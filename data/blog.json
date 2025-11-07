@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Termografía Infrarroja: La clave para detectar fallas antes de que ocurran",
+      "excerpt": "Descubre cómo la tecnología de termografía permite identificar puntos calientes y anomalías térmicas en equipos industriales, previniendo paros no programados.",
+      "date": "2024-11-15",
+      "category": "Tecnología",
+      "image": "/images/blog/termografia.jpg",
+      "slug": "termografia-infrarroja-deteccion-fallas"
+    },
+    {
+      "id": 2,
+      "title": "Análisis de Vibraciones: Monitoreo continuo para máxinas críticas",
+      "excerpt": "El análisis de vibraciones es fundamental para detectar desbalances, desalineaciones y desgastes en rodamientos. Conoce cómo implementarlo en tu planta.",
+      "date": "2024-10-28",
+      "category": "Mantenimiento Predictivo",
+      "image": "/images/blog/vibraciones.jpg",
+      "slug": "analisis-vibraciones-monitoreo-continuo"
+    },
+    {
+      "id": 3,
+      "title": "ROI del Mantenimiento Predictivo: Casos de éxito en la industria",
+      "excerpt": "Empresas líderes han reducido hasta un 40% sus costos de mantenimiento implementando estrategias predictivas. Te compartimos los números reales.",
+      "date": "2024-10-10",
+      "category": "Casos de Éxito",
+      "image": "/images/blog/roi-mantenimiento.jpg",
+      "slug": "roi-mantenimiento-predictivo-casos-exito"
+    }
+  ]
+}
