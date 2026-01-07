@@ -1,0 +1,69 @@
+{
+  "id": "estudios-electricos",
+  "slug": "estudios-electricos",
+  "type": "tecnologia",
+
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios y Productos",
+      "link": "/servicios-productos"
+    },
+    {
+      "label": "Estudios Eléctricos",
+      "link": "/servicios-productos/estudios-electricos"
+    }
+  ],
+
+  "header": {
+    "title": "Estudios Eléctricos Especializados",
+    "subtitle": "Análisis y diagnóstico de sistemas eléctricos industriales",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+
+  "content": {
+    "title": "¿Qué son los Estudios Eléctricos?",
+    "subtitle": "Garantía de confiabilidad y seguridad eléctrica",
+    "image": "/images/servicios/electricos-placeholder.jpg",
+
+    "items": [
+      {
+        "id": "aplicaciones",
+        "title": "Aplicaciones",
+        "content": "Realizamos análisis de calidad de energía, estudios de coordinación de protecciones, evaluación de sistemas de puesta a tierra, medición de armónicos, análisis de motores eléctricos y pruebas de equipos de media y alta tensión."
+      },
+      {
+        "id": "beneficios",
+        "title": "Beneficios",
+        "content": "Mejora la confiabilidad del sistema eléctrico, reduce consumos energéticos, previene fallas y accidentes, optimiza la operación de equipos eléctricos, cumple con normativas de seguridad y calidad."
+      },
+      {
+        "id": "metodologia",
+        "title": "Metodología",
+        "content": "Aplicamos normas IEEE, IEC y NOM vigentes. Utilizamos analizadores de redes certificados y software especializado. Nuestros ingenieros cuentan con certificaciones en sistemas eléctricos de potencia."
+      }
+    ]
+  },
+
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": [
+      {
+        "name": "Analizador de Redes",
+        "description": "Medición de calidad de energía",
+        "image": "/images/productos/placeholder-1.jpg",
+        "link": "#"
+      },
+      {
+        "name": "Sistema de Monitoreo",
+        "description": "Supervisión continua de parámetros eléctricos",
+        "image": "/images/productos/placeholder-2.jpg",
+        "link": "#"
+      }
+    ]
+  }
+}

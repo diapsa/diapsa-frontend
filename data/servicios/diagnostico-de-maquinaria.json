@@ -1,0 +1,69 @@
+{
+  "id": "diagnostico-de-maquinaria",
+  "slug": "diagnostico-de-maquinaria",
+  "type": "tecnologia",
+
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios y Productos",
+      "link": "/servicios-productos"
+    },
+    {
+      "label": "Diagnóstico de Maquinaria",
+      "link": "/servicios-productos/diagnostico-de-maquinaria"
+    }
+  ],
+
+  "header": {
+    "title": "Diagnóstico Integral de Maquinaria",
+    "subtitle": "Evaluación completa del estado de sus activos industriales",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+
+  "content": {
+    "title": "¿Qué es el Diagnóstico de Maquinaria?",
+    "subtitle": "Análisis multidisciplinario para máxima confiabilidad",
+    "image": "/images/servicios/diagnostico-placeholder.jpg",
+
+    "items": [
+      {
+        "id": "aplicaciones",
+        "title": "Aplicaciones",
+        "content": "El diagnóstico integral combina múltiples tecnologías (vibraciones, termografía, ultrasonido, análisis de lubricantes) para evaluar el estado real de maquinaria crítica y determinar acciones correctivas precisas."
+      },
+      {
+        "id": "beneficios",
+        "title": "Beneficios",
+        "content": "Proporciona una visión completa del estado de los equipos, permite planificar mantenimientos con mayor precisión, reduce inventarios de refacciones, optimiza recursos y minimiza riesgos operacionales."
+      },
+      {
+        "id": "metodologia",
+        "title": "Metodología",
+        "content": "Nuestro equipo multidisciplinario integra datos de diferentes tecnologías predictivas siguiendo metodologías de análisis de causa raíz (RCA) y análisis de modos de falla (FMEA) para entregar diagnósticos precisos."
+      }
+    ]
+  },
+
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": [
+      {
+        "name": "Kit de Diagnóstico Portátil",
+        "description": "Conjunto de herramientas para análisis en campo",
+        "image": "/images/productos/placeholder-1.jpg",
+        "link": "#"
+      },
+      {
+        "name": "Plataforma de Gestión",
+        "description": "Software integrado de análisis predictivo",
+        "image": "/images/productos/placeholder-2.jpg",
+        "link": "#"
+      }
+    ]
+  }
+}

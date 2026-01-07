@@ -1,0 +1,46 @@
+{
+  "cursos": [
+    {
+      "id": "termografia-infrarroja",
+      "nombre": "TERMOGRAFÍA INFRARROJA",
+      "descripcion": "Domina la detección temprana de problemas mediante el análisis térmico de tus equipos.",
+      "imagen": "/images/cursos/placeholder.png",
+      "link": "#"
+    },
+    {
+      "id": "vibraciones-mecanicas",
+      "nombre": "VIBRACIONES MECÁNICAS",
+      "descripcion": "Aprende a interpretar vibraciones y prevenir fallas en maquinaria de forma temprana y rápida.",
+      "imagen": "/images/cursos/placeholder.png",
+      "link": "#"
+    },
+    {
+      "id": "monitoreo-condicion",
+      "nombre": "INCREMENTO DE LA CONFIABILIDAD A TRAVÉS DEL MONITOREO DE CONDICIÓN",
+      "descripcion": "Optimiza la operación de tus equipos mediante el monitoreo de condiciones.",
+      "imagen": "/images/cursos/placeholder.png",
+      "link": "#"
+    },
+    {
+      "id": "ultrasonido-pasivo",
+      "nombre": "ULTRASONIDO PASIVO",
+      "descripcion": "Descubre cómo el ultrasonido pasivo mejora la identificación de problemas en maquinaria.",
+      "imagen": "/images/cursos/ultrasonido-pasivo.jpg",
+      "link": "#"
+    },
+    {
+      "id": "rcm-mantenimiento",
+      "nombre": "RCM MANTENIMIENTO CENTRADO EN LA CONFIABILIDAD",
+      "descripcion": "Implementa estrategias RCM para asegurar la durabilidad y confiabilidad de los equipos.",
+      "imagen": "/images/cursos/rcm-mantenimiento.jpg",
+      "link": "#"
+    },
+    {
+      "id": "alineacion-balanceo",
+      "nombre": "ALINEACIÓN Y BALANCEO DE MAQUINARIA",
+      "descripcion": "Perfecciona las técnicas para alinear y balancear equipos, mejorando su vida útil.",
+      "imagen": "/images/cursos/alineacion-balanceo.jpg",
+      "link": "#"
+    }
+  ]
+}

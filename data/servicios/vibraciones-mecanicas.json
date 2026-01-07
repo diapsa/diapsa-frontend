@@ -1,0 +1,69 @@
+{
+  "id": "vibraciones-mecanicas",
+  "slug": "vibraciones-mecanicas",
+  "type": "tecnologia",
+
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios y Productos",
+      "link": "/servicios-productos"
+    },
+    {
+      "label": "Vibraciones Mecánicas",
+      "link": "/servicios-productos/vibraciones-mecanicas"
+    }
+  ],
+
+  "header": {
+    "title": "Análisis de Vibraciones Mecánicas",
+    "subtitle": "Diagnóstico preciso del estado de maquinaria rotativa",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+
+  "content": {
+    "title": "¿Qué es el Análisis de Vibraciones?",
+    "subtitle": "Monitoreo continuo de la salud mecánica",
+    "image": "/images/servicios/vibraciones-placeholder.jpg",
+
+    "items": [
+      {
+        "id": "aplicaciones",
+        "title": "Aplicaciones",
+        "content": "El análisis de vibraciones se aplica en motores eléctricos, bombas, ventiladores, compresores, reductores y turbinas. Permite detectar desbalanceo, desalineación, rodamientos dañados, resonancia y otras anomalías mecánicas."
+      },
+      {
+        "id": "beneficios",
+        "title": "Beneficios",
+        "content": "Minimiza tiempos de paro, optimiza intervalos de mantenimiento, reduce costos operativos, extiende la vida útil de componentes críticos y mejora la confiabilidad de los procesos productivos."
+      },
+      {
+        "id": "metodologia",
+        "title": "Metodología",
+        "content": "Aplicamos normas ISO 10816 e ISO 20816 utilizando analizadores de vibraciones certificados. Nuestros analistas cuentan con certificación Categoría III en análisis de vibraciones según ISO 18436-2."
+      }
+    ]
+  },
+
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": [
+      {
+        "name": "Analizador de Vibraciones",
+        "description": "Equipo portátil para medición y análisis",
+        "image": "/images/productos/placeholder-1.jpg",
+        "link": "#"
+      },
+      {
+        "name": "Sensores de Monitoreo",
+        "description": "Sistema de monitoreo continuo en línea",
+        "image": "/images/productos/placeholder-2.jpg",
+        "link": "#"
+      }
+    ]
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "series": [
+    {
+      "id": "serie-m",
+      "title": "HIKMIKRO | SERIE M",
+      "serie": "M",
+      "description": "Cámaras compactas, precisas y versátiles, ideales para mantenimiento predictivo y análisis térmico en campo.",
+      "images": [
+        "/images/camaras/serie-m/hero.jpg",
+        "/images/camaras/serie-m/gallery-1.jpg"
+      ],
+      "cameras": [
+        {
+          "id": "m11",
+          "slug": "hikmikro-m11",
+          "modelo": "M11",
+          "descripcion": "Cámara termográfica compacta de nivel básico con resolución 192×144 y enfoque manual, ideal para inspecciones de mantenimiento preventivo.",
+          "images": [
+            "/images/camaras/serie-m/m11-1.jpg",
+            "/images/camaras/serie-m/m11-2.jpg",
+            "/images/camaras/serie-m/m11-3.jpg"
+          ],
+          "specs": {
+            "resolucion": "192 × 144",
+            "superIR": true,
+            "superFocus": false,
+            "enfoque": "Manual",
+            "anguloVision": "18.8° × 14.1°"
+          },
+          "brochure": "/downloads/camaras/m11-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/m11-ficha-tecnica.pdf"
+        },
+        {
+          "id": "m11w",
+          "slug": "hikmikro-m11w",
+          "modelo": "M11W",
+          "descripcion": "Versión gran angular de la M11 con enfoque libre y campo de visión ampliado para inspecciones de áreas grandes.",
+          "images": [
+            "/images/camaras/serie-m/m11w-1.jpg",
+            "/images/camaras/serie-m/m11w-2.jpg"
+          ],
+          "specs": {
+            "resolucion": "192 × 144",
+            "superIR": true,
+            "superFocus": false,
+            "enfoque": "Free",
+            "anguloVision": "37.2° × 27.8°"
+          },
+          "brochure": "/downloads/camaras/m11w-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/m11w-ficha-tecnica.pdf"
+        },
+        {
+          "id": "m20",
+          "slug": "hikmikro-m20",
+          "modelo": "M20",
+          "descripcion": "Cámara de rango medio con resolución mejorada 256×192, perfecta para análisis térmicos detallados en aplicaciones industriales.",
+          "images": [
+            "/images/camaras/serie-m/m20-1.jpg",
+            "/images/camaras/serie-m/m20-2.jpg",
+            "/images/camaras/serie-m/m20-3.jpg"
+          ],
+          "specs": {
+            "resolucion": "256 × 192",
+            "superIR": true,
+            "superFocus": false,
+            "enfoque": "Manual",
+            "anguloVision": "25° × 18.8°"
+          },
+          "brochure": "/downloads/camaras/m20-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/m20-ficha-tecnica.pdf"
+        },
+        {
+          "id": "m20w",
+          "slug": "hikmikro-m20w",
+          "modelo": "M20W",
+          "descripcion": "Modelo M20 con lente gran angular y enfoque libre, diseñado para capturar áreas extensas en una sola toma.",
+          "images": [
+            "/images/camaras/serie-m/m20w-1.jpg",
+            "/images/camaras/serie-m/m20w-2.jpg"
+          ],
+          "specs": {
+            "resolucion": "256 × 192",
+            "superIR": true,
+            "superFocus": false,
+            "enfoque": "Free",
+            "anguloVision": "50° × 37.2°"
+          },
+          "brochure": "/downloads/camaras/m20w-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/m20w-ficha-tecnica.pdf"
+        },
+        {
+          "id": "m31",
+          "slug": "hikmikro-m31",
+          "modelo": "M31",
+          "descripcion": "Cámara profesional con resolución 384×288 y tecnología Super Focus, ideal para diagnósticos avanzados de equipos críticos.",
+          "images": [
+            "/images/camaras/serie-m/m31-1.jpg",
+            "/images/camaras/serie-m/m31-2.jpg",
+            "/images/camaras/serie-m/m31-3.jpg"
+          ],
+          "specs": {
+            "resolucion": "384 × 288",
+            "superIR": true,
+            "superFocus": true,
+            "enfoque": "Manual",
+            "anguloVision": "41.1° × 30.5°"
+          },
+          "brochure": "/downloads/camaras/m31-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/m31-ficha-tecnica.pdf"
+        },
+        {
+          "id": "m31t",
+          "slug": "hikmikro-m31t",
+          "modelo": "M31T",
+          "descripcion": "Variante táctil de la M31 con pantalla interactiva y controles optimizados para trabajo en campo.",
+          "images": [
+            "/images/camaras/serie-m/m31t-1.jpg",
+            "/images/camaras/serie-m/m31t-2.jpg"
+          ],
+          "specs": {
+            "resolucion": "384 × 288",
+            "superIR": true,
+            "superFocus": false,
+            "enfoque": "Manual",
+            "anguloVision": "41.1° × 30.5°"
+          },
+          "brochure": "/downloads/camaras/m31t-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/m31t-ficha-tecnica.pdf"
+        },
+        {
+          "id": "m80",
+          "slug": "hikmikro-m80",
+          "modelo": "M80",
+          "descripcion": "Top de línea con resolución 640×480 y Super Focus, ofrece la máxima precisión para análisis térmicos profesionales.",
+          "images": [
+            "/images/camaras/serie-m/m80-1.jpg",
+            "/images/camaras/serie-m/m80-2.jpg",
+            "/images/camaras/serie-m/m80-3.jpg"
+          ],
+          "specs": {
+            "resolucion": "640 × 480",
+            "superIR": true,
+            "superFocus": true,
+            "enfoque": "Manual",
+            "anguloVision": "41.9° × 33.3°"
+          },
+          "brochure": "/downloads/camaras/m80-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/m80-ficha-tecnica.pdf"
+        }
+      ]
+    },
+    {
+      "id": "serie-sp",
+      "title": "HIKMIKRO | SERIE SP",
+      "serie": "SP",
+      "description": "Serie especializada con funciones avanzadas de medición y análisis, diseñada para profesionales que requieren máxima precisión y herramientas de diagnóstico avanzadas.",
+      "images": [
+        "/images/camaras/serie-sp/hero.jpg",
+        "/images/camaras/serie-sp/gallery-1.jpg"
+      ],
+      "cameras": [
+        {
+          "id": "sp60",
+          "slug": "hikmikro-sp60",
+          "modelo": "SP60",
+          "descripcion": "Cámara profesional con detector de 384×288 píxeles, capacidad de medición de temperatura hasta 650°C y análisis avanzado de datos.",
+          "images": [
+            "/images/camaras/serie-sp/sp60-1.jpg",
+            "/images/camaras/serie-sp/sp60-2.jpg",
+            "/images/camaras/serie-sp/sp60-3.jpg"
+          ],
+          "specs": {
+            "resolucion": "384 × 288",
+            "superIR": true,
+            "superFocus": true,
+            "enfoque": "Manual",
+            "anguloVision": "25° × 19°",
+            "rangoTemperatura": "-20°C a 650°C",
+            "sensibilidadTermica": "< 40 mK"
+          },
+          "brochure": "/downloads/camaras/sp60-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/sp60-ficha-tecnica.pdf"
+        },
+        {
+          "id": "sp80",
+          "slug": "hikmikro-sp80",
+          "modelo": "SP80",
+          "descripcion": "Modelo avanzado con resolución 640×480, medición hasta 1000°C y software de análisis profesional integrado.",
+          "images": [
+            "/images/camaras/serie-sp/sp80-1.jpg",
+            "/images/camaras/serie-sp/sp80-2.jpg"
+          ],
+          "specs": {
+            "resolucion": "640 × 480",
+            "superIR": true,
+            "superFocus": true,
+            "enfoque": "Manual/Auto",
+            "anguloVision": "24° × 18°",
+            "rangoTemperatura": "-20°C a 1000°C",
+            "sensibilidadTermica": "< 30 mK"
+          },
+          "brochure": "/downloads/camaras/sp80-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/sp80-ficha-tecnica.pdf"
+        },
+        {
+          "id": "sp120",
+          "slug": "hikmikro-sp120",
+          "modelo": "SP120",
+          "descripcion": "Top de línea con resolución ultra alta 1024×768, medición hasta 1200°C y conectividad avanzada para diagnóstico remoto.",
+          "images": [
+            "/images/camaras/serie-sp/sp120-1.jpg",
+            "/images/camaras/serie-sp/sp120-2.jpg",
+            "/images/camaras/serie-sp/sp120-3.jpg"
+          ],
+          "specs": {
+            "resolucion": "1024 × 768",
+            "superIR": true,
+            "superFocus": true,
+            "enfoque": "Auto",
+            "anguloVision": "28° × 21°",
+            "rangoTemperatura": "-40°C a 1200°C",
+            "sensibilidadTermica": "< 20 mK",
+            "conectividad": "WiFi, Bluetooth, USB-C"
+          },
+          "brochure": "/downloads/camaras/sp120-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/sp120-ficha-tecnica.pdf"
+        }
+      ]
+    },
+    {
+      "id": "serie-g",
+      "title": "HIKMIKRO | SERIE G",
+      "serie": "G",
+      "description": "Serie industrial robusta con certificación IP65, diseñada para entornos hostiles y condiciones extremas de trabajo en campo.",
+      "images": [
+        "/images/camaras/serie-g/hero.jpg",
+        "/images/camaras/serie-g/gallery-1.jpg"
+      ],
+      "cameras": [
+        {
+          "id": "g40",
+          "slug": "hikmikro-g40",
+          "modelo": "G40",
+          "descripcion": "Cámara robusta con carcasa reforzada IP65, resolución 320×240 y batería de larga duración para trabajo prolongado en campo.",
+          "images": [
+            "/images/camaras/serie-g/g40-1.jpg",
+            "/images/camaras/serie-g/g40-2.jpg"
+          ],
+          "specs": {
+            "resolucion": "320 × 240",
+            "superIR": true,
+            "superFocus": false,
+            "enfoque": "Manual",
+            "anguloVision": "32° × 24°",
+            "certificacion": "IP65",
+            "bateria": "8 horas continuas",
+            "resistenciaGolpes": "2 metros"
+          },
+          "brochure": "/downloads/camaras/g40-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/g40-ficha-tecnica.pdf"
+        },
+        {
+          "id": "g60",
+          "slug": "hikmikro-g60",
+          "modelo": "G60",
+          "descripcion": "Modelo intermedio con resolución 384×288, Super Focus y protección IP67 para ambientes industriales severos.",
+          "images": [
+            "/images/camaras/serie-g/g60-1.jpg",
+            "/images/camaras/serie-g/g60-2.jpg",
+            "/images/camaras/serie-g/g60-3.jpg"
+          ],
+          "specs": {
+            "resolucion": "384 × 288",
+            "superIR": true,
+            "superFocus": true,
+            "enfoque": "Manual",
+            "anguloVision": "30° × 23°",
+            "certificacion": "IP67",
+            "bateria": "10 horas continuas",
+            "resistenciaGolpes": "3 metros",
+            "temperaturaOperacion": "-20°C a 50°C"
+          },
+          "brochure": "/downloads/camaras/g60-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/g60-ficha-tecnica.pdf"
+        },
+        {
+          "id": "g100",
+          "slug": "hikmikro-g100",
+          "modelo": "G100",
+          "descripcion": "Cámara industrial de alta gama con resolución 640×480, certificación militar y sistema de almacenamiento interno de 32GB.",
+          "images": [
+            "/images/camaras/serie-g/g100-1.jpg",
+            "/images/camaras/serie-g/g100-2.jpg"
+          ],
+          "specs": {
+            "resolucion": "640 × 480",
+            "superIR": true,
+            "superFocus": true,
+            "enfoque": "Auto/Manual",
+            "anguloVision": "28° × 21°",
+            "certificacion": "IP67 / MIL-STD-810G",
+            "bateria": "12 horas continuas",
+            "resistenciaGolpes": "5 metros",
+            "temperaturaOperacion": "-30°C a 60°C",
+            "almacenamiento": "32GB interno"
+          },
+          "brochure": "/downloads/camaras/g100-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/g100-ficha-tecnica.pdf"
+        },
+        {
+          "id": "g120x",
+          "slug": "hikmikro-g120x",
+          "modelo": "G120X",
+          "descripcion": "Modelo extremo con cámara dual (térmica + visual 4K), GPS integrado y conectividad satelital para operaciones remotas.",
+          "images": [
+            "/images/camaras/serie-g/g120x-1.jpg",
+            "/images/camaras/serie-g/g120x-2.jpg",
+            "/images/camaras/serie-g/g120x-3.jpg"
+          ],
+          "specs": {
+            "resolucion": "640 × 480",
+            "camaraVisual": "4K UHD",
+            "superIR": true,
+            "superFocus": true,
+            "enfoque": "Auto",
+            "anguloVision": "42° × 32°",
+            "certificacion": "IP68 / MIL-STD-810H",
+            "bateria": "16 horas continuas",
+            "resistenciaGolpes": "10 metros",
+            "temperaturaOperacion": "-40°C a 70°C",
+            "almacenamiento": "128GB interno",
+            "conectividad": "GPS, WiFi 6, Bluetooth 5.0, LTE"
+          },
+          "brochure": "/downloads/camaras/g120x-brochure.pdf",
+          "fichaTecnica": "/downloads/camaras/g120x-ficha-tecnica.pdf"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "termografia-infrarroja",
+  "slug": "termografia-infrarroja",
+  "type": "tecnologia",
+
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios y Productos",
+      "link": "/servicios-productos"
+    },
+    {
+      "label": "Termografía Infrarroja",
+      "link": "/servicios-productos/termografia-infrarroja"
+    }
+  ],
+
+  "header": {
+    "title": "Termografía Infrarroja",
+    "subtitle": "Detección temprana de fallas mediante análisis térmico de precisión",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+
+  "content": {
+    "title": null,
+    "subtitle": null,
+    "image": "/images/servicios/placeholder.jpg",
+
+    "items": [
+      {
+        "id": "aplicaciones",
+        "title": "Aplicaciones",
+        "content": "La termografía infrarroja se utiliza para detectar puntos calientes en equipos eléctricos, pérdidas de energía en sistemas térmicos, y anomalías en maquinaria industrial. Esta tecnología permite identificar problemas antes de que se conviertan en fallas críticas."
+      },
+      {
+        "id": "beneficios",
+        "title": "Beneficios",
+        "content": "Reduce costos de mantenimiento, previene paros no programados, aumenta la vida útil de los equipos, mejora la eficiencia energética y garantiza la seguridad operacional de sus instalaciones."
+      },
+      {
+        "id": "metodologia",
+        "title": "Metodología",
+        "content": "Utilizamos cámaras termográficas de última generación y seguimos estándares internacionales como ISO 18434-1 y ASNT para garantizar resultados precisos y confiables en cada inspección."
+      }
+    ]
+  },
+
+  "relatedProducts": {
+    "title": "LLEVA A CABO ANÁLISIS TERMOGRÁFICOS",
+    "subtitle": "Consigue la cámara termográfica que necesitas",
+    "items": [
+      {
+        "name": "Cámara Termográfica FLIR",
+        "description": "Equipo de alta precisión para análisis térmico",
+        "image": "/images/productos/placeholder.jpg",
+        "link": "#"
+      },
+      {
+        "name": "Software de Análisis",
+        "description": "Herramientas de procesamiento de imágenes térmicas",
+        "image": "/images/productos/placeholder.jpg",
+        "link": "#"
+      }
+    ]
+  }
+}

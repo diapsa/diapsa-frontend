@@ -18,12 +18,12 @@ export default function Button({
   ...rest
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center rounded-md px-4 py-2 font-medium transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer select-none active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100";
+    "inline-flex items-center justify-center rounded-xs px-4 py-2 font-medium transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer select-none active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100";
 
   const solidMap: Record<string, string> = {
-    primary: "bg-primary text-white hover:bg-primary/90 hover:shadow-lg focus:ring-primary/50 shadow-md",
-    secondary: "bg-secondary text-white hover:bg-secondary/90 hover:shadow-lg focus:ring-secondary/50 shadow-md",
-    tertiary: "bg-tertiary text-white hover:bg-tertiary/90 hover:shadow-lg focus:ring-tertiary/50 shadow-md",
+    primary: "bg-primary text-white hover:bg-primary hover:shadow-lg focus:ring-primary/50 shadow-md",
+    secondary: "bg-secondary text-white hover:bg-secondary hover:shadow-lg focus:ring-secondary/50 shadow-md px-12 py-3",
+    tertiary: "bg-tertiary text-white hover:bg-tertiary hover:shadow-lg focus:ring-tertiary/50 shadow-md",
   };
 
   const ghostMapLight: Record<string, string> = {

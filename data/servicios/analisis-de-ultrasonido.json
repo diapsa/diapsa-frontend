@@ -1,0 +1,75 @@
+{
+  "id": "analisis-de-ultrasonido",
+  "slug": "analisis-de-ultrasonido",
+  "type": "tecnologia",
+
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios y Productos",
+      "link": "/servicios-productos"
+    },
+    {
+      "label": "Análisis de Ultrasonido",
+      "link": "/servicios-productos/analisis-de-ultrasonido"
+    }
+  ],
+
+  "header": {
+    "title": "Análisis de Ultrasonido",
+    "subtitle": "Detección de fugas, descargas eléctricas y fallas mecánicas",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+
+  "content": {
+    "title": "¿Qué es el Análisis de Ultrasonido?",
+    "subtitle": "Tecnología ultrasónica para mantenimiento predictivo",
+    "image": "/images/servicios/ultrasonido-placeholder.jpg",
+
+    "items": [
+      {
+        "id": "aplicaciones",
+        "title": "Aplicaciones",
+        "content": "El ultrasonido industrial detecta fugas de aire comprimido, vapor y gases, identifica descargas parciales en equipos eléctricos, evalúa el estado de rodamientos, y detecta cavitación en bombas y válvulas."
+      },
+      {
+        "id": "beneficios",
+        "title": "Beneficios",
+        "content": "Reduce pérdidas energéticas por fugas, previene fallas eléctricas catastróficas, optimiza la lubricación de rodamientos, mejora la eficiencia de sistemas neumáticos e hidráulicos, y aumenta la seguridad operacional."
+      },
+      {
+        "id": "metodologia",
+        "title": "Metodología",
+        "content": "Empleamos detectores ultrasónicos de última generación y seguimos protocolos de inspección certificados. Nuestros técnicos están certificados en ultrasonido Nivel II según ASNT SNT-TC-1A."
+      }
+    ]
+  },
+
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": [
+      {
+        "name": "Detector Ultrasónico",
+        "description": "Equipo portátil de alta sensibilidad",
+        "image": "/images/productos/placeholder.jpg",
+        "link": "#"
+      },
+      {
+        "name": "Sensores Fijos",
+        "description": "Monitoreo permanente de áreas críticas",
+        "image": "/images/productos/placeholder.jpg",
+        "link": "#"
+      },
+      {
+        "name": "Sensores Fijos",
+        "description": "Monitoreo permanente de áreas críticas",
+        "image": "/images/productos/placeholder.jpg",
+        "link": "#"
+      }
+    ]
+  }
+}
