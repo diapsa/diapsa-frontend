@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "id": "step-1",
+      "number": "1",
+      "title": "Levantamiento técnico experto",
+      "description": "Nuestro servicio comienza con un levantamiento técnico experto que identifica riesgos ocultos y abre la puerta a decisiones estratégicas.",
+      "details": [
+        "En todo proyecto realizamos una evaluación precisa para entender el estado real de los activos y su operación.",
+        "Los levantamientos realizados son el fundamento perfecto para poder diagnosticar puntos críticos y riesgos ocultos lo que nos permite determinar qué evaluar, cómo hacerlo y qué acciones son prioritarias."
+      ],
+      "image": "/images/metodologia/levantamiento-tecnico.webp",
+      "imageAlt": "Técnico realizando inspección en instalación industrial"
+    },
+    {
+      "id": "step-2",
+      "number": "2",
+      "title": "Recomendación estratégica",
+      "description": "Según los resultados, se recomienda desde la instalación estratégica de sensores, hasta revisiones periódicas o análisis especializados más profundos.",
+      "details": [
+        "El objetivo es gestionar que cada acción responda a una necesidad real y se traduzca en información certera que mejore decisiones técnicas y asegure continuidad operativa."
+      ],
+      "image": "/images/metodologia/recomendacion-estrategica.webp",
+      "imageAlt": "Equipo de expertos analizando datos de equipos industriales"
+    },
+    {
+      "id": "step-3",
+      "number": "3",
+      "title": "Implementación 360°",
+      "description": "Implementamos el 360 de nuestra solución integral de confiabilidad de activos y más allá del simple monitoreo",
+      "details": [
+        "Esta dinámica para mantener la disponibilidad del equipo crítico lo logra de toda la vida útil, desde el diseño hasta el abandono de activos.",
+        "Esto incluye detectar problemas de origen, anticipar la ocurrencia de eventos de detención y proponer acciones oportunas y eficientes."
+      ],
+      "image": "/images/metodologia/implementacion-360.webp",
+      "imageAlt": "Diagrama DIAPSA 360 de solución integral"
+    }
+  ],
+  "cta": {
+    "text": "DESCARGA EL BROCHURE DE NUESTRO SERVICIO INTEGRAL",
+    "link": "#brochure"
+  }
+}

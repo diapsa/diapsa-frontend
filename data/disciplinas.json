@@ -1,0 +1,40 @@
+{
+    "disciplines": [
+        {
+            "title": "Termografía Infrarroja",
+            "description": "Detección temprana de fallas mediante análisis térmico.",
+            "image": "/images/disciplinas/termografia.jpg",
+            "imageAlt": "Termografía Infrarroja"
+        },
+        {
+            "title": "Vibraciones Mecánicas",
+            "description": "Análisis de patrones de vibración para diagnosticar problemas en maquinaria.",
+            "image": "/images/disciplinas/vibraciones.jpg",
+            "imageAlt": "Vibraciones Mecánicas"
+        },
+        {
+            "title": "Ultrasonido",
+            "description": "Detección de fallas incipientes mediante análisis ultrasónico de equipos.",
+            "image": "/images/disciplinas/ultrasonido.jpg",
+            "imageAlt": "Ultrasonido"
+        },
+        {
+            "title": "Tierras Físicas & Estudios Eléctricos",
+            "description": "Evaluación integral de sistemas de puesta a tierra y parámetros eléctricos.",
+            "image": "/images/disciplinas/tierras-fisicas.jpg",
+            "imageAlt": "Tierras Físicas & Estudios Eléctricos"
+        },
+        {
+            "title": "Alineación y Balanceo",
+            "description": "Optimización de alineación y balanceo de equipos rotativos.",
+            "image": "/images/disciplinas/alineacion-balaceo.jpg",
+            "imageAlt": "Alineación y Balanceo"
+        },
+        {
+            "title": "Análisis de Lubricante",
+            "description": "Análisis químico y físico de lubricantes para monitoreo predictivo.",
+            "image": "/images/disciplinas/analisis.jpg",
+            "imageAlt": "Análisis de Lubricante"
+        }
+    ]
+}

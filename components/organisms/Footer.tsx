@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import NavLink from "../atoms/NavLink";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -77,36 +78,36 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link
+                <NavLink
                   href="/servicios/termografia"
-                  className="text-white/80 hover:text-secondary transition-colors text-sm"
+                  variant="footer"
                 >
                   Termografía
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   href="/servicios/vibraciones"
-                  className="text-white/80 hover:text-secondary transition-colors text-sm"
+                  variant="footer"
                 >
                   Análisis de Vibraciones
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   href="/servicios/ultrasonido"
-                  className="text-white/80 hover:text-secondary transition-colors text-sm"
+                  variant="footer"
                 >
                   Ultrasonido
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   href="/servicios/lubricacion"
-                  className="text-white/80 hover:text-secondary transition-colors text-sm"
+                  variant="footer"
                 >
                   Análisis de Lubricación
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -116,36 +117,36 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4 text-secondary">Empresa</h4>
             <ul className="space-y-3">
               <li>
-                <Link
+                <NavLink
                   href="/nosotros"
-                  className="text-white/80 hover:text-secondary transition-colors text-sm"
+                  variant="footer"
                 >
                   Acerca de Nosotros
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   href="/cursos"
-                  className="text-white/80 hover:text-secondary transition-colors text-sm"
+                  variant="footer"
                 >
                   Cursos y Capacitación
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   href="/blog"
-                  className="text-white/80 hover:text-secondary transition-colors text-sm"
+                  variant="footer"
                 >
                   Blog
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   href="/contacto"
-                  className="text-white/80 hover:text-secondary transition-colors text-sm"
+                  variant="footer"
                 >
                   Contacto
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -235,18 +236,16 @@ export default function Footer() {
               © {currentYear} Grupo DIAPSA. Todos los derechos reservados.
             </p>
             <div className="flex gap-6">
-              <Link
+              <NavLink
                 href="/aviso-privacidad"
-                className="hover:text-secondary transition-colors"
               >
                 Aviso de Privacidad
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 href="/terminos"
-                className="hover:text-secondary transition-colors"
               >
                 Términos y Condiciones
-              </Link>
+              </NavLink>
             </div>
           </div>
         </div>

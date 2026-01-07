@@ -1,4 +1,4 @@
-import PageHeader from "@/components/molecules/PageHeader";
+import PageHeader from "@/components/organisms/PageHeader";
 import Button from "@/components/atoms/Button";
 
 export default function ServiciosProductosPage() {

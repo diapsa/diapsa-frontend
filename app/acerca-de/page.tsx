@@ -1,4 +1,5 @@
-import PageHeader from "@/components/molecules/PageHeader";
+import PageHeader from "@/components/organisms/PageHeader";
+import WipState from "@/components/molecules/wip/wipState";
 import Image from "next/image";
 
 export default function AcercaDePage() {
@@ -10,7 +11,7 @@ export default function AcercaDePage() {
       />
 
       <section className="w-full bg-white py-16 lg:py-24">
-        
+        <WipState />
       </section>
     </div>
   );

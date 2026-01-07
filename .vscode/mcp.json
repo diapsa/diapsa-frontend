@@ -1,0 +1,24 @@
+{
+  "servers": {
+    "next-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "next-devtools-mcp@latest"
+      ]
+    },
+    "shadcn": {
+      "command": "npx",
+      "args": [
+        "shadcn@latest",
+        "mcp"
+      ]
+    },
+    "gsap": {
+      "command": "npx",
+      "args": [
+        "bruzethegreat-gsap-master-mcp-server@latest"
+      ]
+    }
+  }
+}

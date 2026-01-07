@@ -1,19 +1,16 @@
 import Image from "next/image";
 import Button from "../atoms/Button";
+import BackgroundImage from "../atoms/BackgroundImage";
 
 export default function Hero() {
   return (
     <section className="relative w-full h-screen overflow-hidden">
       {/* Fondo hero */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/fondo-hero.webp"
-          alt="Fondo hero"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+      <BackgroundImage
+        src="/images/fondo-hero.webp"
+        alt="Fondo hero"
+        priority
+      />
 
       {/* Línea amarilla horizontal fija al centro */}
       <div className="absolute top-1/2 left-0 right-0 h-1 bg-secondary z-10" />

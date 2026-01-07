@@ -1,18 +1,15 @@
-import Image from "next/image";
+import BackgroundImage from "../atoms/BackgroundImage";
 
 export default function AboutUs() {
   return (
     <section className="relative w-full overflow-hidden border-b-4 border-secondary">
       {/* Fondo sección */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/images/fondo-mantenimiento.webp"
-          alt="Fondo sección acerca de nosotros"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+      <BackgroundImage
+        src="/images/fondo-mantenimiento.webp"
+        alt="Fondo sección acerca de nosotros"
+        priority
+        zIndex="-z-10"
+      />
 
       <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 px-6 py-16 lg:py-42">
         {/* Columna izquierda */}
