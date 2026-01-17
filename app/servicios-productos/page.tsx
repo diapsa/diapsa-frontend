@@ -1,5 +1,30 @@
+import type { Metadata } from "next";
 import PageHeader from "@/components/organisms/PageHeader";
 import Button from "@/components/atoms/Button";
+
+export const metadata: Metadata = {
+  title: "Servicios y Productos",
+  description:
+    "Servicios de mantenimiento predictivo industrial: Termografía Infrarroja, Análisis de Vibraciones, Ultrasonido, Estudios Eléctricos y Diagnóstico de Maquinaria. Soluciones integrales para tu industria en México.",
+  keywords: [
+    "servicios mantenimiento predictivo",
+    "termografía industrial México",
+    "análisis de vibraciones",
+    "ultrasonido industrial",
+    "diagnóstico de maquinaria",
+    "estudios eléctricos industriales",
+  ],
+  alternates: {
+    canonical: "/servicios-productos",
+  },
+  openGraph: {
+    title: "Servicios y Productos | Grupo DIAPSA",
+    description:
+      "Soluciones integrales de mantenimiento predictivo: termografía, vibraciones, ultrasonido y diagnóstico de maquinaria.",
+    url: "/servicios-productos",
+    type: "website",
+  },
+};
 
 export default function ServiciosProductosPage() {
   const servicios = [
@@ -50,7 +75,7 @@ export default function ServiciosProductosPage() {
   ];
 
   return (
-    <div>
+    <main>
       <PageHeader
         title="SERVICIOS Y PRODUCTOS"
         subtitle="Soluciones integrales de mantenimiento predictivo para tu industria"
@@ -59,6 +84,6 @@ export default function ServiciosProductosPage() {
       <section className="w-full bg-white py-16 lg:py-24">
 
       </section>
-    </div>
+    </main>
   );
 }

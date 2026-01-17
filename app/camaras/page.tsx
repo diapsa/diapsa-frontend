@@ -1,16 +1,37 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import PageHeader from "@/components/organisms/PageHeader";
 import camerasData from "@/data/camaras.json";
 
-export const metadata = {
-  title: "Cámaras Termográficas | HIKMIKRO | DIAPSA",
-  description: "Catálogo completo de cámaras termográficas profesionales HIKMIKRO. Series M, SP y G para mantenimiento predictivo y análisis térmico industrial.",
+export const metadata: Metadata = {
+  title: "Cámaras Termográficas HIKMIKRO",
+  description:
+    "Catálogo completo de cámaras termográficas profesionales HIKMIKRO. Series M, SP y G para mantenimiento predictivo, análisis térmico industrial y diagnóstico de equipos en México.",
+  keywords: [
+    "cámaras termográficas HIKMIKRO",
+    "cámara termográfica industrial",
+    "equipo termografía México",
+    "HIKMIKRO Serie M",
+    "HIKMIKRO Serie SP",
+    "HIKMIKRO Serie G",
+    "termografía predictiva",
+  ],
+  alternates: {
+    canonical: "/camaras",
+  },
+  openGraph: {
+    title: "Cámaras Termográficas HIKMIKRO | Grupo DIAPSA",
+    description:
+      "Equipos de precisión para análisis térmico y mantenimiento predictivo. Distribuidor autorizado HIKMIKRO en México.",
+    url: "/camaras",
+    type: "website",
+  },
 };
 
 export default function CamerasPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50">
       <PageHeader
         title="CÁMARAS TERMOGRÁFICAS"
         subtitle="Equipos de precisión para análisis térmico y mantenimiento predictivo"
@@ -165,6 +186,6 @@ export default function CamerasPage() {
           </Link>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

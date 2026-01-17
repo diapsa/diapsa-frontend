@@ -6,6 +6,10 @@ import RelatedProducts from "@/components/organisms/RelatedProducts";
 import Image from "next/image";
 import type { Servicio } from "@/types/servicio";
 import CoursesPromo from "@/components/organisms/CoursesPromo";
+import JsonLd, {
+  createServiceSchema,
+  createBreadcrumbSchema,
+} from "@/components/atoms/JsonLd";
 
 // Lista de slugs disponibles
 const serviceSlugs = [
@@ -48,9 +52,37 @@ export async function generateMetadata({
     };
   }
 
+  const keywords = [
+    service.header.title.toLowerCase(),
+    "mantenimiento predictivo",
+    "diagnóstico industrial",
+    "México",
+    "DIAPSA",
+  ];
+
   return {
-    title: `${service.header.title} | DIAPSA`,
+    title: service.header.title,
     description: service.header.subtitle,
+    keywords,
+    alternates: {
+      canonical: `/servicios-productos/${slug}`,
+    },
+    openGraph: {
+      title: `${service.header.title} | Grupo DIAPSA`,
+      description: service.header.subtitle,
+      url: `/servicios-productos/${slug}`,
+      type: "website",
+      images: service.content?.image
+        ? [
+            {
+              url: service.content.image,
+              width: 1200,
+              height: 630,
+              alt: service.header.title,
+            },
+          ]
+        : undefined,
+    },
   };
 }
 
@@ -66,8 +98,26 @@ export default async function ServicePage({
     notFound();
   }
 
+  // Datos estructurados para el servicio
+  const serviceJsonLd = createServiceSchema({
+    name: service.header.title,
+    description: service.header.subtitle,
+    image: service.content?.image || undefined,
+    serviceType: service.header.title,
+  });
+
+  // Breadcrumbs para datos estructurados
+  const breadcrumbItems = [
+    { name: "Inicio", url: "/" },
+    { name: "Servicios", url: "/servicios-productos" },
+    { name: service.header.title, url: `/servicios-productos/${slug}` },
+  ];
+  const breadcrumbJsonLd = createBreadcrumbSchema(breadcrumbItems);
+
   return (
     <main>
+      <JsonLd data={serviceJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       {/* Page Header with Breadcrumb */}
       <PageHeader
         title={service.header.title}

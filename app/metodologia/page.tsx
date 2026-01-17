@@ -1,11 +1,36 @@
+import type { Metadata } from "next";
 import PageHeader from "@/components/organisms/PageHeader";
 import MethodologyProcess from "@/components/organisms/MethodologyProcess";
 import disciplinasData from "@/data/disciplinas.json";
 import Image from "next/image";
 
+export const metadata: Metadata = {
+  title: "Nuestra Metodología",
+  description:
+    "Metodología DIAPSA 360°: Un enfoque sistemático para maximizar la confiabilidad de tus equipos. Diagnóstico integral, análisis predictivo y estrategias de mantenimiento personalizadas.",
+  keywords: [
+    "metodología mantenimiento predictivo",
+    "DIAPSA 360",
+    "confiabilidad de equipos",
+    "diagnóstico integral maquinaria",
+    "estrategia mantenimiento industrial",
+    "análisis predictivo México",
+  ],
+  alternates: {
+    canonical: "/metodologia",
+  },
+  openGraph: {
+    title: "Metodología DIAPSA 360° | Mantenimiento Predictivo",
+    description:
+      "22 años de experiencia en un enfoque sistemático para maximizar la confiabilidad de tus equipos industriales.",
+    url: "/metodologia",
+    type: "website",
+  },
+};
+
 export default function MetodologiaPage() {
   return (
-    <div>
+    <main>
       <PageHeader
         title="NUESTRA METODOLOGÍA"
         subtitle="Un enfoque sistemático para maximizar la confiabilidad de tus equipos"
@@ -163,6 +188,6 @@ export default function MetodologiaPage() {
         </div>
       </section>
 
-    </div>
+    </main>
   );
 }

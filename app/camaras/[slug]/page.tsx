@@ -2,6 +2,10 @@ import { notFound } from "next/navigation";
 import camerasData from "@/data/camaras.json";
 import type { Camera, CameraSerie } from "@/types/camara";
 import CameraDetailContent from "./CameraDetailContent";
+import JsonLd, {
+  createProductSchema,
+  createBreadcrumbSchema,
+} from "@/components/atoms/JsonLd";
 
 // Generar rutas estáticas para todas las cámaras
 export function generateStaticParams() {
@@ -38,9 +42,40 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
+  const { camera, serie } = data;
+  const fullTitle = `${camera.modelo} Serie ${serie.serie}`;
+  const description = camera.descripcion || `Cámara termográfica ${camera.modelo} de la serie ${serie.serie} - Equipos de precisión para termografía industrial`;
+
   return {
-    title: `${data.camera.modelo} ${data.serie.serie} | Cámara Termográfica | DIAPSA`,
-    description: data.camera.descripcion || `Cámara termográfica ${data.camera.modelo} de la serie ${data.serie.serie} - Equipos de precisión para termografía industrial`,
+    title: `${fullTitle} | Cámara Termográfica HIKMIKRO`,
+    description,
+    keywords: [
+      `HIKMIKRO ${camera.modelo}`,
+      `cámara termográfica ${camera.modelo}`,
+      `Serie ${serie.serie} HIKMIKRO`,
+      "termografía industrial",
+      "cámara infrarroja",
+      "DIAPSA México",
+    ],
+    alternates: {
+      canonical: `/camaras/${slug}`,
+    },
+    openGraph: {
+      title: `${fullTitle} | Cámara Termográfica HIKMIKRO`,
+      description,
+      url: `/camaras/${slug}`,
+      type: "website",
+      images: camera.images?.[0]
+        ? [
+            {
+              url: camera.images[0],
+              width: 800,
+              height: 600,
+              alt: `Cámara termográfica HIKMIKRO ${camera.modelo}`,
+            },
+          ]
+        : undefined,
+    },
   };
 }
 
@@ -54,5 +89,29 @@ export default async function CameraDetailPage({ params }: { params: Promise<{ s
 
   const { camera, serie } = data;
 
-  return <CameraDetailContent camera={camera} serie={serie} />;
+  // Datos estructurados del producto
+  const productJsonLd = createProductSchema({
+    name: `HIKMIKRO ${camera.modelo} Serie ${serie.serie}`,
+    description: camera.descripcion || `Cámara termográfica profesional ${camera.modelo}`,
+    image: camera.images?.[0] || "",
+    brand: "HIKMIKRO",
+    sku: camera.id,
+    category: "Cámaras Termográficas",
+  });
+
+  // Breadcrumbs estructurados
+  const breadcrumbJsonLd = createBreadcrumbSchema([
+    { name: "Inicio", url: "/" },
+    { name: "Cámaras", url: "/camaras" },
+    { name: `Serie ${serie.serie}`, url: `/camaras#serie-${serie.id}` },
+    { name: camera.modelo, url: `/camaras/${slug}` },
+  ]);
+
+  return (
+    <>
+      <JsonLd data={productJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
+      <CameraDetailContent camera={camera} serie={serie} />
+    </>
+  );
 }

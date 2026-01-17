@@ -1,5 +1,30 @@
+import type { Metadata } from "next";
 import PageHeader from "@/components/organisms/PageHeader";
 import Button from "@/components/atoms/Button";
+
+export const metadata: Metadata = {
+  title: "Cursos de Capacitación",
+  description:
+    "Cursos profesionales certificados en mantenimiento predictivo: Termografía Categoría 1 y 2, Análisis de Vibraciones, Ultrasonido Industrial. Capacitación presencial y en línea en México.",
+  keywords: [
+    "cursos termografía",
+    "certificación termografía México",
+    "curso análisis de vibraciones",
+    "capacitación ultrasonido",
+    "formación mantenimiento predictivo",
+    "cursos industriales México",
+  ],
+  alternates: {
+    canonical: "/cursos",
+  },
+  openGraph: {
+    title: "Cursos de Capacitación en Mantenimiento Predictivo | DIAPSA",
+    description:
+      "Formación profesional certificada en termografía, vibraciones y ultrasonido. Modalidad presencial y en línea.",
+    url: "/cursos",
+    type: "website",
+  },
+};
 
 export default function CursosPage() {
   const cursos = [
@@ -91,7 +116,7 @@ export default function CursosPage() {
   ];
 
   return (
-    <div>
+    <main>
       <PageHeader
         title="CURSOS"
         subtitle="Capacitación profesional certificada en mantenimiento predictivo"
@@ -100,6 +125,6 @@ export default function CursosPage() {
       <section className="w-full bg-white py-16 lg:py-24">
 
       </section>
-    </div>
+    </main>
   );
 }
