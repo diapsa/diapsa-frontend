@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/organisms/PageHeader";
 import WipState from "@/components/molecules/wip/wipState";
 import Image from "next/image";
+import BackgroundImage from "@/components/atoms/BackgroundImage";
+import { MisionVisionSection } from "@/components/organisms/MisionVisionSection";
+import { ValuesSection } from "@/components/organisms/ValuesSection";
+import { AITalkAboutUs } from "@/components/organisms/AITalkAboutUs";
 
 export const metadata: Metadata = {
   title: "Acerca de Nosotros",
@@ -25,7 +29,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
 export default function AcercaDePage() {
   return (
     <main>
@@ -33,10 +36,12 @@ export default function AcercaDePage() {
         title="ACERCA DE DIAPSA"
         subtitle="Más de 22 años de experiencia en mantenimiento predictivo industrial"
       />
+      {/* Seccion de MIsión y Visión */}
+      <MisionVisionSection />
+      {/* {Valores} */}
+      <ValuesSection />
 
-      <section className="w-full bg-white py-16 lg:py-24">
-        <WipState />
-      </section>
+      <AITalkAboutUs />
     </main>
   );
 }
