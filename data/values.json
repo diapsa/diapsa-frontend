@@ -1,0 +1,20 @@
+{
+    "values": [
+        {
+            "name": "Responsabilidad",
+            "description": "Actuamos con seriedad y transparencia en cada proyecto, cumpliendo los compromisos adquiridos, los tiempos establecidos y las normativas de seguridad industrial, asumiendo la responsabilidad total de nuestros resultados."
+        },
+        {
+            "name": "Compromiso",
+            "description": "Nos involucramos activamente con cada cliente y cada activo industrial, trabajando con dedicación constante para garantizar soluciones confiables que aporten valor real, continuidad operativa y mejora en el desempeño de los equipos."
+        },
+        {
+            "name": "Calidad",
+            "description": "Aplicamos estándares técnicos rigurosos, tecnología especializada y personal capacitado para asegurar diagnósticos precisos, servicios confiables y resultados consistentes en cada intervención."
+        },
+        {
+            "name": "Trabajo en equipo",
+            "description": "Aplicamos estándares técnicos rigurosos, tecnología especializada y personal capacitado para asegurar diagnósticos precisos, servicios confiables y resultados consistentes en cada intervención."
+        }
+    ]
+}
