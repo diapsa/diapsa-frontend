@@ -6,6 +6,8 @@ import BackgroundImage from "@/components/atoms/BackgroundImage";
 import { MisionVisionSection } from "@/components/organisms/MisionVisionSection";
 import { ValuesSection } from "@/components/organisms/ValuesSection";
 import { AITalkAboutUs } from "@/components/organisms/AITalkAboutUs";
+import { WhoIsDiapsaSection } from "@/components/organisms/WhoIsDiapsaSection";
+import { IdapAdvertisementSection } from "@/components/organisms/IdapAdvertisement";
 
 export const metadata: Metadata = {
   title: "Acerca de Nosotros",
@@ -36,12 +38,17 @@ export default function AcercaDePage() {
         title="ACERCA DE DIAPSA"
         subtitle="Más de 22 años de experiencia en mantenimiento predictivo industrial"
       />
+
+      <WhoIsDiapsaSection />
+      <IdapAdvertisementSection />
       {/* Seccion de MIsión y Visión */}
       <MisionVisionSection />
       {/* {Valores} */}
       <ValuesSection />
 
       <AITalkAboutUs />
+
+      {/* Clientes, Servicios, Origen */}
     </main>
   );
 }
