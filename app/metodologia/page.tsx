@@ -55,7 +55,7 @@ export default function MetodologiaPage() {
             <div className="relative bg-black flex flex-col justify-center space-y-6 px-20 h-[400px] lg:h-[450px]">
               {/* Title */}
               <h3 className="relative z-10 text-white text-xl font-bold leading-tight">
-                Este proceso reúne 22 años de experiencia, conocimientos y metodologías de confiabilidad, apoyados en diagnósticos integrales, para maximizar el valor
+                Este proceso reúne 22 años de experiencia, conocimientos y metodologías de confiabilidad, apoyados en diagnósticos integrales de monitoreos de condición para maximizar el valor
               </h3>
 
               {/* Border */}

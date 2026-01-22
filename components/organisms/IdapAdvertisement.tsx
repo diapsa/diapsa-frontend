@@ -1,9 +1,9 @@
 import Image from "next/image"
 export function IdapAdvertisementSection() {
     return (
-        <section className="w-full bg-black py-16 lg:py-24 border-y-4 border-secondary">
-            <div className="px-8 md:px-24 grid grid-cols-2 gap-16">
-                <div className="relative overflow-hidden">
+        <section className="w-full bg-black py-2 md:py-16 lg:py-24 border-y-4 border-secondary">
+            <div className="px-8 md:px-24 grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div className="relative overflow-hidden hidden md:block">
                     <Image
                         fill
                         alt="Imagen de IDAP"
