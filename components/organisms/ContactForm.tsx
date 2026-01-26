@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Button from "@/components/atoms/Button";
 
+
 interface FormData {
   nombre: string;
   empresa: string;
@@ -10,11 +11,20 @@ interface FormData {
   correo: string;
   asunto: string;
   cursos: string[];
+  servicios: string[];
   region: string;
   esProveedor: boolean;
   comentarios: string;
   aceptaPrivacidad: boolean;
 }
+
+const SERVICES = [
+  "Termografia Infrarroja",
+  "Vibraciones Mecanicas",
+  "Diagnostico de Maquinaria",
+  "Analisis de Ultrasonido",
+  "Estudios Electricos"
+]
 
 const CURSOS = [
   "Termografía Cat 1",
@@ -32,6 +42,7 @@ export default function ContactForm() {
     correo: "",
     asunto: "",
     cursos: [],
+    servicios: [],
     region: "",
     esProveedor: false,
     comentarios: "",
@@ -69,6 +80,14 @@ export default function ContactForm() {
       return { ...prev, cursos };
     });
   };
+  const handleServicioChange = (servicio: string) => {
+    setFormData((prev) => {
+      const servicios = prev.servicios.includes(servicio)
+        ? prev.servicios.filter((c) => c !== servicio)
+        : [...prev.servicios, servicio];
+      return { ...prev, servicios };
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -87,6 +106,7 @@ export default function ContactForm() {
       correo: "",
       asunto: "",
       cursos: [],
+      servicios: [],
       region: "",
       esProveedor: false,
       comentarios: "",
@@ -97,6 +117,7 @@ export default function ContactForm() {
   };
 
   const mostrarCursos = formData.asunto === "Información de cursos";
+  const mostrarServicios = formData.asunto === "Información de servicios";
 
   return (
     <section className="w-full bg-black text-white py-12 md:py-20">
@@ -241,6 +262,31 @@ export default function ContactForm() {
                       />
                       <span className="text-sm text-gray-900 group-hover:font-bold transition-colors">
                         {curso}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )}
+            {mostrarServicios && (
+              <div className="p-4 bg-gray-50 border border-gray-700 rounded-lg">
+                <label className="block text-sm font-semibold mb-3 text-gray-900">
+                  Selecciona los cursos de tu interés:
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {SERVICES.map((servicio) => (
+                    <label
+                      key={servicio}
+                      className="flex items-start gap-3 cursor-pointer group"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={formData.servicios.includes(servicio)}
+                        onChange={() => handleServicioChange(servicio)}
+                        className="mt-1 w-4 h-4 text-secondary bg-white border-gray-300 rounded focus:ring-2 focus:ring-secondary"
+                      />
+                      <span className="text-sm text-gray-900 group-hover:font-bold transition-colors">
+                        {servicio}
                       </span>
                     </label>
                   ))}
