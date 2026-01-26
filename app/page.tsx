@@ -4,6 +4,7 @@ import AboutUs from "@/components/organisms/AboutUs";
 import TabsSection from "@/components/organisms/TabsSection";
 import BlogSection from "@/components/organisms/BlogSection";
 import ContactForm from "@/components/organisms/ContactForm";
+import { Clients } from "@/components/organisms/Clients";
 
 export const metadata: Metadata = {
   title: "Inicio | Mantenimiento Predictivo Industrial",
@@ -36,6 +37,7 @@ export default function Home() {
       <AboutUs />
       <TabsSection />
       <BlogSection />
+      <Clients />
       <ContactForm />
     </main>
   );
