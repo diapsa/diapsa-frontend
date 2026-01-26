@@ -20,11 +20,15 @@ export default function NavBar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const serviciosItems = [
+
+    const prodcutosItem = [
         {
             label: "Cámaras",
             href: "/camaras",
         },
+    ];
+    const serviciosItems = [
+
         {
             label: "Termografía Infrarroja",
             href: "/servicios-productos/termografia-infrarroja",
@@ -65,8 +69,12 @@ export default function NavBar() {
                                 Acerca de
                             </NavLink>
                             <Dropdown
-                                trigger="Servicios y Productos"
+                                trigger="Servicios"
                                 items={serviciosItems}
+                            />
+                            <Dropdown
+                                trigger="Productos"
+                                items={prodcutosItem}
                             />
                             <NavLink href="/metodologia">
                                 Metodología
@@ -128,7 +136,7 @@ export default function NavBar() {
                                     href="https://x.com/DIAPSA1"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-8 h-8 bg-white hover:bg-secondary flex items-center justify-center transition-all duration-200 rounded group"
+                                    className="w-6 h-6 bg-white hover:bg-secondary flex items-center justify-center transition-all duration-200 rounded group"
                                     aria-label="Twitter"
                                 >
                                     <svg
@@ -189,9 +197,25 @@ export default function NavBar() {
                             {/* Mobile Services Section */}
                             <div className="py-2">
                                 <p className="text-white/60 text-xs uppercase font-semibold px-4 mb-2">
-                                    Servicios y Productos
+                                    Servicios
                                 </p>
                                 {serviciosItems.map((item, index) => (
+                                    <Link
+                                        key={index}
+                                        href={item.href}
+                                        className="text-white hover:text-secondary transition-colors py-2.5 px-6 block rounded-lg hover:bg-white/5"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ))}
+                            </div>
+                            {/* Mobile Products Section */}
+                            <div className="py-2">
+                                <p className="text-white/60 text-xs uppercase font-semibold px-4 mb-2">
+                                    Productos
+                                </p>
+                                {prodcutosItem.map((item, index) => (
                                     <Link
                                         key={index}
                                         href={item.href}
