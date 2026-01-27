@@ -1,0 +1,43 @@
+{
+    "tabs": [
+        {
+            "id": "visualiza",
+            "title": "VISUALIZA EL ESTADO E HISOTRIAL DE TU MAQUINARIA",
+            "text": [
+                "Analizamos las necesidades operativas en tanto a inteligencia y reporteo para elaborar métricos que engloben y diseccionen la iformación obtenida de maneras inteligentes que brinden respuestas específicas visualizadas de manera clara y contundente. La diferencia de IDAP está en el factor humano: no es una plataforma autónoma que solo recopila datos, sino un sistema vivo donde la tecnología y la experiencia de especialistas convergen para dar certeza en la toma dec decisiones y confianza en la operación"
+            ]
+        },
+        {
+            "id": "reportes",
+            "title": "OBTÉN DEPORTES A MEDIDA DE TU OPERACIÓN",
+            "text": [
+                "Analizamos las necesidades operativas en tanto a inteligencia y reporteo para elaborar métricos que engloben y diseccionen la iformación obtenida de maneras inteligentes que brinden respuestas específicas visualizadas de manera clara y contundente. La diferencia de IDAP está en el factor humano: no es una plataforma autónoma que solo recopila datos, sino un sistema vivo donde la tecnología y la experiencia de especialistas convergen para dar certeza en la toma dec decisiones y confianza en la operación"
+            ]
+        },
+        {
+            "id": "alarmas",
+            "title": "RECIBE ALARMAS EN TIEMPO REAL",
+            "text": [
+                "Analizamos las necesidades operativas en tanto a inteligencia y reporteo para elaborar métricos que engloben y diseccionen la iformación obtenida de maneras inteligentes que brinden respuestas específicas visualizadas de manera clara y contundente. La diferencia de IDAP está en el factor humano: no es una plataforma autónoma que solo recopila datos, sino un sistema vivo donde la tecnología y la experiencia de especialistas convergen para dar certeza en la toma dec decisiones y confianza en la operación"
+            ]
+        }
+    ],
+    "questions": [
+        {
+            "title": "¿CUÁL ES SU FUNCIÓN?",
+            "description": "Funciona como un puente entre la recabación y análisis del estado de los equipos y la visualización de datos analíticos, transformando la información técnica en herramientas claras para la interpretación, priorización y ejecución de acciones correctivas o preventivas."
+        },
+        {
+            "title": "¿CÓMO SE INTEGRA A MI OPERACIÓN??",
+            "description": "Usar IDAP comienza con un levantamiento técnico especializado, donde se identifican los puntos de monitoreo más relevantes y se definen los alcances de acuerdo con las necesidades de cada operación. A partir de ahí, se implementa al menos una revisión programada que permite validar condiciones, ajustar parámetros y proyectar escenarios de mantenimiento predictivo"
+        },
+        {
+            "title": "¿CÓMO APORTA VALOR A MI OPERACIÓN?",
+            "description": "El valor surge de convertir datos en decisiones: cada alarma, cada lectura y cada tendencia se interpretan con un criterio experto que prioriza acciones y optimiza recursos. Esto asegura que los reportes no se queden en gráficas, sino que se traduzcan en mejoras tangibles en disponibilidad, eficiencia y ahorro."
+        },
+        {
+            "title": "¿POR QUÉ ES LA MEJOR HERRAMIENTA EN SU TIPO?",
+            "description": "Detrás del análisis está la trayectoria de DIAPSA, con más de 22 años de experiencia en diagnóstico de condición, capacitando y acompañando a empresas de distintos sectores industriales. Nuestro equipo no se limita a desplegar información: analiza el flujo de datos, interpreta anomalías, propone mejoras y da seguimiento para que cada hallazgo genere un impacto real.Z"
+        }
+    ]
+}

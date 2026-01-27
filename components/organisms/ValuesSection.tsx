@@ -12,8 +12,8 @@ export function ValuesSection() {
                     y el compromiso con nuestros clientes industriales</p>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 sm:gap-16 gap-8 justify-items-center mt-6 xs:px-4">
                     {valuesData.values.map((value) => (
-                        <div className='flex flex-col items-center gap-6'>
-                            <div key={value.name} className="w-8 h-8 bg-secondary rotate-45 flex justify-center items-center shadow-[0_0_50px_rgba(255,255,255,0.35)]" />
+                        <div key={value.name} className='flex flex-col items-center gap-6'>
+                            <div className="w-8 h-8 bg-secondary rotate-45 flex justify-center items-center shadow-[0_0_50px_rgba(255,255,255,0.35)]" />
                             <p className='text-center text-xl font-bold'>{value.name}</p>
                             <p className='text-center '>{value.description}</p>
                         </div>

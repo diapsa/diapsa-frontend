@@ -42,5 +42,10 @@
       "imagen": "/images/cursos/alineacion-balanceo.jpg",
       "link": "#"
     }
-  ]
+  ],
+  "ultimoCurso": {
+    "id": 1,
+    "name": "TERMOGRAFIA INFRARROJA",
+    "date": "2026-06-08"
+  }
 }
