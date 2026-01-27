@@ -98,8 +98,8 @@ export default function IdapIntro() {
                     ))}
                 </div>
             </div>
-            <div className="flex justify-around items-center p-6 text-black">
-                <p className="text-2xl">¡INTEGRA IDAP EN TU OPERACIÓN YA!</p>
+            <div className="flex flex-col lg:flex-row justify-around items-center p-6 text-black">
+                <p className="text-2xl text-center">¡INTEGRA IDAP EN TU OPERACIÓN YA!</p>
                 <Button variant="black" className="text-2xl">
                     CONOCE PRECIOS Y PAQUETES
                 </Button>
