@@ -21,6 +21,7 @@ const tabs: TabContent[] = [
         "En la operación industrial, cada máquina habla: ruidos, vibraciones, temperaturas inusuales: son señales que revelan el estado real de los equipos. Si estas señales no se interpretan a tiempo, pueden convertirse en fallas críticas, paros imprevistos y pérdidas millonarias.",
         "El reto no está solo en detectar anomalías, sino en darles sentido. Sin una interpretación adecuada, las empresas enfrentan altos costos de mantenimiento correctivo, paradas continuas de producción y falta de visibilidad sobre la condición de sus activos.",
       ],
+
     },
   },
   {
@@ -61,28 +62,35 @@ export default function TabsSection() {
   const currentTab = tabs.find((tab) => tab.id === activeTab) || tabs[0];
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-gray-100 to-gray-200 py-16 lg:py-24 overflow-hidden">
+    <section className="relative w-full bg-white py-16 lg:py-24 overflow-hidden">
       {/* Patrón de fondo decorativo (opcional) */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute top-0 right-0 w-1/2 h-full border-l-2 border-secondary transform rotate-12"></div>
-        <div className="absolute bottom-0 left-0 w-1/2 h-full border-r-2 border-secondary transform -rotate-12"></div>
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        {/* Línea derecha */}
+        <div className="absolute hidden lg:block  top-1/2 right-0 w-1/2 h-[140%] border-l-4 border-secondary transform rotate-12 -translate-y-1/2"></div>
+
+        {/* Línea izquierda */}
+        <div className="absolute hidden lg:block top-1/2 left-0 w-1/2 h-[140%] border-r-4 border-secondary transform -rotate-12 -translate-y-1/2"></div>
+        {/* Círculo inferior izquierdo */}
+        <div className="absolute -bottom-40 -left-40 w-125 h-125 rounded-full border-4 border-secondary"></div>
+
+        {/* Círculo superior derecho */}
+        <div className="absolute -top-40 -right-40 w-125 h-125 rounded-full border-4 border-secondary"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto bg-gray-400/20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:py-8">
           {/* Tabs verticales - Izquierda */}
-          <div className="lg:col-span-4 space-y-3">
+          <div className="lg:col-span-5">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`
-                  w-full text-left px-6 py-4 rounded-lg font-semibold text-sm lg:text-base
-                  transition-all duration-300 border-l-4
-                  ${
-                    activeTab === tab.id
-                      ? "bg-primary text-white border-secondary shadow-lg"
-                      : "bg-white text-primary border-transparent hover:border-secondary/50 hover:shadow-md"
+                  w-full text-left px-6 py-6  font-semibold text-sm lg:text-base
+                  transition-all duration-300 
+                  ${activeTab === tab.id
+                    ? "bg-linear-to-r from-gray-500/80 to-gray-400/10 text-gray-900  shadow-lg"
+                    : " text-primary border-transparent  hover:bg-linear-to-r from-gray-500/80 to-gray-400/10 text-gray-900  shadow-lg"
                   }
                 `}
               >
@@ -92,7 +100,7 @@ export default function TabsSection() {
           </div>
 
           {/* Contenido - Derecha */}
-          <div className="lg:col-span-8 bg-white rounded-xl shadow-xl p-8 lg:p-12">
+          <div className="lg:col-span-7 lg:border-l-gray-300 lg:border-2 p-8 lg:p-16">
             <div className="grid grid-cols-1 gap-8 items-center">
               {/* Texto */}
               <div className="space-y-4">

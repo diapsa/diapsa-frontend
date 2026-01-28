@@ -2,7 +2,7 @@ import Image from "next/image"
 export function MisionVisionSection() {
     return (
         <section className="w-full bg-white py-10 space-y-4">
-            <div className="space-y-2 mb-16">
+            <div className="space-y-2 mb-16 px-8" >
                 <div className="flex flex-col items-center">
                     <p className="bg-secondary/10 p-2 text-secondary rounded-lg font-bold">Exelencia operativa</p>
                 </div>
@@ -11,8 +11,8 @@ export function MisionVisionSection() {
 
             </div>
             {/* Misión */}
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 items-center lg:px-28 min-h-[50vh]">
-                <div className="md:py-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 items-center p-8 lg:px-28 lg:py-0 md:min-h-[50vh]">
+                <div className="md:py-16">
                     <h3 className="font-semibold text-2xl text-gray-600 border-b-4 border-secondary mb-4 pb-2">Nuestra misión</h3>
                     <p className="text-lg italic text-gray-700 leading-relaxed">
                         "Ser líderes en las disciplinas que
@@ -34,7 +34,7 @@ export function MisionVisionSection() {
             </div>
 
             {/* Visión */}
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 items-center px-8 lg:px-28 min-h-[50vh]">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 items-center p-8 lg:px-28 lg:py-0 md:min-h-[50vh]">
                 <div className="relative w-full h-full rounded-4xl border-b-4 border-s-4 border-primary hidden md:block p-4">
                     <div className="relative w-full h-full overflow-hidden rounded-2xl">
                         <Image

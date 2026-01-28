@@ -1,10 +1,10 @@
 export function AITalkAboutUs() {
     return (
 
-        <section className="bg-white w-full sm:py-8 lg:py-24 sm:px-12 px-32">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <section className="bg-white w-full sm:py-8 lg:py-24 sm:px-2 md:px-32">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-2 py-4 md:py-0 md:px-0">
                 <div className="flex justify-center items-center">
-                    <h2 className="text-6xl text-gray-600">Lo que la IA sabe de nosotros:</h2>
+                    <h2 className="text-4xl lg:text-6xl text-gray-600">Lo que la IA sabe de nosotros:</h2>
                 </div>
                 <div className="text-gray-900 italic p-10 rounded-[13px] shadow-[inset_6px_6px_12px_#c5c5c5,inset_-8px_-8px_16px_#fbfbfb]">
                     <div className="flex gap-3 items-center border-2 rounded-2xl px-3 py-1 mb-10">

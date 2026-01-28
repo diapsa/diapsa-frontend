@@ -4,6 +4,9 @@ import AboutUs from "@/components/organisms/AboutUs";
 import TabsSection from "@/components/organisms/TabsSection";
 import BlogSection from "@/components/organisms/BlogSection";
 import ContactForm from "@/components/organisms/ContactForm";
+import { Clients } from "@/components/organisms/Clients";
+import { CoursesNCerts } from "@/components/organisms/CoursesNCerts";
+import IdapIntro from "@/components/organisms/IdapIntro";
 
 export const metadata: Metadata = {
   title: "Inicio | Mantenimiento Predictivo Industrial",
@@ -35,6 +38,9 @@ export default function Home() {
       <Hero />
       <AboutUs />
       <TabsSection />
+      {/* <CoursesNCerts /> */}
+      <IdapIntro />
+      <Clients />
       <BlogSection />
       <ContactForm />
     </main>

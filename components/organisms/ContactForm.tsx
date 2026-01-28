@@ -3,16 +3,28 @@
 import { useState } from "react";
 import Button from "@/components/atoms/Button";
 
+
 interface FormData {
   nombre: string;
   empresa: string;
   telefono: string;
   correo: string;
   asunto: string;
-  curso: string;
+  cursos: string[];
+  servicios: string[];
+  region: string;
+  esProveedor: boolean;
   comentarios: string;
   aceptaPrivacidad: boolean;
 }
+
+const SERVICES = [
+  "Termografia Infrarroja",
+  "Vibraciones Mecanicas",
+  "Diagnostico de Maquinaria",
+  "Analisis de Ultrasonido",
+  "Estudios Electricos"
+]
 
 const CURSOS = [
   "Termografía Cat 1",
@@ -29,7 +41,10 @@ export default function ContactForm() {
     telefono: "",
     correo: "",
     asunto: "",
-    curso: "",
+    cursos: [],
+    servicios: [],
+    region: "",
+    esProveedor: false,
     comentarios: "",
     aceptaPrivacidad: false,
   });
@@ -42,139 +57,131 @@ export default function ContactForm() {
     >
   ) => {
     const { name, value, type } = e.target;
-    
+
     if (type === "checkbox") {
-      const checked = (e.target as HTMLInputElement).checked;
-      setFormData((prev) => ({ ...prev, [name]: checked }));
+      setFormData((prev) => ({
+        ...prev,
+        [name]: (e.target as HTMLInputElement).checked,
+      }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
-      
-      // Reset curso si cambian de asunto
+
       if (name === "asunto" && value !== "Información de cursos") {
-        setFormData((prev) => ({ ...prev, curso: "" }));
+        setFormData((prev) => ({ ...prev, cursos: [] }));
       }
     }
+  };
+
+  const handleCursoChange = (curso: string) => {
+    setFormData((prev) => {
+      const cursos = prev.cursos.includes(curso)
+        ? prev.cursos.filter((c) => c !== curso)
+        : [...prev.cursos, curso];
+      return { ...prev, cursos };
+    });
+  };
+  const handleServicioChange = (servicio: string) => {
+    setFormData((prev) => {
+      const servicios = prev.servicios.includes(servicio)
+        ? prev.servicios.filter((c) => c !== servicio)
+        : [...prev.servicios, servicio];
+      return { ...prev, servicios };
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Aquí iría la lógica de envío (API call, etc.)
     console.log("Formulario enviado:", formData);
 
-    // Simular envío
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    alert("¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.");
-    
-    // Reset form
+    alert("¡Gracias por contactarnos!");
+
     setFormData({
       nombre: "",
       empresa: "",
       telefono: "",
       correo: "",
       asunto: "",
-      curso: "",
+      cursos: [],
+      servicios: [],
+      region: "",
+      esProveedor: false,
       comentarios: "",
       aceptaPrivacidad: false,
     });
-    
+
     setIsSubmitting(false);
   };
 
   const mostrarCursos = formData.asunto === "Información de cursos";
+  const mostrarServicios = formData.asunto === "Información de servicios";
 
   return (
-    <section id="contacto" className="w-full bg-linear-to-b from-gray-50 to-white py-16 lg:py-24">
-      <div className="max-w-4xl mx-auto px-6 lg:px-12">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
-            CONTÁCTANOS
+    <section className="w-full bg-black text-white py-12 md:py-20">
+      <div className="lg:max-w-7xl mx-auto px-6 flex flex-col lg:flex-row justify-between gap-8 lg:gap-16 items-center">
+
+        {/* COLUMNA IZQUIERDA */}
+        <div className="w-full lg:w-auto">
+          <h2 className="text-3xl text-center lg:text-end md:text-4xl lg:text-5xl font-extrabold leading-tight">
+            SOLICITA YA
+            <br />
+            UNA ASESORÍA
+            <br />
+            SIN COSTO
           </h2>
-          <p className="text-lg text-gray-600">
-            ¿Tienes alguna pregunta? Completa el formulario y nos pondremos en
-            contacto contigo
+
+          <div className="w-24 h-1 bg-secondary mx-auto lg:ml-auto lg:mr-0 my-6" />
+
+          <p className="text-lg md:text-xl font-light text-center lg:text-end">
+            Descubre el camino hacia la
+            <br />
+            Industria 4.0
           </p>
         </div>
 
-        {/* Formulario */}
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white rounded-xl shadow-xl p-8 lg:p-12 border border-gray-100"
-        >
-          <div className="space-y-6">
-            {/* Nombre */}
-            <div>
-              <label
-                htmlFor="nombre"
-                className="block text-sm font-semibold text-gray-700 mb-2"
-              >
-                Nombre completo <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                value={formData.nombre}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
-                placeholder="Ingresa tu nombre completo"
-              />
-            </div>
+        {/* COLUMNA DERECHA - FORM */}
+        <div className="w-full lg:flex-1 max-w-2xl">
+          <form
+            onSubmit={handleSubmit}
+            className="w-full space-y-4"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-            {/* Empresa */}
-            <div>
-              <label
-                htmlFor="empresa"
-                className="block text-sm font-semibold text-gray-700 mb-2"
-              >
-                Empresa <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="empresa"
-                name="empresa"
-                value={formData.empresa}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
-                placeholder="Nombre de tu empresa"
-              />
-            </div>
-
-            {/* Teléfono y Correo en grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Teléfono */}
               <div>
-                <label
-                  htmlFor="telefono"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
-                >
-                  Teléfono <span className="text-red-500">*</span>
-                </label>
+
                 <input
-                  type="tel"
-                  id="telefono"
-                  name="telefono"
-                  value={formData.telefono}
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  value={formData.nombre}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
-                  placeholder="(000) 000-0000"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
+                  placeholder="Ingresa tu nombre completo"
+                />
+              </div>
+
+              {/* Empresa */}
+              <div>
+
+                <input
+                  type="text"
+                  id="empresa"
+                  name="empresa"
+                  value={formData.empresa}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
+                  placeholder="Nombre de tu empresa"
                 />
               </div>
 
               {/* Correo */}
               <div>
-                <label
-                  htmlFor="correo"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
-                >
-                  Correo electrónico <span className="text-red-500">*</span>
-                </label>
+
                 <input
                   type="email"
                   id="correo"
@@ -182,80 +189,136 @@ export default function ContactForm() {
                   value={formData.correo}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
+                  className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
                   placeholder="correo@ejemplo.com"
+                />
+              </div>
+
+              {/* Teléfono */}
+              <div>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  value={formData.telefono}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
+                  placeholder="(000) 000-0000"
+                />
+              </div>
+
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Asunto */}
+              <div>
+                <select
+                  id="asunto"
+                  name="asunto"
+                  value={formData.asunto}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
+                >
+                  <option value="">Selecciona una opción</option>
+                  <option value="Información de cursos">
+                    Información de cursos
+                  </option>
+                  <option value="Información de servicios">
+                    Información de servicios
+                  </option>
+                </select>
+              </div>
+              <div>
+                <input
+                  id="region"
+                  type="text"
+                  name="region"
+                  placeholder="PAÍS / REGIÓN"
+                  value={formData.region}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
                 />
               </div>
             </div>
 
-            {/* Asunto */}
-            <div>
-              <label
-                htmlFor="asunto"
-                className="block text-sm font-semibold text-gray-700 mb-2"
-              >
-                Asunto <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="asunto"
-                name="asunto"
-                value={formData.asunto}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
-              >
-                <option value="">Selecciona una opción</option>
-                <option value="Información de cursos">
-                  Información de cursos
-                </option>
-                <option value="Información de servicios">
-                  Información de servicios
-                </option>
-              </select>
-            </div>
-
-            {/* Dropdown condicional de Cursos */}
+            {/* Sección de cursos (solo visible si asunto es "Información de cursos") */}
             {mostrarCursos && (
-              <div className="animate-fadeIn">
-                <label
-                  htmlFor="curso"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
-                >
-                  Curso de interés <span className="text-red-500">*</span>
+              <div className="p-4 bg-gray-50 border border-gray-700 rounded-lg">
+                <label className="block text-sm font-semibold mb-3 text-gray-900">
+                  Selecciona los cursos de tu interés:
                 </label>
-                <select
-                  id="curso"
-                  name="curso"
-                  value={formData.curso}
-                  onChange={handleChange}
-                  required={mostrarCursos}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
-                >
-                  <option value="">Selecciona un curso</option>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {CURSOS.map((curso) => (
-                    <option key={curso} value={curso}>
-                      {curso}
-                    </option>
+                    <label
+                      key={curso}
+                      className="flex items-start gap-3 cursor-pointer group"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={formData.cursos.includes(curso)}
+                        onChange={() => handleCursoChange(curso)}
+                        className="mt-1 w-4 h-4 text-secondary bg-white border-gray-300 rounded focus:ring-2 focus:ring-secondary"
+                      />
+                      <span className="text-sm text-gray-900 group-hover:font-bold transition-colors">
+                        {curso}
+                      </span>
+                    </label>
                   ))}
-                </select>
+                </div>
+              </div>
+            )}
+            {mostrarServicios && (
+              <div className="p-4 bg-gray-50 border border-gray-700 rounded-lg">
+                <label className="block text-sm font-semibold mb-3 text-gray-900">
+                  Selecciona los cursos de tu interés:
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {SERVICES.map((servicio) => (
+                    <label
+                      key={servicio}
+                      className="flex items-start gap-3 cursor-pointer group"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={formData.servicios.includes(servicio)}
+                        onChange={() => handleServicioChange(servicio)}
+                        className="mt-1 w-4 h-4 text-secondary bg-white border-gray-300 rounded focus:ring-2 focus:ring-secondary"
+                      />
+                      <span className="text-sm text-gray-900 group-hover:font-bold transition-colors">
+                        {servicio}
+                      </span>
+                    </label>
+                  ))}
+                </div>
               </div>
             )}
 
+            <div className="flex items-start gap-3 text-sm">
+              <input
+                type="checkbox"
+                id="esProveedor"
+                name="esProveedor"
+                checked={formData.esProveedor}
+                onChange={handleChange}
+                className="mt-1 w-4 h-4 text-secondary bg-white border-gray-300 rounded focus:ring-2 focus:ring-secondary"
+              />
+              <label htmlFor="esProveedor" className="text-gray-300">
+                Brindo servicios especializados a la industria como proveedor,
+                asesor o coach
+              </label>
+            </div>
+
             {/* Comentarios */}
             <div>
-              <label
-                htmlFor="comentarios"
-                className="block text-sm font-semibold text-gray-700 mb-2"
-              >
-                Comentarios
-              </label>
+
               <textarea
                 id="comentarios"
                 name="comentarios"
                 value={formData.comentarios}
                 onChange={handleChange}
-                rows={5}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all resize-none text-gray-900 placeholder:text-gray-400"
+                rows={3}
+                className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all resize-none text-gray-900 placeholder:text-gray-400"
                 placeholder="Cuéntanos más sobre tu consulta..."
               />
             </div>
@@ -290,19 +353,16 @@ export default function ContactForm() {
               </label>
             </div>
 
-            {/* Botón de envío */}
-            <div className="pt-4">
-              <Button
-                type="submit"
-                variant="secondary"
-                disabled={isSubmitting}
-                className="w-full text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "Enviando..." : "Enviar mensaje"}
-              </Button>
-            </div>
-          </div>
-        </form>
+            <Button
+              type="submit"
+              variant="secondary"
+              disabled={isSubmitting}
+              className="w-full py-4 text-lg"
+            >
+              {isSubmitting ? "ENVIANDO..." : "ENVIAR"}
+            </Button>
+          </form>
+        </div>
       </div>
     </section>
   );

@@ -1,0 +1,44 @@
+{
+    "clients": [
+        {
+            "name": "Siemens",
+            "logo": "/images/clientes/pemex.svg",
+            "caseStudy": true
+        },
+        {
+            "name": "Pemex",
+            "logo": "/images/clientes/pemex.svg",
+            "caseStudy": true
+        },
+        {
+            "name": "Kenworth",
+            "logo": "/images/clientes/pemex.svg",
+            "caseStudy": true
+        },
+        {
+            "name": "Invenergy",
+            "logo": "/images/clientes/pemex.svg",
+            "caseStudy": true
+        },
+        {
+            "name": "ValiaEnergía",
+            "logo": "/images/clientes/pemex.svg",
+            "caseStudy": true
+        },
+        {
+            "name": "Whirlpool",
+            "logo": "/images/clientes/pemex.svg",
+            "caseStudy": true
+        },
+        {
+            "name": "Holcim",
+            "logo": "/images/clientes/pemex.svg",
+            "caseStudy": true
+        },
+        {
+            "name": "Aptiv",
+            "logo": "/images/clientes/pemex.svg",
+            "caseStudy": true
+        }
+    ]
+}
