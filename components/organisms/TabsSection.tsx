@@ -90,7 +90,7 @@ export default function TabsSection() {
                   transition-all duration-300 
                   ${activeTab === tab.id
                     ? "bg-linear-to-r from-gray-500/80 to-gray-400/10 text-gray-900  shadow-lg"
-                    : " text-primary border-transparent  hover:bg-linear-to-r from-gray-500/80 to-gray-400/10 text-gray-900  shadow-lg"
+                    : " border-transparent  hover:bg-linear-to-r from-gray-500/80 to-gray-400/10 text-gray-900  shadow-lg"
                   }
                 `}
               >

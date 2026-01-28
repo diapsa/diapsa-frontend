@@ -30,25 +30,31 @@ export default function NavBar() {
     const serviciosItems = [
 
         {
-            label: "Termografía Infrarroja",
+            label: "Conoce IDAP",
             href: "/servicios-productos/termografia-infrarroja",
         },
         {
-            label: "Vibraciones Mecánicas",
+            label: "Monitoreo de condicion",
+            href: "/servicios-productos/monitoreo-condicion",
+        },
+
+        {
+            label: "Detecciones de Gas",
             href: "/servicios-productos/vibraciones-mecanicas",
         },
-        {
-            label: "Diagnóstico de Maquinaria",
-            href: "/servicios-productos/diagnostico-de-maquinaria",
-        },
-        {
-            label: "Análisis de Ultrasonido",
-            href: "/servicios-productos/analisis-de-ultrasonido",
-        },
-        {
-            label: "Estudios Eléctricos",
-            href: "/servicios-productos/estudios-electricos",
-        }
+
+        // {
+        //     label: "Diagnóstico de Maquinaria",
+        //     href: "/servicios-productos/diagnostico-de-maquinaria",
+        // },
+        // {
+        //     label: "Análisis de Ultrasonido",
+        //     href: "/servicios-productos/analisis-de-ultrasonido",
+        // },
+        // {
+        //     label: "Estudios Eléctricos",
+        //     href: "/servicios-productos/estudios-electricos",
+        // }
     ];
 
     return (
