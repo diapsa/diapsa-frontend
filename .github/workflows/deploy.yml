@@ -20,6 +20,8 @@ jobs:
             username: ${{ secrets.SERVER_USER }}
             key: ${{ secrets.SERVER_SSH_KEY }}
             script: |
+                set -e
+
                 export NVM_DIR="$HOME/.nvm"
                 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
@@ -27,14 +29,20 @@ jobs:
 
                 cd ${{ secrets.APP_PATH }}
 
-                echo "📦 Pulling latest code"
+                echo "Pulling latest code"
                 git pull origin main
 
-                echo "📦 Installing dependencies"
+                echo "Installing dependencies"
                 npm install
 
-                echo "🏗️ Building Next.js"
+                echo "Building Next.js"
                 npm run build
 
-                echo "♻️ Reloading PM2"
+                echo "Reloading PM2"
                 pm2 reload diapsa-frontend --update-env
+
+# Pendientes
+# cache de node_modules
+# staging branch
+# rollback automático
+# healthcheck post-deploy
