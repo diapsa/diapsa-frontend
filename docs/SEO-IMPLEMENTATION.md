@@ -35,8 +35,9 @@
 | `/cursos` | ✅ | ✅ | ✅ | ✅ | ✅ |
 | `/camaras` | ✅ | ✅ | ✅ | ✅ | ✅ |
 | `/camaras/[slug]` | ✅ Dinámico | ✅ | ✅ | ✅ | ✅ |
-| `/servicios-productos` | ✅ | ✅ | ✅ | ✅ | ✅ |
-| `/servicios-productos/[slug]` | ✅ Dinámico | ✅ | ✅ | ✅ | ✅ |
+| `/servicios` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `/servicios/monitoreo-condicion` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `/servicios/monitoreo-condicion/[slug]` | ✅ Dinámico | ✅ | ✅ | ✅ | ✅ |
 
 ### 5. Semántica HTML
 - Todas las páginas usan `<main>` como contenedor principal

@@ -28,27 +28,22 @@ export default function NavBar() {
         },
     ];
     const serviciosItems = [
-
         {
-            label: "Termografía Infrarroja",
-            href: "/servicios-productos/termografia-infrarroja",
+            label: "Monitoreo de condición",
+            href: "/servicios/monitoreo-condicion",
         },
         {
-            label: "Vibraciones Mecánicas",
-            href: "/servicios-productos/vibraciones-mecanicas",
+            label: "DIAPSA START",
+            href: "/servicios/diapsa-start",
         },
         {
-            label: "Diagnóstico de Maquinaria",
-            href: "/servicios-productos/diagnostico-de-maquinaria",
+            label: "Conoce IDAP",
+            href: "/servicios/idap",
         },
         {
-            label: "Análisis de Ultrasonido",
-            href: "/servicios-productos/analisis-de-ultrasonido",
+            label: "Detecciones de Gas",
+            href: "/servicios/deteccion-gas",
         },
-        {
-            label: "Estudios Eléctricos",
-            href: "/servicios-productos/estudios-electricos",
-        }
     ];
 
     return (

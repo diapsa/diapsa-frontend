@@ -49,7 +49,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/servicios-productos`,
+      url: `${BASE_URL}/servicios`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/servicios/monitoreo-condicion`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
@@ -58,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Páginas de servicios
   const servicePages: MetadataRoute.Sitemap = serviceSlugs.map((slug) => ({
-    url: `${BASE_URL}/servicios-productos/${slug}`,
+    url: `${BASE_URL}/servicios/monitoreo-condicion/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.8,

@@ -7,7 +7,7 @@ export function IdapAdvertisementSection() {
                     <Image
                         fill
                         alt="Imagen de IDAP"
-                        src="/images/metodologia/22-años.jpg"
+                        src="/images/idap/mockup2.png"
                         className="object-cover"
                     />
                 </div>
