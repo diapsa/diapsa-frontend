@@ -2,33 +2,33 @@
   "id": "diagnostico-de-maquinaria",
   "slug": "diagnostico-de-maquinaria",
   "type": "tecnologia",
-
   "breadcrumbs": [
     {
       "label": "Inicio",
       "link": "/"
     },
     {
-      "label": "Servicios y Productos",
-      "link": "/servicios-productos"
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo de Condición",
+      "link": "/servicios/monitoreo-condicion"
     },
     {
       "label": "Diagnóstico de Maquinaria",
-      "link": "/servicios-productos/diagnostico-de-maquinaria"
+      "link": "/servicios/monitoreo-condicion/diagnostico-de-maquinaria"
     }
   ],
-
   "header": {
     "title": "Diagnóstico Integral de Maquinaria",
     "subtitle": "Evaluación completa del estado de sus activos industriales",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-
   "content": {
     "title": "¿Qué es el Diagnóstico de Maquinaria?",
     "subtitle": "Análisis multidisciplinario para máxima confiabilidad",
-    "image": "/images/servicios/diagnostico-placeholder.jpg",
-
+    "image": "/images/servicios/placeholder.jpg",
     "items": [
       {
         "id": "aplicaciones",
@@ -47,7 +47,6 @@
       }
     ]
   },
-
   "relatedProducts": {
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",

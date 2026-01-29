@@ -2,33 +2,33 @@
   "id": "termografia-infrarroja",
   "slug": "termografia-infrarroja",
   "type": "tecnologia",
-
   "breadcrumbs": [
     {
       "label": "Inicio",
       "link": "/"
     },
     {
-      "label": "Servicios y Productos",
-      "link": "/servicios-productos"
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo de Condición",
+      "link": "/servicios/monitoreo-condicion"
     },
     {
       "label": "Termografía Infrarroja",
-      "link": "/servicios-productos/termografia-infrarroja"
+      "link": "/servicios/monitoreo-condicion/termografia-infrarroja"
     }
   ],
-
   "header": {
     "title": "Termografía Infrarroja",
     "subtitle": "Detección temprana de fallas mediante análisis térmico de precisión",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-
   "content": {
     "title": null,
     "subtitle": null,
-    "image": "/images/servicios/placeholder.jpg",
-
+    "image": "/images/disciplinas/termografia.jpg",
     "items": [
       {
         "id": "aplicaciones",
@@ -47,7 +47,6 @@
       }
     ]
   },
-
   "relatedProducts": {
     "title": "LLEVA A CABO ANÁLISIS TERMOGRÁFICOS",
     "subtitle": "Consigue la cámara termográfica que necesitas",

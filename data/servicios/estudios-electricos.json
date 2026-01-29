@@ -2,33 +2,33 @@
   "id": "estudios-electricos",
   "slug": "estudios-electricos",
   "type": "tecnologia",
-
   "breadcrumbs": [
     {
       "label": "Inicio",
       "link": "/"
     },
     {
-      "label": "Servicios y Productos",
-      "link": "/servicios-productos"
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo de Condición",
+      "link": "/servicios/monitoreo-condicion"
     },
     {
       "label": "Estudios Eléctricos",
-      "link": "/servicios-productos/estudios-electricos"
+      "link": "/servicios/monitoreo-condicion/estudios-electricos"
     }
   ],
-
   "header": {
     "title": "Estudios Eléctricos Especializados",
     "subtitle": "Análisis y diagnóstico de sistemas eléctricos industriales",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-
   "content": {
     "title": "¿Qué son los Estudios Eléctricos?",
     "subtitle": "Garantía de confiabilidad y seguridad eléctrica",
-    "image": "/images/servicios/electricos-placeholder.jpg",
-
+    "image": "/images/disciplinas/tierras-fisicas.jpg",
     "items": [
       {
         "id": "aplicaciones",
@@ -47,7 +47,6 @@
       }
     ]
   },
-
   "relatedProducts": {
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
