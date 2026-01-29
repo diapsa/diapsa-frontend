@@ -28,33 +28,22 @@ export default function NavBar() {
         },
     ];
     const serviciosItems = [
-
+        {
+            label: "Monitoreo de condición",
+            href: "/servicios/monitoreo-condicion",
+        },
+        {
+            label: "DIAPSA START",
+            href: "/servicios/diapsa-start",
+        },
         {
             label: "Conoce IDAP",
-            href: "/servicios-productos/termografia-infrarroja",
+            href: "/servicios/idap",
         },
-        {
-            label: "Monitoreo de condicion",
-            href: "/servicios-productos/monitoreo-condicion",
-        },
-
         {
             label: "Detecciones de Gas",
-            href: "/servicios-productos/vibraciones-mecanicas",
+            href: "/servicios/deteccion-gas",
         },
-
-        // {
-        //     label: "Diagnóstico de Maquinaria",
-        //     href: "/servicios-productos/diagnostico-de-maquinaria",
-        // },
-        // {
-        //     label: "Análisis de Ultrasonido",
-        //     href: "/servicios-productos/analisis-de-ultrasonido",
-        // },
-        // {
-        //     label: "Estudios Eléctricos",
-        //     href: "/servicios-productos/estudios-electricos",
-        // }
     ];
 
     return (

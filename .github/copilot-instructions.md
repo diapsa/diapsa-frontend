@@ -19,7 +19,11 @@ app/
   acerca-de/      # Uses PageHeader + WipState placeholder
   cursos/         # Uses PageHeader + WipState placeholder  
   metodologia/    # Uses PageHeader + WipState placeholder
-  servicios-productos/
+  servicios/
+    page.tsx      # Main services page
+    monitoreo-condicion/
+      page.tsx    # Monitoreo de condición listing page
+      [slug]/     # Dynamic service detail pages
 ```
 
 ## Key Conventions
