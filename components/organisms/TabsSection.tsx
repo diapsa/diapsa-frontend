@@ -29,8 +29,8 @@ const tabs: TabContent[] = [
     title: "SOLUCIÓN: DIAPSA 360",
     content: {
       text: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Al igual que en la medicina, un diagnóstico certero no se obtiene con un solo estudio. Revisar únicamente vibraciones, termografía o ultrasonido de manera aislada ofrece una visión parcial del problema. En DIAPSA integramos estas disciplinas dentro de un mismo servicio para obtener una visión 360° del equipo, validar hallazgos entre técnicas y entender la causa real de las fallas."
+
       ],
     },
   },
@@ -39,8 +39,7 @@ const tabs: TabContent[] = [
     title: "METODOLOGÍA",
     content: {
       text: [
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Nuestro servicio ofrece una visión integral del estado y desempeño de los activos mediante un levantamiento técnico especializado. Este proceso permite identificar riesgos, condiciones críticas y áreas de oportunidad que no siempre son evidentes a simple vista. A partir de este entendimiento global, se establece un marco claro para orientar evaluaciones, definir prioridades y alinear las acciones técnicas con las necesidades reales de la operación, generando información confiable que respalda decisiones sólidas y una gestión operativa más efectiva."
       ],
     },
   },
@@ -49,8 +48,10 @@ const tabs: TabContent[] = [
     title: "RESULTADOS",
     content: {
       text: [
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-        "Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+        "• 95 % de efectividad en la detección temprana de fallas críticas.",
+        "• 150 % de retorno de inversión durante el primer año.",
+        "• 90 % de reducción en paros no planificados.",
+        "En conjunto, estos resultados demuestran un impacto económico significativo, reflejado en ahorros medibles en miles o incluso millones, gracias a la mejora en eficiencia operativa y prevención de fallas."
       ],
     },
   },
@@ -62,22 +63,18 @@ export default function TabsSection() {
   const currentTab = tabs.find((tab) => tab.id === activeTab) || tabs[0];
 
   return (
-    <section className="relative w-full bg-white py-16 lg:py-24 overflow-hidden">
-      {/* Patrón de fondo decorativo (opcional) */}
+    <section className="relative w-full bg-white py-16 lg:py-40 overflow-hidden">
+      {/* Patrón de fondo decorativo */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
-        {/* Línea derecha */}
-        <div className="absolute hidden lg:block  top-1/2 right-0 w-1/2 h-[140%] border-l-4 border-secondary transform rotate-12 -translate-y-1/2"></div>
-
-        {/* Línea izquierda */}
-        <div className="absolute hidden lg:block top-1/2 left-0 w-1/2 h-[140%] border-r-4 border-secondary transform -rotate-12 -translate-y-1/2"></div>
-        {/* Círculo inferior izquierdo */}
-        <div className="absolute -bottom-40 -left-40 w-125 h-125 rounded-full border-4 border-secondary"></div>
-
-        {/* Círculo superior derecho */}
-        <div className="absolute -top-40 -right-40 w-125 h-125 rounded-full border-4 border-secondary"></div>
+        <Image
+          src="/images/FONDO-360-DIANAS.png"
+          alt="Fondo decorativo"
+          fill
+          className="object-cover"
+        />
       </div>
 
-      <div className="max-w-7xl mx-auto bg-gray-400/20">
+      <div className="max-w-7xl mx-auto bg-gray-400/20 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 lg:py-8">
           {/* Tabs verticales - Izquierda */}
           <div className="lg:col-span-5">
@@ -128,7 +125,14 @@ export default function TabsSection() {
             </div>
           </div>
         </div>
+
+        {/* Motor superpuesto */}
+        <div className="hidden lg:block lg:absolute -bottom-60 left-1/2 -translate-x-1/2 lg:w-96 lg:h-96 z-10">
+          <Image src="/images/motor.png" alt="Motor" fill className="object-contain drop-shadow-2xl" />
+        </div>
       </div>
+
+
     </section>
   );
 }

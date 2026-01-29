@@ -11,7 +11,7 @@ export default function MethodologyProcess() {
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                         {/* Left side - Content */}
-                        <div className="relative flex flex-col justify-center space-y-6 px-20">
+                        <div className="relative flex flex-col justify-center space-y-6 px-6 lg:px-20">
                             {/* Number - Background */}
                             <div className="absolute -top-30 left-0  text-secondary text-[20rem] font-bold opacity-10 select-none pointer-events-none">
                                 #1
@@ -59,7 +59,7 @@ export default function MethodologyProcess() {
                         {/* Left side - Image */}
                         <div className="relative h-[400px] lg:h-[500px] rounded-lg overflow-hidden">
                             <Image
-                                src="/images/metodologia/metodologia-1.jpg"
+                                src="/images/metodologia/metodologia-2.png"
                                 alt="Técnico realizando inspección en instalación industrial"
                                 fill
                                 className="object-cover"
@@ -67,7 +67,7 @@ export default function MethodologyProcess() {
                         </div>
 
                         {/* Right side - Content */}
-                        <div className="relative flex flex-col justify-center space-y-6 px-20">
+                        <div className="relative flex flex-col justify-center space-y-6 px-6 lg:px-20">
                             {/* Number - Background */}
                             <div className="absolute -top-30 right-0 text-secondary text-[20rem] font-bold opacity-10 select-none pointer-events-none">
                                 #2
@@ -94,11 +94,11 @@ export default function MethodologyProcess() {
                 </div>
             </section>
 
-            <section className="w-full py-16 md:py-24 bg-white">
+            <section className="w-full py-8 md:py-24 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                         {/* Left side - Content */}
-                        <div className="relative flex flex-col justify-center space-y-6 px-20">
+                        <div className="relative flex flex-col justify-center space-y-6 px-6 lg:px-20">
                             {/* Number - Background */}
                             <div className="absolute -top-30 left-0 text-secondary text-[20rem] font-bold opacity-10 select-none pointer-events-none">
                                 #3
@@ -126,13 +126,16 @@ export default function MethodologyProcess() {
                         </div>
 
                         {/* Right side - Image */}
-                        <div className="relative h-[400px] lg:h-[500px] rounded-lg overflow-hidden">
-                            <Image
-                                src="/images/metodologia/metodologia-1.jpg"
-                                alt="Diagrama DIAPSA 360 de solución integral"
-                                fill
-                                className="object-cover"
-                            />
+                        <div >
+                            <div className=" h-[400px] lg:h-[500px] rounded-lg">
+                                <Image
+                                    src="/images/360DIAPSADIAGRAMA.svg"
+                                    alt="Diagrama DIAPSA 360 de solución integral"
+                                    width="500"
+                                    height="500"
+                                    className="object-cover"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

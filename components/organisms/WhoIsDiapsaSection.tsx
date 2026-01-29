@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { CheckCircleIcon } from "../atoms/CheckCircleIcon"
+import { CheckCircleIcon } from "../atoms/icons/CheckCircleIcon"
 export function WhoIsDiapsaSection() {
     return (
         <section className="w-full bg-white py-16">
