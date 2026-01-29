@@ -1,43 +1,58 @@
 {
     "clients": [
         {
-            "name": "Siemens",
-            "logo": "/images/clientes/pemex.svg",
+            "name": "Sukarne",
+            "logo": "/images/clientes/SUKARNE.svg",
             "caseStudy": true
         },
         {
             "name": "Pemex",
-            "logo": "/images/clientes/pemex.svg",
+            "logo": "/images/clientes/PEMEX.svg",
             "caseStudy": true
         },
         {
             "name": "Kenworth",
-            "logo": "/images/clientes/pemex.svg",
+            "logo": "/images/clientes/KENWORTH.svg",
             "caseStudy": true
         },
         {
             "name": "Invenergy",
-            "logo": "/images/clientes/pemex.svg",
+            "logo": "/images/clientes/INVENERGY.svg",
             "caseStudy": true
         },
         {
             "name": "ValiaEnergía",
-            "logo": "/images/clientes/pemex.svg",
+            "logo": "/images/clientes/VALIA.svg",
             "caseStudy": true
         },
         {
             "name": "Whirlpool",
-            "logo": "/images/clientes/pemex.svg",
+            "logo": "/images/clientes/WHIRLPOOL.svg",
             "caseStudy": true
         },
         {
             "name": "Holcim",
-            "logo": "/images/clientes/pemex.svg",
+            "logo": "/images/clientes/HOLCIM.svg",
             "caseStudy": true
         },
         {
             "name": "Aptiv",
-            "logo": "/images/clientes/pemex.svg",
+            "logo": "/images/clientes/APTIV.svg",
+            "caseStudy": true
+        },
+        {
+            "name": "Arca Contiental",
+            "logo": "/images/clientes/ARCA.svg",
+            "caseStudy": true
+        },
+        {
+            "name": "Mitinfra",
+            "logo": "/images/clientes/MITINFRA.svg",
+            "caseStudy": true
+        },
+        {
+            "name": "Interceramic",
+            "logo": "/images/clientes/INTERCERAMIC.svg",
             "caseStudy": true
         }
     ]
