@@ -5,9 +5,9 @@ import clientsData from '@/data/clients.json';
 
 export function Clients() {
     // Duplicar los clientes para crear el efecto de loop infinito
+    // NO usar Math.random() aquí porque causa hydration mismatch entre servidor y cliente
     const duplicatedClients = [...clientsData.clients, ...clientsData.clients];
-    const shuffledClients = [...clientsData.clients].sort(() => Math.random() - 0.5);
-    const randomClients = [...shuffledClients, ...shuffledClients];
+    const randomClients = [...clientsData.clients, ...clientsData.clients];
 
     return (
         <section className="w-full flex flex-col pt-10 bg-white">

@@ -67,10 +67,9 @@ export default function NavBar() {
                                 trigger="Servicios"
                                 items={serviciosItems}
                             />
-                            <Dropdown
-                                trigger="Productos"
-                                items={prodcutosItem}
-                            />
+                            <NavLink href="/productos">
+                                Productos
+                            </NavLink>
                             <NavLink href="/metodologia">
                                 Metodología
                             </NavLink>

@@ -3,7 +3,7 @@ import React from "react";
 
 interface BreadcrumbItem {
   label: string;
-  link: string;
+  href: string;
 }
 
 interface BreadcrumbProps {
@@ -30,7 +30,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, variant = "dark" }) => {
               <span className={`${textColor} font-medium`}>{item.label}</span>
             ) : (
               <Link
-                href={item.link}
+                href={item.href}
                 className={`${linkColor} transition-colors duration-200 font-medium`}
               >
                 {item.label}
