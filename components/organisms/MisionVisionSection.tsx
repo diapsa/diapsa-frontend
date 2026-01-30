@@ -24,7 +24,7 @@ export function MisionVisionSection() {
                 <div className="relative w-full h-full rounded-4xl border-e-4 border-t-4 border-secondary hidden md:block p-4">
                     <div className="relative w-full h-full overflow-hidden rounded-2xl">
                         <Image
-                            src="/images/metodologia/metodologia-2.png"
+                            src="/images/mision-image.jpeg"
                             fill
                             className="object-cover"
                             alt="Representación de la misión de la empresa"
@@ -38,7 +38,7 @@ export function MisionVisionSection() {
                 <div className="relative w-full h-full rounded-4xl border-b-4 border-s-4 border-primary hidden md:block p-4">
                     <div className="relative w-full h-full overflow-hidden rounded-2xl">
                         <Image
-                            src="/images/metodologia/metodologia-1.jpg"
+                            src="/images/vision-image.jpeg"
                             fill
                             className="object-cover"
                             alt="Representación de la misión de la empresa"

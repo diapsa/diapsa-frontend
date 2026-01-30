@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/organisms/PageHeader";
 import Button from "@/components/atoms/Button";
+import WipState from "@/components/molecules/wip/wipState";
 
 export const metadata: Metadata = {
   title: "Cursos de Capacitación",
@@ -123,7 +124,7 @@ export default function CursosPage() {
       />
 
       <section className="w-full bg-white py-16 lg:py-24">
-
+        <WipState />
       </section>
     </main>
   );

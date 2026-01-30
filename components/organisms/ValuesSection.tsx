@@ -3,7 +3,7 @@ export function ValuesSection() {
 
     return (
 
-        <section className="w-full py-14 lg:py-18 border-y-4 border-secondary">
+        <section className="w-full py-14 lg:py-18 border-y-4 border-secondary bg-black text-white">
             <div className="sm:px-2 md:px-16 flex flex-col justify-center items-center gap-6">
                 <h3 className='font-bold text-center text-secondary'>Nuestra identidiad</h3>
                 <h3 className="text-center text-4xl font-extrabold">Valores dentro de nuestra empresa</h3>

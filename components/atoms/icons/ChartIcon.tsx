@@ -1,7 +1,7 @@
 interface Props {
     className?: string
 }
-export default function ChartIcon({ className = "" }: Props) {
+export function ChartIcon({ className = "" }: Props) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" className={`inline-block ${className}`}>
             <path
