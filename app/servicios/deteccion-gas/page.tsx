@@ -1,7 +1,37 @@
 import Button from "@/components/atoms/Button";
-import WipState from "@/components/molecules/wip/wipState";
 import PageHeader from "@/components/organisms/PageHeader";
 import { VibrationIcon, VisibilityIcon, SecurityIcon, EcoIcon, PrecisionManufacturingIcon } from "@/components/atoms/icons";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Detección de Gas y Fugas Industriales | Grupo DIAPSA",
+    description:
+        "Servicios profesionales de detección de gas y fugas con tecnología acústica y óptica (OGI). Localización precisa de emisiones en plantas industriales. Seguridad garantizada 24/7 en México.",
+    keywords: [
+        "detección de gas industrial",
+        "detección de fugas México",
+        "tecnología OGI",
+        "detección acústica de fugas",
+        "termografía infrarroja gas",
+        "seguridad industrial México",
+        "monitoreo emisiones industriales",
+        "detección ultrasónica fugas",
+        "Optical Gas Imaging",
+        "inspección fugas alta presión",
+        "reducción emisiones CO2",
+        "gestión de activos industriales",
+    ],
+    alternates: {
+        canonical: "/servicios/deteccion-gas",
+    },
+    openGraph: {
+        title: "Detección de Gas y Fugas con Tecnología Avanzada | DIAPSA",
+        description:
+            "Detección acústica y óptica (OGI) de última generación para localización precisa de emisiones y fugas. Seguridad industrial 24/7.",
+        url: "/servicios/deteccion-gas",
+        type: "website",
+    },
+};
 
 const tecnologyCards = [
     {
