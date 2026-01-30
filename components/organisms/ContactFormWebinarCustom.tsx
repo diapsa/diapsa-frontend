@@ -7,12 +7,13 @@
 
 import { useState, useRef, FormEvent } from 'react';
 import { useContactForm } from '@/lib/hooks/useContactForm';
+import { sanitizeContactFormData } from '@/lib/utils/sanitizeFormData';
 import InputField, { SelectField } from '@/components/atoms/InputField';
 import LoadingSpinner from '@/components/atoms/LoadingSpinner';
 import SuccessMessage from '@/components/atoms/SuccessMessage';
 import RateLimitNotice from '@/components/molecules/RateLimitNotice';
 import { FormErrors } from '@/components/atoms/FormFieldError';
-import type { ContactFormWebinar as ContactFormData } from '@/types/contact';
+import type { ContactFormWebinar as ContactFormWebinarType, ContactFormData } from '@/types/contact';
 
 interface ContactFormWebinarCustomProps {
   webinarTitle?: string;
@@ -57,7 +58,7 @@ export default function ContactFormWebinarCustom({
     validateField,
   } = useContactForm();
 
-  const [formData, setFormData] = useState<ContactFormData>({
+  const [formData, setFormData] = useState<ContactFormWebinarType>({
     name: '',
     email: '',
     phone: '',
@@ -153,14 +154,8 @@ export default function ContactFormWebinarCustom({
       return;
     }
 
-    // Asegurar que todos los campos custom sean strings (no undefined)
-    const sanitizedData = {
-      ...formData,
-      custom_fields: Object.fromEntries(
-        Object.entries(formData.custom_fields || {}).map(([key, value]) => [key, value || ''])
-      ) as Record<string, string>,
-    };
-
+    // Sanitizar datos antes de enviar
+    const sanitizedData = sanitizeContactFormData(formData);
     const result = await submitForm(sanitizedData);
 
     if (result) {

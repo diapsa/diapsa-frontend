@@ -7,12 +7,13 @@
 
 import { useState, useRef, FormEvent } from 'react';
 import { useContactForm } from '@/lib/hooks/useContactForm';
+import { sanitizeContactFormData } from '@/lib/utils/sanitizeFormData';
 import InputField from '@/components/atoms/InputField';
 import LoadingSpinner from '@/components/atoms/LoadingSpinner';
 import SuccessMessage from '@/components/atoms/SuccessMessage';
 import RateLimitNotice from '@/components/molecules/RateLimitNotice';
 import { FormErrors } from '@/components/atoms/FormFieldError';
-import type { ContactFormExpo as ContactFormData } from '@/types/contact';
+import type { ContactFormExpo as ContactFormExpoType, ContactFormData } from '@/types/contact';
 
 interface ContactFormExpoProps {
   eventName?: string;
@@ -40,7 +41,7 @@ export default function ContactFormExpo({
     validateField,
   } = useContactForm();
 
-  const [formData, setFormData] = useState<ContactFormData>({
+  const [formData, setFormData] = useState<ContactFormExpoType>({
     name: '',
     email: '',
     phone: '',
@@ -111,18 +112,8 @@ export default function ContactFormExpo({
       return;
     }
 
-    // Asegurar que todos los campos custom sean strings (no undefined)
-    const sanitizedData = {
-      ...formData,
-      custom_fields: formData.custom_fields
-        ? Object.fromEntries(
-            Object.entries(formData.custom_fields)
-              .filter(([_, value]) => value !== undefined)
-              .map(([key, value]) => [key, value || ''])
-          )
-        : undefined,
-    } as ContactFormData;
-
+    // Sanitizar datos antes de enviar
+    const sanitizedData = sanitizeContactFormData(formData);
     const result = await submitForm(sanitizedData);
 
     if (result) {

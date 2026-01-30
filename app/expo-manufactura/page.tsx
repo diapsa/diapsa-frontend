@@ -92,9 +92,6 @@ export default function ExpoManufacturaPage() {
             <ContactFormExpo
               eventName="Expo Manufactura DIAPSA"
               eventDate=""
-              onSuccess={() => {
-                console.log("Registro exitoso en Expo Manufactura");
-              }}
             />
           </div>
 

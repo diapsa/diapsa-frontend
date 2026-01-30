@@ -7,12 +7,13 @@
 
 import { useState, useRef, FormEvent } from 'react';
 import { useContactForm } from '@/lib/hooks/useContactForm';
+import { sanitizeContactFormData } from '@/lib/utils/sanitizeFormData';
 import InputField, { TextareaField, SelectField } from '@/components/atoms/InputField';
 import LoadingSpinner from '@/components/atoms/LoadingSpinner';
 import SuccessMessage from '@/components/atoms/SuccessMessage';
 import RateLimitNotice, { RateLimitBanner } from '@/components/molecules/RateLimitNotice';
 import { FormErrors } from '@/components/atoms/FormFieldError';
-import type { ContactFormGeneral as ContactFormData } from '@/types/contact';
+import type { ContactFormGeneral as ContactFormGeneralType, ContactFormData } from '@/types/contact';
 
 interface ContactFormGeneralProps {
   onSuccess?: () => void;
@@ -45,7 +46,7 @@ export default function ContactFormGeneral({
     validateField,
   } = useContactForm();
 
-  const [formData, setFormData] = useState<ContactFormData>({
+  const [formData, setFormData] = useState<ContactFormGeneralType>({
     name: '',
     email: '',
     phone: '',
@@ -127,18 +128,8 @@ export default function ContactFormGeneral({
     }
 
     // Submit
-    // Asegurar que todos los campos custom sean strings (no undefined)
-    const sanitizedData = {
-      ...formData,
-      custom_fields: formData.custom_fields
-        ? Object.fromEntries(
-            Object.entries(formData.custom_fields)
-              .filter(([_, value]) => value !== undefined)
-              .map(([key, value]) => [key, value || ''])
-          )
-        : undefined,
-    } as ContactFormData;
-
+    // Sanitizar datos antes de enviar
+    const sanitizedData = sanitizeContactFormData(formData);
     const result = await submitForm(sanitizedData);
 
     if (result) {
