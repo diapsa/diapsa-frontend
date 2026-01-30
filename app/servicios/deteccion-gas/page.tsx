@@ -74,25 +74,25 @@ export default function DeteccionGasPage() {
         <main>
             <PageHeader title="Deteccion de Gas" subtitle="" />
 
-            <div className="bg-industrial-dark text-white font-display overflow-x-hidden">
+            <div className="bg-industrial-dark font-display overflow-x-hidden">
                 {/* <!-- Technology Features Section --> */}
                 <div className="py-24 px-6 max-w-300 mx-auto">
                     <div className="mb-16 text-center">
                         <h2 className="text-4xl @[480px]:text-5xl font-extrabold  tracking-tighter mb-4">TECNOLOGÍAS DE VANGUARDIA</h2>
                         <div className="h-1.5 w-24 bg-accent-orange mx-auto rounded-full"></div>
-                        <p className="text-[#8db9ce] mt-6 text-lg max-w-175 mx-auto">
+                        <p className="dark:text-[#8db9ce] dark:font-normal text-secondary font-bold mt-6 text-lg max-w-175 mx-auto">
                             Implementamos los métodos más avanzados para la localización precisa de emisiones y fugas en entornos industriales críticos.
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {tecnologyCards.map((t) => (
-                            <div key={t.title} className="flex flex-col gap-6 rounded-xl border border-secondary/50 bg-primary/10 p-8 hover:border-accent-orange/50 transition-colors group">
-                                <div className="w-16 h-16 rounded-lg bg-primary flex items-center justify-center text-accent-orange group-hover:scale-110 transition-transform">
+                            <div key={t.title} className="flex flex-col gap-6 rounded-xl border dark:border-secondary/50 dark:bg-primary/10 bg-secondary/10 border-secondary p-8 hover:border-accent-orange/50 transition-colors group">
+                                <div className="w-16 h-16 rounded-lg dark:bg-primary bg-secondary flex items-center justify-center text-accent-orange group-hover:scale-110 transition-transform">
                                     {t.icon}
                                 </div>
                                 <div className="flex flex-col gap-3">
                                     <h3 className="text-3xl font-black leading-tight">{t.title}</h3>
-                                    <p className="text-[#8db9ce] text-base leading-relaxed">
+                                    <p className="dark:text-[#8db9ce] text-base leading-relaxed">
                                         {t.description}
                                     </p>
                                     <div className="flex items-center gap-2 text-accent-orange font-bold text-sm uppercase mt-2">
@@ -105,23 +105,23 @@ export default function DeteccionGasPage() {
                     </div>
                 </div>
                 {/* <!-- DIAPSA Strategy Section --> */}
-                <div className="bg-primary/20 py-16 border-y border-primary/50">
+                <div className="dark:bg-primary/20 py-16 border-y dark:border-primary/50 bg-secondary/10 border-secondary/50">
                     <div className="max-w-3000 px-6 mx-auto">
                         <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
                             <div className="max-w-150">
-                                <h2 className="text-white text-4xl font-black leading-tight tracking-tight uppercase">Estrategia DIAPSA</h2>
-                                <p className="text-[#8db9ce] mt-4 text-lg">Metodologías integrales diseñadas para la optimización de activos y mitigación de riesgos operativos.</p>
+                                <h2 className="text-4xl font-black leading-tight tracking-tight uppercase">Estrategia DIAPSA</h2>
+                                <p className="dark:text-[#8db9ce] mt-4 text-lg">Metodologías integrales diseñadas para la optimización de activos y mitigación de riesgos operativos.</p>
                             </div>
                             <div className="hidden md:block h-px flex-1 bg-secondary mx-8 mb-4"></div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {/* <!-- Asset Management Card --> */}
-                            <div className="bg-industrial-dark border-l-4 border-l-secondary border border-secondary/50 rounded-lg p-8 flex gap-6 items-start">
+                            <div className="bg-industrial-dark border-l-4 dark:border-l-secondary border border-secondary/50 rounded-lg p-8 flex gap-6 items-start">
                                 <div className="hidden sm:block w-32 h-32 shrink-0 bg-cover bg-center rounded-lg" data-alt="Icono de gestión de activos industriales" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuASzoPFm_d8UPTzczW9azlI5JrU_trzLzkYZrTgjO3aVXXeXn2KnJb5ewl6VI5mbglDkpDKnxwWPMIAJ8BdLYfD8LReQTK1omTh6yk08PXiotSNfpIg4GppnVDmKWSz2q72RzmGWHmccW7sicclJnVqtVrY9APCclynVqEFyg_0NMpqZP8fWqE0hgoInIA0BOH8akcwbNWeNokScmcWf6yoz0CRZpyWX3-PTHtSJDotsh2hyICSC8p-dFnijCiVsqMvndWF1goJL1o")' }}></div>
                                 <div>
                                     <span className="text-accent-orange text-xs font-bold tracking-widest uppercase mb-2 block">Lifecycle Focus</span>
                                     <h4 className="text-xl font-bold mb-3">Gestión de Activos</h4>
-                                    <p className="text-[#8db9ce] text-sm leading-relaxed mb-4">Optimización del ciclo de vida de su infraestructura para maximizar la rentabilidad y reducir riesgos operativos críticos.</p>
+                                    <p className="dark:text-[#8db9ce] text-sm leading-relaxed mb-4">Optimización del ciclo de vida de su infraestructura para maximizar la rentabilidad y reducir riesgos operativos críticos.</p>
                                     <p className="text-primary font-mono text-xs font-bold">ASSET_MANAGEMENT_ST_01</p>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@ export default function DeteccionGasPage() {
                                 <div>
                                     <span className="text-accent-orange text-xs font-bold tracking-widest uppercase mb-2 block">Real-time Data</span>
                                     <h4 className="text-xl font-bold mb-3">Monitoreo de Condición</h4>
-                                    <p className="text-[#8db9ce] text-sm leading-relaxed mb-4">Seguimiento constante de la salud de sus equipos para prevenir fallas catastróficas y paros no programados.</p>
+                                    <p className="dark:text-[#8db9ce] text-sm leading-relaxed mb-4">Seguimiento constante de la salud de sus equipos para prevenir fallas catastróficas y paros no programados.</p>
                                     <p className="text-primary font-mono text-xs font-bold">CONDITION_MONITORING_RT_24/7</p>
                                 </div>
                             </div>
@@ -142,13 +142,13 @@ export default function DeteccionGasPage() {
                 <div className="py-16 px-6 max-w-300 mx-auto text-center">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {indicadores.map((i) => (
-                            <div key={i.name} className="flex flex-col items-center gap-4 p-8 rounded-2xl border border-primary/50 bg-primary/20">
+                            <div key={i.name} className="flex flex-col items-center gap-4 p-8 rounded-2xl border dark:border-primary/50 dark:bg-primary/20 border-secondary/50 bg-secondary/10">
                                 <div className="text-accent-orange mb-2">
                                     {i.icon}
                                 </div>
-                                <h3 className="text-white text-4xl font-black leading-tight">{i.value}</h3>
-                                <p className="text-lg font-bold text-white uppercase tracking-wider">{i.name}</p>
-                                <p className="text-[#8db9ce] text-sm italic">{i.label}</p>
+                                <h3 className="text-4xl font-black leading-tight">{i.value}</h3>
+                                <p className="text-lg font-bold  uppercase tracking-wider">{i.name}</p>
+                                <p className="dark:text-[#8db9ce] text-sm italic">{i.label}</p>
                             </div>
                         ))}
                     </div>

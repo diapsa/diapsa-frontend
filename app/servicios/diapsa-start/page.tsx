@@ -20,7 +20,7 @@ export default function DiapsaStart() {
                         <h3 className="text-2xl lg:text-7xl italic text-secondary font-extrabold">Tomar control de los activos</h3>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center w-full px-2 lg:px-24 space-y-4">
-                        <p className="text-gray-300 text-xl">
+                        <p className="dark:text-gray-300  text-xl">
                             El programa DIAPSA Start trasciende las simple instalación tecnica. Es una transformación
                             estructural en la cultura de mantenimiento, diseñada para empresas que demandan una estrategia
                             de predictibilidad sólida y robusta.
@@ -36,7 +36,7 @@ export default function DiapsaStart() {
                     <div className="relative px-8 md:px-12 lg:px-16 py-16 md:py-18 lg:py-18 space-y-6 bg-primary aspect-8/12 w-full overflow-hidden">
                         <DoubleCircleIcon className="text-secondary w-8 h-8" />
                         <p className="text-secondary font-bold">Etapa 01</p>
-                        <h3 className="text-xl font-bold">Formación técnica aplicada</h3>
+                        <h3 className="text-xl text-white font-bold">Formación técnica aplicada</h3>
                         <p className="text-gray-300 text-lg">Capacitación teórica y práctica directamente en planta para asegurar la
                             transferencia de conocimiento real
                         </p>
@@ -47,7 +47,7 @@ export default function DiapsaStart() {
                     <div className="relative px-8 md:px-12 lg:px-16 py-16 md:py-18 lg:py-18 space-y-6 bg-primary border-4 border-secondary aspect-8/12 w-full overflow-hidden">
                         <WindowIcon className="text-secondary w-8 h-8" />
                         <p className="text-secondary font-bold">Etapa 02 (core)</p>
-                        <h3 className="text-xl font-bold">Diagnóstico situacional</h3>
+                        <h3 className="text-xl text-white font-bold">Diagnóstico situacional</h3>
                         <ul className="text-gray-300 text-sm md:text-base lg:text-lg space-y-1">
                             <li className="flex items-center"><span className="text-secondary text-3xl mr-2">•</span> <p>Levatamiento de datos técnicos</p></li>
                             <li className="flex items-center"><span className="text-secondary text-3xl mr-2">•</span> <p>Revisión de manuales de fabricante</p></li>
@@ -61,7 +61,7 @@ export default function DiapsaStart() {
                     <div className="relative px-8 md:px-12 lg:px-16 py-16 md:py-18 lg:py-18 space-y-6 bg-primary aspect-8/12 w-full overflow-hidden">
                         <ChartIcon className="text-secondary w-8 h-8" />
                         <p className="text-secondary font-bold">Etapa 03</p>
-                        <h3 className="text-xl font-bold">Mediciones</h3>
+                        <h3 className="text-xl text-white font-bold">Mediciones</h3>
                         <p className="text-gray-300 text-lg">Recolección de datos de alta precisión y confiabilidad para establecer
                             lineas de operación certificadas.
 
@@ -73,8 +73,8 @@ export default function DiapsaStart() {
                     <div className="relative px-8 md:px-12 lg:px-16 py-16 md:py-18 lg:py-18 space-y-6 bg-primary aspect-8/12 w-full overflow-hidden">
                         <ChartIcon2 className="text-secondary w-8 h-8" />
                         <p className="text-secondary font-bold">Etapa 04</p>
-                        <h3 className="text-xl font-bold">Gestión de datos</h3>
-                        <p className="font-bold">"LO QUE NO SE MIDE, NO SE CONTROLA"</p>
+                        <h3 className="text-xl text-white font-bold">Gestión de datos</h3>
+                        <p className="font-bold text-white">"LO QUE NO SE MIDE, NO SE CONTROLA"</p>
                         <p className="text-gray-300 text-lg">
                             Transformamos datos complejos en decisiones estratégicas basadas en evidencia industrial.
                         </p>
