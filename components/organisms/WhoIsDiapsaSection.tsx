@@ -42,7 +42,7 @@ export function WhoIsDiapsaSection() {
                     </div>
                     <div className="relative hidden md:block overflow-hidden ">
                         <Image
-                            src="/images/metodologia/22-años.jpg"
+                            src="/images/about.jpg"
                             alt="representacion de que es Diapsa"
                             fill
                             className="object-cover" />
