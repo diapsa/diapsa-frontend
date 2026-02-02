@@ -39,11 +39,8 @@ jobs:
                 rm -rf .next
                 npm run build
 
-                echo "Loading env vars"
-                export $(grep -v '^#' .env | xargs)
-
                 echo "Reloading PM2"
-                pm2 reload diapsa-frontend --update-env
+                pm2 reload ecosystem.config.js --update-env
 
 # Pendientes
 # cache de node_modules
