@@ -3,11 +3,13 @@
  * Base URL and fetch wrapper for API requests
  */
 
-export const API_BASE_URL = 
-  process.env.NEXT_PUBLIC_API_BASE_URL || 'https://cms.grupodiapsa.com.mx/api/v1';
+if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
+  throw new Error('NEXT_PUBLIC_API_BASE_URL is not defined');
+}
 
-export const API_TIMEOUT = 
-  parseInt(process.env.NEXT_PUBLIC_API_TIMEOUT || '10000', 10);
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+export const API_TIMEOUT = parseInt(process.env.NEXT_PUBLIC_API_TIMEOUT || '10000', 10);
 
 /**
  * Custom error class for API errors
