@@ -36,6 +36,7 @@ jobs:
                 npm install
 
                 echo "Building Next.js"
+                rm -rf .next
                 npm run build
 
                 echo "Reloading PM2"
