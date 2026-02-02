@@ -70,7 +70,6 @@ export default function ExpoManufacturaPage() {
             </p>
             <ContactFormExpo
               eventName="Expo Manufactura DIAPSA"
-              eventDate=""
             />
           </div>
 
