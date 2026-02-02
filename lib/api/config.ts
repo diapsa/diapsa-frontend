@@ -3,7 +3,8 @@
  * Base URL and fetch wrapper for API requests
  */
 
-export const API_BASE_URL = 'https://cms.grupodiapsa.com.mx/api/v1';
+//export const API_BASE_URL = 'https://cms.grupodiapsa.com.mx/api/v1';
+export const API_BASE_URL = 'http://grupodiapsa.test/api/v1';
 
 export const API_TIMEOUT = 10000; // 10 seconds
 

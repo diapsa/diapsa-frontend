@@ -72,7 +72,14 @@ export function useContactForm(): UseContactFormResult {
 
       // Handle validation errors
       if (result.errors) {
-        setErrors(result.errors);
+        // Si hay errores en custom_fields, mostrar mensaje genérico por seguridad
+        if (result.errors.custom_fields) {
+          setErrors({
+            general: ['Hubo un problema con algunos campos del formulario. Por favor, verifica tu información e intenta de nuevo.'],
+          });
+        } else {
+          setErrors(result.errors);
+        }
         return false;
       }
 

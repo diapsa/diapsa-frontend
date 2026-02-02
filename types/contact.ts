@@ -61,10 +61,15 @@ export interface ContactFormExpo {
   utm_campaign?: string;
   website?: string; // Honeypot
   custom_fields?: {
-    booth_number?: string;
     event_name?: string;
     event_date?: string;
-    [key: string]: string | undefined;
+    city?: string;
+    industry?: string;
+    position?: string;
+    comments?: string;
+    subject?: string; // "informacion_cursos" | "otro"
+    privacy_accepted?: boolean; // "true" | "false"
+    [key: string]: string | boolean | undefined;
   };
 }
 
