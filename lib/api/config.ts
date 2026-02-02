@@ -3,10 +3,14 @@
  * Base URL and fetch wrapper for API requests
  */
 
-//export const API_BASE_URL = 'https://cms.grupodiapsa.com.mx/api/v1';
-export const API_BASE_URL = 'http://grupodiapsa.test/api/v1';
+// Obtener API base URL desde variables de entorno
+// Fallback a producción si no está definida (seguridad)
+export const API_BASE_URL = 
+  process.env.NEXT_PUBLIC_API_BASE_URL;
 
-export const API_TIMEOUT = 10000; // 10 seconds
+// Timeout configurable desde env o default 10 segundos
+export const API_TIMEOUT = 
+  parseInt(process.env.NEXT_PUBLIC_API_TIMEOUT || '10000', 10);
 
 /**
  * Custom error class for API errors
