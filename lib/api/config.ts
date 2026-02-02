@@ -3,12 +3,9 @@
  * Base URL and fetch wrapper for API requests
  */
 
-// Obtener API base URL desde variables de entorno
-// Fallback a producción si no está definida (seguridad)
 export const API_BASE_URL = 
   process.env.NEXT_PUBLIC_API_BASE_URL;
 
-// Timeout configurable desde env o default 10 segundos
 export const API_TIMEOUT = 
   parseInt(process.env.NEXT_PUBLIC_API_TIMEOUT || '10000', 10);
 
