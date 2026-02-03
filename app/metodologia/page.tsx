@@ -4,6 +4,7 @@ import MethodologyProcess from "@/components/organisms/MethodologyProcess";
 import disciplinasData from "@/data/disciplinas.json";
 import Image from "next/image";
 import { Clients } from "@/components/organisms/Clients";
+import SuccessCases from "@/components/organisms/SuccessCases";
 
 export const metadata: Metadata = {
   title: "Nuestra Metodología",
@@ -188,6 +189,7 @@ export default function MetodologiaPage() {
           </div>
         </div>
       </section>
+      <SuccessCases />
 
       <Clients />
 
