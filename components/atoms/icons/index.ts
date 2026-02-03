@@ -9,4 +9,9 @@ export { SecurityIcon } from "./SecurityIcon";
 export { VibrationIcon } from "./VibrationIcon";
 export { VisibilityIcon } from "./VisibilityIcon";
 export { WindowIcon } from "./WindowIcon"
+export { ThermometerIcon } from "./ThermometerIcon";
+export { SoundIcon } from "./SoundIcon";
+export { SettingsIcon } from "./SettingsIcon";
+export { MonitorIcon } from "./MonitorIcon";
+export { EnergyIcon } from "./EnergyIcon";
 
