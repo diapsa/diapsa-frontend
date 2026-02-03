@@ -1,0 +1,122 @@
+[
+    {
+        "slug": "diapsa-start-mitinfra",
+        "title": "DIAPSA START en Planta de Tratamiento de Agua Residual",
+        "client": "Mitinfra",
+        "industry": "Tratamiento de agua residual",
+        "service": "Mantenimiento predictivo y monitoreo de condición",
+        "seo": {
+            "title": "Caso de Éxito DIAPSA START | Monitoreo Predictivo en Agua Residual",
+            "description": "Implementación del programa DIAPSA START para capacitar, diagnosticar y establecer una estrategia de mantenimiento predictivo basada en datos en una planta de tratamiento de agua residual."
+        },
+        "introduction": "Una empresa de servicios de tratamiento de agua residual enfrentaba una alta rotación de personal y una limitada experiencia técnica en su área de mantenimiento. Esta situación comprometía la confiabilidad operativa de sus activos, por lo que se solicitó un servicio integral que combinara capacitación técnica, diagnóstico profundo e implementación de una metodología de mantenimiento predictivo y monitoreo de condición.",
+        "challenge": "La falta de estandarización técnica, el desconocimiento del estado real de los equipos y la ausencia de una estrategia de mantenimiento basada en datos generaban riesgos operativos ocultos y decisiones reactivas.",
+        "methodology": {
+            "name": "DIAPSA START",
+            "stages": [
+                {
+                    "stage": "Etapa 1",
+                    "title": "Formación técnica aplicada",
+                    "description": "Capacitación práctica del personal alineada a las necesidades reales de planta. Se integraron las tres disciplinas principales del Monitoreo de Condición como un paquete formativo integral."
+                },
+                {
+                    "stage": "Etapa 2",
+                    "title": "Diagnóstico situacional",
+                    "description": "Evaluación técnica y operativa equipo por equipo, recopilando datos técnicos, manuales, historial de fallas, programas de mantenimiento y evidencia visual. Se realizó un análisis económico de confiabilidad para priorizar correctamente los activos críticos."
+                },
+                {
+                    "stage": "Etapa 3",
+                    "title": "Mediciones de monitoreo de condición",
+                    "description": "Ejecución de mediciones en campo bajo criterios de criticidad, asegurando datos confiables, repetibles y trazables para la detección temprana de fallas."
+                },
+                {
+                    "stage": "Etapa 4",
+                    "title": "Gestión de la información",
+                    "description": "Consolidación del valor del programa mediante control histórico, análisis de tendencias, reportes de condición y priorización de acciones para la toma de decisiones técnicas y estratégicas."
+                }
+            ]
+        },
+        "results": "El programa permitió transformar inspecciones aisladas en una estrategia estructurada de confiabilidad, estableciendo bases técnicas sólidas y una cultura de mantenimiento basada en datos.",
+        "metrics": {
+            "programStages": 4,
+            "disciplinesImplemented": 3
+        },
+        "economicImpact": "La correcta priorización de activos y la detección temprana de riesgos sentaron las bases para una reducción sostenida de fallas operativas y una mejor asignación de recursos de mantenimiento.",
+        "conclusion": "DIAPSA START permitió desarrollar capacidades internas, generar información técnica confiable y evolucionar hacia un modelo de mantenimiento predictivo alineado a la confiabilidad operacional."
+    },
+    {
+        "slug": "keken-mantenimiento-predictivo-termografia",
+        "title": "Visión Predictiva y Ahorros Millonarios en Industria Alimenticia",
+        "client": "Kekén",
+        "industry": "Industria alimenticia",
+        "service": "Mantenimiento predictivo por termografía",
+        "seo": {
+            "title": "Caso de Éxito Kekén | Más de 12 MUSD en Ahorros con Mantenimiento Predictivo",
+            "description": "Implementación de un programa de mantenimiento predictivo por termografía que redujo el riesgo operativo y generó ahorros superiores a 12 millones de dólares."
+        },
+        "introduction": "En un entorno altamente competitivo, una empresa alimenticia global enfrentaba severas consecuencias por fallas no anticipadas que comprometían activos, producción y rentabilidad.",
+        "challenge": "Las fallas imprevistas generaban pérdidas de activos, producto terminado y riesgos operativos elevados.",
+        "methodology": {
+            "name": "Mantenimiento Predictivo por Termografía y Confiabilidad Temprana",
+            "stages": [
+                {
+                    "stage": "Programa Predictivo",
+                    "title": "Termografía industrial",
+                    "description": "Implementación sistemática de termografía en todas las instalaciones durante cinco años, detectando anomalías térmicas críticas y no críticas."
+                },
+                {
+                    "stage": "Confiabilidad Temprana",
+                    "title": "Auditoría de nuevas instalaciones",
+                    "description": "Evaluación de naves nuevas antes de su puesta en marcha, funcionando como un control de calidad para eliminar defectos de origen."
+                }
+            ]
+        },
+        "results": "Se identificaron miles de anomalías térmicas, reduciendo drásticamente el riesgo de fallas críticas y validando nuevas inversiones desde el día uno.",
+        "metrics": {
+            "totalFindings": 7181,
+            "criticalFindings": 1373,
+            "nonCriticalFindings": 5808,
+            "criticalityRateReductionPercent": 90,
+            "roiUSD": 12251300
+        },
+        "economicImpact": "El consenso interdepartamental permitió cuantificar ahorros superiores a 12.2 millones de dólares, considerando costos directos e indirectos evitados.",
+        "conclusion": "El programa no solo redujo más del 90% del riesgo operativo, sino que consolidó una estrategia de confiabilidad y control de calidad en activos nuevos y existentes."
+    },
+    {
+        "slug": "tla-monitoreo-integral-condicion",
+        "title": "Monitoreo Predictivo en Central de Ciclo Combinado",
+        "client": "TLA",
+        "industry": "Generación de energía",
+        "service": "Monitoreo Integral de Condición (MCI)",
+        "seo": {
+            "title": "Caso de Éxito TLA | Monitoreo Predictivo en Generación de Energía",
+            "description": "Implementación del Monitoreo Integral de Condición que redujo en 98.7% las condiciones críticas y mejoró la confiabilidad operativa en una central de ciclo combinado."
+        },
+        "introduction": "Desde 2018, una central generadora de energía a gas natural implementó el Monitoreo Integral de Condición para obtener visibilidad real del estado dinámico de sus activos críticos.",
+        "challenge": "La operación dependía de modelos reactivos que elevaban el riesgo de fallas severas y penalizaciones contractuales.",
+        "methodology": {
+            "name": "Monitoreo Integral de Condición",
+            "stages": [
+                {
+                    "stage": "Diagnóstico continuo",
+                    "title": "Monitoreo multidisciplinario",
+                    "description": "Integración de termografía, vibraciones, ultrasonido y análisis de aceites con interpretación especializada."
+                },
+                {
+                    "stage": "Seguimiento",
+                    "title": "Intervención basada en datos",
+                    "description": "Reinspecciones, acompañamiento técnico y validación posterior a mantenimiento."
+                }
+            ]
+        },
+        "results": "La central redujo de forma sostenida las condiciones críticas y mejoró estructuralmente la calidad operativa de sus equipos.",
+        "metrics": {
+            "conditionsMonitored": 8613,
+            "criticalReductionPercent": 98.7,
+            "precautionReductionPercent": 75.4,
+            "estimatedSavingsUSD": 5100000
+        },
+        "economicImpact": "La prevención de eventos críticos y la atención temprana de condiciones de precaución protegieron la disponibilidad energética y evitaron pérdidas millonarias.",
+        "conclusion": "El monitoreo predictivo consolidó un cambio cultural hacia un modelo de mantenimiento basado en datos, seguridad operativa y sostenibilidad energética."
+    }
+]
