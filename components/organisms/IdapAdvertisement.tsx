@@ -12,12 +12,12 @@ export function IdapAdvertisementSection() {
                     />
                 </div>
                 <div className="py-10">
-                    <h2 className="text-4xl font-extrabold leading-thight">Nuestra plataforma IDAP</h2>
+                    <h2 className="text-4xl text-white font-extrabold leading-thight">Nuestra plataforma IDAP</h2>
                     <h3 className="text-gray-400">Inspection Diagnostic and Assets Plataform</h3>
                     <hr className="border-2 border-secondary my-2" />
                     <div className="space-y-5 py-10">
-                        <p className="font-semibold text-2xl">IDAP transforma el monitoreo de condición en decisiones confiables.</p>
-                        <p className="">
+                        <p className="font-semibold text-2xl text-white">IDAP transforma el monitoreo de condición en decisiones confiables.</p>
+                        <p className="text-white">
                             Una plataforma que centraliza la información técnica de los activos industriales y permite visualizar su estado,
                             priorizar riesgos y anticiparse a fallas que afectan la operación.</p>
 
