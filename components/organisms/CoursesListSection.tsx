@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import cursosData from '@/data/cursos.json';
+import { useState, useMemo } from 'react';
+import cursosData from '@/data/cursos/new.json';
 import {
     ThermometerIcon,
     VibrationIcon,
@@ -13,13 +13,16 @@ import {
 } from '@/components/atoms/icons';
 
 interface Curso {
-    id: string;
-    nombre: string;
-    descripcion: string;
-    modalidad: string;
-    categoria: string;
+    id: number;
+    name: string;
+    slug: string;
+    tipo_curso: string;
     icono: string;
-    link: string;
+    provider: string;
+    contenido: {
+        descripcion_general: string;
+        modalidad: string;
+    };
 }
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -33,26 +36,22 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export function CoursesListSection() {
-    const [activeTab, setActiveTab] = useState<'tecnico' | 'estrategico' | 'diplomado'>('tecnico');
+    // Obtener todos los tipos de curso únicos
+    const tiposCurso = useMemo(() => {
+        const tipos = [...new Set(cursosData.courses.map(c => c.tipo_curso))];
+        return tipos;
+    }, []);
 
-    const cursosTecnicos = cursosData.cursos.filter(c => c.categoria === 'tecnico');
-    const cursosEstrategicos = cursosData.cursos.filter(c => c.categoria === 'estrategico');
-    const diplomados = cursosData.cursos.filter(c => c.categoria === 'diplomado');
+    const [activeTab, setActiveTab] = useState<string>(tiposCurso[0] || 'Certificación');
 
-    const getCursosPorCategoria = () => {
-        switch (activeTab) {
-            case 'tecnico':
-                return cursosTecnicos;
-            case 'estrategico':
-                return cursosEstrategicos;
-            case 'diplomado':
-                return diplomados;
-            default:
-                return [];
-        }
+    const cursosFiltrados = cursosData.courses.filter(c => c.tipo_curso === activeTab);
+
+    // Mapeo de colores por tipo de curso
+    const getTabColor = (tipo: string) => {
+        if (tipo === 'Certificación') return 'secondary';
+        if (tipo === 'Ejecutivo') return 'tertiary';
+        return 'primary';
     };
-
-    const cursos = getCursosPorCategoria();
 
     return (
         <section className="w-full bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -69,40 +68,30 @@ export function CoursesListSection() {
 
                 {/* Tabs */}
                 <div className="flex flex-wrap justify-center gap-4 mb-10">
-                    <button
-                        onClick={() => setActiveTab('tecnico')}
-                        className={`px-8 py-3 font-bold text-base sm:text-lg transition-all rounded-md ${activeTab === 'tecnico'
-                            ? 'bg-secondary text-white shadow-lg'
-                            : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-secondary'
-                            }`}
-                    >
-                        Cursos Técnicos
-                    </button>
-                    <button
-                        onClick={() => setActiveTab('estrategico')}
-                        className={`px-8 py-3 font-bold text-base sm:text-lg transition-all rounded-md ${activeTab === 'estrategico'
-                            ? 'bg-primary text-white shadow-lg'
-                            : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-primary'
-                            }`}
-                    >
-                        Cursos Estratégicos
-                    </button>
-                    <button
-                        onClick={() => setActiveTab('diplomado')}
-                        className={`px-8 py-3 font-bold text-base sm:text-lg transition-all rounded-md ${activeTab === 'diplomado'
-                            ? 'bg-primary text-white shadow-lg'
-                            : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-primary'
-                            }`}
-                    >
-                        Diplomados
-                    </button>
+                    {tiposCurso.map((tipo) => {
+                        const color = getTabColor(tipo);
+                        const isActive = activeTab === tipo;
+
+                        return (
+                            <button
+                                key={tipo}
+                                onClick={() => setActiveTab(tipo)}
+                                className={`px-6 py-3 font-bold text-sm sm:text-base transition-all rounded-md ${isActive
+                                    ? `bg-${color} text-white shadow-lg`
+                                    : `bg-white text-gray-700 border-2 border-gray-300 hover:border-${color}`
+                                    }`}
+                            >
+                                {tipo}
+                            </button>
+                        );
+                    })}
                 </div>
 
                 {/* Lista de cursos */}
                 <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                    {cursos.length > 0 ? (
+                    {cursosFiltrados.length > 0 ? (
                         <ul className="divide-y divide-gray-200">
-                            {cursos.map((curso: Curso) => {
+                            {cursosFiltrados.map((curso: Curso) => {
                                 const IconComponent = iconMap[curso.icono] || MonitorIcon;
                                 return (
                                     <li
@@ -119,23 +108,23 @@ export function CoursesListSection() {
                                         {/* Contenido */}
                                         <div className="grow space-y-1">
                                             <h3 className="text-lg font-bold text-gray-900">
-                                                {curso.nombre}
+                                                {curso.name}
                                             </h3>
                                             <p className="text-sm text-gray-600">
-                                                {curso.descripcion}
+                                                {curso.contenido.descripcion_general}
                                             </p>
                                         </div>
 
                                         {/* Modalidad y enlace */}
                                         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full sm:w-auto">
                                             <span className="text-sm font-medium text-gray-700 whitespace-nowrap">
-                                                {curso.modalidad}
+                                                {curso.contenido.modalidad}
                                             </span>
                                             <a
-                                                href={curso.link}
+                                                href={`/cursos/${curso.slug}`}
                                                 className="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline whitespace-nowrap"
                                             >
-                                                Solicita informes
+                                                Ver detalles
                                             </a>
                                         </div>
                                     </li>
