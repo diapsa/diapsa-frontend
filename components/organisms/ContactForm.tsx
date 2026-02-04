@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/atoms/Button";
-
+import cursosData from "@/data/cursos/new.json";
 
 interface FormData {
   nombre: string;
@@ -26,13 +26,7 @@ const SERVICES = [
   "Estudios Electricos"
 ]
 
-const CURSOS = [
-  "Termografía Cat 1",
-  "Termografía Cat 2",
-  "Vibraciones Mecánicas Cat 1",
-  "Vibraciones Mecánicas Cat 2",
-  "Ultrasonido Pasivo Cat 1",
-];
+const CURSOS = cursosData.courses.map(course => course.name);
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -126,10 +120,9 @@ export default function ContactForm() {
         {/* COLUMNA IZQUIERDA */}
         <div className="w-full lg:w-auto">
           <h2 className="text-3xl text-center lg:text-end md:text-4xl lg:text-5xl font-extrabold leading-tight">
-            SOLICITA YA
-            <br />
-            UNA ASESORÍA
-            <br />
+            SOLICITA <br />
+            ASESORÍA Ó <br />
+            INFORMACIÓN <br />
             SIN COSTO
           </h2>
 
