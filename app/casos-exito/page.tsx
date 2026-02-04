@@ -73,9 +73,9 @@ export default function CasosExitoPage() {
                                         <h3 className="text-white text-xl font-bold leading-tight mb-3 group-hover:text-secondary transition-colors">
                                             {caso.title}
                                         </h3>
-                                        <p className="text-gray-300 text-sm">
+                                        {/* <p className="text-gray-300 text-sm">
                                             Cliente: <span className="font-semibold">{caso.client}</span>
-                                        </p>
+                                        </p> */}
                                     </div>
                                 </div>
 

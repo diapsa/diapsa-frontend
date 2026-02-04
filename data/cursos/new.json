@@ -1,0 +1,407 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "name": "Termografía Infrarroja - Curso de Certificación",
+            "slug": "termografia-infrarroja-curso-de-certificacion",
+            "tipo_curso": "Certificación",
+            "icono": "thermometer",
+            "provider": "DIAPSA",
+            "contenido": {
+                "descripcion_general": "Curso de certificación que cumple con los temas de la norma para generar el proceso de certificación de acuerdo a las categorías (I y II). La metodología explica la información de manera práctica para su aplicación real.",
+                "normativa_referencia": "ISO 18436-7",
+                "objetivo_general": "Formar inspectores especializados técnicamente (Categoría I) y analistas especializados (Categoría II).",
+                "objetivos_especificos": [
+                    "Explicar la historia y alcances de la termografía.",
+                    "Revisar sistemas a inspeccionar y asesorar para la mejor elección del equipo de termografía."
+                ],
+                "metodologia": "Enfoque 70% técnico-práctico y 30% teórico. Se utilizan más de 100 ejercicios reales con imágenes propias que se revisan desde diferentes enfoques.",
+                "temario": [
+                    "Historia y alcances de la realidad de la Termografía.",
+                    "Ejercicios reales en subestaciones, acometidas y transformadores.",
+                    "Ejercicios en electrónicos, motores, reductores y bombas.",
+                    "Ejercicios en hornos, calderas y aislamiento.",
+                    "Revisión de casos específicos de los participantes.",
+                    "Elección del equipo adecuado."
+                ],
+                "duracion": null,
+                "modalidad": "Teórico-Práctico",
+                "requisitos": [
+                    "Cumplir con los requisitos de experiencia por categoría según ISO 18436."
+                ],
+                "evaluacion": "Asistencia al curso, aprobar el examen teórico y aprobar el trabajo práctico.",
+                "certificacion": "Certificación Categoría I o II según corresponda, bajo lineamientos ISO 18436 e ISO/IEC 17024.",
+                "perfil_egreso": "Inspectores especializados técnicamente (Cat I) o Analistas especializados (Cat II) capaces de realizar diagnósticos en diversos equipos industriales."
+            }
+        },
+        {
+            "id": 2,
+            "name": "Vibraciones Mecánicas - Curso de Certificación",
+            "slug": "vibraciones-mecanicas-curso-de-certificacion",
+            "tipo_curso": "Certificación",
+            "icono": "vibration",
+            "provider": "DIAPSA",
+            "contenido": {
+                "descripcion_general": "Curso diseñado para identificar fuerzas vibratorias propias y anómalas, exponiendo principios de vibración y su influencia en los equipos. Cumple con los temas de la norma para el proceso de certificación.",
+                "normativa_referencia": "ISO 18436-2",
+                "objetivo_general": "Formar especialistas en monitoreo (Categoría I) y analistas especializados (Categoría II).",
+                "objetivos_especificos": [
+                    "Identificar fuerzas vibratorias anómalas vs. propias.",
+                    "Revisar sistemas a monitorear y sus correctos puntos de medición.",
+                    "Asesorar en la elección del equipo basado en necesidades."
+                ],
+                "metodologia": "Práctica con ejemplos de equipos inspeccionados. El participante interactúa e identifica lugares de medición y resultados en gráficas o espectros.",
+                "temario": [
+                    "Principios de la vibración e influencia en equipos.",
+                    "Identificación de puntos de medición correctos.",
+                    "Casos prácticos: motores, bombas, turbinas, ventiladores.",
+                    "Casos prácticos: motocompresores, transmisiones.",
+                    "Temas de sensores mono y triaxiales.",
+                    "Revisión de casos específicos de los participantes."
+                ],
+                "duracion": null,
+                "modalidad": "Teórico-Práctico",
+                "requisitos": [
+                    "Cumplir con los requisitos de experiencia por categoría según ISO 18436."
+                ],
+                "evaluacion": "Asistencia al curso, aprobar el examen teórico y aprobar el trabajo práctico.",
+                "certificacion": "Certificación bajo lineamientos ISO 18436.",
+                "perfil_egreso": "Especialistas en monitoreo (Cat I) y Analistas especializados (Cat II)."
+            }
+        },
+        {
+            "id": 3,
+            "name": "Ultrasonido Pasivo - Curso de Certificación",
+            "slug": "ultrasonido-pasivo-curso-de-certificacion",
+            "tipo_curso": "Certificación",
+            "icono": "sound",
+            "provider": "DIAPSA",
+            "contenido": {
+                "descripcion_general": "Curso enfocado en los principios del sonido y ultrasonido, alcances y aplicaciones industriales para diferenciar sonido normal de anomalías.",
+                "normativa_referencia": "ISO 18436-8 ",
+                "objetivo_general": "Formar especialistas en monitoreo y analistas especializados en ultrasonido.",
+                "objetivos_especificos": [
+                    "Explicar aplicaciones y patrones de comportamiento de ultrasonido.",
+                    "Diferenciar sonido normal a sonido de anomalía."
+                ],
+                "metodologia": "Desarrollo de ejemplos prácticos para diferentes comportamientos del sonido en equipos eléctricos y mecánicos.",
+                "temario": [
+                    "Principios del sonido y ultrasonido.",
+                    "Comportamiento del sonido en equipos eléctricos (arcos, efectos corona, arborescencias).",
+                    "Aplicaciones en subestaciones, tableros, transformadores.",
+                    "Comportamiento en equipos mecánicos (rodamientos: motores, bombas, transmisiones).",
+                    "Detección de fugas de aire, gas y vapor.",
+                    "Revisión de casos específicos de los participantes."
+                ],
+                "duracion": null,
+                "modalidad": "Teórico-Práctico",
+                "requisitos": [
+                    "Cumplir con los requisitos de experiencia por categoría según ISO 18436."
+                ],
+                "evaluacion": "Asistencia al curso, aprobar el examen teórico y aprobar el trabajo práctico.",
+                "certificacion": "Certificación bajo lineamientos ISO 18436.",
+                "perfil_egreso": "Especialistas en monitoreo y analistas especializados en ultrasonido."
+            }
+        },
+        {
+            "id": 4,
+            "name": "Incremento de la Confiabilidad - Monitoreo de Condición",
+            "slug": "incremento-confiabilidad-monitoreo-condicion",
+            "tipo_curso": "Certificación",
+            "icono": "monitor",
+            "provider": "DIAPSA",
+            "contenido": {
+                "descripcion_general": "Identificación de herramientas administrativas y técnicas para establecer programas de monitoreo de condición, sus beneficios y alcances.",
+                "normativa_referencia": "ISO 18436 ",
+                "objetivo_general": "Utilizar la norma ISO 18436 como base y referencia para entregar un certificado de aprendizaje en implementación de programas de monitoreo.",
+                "objetivos_especificos": null,
+                "metodologia": "Temas totalmente prácticos con ejemplos en cada herramienta, mostrando equipos básicos y software.",
+                "temario": [
+                    "Herramientas administrativas y técnicas para programas de monitoreo.",
+                    "Criticidad de equipos.",
+                    "Determinación de frecuencias de inspección.",
+                    "Uso de softwares para desarrollo de actividades.",
+                    "Revisión de casos específicos de participantes."
+                ],
+                "duracion": "24 Horas / 32 Horas (Varía según configuración) ",
+                "modalidad": "Teórico-Práctico",
+                "requisitos": [],
+                "evaluacion": "Asistencia, examen teórico y trabajo práctico.",
+                "certificacion": "Certificado de aprendizaje basado en ISO 18436.",
+                "perfil_egreso": null
+            }
+        },
+        {
+            "id": 5,
+            "name": "Alineamiento \u0026 Balanceo (Proactivo)",
+            "slug": "alineamiento-y-balanceo-proactivo",
+            "tipo_curso": "Estrategico",
+            "icono": "settings",
+            "provider": "DIAPSA",
+            "contenido": {
+                "descripcion_general": "Curso enfocado en la importancia de generar programas de mantenimiento proactivo y solucionar causas raíz de eventos repetitivos como desbalanceo y desalineación.",
+                "normativa_referencia": null,
+                "objetivo_general": "Investigar si existe desbalanceo/desalineación y aplicar soluciones prácticas.",
+                "objetivos_especificos": [
+                    "Exponer la importancia del mantenimiento proactivo.",
+                    "Compartir causas que impiden la confiabilidad operativa."
+                ],
+                "metodologia": "Totalmente práctico, análisis de casos reales de los participantes.",
+                "temario": [
+                    "Investigación de fallas: desbalanceo y desalineación.",
+                    "Mantenimiento proactivo como confiabilidad temprana.",
+                    "Causas raíz de eventos repetitivos.",
+                    "Solución de fallas de mayor repetitividad."
+                ],
+                "duracion": "32 Horas ",
+                "modalidad": "Presencial / Práctico",
+                "requisitos": [
+                    "Se recomienda tener bases de mantenimiento (no limitativo)."
+                ],
+                "evaluacion": null,
+                "certificacion": "Constancia de participación.",
+                "perfil_egreso": "Capacidad para solucionar fallas de alineación y balanceo de manera práctica."
+            }
+        },
+        {
+            "id": 6,
+            "name": "Cursos de Aprendizaje Práctico (Vibraciones, Ultrasonido, Termografía)",
+            "slug": "cursos-aprendizaje-practico-predictivo",
+            "tipo_curso": "Estrategico",
+            "icono": "monitor",
+            "provider": "DIAPSA",
+            "contenido": {
+                "descripcion_general": "Cursos enfocados en el dominio de la inspección o el análisis (Curso 1 y Curso 2 respectivamente para cada técnica). Se busca la solución de problemas con ejemplos 100% reales.",
+                "normativa_referencia": null,
+                "objetivo_general": "Recordar bases e interiorizar en especialidades de inspección o análisis, interpretando resultados para determinar condiciones normales o anómalas.",
+                "objetivos_especificos": [
+                    "Interpretar resultados de mediciones.",
+                    "Analizar y proponer soluciones a anomalías."
+                ],
+                "metodologia": "Totalmente prácticos, compartiendo experiencia de instructores y trabajando casos reales de los participantes.",
+                "temario": [
+                    "Vibraciones Mecánicas Curso 1: Dominio del monitoreo.",
+                    "Vibraciones Mecánicas Curso 2: Dominio del análisis de Espectros.",
+                    "Ultrasonido Pasivo Curso 1: Dominio de la inspección y análisis de Sonidos.",
+                    "Termografía I Curso 1: Dominio de la Inspección Infrarroja.",
+                    "Termografía I Curso 2: Dominio del análisis de termogramas."
+                ],
+                "duracion": "24 Horas ",
+                "modalidad": "Práctico (Solo cursos privados) ",
+                "requisitos": [
+                    "Se recomienda tener bases de la teoría de las herramientas predictivas (no limitativo)."
+                ],
+                "evaluacion": null,
+                "certificacion": null,
+                "perfil_egreso": null
+            }
+        },
+        {
+            "id": 7,
+            "name": "Talleres de Aprendizaje Práctico (Vibraciones, Ultrasonido, Termografía)",
+            "slug": "talleres-aprendizaje-practico-predictivo",
+            "tipo_curso": "Taller",
+            "icono": "settings",
+            "provider": "DIAPSA",
+            "contenido": {
+                "descripcion_general": "Talleres intensivos para trabajar directamente con las técnicas de vibraciones, ultrasonido y termografía, basados en el conocimiento previo de los participantes.",
+                "normativa_referencia": null,
+                "objetivo_general": "Desarrollar una metodología para presentar los puntos más importantes de monitoreo y análisis de sistemas eléctricos y mecánicos.",
+                "objetivos_especificos": null,
+                "metodologia": "100% prácticos, exponiendo conceptos aprendidos en más de 20 años de experiencia de los instructores.",
+                "temario": [
+                    "Vibraciones Mecánicas: Trabajando las Vibraciones.",
+                    "Ultrasonido Pasivo: Trabajando el Ultrasonido.",
+                    "Termografía I: Trabajando con la inspección Infrarroja."
+                ],
+                "duracion": "16 Horas ",
+                "modalidad": "Práctico (Solo cursos privados) ",
+                "requisitos": [
+                    "Se recomienda tener bases de la teoría de las herramientas predictivas."
+                ],
+                "evaluacion": null,
+                "certificacion": null,
+                "perfil_egreso": null
+            }
+        },
+        {
+            "id": 8,
+            "name": "Curso Técnico Especializado: Termografía",
+            "slug": "curso-tecnico-especializado-termografia",
+            "tipo_curso": "Estrategico",
+            "icono": "thermometer",
+            "provider": "DIAPSA",
+            "contenido": {
+                "descripcion_general": "Formación integral del especialista con aprendizaje de inspección, análisis, y uso de equipos, practicando primero en pantalla y luego en sistemas instalados.",
+                "normativa_referencia": "ISO 18436-7",
+                "objetivo_general": "Que el participante aprenda de termografía, uso del equipo y administración de imágenes para certificarse como Categoría I.",
+                "objetivos_especificos": null,
+                "metodologia": "Híbrida/Práctica. Trabajo directo en instalaciones del cliente para aclarar dudas en el momento.",
+                "temario": [
+                    "Inspección y análisis termográfic.",
+                    "Uso del equipo y administración de imágene.",
+                    "Práctica con imágenes en pantall.",
+                    "Práctica en sistemas instalados (campo."
+                ],
+                "duracion": "48 Horas",
+                "modalidad": "Híbrido (Solo cursos privados)",
+                "requisitos": [],
+                "evaluacion": "Asistencia, examen teórico y trabajo práctico.",
+                "certificacion": "Cumple información necesaria para certificarse Categoría I.",
+                "perfil_egreso": "Especialista técnico integral en termografía."
+            }
+        },
+        {
+            "id": 9,
+            "name": "Curso Técnico Especializado: Vibraciones Mecánicas",
+            "slug": "curso-tecnico-especializado-vibraciones-mecanicas",
+            "tipo_curso": "Estrategico",
+            "icono": "vibration",
+            "provider": "DIAPSA",
+            "contenido": {
+                "descripcion_general": "Formación integral con aprendizaje de monitoreo, análisis y alcance de equipos, practicando primero en pantalla y luego en sistemas instalados.",
+                "normativa_referencia": "ISO 18436-2 ",
+                "objetivo_general": "Que el participante aprenda de vibraciones, uso del equipo y administración y análisis de espectros para certificarse como Categoría I.",
+                "objetivos_especificos": null,
+                "metodologia": "Híbrida/Práctica. Trabajo directo en instalaciones del cliente.",
+                "temario": [
+                    "Monitoreo y análisis de vibraciones.",
+                    "Uso del equipo y administración de espectros.",
+                    "Práctica con equipos y espectros en pantalla.",
+                    "Práctica en sistemas instalados (campo)."
+                ],
+                "duracion": "48 Horas ",
+                "modalidad": "Híbrido (Solo cursos privados)",
+                "requisitos": [],
+                "evaluacion": "Asistencia, examen teórico y trabajo práctico.",
+                "certificacion": "Cumple información necesaria para certificarse Categoría I.",
+                "perfil_egreso": "Especialista técnico integral en vibraciones."
+            }
+        },
+        {
+            "id": 10,
+            "name": "Curso Técnico Especializado: Ultrasonido Pasivo",
+            "slug": "curso-tecnico-especializado-ultrasonido-pasivo",
+            "tipo_curso": "Estrategico",
+            "icono": "sound",
+            "provider": "DIAPSA",
+            "contenido": {
+                "descripcion_general": "Formación integral con aprendizaje de monitoreo, análisis y alcance de equipos de ultrasonido, con práctica en sistemas instalados.",
+                "normativa_referencia": "ISO 18436-8",
+                "objetivo_general": "Que el participante aprenda de Ultrasonido, uso del equipo y administración/análisis de espectros para certificarse como Categoría I.",
+                "objetivos_especificos": null,
+                "metodologia": "Híbrida/Práctica. Trabajo directo en instalaciones del cliente.",
+                "temario": [
+                    "Monitoreo y análisis de ultrasonido.",
+                    "Uso del equipo y administración de espectros.",
+                    "Práctica con equipos y espectros en pantalla.",
+                    "Práctica en sistemas instalados (campo)."
+                ],
+                "duracion": "48 Horas ",
+                "modalidad": "Híbrido (Solo cursos privados)",
+                "requisitos": [],
+                "evaluacion": "Asistencia, examen teórico y trabajo práctico.",
+                "certificacion": "Cumple información necesaria para certificarse Categoría I.",
+                "perfil_egreso": "Especialista técnico integral en ultrasonido."
+            }
+        },
+        {
+            "id": 11,
+            "name": "Curso de Mantenimiento para no Mantenedores",
+            "slug": "curso-mantenimiento-para-no-mantenedores",
+            "tipo_curso": "Estrategico",
+            "icono": "security",
+            "provider": "DIAPSA",
+            "contenido": {
+                "descripcion_general": "Curso ejecutivo diseñado para incrementar la cultura del monitoreo de condición desde el enfoque administrativo.",
+                "normativa_referencia": null,
+                "objetivo_general": "Establecer una cultura general de la institución para formar grupos y comités tomadores de decisiones.",
+                "objetivos_especificos": [
+                    "Verificar alcances y beneficios técnicos y financieros del Monitoreo de Condición (MC).",
+                    "Impulsar capacitaciones, adquisición de equipos y paros programados desde el apoyo administrativo."
+                ],
+                "metodologia": "Principalmente teórico con ejemplos prácticos de beneficios y logros.",
+                "temario": [
+                    "Alcances y beneficios financieros del Monitoreo de Condición.",
+                    "Importancia del apoyo administrativo (gerencial/directivo).",
+                    "Adquisición de equipos y paros programados."
+                ],
+                "duracion": "16 Horas ",
+                "modalidad": "Ejecutivo ",
+                "requisitos": [],
+                "evaluacion": null,
+                "certificacion": null,
+                "perfil_egreso": null,
+                "publico_objetivo": "Personal administrativo, gerencial y directivo (No mantenedores)."
+            }
+        },
+        {
+            "id": 12,
+            "name": "Curso de Inspección Termográfica en Plantas Fotovoltaicas",
+            "slug": "curso-inspeccion-termografica-plantas-fotovoltaicas",
+            "tipo_curso": "Estrategico",
+            "icono": "energy",
+            "provider": "DIAPSA / BAC Engineering Consultancy Group",
+            "contenido": {
+                "descripcion_general": "Curso sobre el proceso de inspección en plantas fotovoltaicas según IEC TS 62446-3, incluyendo inspecciones manuales y con dron.",
+                "normativa_referencia": "IEC TS 62446-3",
+                "objetivo_general": "Conocer el proceso de inspección, tipos de inspecciones, equipos necesarios, defectos y normativa aplicable.",
+                "objetivos_especificos": null,
+                "metodologia": "Online en directo, mostrando ejemplos de inspecciones reales (2008-actualidad). Incluye software propio personalizado para cálculos termográficos.",
+                "temario": [
+                    "Proceso de inspección (dron o manual, ventajas).",
+                    "Equipos (conocimiento, necesidades mínimas, calibración).",
+                    "Defectos o anomalías (patrones térmicos, cálculo de temperatura extrapolada).",
+                    "Contenido del informe según IEC TS 62446-3.",
+                    "Uso de software para cálculo de FOV, MFOV, y radiación."
+                ],
+                "duracion": "16 Horas",
+                "modalidad": "Online",
+                "requisitos": [
+                    "Experiencia en inspecciones termográficas en sistemas eléctricos.",
+                    "Recomendable disponer de Nivel I o Categoría I.",
+                    "Disponer de cámara y micrófono."
+                ],
+                "evaluacion": null,
+                "certificacion": "Diploma de aprovechamiento emitido por BAC Engineering Consultancy Group.",
+                "instructor_profile": "Carles Picanyol: Termógrafo certificado Nivel III, Categoría III por ITZAM, con más de 20 años de experiencia."
+            }
+        },
+        {
+            "id": 13,
+            "name": "Redacción de Informes Técnicos",
+            "slug": "redaccion-informes-tecnicos",
+            "tipo_curso": "Estrategico",
+            "icono": "document",
+            "provider": "DIAPSA",
+            "contenido": {
+                "descripcion_general": "Curso estratégico enfocado en la correcta redacción de informes técnicos, diferenciando tipos de informes y desarrollando habilidades para comunicar hallazgos técnicos de manera clara y entendible para los tomadores de decisión.",
+                "normativa_referencia": null,
+                "objetivo_general": "Desarrollar habilidades para redactar informes técnicos claros y efectivos que comuniquen soluciones sin generar confusión, adaptando el contenido técnico a diferentes audiencias.",
+                "objetivos_especificos": [
+                    "Diferenciar los tipos de informes técnicos según el contexto y la audiencia.",
+                    "Expresar tecnicismos de manera entendible para tomadores de decisión.",
+                    "Estructurar informes que comuniquen soluciones de manera efectiva."
+                ],
+                "metodologia": "Totalmente práctico. Se trabaja cada ejemplo de manera práctica para revisar conceptos y maneras de entendimiento, trabajando con casos reales de los participantes.",
+                "temario": [
+                    "Tipos de informes técnicos y su diferenciación.",
+                    "Estructura y contenido de un informe técnico efectivo.",
+                    "Técnicas para comunicar conceptos técnicos de manera clara.",
+                    "Balance entre contenido técnico y comprensión para tomadores de decisión.",
+                    "Análisis de casos reales de los participantes.",
+                    "Ejercicios prácticos de redacción y revisión."
+                ],
+                "duracion": null,
+                "modalidad": "Práctico (Solo cursos privados)",
+                "requisitos": [
+                    "Experiencia realizando actividades de inspección o mantenimiento en instalaciones industriales."
+                ],
+                "evaluacion": null,
+                "certificacion": null,
+                "perfil_egreso": "Capacidad para redactar informes técnicos claros y efectivos que faciliten la toma de decisiones.",
+                "publico_objetivo": "Personal que realiza actividades donde se tiene que indicar alguna situación de las instalaciones industriales."
+            }
+        }
+    ]
+}

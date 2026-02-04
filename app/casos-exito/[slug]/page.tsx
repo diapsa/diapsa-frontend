@@ -86,17 +86,17 @@ export default async function CasoExitoDetailPage({
             <JsonLd data={breadcrumbJsonLd} />
 
             {/* Page Header */}
-            <PageHeader title={caso.title} subtitle={`Cliente: ${caso.client}`} />
+            <PageHeader title={caso.title} />
 
             {/* Hero Info Section */}
             <section className="bg-primary py-12 lg:py-16 px-6 lg:px-32">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="text-center">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* <div className="text-center">
                         <p className="text-secondary text-sm font-semibold uppercase tracking-wide mb-2">
                             Cliente
                         </p>
                         <p className="text-white text-xl font-bold">{caso.client}</p>
-                    </div>
+                    </div> */}
                     <div className="text-center">
                         <p className="text-secondary text-sm font-semibold uppercase tracking-wide mb-2">
                             Industria

@@ -41,16 +41,6 @@
       "link": "#"
     },
     {
-      "id": "eficiencia-energetica",
-      "nombre": "Eficiencia Energética",
-      "descripcion": "Optimización del consumo de energía y reducción de costos operativos.",
-      "imagen": "/images/cursos/placeholder.png",
-      "modalidad": "Presencial/Webinar",
-      "categoria": "tecnico",
-      "icono": "energy",
-      "link": "#"
-    },
-    {
       "id": "monitoreo-condicion",
       "nombre": "Incremento de la Confiabilidad a través del Monitoreo de Condición",
       "descripcion": "Optimiza la operación de tus equipos mediante el monitoreo de condiciones.",
