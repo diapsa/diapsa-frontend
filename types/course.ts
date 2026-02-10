@@ -14,6 +14,7 @@ export interface Course {
 export interface CourseType {
     id: string;
     name: string;
+    slug: string;
 }
 
 export interface CoursesFilters {
