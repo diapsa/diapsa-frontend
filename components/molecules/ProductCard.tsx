@@ -6,6 +6,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Product } from '@/types/product';
+import { getStorageUrl } from '@/lib/api/config';
 
 interface ProductCardProps {
   // Acepta datos del CMS API
@@ -27,31 +28,45 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, custom, className = '' }: ProductCardProps) {
+  // Helper para validar URLs
+  const isValidImageUrl = (url: string | null | undefined): boolean => {
+    if (!url || typeof url !== 'string' || url.trim() === '') return false;
+    try {
+      // Verificar si es una URL absoluta válida
+      new URL(url);
+      return true;
+    } catch {
+      // Si no es una URL absoluta, verificar si es una ruta relativa válida
+      return url.startsWith('/') && url.length > 1;
+    }
+  };
+
   // Normalizar datos
   const data = product
     ? {
-        id: product.id.toString(),
-        slug: product.slug,
-        name: product.name,
-        model: product.model,
-        image: product.main_image,
-        description: product.short_description,
-        badge: product.is_new ? 'Nuevo' : product.featured ? 'Destacado' : undefined,
-        badgeColor: product.is_new ? ('success' as const) : ('secondary' as const),
-        specs: product.featured_specs.map((spec) => ({
-          label: spec.label,
-          value: `${spec.value} ${spec.unit}`,
-        })),
-        href: `/productos/${product.slug}`,
-        availability: product.availability_status,
-        brand: product.brand.name,
-      }
+      id: product.id.toString(),
+      slug: product.slug,
+      name: product.name,
+      model: product.model,
+      image: getStorageUrl(product.main_image),
+      description: product.short_description,
+      badge: product.is_new ? 'Nuevo' : product.featured ? 'Destacado' : undefined,
+      badgeColor: product.is_new ? ('success' as const) : ('secondary' as const),
+      specs: product.featured_specs.map((spec) => ({
+        label: spec.label,
+        value: `${spec.value} ${spec.unit}`,
+      })),
+      href: `/productos/${product.slug}`,
+      availability: product.availability_status,
+      brand: product.brand.name,
+    }
     : custom
-    ? {
+      ? {
         ...custom,
+        image: isValidImageUrl(custom.image) ? custom.image : null,
         href: custom.href || `/productos/${custom.slug}`,
       }
-    : null;
+      : null;
 
   if (!data) return null;
 
@@ -162,10 +177,9 @@ export default function ProductCard({ product, custom, className = '' }: Product
             <span
               className={`
                 inline-block w-2 h-2 rounded-full mr-1.5
-                ${
-                  data.availability.toLowerCase().includes('disponible')
-                    ? 'bg-green-500'
-                    : 'bg-yellow-500'
+                ${data.availability.toLowerCase().includes('disponible')
+                  ? 'bg-green-500'
+                  : 'bg-yellow-500'
                 }
               `}
             />
