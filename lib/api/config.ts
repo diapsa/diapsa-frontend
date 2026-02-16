@@ -12,6 +12,29 @@ export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 export const API_TIMEOUT = parseInt(process.env.NEXT_PUBLIC_API_TIMEOUT || '10000', 10);
 
 /**
+ * Construye la URL completa para archivos del storage
+ * @param relativePath - Ruta relativa desde el storage (ej: "products/abc/image.jpg")
+ * @returns URL completa del archivo o null si la ruta es inválida
+ */
+export function getStorageUrl(relativePath: string | null | undefined): string | null {
+  if (!relativePath || typeof relativePath !== 'string' || relativePath.trim() === '') {
+    return null;
+  }
+
+  // Si ya es una URL completa, devolverla tal cual
+  if (relativePath.startsWith('http://') || relativePath.startsWith('https://')) {
+    return relativePath;
+  }
+
+  // Construir URL del storage a partir de la API base URL
+  // Ejemplo: http://diapsa-cms.test/api/v1 -> http://diapsa-cms.test/storage/
+  const baseUrl = API_BASE_URL.replace('/api/v1', '');
+  const cleanPath = relativePath.startsWith('/') ? relativePath.slice(1) : relativePath;
+
+  return `${baseUrl}/storage/${cleanPath}`;
+}
+
+/**
  * Custom error class for API errors
  */
 export class ApiError extends Error {
