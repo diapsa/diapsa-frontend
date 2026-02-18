@@ -8,126 +8,72 @@ import JsonLd, {
     createServiceSchema,
     createBreadcrumbSchema,
 } from "@/components/atoms/JsonLd";
+import { getCourseBySlug } from "@/lib/api/courses";
 
-// Interfaz para el curso
-interface Course {
-    id: number;
-    name: string;
-    slug: string;
-    tipo_curso: string;
-    icono: string;
-    provider: string;
-    contenido: {
-        descripcion_general: string;
-        normativa_referencia: string | null;
-        objetivo_general: string;
-        objetivos_especificos: string[] | null;
-        metodologia: string;
-        temario: string[];
-        duracion: string | null;
-        modalidad: string;
-        requisitos: string[];
-        evaluacion: string | null;
-        certificacion: string | null;
-        perfil_egreso: string | null;
-        publico_objetivo?: string | null;
-        instructor_profile?: string | null;
-    };
-}
 
-// Cargar datos del curso
-async function getCourseData(slug: string): Promise<Course | null> {
-    try {
-        const data = await import("@/data/cursos/new.json");
-        const courses = data.courses as Course[];
-        const course = courses.find((c) => c.slug === slug);
-        return course || null;
-    } catch (error) {
-        return null;
-    }
-}
-
-// Generar parámetros estáticos para pre-renderizado
-export async function generateStaticParams() {
-    try {
-        const data = await import("@/data/cursos/new.json");
-        const courses = data.courses as Course[];
-        return courses.map((course) => ({
-            slug: course.slug,
-        }));
-    } catch (error) {
-        return [];
-    }
+interface CoursePageProps {
+    params: Promise<{ slug: string }>
 }
 
 // Generar metadata para SEO
 export async function generateMetadata({
     params,
-}: {
-    params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}: CoursePageProps): Promise<Metadata> {
     const { slug } = await params;
-    const course = await getCourseData(slug);
 
-    if (!course) {
+    try {
+        const course = await getCourseBySlug(slug);
+
         return {
-            title: "Curso no encontrado",
+            title: `${course.name} | Cursos DIAPSA`,
+            description: course.description,
+            keywords: [
+                course.name,
+                course.provider
+            ],
+            alternates: {
+                canonical: `/cursos/${slug}`,
+            },
+            openGraph: {
+                title: `${course.name} | Grupo DIAPSA`,
+                description: course.description,
+                url: `/cursos/${slug}`,
+                type: "website",
+            },
+        };
+    } catch (error) {
+        return {
+            title: 'Curso no encontrado'
         };
     }
-
-    const keywords = [
-        course.name.toLowerCase(),
-        "curso",
-        course.tipo_curso.toLowerCase(),
-        "mantenimiento predictivo",
-        "capacitación",
-        "certificación",
-        "México",
-        "DIAPSA",
-    ];
-
-    return {
-        title: `${course.name} | Cursos DIAPSA`,
-        description: course.contenido.descripcion_general,
-        keywords,
-        alternates: {
-            canonical: `/cursos/${slug}`,
-        },
-        openGraph: {
-            title: `${course.name} | Grupo DIAPSA`,
-            description: course.contenido.descripcion_general,
-            url: `/cursos/${slug}`,
-            type: "website",
-        },
-    };
 }
 
 // Componente principal
 export default async function CoursePage({
     params,
-}: {
-    params: Promise<{ slug: string }>;
-}) {
+}: CoursePageProps) {
     const { slug } = await params;
-    const course = await getCourseData(slug);
 
-    if (!course) {
+    let course;
+    try {
+        course = await getCourseBySlug(slug)
+    } catch (error) {
         notFound();
     }
 
-    // Datos estructurados para el curso
-    const courseJsonLd = createServiceSchema({
-        name: course.name,
-        description: course.contenido.descripcion_general,
-        serviceType: `Curso de ${course.tipo_curso}`,
-    });
-
-    // Breadcrumbs para datos estructurados
     const breadcrumbItems = [
         { name: "Inicio", url: "/" },
         { name: "Cursos", url: "/cursos" },
-        { name: course.name, url: `/cursos/${slug}` },
+        { name: course.name, url: `/cursos/${course.slug}` },
     ];
+    // Datos estructurados para el curso
+    const courseJsonLd = createServiceSchema({
+        name: course.name,
+        description: course.description,
+        serviceType: `Curso de ${course.course_type}`,
+    });
+
+    // Breadcrumbs para datos estructurados
     const breadcrumbJsonLd = createBreadcrumbSchema(breadcrumbItems);
 
     return (
@@ -137,7 +83,7 @@ export default async function CoursePage({
 
             <PageHeader
                 title={course.name}
-                subtitle={`${course.tipo_curso} • ${course.provider}`}
+                subtitle={`${course.course_type.name} • ${course.provider}`}
                 breadcrumbs={breadcrumbItems.map((item) => ({
                     label: item.name,
                     link: item.url,
@@ -158,8 +104,6 @@ export default async function CoursePage({
                             contacto contigo.
                         </p>
                     </div>
-
-
                 </div>
             </section>
             <ContactForm />

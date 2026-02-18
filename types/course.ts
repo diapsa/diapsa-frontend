@@ -33,7 +33,7 @@ export interface CourseDetail {
     next_date: string | Date;
     icon: string;
     referecne_norm: string;
-    specification_objectives: string[];
+    specific_objectives: string[];
     methodology: string;
     syllabus: string;
     duration: number;
@@ -42,5 +42,6 @@ export interface CourseDetail {
     certification: string;
     graduate_profile: string;
     technical_specification: string | File;
+    provider: string;
 
 }
