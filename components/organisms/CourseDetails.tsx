@@ -74,6 +74,9 @@ const normalizeTextList = (
 };
 
 export default function CourseDetails({ course }: CourseDetailsProps) {
+
+    console.log('Curso', course)
+    console.log('Requisitos', course.requirements)
     const [activeTab, setActiveTab] = useState<
         | "descripcion"
         | "objetivos"
@@ -86,7 +89,7 @@ export default function CourseDetails({ course }: CourseDetailsProps) {
 
     const Icon = iconMap[course.icon] || MonitorIcon;
     const courseTypeName = course.course_type?.name ?? "";
-    const requirements = normalizeTextList(course.requiresment);
+    const requirements = normalizeTextList(course.requirements);
     const specificObjectives = normalizeTextList(course.specific_objectives);
     const syllabusItems = normalizeTextList(course.syllabus, /\r?\n/);
 
@@ -94,6 +97,7 @@ export default function CourseDetails({ course }: CourseDetailsProps) {
     const scrollToContact = () => {
         const contactSection = document.getElementById("contacto");
         contactSection?.scrollIntoView({ behavior: "smooth" });
+
     };
 
     return (

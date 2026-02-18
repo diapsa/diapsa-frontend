@@ -38,7 +38,7 @@ export interface CourseDetail {
     syllabus: string;
     duration: number;
     modality: string;
-    requiresment: string[];
+    requirements: string[];
     certification: string;
     graduate_profile: string;
     technical_specification: string | File;
