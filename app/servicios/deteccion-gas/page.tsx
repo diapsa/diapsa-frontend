@@ -1,7 +1,11 @@
 import Button from "@/components/atoms/Button";
 import PageHeader from "@/components/organisms/PageHeader";
-import { VibrationIcon, VisibilityIcon, SecurityIcon, EcoIcon, PrecisionManufacturingIcon } from "@/components/atoms/icons";
+import LdarServiceCards from "@/components/organisms/LdarServiceCards";
+import { DoubleCircleIcon, ChartIcon2, HistoryIcon, WarningIcon } from "@/components/atoms/icons";
 import { Metadata } from "next";
+import type { ComponentType, SVGProps } from "react";
+import Image from "next/image";
+import WhatAksPPCIEM from "@/components/organisms/WhatAskPPCIEM";
 
 export const metadata: Metadata = {
     title: "Detección de Gas y Fugas Industriales | Grupo DIAPSA",
@@ -33,137 +37,206 @@ export const metadata: Metadata = {
     },
 };
 
-const tecnologyCards = [
-    {
-        title: "Detección Acústica",
-        description: "Visualización ultrasónica que permite identificar fugas mediante patrones de sonido inaudibles para el oído humano. Ideal para inspecciones a distancia en sistemas de alta presión.",
-        little: "Precisión Sónica",
-        icon: <VibrationIcon className="w-10 h-10" />
-    },
-    {
-        title: "Detección Óptica (OGI)",
-        description: "Tecnología infrarroja de última generación (Optical Gas Imaging) para visualizar nubes de gas invisibles en tiempo real, permitiendo una respuesta inmediata sin contacto.",
-        little: "Visión Infrarroja",
-        icon: <VisibilityIcon className="w-10 h-10" />
-    }
-];
 
-const indicadores = [
+const challenges: { icon: ComponentType<SVGProps<SVGSVGElement>>; iconBg: string; iconColor: string; title: string; description: string }[] = [
     {
-        name: "Seguridad",
-        value: "100%",
-        label: "Prioridad absoluta en entornos de alto riesgo.",
-        icon: <SecurityIcon className="w-16 h-16" />
+        icon: DoubleCircleIcon,
+        iconBg: "bg-red-100",
+        iconColor: "text-red-500",
+        title: "Detección y Precisión",
+        description: "Fallas en la localización exacta de fugas imperceptibles que comprometen la seguridad operativa.",
     },
     {
-        name: "Sustentabilidad",
-        value: <>CO<sub>2</sub></>,
-        label: "Reducción drástica de huella de carbono.",
-        icon: <EcoIcon className="w-16 h-16" />
+        icon: ChartIcon2,
+        iconBg: "bg-amber-100",
+        iconColor: "text-amber-500",
+        title: "Cuantificación de Impacto",
+        description: "Dificultad técnica para medir el volumen real de emisiones perdidas y su costo económico.",
     },
     {
-        name: "Continuidad",
-        value: "24/7",
-        label: "Eliminación de tiempos muertos operativos.",
-        icon: <PrecisionManufacturingIcon className="w-16 h-16" />
-    }
-]
+        icon: HistoryIcon,
+        iconBg: "bg-indigo-100",
+        iconColor: "text-indigo-500",
+        title: "Trazabilidad Reparación",
+        description: "Falta de seguimiento histórico y re-inspección en el ciclo crítico de mantenimiento de activos.",
+    },
+    {
+        icon: WarningIcon,
+        iconBg: "bg-yellow-100",
+        iconColor: "text-yellow-500",
+        title: "Reportes No Conformantes",
+        description: "Alto riesgo de sanciones por auditorías de ASEA ante informes incompletos o mal documentados.",
+    },
+];
 
 export default function DeteccionGasPage() {
     return (
         <main>
-            <PageHeader title="Deteccion de Gas" subtitle="" />
+            <PageHeader title="Deteccion de Gas" />
 
-            <div className="bg-industrial-dark font-display overflow-x-hidden">
-                {/* <!-- Technology Features Section --> */}
-                <div className="py-24 px-6 max-w-300 mx-auto">
-                    <div className="mb-16 text-center">
-                        <h2 className="text-4xl @[480px]:text-5xl font-extrabold  tracking-tighter mb-4">TECNOLOGÍAS DE VANGUARDIA</h2>
-                        <div className="h-1.5 w-24 bg-accent-orange mx-auto rounded-full"></div>
-                        <p className="dark:text-[#8db9ce] dark:font-normal text-secondary font-bold mt-6 text-lg max-w-175 mx-auto">
-                            Implementamos los métodos más avanzados para la localización precisa de emisiones y fugas en entornos industriales críticos.
+            <div className="bg-white font-display">
+                <section className="min-h-screen flex flex-col lg:flex-row p-10 gap-20">
+                    <div className="space-y-10 text-black text-xl flex flex-col justify-center">
+                        <p className="text-primary/60 font-bold bg-primary/10 rounded px-2">SECTOR HIDROCARBUROS</p>
+                        <h2 className=" text-5xl lg:text-7xl font-bold text-black text-center lg:text-start">
+                            Detección de <span className="text-secondary lg:block">Gases</span>
+                        </h2>
+
+                        <p className="lg:w-2/3">
+                            Cumplimiento regulatorio <strong>PPCIEM</strong> y mitigación de riesgos
+                            poer emisiones de metano en el sector hidrocarburos. <br />
+                            Protegemos su operación y el medio ambiente.
                         </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {tecnologyCards.map((t) => (
-                            <div key={t.title} className="flex flex-col gap-6 rounded-xl border dark:border-secondary/50 dark:bg-primary/10 bg-secondary/10 border-secondary p-8 hover:border-accent-orange/50 transition-colors group">
-                                <div className="w-16 h-16 rounded-lg dark:bg-primary bg-secondary flex items-center justify-center text-accent-orange group-hover:scale-110 transition-transform">
-                                    {t.icon}
-                                </div>
-                                <div className="flex flex-col gap-3">
-                                    <h3 className="text-3xl font-black leading-tight">{t.title}</h3>
-                                    <p className="dark:text-[#8db9ce] text-base leading-relaxed">
-                                        {t.description}
-                                    </p>
-                                    <div className="flex items-center gap-2 text-accent-orange font-bold text-sm uppercase mt-2">
-                                        <span>{t.little}</span>
-                                        <div className="h-px flex-1 bg-accent-orange/30"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                {/* <!-- DIAPSA Strategy Section --> */}
-                <div className="dark:bg-primary/20 py-16 border-y dark:border-primary/50 bg-secondary/10 border-secondary/50">
-                    <div className="max-w-3000 px-6 mx-auto">
-                        <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
-                            <div className="max-w-150">
-                                <h2 className="text-4xl font-black leading-tight tracking-tight uppercase">Estrategia DIAPSA</h2>
-                                <p className="dark:text-[#8db9ce] mt-4 text-lg">Metodologías integrales diseñadas para la optimización de activos y mitigación de riesgos operativos.</p>
-                            </div>
-                            <div className="hidden md:block h-px flex-1 bg-secondary mx-8 mb-4"></div>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {/* <!-- Asset Management Card --> */}
-                            <div className="bg-industrial-dark border-l-4 dark:border-l-secondary border border-secondary/50 rounded-lg p-8 flex gap-6 items-start">
-                                <div className="hidden sm:block w-32 h-32 shrink-0 bg-cover bg-center rounded-lg" data-alt="Icono de gestión de activos industriales" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuASzoPFm_d8UPTzczW9azlI5JrU_trzLzkYZrTgjO3aVXXeXn2KnJb5ewl6VI5mbglDkpDKnxwWPMIAJ8BdLYfD8LReQTK1omTh6yk08PXiotSNfpIg4GppnVDmKWSz2q72RzmGWHmccW7sicclJnVqtVrY9APCclynVqEFyg_0NMpqZP8fWqE0hgoInIA0BOH8akcwbNWeNokScmcWf6yoz0CRZpyWX3-PTHtSJDotsh2hyICSC8p-dFnijCiVsqMvndWF1goJL1o")' }}></div>
-                                <div>
-                                    <span className="text-accent-orange text-xs font-bold tracking-widest uppercase mb-2 block">Lifecycle Focus</span>
-                                    <h4 className="text-xl font-bold mb-3">Gestión de Activos</h4>
-                                    <p className="dark:text-[#8db9ce] text-sm leading-relaxed mb-4">Optimización del ciclo de vida de su infraestructura para maximizar la rentabilidad y reducir riesgos operativos críticos.</p>
-                                    <p className="text-primary font-mono text-xs font-bold">ASSET_MANAGEMENT_ST_01</p>
-                                </div>
-                            </div>
-                            {/* <!-- Condition Monitoring Card --> */}
-                            <div className="bg-industrial-dark border-l-4 border-l-secondary border border-secondary/50 rounded-lg p-8 flex gap-6 items-start">
-                                <div className="hidden sm:block w-32 h-32 shrink-0 bg-cover bg-center rounded-lg" data-alt="Monitoreo de equipos industriales en tiempo real" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMNALM8OuH1vy2TBGWz5SJqAIocoYWbbwXEppBQMjB-FyvyfBLumbtKjJmfnXNQVq3p_cqGWxsN_X9TNNFKVXq2qrcbrgGEa4vbbDpEOLna8tDjFpfouzje488V8r3MHd2sEfiNyyynyVoH_bk3tfJiG7_jmwVADRIOhDI6ZwPx32B9m590uAPwd6DVivt_s6YNPkTxduSGYSl0MZHeleeOhlfM3pOQa8iGIZscjc24UwZfy1E4yVMkxaSjHzZmbfDJMaXUtKIdFw")' }}></div>
-                                <div>
-                                    <span className="text-accent-orange text-xs font-bold tracking-widest uppercase mb-2 block">Real-time Data</span>
-                                    <h4 className="text-xl font-bold mb-3">Monitoreo de Condición</h4>
-                                    <p className="dark:text-[#8db9ce] text-sm leading-relaxed mb-4">Seguimiento constante de la salud de sus equipos para prevenir fallas catastróficas y paros no programados.</p>
-                                    <p className="text-primary font-mono text-xs font-bold">CONDITION_MONITORING_RT_24/7</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {/* <!-- Impact Pillars Section --> */}
-                <div className="py-16 px-6 max-w-300 mx-auto text-center">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {indicadores.map((i) => (
-                            <div key={i.name} className="flex flex-col items-center gap-4 p-8 rounded-2xl border dark:border-primary/50 dark:bg-primary/20 border-secondary/50 bg-secondary/10">
-                                <div className="text-accent-orange mb-2">
-                                    {i.icon}
-                                </div>
-                                <h3 className="text-4xl font-black leading-tight">{i.value}</h3>
-                                <p className="text-lg font-bold  uppercase tracking-wider">{i.name}</p>
-                                <p className="dark:text-[#8db9ce] text-sm italic">{i.label}</p>
-                            </div>
-                        ))}
-                    </div>
-                    {/* <div className="mt-20">
-                        <div className="bg-primary p-12 rounded-xl border border-accent-orange/30 relative overflow-hidden">
-                            <!-- Abstract Accent -->
-                            <div className="absolute right-0 top-0 w-64 h-64 bg-accent-orange/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
-                            <h3 className="text-3xl font-black mb-6 relative z-10">¿Listo para asegurar su planta industrial?</h3>
-                            <p className="text-[#8db9ce] max-w-150 mx-auto mb-10 relative z-10">Agende hoy mismo una demostración de nuestras tecnologías de detección acústica y óptica.</p>
-                            <Button variant="secondary" className="bg-accent-orange hover:text-primary transition-all duration-300 px-12 py-5 rounded-lg font-black text-xl uppercase tracking-widest relative z-10">
-                                Contáctenos Ahora
+                        <p className="text-gray-500 text-base lg:w-2/3 leading-relaxed">
+                            Evite multas ASEA y reduzca emisiones de metano antes de la próxima auditoría.
+                            Nuestro equipo especializado detecta lo que el ojo no puede ver.
+                        </p>
+                        {/* <div className="flex flex-col sm:flex-row gap-4">
+                            <Button variant="primary" href="/contacto">
+                                Solicitar diagnóstico gratuito
                             </Button>
+                            <Button variant="secondary" ghost href="#solucion">
+                                Ver cómo funciona
+                            </Button>
+                        </div> */}
+                    </div>
+                    <div className="relative h-52 w-full [clip-path:polygon(15%_0%,100%_0%,85%_100%,0%_100%)] lg:[clip-path:none] lg:h-auto lg:w-1/2">
+                        <Image
+                            src="/images/deteccion-gas/deteccion-gas-ppciem.jpg"
+                            alt="Detector de Gas " fill className="object-cover rounded-2xl" />
+                    </div>
+                </section>
+                <section className="bg-gray-100 text-black py-16 px-10 min-h-screen flex flex-col justify-center">
+                    <p className="text-center font-bold text-primary/70 tracking-widest text-sm mb-4">
+                        DESAFÍOS CRÍTICOS
+                    </p>
+                    <h2 className="font-bold text-center text-2xl lg:text-4xl text-black mb-12 max-w-xl mx-auto leading-tight">
+                        Identificamos los riesgos que amenazan su cumplimiento
+                    </h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                        {challenges.map(({ icon: Icon, iconBg, iconColor, title, description }) => (
+                            <div key={title} className="bg-white rounded-2xl p-6 shadow-sm flex flex-col gap-4">
+                                <div className={`w-12 h-12 rounded-xl ${iconBg} flex items-center justify-center`}>
+                                    <Icon className={`w-6 h-6 ${iconColor}`} />
+                                </div>
+                                <h3 className="font-bold text-black text-lg">{title}</h3>
+                                <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+                <WhatAksPPCIEM />
+                <LdarServiceCards />
+
+                <section className="bg-gray-100 py-20 px-10">
+                    <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+                        {/* Image */}
+                        <div className="relative w-full lg:w-1/2 h-80 lg:h-125 shrink-0">
+                            <Image
+                                src="/images/deteccion-gas/observe-invisible.png"
+                                alt="Solución DIAPSA - Detección de Fugas"
+                                fill
+                                className="object-cover rounded-3xl"
+                            />
                         </div>
-                    </div> */}
-                </div>
+
+                        {/* Content */}
+                        <div className="flex flex-col gap-6 text-black">
+                            <p className="text-primary font-bold tracking-widest text-sm uppercase">
+                                La Solución DIAPSA
+                            </p>
+                            <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+                                Transformamos la detección en cumplimiento integral
+                            </h2>
+                            <p className="text-gray-500 text-base leading-relaxed max-w-lg">
+                                Implementamos un programa de Detección y Reparación de Fugas (LDAR) diseñado
+                                específicamente para garantizar la continuidad operativa y seguridad normativa.
+                            </p>
+
+                            <ul className="flex flex-col gap-6 mt-2">
+                                {[
+                                    {
+                                        title: "Inspección Trimestral",
+                                        description:
+                                            "Monitoreo periódico con tecnología de punta para asegurar la integridad total de sus activos.",
+                                    },
+                                    {
+                                        title: "Confirmación de Metano",
+                                        description:
+                                            "Validación técnica de concentraciones mediante sensores especializados y calibrados.",
+                                    },
+                                    {
+                                        title: "Priorización de Riesgos",
+                                        description:
+                                            "Clasificación inteligente de hallazgos para optimizar sus recursos y tiempos de reparación.",
+                                    },
+                                ].map(({ title, description }) => (
+                                    <li key={title} className="flex items-start gap-4">
+                                        <span className="shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center mt-0.5">
+                                            <svg className="w-4 h-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                                <path
+                                                    fillRule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clipRule="evenodd"
+                                                />
+                                            </svg>
+                                        </span>
+                                        <div>
+                                            <h3 className="font-bold text-black text-base">{title}</h3>
+                                            <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section className="bg-white text-black py-20 px-10">
+                    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {[
+                            {
+                                image: "/images/deteccion-gas/camaras-acusticas-deteccion-gas.png",
+                                alt: "Tecnología OGI - Cámaras térmicas y detectores láser",
+                                title: "Tecnología",
+                                description:
+                                    "Sistemas avanzados de Detection + Quantification. Utilizamos cámaras térmicas OGI y detectores láser de última generación para una precisión absoluta.",
+                                tag: "EQUIPAMIENTO PREMIUM",
+                            },
+                            {
+                                image: "/images/deteccion-gas/servicio-ldar.jpg",
+                                alt: "Servicio LDAR - Ingenieros certificados en planta",
+                                title: "Servicio",
+                                description:
+                                    "Inspections + Repairs + Follow-up. Un equipo de ingenieros certificados gestiona todo el ciclo de vida de la detección hasta la reparación final.",
+                                tag: "GESTIÓN OPERATIVA",
+                            },
+                            // {
+                            //     image: "/images/deteccion-gas/plataforma-digital.jpg",
+                            //     alt: "Plataforma Digital - Dashboard ASEA reports",
+                            //     title: "Plataforma Digital",
+                            //     description:
+                            //         "Data management + ASEA reports. Centralización de hallazgos en la nube para generación automática de reportes de cumplimiento normativo.",
+                            //     tag: "CUMPLIMIENTO ASEA",
+                            // },
+                        ].map(({ image, alt, title, description, tag }) => (
+                            <div key={title} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+                                <div className="relative h-60 w-full">
+                                    <Image src={image} alt={alt} fill className="object-cover" />
+                                </div>
+                                <div className="p-6 flex flex-col gap-3 flex-1">
+                                    <h3 className="font-bold text-black text-2xl">{title}</h3>
+                                    <p className="text-gray-500 text-sm leading-relaxed flex-1">{description}</p>
+                                    <span className="text-primary font-bold text-xs tracking-widest uppercase mt-2">
+                                        {tag}
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+
 
             </div>
         </main>

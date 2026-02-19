@@ -14,4 +14,6 @@ export { SoundIcon } from "./SoundIcon";
 export { SettingsIcon } from "./SettingsIcon";
 export { MonitorIcon } from "./MonitorIcon";
 export { EnergyIcon } from "./EnergyIcon";
+export { HistoryIcon } from "./HistoryIcon";
+export { WarningIcon } from "./WarningIcon";
 
