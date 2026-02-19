@@ -74,9 +74,6 @@ const normalizeTextList = (
 };
 
 export default function CourseDetails({ course }: CourseDetailsProps) {
-
-    console.log('Curso', course)
-    console.log('Requisitos', course.requirements)
     const [activeTab, setActiveTab] = useState<
         | "descripcion"
         | "objetivos"

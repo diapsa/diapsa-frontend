@@ -63,3 +63,8 @@ export async function getCourseTypeBySlug(slug: string): Promise<CourseType> {
     const response = await apiFetch<ApiResponse<CourseType>>(`/course-types/${slug}`);
     return response.data;
 }
+
+export async function getNextCourse() {
+    const response = await apiFetch<ApiResponse<CourseDetail>>('/courses/next');
+    return response.data;
+}

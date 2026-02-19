@@ -36,17 +36,17 @@ export default function CourseCard({ course }: CourseCardProps) {
                 {/* Contenido */}
                 <div className="flex-1 min-w-0">
                     {/* Nombre del curso */}
-                    <h3 className="font-bold text-gray-900 text-sm mb-1 line-clamp-2">
+                    <h3 className="font-bold text-gray-900  mb-1 line-clamp-2">
                         {course.name}
                     </h3>
 
                     {/* Proveedor */}
-                    <p className="text-xs text-gray-600 mb-2">
+                    <p className="text-sm text-gray-600 mb-2">
                         {course.provider}
                     </p>
 
                     {/* Descripción */}
-                    <p className="text-xs text-gray-700 line-clamp-2 mb-2">
+                    <p className="text-gray-700 line-clamp-2 mb-2">
                         {course.description}
                     </p>
 

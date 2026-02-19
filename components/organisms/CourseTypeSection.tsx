@@ -33,7 +33,7 @@ export default function CourseTypeSection({ title, courses, loading = false }: C
     }
 
     return (
-        <div className="bg-white rounded-lg shadow-md p-6 flex flex-col h-full max-h-150">
+        <div className="p-6 flex flex-col h-full max-h-150">
             {/* Título del tipo de curso */}
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                 {title}

@@ -26,7 +26,7 @@ export default function CursosPage() {
           // Loading state - 2 columnas en desktop
           <div className="grid grid-cols-1 gap-6">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className="animate-pulse bg-white rounded-lg shadow-md p-6 h-[600px]">
+              <div key={i} className="animate-pulse bg-white rounded-lg shadow-md p-6 h-150">
                 <div className="h-8 bg-gray-200 rounded w-48 mb-6"></div>
                 <div className="space-y-4">
                   {[...Array(3)].map((_, j) => (
@@ -38,7 +38,7 @@ export default function CursosPage() {
           </div>
         ) : (
           // Grid de 2 columnas para las cards de tipo de curso
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
             {courseTypes.map((courseType) => (
               <CourseTypeSectionWrapper key={courseType.id} courseType={courseType} />
             ))}
