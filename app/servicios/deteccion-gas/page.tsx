@@ -1,41 +1,47 @@
+'use client';
 import Button from "@/components/atoms/Button";
 import PageHeader from "@/components/organisms/PageHeader";
 import LdarServiceCards from "@/components/organisms/LdarServiceCards";
 import { DoubleCircleIcon, ChartIcon2, HistoryIcon, WarningIcon } from "@/components/atoms/icons";
 import { Metadata } from "next";
-import type { ComponentType, SVGProps } from "react";
+import { useState, type ComponentType, type SVGProps } from "react";
 import Image from "next/image";
 import WhatAksPPCIEM from "@/components/organisms/WhatAskPPCIEM";
+import ContactFormGeneral from "@/components/organisms/ContactFormGeneral";
+import ContactFormExpo from "@/components/organisms/ContactFormExpo";
+import ContactFormGasDetection from "@/components/organisms/ContactFormGasDetection";
 
-export const metadata: Metadata = {
-    title: "Detección de Gas y Fugas Industriales | Grupo DIAPSA",
-    description:
-        "Servicios profesionales de detección de gas y fugas con tecnología acústica y óptica (OGI). Localización precisa de emisiones en plantas industriales. Seguridad garantizada 24/7 en México.",
-    keywords: [
-        "detección de gas industrial",
-        "detección de fugas México",
-        "tecnología OGI",
-        "detección acústica de fugas",
-        "termografía infrarroja gas",
-        "seguridad industrial México",
-        "monitoreo emisiones industriales",
-        "detección ultrasónica fugas",
-        "Optical Gas Imaging",
-        "inspección fugas alta presión",
-        "reducción emisiones CO2",
-        "gestión de activos industriales",
-    ],
-    alternates: {
-        canonical: "/servicios/deteccion-gas",
-    },
-    openGraph: {
-        title: "Detección de Gas y Fugas con Tecnología Avanzada | DIAPSA",
-        description:
-            "Detección acústica y óptica (OGI) de última generación para localización precisa de emisiones y fugas. Seguridad industrial 24/7.",
-        url: "/servicios/deteccion-gas",
-        type: "website",
-    },
-};
+// export const metadata: Metadata = {
+//     title: "Detección de Gas y Fugas Industriales | Grupo DIAPSA",
+//     description:
+//         "Servicios profesionales de detección de gas y fugas con tecnología acústica y óptica (OGI). Localización precisa de emisiones en plantas industriales. Seguridad garantizada 24/7 en México.",
+//     keywords: [
+//         "detección de gas industrial",
+//         "detección de fugas México",
+//         "tecnología OGI",
+//         "detección acústica de fugas",
+//         "termografía infrarroja gas",
+//         "seguridad industrial México",
+//         "monitoreo emisiones industriales",
+//         "detección ultrasónica fugas",
+//         "Optical Gas Imaging",
+//         "inspección fugas alta presión",
+//         "reducción emisiones CO2",
+//         "gestión de activos industriales",
+//     ],
+//     alternates: {
+//         canonical: "/servicios/deteccion-gas",
+//     },
+//     openGraph: {
+//         title: "Detección de Gas y Fugas con Tecnología Avanzada | DIAPSA",
+//         description:
+//             "Detección acústica y óptica (OGI) de última generación para localización precisa de emisiones y fugas. Seguridad industrial 24/7.",
+//         url: "/servicios/deteccion-gas",
+//         type: "website",
+//     },
+// };
+
+
 
 
 const challenges: { icon: ComponentType<SVGProps<SVGSVGElement>>; iconBg: string; iconColor: string; title: string; description: string }[] = [
@@ -70,8 +76,11 @@ const challenges: { icon: ComponentType<SVGProps<SVGSVGElement>>; iconBg: string
 ];
 
 export default function DeteccionGasPage() {
+    const [openModal, setOpenModal] = useState(false);
+
     return (
         <main>
+            <ContactFormGasDetection isOpen={openModal} onClose={() => setOpenModal(false)} />
             <PageHeader title="Deteccion de Gas" />
 
             <div className="bg-white font-display">
@@ -91,14 +100,12 @@ export default function DeteccionGasPage() {
                             Evite multas ASEA y reduzca emisiones de metano antes de la próxima auditoría.
                             Nuestro equipo especializado detecta lo que el ojo no puede ver.
                         </p>
-                        {/* <div className="flex flex-col sm:flex-row gap-4">
-                            <Button variant="primary" href="/contacto">
-                                Solicitar diagnóstico gratuito
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <Button variant="primary" className="hover:bg-secondary" onClick={() => setOpenModal(true)}>
+                                Solicitar información
                             </Button>
-                            <Button variant="secondary" ghost href="#solucion">
-                                Ver cómo funciona
-                            </Button>
-                        </div> */}
+
+                        </div>
                     </div>
                     <div className="relative h-52 w-full [clip-path:polygon(15%_0%,100%_0%,85%_100%,0%_100%)] lg:[clip-path:none] lg:h-auto lg:w-1/2">
                         <Image
@@ -235,8 +242,6 @@ export default function DeteccionGasPage() {
                         ))}
                     </div>
                 </section>
-
-
 
             </div>
         </main>
