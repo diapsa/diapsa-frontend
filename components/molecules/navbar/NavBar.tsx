@@ -6,6 +6,7 @@ import Logo from "@/components/atoms/Logo";
 import NavLink from "@/components/atoms/NavLink";
 import Dropdown from "@/components/atoms/Dropdown";
 import Link from "next/link";
+import services from '@/data/servicios.json'
 
 export default function NavBar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -25,24 +26,6 @@ export default function NavBar() {
         {
             label: "Cámaras",
             href: "/camaras",
-        },
-    ];
-    const serviciosItems = [
-        {
-            label: "Monitoreo de condición",
-            href: "/servicios/monitoreo-condicion",
-        },
-        {
-            label: "DIAPSA START",
-            href: "/servicios/diapsa-start",
-        },
-        {
-            label: "Conoce IDAP",
-            href: "/servicios/idap",
-        },
-        {
-            label: "Detecciones de Gas",
-            href: "/servicios/deteccion-gas",
         },
     ];
 
@@ -65,7 +48,7 @@ export default function NavBar() {
                             </NavLink>
                             <Dropdown
                                 trigger="Servicios"
-                                items={serviciosItems}
+                                items={services}
                             />
                             <NavLink href="/productos">
                                 Productos
@@ -193,7 +176,7 @@ export default function NavBar() {
                                 <p className="text-white/60 text-xs uppercase font-semibold px-4 mb-2">
                                     Servicios
                                 </p>
-                                {serviciosItems.map((item, index) => (
+                                {services.map((item, index) => (
                                     <Link
                                         key={index}
                                         href={item.href}
@@ -205,21 +188,16 @@ export default function NavBar() {
                                 ))}
                             </div>
                             {/* Mobile Products Section */}
-                            <div className="py-2">
-                                <p className="text-white/60 text-xs uppercase font-semibold px-4 mb-2">
-                                    Productos
-                                </p>
-                                {prodcutosItem.map((item, index) => (
-                                    <Link
-                                        key={index}
-                                        href={item.href}
-                                        className="text-white hover:text-secondary transition-colors py-2.5 px-6 block rounded-lg hover:bg-white/5"
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                    >
-                                        {item.label}
-                                    </Link>
-                                ))}
-                            </div>
+
+                            <Link
+                                href="/productos"
+                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Productos
+                            </Link>
+
+
 
                             <Link
                                 href="/metodologia"
