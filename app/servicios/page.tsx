@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/organisms/PageHeader";
-import Button from "@/components/atoms/Button";
+
 
 export const metadata: Metadata = {
   title: "Servicios y Productos",
@@ -27,52 +27,52 @@ export const metadata: Metadata = {
 };
 
 export default function ServiciosProductosPage() {
-  const servicios = [
-    {
-      title: "Termografía Infrarroja",
-      description:
-        "Detección temprana de puntos calientes, conexiones flojas, sobrecargas y fallas en equipos eléctricos y mecánicos mediante cámaras termográficas de alta precisión.",
-      features: [
-        "Inspección de tableros eléctricos",
-        "Análisis de motores y equipos rotativos",
-        "Detección de fugas térmicas",
-        "Reportes detallados con imágenes térmicas",
-      ],
-    },
-    {
-      title: "Análisis de Vibraciones",
-      description:
-        "Monitoreo continuo y diagnóstico de fallas en maquinaria rotativa mediante análisis espectral de vibraciones, identificando desbalances, desalineaciones y desgastes.",
-      features: [
-        "Monitoreo de rodamientos",
-        "Detección de desbalances",
-        "Análisis de desalineaciones",
-        "Diagnóstico de holguras mecánicas",
-      ],
-    },
-    {
-      title: "Ultrasonido Pasivo",
-      description:
-        "Detección de fugas de aire comprimido, vapor, gases y fallas en rodamientos mediante equipos de ultrasonido de alta sensibilidad.",
-      features: [
-        "Detección de fugas de aire",
-        "Inspección de válvulas",
-        "Análisis de rodamientos en fase temprana",
-        "Reducción de costos energéticos",
-      ],
-    },
-    {
-      title: "Análisis de Lubricación",
-      description:
-        "Análisis físico-químico de aceites lubricantes para determinar el estado del lubricante y detectar desgaste prematuro en componentes internos de maquinaria.",
-      features: [
-        "Análisis de viscosidad",
-        "Conteo de partículas",
-        "Detección de contaminación",
-        "Recomendaciones de cambio de aceite",
-      ],
-    },
-  ];
+  // const servicios = [
+  //   {
+  //     title: "Termografía Infrarroja",
+  //     description:
+  //       "Detección temprana de puntos calientes, conexiones flojas, sobrecargas y fallas en equipos eléctricos y mecánicos mediante cámaras termográficas de alta precisión.",
+  //     features: [
+  //       "Inspección de tableros eléctricos",
+  //       "Análisis de motores y equipos rotativos",
+  //       "Detección de fugas térmicas",
+  //       "Reportes detallados con imágenes térmicas",
+  //     ],
+  //   },
+  //   {
+  //     title: "Análisis de Vibraciones",
+  //     description:
+  //       "Monitoreo continuo y diagnóstico de fallas en maquinaria rotativa mediante análisis espectral de vibraciones, identificando desbalances, desalineaciones y desgastes.",
+  //     features: [
+  //       "Monitoreo de rodamientos",
+  //       "Detección de desbalances",
+  //       "Análisis de desalineaciones",
+  //       "Diagnóstico de holguras mecánicas",
+  //     ],
+  //   },
+  //   {
+  //     title: "Ultrasonido Pasivo",
+  //     description:
+  //       "Detección de fugas de aire comprimido, vapor, gases y fallas en rodamientos mediante equipos de ultrasonido de alta sensibilidad.",
+  //     features: [
+  //       "Detección de fugas de aire",
+  //       "Inspección de válvulas",
+  //       "Análisis de rodamientos en fase temprana",
+  //       "Reducción de costos energéticos",
+  //     ],
+  //   },
+  //   {
+  //     title: "Análisis de Lubricación",
+  //     description:
+  //       "Análisis físico-químico de aceites lubricantes para determinar el estado del lubricante y detectar desgaste prematuro en componentes internos de maquinaria.",
+  //     features: [
+  //       "Análisis de viscosidad",
+  //       "Conteo de partículas",
+  //       "Detección de contaminación",
+  //       "Recomendaciones de cambio de aceite",
+  //     ],
+  //   },
+  // ];
 
   return (
     <main>

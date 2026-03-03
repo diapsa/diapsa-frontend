@@ -13,7 +13,7 @@ import LoadingSpinner from '@/components/atoms/LoadingSpinner';
 import SuccessMessage from '@/components/atoms/SuccessMessage';
 import RateLimitNotice from '@/components/molecules/RateLimitNotice';
 import { FormErrors } from '@/components/atoms/FormFieldError';
-import type { ContactFormWebinar as ContactFormWebinarType, ContactFormData } from '@/types/contact';
+import type { ContactFormWebinar as ContactFormWebinarType } from '@/types/contact';
 
 interface ContactFormWebinarProps {
   webinarTitle?: string;
@@ -252,7 +252,7 @@ export default function ContactFormWebinar({
         type="text"
         name="website"
         value=""
-        onChange={() => {}}
+        onChange={() => { }}
         style={{ display: 'none' }}
         tabIndex={-1}
         autoComplete="off"

@@ -1,6 +1,5 @@
 import PageHeader from "@/components/organisms/PageHeader"
 import { PlusCircleIcon, ChartIcon, ChartIcon2, WindowIcon, DoubleCircleIcon } from '@/components/atoms/icons/'
-import Button from "@/components/atoms/Button"
 
 export default function DiapsaStart() {
     return (
@@ -74,7 +73,7 @@ export default function DiapsaStart() {
                         <ChartIcon2 className="text-secondary w-8 h-8" />
                         <p className="text-secondary font-bold">Etapa 04</p>
                         <h3 className="text-xl text-white font-bold">Gestión de datos</h3>
-                        <p className="font-bold text-white">"LO QUE NO SE MIDE, NO SE CONTROLA"</p>
+                        <p className="font-bold text-white">&ldquo;LO QUE NO SE MIDE, NO SE CONTROLA&rdquo;</p>
                         <p className="text-gray-300 text-lg">
                             Transformamos datos complejos en decisiones estratégicas basadas en evidencia industrial.
                         </p>

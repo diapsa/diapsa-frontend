@@ -1,6 +1,5 @@
-import Link from "next/link";
-import Image from "next/image";
 import NavLink from "../atoms/NavLink";
+import services from '@/data/servicios.json'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -77,38 +76,24 @@ export default function Footer() {
               Servicios
             </h4>
             <ul className="space-y-3">
-              <li>
-                <NavLink
-                  href="/servicios/termografia"
-                  variant="footer"
-                >
-                  Termografía
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  href="/servicios/vibraciones"
-                  variant="footer"
-                >
-                  Análisis de Vibraciones
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  href="/servicios/ultrasonido"
-                  variant="footer"
-                >
-                  Ultrasonido
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  href="/servicios/lubricacion"
-                  variant="footer"
-                >
-                  Análisis de Lubricación
-                </NavLink>
-              </li>
+              {services.map((item, index) => (
+                <li key={index}>
+                  <NavLink href={item.href}>
+                    {item.label}
+                  </NavLink>
+                  {'children' in item && Array.isArray(item.children) && (
+                    <ul className="mt-2 space-y-2 pl-3 border-l border-white/20">
+                      {item.children.map((child, childIndex) => (
+                        <li key={childIndex}>
+                          <NavLink href={child.href} variant="footer">
+                            <span className="text">{child.label}</span>
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
 

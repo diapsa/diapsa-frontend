@@ -13,7 +13,7 @@ import LoadingSpinner from '@/components/atoms/LoadingSpinner';
 import SuccessMessage from '@/components/atoms/SuccessMessage';
 import RateLimitNotice, { RateLimitBanner } from '@/components/molecules/RateLimitNotice';
 import { FormErrors } from '@/components/atoms/FormFieldError';
-import type { ContactFormGeneral as ContactFormGeneralType, ContactFormData } from '@/types/contact';
+import type { ContactFormGeneral as ContactFormGeneralType } from '@/types/contact';
 
 interface ContactFormGeneralProps {
   onSuccess?: () => void;
@@ -314,7 +314,7 @@ export default function ContactFormGeneral({
         type="text"
         name="website"
         value=""
-        onChange={() => {}}
+        onChange={() => { }}
         style={{ display: 'none' }}
         tabIndex={-1}
         autoComplete="off"
