@@ -22,12 +22,12 @@ export default function NavBar() {
     }, []);
 
 
-    const prodcutosItem = [
-        {
-            label: "Cámaras",
-            href: "/camaras",
-        },
-    ];
+    // const prodcutosItem = [
+    //     {
+    //         label: "Cámaras",
+    //         href: "/camaras",
+    //     },
+    // ];
 
     return (
         <nav className={`sticky top-0 z-40 bg-black transition-all duration-300 ease-out ${isScrolled ? "shadow-lg border-b border-white/10" : "shadow shadow-black"

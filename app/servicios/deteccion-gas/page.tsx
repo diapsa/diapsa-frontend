@@ -1,4 +1,3 @@
-import Button from "@/components/atoms/Button";
 import PageHeader from "@/components/organisms/PageHeader";
 import { VibrationIcon, VisibilityIcon, SecurityIcon, EcoIcon, PrecisionManufacturingIcon } from "@/components/atoms/icons";
 import { Metadata } from "next";

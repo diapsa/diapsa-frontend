@@ -10,52 +10,39 @@ interface TimeLeft {
     segundos: number;
 }
 
+// Función pura fuera del componente para evitar setState síncrono en useEffect
+const calculateTimeLeft = (): TimeLeft | null => {
+    // Parsear la fecha como fecha local, no UTC
+    const [year, month, day] = dataCurso.proximoCurso.dateStart.split('-').map(Number);
+    const targetDate = new Date(year, month - 1, day); // month es 0-indexed en JavaScript
+    const now = new Date();
+    const difference = targetDate.getTime() - now.getTime();
+
+    if (difference <= 0) return null;
+
+    const dias = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((difference % (1000 * 60)) / 1000);
+
+    return { dias, horas, minutos, segundos };
+};
+
 export function TimerCourses() {
-    const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
-    const [isExpired, setIsExpired] = useState(false);
+    // Inicialización lazy: se calcula una sola vez al montar, sin pasar por useEffect
+    const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(() => calculateTimeLeft());
 
     useEffect(() => {
-        const calculateTimeLeft = (): TimeLeft | null => {
-            // Parsear la fecha como fecha local, no UTC
-            const [year, month, day] = dataCurso.proximoCurso.dateStart.split('-').map(Number);
-            const targetDate = new Date(year, month - 1, day); // month es 0-indexed en JavaScript
-            const now = new Date();
-            const difference = targetDate.getTime() - now.getTime();
-
-            // Si la fecha ya pasó, retornar null y marcar como expirado
-            if (difference <= 0) {
-                setIsExpired(true);
-                return null;
-            }
-
-            const dias = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((difference % (1000 * 60)) / 1000);
-
-            return { dias, horas, minutos, segundos };
-        };
-
-        // Calcular inmediatamente al montar
-        const initialTime = calculateTimeLeft();
-        setTimeLeft(initialTime);
-
         // Actualizar cada segundo
         const timer = setInterval(() => {
-            const newTimeLeft = calculateTimeLeft();
-            setTimeLeft(newTimeLeft);
+            setTimeLeft(calculateTimeLeft());
         }, 1000);
 
         // Limpiar el intervalo al desmontar
         return () => clearInterval(timer);
     }, []);
 
-    // Si la fecha ya pasó, no mostrar nada
-    if (isExpired) {
-        return null;
-    }
-
-    // Mostrar loading mientras calcula el primer valor
+    // Si la fecha ya pasó o aún no hay valor, no mostrar nada
     if (!timeLeft) {
         return null;
     }

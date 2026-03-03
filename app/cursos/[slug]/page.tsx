@@ -43,6 +43,7 @@ async function getCourseData(slug: string): Promise<Course | null> {
         const course = courses.find((c) => c.slug === slug);
         return course || null;
     } catch (error) {
+        console.error(error)
         return null;
     }
 }
@@ -56,7 +57,7 @@ export async function generateStaticParams() {
             slug: course.slug,
         }));
     } catch (error) {
-        return [];
+        return [error];
     }
 }
 
