@@ -104,8 +104,10 @@ export default function IdapIntro() {
                     CONOCE PRECIOS Y PAQUETES
                 </Button>
             </div>
-            <div className="bg-gray-500 py-8 px-4 md:py-12 md:px-16 lg:py-16 lg:px-32 xl:px-48 flex justify-center items-center">
-                <div className="p-4 md:p-6 lg:p-8 bg-[#002e46a0]">
+            <div className="relative bg-gray-500 py-8 px-4 md:py-12 md:px-16 lg:py-16 lg:px-32 xl:px-48 flex justify-center items-center">
+
+                <Image src="/images/factory-image.avif" fill className="object-cover opacity-70" alt="Imagen de fondo de una planta" />
+                <div className="relative p-4 md:p-6 lg:p-8 bg-[#002e46cb] ">
                     <p className="text-base md:text-lg lg:text-4xl text-center">
                         La diferencia de IDAP está en el factor humano:
                         no es una plataforma autónoma que solo recopila datos,
