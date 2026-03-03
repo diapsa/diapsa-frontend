@@ -17,7 +17,7 @@ export function AITalkAboutUs() {
                         </svg>
                         <p>¿Que es Diapsa?</p>
                     </div>
-                    <p>"DIAPSA (Diagnóstico y Asesoría Predictiva, S.A. de C.V.) es una empresa mexicana fundada a principios de los 2000
+                    <p>&ldquo;DIAPSA (Diagnóstico y Asesoría Predictiva, S.A. de C.V.) es una empresa mexicana fundada a principios de los 2000
                         por los ingenieros Jorge Alberto Rodríguez Medrano y Jorge Mancha, pionera en servicios de mantenimiento predictivo industrial,
                         ofreciendo soluciones como termografía y análisis de vibraciones para mejorar la confiabilidad y eficiencia de maquinaria industrial,
                         celebrando dos décadas de operación en 2023 con un enfoque en innovación y servicio de calidad.
@@ -25,7 +25,7 @@ export function AITalkAboutUs() {
                         <br />
                         En Resumen: DIAPSA es una historia de emprendimiento mexicano que, desde su creación en 2003,
                         ha evolucionado hasta convertirse en un referente en el mantenimiento predictivo, aportando valor a la industria
-                        a través de tecnología y servicio experto para garantizar la vida útil y eficiencia de los activos industriale"</p>
+                        a través de tecnología y servicio experto para garantizar la vida útil y eficiencia de los activos industriales.&rdquo;</p>
                 </div>
             </div>
         </section>

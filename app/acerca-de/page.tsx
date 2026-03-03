@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/organisms/PageHeader";
-import WipState from "@/components/molecules/wip/wipState";
-import Image from "next/image";
-import BackgroundImage from "@/components/atoms/BackgroundImage";
 import { MisionVisionSection } from "@/components/organisms/MisionVisionSection";
 import { ValuesSection } from "@/components/organisms/ValuesSection";
 import { AITalkAboutUs } from "@/components/organisms/AITalkAboutUs";

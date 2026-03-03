@@ -15,10 +15,10 @@ export function MisionVisionSection() {
                 <div className="md:py-16">
                     <h3 className="font-semibold text-4xl text-gray-600 border-b-4 border-secondary mb-4 pb-2">Nuestra misión</h3>
                     <p className="text-xl italic text-gray-700 leading-relaxed">
-                        "Ser líderes en las disciplinas que
+                        &ldquo;Ser líderes en las disciplinas que
                         desarrollamos a través de un servicio de calidad, precisión y rapidez, beneficiando a
                         nuestros clientes, incrementando la confiabilidad de los equipos y la productividad de
-                        la planta."
+                        la planta.&rdquo;
                     </p>
                 </div>
                 <div className="relative w-full h-full rounded-4xl border-e-4 border-t-4 border-secondary hidden md:block p-4">
@@ -48,10 +48,10 @@ export function MisionVisionSection() {
                 <div className="md:py-16">
                     <h3 className="font-semibold text-4xl text-gray-600  border-b-4 border-primary mb-4 pb-2">Nuestra visión</h3>
                     <p className="text-xl italic text-gray-700 leading-relaxed">
-                        "Elevar la confiabilidad y seguridad de las plantas a través
+                        &ldquo;Elevar la confiabilidad y seguridad de las plantas a través
                         del monitoreo de condición del estado de la maquinaria mediante herramientas
                         predictivas, desarrollando los servicios con eficiencia y calidad, comprometidos como
-                        equipo con las normativas de seguridad e higiene."
+                        equipo con las normativas de seguridad e higiene.&rdquo;
                     </p>
                 </div>
             </div>

@@ -13,7 +13,7 @@ import LoadingSpinner from '@/components/atoms/LoadingSpinner';
 import SuccessMessage from '@/components/atoms/SuccessMessage';
 import RateLimitNotice from '@/components/molecules/RateLimitNotice';
 import { FormErrors } from '@/components/atoms/FormFieldError';
-import type { ContactFormExpo as ContactFormExpoType, ContactFormData } from '@/types/contact';
+import type { ContactFormExpo as ContactFormExpoType } from '@/types/contact';
 
 interface ContactFormExpoProps {
   eventName?: string;
@@ -225,7 +225,7 @@ export default function ContactFormExpo({
       {/* Información Personal */}
       <div className="space-y-4">
         <h4 className="text-sm font-semibold text-primary uppercase tracking-wide">Información Personal</h4>
-        
+
         <InputField
           label="Nombre completo"
           name="name"
@@ -268,7 +268,7 @@ export default function ContactFormExpo({
       {/* Información Empresarial */}
       <div className="space-y-4 pt-4 border-t border-gray-200">
         <h4 className="text-sm font-semibold text-primary uppercase tracking-wide">Información Empresarial</h4>
-        
+
         <InputField
           label="Nombre de la empresa"
           name="company"
@@ -309,7 +309,7 @@ export default function ContactFormExpo({
       {/* Ubicación */}
       <div className="space-y-4 pt-4 border-t border-gray-200">
         <h4 className="text-sm font-semibold text-primary uppercase tracking-wide">Ubicación</h4>
-        
+
         <InputField
           label="País/Región"
           name="country"
@@ -338,7 +338,7 @@ export default function ContactFormExpo({
       {/* Asunto e Intereses */}
       <div className="space-y-4 pt-4 border-t border-gray-200">
         <h4 className="text-sm font-semibold text-primary uppercase tracking-wide">Información de Contacto</h4>
-        
+
         <div>
           <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
             Asunto <span className="text-red-500">*</span>
@@ -350,8 +350,7 @@ export default function ContactFormExpo({
             onChange={handleChange}
             disabled={loading}
             className={
-              `w-full px-4 py-2.5 border rounded-lg text-gray-900 focus:ring-2 focus:ring-primary/50 focus:outline-none transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed ${
-                getFieldError('subject') ? 'border-red-500' : 'border-gray-300'
+              `w-full px-4 py-2.5 border rounded-lg text-gray-900 focus:ring-2 focus:ring-primary/50 focus:outline-none transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed ${getFieldError('subject') ? 'border-red-500' : 'border-gray-300'
               } ${!formData.custom_fields?.subject ? 'text-gray-400' : ''}`
             }
           >
@@ -418,7 +417,7 @@ export default function ContactFormExpo({
         type="text"
         name="website"
         value=""
-        onChange={() => {}}
+        onChange={() => { }}
         style={{ display: 'none' }}
         tabIndex={-1}
         autoComplete="off"

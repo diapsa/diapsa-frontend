@@ -49,6 +49,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
       },
     };
   } catch (error) {
+
     return {
       title: 'Producto no encontrado',
     };
@@ -62,6 +63,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   try {
     product = await getProductBySlug(slug);
   } catch (error) {
+    console.log(error)
     notFound();
   }
 

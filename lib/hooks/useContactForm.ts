@@ -9,7 +9,6 @@ import { useState, useCallback, useEffect } from 'react';
 import { submitContact, getUTMParams } from '@/lib/api/contacts';
 import type {
   ContactFormData,
-  ContactResponse,
   ValidationErrors,
 } from '@/types/contact';
 

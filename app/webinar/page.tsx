@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/organisms/PageHeader";
 import ContactFormWebinarCustom from "@/components/organisms/ContactFormWebinarCustom";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Webinar DIAPSA | Capacitación en Mantenimiento Predictivo",
@@ -34,13 +35,13 @@ export default function WebinarPage() {
               <h2 className="text-2xl lg:text-3xl font-bold text-primary mb-6">
                 Introducción al Mantenimiento Predictivo 4.0
               </h2>
-              
+
               <div className="prose prose-gray max-w-none mb-6">
                 <p className="text-gray-700 mb-4">
                   Descubre cómo implementar estrategias efectivas de mantenimiento predictivo
                   utilizando las últimas tecnologías disponibles en el mercado.
                 </p>
-                
+
                 <h3 className="text-lg font-semibold text-primary mt-6 mb-3">
                   En este webinar aprenderás:
                 </h3>
@@ -202,12 +203,13 @@ export default function WebinarPage() {
           <div className="mt-8 text-center text-sm text-gray-600">
             <p>
               ¿Tienes preguntas?{" "}
-              <a
+
+              <Link
                 href="/#contacto"
-                className="text-secondary hover:underline font-medium"
-              >
+                className="text-secondary hover:underline font-medium">
                 Contáctanos
-              </a>
+              </Link>
+
             </p>
           </div>
         </div>
