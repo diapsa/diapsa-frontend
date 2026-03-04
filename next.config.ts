@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
         pathname: '/storage/**',
       },
       {
+        protocol: 'https',
+        hostname: 'diapsa-storage.sfo3.cdn.digitaloceanspaces.com',
+        pathname: '/**',
+      },
+      {
         protocol: 'http',
         hostname: 'localhost',
         pathname: '/storage/**',
