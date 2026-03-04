@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getProductBySlug } from '@/lib/api/products';
 import ProductDetails from '@/components/organisms/ProductDetails';
-import Breadcrumb from '@/components/atoms/Breadcrumb';
+import PageHeader from '@/components/organisms/PageHeader';
 import JsonLd, { createProductSchema, createBreadcrumbSchema } from '@/components/atoms/JsonLd';
 
 interface ProductPageProps {
@@ -96,12 +96,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <JsonLd data={breadcrumbSchema} />
 
       <main className="min-h-screen bg-white">
-        {/* Breadcrumb */}
-        <div className="bg-gray-50 border-b border-gray-200">
-          <div className="container mx-auto px-4 py-4">
-            <Breadcrumb items={breadcrumbItems} />
-          </div>
-        </div>
+        <PageHeader
+          title={product.name}
+          subtitle={product.short_description}
+          breadcrumbs={breadcrumbItems.map((item) => ({
+            label: item.label,
+            link: item.href,
+          }))}
+        />
 
         {/* Product Details */}
         <section className="py-8 lg:py-12">
