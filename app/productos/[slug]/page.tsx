@@ -106,13 +106,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         {/* Product Details */}
         <section className="py-8 lg:py-12">
           <div className="container mx-auto px-4">
-            <ProductDetails
-              product={product}
-              onQuoteRequest={() => {
-                // Scroll to contact form or open modal
-                window.location.href = `/contacto?product=${product.slug}`;
-              }}
-            />
+            <ProductDetails product={product} />
           </div>
         </section>
       </main>

@@ -6,6 +6,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import ProductCard from '@/components/molecules/ProductCard';
@@ -14,10 +15,10 @@ import { getStorageUrl } from '@/lib/api/config';
 
 interface ProductDetailsProps {
   product: ProductDetail;
-  onQuoteRequest?: () => void;
 }
 
-export default function ProductDetails({ product, onQuoteRequest }: ProductDetailsProps) {
+export default function ProductDetails({ product }: ProductDetailsProps) {
+  const router = useRouter();
   const [selectedImage, setSelectedImage] = useState(0);
   const [activeTab, setActiveTab] = useState<'specs' | 'docs' | 'related'>('specs');
 
@@ -166,7 +167,7 @@ export default function ProductDetails({ product, onQuoteRequest }: ProductDetai
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <button
-              onClick={onQuoteRequest}
+              onClick={() => router.push(`/contacto?product=${product.slug}`)}
               className="
                 flex-1 px-6 py-3 bg-primary text-white rounded-lg
                 font-semibold hover:bg-primary/90 transition-colors
