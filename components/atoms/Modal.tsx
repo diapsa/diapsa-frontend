@@ -23,11 +23,22 @@ export default function Modal({ isOpen, onClose, children, className = "" }: Pro
         }
     }, [isOpen]);
 
-    const handleAnimationEnd = () => {
+    // Guard against animationend events bubbling up from child elements
+    const handleAnimationEnd = (e: React.AnimationEvent<HTMLDialogElement>) => {
+        if (e.target !== e.currentTarget) return;
         if (animClass === "modal-closing") {
             dialogRef.current?.close();
         }
     };
+
+    // Fallback: if animationend never fires (e.g. animation interrupted), force-close after the animation duration
+    useEffect(() => {
+        if (animClass !== "modal-closing") return;
+        const timer = setTimeout(() => {
+            if (dialogRef.current?.open) dialogRef.current.close();
+        }, 300);
+        return () => clearTimeout(timer);
+    }, [animClass]);
 
     return (
         <dialog
