@@ -1,4 +1,17 @@
-const whatIsItems = ["Detección", "Cuantificación", "Cierre"];
+const whatIsSteps = [
+    {
+        label: "Detección",
+        description: "Localización precisa de fugas en campo con tecnología OGI.",
+    },
+    {
+        label: "Cuantificación",
+        description: "Medición del volumen y tasa de emisión por componente.",
+    },
+    {
+        label: "Cierre",
+        description: "Reparación, reinspección y cierre documentado del hallazgo.",
+    },
+];
 
 const howItems = [
     "Inspección trimestral en campo",
@@ -12,105 +25,165 @@ const howItems = [
 ];
 
 const achievementsItems = [
-    { text: "Reducción medible de emisiones", bold: false },
-    { text: "Evidencia trimestral estructurada", bold: false },
-    { text: "Cumplimiento PPCIEM documentado", bold: false },
-    { text: "Disminución de riesgo regulatorio", bold: false },
-    { text: "Control técnico real de emisiones", bold: false },
-    { text: "Transición de mantenimiento reactivo a preventivo", bold: true },
+    "Reducción medible de emisiones",
+    "Evidencia trimestral estructurada",
+    "Cumplimiento PPCIEM documentado",
+    "Disminución de riesgo regulatorio",
+    "Control técnico real de emisiones",
 ];
 
-function ArrowIcon() {
+const achievementHighlight =
+    "Transición de mantenimiento reactivo a preventivo";
+
+function CheckIcon() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="14"
+            height="14"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
+            className="shrink-0 mt-0.5"
         >
-            <path d="M7 17L17 7" />
-            <path d="M7 7h10v10" />
+            <polyline points="20 6 9 17 4 12" />
         </svg>
     );
 }
 
 export default function LdarServiceCards() {
     return (
-        <section className="bg-white min-h-screen py-20 px-10 text-black">
-            <h2 className="text-4xl font-bold text-center text-black mb-14">
-                Servicio Trimestral LDAR para PPCIEM
-            </h2>
+        <section className="relative bg-gray-50 text-black overflow-hidden">
+            {/* Decorative blobs */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
+                <div className="absolute bottom-0 -right-16 w-72 h-72 rounded-full bg-secondary/5 blur-2xl" />
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-                {/* ¿QUÉ ES? */}
-                <div className="border border-gray-200 rounded-2xl p-8 flex flex-col gap-6 h-full">
-                    <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-bold text-black">¿QUÉ ES?</h3>
-                        <span className="text-secondary">
-                            <ArrowIcon />
-                        </span>
-                    </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                        DIAPSA transforma la detección de fugas en un programa completo,
-                        audit-able y alineado al PPCIEM.
+            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 py-24">
+                {/* Header */}
+                <div className="text-center mb-16 space-y-4">
+                    <p className="text-secondary font-bold tracking-widest text-sm uppercase">
+                        Programa Certificado
                     </p>
-                    <ol className="mt-4 space-y-4">
-                        {whatIsItems.map((item, i) => (
-                            <li key={item} className="flex items-center gap-2 text-sm font-semibold text-black">
-                                <span className="text-gray-400">{i + 1}.</span>
-                                <span>{item}</span>
-                            </li>
-                        ))}
-                    </ol>
+                    <h2 className="text-3xl lg:text-5xl font-bold text-black leading-tight">
+                        Servicio Trimestral{" "}
+                        <span className="text-secondary">LDAR</span> para PPCIEM
+                    </h2>
+                    <p className="text-gray-500 text-base max-w-xl mx-auto leading-relaxed">
+                        Un ciclo completo, auditable y alineado a la normativa ASEA que
+                        convierte la obligación regulatoria en control operativo real.
+                    </p>
                 </div>
 
-                {/* ¿CÓMO SE REALIZA? */}
-                <div className="bg-primary rounded-2xl p-8 flex flex-col gap-6 h-full">
-                    <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-bold text-white">¿CÓMO SE REALIZA?</h3>
-                        <span className="text-white/60">
-                            <ArrowIcon />
-                        </span>
-                    </div>
-                    <ol className="space-y-3">
-                        {howItems.map((item, i) => (
-                            <li key={item} className="flex gap-3 text-sm text-white/90 leading-snug">
-                                <span className="text-white/50 shrink-0">{i + 1}.</span>
-                                <span>{item}</span>
-                            </li>
-                        ))}
-                    </ol>
-                </div>
+                {/* Cards grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
 
-                {/* ¿QUÉ LOGRAMOS? */}
-                <div className="border border-gray-200 rounded-2xl p-8 flex flex-col gap-6 h-full">
-                    <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-bold text-black">¿QUÉ LOGRAMOS?</h3>
-                        <span className="text-secondary">
-                            <ArrowIcon />
-                        </span>
+                    {/* ── ¿QUÉ ES? ── */}
+                    <div className="bg-white border border-gray-200 rounded-2xl p-8 flex flex-col gap-6 hover:border-secondary/40 hover:shadow-md transition-all duration-300">
+                        <div>
+                            <span className="inline-block text-xs font-bold tracking-widest uppercase text-secondary mb-3">
+                                ¿Qué es?
+                            </span>
+                            <h3 className="text-xl font-bold text-black leading-snug">
+                                Ciclo integral de gestión de fugas
+                            </h3>
+                        </div>
+                        <p className="text-gray-500 text-sm leading-relaxed">
+                            DIAPSA transforma la detección de fugas en un programa
+                            auditado y alineado al PPCIEM, con tres fases críticas:
+                        </p>
+
+                        {/* Process flow steps */}
+                        <div className="flex flex-col gap-3 mt-auto">
+                            {whatIsSteps.map((step, i) => (
+                                <div key={step.label} className="flex gap-4 items-start">
+                                    <div className="flex flex-col items-center shrink-0">
+                                        <span className="w-8 h-8 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-xs font-bold flex items-center justify-center">
+                                            {i + 1}
+                                        </span>
+                                        {i < whatIsSteps.length - 1 && (
+                                            <span className="w-px h-6 bg-gray-200 mt-1" />
+                                        )}
+                                    </div>
+                                    <div className="pb-1">
+                                        <p className="text-sm font-bold text-black">{step.label}</p>
+                                        <p className="text-xs text-gray-500 mt-0.5 leading-snug">
+                                            {step.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <ol className="space-y-3">
-                        {achievementsItems.map((item, i) => (
-                            <li key={item.text} className="flex gap-3 text-sm leading-snug">
-                                <span className="text-gray-400 shrink-0">{i + 1}.</span>
-                                <span
-                                    className={
-                                        item.bold
-                                            ? "font-bold text-black"
-                                            : "text-gray-500"
-                                    }
-                                >
-                                    {item.text}
-                                </span>
-                            </li>
-                        ))}
-                    </ol>
+
+                    {/* ── ¿CÓMO SE REALIZA? ── */}
+                    <div className="bg-primary rounded-2xl p-8 flex flex-col gap-6">
+                        <div>
+                            <span className="inline-block text-xs font-bold tracking-widest uppercase text-secondary/80 mb-3">
+                                ¿Cómo se realiza?
+                            </span>
+                            <h3 className="text-xl font-bold text-white leading-snug">
+                                8 pasos de ejecución en campo
+                            </h3>
+                        </div>
+
+                        {/* Timeline list */}
+                        <ol className="flex flex-col gap-0">
+                            {howItems.map((item, i) => (
+                                <li key={item} className="flex gap-4 items-start">
+                                    <div className="flex flex-col items-center shrink-0">
+                                        <span className="w-6 h-6 rounded-full bg-white/10 border border-white/20 text-white/70 text-xs font-bold flex items-center justify-center">
+                                            {i + 1}
+                                        </span>
+                                        {i < howItems.length - 1 && (
+                                            <span className="w-px h-5 bg-white/15" />
+                                        )}
+                                    </div>
+                                    <p className="text-sm text-white/85 leading-snug py-1">
+                                        {item}
+                                    </p>
+                                </li>
+                            ))}
+                        </ol>
+                    </div>
+
+                    {/* ── ¿QUÉ LOGRAMOS? ── */}
+                    <div className="bg-white border border-gray-200 rounded-2xl p-8 flex flex-col gap-6 hover:border-secondary/40 hover:shadow-md transition-all duration-300">
+                        <div>
+                            <span className="inline-block text-xs font-bold tracking-widest uppercase text-secondary mb-3">
+                                ¿Qué logramos?
+                            </span>
+                            <h3 className="text-xl font-bold text-black leading-snug">
+                                Resultados medibles y documentados
+                            </h3>
+                        </div>
+
+                        <ul className="flex flex-col gap-3">
+                            {achievementsItems.map((item) => (
+                                <li key={item} className="flex items-start gap-3 text-sm text-gray-600 leading-snug">
+                                    <span className="text-secondary mt-0.5">
+                                        <CheckIcon />
+                                    </span>
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+
+                        {/* Highlighted last item */}
+                        <div className="mt-auto bg-secondary/8 border border-secondary/30 rounded-xl p-4 flex items-start gap-3">
+                            <span className="text-secondary mt-0.5 shrink-0">
+                                <CheckIcon />
+                            </span>
+                            <p className="text-sm font-bold text-primary leading-snug">
+                                {achievementHighlight}
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
