@@ -3,14 +3,15 @@
  * Convierte custom_fields con valores undefined a Record<string, string>
  */
 
-import type { 
-  ContactFormData, 
-  ContactFormExpo, 
-  ContactFormGeneral, 
-  ContactFormWebinar 
+import type {
+  ContacFormGasDetection,
+  ContactFormData,
+  ContactFormExpo,
+  ContactFormGeneral,
+  ContactFormWebinar
 } from '@/types/contact';
 
-type AnyContactForm = ContactFormExpo | ContactFormGeneral | ContactFormWebinar;
+type AnyContactForm = ContactFormExpo | ContactFormGeneral | ContactFormWebinar | ContacFormGasDetection;
 
 /**
  * Sanitiza los datos del formulario para que sean compatibles con ContactFormData
@@ -19,10 +20,10 @@ type AnyContactForm = ContactFormExpo | ContactFormGeneral | ContactFormWebinar;
 export function sanitizeContactFormData(formData: AnyContactForm): ContactFormData {
   const customFieldsSanitized = formData.custom_fields
     ? (Object.fromEntries(
-        Object.entries(formData.custom_fields)
-          .filter(([_, value]) => value !== undefined)
-          .map(([key, value]) => [key, value || ''])
-      ) as Record<string, string>)
+      Object.entries(formData.custom_fields)
+        .filter(([_, value]) => value !== undefined)
+        .map(([key, value]) => [key, value || ''])
+    ) as Record<string, string>)
     : undefined;
 
   return {

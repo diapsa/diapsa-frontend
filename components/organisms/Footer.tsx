@@ -184,7 +184,7 @@ export default function Footer() {
                   href="mailto:contacto@diapsa.com"
                   className="text-white/80 hover:text-secondary transition-colors"
                 >
-                  contacto@diapsa.com
+                  info@grupodiapsa.com
                 </a>
               </li>
               <li className="flex items-center gap-2">

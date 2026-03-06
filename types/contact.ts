@@ -6,7 +6,7 @@
 /**
  * Form types supported by the API
  */
-export type ContactFormType = 'general' | 'expo' | 'webinar';
+export type ContactFormType = 'general' | 'expo' | 'webinar' | 'gas';
 
 /**
  * Base contact form data
@@ -71,6 +71,18 @@ export interface ContactFormExpo {
     privacy_accepted?: boolean; // "true" | "false"
     [key: string]: string | boolean | undefined;
   };
+}
+
+/**
+ * 
+ */
+export interface ContacFormGasDetection extends ContactFormData {
+  form_type: 'gas';
+  custom_fields?: {
+    subject: string;
+    message?: string
+
+  }
 }
 
 /**
