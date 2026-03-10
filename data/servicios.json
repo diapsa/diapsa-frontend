@@ -26,6 +26,10 @@
         ]
     },
     {
+        "label": "Monitoreo continuo (DIAPSA 4.0)",
+        "href": "/servicios/monitoreo-continuo"
+    },
+    {
         "label": "DIAPSA START",
         "href": "/servicios/diapsa-start"
     },
