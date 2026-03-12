@@ -5,6 +5,7 @@ import ContinuosMonitoringStats from "@/components/organisms/ContinuosMonitoring
 import ContinuosMonitoringChallenge from "@/components/organisms/ContinuosMonitoringChallenge";
 import ContinuosMonitoringSolutions from "@/components/organisms/ContinuosMonitoringSolutions";
 import ContinuosMonitoringCta from "@/components/organisms/ContinuosMonitoringCta";
+import ContinuosMonitoringTechnology from "@/components/organisms/ContinuosMonitoringTechnology";
 
 export default function ContinuosMonitoringPage() {
     return (
@@ -23,9 +24,10 @@ export default function ContinuosMonitoringPage() {
             <ContinuosMonitoringChallenge />
             <ContinuosMonitoringSolutions />
             <ContinuosMonitoringCta />
+            {/* <ContinuosMonitoringTechnology />
             <section id="contacto">
                 <ContactForm />
-            </section>
+            </section> */}
         </main>
     );
 }
