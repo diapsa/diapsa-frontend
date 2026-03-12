@@ -1,6 +1,6 @@
 [
     {
-        "label": "Monitoreo de condición",
+        "label": "Monitoreo de Condición",
         "href": "/servicios/monitoreo-condicion",
         "children": [
             {
@@ -26,6 +26,10 @@
         ]
     },
     {
+        "label": "Monitoreo Continuo",
+        "href": "/servicios/monitoreo-continuo"
+    },
+    {
         "label": "DIAPSA START",
         "href": "/servicios/diapsa-start"
     },
@@ -34,7 +38,7 @@
         "href": "/servicios/idap"
     },
     {
-        "label": "Detecciones de Gas",
+        "label": "Deteccion de Gas",
         "href": "/servicios/deteccion-gas"
     }
 ]
