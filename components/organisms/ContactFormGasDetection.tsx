@@ -118,8 +118,6 @@ export default function ContactFormGasDetection({ isOpen, onClose, onSuccess }: 
             return
         }
 
-        console.log(formData);
-
         const sanitizedData = sanitizeContactFormData(formData);
         const result = await submitForm(sanitizedData);
 
