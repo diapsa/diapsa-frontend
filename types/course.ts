@@ -1,7 +1,10 @@
+import { Category } from "./category";
+
+
 export interface Course {
     id: string;
     name: string;
-    course_type: CourseType;
+    category: Category;
     provider: string;
     description: string;
     slug: string;
@@ -26,7 +29,7 @@ export interface CoursesFilters {
 export interface CourseDetail {
     id: string;
     name: string;
-    course_type: CourseType;
+    category: Category;
     description: string;
     objective: string;
     slug: string;

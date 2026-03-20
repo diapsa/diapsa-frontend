@@ -5,6 +5,7 @@
 
 import { apiFetch } from "./config";
 import { ApiResponse, PaginatedResponse } from "@/types/api";
+import { Category } from "@/types/category";
 import type {
     Course,
     CourseDetail,
@@ -51,16 +52,16 @@ export async function getCourseBySlug(
  * Get All courses types
  * GET /api/v1/course-types/
  */
-export async function getCourseTypes(): Promise<CourseType[]> {
-    const response = await apiFetch<ApiResponse<CourseType[]>>('/course-types');
+export async function getCourseCategories(): Promise<Category[]> {
+    const response = await apiFetch<ApiResponse<Category[]>>('/course-categories');
     return response.data;
 }
 /**
  * Get course type by slug
  * GET /api/v1/course-types/{slug}
  */
-export async function getCourseTypeBySlug(slug: string): Promise<CourseType> {
-    const response = await apiFetch<ApiResponse<CourseType>>(`/course-types/${slug}`);
+export async function getCourseCategoriesBySlug(slug: string): Promise<Category> {
+    const response = await apiFetch<ApiResponse<Category>>(`/course-categories/${slug}`);
     return response.data;
 }
 

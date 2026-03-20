@@ -1,4 +1,3 @@
-import React from "react";
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/organisms/PageHeader";
 import CourseDetails from "@/components/organisms/CourseDetails";
@@ -70,7 +69,7 @@ export default async function CoursePage({
     const courseJsonLd = createServiceSchema({
         name: course.name,
         description: course.description,
-        serviceType: `Curso de ${course.course_type}`,
+        serviceType: `Curso de ${course.category?.name ?? ''}`,
     });
 
     // Breadcrumbs para datos estructurados
@@ -83,7 +82,7 @@ export default async function CoursePage({
 
             <PageHeader
                 title={course.name}
-                subtitle={`${course.course_type.name} • ${course.provider}`}
+                subtitle={`${course.category?.name ?? ''} • ${course.provider}`}
                 breadcrumbs={breadcrumbItems.map((item) => ({
                     label: item.name,
                     link: item.url,

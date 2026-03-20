@@ -2,28 +2,29 @@
 
 import { CourseType } from "@/types/course";
 import { useEffect, useState } from "react";
-import { getCourseTypes } from "../api/courses";
+import { getCourseCategories } from "../api/courses";
+import { Category } from "@/types/category";
 
 
-let coursesTypesCache: CourseType[] | null = null;
-let coursesTypesCacheTime: number | null = null;
+let coursesCategoriesCache: Category[] | null = null;
+let coursesCategoriesCacheTime: number | null = null;
 const CACHE_DURATION = 5 * 60 * 1000 //5 minutos
 
-export function useCourseTypes() {
-    const [courseTypes, setCourseTypes] = useState<CourseType[]>([]);
+export function useCourseCategories() {
+    const [courseCategories, setCourseCategories] = useState<Category[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
-        const fetchCoursesTypes = async () => {
+        const fetchCoursesCategories = async () => {
             //Verificar cache
             const now = Date.now();
 
             if (
-                coursesTypesCache &&
-                coursesTypesCacheTime &&
-                now - coursesTypesCacheTime < CACHE_DURATION) {
-                setCourseTypes(coursesTypesCache);
+                coursesCategoriesCache &&
+                coursesCategoriesCacheTime &&
+                now - coursesCategoriesCacheTime < CACHE_DURATION) {
+                setCourseCategories(coursesCategoriesCache);
                 setLoading(false);
                 return
             }
@@ -31,11 +32,11 @@ export function useCourseTypes() {
             try {
                 setLoading(true);
                 setError(null);
-                const data = await getCourseTypes();
+                const data = await getCourseCategories();
 
-                coursesTypesCache = data;
-                coursesTypesCacheTime = now
-                setCourseTypes(data);
+                coursesCategoriesCache = data;
+                coursesCategoriesCacheTime = now
+                setCourseCategories(data);
             } catch (err) {
                 const error = err instanceof Error ? err : new Error('Error al cargar tipos de curso');
                 setError(error);
@@ -43,8 +44,8 @@ export function useCourseTypes() {
                 setLoading(false);
             }
         };
-        fetchCoursesTypes();
+        fetchCoursesCategories();
 
     }, []);
-    return { courseTypes, loading, error };
+    return { courseCategories, loading, error };
 }
