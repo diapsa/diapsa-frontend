@@ -20,6 +20,12 @@ export interface CourseType {
     slug: string;
 }
 
+export interface GroupedCourses {
+    certificates?: Course[];
+    workshops?: Course[];
+    strategics?: Course[];
+}
+
 export interface CoursesFilters {
     courseType?: string
     per_page?: number;

@@ -5,6 +5,7 @@ import { CoursesNCerts } from "@/components/organisms/CoursesNCerts";
 import CourseTypeSection from "@/components/organisms/CourseTypeSection";
 import { useCourses } from "@/lib/hooks/useCourses";
 import { useCourseCategories } from "@/lib/hooks/useCourseType";
+import CourseMainContent from "@/components/organisms/CourseMainContent";
 
 export default function CursosPage() {
   const { courseCategories, loading: loadingCourseCategories } = useCourseCategories();
@@ -16,8 +17,11 @@ export default function CursosPage() {
         subtitle="Capacitación profesional certificada en mantenimiento predictivo"
       />
 
-      <section className="w-full bg-white py-12">
+      <section className="w-full bg-white p-5">
         <CoursesNCerts />
+      </section>
+      <section className="bg-white p-5">
+        <CourseMainContent />
       </section>
 
       {/* Grid de secciones de cursos por tipo */}
