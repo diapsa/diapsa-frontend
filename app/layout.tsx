@@ -99,11 +99,11 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/icon.png" },
-      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon.ico" },
+      { url: "/icon.ico", sizes: "192x192", type: "image/x-icon" },
     ],
     apple: [
-      { url: "/icon.png", sizes: "152x152", type: "image/png" },
+      { url: "/icon.ico", sizes: "152x152", type: "image/x-icon" },
     ],
   },
   category: "Industrial Services",
