@@ -769,11 +769,12 @@ Accept: application/json
 
 **Tipos de Formulario (form_type):**
 
-| Valor | Descripción | Custom Fields Sugeridos |
-|-------|-------------|-------------------------|
+|   Valor   | Descripción | Custom Fields Sugeridos |
+|-----------|-------------|-------------------------|
 | `general` | Contacto general | Ninguno específico |
-| `expo` | Registro de exposición | `booth_number`, `event_name`, `event_date` |
+| `expo`    | Registro de exposición | `booth_number`, `event_name`, `event_date` |
 | `webinar` | Registro de webinar | `webinar_title`, `webinar_date`, `attendance_confirmed` |
+| `gas`     | Informacion Servicio gas | `subject`,`message`|
 
 **Ejemplo de Request (Contacto General):**
 ```bash

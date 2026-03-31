@@ -82,6 +82,7 @@ export function TimerCourses() {
 
         const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
+            setTimeLeft(calculateTimeLeft());
         }, 1000);
 
         return () => clearInterval(timer);

@@ -50,8 +50,8 @@ export default function MonitoreoConditionPage() {
                             para garantizar que su operación nunca se detenga.
                         </p>
                         <p className="p-6 text-sm rounded-2xl border-secondary border-l-4 bg-secondary/10">
-                            "Nuestra vision 360° combina el analisis de vibraciones, termografía y ultrasonido
-                            para entregar un diagnostico preciso que evita paros no programados y extiende la vida de su maquinaria"
+                            &ldquo;Nuestra vision 360° combina el analisis de vibraciones, termografía y ultrasonido
+                            para entregar un diagnostico preciso que evita paros no programados y extiende la vida de su maquinaria&rdquo;
                         </p>
                     </div>
                     <div className="lg:px-16">

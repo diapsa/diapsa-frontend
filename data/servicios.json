@@ -1,0 +1,44 @@
+[
+    {
+        "label": "Monitoreo de Condición",
+        "href": "/servicios/monitoreo-condicion",
+        "children": [
+            {
+                "label": "Análisis de Vibraciones Mecánicas",
+                "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+            },
+            {
+                "label": "Termografía Infrarroja",
+                "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+            },
+            {
+                "label": "Estudios Eléctricos Especializados",
+                "href": "/servicios/monitoreo-condicion/estudios-electricos"
+            },
+            {
+                "label": "Diagnóstico Integral de Maquinaria",
+                "href": "/servicios/monitoreo-condicion/diagnostico-de-maquinaria"
+            },
+            {
+                "label": "Análisis de Ultrasonido",
+                "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+            }
+        ]
+    },
+    {
+        "label": "Monitoreo Continuo",
+        "href": "/servicios/monitoreo-continuo"
+    },
+    {
+        "label": "DIAPSA START",
+        "href": "/servicios/diapsa-start"
+    },
+    {
+        "label": "Conoce IDAP",
+        "href": "/servicios/idap"
+    },
+    {
+        "label": "Deteccion de Gas",
+        "href": "/servicios/deteccion-gas"
+    }
+]

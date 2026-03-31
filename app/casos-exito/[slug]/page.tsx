@@ -1,10 +1,9 @@
-import React from "react";
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/organisms/PageHeader";
-import Image from "next/image";
 import type { CasoExito } from "@/types/caso-exito";
 import JsonLd, { createBreadcrumbSchema } from "@/components/atoms/JsonLd";
 import casosExitoData from "@/data/casos-exito.json";
+import Link from "next/link";
 
 const casosExito = casosExitoData as unknown as CasoExito[];
 
@@ -312,18 +311,18 @@ export default async function CasoExitoDetailPage({
                         transformar tu industria como lo hicieron con {caso.client}.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                        <a
+                        <Link
                             href="/casos-exito"
                             className="inline-block bg-white hover:bg-gray-100 text-primary font-bold px-8 py-3 rounded-lg transition-all"
                         >
                             Ver más casos
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="/contacto"
                             className="inline-block bg-secondary hover:bg-secondary/90 text-white font-bold px-8 py-3 rounded-lg transition-all"
                         >
                             Contáctanos
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

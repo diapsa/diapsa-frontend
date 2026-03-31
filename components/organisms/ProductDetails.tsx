@@ -6,22 +6,32 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import ProductCard from '@/components/molecules/ProductCard';
 import type { ProductDetail } from '@/types/product';
+import { getStorageUrl } from '@/lib/api/config';
 
 interface ProductDetailsProps {
   product: ProductDetail;
-  onQuoteRequest?: () => void;
 }
 
-export default function ProductDetails({ product, onQuoteRequest }: ProductDetailsProps) {
+export default function ProductDetails({ product }: ProductDetailsProps) {
+  const router = useRouter();
   const [selectedImage, setSelectedImage] = useState(0);
   const [activeTab, setActiveTab] = useState<'specs' | 'docs' | 'related'>('specs');
 
-  const mainImage = product.images.find((img) => img.type === 'main') || product.images[0];
-  const galleryImages = product.images.filter((img) => img.type === 'gallery');
+  // Procesar imágenes con URLs completas del storage
+  const processedImages = product.images
+    .map(img => ({
+      ...img,
+      url: getStorageUrl(img.url) || img.url
+    }))
+    .filter(img => img.url); // Filtrar imágenes sin URL válida
+
+  const mainImage = processedImages.find((img) => img.type === 'main') || processedImages[0];
+  const galleryImages = processedImages.filter((img) => img.type === 'gallery');
   const allImages = [mainImage, ...galleryImages].filter(Boolean);
 
   return (
@@ -94,9 +104,9 @@ export default function ProductDetails({ product, onQuoteRequest }: ProductDetai
         <div className="space-y-6">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            {product.brand.logo && (
+            {getStorageUrl(product.brand.logo) && (
               <Image
-                src={product.brand.logo}
+                src={getStorageUrl(product.brand.logo)!}
                 alt={product.brand.name}
                 width={80}
                 height={40}
@@ -157,7 +167,7 @@ export default function ProductDetails({ product, onQuoteRequest }: ProductDetai
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <button
-              onClick={onQuoteRequest}
+              onClick={() => router.push(`/contacto?product=${product.slug}`)}
               className="
                 flex-1 px-6 py-3 bg-primary text-white rounded-lg
                 font-semibold hover:bg-primary/90 transition-colors
@@ -311,7 +321,7 @@ export default function ProductDetails({ product, onQuoteRequest }: ProductDetai
                     slug: related.slug,
                     name: related.name,
                     model: related.model,
-                    image: related.main_image || undefined,
+                    image: getStorageUrl(related.main_image) || undefined,
                     description: related.short_description,
                     href: `/productos/${related.slug}`,
                   }}

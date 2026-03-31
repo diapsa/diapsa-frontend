@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/organisms/PageHeader";
-import Image from "next/image";
 import Link from "next/link";
 import casosExitoData from "@/data/casos-exito.json";
 import type { CasoExito } from "@/types/caso-exito";
