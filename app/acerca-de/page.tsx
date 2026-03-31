@@ -5,6 +5,8 @@ import { ValuesSection } from "@/components/organisms/ValuesSection";
 import { AITalkAboutUs } from "@/components/organisms/AITalkAboutUs";
 import { WhoIsDiapsaSection } from "@/components/organisms/WhoIsDiapsaSection";
 import { IdapAdvertisementSection } from "@/components/organisms/IdapAdvertisement";
+import { GallerySection } from "@/components/organisms/GallerySection";
+
 
 export const metadata: Metadata = {
   title: "Acerca de Nosotros",
@@ -43,8 +45,9 @@ export default function AcercaDePage() {
       {/* {Valores} */}
       <ValuesSection />
 
-      <AITalkAboutUs />
+      {/* <AITalkAboutUs /> */}
 
+      <GallerySection />
       {/* Clientes, Servicios, Origen */}
     </main>
   );

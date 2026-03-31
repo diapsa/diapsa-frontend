@@ -38,7 +38,7 @@ export default function ContinuosMonitoringChallenge() {
                     <div className="relative order-2 lg:order-1">
                         <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl">
                             <Image
-                                src="/images/monitoreo-continuo/motor.jpg"
+                                src="/images/monitoreo-continuo/tecnico-revision.jpeg"
                                 alt="Equipo industrial con sensores. IA"
                                 fill
                                 className="object-cover bg-gray-100"
