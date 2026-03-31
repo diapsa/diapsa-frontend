@@ -18,8 +18,6 @@ import {
 } from "@/components/atoms/icons";
 import { CourseDetail } from "@/types/course";
 
-
-
 interface CourseDetailsProps {
     course: CourseDetail;
 }
@@ -82,10 +80,8 @@ export default function CourseDetails({ course }: CourseDetailsProps) {
         | "certificacion"
     >("descripcion");
 
-
-
     const Icon = iconMap[course.icon] || MonitorIcon;
-    const courseTypeName = course.course_type?.name ?? "";
+    const courseTypeName = course.category.name ?? "";
     const requirements = normalizeTextList(course.requirements);
     const specificObjectives = normalizeTextList(course.specific_objectives);
     const syllabusItems = normalizeTextList(course.syllabus, /\r?\n/);
@@ -434,8 +430,20 @@ export default function CourseDetails({ course }: CourseDetailsProps) {
                                     </div>
                                 </div>
 
-                                {/* CTA Button */}
-                                <div className="mt-8 pt-6 border-t border-gray-200">
+                                <div className="mt-8 space-y-3 pt-6 border-t border-gray-200">
+
+                                    {course.technical_specification && (
+                                        <a href="/files/CURSO-TI-I&II.pdf" download="CURSO TI I&II" className="block">
+                                            <Button
+                                                variant="primary"
+                                                className="w-full justify-center text-lg py-4"
+                                            >
+                                                Obtener ficha tecnica
+                                            </Button>
+                                        </a>
+                                    )}
+                                    {/* CTA Button */}
+
                                     <Button
                                         variant="secondary"
                                         onClick={scrollToContact}
