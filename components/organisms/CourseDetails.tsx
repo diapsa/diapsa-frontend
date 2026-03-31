@@ -24,6 +24,7 @@ interface Course {
     tipo_curso: string;
     icono: string;
     provider: string;
+    technical_specifications?: string;
     contenido: {
         descripcion_general: string;
         normativa_referencia: string | null;
@@ -59,6 +60,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export default function CourseDetails({ course }: CourseDetailsProps) {
+
+
     const [activeTab, setActiveTab] = useState<
         | "descripcion"
         | "objetivos"
@@ -74,6 +77,10 @@ export default function CourseDetails({ course }: CourseDetailsProps) {
         const contactSection = document.getElementById("contacto");
         contactSection?.scrollIntoView({ behavior: "smooth" });
     };
+
+    const downloadPDf = () => {
+
+    }
 
     return (
         <div className="w-full bg-white">
@@ -444,8 +451,20 @@ export default function CourseDetails({ course }: CourseDetailsProps) {
                                     </div>
                                 </div>
 
-                                {/* CTA Button */}
-                                <div className="mt-8 pt-6 border-t border-gray-200">
+                                <div className="mt-8 space-y-3 pt-6 border-t border-gray-200">
+
+                                    {course.technical_specifications && (
+                                        <a href="/files/CURSO-TI-I&II.pdf" download="CURSO TI I&II" className="block">
+                                            <Button
+                                                variant="primary"
+                                                className="w-full justify-center text-lg py-4"
+                                            >
+                                                Obtener ficha tecnica
+                                            </Button>
+                                        </a>
+                                    )}
+                                    {/* CTA Button */}
+
                                     <Button
                                         variant="secondary"
                                         onClick={scrollToContact}
