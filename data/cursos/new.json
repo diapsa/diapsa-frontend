@@ -7,6 +7,7 @@
             "tipo_curso": "Certificación",
             "icono": "thermometer",
             "provider": "DIAPSA",
+            "technical_specifications": "/files/CURSO-TI-I&II.pdf",
             "contenido": {
                 "descripcion_general": "Curso de certificación que cumple con los temas de la norma para generar el proceso de certificación de acuerdo a las categorías (I y II). La metodología explica la información de manera práctica para su aplicación real.",
                 "normativa_referencia": "ISO 18436-7",
