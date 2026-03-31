@@ -17,6 +17,7 @@ interface Course {
     tipo_curso: string;
     icono: string;
     provider: string;
+    technical_pecifications?: string;
     contenido: {
         descripcion_general: string;
         normativa_referencia: string | null;
