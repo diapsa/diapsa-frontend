@@ -94,7 +94,7 @@ export default function ContinuosMonitoringSolutions() {
                     {/* Imagen */}
                     <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-xl bg-gray-100 flex items-center justify-center">
                         <Image
-                            src="/images/monitoreo-continuo/sensor-installation.jpg"
+                            src="/images/monitoreo-continuo/tecnico-laptop.jpeg"
                             alt="Especialistas en instalación de sensores. IA"
                             fill
                             className="object-cover"

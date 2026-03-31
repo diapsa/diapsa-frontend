@@ -67,7 +67,7 @@ export default function ContinuosMonitoringValueProp() {
                     <div className="relative">
                         <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-2xl">
                             <Image
-                                src="/images/monitoreo-continuo/factory-image.jpg"
+                                src="/images/monitoreo-continuo/factory.jpeg"
                                 alt="Monitoreo continuo en planta industrial IA"
                                 fill
                                 className="object-cover"

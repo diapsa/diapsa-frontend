@@ -24,7 +24,7 @@ const challenges: {
             iconBg: "bg-amber-100",
             iconColor: "text-amber-500",
             title: "Cuantificación de Impacto",
-            image: "/images/deteccion-gas/charts_ai.jpg",
+            image: "/images/deteccion-gas/charts_visualitation.jpg",
             description:
                 "Dificultad técnica para medir el volumen real de emisiones perdidas y su costo económico.",
         },
@@ -33,7 +33,7 @@ const challenges: {
             iconBg: "bg-indigo-100",
             iconColor: "text-indigo-500",
             title: "Trazabilidad Reparación",
-            image: "/images/deteccion-gas/technical_reviewing_ai.jpg",
+            image: "/images/deteccion-gas/technical_reviewing.jpeg",
             description:
                 "Falta de seguimiento histórico y re-inspección en el ciclo crítico de mantenimiento de activos.",
         },
@@ -42,7 +42,7 @@ const challenges: {
             iconBg: "bg-yellow-100",
             iconColor: "text-yellow-500",
             title: "Reportes No Conformantes",
-            image: "/images/deteccion-gas/report_ai.jpg",
+            image: "/images/deteccion-gas/report.jpg",
             description:
                 "Alto riesgo de sanciones por auditorías de ASEA ante informes incompletos o mal documentados.",
         },
