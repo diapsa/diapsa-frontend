@@ -37,7 +37,73 @@
         },
         {
             "title": "¿POR QUÉ ES LA MEJOR HERRAMIENTA EN SU TIPO?",
-            "description": "Detrás del análisis está la trayectoria de DIAPSA, con más de 22 años de experiencia en diagnóstico de condición, capacitando y acompañando a empresas de distintos sectores industriales. Nuestro equipo no se limita a desplegar información: analiza el flujo de datos, interpreta anomalías, propone mejoras y da seguimiento para que cada hallazgo genere un impacto real.Z"
+            "description": "Detrás del análisis está la trayectoria de DIAPSA, con más de 22 años de experiencia en diagnóstico de condición, capacitando y acompañando a empresas de distintos sectores industriales. Nuestro equipo no se limita a desplegar información: analiza el flujo de datos, interpreta anomalías, propone mejoras y da seguimiento para que cada hallazgo genere un impacto real."
+        }
+    ],
+    "information": [
+        {
+            "bg": true,
+            "title": "INDICADORES DE CRITICIDAD DE ACTIVOS",
+            "description": "En DIAPSA analiazamos la criticidasd de sus activos en base al impacto operacional y economico",
+            "status": [
+                {
+                    "name": "Baja",
+                    "description": "Equipos de bajo impacto operativo, cuya falla no afecta la continuidad del proceso."
+                },
+                {
+                    "name": "Media",
+                    "description": "Activos importantes, pero con alternativas o respaldo parcial. Su falla reduce la eficiencia o calidad, sin detener totalmente la producción."
+                },
+                {
+                    "name": "Alta",
+                    "description": "Equipos esenciales para la operación. Su falla detiene el proceso, genera pérdidas productivas o riesgos de seguridad."
+                }
+            ],
+            "image": "/images/idap/criticallity_status.png"
+        },
+        {
+            "title": "GESTIÓN INTEGRAL DE ACTIVOS INDUSTRIALES",
+            "description": "IDAP centraliza toda la información técnica de planta en una sola plataforma. Esto permite tener control total del estado operativo de cada activo.",
+            "items": [
+                "Equipos",
+                "Ubicaciones",
+                "Niveles de Criticidad",
+                "Inspecciones",
+                "Mantenimineto"
+            ]
+        },
+        {
+            "bg": true,
+            "title": "Indicadores de Resultados de Inspección y Prioridad",
+            "description": "Interpretación de los indicadores de condición según niveles de riesgo y atención requerida.",
+            "items": [
+                "Equipos",
+                "Ubicaciones",
+                "Niveles de Criticidad",
+                "Inspecciones",
+                "Mantenimineto"
+            ],
+            "image": "/images/idap/status.png"
+        },
+        {
+            "bg": true,
+            "title": "PRIORIZACIÓN INTELIGENTE",
+            "description": "A través de su panel principal o Dashboard, IDAP muestra las métricas y alertas más recientes clasificadas por nivel de riesgo (bajo, programable o crítico). Así, los equipos de mantenimiento pueden enfocar sus recursos en lo urgente.",
+            "s": ""
+        },
+        {
+            "bg": true,
+            "title": "SEGUIMIENTO HISTÓRICO Y ANÁLISIS COMPARATIVO",
+            "description": "Cada inspección queda registrada en el sistema con su respectivo diagnóstico, gráfica de tendencias y recomendaciones técnicas. Esta trazabilidad histórica permite identificar patrones de falla y medir la efectividad de las acciones preventivas."
+        },
+        {
+            "title": "MÚLTIPLES DISCIPLINAS, UN SOLO SISTEMA",
+            "description": "IDAP integra resultados de termografía infrarroja, análisis de vibraciones, ultrasonido pasivo, análisis de lubricantes y más, mostrando la condición real de los equipos desde distintas perspectivas. Con ello, la plataforma une las disciplinas predictivas en un entorno colaborativo"
+        },
+        {
+            "bg": true,
+            "title": "ESCALABILIDAD Y CONTROL REMOTO CORPORATIVO",
+            "description": "Diseñado para operaciones complejas, IDAP permite administrar de forma remota varias plantas o corporativos desde una misma cuenta, visualizando indicadores clave de desempeño y hallazgos en cualquier ubicación"
         }
     ]
 }
