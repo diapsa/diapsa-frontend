@@ -78,7 +78,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((item, index) => (
                 <li key={index}>
-                  <NavLink href={item.href}>
+                  <NavLink variant="footer" href={item.href}>
                     {item.label}
                   </NavLink>
                   {'children' in item && Array.isArray(item.children) && (
