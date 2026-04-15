@@ -78,7 +78,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((item, index) => (
                 <li key={index}>
-                  <NavLink href={item.href}>
+                  <NavLink variant="footer" href={item.href}>
                     {item.label}
                   </NavLink>
                   {'children' in item && Array.isArray(item.children) && (
@@ -181,7 +181,7 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="mailto:contacto@diapsa.com"
+                  href="mailto:info@grupodiapsa.com"
                   className="text-white/80 hover:text-secondary transition-colors"
                 >
                   info@grupodiapsa.com
@@ -202,10 +202,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="tel:+528441234567"
+                  href="tel:+528145903792"
                   className="text-white/80 hover:text-secondary transition-colors"
                 >
-                  +52 (844) 123-4567
+                  +52 (81) 4590-3792
                 </a>
               </li>
             </ul>
