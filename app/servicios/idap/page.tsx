@@ -271,7 +271,7 @@ export default function PageIdap() {
 
                     <div className="pt-2">
                         <a
-                            href="mailto:contacto@diapsa.com"
+                            href="mailto:info@grupodiapsa.com"
                             className="inline-flex items-center justify-center gap-3 rounded-xs px-10 py-4 bg-secondary text-white font-semibold text-base shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.98]"
                         >
                             Contactar a un especialista

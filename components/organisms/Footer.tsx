@@ -181,7 +181,7 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="mailto:contacto@diapsa.com"
+                  href="mailto:info@grupodiapsa.com"
                   className="text-white/80 hover:text-secondary transition-colors"
                 >
                   info@grupodiapsa.com
