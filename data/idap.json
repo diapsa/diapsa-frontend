@@ -2,23 +2,23 @@
     "tabs": [
         {
             "id": "visualiza",
-            "title": "VISUALIZA EL ESTADO E HISOTRIAL DE TU MAQUINARIA",
+            "title": "VISUALIZA EL ESTADO E HISTORIAL DE TU MAQUINARIA",
             "text": [
-                "Analizamos las necesidades operativas en tanto a inteligencia y reporteo para elaborar métricos que engloben y diseccionen la iformación obtenida de maneras inteligentes que brinden respuestas específicas visualizadas de manera clara y contundente. La diferencia de IDAP está en el factor humano: no es una plataforma autónoma que solo recopila datos, sino un sistema vivo donde la tecnología y la experiencia de especialistas convergen para dar certeza en la toma dec decisiones y confianza en la operación"
+                "Analizamos las necesidades operativas en tanto a inteligencia y reporteo para elaborar métricos que engloben y diseccionen la información obtenida de maneras inteligentes que brinden respuestas específicas visualizadas de manera clara y contundente. La diferencia de IDAP está en el factor humano: no es una plataforma autónoma que solo recopila datos, sino un sistema vivo donde la tecnología y la experiencia de especialistas convergen para dar certeza en la toma de decisiones y confianza en la operación."
             ]
         },
         {
             "id": "reportes",
             "title": "OBTÉN REPORTES A MEDIDA DE TU OPERACIÓN",
             "text": [
-                "Analizamos las necesidades operativas en tanto a inteligencia y reporteo para elaborar métricos que engloben y diseccionen la iformación obtenida de maneras inteligentes que brinden respuestas específicas visualizadas de manera clara y contundente. La diferencia de IDAP está en el factor humano: no es una plataforma autónoma que solo recopila datos, sino un sistema vivo donde la tecnología y la experiencia de especialistas convergen para dar certeza en la toma dec decisiones y confianza en la operación"
+                "Analizamos las necesidades operativas en tanto a inteligencia y reporteo para elaborar métricos que engloben y diseccionen la información obtenida de maneras inteligentes que brinden respuestas específicas visualizadas de manera clara y contundente. La diferencia de IDAP está en el factor humano: no es una plataforma autónoma que solo recopila datos, sino un sistema vivo donde la tecnología y la experiencia de especialistas convergen para dar certeza en la toma de decisiones y confianza en la operación."
             ]
         },
         {
-            "id": "alarmas",
-            "title": "RECIBE ALARMAS EN TIEMPO REAL",
+            "id": "historial",
+            "title": "ANALIZA EL HISTORIAL Y TENDENCIAS DE TUS EQUIPOS",
             "text": [
-                "Analizamos las necesidades operativas en tanto a inteligencia y reporteo para elaborar métricos que engloben y diseccionen la iformación obtenida de maneras inteligentes que brinden respuestas específicas visualizadas de manera clara y contundente. La diferencia de IDAP está en el factor humano: no es una plataforma autónoma que solo recopila datos, sino un sistema vivo donde la tecnología y la experiencia de especialistas convergen para dar certeza en la toma dec decisiones y confianza en la operación"
+                "Cada inspección queda registrada en el sistema con su respectivo diagnóstico, gráfica de tendencias y recomendaciones técnicas. Esta trazabilidad histórica permite identificar patrones de falla, comparar el comportamiento de los equipos a lo largo del tiempo y medir la efectividad de las acciones preventivas tomadas."
             ]
         }
     ],
@@ -28,8 +28,8 @@
             "description": "Funciona como un puente entre la recabación y análisis del estado de los equipos y la visualización de datos analíticos, transformando la información técnica en herramientas claras para la interpretación, priorización y ejecución de acciones correctivas o preventivas."
         },
         {
-            "title": "¿CÓMO SE INTEGRA A MI OPERACIÓN??",
-            "description": "Usar IDAP comienza con un levantamiento técnico especializado, donde se identifican los puntos de monitoreo más relevantes y se definen los alcances de acuerdo con las necesidades de cada operación. A partir de ahí, se implementa al menos una revisión programada que permite validar condiciones, ajustar parámetros y proyectar escenarios de mantenimiento predictivo"
+            "title": "¿CÓMO SE INTEGRA A MI OPERACIÓN?",
+            "description": "Usar IDAP comienza con un levantamiento técnico especializado, donde se identifican los puntos de monitoreo más relevantes y se definen los alcances de acuerdo con las necesidades de cada operación. A partir de ahí, se implementa al menos una revisión programada que permite validar condiciones, ajustar parámetros y proyectar escenarios de mantenimiento predictivo."
         },
         {
             "title": "¿CÓMO APORTA VALOR A MI OPERACIÓN?",
@@ -44,7 +44,7 @@
         {
             "bg": true,
             "title": "INDICADORES DE CRITICIDAD DE ACTIVOS",
-            "description": "En DIAPSA, transformamos la gestion industrial mediante un analisis profundo del impacto operativo. Identifamos vulnerabilidades pra priorizar la continuidad de su produccion",
+            "description": "En DIAPSA, transformamos la gestión industrial mediante un análisis profundo del impacto operativo. Identificamos vulnerabilidades para priorizar la continuidad de su producción.",
             "status": [
                 {
                     "name": "Baja",
@@ -65,21 +65,44 @@
         {
             "title": "GESTIÓN INTEGRAL DE ACTIVOS INDUSTRIALES",
             "description": "IDAP centraliza toda la información técnica de planta en una sola plataforma. Esto permite tener control total del estado operativo de cada activo.",
-            "image": "/images/idap/integral-asset-management.png",
             "alt": "Panel de gestión integrada mostrando equipos, ubicaciones, niveles de criticidad, inspecciones, mantenimiento y componentes en plataforma centralizada",
             "items": [
-                "Equipos",
-                "Ubicaciones",
-                "Niveles de Criticidad",
-                "Inspecciones",
-                "Mantenimineto",
-                "Componentes"
+                {
+                    "id": "01",
+                    "name": "Equipos",
+                    "description": "Gestión centralizada de maquinaria pesada, motores industriales y sistemas de potencia automatizados."
+                },
+                {
+                    "id": "02",
+                    "name": "Ubicaciones",
+                    "description": "Jerarquía estructural de plantas y naves industriales."
+                },
+                {
+                    "id": "03",
+                    "name": "Criticidad",
+                    "description": "Niveles de riesgo y análisis de impacto operacional en tiempo real."
+                },
+                {
+                    "id": "04",
+                    "name": "Inspecciones",
+                    "description": "Protocolos de verificación técnica y auditoría de seguridad industrial."
+                },
+                {
+                    "id": "05",
+                    "name": "Mantenimiento",
+                    "description": "Planificación predictiva y correctiva de componentes críticos."
+                },
+                {
+                    "id": "06",
+                    "name": "Componentes",
+                    "description": "Inventario de piezas y datos técnicos de fábrica."
+                }
             ]
         },
         {
             "bg": true,
             "title": "MÚLTIPLES DISCIPLINAS, UN SOLO SISTEMA",
-            "description": "IDAP integra resultados de todas las diciplinas que se ejecutan en DIAPSA, mostrando la condición real de los equipos desde distintas perspectivas. Con ello, la plataforma une las disciplinas predictivas en un entorno colaborativo",
+            "description": "IDAP integra resultados de todas las disciplinas que se ejecutan en DIAPSA, mostrando la condición real de los equipos desde distintas perspectivas. Con ello, la plataforma une las disciplinas predictivas en un entorno colaborativo.",
             "image": "/images/idap/multidisciplines-2.png",
             "alt": "Iconos representando las seis disciplinas de predictivo: termografía infrarroja, análisis de vibraciones, ultrasonido pasivo, análisis de aceite, análisis eléctrico e integrales",
             "diciplines": [
@@ -106,7 +129,7 @@
                 {
                     "id": 5,
                     "icon": "electrical",
-                    "name": "Análisis de electrico"
+                    "name": "Análisis eléctrico"
                 },
                 {
                     "id": 6,
@@ -118,34 +141,34 @@
         {
             "bg": false,
             "title": "Indicadores de Resultados de Inspección y Prioridad",
-            "description": "Se proporcionan recomendaciones segun el estado del equipo y la interpretación de los indicadores de condición según niveles de riesgo y atención requerida.",
+            "description": "Se proporcionan recomendaciones según el estado del equipo y la interpretación de los indicadores de condición según niveles de riesgo y atención requerida.",
             "image": "/images/idap/status.png",
             "alt": "Indicadores de resultados de inspección con estados Bueno, Observación, Precaución, Alarma y Seguimiento, mostrando recomendaciones según nivel de riesgo",
             "indicadores": [
                 {
                     "id": 1,
                     "name": "Bueno",
-                    "recommendation": "Equipo dentro de parámetros. Continuar con el programa de monitoreo para evitar cambios de estado inesperados"
+                    "recommendation": "Equipo dentro de parámetros. Continuar con el programa de monitoreo para evitar cambios de estado inesperados."
                 },
                 {
                     "id": 2,
                     "name": "Observación",
-                    "recommendation": "Mantener al equipo en observación al estar vulnerable a fallos futuros inminentes"
+                    "recommendation": "Mantener al equipo en observación al estar vulnerable a fallos futuros inminentes."
                 },
                 {
                     "id": 3,
                     "name": "Precaución",
-                    "recommendation": "Programar medidas correctivas tan pronto disponga el equipo verificando su criticidad operativa"
+                    "recommendation": "Programar medidas correctivas tan pronto disponga el equipo verificando su criticidad operativa."
                 },
                 {
                     "id": 4,
                     "name": "Alarma",
-                    "recommendation": "Programar y ejecutar medidas correctivas inmediatamente para evitar falla crítica"
+                    "recommendation": "Programar y ejecutar medidas correctivas inmediatamente para evitar falla crítica."
                 },
                 {
                     "id": 5,
                     "name": "Seguimiento",
-                    "recommendation": "No requiere atención inmediata. Dar seguimiento continuo para cerciorarse que no haya cambios peligrosos en la operación"
+                    "recommendation": "No requiere atención inmediata. Dar seguimiento continuo para cerciorarse que no haya cambios peligrosos en la operación."
                 }
             ]
         },
@@ -153,15 +176,21 @@
             "bg": true,
             "title": "SEGUIMIENTO HISTÓRICO Y ANÁLISIS COMPARATIVO",
             "description": "Cada inspección queda registrada en el sistema con su respectivo diagnóstico, gráfica de tendencias y recomendaciones técnicas. Esta trazabilidad histórica permite identificar patrones de falla y medir la efectividad de las acciones preventivas.",
-            "image": "/images/idap/historical-analysis.png",
+            "images": [
+                {
+                    "src": "/images/idap/idap-dashboard.png",
+                    "alt": "Descripción imagen 1"
+                },
+                {
+                    "src": "/images/idap/chart.png",
+                    "alt": "Descripción imagen 2"
+                },
+                {
+                    "src": "/images/idap/history.png",
+                    "alt": "Descripción imagen 3"
+                }
+            ],
             "alt": "Gráfica de tendencias históricas mostrando series de tiempo de inspecciones anteriores, diagnósticos de condición y patrones de falla identificados"
-        },
-        {
-            "bg": false,
-            "title": "ESCALABILIDAD Y CONTROL REMOTO CORPORATIVO",
-            "description": "Diseñado para operaciones complejas, IDAP permite administrar de forma remota varias plantas o corporativos desde una misma cuenta, visualizando indicadores clave de desempeño y hallazgos en cualquier ubicación",
-            "image": "/images/idap/corporate-control.png",
-            "alt": "Interfaz de control remoto centralizado mostrando múltiples plantas e instalaciones corporativas con KPIs y hallazgos consolidados por ubicación"
         }
     ]
 }

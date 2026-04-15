@@ -34,7 +34,7 @@ export default function IdapHero() {
             <div className="relative z-10 w-full lg:w-1/2 text-white px-8 lg:ps-20 2xl:ps-28 flex flex-col justify-center space-y-8 2xl:space-y-10">
 
                 {/* Badge de categoría */}
-                <div className="inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-secondary/10 px-4 py-1.5 backdrop-blur-sm">
+                <div className="inline-flex self-start items-center gap-2 rounded-full border border-secondary/40 bg-secondary/10 px-4 py-1.5 backdrop-blur-sm">
                     <span className="h-2 w-2 animate-pulse rounded-full bg-secondary" />
                     <span className="text-xs font-semibold uppercase tracking-widest text-secondary">
                         Plataforma Tecnológica
@@ -43,7 +43,7 @@ export default function IdapHero() {
 
                 {/* Título + subtítulo */}
                 <div className="space-y-3">
-                    <h1 className="text-8xl 2xl:text-[9rem] font-black leading-none tracking-tight">
+                    <h1 className="text-8xl 2xl:text-[9rem] font-bold leading-none tracking-tight">
                         <span className="text-secondary">I</span>DAP
                     </h1>
 
@@ -68,9 +68,9 @@ export default function IdapHero() {
                 {/* Métricas clave */}
                 <div className="flex flex-wrap gap-x-6 gap-y-4">
                     {[
-                        { value: "+500", label: "Activos monitoreados" },
-                        { value: "24/7", label: "Disponibilidad" },
-                        { value: "Real-time", label: "Datos en vivo" },
+                        { value: "+22", label: "Años de experiencia en predictivo" },
+                        { value: "6", label: "Disciplinas integradas" },
+                        { value: "100%", label: "Respaldado por especialistas DIAPSA" },
                     ].map(({ value, label }) => (
                         <div key={label} className="flex flex-col">
                             <span className="text-2xl 2xl:text-3xl font-bold text-secondary">{value}</span>
@@ -81,38 +81,32 @@ export default function IdapHero() {
 
                 {/* CTAs */}
                 <div className="flex flex-wrap gap-4 pt-2">
-                    <Button variant="secondary">Solicitar demo</Button>
-                    <Button variant="primary" ghost ghostVariant="dark">
-                        Conocer más
-                    </Button>
+                    <a href="#contacto">
+                        <Button variant="secondary">Solicitar información</Button>
+                    </a>
+                    <a href="#plataforma">
+                        <Button variant="primary" ghost ghostVariant="dark">
+                            Explorar plataforma
+                        </Button>
+                    </a>
                 </div>
             </div>
 
-            {/* ══ COLUMNA DERECHA — GRÁFICA ══ */}
-            <div className="relative z-10 hidden lg:flex w-1/2 flex-col py-12 2xl:py-16 justify-center items-end">
+            {/* ══ COLUMNA DERECHA — MOCKUP ══ */}
+            <div className="relative z-10 hidden lg:flex w-1/2 flex-col justify-center items-center">
 
-                {/* Halo naranja detrás del panel */}
+                {/* Halo naranja detrás del mockup */}
                 <div className="absolute right-24 top-1/2 -translate-y-1/2 h-80 w-80 rounded-full bg-secondary/15 blur-3xl" />
 
-                {/* Frame del panel */}
-                <div
-                    className="relative mr-0 w-full flex-1 overflow-hidden rounded-tl-2xl rounded-bl-2xl flex flex-col"
-
-                >
-                    {/* Barra superior de "ventana" de app */}
-                    <div className="flex-none flex h-9 items-center gap-2 bg-primary/80 px-4 backdrop-blur-sm border-b border-white/10">
-                        <span className="h-2.5 w-2.5 rounded-full bg-secondary/80" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-                        <span className="ml-4 text-xs text-white/40 font-mono">
-                            idap.diapsa.com / activos / tendencias
-                        </span>
-                    </div>
-
-                    {/* Gráfica */}
-                    <div className="relative flex-1 overflow-hidden">
-                        <Image src="/images/idap/chart.png" fill className="object-cover " alt="Dashboard de IDAP" />
-                    </div>
+                {/* Mockup */}
+                <div className="relative w-full h-full">
+                    <Image
+                        src="/images/idap/mockup.png"
+                        fill
+                        className="object-contain object-center"
+                        alt="Dashboard de IDAP en laptop"
+                        priority
+                    />
                 </div>
             </div>
 
