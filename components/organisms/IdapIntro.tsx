@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import idapdata from '@/data/idap.json';
 import Button from "../atoms/Button";
+import Link from "next/link";
 
 
 export default function IdapIntro() {
@@ -31,7 +32,7 @@ export default function IdapIntro() {
                         <div>
                             <h2>¿QUÉ ES IDAP</h2>
                             <p className="text-sm font-sans">
-                                IDAP (Interfaz de Diagnóstico y Análisis Predictivo) es la plataforma
+                                IDAP ( Inspection, Diagnostic &amp; Asset Platform) es la plataforma
                                 desarrollada por DIAPSA para la gestión integral de resultados de
                                 monitoreo de condición.
                             </p>
@@ -99,10 +100,13 @@ export default function IdapIntro() {
                 </div>
             </div>
             <div className="flex flex-col lg:flex-row justify-around items-center p-6 text-black">
-                <p className="text-2xl text-center">¡INTEGRA IDAP EN TU OPERACIÓN YA!</p>
-                <Button variant="black" className="text-2xl">
-                    CONOCE PRECIOS Y PAQUETES
-                </Button>
+
+                <p className="text-2xl text-center uppercase">Deja de reaccionar ante las fallas. Con IDAP, anticípalas.</p>
+                <Link href='/servicios/idap'>
+                    <Button variant="black" className="text-2xl uppercase">
+                        Descubir IDAP
+                    </Button>
+                </Link>
             </div>
             <div className="relative bg-gray-500 py-8 px-4 md:py-12 md:px-16 lg:py-16 lg:px-32 xl:px-48 flex justify-center items-center">
 
