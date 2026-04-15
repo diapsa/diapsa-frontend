@@ -202,10 +202,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="tel:+528441234567"
+                  href="tel:+528145903792"
                   className="text-white/80 hover:text-secondary transition-colors"
                 >
-                  +52 (844) 123-4567
+                  +52 (81) 4590-3792
                 </a>
               </li>
             </ul>

@@ -347,17 +347,17 @@ export default function ContactLandingForm() {
           <p className="text-gray-600 text-sm">
             También puedes contactarnos directamente al{" "}
             <a
-              href="tel:+525512345678"
+              href="tel:+528145903792"
               className="text-secondary font-semibold hover:underline"
             >
-              +52 (55) 1234-5678
+              +52 (81) 4590-3792
             </a>{" "}
             o vía email a{" "}
             <a
-              href="mailto:contacto@diapsa.com.mx"
+              href="mailto:info@grupodiapsa.com"
               className="text-secondary font-semibold hover:underline"
             >
-              contacto@diapsa.com.mx
+              info@grupodiapsa.com
             </a>
           </p>
         </div>

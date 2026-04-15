@@ -4,6 +4,7 @@ import IdapPillars from "@/components/organisms/IdapPillars";
 import IdapFaq from "@/components/organisms/IdapFaq";
 import { information as idapdata } from "@/data/idap.json";
 import Image from "next/image";
+import ContactLandingForm from "@/components/organisms/ContactLandingForm";
 
 type InfoBlock = {
     bg?: boolean;
