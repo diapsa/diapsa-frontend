@@ -44,6 +44,66 @@ function LoadingSkeleton() {
     );
 }
 
+function CoursePromo() {
+    const pillars = [
+        { icon: '🏆', text: 'Certificaciones ISO reconocidas globalmente' },
+        { icon: '⚙️', text: 'Metodología práctica basada en campo real' },
+        { icon: '📈', text: 'Profesionales que reducen fallas hasta un 40%' },
+    ];
+
+    return (
+        <div className="relative overflow-hidden flex flex-col gap-6 p-6 md:p-8 bg-linear-to-br from-primary via-primary to-primary/90 rounded-2xl shadow-2xl border border-white/10">
+            {/* Decorative glows */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+
+            {/* Badge */}
+            <span className="inline-flex items-center gap-2 w-fit bg-secondary/20 text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+                Programa de formación
+            </span>
+
+            {/* Punchline principal */}
+            <div className="space-y-2">
+                <p className="text-white/60 text-sm uppercase tracking-widest">La diferencia entre</p>
+                <h3 className="text-white text-2xl md:text-3xl font-extrabold leading-tight">
+                    reaccionar a las fallas
+                    <br />
+                    <span className="text-secondary">y anticiparlas</span>
+                    <br />
+                    <span className="text-white/80 text-xl md:text-2xl font-bold">se llama formación.</span>
+                </h3>
+            </div>
+
+            {/* Pilares */}
+            <ul className="flex flex-col gap-3">
+                {pillars.map((p) => (
+                    <li key={p.text} className="flex items-center gap-3 text-sm text-white/80">
+                        <span className="text-lg shrink-0">{p.icon}</span>
+                        {p.text}
+                    </li>
+                ))}
+            </ul>
+
+            {/* Divider */}
+            <div className="w-12 h-0.5 rounded-full bg-secondary/50" />
+
+            {/* CTA */}
+            <div className="flex flex-col gap-3">
+                <p className="text-white/50 text-xs text-center">
+                    Nuevas fechas disponibles próximamente
+                </p>
+                <Link
+                    href="/cursos"
+                    className="w-full text-center bg-secondary hover:bg-secondary/90 active:scale-95 transition-all text-white font-bold py-3 px-6 rounded-lg shadow-lg text-sm uppercase tracking-wider"
+                >
+                    Explorar todos los cursos →
+                </Link>
+            </div>
+        </div>
+    );
+}
+
 export function TimerCourses() {
     const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
     const [isExpired, setIsExpired] = useState(false);
@@ -89,7 +149,7 @@ export function TimerCourses() {
     }, [course]);
 
     if (isLoading) return <LoadingSkeleton />;
-    if (!course || isExpired || !timeLeft) return null;
+    if (!course || isExpired || !timeLeft) return <CoursePromo />;
 
     const formattedDate = new Date(course.next_date).toLocaleDateString('es-MX', {
         weekday: 'long',

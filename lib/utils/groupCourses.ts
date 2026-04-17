@@ -11,13 +11,14 @@ export function groupCoursesByType(courses: Course[]): GroupedCourses {
         switch (type) {
             case 'certificados':
             case 'certificado':
+            case 'Certificación':
                 certificates.push(course);
                 break;
-            case 'taller':
+            case 'Taller':
             case 'talleres':
                 workshops.push(course);
                 break;
-            case 'estrategicos':
+            case 'Estrategico':
             case 'estrategico':
                 strategics.push(course);
         }

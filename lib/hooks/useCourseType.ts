@@ -1,6 +1,5 @@
 'use client';
 
-import { CourseType } from "@/types/course";
 import { useEffect, useState } from "react";
 import { getCourseCategories } from "../api/courses";
 import { Category } from "@/types/category";

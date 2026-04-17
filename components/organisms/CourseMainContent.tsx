@@ -24,11 +24,12 @@ export default function CourseMainContent() {
             </div>
 
             {/* Imagen derecha — en móvil actúa como fondo detrás del contenido */}
-            <div className="absolute inset-0 md:static md:relative md:w-1/2 h-full">
+            <div className="absolute inset-0 md:static  md:w-1/2 h-full">
                 <Image
                     src="/images/vision-image.jpeg"
                     alt="Técnico tomando Diplomado"
                     fill
+                    priority
                     className="object-cover"
                 />
                 {/* En móvil: overlay denso para asegurar legibilidad del texto encima */}
