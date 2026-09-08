@@ -185,11 +185,11 @@ export default async function ServicePage({
                                 {overviewTitle}
                             </h2>
 
-                            <p className="text-tertiary text-lg leading-relaxed max-w-2xl">
+                            <p className="text-tertiary text-lg leading-relaxed max-w-2xl text-justify">
                                 {overviewSubtitle}
                             </p>
 
-                            <p className="text-tertiary text-base lg:text-lg leading-relaxed max-w-2xl mt-5">
+                            <p className="text-tertiary text-base lg:text-lg leading-relaxed max-w-2xl mt-5 text-justify">
                                 Integramos levantamiento en campo, lectura tecnica de la condicion del activo
                                 y recomendaciones accionables para que mantenimiento pueda priorizar
                                 intervenciones con mejor criterio operativo.
@@ -252,7 +252,7 @@ export default async function ServicePage({
                             Informacion tecnica <span className="text-secondary">visible y accionable</span>
                         </h2>
 
-                        <p className="text-tertiary text-lg max-w-2xl leading-relaxed">
+                        <p className="text-tertiary text-lg max-w-2xl leading-relaxed text-justify">
                             Estos son los puntos clave del servicio, organizados para entender donde se aplica,
                             que impacto tiene y bajo que criterio se ejecuta.
                         </p>
@@ -274,7 +274,7 @@ export default async function ServicePage({
                                     </h3>
                                 </div>
 
-                                <p className="text-tertiary text-base leading-relaxed">
+                                <p className="text-tertiary text-base leading-relaxed text-justify">
                                     {item.content}
                                 </p>
                             </article>
@@ -291,7 +291,7 @@ export default async function ServicePage({
                                 Del dato al <span className="text-secondary">criterio de mantenimiento</span>
                             </h2>
 
-                            <p className="text-white/80 text-lg leading-relaxed max-w-2xl">
+                            <p className="text-white/80 text-lg leading-relaxed max-w-2xl text-justify">
                                 El objetivo no es solo medir: es interpretar la condicion real del equipo,
                                 documentar hallazgos y convertirlos en decisiones claras para reducir riesgo
                                 operativo.
@@ -344,7 +344,7 @@ export default async function ServicePage({
                             <h2 className="text-3xl lg:text-4xl font-extrabold text-primary leading-tight">
                                 DIAPSA <span className="text-secondary">en campo</span>
                             </h2>
-                            <p className="text-tertiary text-lg mt-2 max-w-2xl">
+                            <p className="text-tertiary text-lg mt-2 max-w-2xl text-justify">
                                 Nuestros analistas, nuestros equipos y mediciones reales. Sin fotos de banco de imágenes.
                             </p>
                         </div>
@@ -387,7 +387,7 @@ export default async function ServicePage({
                                             +
                                         </span>
                                     </summary>
-                                    <p className="mt-3 text-tertiary text-base lg:text-lg leading-relaxed">
+                                    <p className="mt-3 text-tertiary text-base lg:text-lg leading-relaxed text-justify">
                                         {item.answer}
                                     </p>
                                 </details>
@@ -407,7 +407,7 @@ export default async function ServicePage({
                         <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-4 leading-tight">
                             {service.cta.title}
                         </h2>
-                        <p className="text-primary/80 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+                        <p className="text-primary/80 text-lg leading-relaxed max-w-2xl mx-auto mb-8 text-justify">
                             {service.cta.text}
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

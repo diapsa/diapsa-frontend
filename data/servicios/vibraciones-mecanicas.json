@@ -44,7 +44,7 @@
       {
         "id": "metodologia",
         "title": "Metodología y normas",
-        "content": "Medimos y evaluamos conforme a ISO 10816 e ISO 20816 con analizadores de vibraciones certificados. Los espectros los interpreta un analista con certificación Categoría III según ISO 18436-2 — no solo un software."
+        "content": "Medimos y evaluamos conforme a ISO 10816 e ISO 20816 con analizadores de vibraciones certificados. Los espectros los interpreta un analista con certificación Categoría III según ISO 18436-2, no solo un software."
       },
       {
         "id": "beneficios",
@@ -66,7 +66,7 @@
   "faq": [
     {
       "question": "¿Qué es el análisis de vibraciones?",
-      "answer": "Es una técnica de mantenimiento predictivo que mide la vibración de la maquinaria rotativa para detectar fallas en desarrollo. Cada tipo de falla — desbalanceo, desalineación, un rodamiento dañado — deja una firma distinta en el espectro de vibración, lo que permite identificarla y corregirla antes de que provoque un paro."
+      "answer": "Es una técnica de mantenimiento predictivo que mide la vibración de la maquinaria rotativa para detectar fallas en desarrollo. Cada tipo de falla, como el desbalanceo, la desalineación o un rodamiento dañado, deja una firma distinta en el espectro de vibración, lo que permite identificarla y corregirla antes de que provoque un paro."
     },
     {
       "question": "¿Qué fallas se pueden detectar con el análisis de vibraciones?",
