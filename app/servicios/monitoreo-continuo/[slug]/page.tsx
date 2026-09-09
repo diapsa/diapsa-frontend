@@ -10,6 +10,7 @@ import JsonLd, {
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
 import ServiceTable from "@/components/organisms/ServiceTable";
+import ServiceRecurso from "@/components/organisms/ServiceRecurso";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
@@ -435,6 +436,10 @@ export default async function ServicePage({
                         </div>
                     </div>
                 </section>
+            )}
+
+            {service.recurso && (
+                <ServiceRecurso recurso={service.recurso} servicio={service.header.title} />
             )}
 
             {/* Artículo del blog sobre el mismo tema. Sirve al lector que

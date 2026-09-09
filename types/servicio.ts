@@ -45,6 +45,15 @@ export interface GaleriaFoto {
   alt: string;
 }
 
+export interface ServiceRecurso {
+  titulo: string;
+  descripcion: string;
+  /** Qué trae el material, para que el visitante sepa qué recibe. */
+  incluye?: string[];
+  /** Ruta pública del archivo, ej. /documentos/reporte-ejemplo-vibraciones.pdf */
+  archivo: string;
+}
+
 export interface ServiceTabla {
   titulo: string;
   subtitulo?: string;
@@ -85,4 +94,6 @@ export interface Servicio {
   galeria?: GaleriaFoto[];
   /** Tabla técnica de referencia. */
   tabla?: ServiceTabla;
+  /** Material descargable a cambio de datos de contacto. */
+  recurso?: ServiceRecurso;
 }
