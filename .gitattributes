@@ -1,0 +1,28 @@
+# Normalizacion de fin de linea.
+#
+# Sin esto, `core.autocrlf=true` en Windows hace que cada archivo tocado
+# aparezca como reescrito por completo en el diff. Con `text=auto eol=lf`
+# el repositorio guarda siempre LF y cada quien trabaja con lo que su
+# sistema use localmente.
+* text=auto eol=lf
+
+# Scripts que se ejecutan en el servidor: siempre LF, sin excepcion.
+*.sh text eol=lf
+
+# Binarios: git no debe tocarlos.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.mp4 binary
+*.webm binary
+
+# Generado por npm: se marca para que no ensucie las revisiones.
+package-lock.json linguist-generated=true -diff

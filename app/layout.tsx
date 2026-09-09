@@ -3,11 +3,14 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
+import WhatsAppButton from "@/components/atoms/WhatsAppButton";
+import ClarityAnalytics from "@/components/atoms/ClarityAnalytics";
 import JsonLd, {
   organizationSchema,
   localBusinessSchema,
   createWebsiteSchema,
 } from "@/components/atoms/JsonLd";
+import { SITE_CONFIG } from "@/lib/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,9 +22,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const BASE_URL = "https://www.grupodiapsa.com.mx";
-const OG_IMAGE = "/images/og-images/og-image.jpg";
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -30,7 +30,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL(SITE_CONFIG.baseUrl),
   title: {
     default: "Grupo DIAPSA | Mantenimiento Predictivo Industrial",
     template: "%s | Grupo DIAPSA",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     "confiabilidad de equipos",
     "Grupo DIAPSA",
   ],
-  authors: [{ name: "Grupo DIAPSA", url: BASE_URL }],
+  authors: [{ name: "Grupo DIAPSA", url: SITE_CONFIG.baseUrl }],
   creator: "Grupo DIAPSA",
   publisher: "Grupo DIAPSA",
   formatDetection: {
@@ -65,14 +65,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_MX",
-    url: BASE_URL,
+    url: SITE_CONFIG.baseUrl,
     siteName: "Grupo DIAPSA",
     title: "Grupo DIAPSA | Mantenimiento Predictivo Industrial",
     description:
       "Mantenimiento predictivo, monitoreo de condición y servicios de mantenimiento industrial para Mexico y Sudamérica.",
     images: [
       {
-        url: OG_IMAGE,
+        url: SITE_CONFIG.defaultOgImage,
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     title: "Grupo DIAPSA | Mantenimiento Predictivo Industrial",
     description:
       "Mantenimiento predictivo, monitoreo de condición y servicios de mantenimiento industrial para Mexico y Sudamérica.",
-    images: [OG_IMAGE],
+    images: [SITE_CONFIG.defaultOgImage],
   },
   robots: {
     index: true,
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: BASE_URL,
+    canonical: SITE_CONFIG.baseUrl,
   },
   manifest: "/manifest.json",
   icons: {
@@ -137,6 +137,8 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <WhatsAppButton etiqueta="WhatsApp" />
+        <ClarityAnalytics />
       </body>
     </html>
   );

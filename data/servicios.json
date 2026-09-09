@@ -22,12 +22,38 @@
             {
                 "label": "Análisis de Ultrasonido",
                 "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+            },
+            {
+                "label": "Análisis de Aceite",
+                "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+            },
+            {
+                "label": "Tierras Físicas",
+                "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+            },
+            {
+                "label": "Estudios de Arco Eléctrico",
+                "href": "/servicios/monitoreo-condicion/arco-electrico"
             }
         ]
     },
     {
         "label": "Monitoreo Continuo",
-        "href": "/servicios/monitoreo-continuo"
+        "href": "/servicios/monitoreo-continuo",
+        "children": [
+            {
+                "label": "Proyectos de Cámaras Térmicas",
+                "href": "/servicios/monitoreo-continuo/camaras-termicas"
+            },
+            {
+                "label": "Sensores de Vibración",
+                "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+            },
+            {
+                "label": "Sensores Acústicos",
+                "href": "/servicios/monitoreo-continuo/sensores-acusticos"
+            }
+        ]
     },
     {
         "label": "DIAPSA START",

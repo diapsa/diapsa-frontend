@@ -103,10 +103,18 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <NavLink
-                  href="/nosotros"
+                  href="/acerca-de"
                   variant="footer"
                 >
                   Acerca de Nosotros
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  href="/metodologia"
+                  variant="footer"
+                >
+                  Metodología
                 </NavLink>
               </li>
               <li>
@@ -119,10 +127,26 @@ export default function Footer() {
               </li>
               <li>
                 <NavLink
+                  href="/webinar"
+                  variant="footer"
+                >
+                  Webinar
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   href="/blog"
                   variant="footer"
                 >
                   Blog
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  href="/folletodigital"
+                  variant="footer"
+                >
+                  Folleto digital
                 </NavLink>
               </li>
               <li>

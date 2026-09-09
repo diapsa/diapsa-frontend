@@ -8,6 +8,21 @@ import Dropdown from "@/components/atoms/Dropdown";
 import Link from "next/link";
 import services from '@/data/servicios.json'
 
+// Menú de 5 entradas (2026-08-25). Antes había 7, con "Monitoreo" y "Detección
+// de Gas" sueltos arriba y un cajón de sastre llamado "Más servicios". Ahora
+// todos los servicios viven bajo una sola entrada: Servicios.
+
+// Todo lo institucional cuelga de "Empresa" en vez de ocupar la tira principal.
+const empresaLinks = [
+    { label: "Acerca de Nosotros", href: "/acerca-de" },
+    { label: "Metodología", href: "/metodologia" },
+    { label: "Galería", href: "/acerca-de#galeria" },
+    { label: "Blog", href: "/blog" },
+    { label: "Webinar", href: "/webinar" },
+    { label: "Folleto digital", href: "/folletodigital" },
+    { label: "Contacto", href: "/contacto" },
+];
+
 export default function NavBar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -27,36 +42,31 @@ export default function NavBar() {
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="flex items-center justify-between py-3 sm:py-4">
                     {/* Left Side: Logo + Desktop Navigation */}
-                    <div className="flex items-center space-x-12">
+                    <div className="flex items-center gap-6 xl:gap-10 min-w-0">
                         {/* Logo */}
-                        <Link href="/" className="flex items-center z-50">
+                        <Link href="/" className="flex items-center z-50 shrink-0">
                             <Logo />
                         </Link>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden lg:flex items-center space-x-8 text-white">
-                            <NavLink href="/acerca-de">
-                                Acerca de
-                            </NavLink>
+                        <div className="hidden lg:flex items-center gap-5 xl:gap-7 text-white whitespace-nowrap">
                             <Dropdown
                                 trigger="Servicios"
                                 items={services}
                             />
-                            <NavLink href="/productos">
-                                Productos
-                            </NavLink>
-                            <NavLink href="/metodologia">
-                                Metodología
-                            </NavLink>
                             <NavLink href="/cursos">
                                 Cursos
                             </NavLink>
+                            <NavLink href="/productos">
+                                Equipos
+                            </NavLink>
                             <NavLink href="/casos-exito">
-                                Resultados
+                                Casos de Éxito
                             </NavLink>
-                            <NavLink href="/blog">
-                                Blog
-                            </NavLink>
+                            <Dropdown
+                                trigger="Empresa"
+                                items={empresaLinks}
+                            />
                         </div>
                     </div>
 
@@ -66,7 +76,7 @@ export default function NavBar() {
                         <div className="hidden lg:block">
                             <Link href="/contacto">
                                 <Button variant="primary" ghost ghostVariant="auto">
-                                    Contactanos
+                                    Cotizar
                                 </Button>
                             </Link>
                         </div>
@@ -81,7 +91,7 @@ export default function NavBar() {
                                     href="https://www.facebook.com/diapsa/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-6 h-6 bg-white hover:bg-secondary flex items-center justify-center transition-all duration-200 rounded group"
+                                    className="w-9 h-9 bg-white hover:bg-secondary flex items-center justify-center transition-all duration-200 rounded group"
                                     aria-label="Facebook"
                                 >
                                     <svg
@@ -96,7 +106,7 @@ export default function NavBar() {
                                     href="https://www.linkedin.com/company/grupodiapsa"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-6 h-6 bg-white hover:bg-secondary flex items-center justify-center transition-all duration-200 rounded group"
+                                    className="w-9 h-9 bg-white hover:bg-secondary flex items-center justify-center transition-all duration-200 rounded group"
                                     aria-label="LinkedIn"
                                 >
                                     <svg
@@ -146,20 +156,63 @@ export default function NavBar() {
                 {isMobileMenuOpen && (
                     <div className="lg:hidden absolute top-full left-0 w-full bg-black border-t border-white/10 shadow-xl">
                         <div className="flex flex-col space-y-1 px-4 py-4">
-                            <Link
-                                href="/acerca-de"
-                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Acerca de
-                            </Link>
-
-                            {/* Mobile Services Section */}
+                            {/* Servicios — mismo agrupamiento que en escritorio */}
                             <div className="py-2">
                                 <p className="text-white/60 text-xs uppercase font-semibold px-4 mb-2">
                                     Servicios
                                 </p>
                                 {services.map((item, index) => (
+                                    <div key={index}>
+                                        <Link
+                                            href={item.href}
+                                            className="text-white hover:text-secondary transition-colors py-2.5 px-6 block rounded-lg hover:bg-white/5"
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                        {"children" in item && item.children?.map((child) => (
+                                            <Link
+                                                key={child.href}
+                                                href={child.href}
+                                                className="text-white/80 hover:text-secondary transition-colors py-2 pl-10 pr-6 block text-sm rounded-lg hover:bg-white/5"
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                            >
+                                                {child.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                ))}
+                            </div>
+
+                            <Link
+                                href="/cursos"
+                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Cursos
+                            </Link>
+                            <Link
+                                href="/productos"
+                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Equipos
+                            </Link>
+
+                            <Link
+                                href="/casos-exito"
+                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Casos de Éxito
+                            </Link>
+
+                            {/* Empresa */}
+                            <div className="py-2">
+                                <p className="text-white/60 text-xs uppercase font-semibold px-4 mb-2">
+                                    Empresa
+                                </p>
+                                {empresaLinks.map((item, index) => (
                                     <Link
                                         key={index}
                                         href={item.href}
@@ -170,46 +223,12 @@ export default function NavBar() {
                                     </Link>
                                 ))}
                             </div>
-                            {/* Mobile Products Section */}
-
-                            <Link
-                                href="/productos"
-                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Productos
-                            </Link>
-
-
-
-                            <Link
-                                href="/metodologia"
-                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Metodología
-                            </Link>
-
-                            <Link
-                                href="/cursos"
-                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Cursos
-                            </Link>
-                            <Link
-                                href="/casos-exito"
-                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Resultados
-                            </Link>
 
                             {/* Mobile CTA */}
                             <div className="pt-4 pb-2 px-4">
                                 <Link href="/contacto" onClick={() => setIsMobileMenuOpen(false)}>
                                     <Button variant="primary" ghost ghostVariant="auto">
-                                        Contactanos
+                                        Cotizar
                                     </Button>
                                 </Link>
                             </div>

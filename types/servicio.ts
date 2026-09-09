@@ -35,6 +35,23 @@ export interface RelatedProducts {
   items: RelatedProduct[];
 }
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface GaleriaFoto {
+  src: string;
+  alt: string;
+}
+
+export interface ServiceCta {
+  title: string;
+  text: string;
+  /** Mensaje prellenado para el enlace de WhatsApp. */
+  whatsappMessage: string;
+}
+
 export interface Servicio {
   id: string;
   slug: string;
@@ -43,4 +60,16 @@ export interface Servicio {
   header: ServiceHeader;
   content: ServiceContent;
   relatedProducts: RelatedProducts;
+  /** Meta descripción para Google. Si falta, se usa header.subtitle
+      (que también es el subtítulo visible del hero). */
+  seoDescription?: string;
+  /** Preguntas frecuentes. Si existen, la página las muestra y emite
+      schema FAQPage (elegible para resultado enriquecido en Google). */
+  faq?: FaqItem[];
+  /** Llamado a la acción específico del servicio (banda tras el FAQ). */
+  cta?: ServiceCta;
+  /** Certificación a resaltar en la banda de cifras, ej. "Analistas Categoría III · ISO 18436-2". */
+  certificacion?: string;
+  /** Fotos reales de campo; si existen, la página muestra la franja "DIAPSA en campo". */
+  galeria?: GaleriaFoto[];
 }

@@ -113,12 +113,23 @@ function getPageParam(page?: string | string[]) {
 export default async function BlogPage({ searchParams }: BlogPageProps) {
     const params = await searchParams;
     const requestedPage = getPageParam(params?.page);
+    // Si el CMS no responde, la página carga vacía en vez de devolver un 500.
     const blogsResponse = await getPaginatedBlogs({
         page: requestedPage,
         perPage: BLOGS_PER_PAGE,
+    }).catch((error) => {
+        console.error("[blog] No se pudo cargar el listado:", error);
+        return null;
     });
-    const blogs = blogsResponse.data;
-    const meta = blogsResponse.meta;
+    const blogs = blogsResponse?.data ?? [];
+    const meta = blogsResponse?.meta ?? {
+        current_page: requestedPage,
+        from: 0,
+        last_page: 1,
+        per_page: BLOGS_PER_PAGE,
+        to: 0,
+        total: 0,
+    };
 
     const breadcrumbJsonLd = createBreadcrumbSchema([
         { name: "Inicio", url: "/" },

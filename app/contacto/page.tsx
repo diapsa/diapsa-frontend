@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
 import ContactFormGeneral from "@/components/organisms/ContactFormGeneral";
 import PageHeader from "@/components/organisms/PageHeader";
+
+export const metadata: Metadata = {
+    title: "Contacto",
+    description: "Solicita un diagnóstico sin costo para tu planta industrial. Expertos en mantenimiento predictivo, monitoreo de condición y detección de gases listos para ayudarte.",
+    alternates: {
+        canonical: "/contacto",
+    },
+    openGraph: {
+        title: "Contacto — Grupo DIAPSA",
+        description: "Habla con un experto en mantenimiento predictivo. Respuesta en menos de 24 horas.",
+        url: "/contacto",
+        type: "website",
+    },
+};
 
 export default function ContactPage() {
     return (

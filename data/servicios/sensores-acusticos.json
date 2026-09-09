@@ -1,0 +1,61 @@
+{
+  "id": "sensores-acusticos",
+  "slug": "sensores-acusticos",
+  "type": "tecnologia",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo Continuo",
+      "link": "/servicios/monitoreo-continuo"
+    },
+    {
+      "label": "Sensores Acústicos",
+      "link": "/servicios/monitoreo-continuo/sensores-acusticos"
+    }
+  ],
+  "header": {
+    "title": "Sensores Acústicos",
+    "subtitle": "Detección de fugas y anomalías por ultrasonido y acústica",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoDescription": "Sensores acústicos y de ultrasonido para detectar fugas de aire comprimido y gas, descargas eléctricas y fallas tempranas de rodamientos, en continuo.",
+  "content": {
+    "title": "¿Qué detectan los sensores acústicos?",
+    "subtitle": "Muchas fallas suenan antes de verse: una fuga, una descarga eléctrica o un rodamiento que empieza a degradarse emiten ultrasonido mucho antes de dar otra señal. Estos sensores lo escuchan por ti, todo el tiempo.",
+    "image": "/images/deteccion-gas/camaras-acusticas-deteccion-gas.png",
+    "items": [
+      {
+        "id": "donde-aplica",
+        "title": "Dónde se aplica",
+        "content": "Redes de aire comprimido y gases (las fugas son dinero que se escapa todos los días), equipos eléctricos con riesgo de descargas parciales, trampas de vapor y rodamientos de baja velocidad donde la vibración tradicional detecta tarde."
+      },
+      {
+        "id": "que-incluye",
+        "title": "Qué incluye el proyecto",
+        "content": "Levantamiento de los puntos a vigilar, instalación de los sensores, umbrales de alarma por tipo de fuente y reporte de hallazgos priorizado: qué fuga cerrar primero, qué equipo intervenir y cuánto se está perdiendo por no hacerlo."
+      },
+      {
+        "id": "beneficios",
+        "title": "Beneficios",
+        "content": "Ahorro directo al eliminar fugas de aire y gas, prevención de fallas eléctricas y de rodamientos en etapa temprana, y cobertura de los modos de falla que la vibración y la temperatura no alcanzan a ver."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Cuánto te está costando lo que no se oye?",
+    "text": "Cuéntanos qué redes y equipos quieres vigilar y te proponemos el proyecto de detección acústica para tu planta.",
+    "whatsappMessage": "Hola, quiero información sobre sensores acústicos para mi planta."
+  },
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": []
+  }
+}

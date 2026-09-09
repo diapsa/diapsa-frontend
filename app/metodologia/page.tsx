@@ -34,7 +34,11 @@ export const metadata: Metadata = {
 
 export default async function MetodologiaPage() {
 
-  const cases = await getFeaturedSuccessCases();
+  // Si el CMS no responde, la página carga igual y solo omite los casos.
+  const cases = await getFeaturedSuccessCases().catch((error) => {
+    console.error("[metodologia] No se pudieron cargar los casos de éxito:", error);
+    return [];
+  });
 
   return (
     <main>

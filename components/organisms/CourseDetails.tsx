@@ -80,8 +80,6 @@ export default function CourseDetails({ course }: CourseDetailsProps) {
         | "certificacion"
     >("descripcion");
 
-    console.log('Curso: ', course)
-
     const Icon = iconMap[course.icon] || MonitorIcon;
     const courseTypeName = course.category.name ?? "";
     const requirements = normalizeTextList(course.requirements);
@@ -168,13 +166,13 @@ export default function CourseDetails({ course }: CourseDetailsProps) {
                             {/* Tab: Descripción */}
                             {activeTab === "descripcion" && (
                                 <div className="space-y-6">
-                                    {course.referecne_norm && (
+                                    {course.reference_norm && (
                                         <div>
                                             <h3 className="text-xl font-bold text-primary mb-3">
                                                 Normativa de Referencia
                                             </h3>
                                             <p className="text-gray-700 bg-blue-50 border-l-4 border-primary p-4 rounded">
-                                                {course.referecne_norm}
+                                                {course.reference_norm}
                                             </p>
                                         </div>
                                     )}
@@ -361,7 +359,7 @@ export default function CourseDetails({ course }: CourseDetailsProps) {
                                     </div>
 
                                     {/* Duración */}
-                                    {course.duration && (
+                                    {course.duration ? (
                                         <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
                                             <svg
                                                 className="w-6 h-6 text-primary shrink-0"
@@ -383,53 +381,57 @@ export default function CourseDetails({ course }: CourseDetailsProps) {
                                                 </p>
                                             </div>
                                         </div>
-                                    )}
+                                    ) : null}
 
                                     {/* Modalidad */}
-                                    <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
-                                        <svg
-                                            className="w-6 h-6 text-primary shrink-0"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                            />
-                                        </svg>
-                                        <div>
-                                            <p className="text-sm text-gray-500">Modalidad</p>
-                                            <p className="font-semibold text-gray-900">
-                                                {course.modality}
-                                            </p>
+                                    {course.modality && (
+                                        <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
+                                            <svg
+                                                className="w-6 h-6 text-primary shrink-0"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth={2}
+                                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                                />
+                                            </svg>
+                                            <div>
+                                                <p className="text-sm text-gray-500">Modalidad</p>
+                                                <p className="font-semibold text-gray-900">
+                                                    {course.modality}
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    )}
 
                                     {/* Provider */}
-                                    <div className="flex items-center gap-3">
-                                        <svg
-                                            className="w-6 h-6 text-primary shrink-0"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                                            />
-                                        </svg>
-                                        <div>
-                                            <p className="text-sm text-gray-500">Impartido por</p>
-                                            <p className="font-semibold text-gray-900">
-                                                {course.provider}
-                                            </p>
+                                    {course.provider && (
+                                        <div className="flex items-center gap-3">
+                                            <svg
+                                                className="w-6 h-6 text-primary shrink-0"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth={2}
+                                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                                />
+                                            </svg>
+                                            <div>
+                                                <p className="text-sm text-gray-500">Impartido por</p>
+                                                <p className="font-semibold text-gray-900">
+                                                    {course.provider}
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    )}
                                 </div>
 
                                 <div className="mt-8 space-y-3 pt-6 border-t border-gray-200">

@@ -20,16 +20,9 @@ import serviciosData from "@/data/servicios.json";
 // Extraer solo servicios principales
 const SERVICES = serviciosData.map(servicio => servicio.label);
 
-const countries = [
-  { value: "México", label: "México" },
-  { value: "Estados Unidos", label: "Estados Unidos" },
-  { value: "Colombia", label: "Colombia" },
-  { value: "Argentina", label: "Argentina" },
-  { value: "Chile", label: "Chile" },
-  { value: "Perú", label: "Perú" },
-  { value: "España", label: "España" },
-  { value: "Otro", label: "Otro" },
-];
+// País por defecto. Se dejó de preguntar en el formulario (2026-08-24) porque
+// prácticamente todo el tráfico es de México y cada campo extra cuesta leads.
+const PAIS_POR_DEFECTO = "México";
 
 export default function ContactForm() {
   const {
@@ -51,7 +44,7 @@ export default function ContactForm() {
     email: "",
     phone: "",
     company: "",
-    country: "",
+    country: PAIS_POR_DEFECTO,
     form_type: "main",
     custom_fields: {
       subject: "",
@@ -189,7 +182,7 @@ export default function ContactForm() {
         email: "",
         phone: "",
         company: "",
-        country: "",
+        country: PAIS_POR_DEFECTO,
         form_type: "main",
         custom_fields: {
           subject: "",
@@ -343,43 +336,25 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Asunto */}
-              <div>
-                <select
-                  id="subject"
-                  name="subject"
-                  value={formData.custom_fields?.subject}
-                  onChange={handleChange}
-                  required
-                  disabled={loading}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
-                >
-                  <option value="">Selecciona una opción</option>
-                  <option value="cursos">Información de cursos</option>
-                  <option value="servicios">Información de servicios</option>
-                  <option value="cursos/servicios">Información de cursos y servicios</option>
-                </select>
-              </div>
-
-              {/* País */}
-              <div>
-                <select
-                  id="country"
-                  name="country"
-                  value={formData.country}
-                  onChange={handleChange}
-                  disabled={loading}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
-                >
-                  <option value="">PAÍS / REGIÓN</option>
-                  {countries.map((country) => (
-                    <option key={country.value} value={country.value}>
-                      {country.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
+            {/* Asunto. El selector de país se retiró del formulario (2026-08-24):
+                cada campo extra cuesta conversión y el país se deduce del
+                teléfono o se pregunta en el primer contacto. Se sigue enviando
+                "México" por defecto para no cambiar el contrato del backend. */}
+            <div>
+              <select
+                id="subject"
+                name="subject"
+                value={formData.custom_fields?.subject}
+                onChange={handleChange}
+                required
+                disabled={loading}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
+              >
+                <option value="">¿Qué necesitas?</option>
+                <option value="servicios">Un servicio para mi planta</option>
+                <option value="cursos">Información de cursos</option>
+                <option value="cursos/servicios">Servicios y cursos</option>
+              </select>
             </div>
 
             {/* Sección de cursos */}
@@ -444,67 +419,11 @@ export default function ContactForm() {
               </div>
             )}
 
-            {/* Medio de contacto preferido */}
-            <div>
-              <p className="block text-sm font-semibold text-white mb-2">
-                Medio de contacto preferido
-              </p>
-              <div className="flex gap-3">
-                {[
-                  { value: "email", label: "Email" },
-                  { value: "phone", label: "Teléfono" },
-                ].map((opt) => {
-                  const isSelected = formData.custom_fields?.prefered_contact === opt.value;
-                  return (
-                    <label
-                      key={opt.value}
-                      className={`flex items-center gap-2 cursor-pointer px-4 py-2 rounded-sm border text-sm font-semibold transition-all duration-200 select-none
-                        ${isSelected
-                          ? "bg-secondary text-primary border-secondary"
-                          : "bg-white text-gray-600 border-gray-200 hover:border-secondary/40 hover:text-secondary"
-                        }
-                        ${loading ? "opacity-50 cursor-not-allowed" : ""}
-                      `}
-                    >
-                      <input
-                        type="radio"
-                        name="preferred_contact"
-                        value={opt.value}
-                        checked={isSelected}
-                        onChange={handleChange}
-                        disabled={loading}
-                        className="sr-only"
-                      />
-                      {opt.label}
-                    </label>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Proveedor checkbox */}
-            <div className="flex items-start gap-3 text-sm">
-              <input
-                type="checkbox"
-                id="isProvider"
-                name="isProvider"
-                checked={formData.custom_fields?.isProvider === "true"}
-                onChange={(e) =>
-                  setFormData((prev) => ({
-                    ...prev,
-                    custom_fields: {
-                      ...prev.custom_fields,
-                      isProvider: e.target.checked ? "true" : "false",
-                    } as ContactFormMain['custom_fields'],
-                  }))
-                }
-                disabled={loading}
-                className="mt-1 w-4 h-4 text-secondary bg-white border-gray-300 rounded focus:ring-2 focus:ring-secondary"
-              />
-              <label htmlFor="isProvider" className="text-gray-300">
-                Brindo servicios especializados a la industria como proveedor, asesor o coach
-              </label>
-            </div>
+            {/* "Medio de contacto preferido" y la casilla de proveedor se
+                retiraron del formulario (2026-08-24). El primero no cambiaba
+                nada operativamente (se responde por donde el prospecto dejó
+                dato) y el segundo pedía al cliente que se autoclasificara antes
+                de conocerlo. Ambos se siguen enviando con su valor por defecto. */}
 
             {/* Comentarios */}
             <div>

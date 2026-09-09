@@ -1,0 +1,61 @@
+{
+  "id": "analisis-de-aceite",
+  "slug": "analisis-de-aceite",
+  "type": "tecnologia",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo de Condición",
+      "link": "/servicios/monitoreo-condicion"
+    },
+    {
+      "label": "Análisis de Aceite",
+      "link": "/servicios/monitoreo-condicion/analisis-de-aceite"
+    }
+  ],
+  "header": {
+    "title": "Análisis de Aceite",
+    "subtitle": "El lubricante cuenta lo que pasa dentro del equipo",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoDescription": "Análisis de aceite lubricante y DGA de transformadores: detecta desgaste interno, contaminación y degradación del lubricante antes de que la falla avance.",
+  "content": {
+    "title": "¿Qué revela el análisis de aceite?",
+    "subtitle": "El aceite circula por donde ninguna otra técnica llega: arrastra las partículas del desgaste interno, la contaminación que entró y la historia térmica del equipo. Analizarlo es leer esa evidencia a tiempo.",
+    "image": "/images/monitoreo-condicion/rodamiento-con-sobre-lubricacion.avif",
+    "items": [
+      {
+        "id": "donde-aplica",
+        "title": "Dónde se aplica",
+        "content": "Reductores, compresores, turbinas, sistemas hidráulicos y motores de combustión con cárter. En transformadores, el análisis de gases disueltos (DGA) sobre el aceite dieléctrico detecta sobrecalentamientos, descargas parciales y arqueos internos sin abrir el equipo."
+      },
+      {
+        "id": "que-detecta",
+        "title": "Qué detecta",
+        "content": "Partículas de desgaste y de qué componente vienen, contaminación por agua, polvo o refrigerante, degradación del lubricante (viscosidad, oxidación, aditivos agotados) y, vía DGA, fallas incipientes dentro del transformador clasificadas por tipo de gas generado."
+      },
+      {
+        "id": "entregable",
+        "title": "Qué recibes",
+        "content": "Resultados de laboratorio interpretados por nuestros especialistas, no solo la hoja de valores: severidad por equipo, causa probable, recomendación concreta (cambiar, filtrar, corregir la fuente de contaminación o intervenir el componente) y la tendencia contra muestras anteriores."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Hace cuánto no le preguntas a tu aceite cómo está el equipo?",
+    "text": "Cuéntanos qué equipos y transformadores quieres vigilar y te armamos el programa de muestreo y análisis.",
+    "whatsappMessage": "Hola, quiero información sobre análisis de aceite y DGA para mi planta."
+  },
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": []
+  }
+}

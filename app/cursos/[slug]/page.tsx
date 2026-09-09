@@ -3,11 +3,9 @@ import PageHeader from "@/components/organisms/PageHeader";
 import CourseDetails from "@/components/organisms/CourseDetails";
 import ContactForm from "@/components/organisms/ContactForm";
 import type { Metadata } from "next";
-import JsonLd, {
-    createServiceSchema,
-    createBreadcrumbSchema,
-} from "@/components/atoms/JsonLd";
+import CourseJsonLd from "@/components/molecules/CourseJsonLd";
 import { getCourseBySlug } from "@/lib/api/courses";
+import { SITE_CONFIG } from "@/lib/constants";
 
 
 interface CoursePageProps {
@@ -23,20 +21,29 @@ export async function generateMetadata({
     try {
         const course = await getCourseBySlug(slug);
 
+        // El layout raíz aplica el template "%s | Grupo DIAPSA", así que el
+        // <title> del documento solo lleva el nombre (la marca se agrega una
+        // sola vez). Si el CMS trae meta_title se respeta tal cual (absolute).
+        // Para redes sociales sí armamos el título con marca explícita.
+        const description = course.meta_description ?? course.description;
+        const brandedTitle = course.meta_title ?? `${course.name} | Grupo DIAPSA`;
+
         return {
-            title: `${course.name} | Cursos DIAPSA`,
-            description: course.description,
+            title: course.meta_title
+                ? { absolute: course.meta_title }
+                : course.name,
+            description,
             keywords: [
                 course.name,
                 course.provider
             ],
             alternates: {
-                canonical: `/cursos/${slug}`,
+                canonical: `${SITE_CONFIG.baseUrl}/cursos/${slug}`,
             },
             openGraph: {
-                title: `${course.name} | Grupo DIAPSA`,
-                description: course.description,
-                url: `/cursos/${slug}`,
+                title: brandedTitle,
+                description,
+                url: `${SITE_CONFIG.baseUrl}/cursos/${slug}`,
                 type: "website",
             },
         };
@@ -65,20 +72,15 @@ export default async function CoursePage({
         { name: "Cursos", url: "/cursos" },
         { name: course.name, url: `/cursos/${course.slug}` },
     ];
-    // Datos estructurados para el curso
-    const courseJsonLd = createServiceSchema({
-        name: course.name,
-        description: course.description,
-        serviceType: `Curso de ${course.category?.name ?? ''}`,
-    });
-
-    // Breadcrumbs para datos estructurados
-    const breadcrumbJsonLd = createBreadcrumbSchema(breadcrumbItems);
 
     return (
         <main>
-            <JsonLd data={courseJsonLd} />
-            <JsonLd data={breadcrumbJsonLd} />
+            {/* Datos estructurados: Course + BreadcrumbList + FAQPage (si hay FAQs) */}
+            <CourseJsonLd
+                course={course}
+                breadcrumbItems={breadcrumbItems}
+                url={`/cursos/${course.slug}`}
+            />
 
             <PageHeader
                 title={course.name}

@@ -35,6 +35,15 @@ export interface CoursesFilters {
     page?: number;
 }
 
+/**
+ * Pregunta frecuente de un curso (schema.org/FAQPage).
+ * El CMS aún no expone este campo; el template lo soporta cuando exista.
+ */
+export interface CourseFaq {
+    question: string;
+    answer: string;
+}
+
 export interface CourseDetail {
     id: string;
     name: string;
@@ -44,7 +53,7 @@ export interface CourseDetail {
     slug: string;
     next_date: string | Date;
     icon: string;
-    referecne_norm: string;
+    reference_norm: string;
     specific_objectives: string[];
     methodology: string;
     syllabus: string;
@@ -55,5 +64,8 @@ export interface CourseDetail {
     graduate_profile: string;
     technical_specification: string;
     provider: string;
-
+    // Campos SEO opcionales: el template los usa si el CMS los provee.
+    meta_title?: string;
+    meta_description?: string;
+    faqs?: CourseFaq[];
 }

@@ -7,6 +7,10 @@ interface DropdownItem {
   label: string;
   href: string;
   description?: string;
+  /** Subniveles (p. ej. las disciplinas de Monitoreo de Condición).
+      Antes el menú los ignoraba y páginas como Análisis de Vibraciones
+      quedaban a 3+ clics; ahora se muestran indentados bajo su padre. */
+  children?: Array<{ label: string; href: string }>;
 }
 
 interface DropdownProps {
@@ -36,7 +40,7 @@ export default function Dropdown({ trigger, items, className = "" }: DropdownPro
     <div className={`relative ${className}`} ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1 hover:text-secondary transition-all duration-200 ease-out group"
+        className="flex min-h-11 items-center gap-1 py-2.5 hover:text-secondary transition-all duration-200 ease-out group"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
@@ -54,21 +58,56 @@ export default function Dropdown({ trigger, items, className = "" }: DropdownPro
       {isOpen && (
         <>
           <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
-          <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
             {items.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 hover:bg-secondary/5 transition-colors duration-150 ease-out group/item"
-              >
-                <div className="font-medium text-primary group-hover/item:text-secondary transition-colors duration-150">
-                  {item.label}
-                </div>
-                {item.description && (
-                  <div className="text-sm text-gray-600 mt-1 group-hover/item:text-gray-700 transition-colors duration-150">{item.description}</div>
+              // group/sub mantiene el panel lateral abierto mientras el ratón
+              // esté sobre la fila padre O sobre el propio panel (es su hijo).
+              <div key={index} className="relative group/sub">
+                <Link
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-between gap-2 px-4 py-3 hover:bg-secondary/5 transition-colors duration-150 ease-out group/item"
+                >
+                  <div>
+                    <div className="font-medium text-primary group-hover/item:text-secondary transition-colors duration-150">
+                      {item.label}
+                    </div>
+                    {item.description && (
+                      <div className="text-sm text-gray-600 mt-1 group-hover/item:text-gray-700 transition-colors duration-150">{item.description}</div>
+                    )}
+                  </div>
+                  {item.children && (
+                    <svg
+                      className="w-4 h-4 shrink-0 text-gray-400 group-hover/sub:text-secondary transition-colors duration-150"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  )}
+                </Link>
+                {item.children && (
+                  // Panel lateral: aparece solo al pasar el ratón por la fila.
+                  // pl-1 sirve de puente para que el cursor no "caiga" en el
+                  // hueco entre la fila y el panel y se cierre en el camino.
+                  <div className="hidden group-hover/sub:block absolute left-full top-0 pl-1 z-50">
+                    <div className="w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          onClick={() => setIsOpen(false)}
+                          className="block px-4 py-2.5 text-sm font-medium text-primary hover:text-secondary hover:bg-secondary/5 transition-colors duration-150"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 )}
-              </Link>
+              </div>
             ))}
           </div>
         </>

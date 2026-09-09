@@ -13,6 +13,7 @@ import PageHeader from '@/components/organisms/PageHeader';
 import JsonLd, { createProductSchema, createBreadcrumbSchema } from '@/components/atoms/JsonLd';
 import ContactFormProduct from '@/components/organisms/ContactFormProduct';
 import BackgroundImage from '@/components/atoms/BackgroundImage';
+import { SITE_CONFIG } from '@/lib/constants';
 
 interface ProductPageProps {
   params: Promise<{ categoria: string; producto: string }>;
@@ -44,12 +45,12 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
         'equipos industriales',
       ],
       alternates: {
-        canonical: productPath,
+        canonical: `${SITE_CONFIG.baseUrl}${productPath}`,
       },
       openGraph: {
         title: product.seo.title,
         description: product.seo.description,
-        url: productPath,
+        url: `${SITE_CONFIG.baseUrl}${productPath}`,
         type: 'website',
         images: mainImages,
       },
@@ -93,6 +94,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     brand: product.brand.name,
     sku: product.model,
     category: product.category.name,
+    url: `/productos/${product.category.slug}/${product.slug}`,
   });
 
   const breadcrumbSchema = createBreadcrumbSchema(

@@ -25,27 +25,85 @@
     "subtitle": "Diagnóstico preciso del estado de maquinaria rotativa",
     "backgroundImage": "/images/fondo-hero.webp"
   },
+  "seoDescription": "Detectamos desbalanceo, desalineación y fallas de rodamientos antes del paro. Analistas Categoría III ISO 18436-2 con más de 20 años en planta.",
   "content": {
     "title": "¿Qué es el Análisis de Vibraciones?",
-    "subtitle": "Monitoreo continuo de la salud mecánica",
-    "image": "/images/disciplinas/vibraciones-img.jpg",
+    "subtitle": "Cada falla en desarrollo deja una firma distinta en el espectro de vibración. Medirla y saber leerla permite detectar el problema semanas o meses antes de que pare el equipo.",
+    "image": "/images/gallery/campo-img-4.jpg",
     "items": [
       {
         "id": "aplicaciones",
-        "title": "Aplicaciones",
-        "content": "El análisis de vibraciones se aplica en motores eléctricos, bombas, ventiladores, compresores, reductores y turbinas. Permite detectar desbalanceo, desalineación, rodamientos dañados, resonancia y otras anomalías mecánicas."
+        "title": "Dónde se aplica",
+        "content": "Motores eléctricos, bombas, ventiladores, compresores, reductores, torres de enfriamiento y turbinas. En general, cualquier equipo rotativo crítico: si su paro detiene la línea, es candidato a medirse de forma periódica."
+      },
+      {
+        "id": "fallas",
+        "title": "Fallas que detecta",
+        "content": "Desbalanceo, desalineación, holguras mecánicas, rodamientos en degradación, problemas de engranes y bandas, resonancia estructural, ejes doblados y fallas de origen eléctrico en motores. Es la técnica con mayor cobertura de modos de falla en equipo rotativo."
+      },
+      {
+        "id": "metodologia",
+        "title": "Metodología y normas",
+        "content": "Medimos y evaluamos conforme a ISO 10816 e ISO 20816 con analizadores de vibraciones certificados. Los espectros los interpreta un analista con certificación Categoría III según ISO 18436-2, no solo un software."
       },
       {
         "id": "beneficios",
         "title": "Beneficios",
-        "content": "Minimiza tiempos de paro, optimiza intervalos de mantenimiento, reduce costos operativos, extiende la vida útil de componentes críticos y mejora la confiabilidad de los procesos productivos."
+        "content": "Menos paros no programados, refacciones compradas con anticipación en lugar de con urgencia, intervenciones agendadas en ventanas de producción y mayor vida útil de los componentes críticos."
       },
       {
-        "id": "metodologia",
-        "title": "Metodología",
-        "content": "Aplicamos normas ISO 10816 e ISO 20816 utilizando analizadores de vibraciones certificados. Nuestros analistas cuentan con certificación Categoría III en análisis de vibraciones según ISO 18436-2."
+        "id": "entregable",
+        "title": "Qué recibes",
+        "content": "Cada equipo medido se entrega con su nivel de severidad, el espectro que lo respalda, el diagnóstico del posible modo de falla y una recomendación concreta: qué intervenir, con qué urgencia y qué vigilar en la siguiente ruta."
+      },
+      {
+        "id": "modalidades",
+        "title": "Puntual o continuo",
+        "content": "Rutas periódicas con analizador portátil para la mayoría de los activos, y sensores en línea con monitoreo continuo las 24 horas para los equipos donde una falla no da tiempo de reaccionar."
       }
     ]
+  },
+  "faq": [
+    {
+      "question": "¿Qué es el análisis de vibraciones?",
+      "answer": "Es una técnica de mantenimiento predictivo que mide la vibración de la maquinaria rotativa para detectar fallas en desarrollo. Cada tipo de falla, como el desbalanceo, la desalineación o un rodamiento dañado, deja una firma distinta en el espectro de vibración, lo que permite identificarla y corregirla antes de que provoque un paro."
+    },
+    {
+      "question": "¿Qué fallas se pueden detectar con el análisis de vibraciones?",
+      "answer": "Desbalanceo, desalineación, holguras mecánicas, rodamientos dañados, problemas de engranes y bandas, resonancia, ejes doblados y algunas fallas eléctricas en motores. Es la técnica con mayor cobertura de modos de falla en equipo rotativo."
+    },
+    {
+      "question": "¿Cada cuánto se debe medir la vibración de un equipo?",
+      "answer": "Depende de su criticidad. Los equipos críticos suelen medirse cada mes y el resto de forma bimestral o trimestral. Los activos donde una falla evoluciona en horas se monitorean con sensores en línea las 24 horas."
+    },
+    {
+      "question": "¿Qué normas regulan el análisis de vibraciones?",
+      "answer": "Las más usadas son ISO 10816 e ISO 20816, que fijan los límites de severidad de vibración por tipo de máquina, e ISO 18436-2, que certifica la competencia de los analistas por categorías (I a IV)."
+    },
+    {
+      "question": "¿Cuánto cuesta un servicio de análisis de vibraciones?",
+      "answer": "Depende del número de equipos, su ubicación y si se combina con otras técnicas como termografía o ultrasonido. Compártenos el listado de tus equipos y te preparamos una propuesta a la medida, sin compromiso."
+    }
+  ],
+  "certificacion": "Analistas Categoría III · ISO 18436-2",
+  "galeria": [
+    {
+      "src": "/images/gallery/campo-img-4.jpg",
+      "alt": "Analista de DIAPSA midiendo vibración en un motor eléctrico con analizador de vibraciones"
+    },
+    {
+      "src": "/images/gallery/campo-img-2.jpg",
+      "alt": "Técnicos de DIAPSA realizando análisis de vibraciones en un tren motor-ventilador industrial"
+    },
+    {
+      "src": "/images/gallery/campo-img-5.jpg",
+      "alt": "Medición de vibración en motor vertical durante una ruta de monitoreo de condición"
+    }
+  ],
+  "cta": {
+    "title": "¿Cuántos equipos rotativos críticos tiene tu planta?",
+    "text": "Compártenos tu listado de equipos y te preparamos una ruta de medición con propuesta a la medida, sin compromiso.",
+    "whatsappMessage": "Hola, quiero cotizar análisis de vibraciones para mi planta."
   },
   "relatedProducts": {
     "title": "Productos Relacionados",

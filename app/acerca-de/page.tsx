@@ -9,9 +9,9 @@ import { GallerySection } from "@/components/organisms/GallerySection";
 
 
 export const metadata: Metadata = {
-  title: "Acerca de Grupo DIAPSA",
+  title: "Acerca de Nosotros",
   description:
-    "Grupo DIAPSA es especialista en mantenimiento predictivo, monitoreo de condicion y servicios de mantenimiento para Mexico y Sudamerica.",
+    "Más de 20 años, +1,500 servicios y +50,000 fallas detectadas antes de parar una planta. Conoce al equipo de monitoreo de condición de Grupo DIAPSA.",
   keywords: [
     "Grupo DIAPSA",
     "empresa mantenimiento predictivo",

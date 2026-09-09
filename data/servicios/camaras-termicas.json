@@ -1,0 +1,61 @@
+{
+  "id": "camaras-termicas",
+  "slug": "camaras-termicas",
+  "type": "tecnologia",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo Continuo",
+      "link": "/servicios/monitoreo-continuo"
+    },
+    {
+      "label": "Proyectos de Cámaras Térmicas",
+      "link": "/servicios/monitoreo-continuo/camaras-termicas"
+    }
+  ],
+  "header": {
+    "title": "Proyectos de Cámaras Térmicas",
+    "subtitle": "Vigilancia térmica continua de equipos y tableros críticos",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoDescription": "Cámaras térmicas fijas que vigilan tableros, motores y procesos las 24 horas y alertan ante calentamientos anómalos antes de la falla o el incendio.",
+  "content": {
+    "title": "¿Qué es un proyecto de cámara térmica?",
+    "subtitle": "Una cámara radiométrica fija mide la temperatura de tus puntos críticos de forma continua y dispara una alerta en cuanto algo se calienta fuera de lo normal, sin esperar a la siguiente inspección.",
+    "image": "/images/disciplinas/termografia.jpg",
+    "items": [
+      {
+        "id": "donde-aplica",
+        "title": "Dónde se aplica",
+        "content": "Tableros y subestaciones eléctricas, motores y reductores críticos, hornos, secadores, bandas transportadoras y zonas con riesgo de incendio como almacenes de material combustible. Donde una inspección termográfica mensual se queda corta porque la falla evoluciona en horas."
+      },
+      {
+        "id": "que-incluye",
+        "title": "Qué incluye el proyecto",
+        "content": "Selección de puntos y ángulos de visión, instalación de las cámaras, definición de umbrales de alarma por equipo, integración de las alertas y acompañamiento en la interpretación: qué hacer cuando la temperatura sale de rango."
+      },
+      {
+        "id": "beneficios",
+        "title": "Beneficios",
+        "content": "Detección de calentamientos anómalos en tiempo real, prevención de incendios y paros eléctricos, histórico de temperatura por punto vigilado y menos dependencia de rondas manuales en zonas de difícil o riesgoso acceso."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Qué puntos de tu planta deberían vigilarse en continuo?",
+    "text": "Cuéntanos qué equipos o tableros te preocupan y te proponemos el proyecto: cuántas cámaras, dónde y con qué umbrales.",
+    "whatsappMessage": "Hola, quiero información sobre proyectos de cámaras térmicas para mi planta."
+  },
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": []
+  }
+}

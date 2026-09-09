@@ -35,6 +35,8 @@ const slides: Slide[] = [
     imageContain: true,
     bg: "/images/screen.png",
   },
+  // Carrusel de 4 mensajes. Se restauró el 2026-08-26 a petición de
+  // Emiliano: el movimiento es parte de la identidad del sitio.
   {
     id: 1,
     badge: "Monitoreo Continuo · IoT Industrial",
@@ -235,7 +237,8 @@ export default function Hero() {
       ))
       }
 
-      {/* Controles de navegación */}
+      {/* Controles de navegación — solo tienen sentido con más de un slide */}
+      {slides.length > 1 && (
       <div className="absolute bottom-8 left-0 right-0 z-30 flex items-center justify-center gap-3">
         {/* Anterior */}
         <button
@@ -272,11 +275,14 @@ export default function Hero() {
           </svg>
         </button>
       </div>
+      )}
 
       {/* Contador */}
+      {slides.length > 1 && (
       <div className="absolute bottom-8 right-6 z-30 text-white/40 text-xs font-mono tabular-nums">
         {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
       </div>
+      )}
     </section >
   );
 }
