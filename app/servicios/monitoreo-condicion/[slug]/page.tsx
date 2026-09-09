@@ -9,6 +9,7 @@ import JsonLd, {
 } from "@/components/atoms/JsonLd";
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
+import ServiceTable from "@/components/organisms/ServiceTable";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
@@ -291,6 +292,8 @@ export default async function ServicePage({
                     </div>
                 </div>
             </section>
+
+            {service.tabla && <ServiceTable tabla={service.tabla} />}
 
             <section className="w-full bg-primary py-16 lg:py-24">
                 <div className="max-w-7xl mx-auto px-6">
