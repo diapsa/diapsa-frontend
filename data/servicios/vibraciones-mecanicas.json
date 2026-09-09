@@ -73,6 +73,20 @@
       }
     ]
   },
+  "entregable": {
+    "etiqueta": "El entregable",
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "No un archivo de mediciones para que lo interpretes tú. Un informe donde cada equipo trae su estado, el nivel medido contra la norma, el diagnóstico del analista y qué hacer al respecto. Este es uno real, con los datos de la planta omitidos.",
+    "textoBoton": "Descargar el informe de ejemplo",
+    "paginas": [
+      "/images/informe/pagina-1.png",
+      "/images/informe/pagina-2.png"
+    ],
+    "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA, con el estado por disciplina, los niveles de vibración medidos contra los rangos ISO y las imágenes termográficas",
+    "dato": "3",
+    "datoTexto": "disciplinas en un solo informe",
+    "archivo": "/documentos/informe-ejemplo-diapsa.pdf"
+  },
   "tabla": {
     "titulo": "Cada falla tiene su firma",
     "subtitulo": "Esto es lo que busca un analista al abrir un espectro. La frecuencia donde aparece la amplitud, y en qué dirección, es lo que separa un desbalanceo de una desalineación o de un rodamiento en degradación.",
@@ -207,16 +221,5 @@
         "link": "#"
       }
     ]
-  },
-  "recurso": {
-    "titulo": "Mira un informe real antes de contratar",
-    "descripcion": "Este es el entregable que recibe nuestro cliente, con los datos de su planta omitidos. Un informe de inspección integral sobre un ventilador de aerocondensador: lo que medimos, contra qué lo comparamos y qué recomendamos hacer.",
-    "incluye": [
-      "Niveles de vibración punto por punto, en velocidad y aceleración, contra los rangos de severidad ISO",
-      "Imágenes termográficas con temperaturas, emisividad y distancia de captura",
-      "Lecturas de ultrasonido con su criterio de severidad",
-      "Diagnóstico del analista y la recomendación concreta de intervención"
-    ],
-    "archivo": "/documentos/informe-ejemplo-diapsa.pdf"
   }
 }

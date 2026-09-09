@@ -10,7 +10,7 @@ import JsonLd, {
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
 import ServiceTable from "@/components/organisms/ServiceTable";
-import ServiceRecurso from "@/components/organisms/ServiceRecurso";
+import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
@@ -294,6 +294,14 @@ export default async function ServicePage({
                 </div>
             </section>
 
+            {/* El informe va aquí, dentro del contenido, no como banda al
+                final: viene justo después de las tarjetas donde se explica
+                qué se entrega, así que enseñarlo es la continuación natural
+                de la lectura. */}
+            {service.entregable && (
+                <ServiceEntregable entregable={service.entregable} servicio={service.header.title} />
+            )}
+
             {service.tabla && <ServiceTable tabla={service.tabla} />}
 
             <section className="w-full bg-primary py-16 lg:py-24">
@@ -441,10 +449,6 @@ export default async function ServicePage({
                         </div>
                     </div>
                 </section>
-            )}
-
-            {service.recurso && (
-                <ServiceRecurso recurso={service.recurso} servicio={service.header.title} />
             )}
 
             {/* Artículo del blog sobre el mismo tema. Sirve al lector que

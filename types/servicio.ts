@@ -45,12 +45,20 @@ export interface GaleriaFoto {
   alt: string;
 }
 
-export interface ServiceRecurso {
+export interface ServiceEntregable {
+  /** Antetítulo corto, ej. "El entregable". */
+  etiqueta: string;
   titulo: string;
   descripcion: string;
-  /** Qué trae el material, para que el visitante sepa qué recibe. */
-  incluye?: string[];
-  /** Ruta pública del archivo, ej. /documentos/reporte-ejemplo-vibraciones.pdf */
+  /** Texto del botón, ej. "Descargar el informe de ejemplo". */
+  textoBoton: string;
+  /** Imágenes de las páginas del informe, en orden. Se muestran dos. */
+  paginas: string[];
+  altPaginas: string;
+  /** Cifra del sello flotante, ej. "3". */
+  dato: string;
+  datoTexto: string;
+  /** Ruta pública del archivo descargable. */
   archivo: string;
 }
 
@@ -94,6 +102,6 @@ export interface Servicio {
   galeria?: GaleriaFoto[];
   /** Tabla técnica de referencia. */
   tabla?: ServiceTabla;
-  /** Material descargable a cambio de datos de contacto. */
-  recurso?: ServiceRecurso;
+  /** El informe que recibe el cliente, mostrado y descargable a cambio de contacto. */
+  entregable?: ServiceEntregable;
 }
