@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import BackgroundImage from "../atoms/BackgroundImage";
+import CountUp from "../atoms/CountUp";
 
 export default function AboutUs() {
   return (
@@ -56,21 +57,28 @@ export default function AboutUs() {
 
         {/* Columna derecha */}
         <div className="text-white text-center">
-          <h3 className="text-secondary text-2xl lg:text-3xl font-semibold mb-6">
+          <h3 className="text-secondary text-xl lg:text-2xl font-semibold mb-6">
             Nuestra misión:
           </h3>
           <p className="text-lg lg:text-xl text-white/90 whitespace-pre-line">
             Ser líderes en las disciplinas que desarrollamos, aportando valor con precisión, rapidez y calidad, garantizando la productividad y seguridad de las plantas industriales.
           </p>
+          {/* Las cifras cuentan hacia arriba al entrar en pantalla. Son el
+              argumento de venta más fuerte de esta sección y como texto
+              estático pasaban desapercibidas. El número final está en el DOM
+              desde el primer render: Google y los lectores de pantalla leen la
+              cifra real, no un cero. */}
           <div className="grid grid-cols-3 gap-4">
             {[
-              { label: "+50,000 Fallas detectadas" },
-              { label: "+1,500 Servicios realizados" },
-              { label: "+20 Años de trayectoria" },
-            ].map(({ label }) => (
-              <div key={label} className="flex flex-col items-center">
-                <Image src="/images/LOGRO-DIAPSA.svg" alt={`Logro DIAPSA - ${label}`} width={100} height={100} />
-                <p className="text-secondary font-bold">{label}</p>
+              { valor: 50000, texto: "Fallas detectadas" },
+              { valor: 1500, texto: "Servicios realizados" },
+              { valor: 20, texto: "Años de trayectoria" },
+            ].map(({ valor, texto }) => (
+              <div key={texto} className="flex flex-col items-center">
+                <Image src="/images/LOGRO-DIAPSA.svg" alt="" aria-hidden="true" width={100} height={100} />
+                <p className="text-secondary font-bold">
+                  <CountUp valor={valor} prefijo="+" /> {texto}
+                </p>
               </div>
             ))
             }

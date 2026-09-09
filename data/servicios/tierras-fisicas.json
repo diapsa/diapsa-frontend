@@ -1,0 +1,61 @@
+{
+  "id": "tierras-fisicas",
+  "slug": "tierras-fisicas",
+  "type": "tecnologia",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo de Condición",
+      "link": "/servicios/monitoreo-condicion"
+    },
+    {
+      "label": "Tierras Físicas",
+      "link": "/servicios/monitoreo-condicion/tierras-fisicas"
+    }
+  ],
+  "header": {
+    "title": "Servicio de Tierras Físicas",
+    "subtitle": "Medición y diagnóstico del sistema de puesta a tierra",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoDescription": "Medición de resistencia de tierras físicas y diagnóstico del sistema de puesta a tierra conforme a NOM-022-STPS: protege a tu personal y a tus equipos.",
+  "content": {
+    "title": "¿Para qué medir las tierras físicas?",
+    "subtitle": "Un sistema de tierras degradado no avisa: el equipo opera normal hasta el día de la descarga o la falla. Medirlo periódicamente es la única forma de saber que sigue protegiendo, y es una obligación normativa auditable.",
+    "image": "/images/disciplinas/tierras-fisicas.jpg",
+    "items": [
+      {
+        "id": "donde-aplica",
+        "title": "Dónde se aplica",
+        "content": "Subestaciones, tableros, estructuras, pararrayos y equipos sensibles en cualquier planta industrial. Aplica especialmente donde se manejan sustancias inflamables o electricidad estática, que es justo lo que la NOM-022-STPS obliga a controlar y documentar."
+      },
+      {
+        "id": "que-incluye",
+        "title": "Qué incluye el servicio",
+        "content": "Medición de resistencia de los electrodos de tierra, verificación de continuidad de la red, inspección del estado físico de electrodos, conectores y soldaduras, y reporte con valores contra los límites normativos, listo para presentarse ante la STPS."
+      },
+      {
+        "id": "beneficios",
+        "title": "Beneficios",
+        "content": "Protección real del personal ante descargas, menos daños en equipos electrónicos y de control por sobretensiones, cumplimiento normativo demostrable en auditorías e inspecciones, y corrección dirigida: sabes exactamente qué electrodo o conexión rehabilitar."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Tu reporte de tierras está vigente para la STPS?",
+    "text": "Dinos cuántos puntos de medición tiene tu planta y te cotizamos la medición con reporte normativo.",
+    "whatsappMessage": "Hola, quiero información sobre medición de tierras físicas para mi planta."
+  },
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": []
+  }
+}

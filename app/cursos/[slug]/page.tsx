@@ -5,6 +5,7 @@ import ContactForm from "@/components/organisms/ContactForm";
 import type { Metadata } from "next";
 import CourseJsonLd from "@/components/molecules/CourseJsonLd";
 import { getCourseBySlug } from "@/lib/api/courses";
+import { SITE_CONFIG } from "@/lib/constants";
 
 
 interface CoursePageProps {
@@ -37,12 +38,12 @@ export async function generateMetadata({
                 course.provider
             ],
             alternates: {
-                canonical: `/cursos/${slug}`,
+                canonical: `${SITE_CONFIG.baseUrl}/cursos/${slug}`,
             },
             openGraph: {
                 title: brandedTitle,
                 description,
-                url: `/cursos/${slug}`,
+                url: `${SITE_CONFIG.baseUrl}/cursos/${slug}`,
                 type: "website",
             },
         };

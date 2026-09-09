@@ -61,6 +61,22 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
 
+      // --- Redirects de URLs duplicadas de cursos (sufijo -2) ---
+      // Redirige URLs antiguas con sufijo '-2' a sus versiones canónicas sin sufijo.
+      // Estas URLs duplicadas fueron creadas accidentalmente y generaban 404.
+      // Patrón regex: captura cualquier slug de curso que termine en '-2' y redirige
+      // a la versión sin el sufijo, manteniendo el resto del slug intacto.
+      {
+        source: '/cursos/:slug(.*)-2',
+        destination: '/cursos/:slug',
+        statusCode: 301,
+      },
+      {
+        source: '/cursos/:slug(.*)-2/',
+        destination: '/cursos/:slug',
+        statusCode: 301,
+      },
+
       // --- Servicios y soluciones ---
       {
         source: '/servicios-y-soluciones/termografia-infrarroja',

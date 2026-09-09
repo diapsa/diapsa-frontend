@@ -131,12 +131,23 @@ function getPageParam(page?: string | string[]) {
 export default async function CasosExitoPage({ searchParams }: CasosExitoPageProps) {
     const params = await searchParams;
     const requestedPage = getPageParam(params?.page);
+    // Si el CMS no responde, la página carga vacía en vez de devolver un 500.
     const casosResponse = await getPaginatedSuccessCases({
         page: requestedPage,
         perPage: SUCCESS_CASES_PER_PAGE,
+    }).catch((error) => {
+        console.error("[casos-exito] No se pudo cargar el listado:", error);
+        return null;
     });
-    const casosExito = casosResponse.data;
-    const meta = casosResponse.meta;
+    const casosExito = casosResponse?.data ?? [];
+    const meta = casosResponse?.meta ?? {
+        current_page: requestedPage,
+        from: 0,
+        last_page: 1,
+        per_page: SUCCESS_CASES_PER_PAGE,
+        to: 0,
+        total: 0,
+    };
 
     const breadcrumbJsonLd = createBreadcrumbSchema([
         { name: "Inicio", url: "/" },

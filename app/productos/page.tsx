@@ -4,7 +4,7 @@ import ProductsPageClient from '../../components/organisms/ProductsPageClient';
 export const metadata: Metadata = {
   title: 'Productos para Mantenimiento Predictivo Industrial',
   description:
-    'Catalogo de productos Grupo DIAPSA para mantenimiento predictivo, monitoreo de condición, termografía, vibraciones y soluciones industriales en Mexico.',
+    'Cámaras termográficas, analizadores de vibraciones y equipos de detección de gas, con la asesoría de especialistas que los usan a diario en planta.',
   keywords: [
     'productos mantenimiento predictivo',
     'equipos industriales',

@@ -1,0 +1,61 @@
+{
+  "id": "sensores-vibracion",
+  "slug": "sensores-vibracion",
+  "type": "tecnologia",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo Continuo",
+      "link": "/servicios/monitoreo-continuo"
+    },
+    {
+      "label": "Sensores de Vibración",
+      "link": "/servicios/monitoreo-continuo/sensores-vibracion"
+    }
+  ],
+  "header": {
+    "title": "Sensores de Vibración",
+    "subtitle": "Monitoreo de vibración inalámbrico las 24 horas",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoDescription": "Sensores de vibración inalámbricos que vigilan tus equipos rotativos las 24 horas y alertan ante cambios de condición, con análisis remoto por especialistas.",
+  "content": {
+    "title": "¿Qué hacen los sensores de vibración?",
+    "subtitle": "Miden la vibración del equipo de forma continua y envían los datos a la nube: cuando la tendencia cambia, el sistema alerta y un analista confirma qué está pasando, semanas antes del paro.",
+    "image": "/images/monitoreo-continuo/wireless-vibration-sensor-kcf.png",
+    "items": [
+      {
+        "id": "donde-aplica",
+        "title": "Dónde se aplica",
+        "content": "Equipos rotativos críticos donde una falla evoluciona más rápido que la ruta de medición periódica: bombas de proceso, ventiladores, compresores, reductores y motores cuya parada detiene la línea o pone en riesgo la operación."
+      },
+      {
+        "id": "que-incluye",
+        "title": "Qué incluye el proyecto",
+        "content": "Selección de los activos que sí justifican sensorización, instalación de sensores triaxiales inalámbricos y estación base, línea base de condición, umbrales de alarma por equipo y análisis remoto de las alertas por nuestros especialistas."
+      },
+      {
+        "id": "beneficios",
+        "title": "Beneficios",
+        "content": "Tendencias continuas en lugar de fotografías mensuales, alertas tempranas ante cambios de condición, menos rutas manuales en zonas peligrosas y complemento natural del análisis de vibraciones periódico en el resto de la planta."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Qué equipos de tu planta no pueden esperar a la siguiente ruta?",
+    "text": "Compártenos tus activos críticos y te proponemos cuántos sensores necesitas, dónde van y qué vas a ver en la plataforma.",
+    "whatsappMessage": "Hola, quiero información sobre sensores de vibración para monitoreo continuo."
+  },
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": []
+  }
+}

@@ -6,6 +6,7 @@ import JsonLd, {
   createProductSchema,
   createBreadcrumbSchema,
 } from "@/components/atoms/JsonLd";
+import { SITE_CONFIG } from "@/lib/constants";
 
 // Generar rutas estáticas para todas las cámaras
 export function generateStaticParams() {
@@ -58,12 +59,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       "DIAPSA México",
     ],
     alternates: {
-      canonical: `/camaras/${slug}`,
+      canonical: `${SITE_CONFIG.baseUrl}/camaras/${slug}`,
     },
     openGraph: {
       title: `${fullTitle} | Cámara Termográfica HIKMIKRO`,
       description,
-      url: `/camaras/${slug}`,
+      url: `${SITE_CONFIG.baseUrl}/camaras/${slug}`,
       type: "website",
       images: camera.images?.[0]
         ? [

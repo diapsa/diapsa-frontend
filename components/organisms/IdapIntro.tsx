@@ -50,7 +50,9 @@ export default function IdapIntro() {
                     </div>
 
                     <div className="relative order-1 lg:order-2">
-                        <h3 className="text-3xl font-extrabold leading-tight text-white lg:text-4xl">
+                        {/* H3 = 24px. Antes iba a 36px, idéntico a los H2 de la
+                            página: los niveles no se distinguían entre sí. */}
+                        <h3 className="text-xl font-extrabold leading-tight text-white lg:text-2xl">
                             {content.aboutTitle} <span className="text-secondary">{content.aboutTitleHighlight}</span>
                         </h3>
                         <p className="mt-4 max-w-xl text-base leading-relaxed text-white/80 lg:text-lg">
@@ -122,7 +124,7 @@ export default function IdapIntro() {
             <div className="border-t border-white/10">
                 <div className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
                     <div className="max-w-2xl">
-                        <h3 className="text-2xl font-bold leading-snug text-white lg:text-3xl">
+                        <h3 className="text-xl font-bold leading-snug text-white lg:text-2xl">
                             {content.informationTitle} <span className="text-secondary">{content.informationTitleHighlight}</span>
                         </h3>
                         <p className="mt-4 text-base leading-relaxed text-white/80 lg:text-lg">

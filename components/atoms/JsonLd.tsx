@@ -1,3 +1,5 @@
+import { SITE_CONFIG } from "@/lib/constants";
+
 interface JsonLdProps {
   data: Record<string, unknown>;
 }
@@ -22,8 +24,8 @@ export const organizationSchema = {
   "@type": "Organization",
   name: "Grupo DIAPSA",
   alternateName: "DIAPSA",
-  url: "https://grupodiapsa.com",
-  logo: "https://grupodiapsa.com/images/logo-diapsa.webp",
+  url: SITE_CONFIG.baseUrl,
+  logo: `${SITE_CONFIG.baseUrl}/images/logo-diapsa.webp`,
   description:
     "Empresa líder en mantenimiento predictivo industrial, monitoreo de condición y servicios de mantenimiento para Mexico y Sudamérica.",
   foundingDate: "2002",
@@ -44,6 +46,8 @@ export const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
+    telephone: SITE_CONFIG.contact.phone,
+    email: SITE_CONFIG.contact.email,
     availableLanguage: ["Spanish"],
   },
   sameAs: [
@@ -66,10 +70,11 @@ export const organizationSchema = {
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://grupodiapsa.com/#organization",
+  "@id": `${SITE_CONFIG.baseUrl}/#organization`,
   name: "Grupo DIAPSA",
-  image: "https://grupodiapsa.com/images/logo-diapsa.webp",
-  url: "https://grupodiapsa.com",
+  telephone: SITE_CONFIG.contact.phone,
+  image: `${SITE_CONFIG.baseUrl}/images/logo-diapsa.webp`,
+  url: SITE_CONFIG.baseUrl,
   description:
     "Servicios de mantenimiento predictivo industrial, monitoreo de condición, termografía, vibraciones, ultrasonido y estudios eléctricos para Mexico y Sudamérica.",
   priceRange: "$$",
@@ -107,13 +112,15 @@ export function createProductSchema(product: {
   brand?: string;
   sku?: string;
   category?: string;
+  url?: string; // Added for @id field
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": product.url ? `${SITE_CONFIG.baseUrl}${product.url}` : undefined,
     name: product.name,
     description: product.description,
-    image: `https://grupodiapsa.com${product.image}`,
+    image: product.image.startsWith('http') ? product.image : `${SITE_CONFIG.baseUrl}${product.image}`,
     brand: {
       "@type": "Brand",
       name: product.brand || "HIKMIKRO",
@@ -122,15 +129,17 @@ export function createProductSchema(product: {
     category: product.category || "Cámaras Termográficas",
     manufacturer: {
       "@type": "Organization",
-      name: "HIKMIKRO",
+      name: product.brand || "HIKMIKRO",
     },
     offers: {
       "@type": "Offer",
+      url: product.url ? `${SITE_CONFIG.baseUrl}${product.url}` : undefined,
       availability: "https://schema.org/InStock",
       priceCurrency: "MXN",
       seller: {
         "@type": "Organization",
         name: "Grupo DIAPSA",
+        url: SITE_CONFIG.baseUrl,
       },
     },
   };
@@ -147,12 +156,14 @@ export function createServiceSchema(service: {
     "@type": "Service",
     name: service.name,
     description: service.description,
-    image: service.image ? `https://grupodiapsa.com${service.image}` : undefined,
+    image: service.image 
+      ? (service.image.startsWith('http') ? service.image : `${SITE_CONFIG.baseUrl}${service.image}`)
+      : undefined,
     serviceType: service.serviceType || "Mantenimiento Predictivo",
     provider: {
       "@type": "Organization",
       name: "Grupo DIAPSA",
-      url: "https://grupodiapsa.com",
+      url: SITE_CONFIG.baseUrl,
     },
     areaServed: [
       {
@@ -180,11 +191,11 @@ export function createCourseSchema(course: {
     "@type": "Course",
     name: course.name,
     description: course.description,
-    ...(course.url ? { url: course.url } : {}),
+    ...(course.url ? { url: course.url.startsWith('http') ? course.url : `${SITE_CONFIG.baseUrl}${course.url}` } : {}),
     provider: {
       "@type": "Organization",
       name: course.provider || "Grupo DIAPSA",
-      url: "https://grupodiapsa.com",
+      url: SITE_CONFIG.baseUrl,
     },
     educationalLevel: "Professional",
     inLanguage: "es-MX",
@@ -226,7 +237,7 @@ export function createBreadcrumbSchema(
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `https://grupodiapsa.com${item.url}`,
+      item: item.url.startsWith('http') ? item.url : `${SITE_CONFIG.baseUrl}${item.url}`,
     })),
   };
 }
@@ -243,18 +254,20 @@ export function createArticleSchema(article: {
     "@type": "Article",
     headline: article.headline,
     description: article.description,
-    image: `https://grupodiapsa.com${article.image}`,
+    image: article.image.startsWith('http') ? article.image : `${SITE_CONFIG.baseUrl}${article.image}`,
     datePublished: article.datePublished,
     author: {
       "@type": "Organization",
       name: "Grupo DIAPSA",
+      url: SITE_CONFIG.baseUrl,
     },
     publisher: {
       "@type": "Organization",
       name: "Grupo DIAPSA",
+      url: SITE_CONFIG.baseUrl,
       logo: {
         "@type": "ImageObject",
-        url: "https://grupodiapsa.com/images/logo-diapsa.webp",
+        url: `${SITE_CONFIG.baseUrl}/images/logo-diapsa.webp`,
       },
     },
     articleSection: article.category,
@@ -266,12 +279,13 @@ export function createWebsiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Grupo DIAPSA",
-    url: "https://grupodiapsa.com",
+    url: SITE_CONFIG.baseUrl,
     description:
       "Mantenimiento predictivo industrial, monitoreo de condición y servicios de mantenimiento para Mexico y Sudamérica.",
     publisher: {
       "@type": "Organization",
       name: "Grupo DIAPSA",
+      url: SITE_CONFIG.baseUrl,
     },
     inLanguage: "es-MX",
   };

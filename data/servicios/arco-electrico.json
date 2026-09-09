@@ -1,0 +1,61 @@
+{
+  "id": "arco-electrico",
+  "slug": "arco-electrico",
+  "type": "tecnologia",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo de Condición",
+      "link": "/servicios/monitoreo-condicion"
+    },
+    {
+      "label": "Estudios de Arco Eléctrico",
+      "link": "/servicios/monitoreo-condicion/arco-electrico"
+    }
+  ],
+  "header": {
+    "title": "Estudios de Arco Eléctrico",
+    "subtitle": "Conoce el riesgo de cada tablero antes de que alguien lo descubra trabajando",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoDescription": "Estudio de arco eléctrico conforme a IEEE 1584 y NFPA 70E: energía incidente por tablero, etiquetado de riesgo y EPP requerido para proteger a tu personal.",
+  "content": {
+    "title": "¿Qué es un estudio de arco eléctrico?",
+    "subtitle": "Calcula cuánta energía liberaría un arco en cada punto de tu instalación eléctrica y qué protección necesita quien trabaje ahí. Sin el estudio, el EPP y las distancias de seguridad son una suposición.",
+    "image": "/images/disciplinas/analisis.jpg",
+    "items": [
+      {
+        "id": "donde-aplica",
+        "title": "Dónde se aplica",
+        "content": "Tableros de distribución, centros de control de motores, subestaciones e interruptores principales: todo punto donde el personal opera, mide o mantiene equipo energizado. Es el complemento natural del estudio de corto circuito y coordinación de protecciones."
+      },
+      {
+        "id": "que-incluye",
+        "title": "Qué incluye el estudio",
+        "content": "Levantamiento de la instalación, cálculo de energía incidente conforme a IEEE 1584, determinación de las fronteras de protección y del EPP requerido según NFPA 70E, etiquetado de advertencia por tablero y recomendaciones para reducir el nivel de riesgo donde salga alto."
+      },
+      {
+        "id": "beneficios",
+        "title": "Beneficios",
+        "content": "Personal protegido con el equipo correcto para el riesgo real de cada punto, cumplimiento en materia de seguridad eléctrica ante auditorías, tableros etiquetados que eliminan las adivinanzas, y un mapa claro de dónde conviene invertir para bajar el riesgo."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Sabes cuánta energía liberaría un arco en tu tablero principal?",
+    "text": "Compártenos un diagrama unifilar o el número de tableros y te preparamos la propuesta del estudio.",
+    "whatsappMessage": "Hola, quiero información sobre el estudio de arco eléctrico para mi planta."
+  },
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": []
+  }
+}

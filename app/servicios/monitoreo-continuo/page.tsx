@@ -12,7 +12,7 @@ const OG_IMAGE = "/images/og-images/og-image-monitoreo-continuo.jpg";
 
 export const metadata: Metadata = {
     title: "Monitoreo Continuo",
-    description: "Transformamos señales en decisiones con monitoreo continuo, sensores online, análisis remoto y tecnología para activos industriales.",
+    description: "Sensores que vigilan tus equipos las 24 horas y avisan antes de la falla. Monitoreo continuo con análisis remoto por especialistas de Grupo DIAPSA.",
     keywords: [
         "monitoreo continuo",
         "monitoreo 24/7",

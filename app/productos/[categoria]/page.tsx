@@ -10,6 +10,7 @@ import { getStorageUrl } from '@/lib/api/config';
 import { getProducts } from '@/lib/api/products';
 import JsonLd, { createBreadcrumbSchema } from '@/components/atoms/JsonLd';
 import CategoryPageClient from '@/components/organisms/CategoryPageClient';
+import { SITE_CONFIG } from '@/lib/constants';
 
 interface CategoryPageProps {
     params: Promise<{ categoria: string }>;
@@ -44,12 +45,12 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
                 'Grupo DIAPSA',
             ],
             alternates: {
-                canonical: `/productos/${category.slug}`,
+                canonical: `${SITE_CONFIG.baseUrl}/productos/${category.slug}`,
             },
             openGraph: {
                 title: category.seo?.title || `${category.name} | Grupo DIAPSA`,
                 description,
-                url: `/productos/${category.slug}`,
+                url: `${SITE_CONFIG.baseUrl}/productos/${category.slug}`,
                 type: 'website',
                 images: image
                     ? [

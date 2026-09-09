@@ -9,6 +9,7 @@ import PageHeader from "@/components/organisms/PageHeader";
 import { getStorageUrl } from "@/lib/api/config";
 import { getBlogBySlug } from "@/lib/api/posts";
 import { formatDate } from "@/lib/utils/formatDate";
+import { SITE_CONFIG } from "@/lib/constants";
 
 interface BlogDetailPageProps {
     params: Promise<{ slug: string }>;
@@ -20,31 +21,44 @@ export async function generateMetadata({
     params,
 }: BlogDetailPageProps): Promise<Metadata> {
     const { slug } = await params;
-    const blog = await getBlogBySlug(slug);
 
-    if (!blog) {
-        return { title: "Articulo no encontrado" };
-    }
+    try {
+        const blog = await getBlogBySlug(slug);
 
-    return {
-        title: blog.seo?.title || blog.title,
-        description: blog.seo?.description || blog.excerpt,
-        alternates: { canonical: `/blog/${slug}` },
-        openGraph: {
+        return {
             title: blog.seo?.title || blog.title,
             description: blog.seo?.description || blog.excerpt,
-            url: `/blog/${slug}`,
-            type: "article",
-            images: blog.cover_image ? [getStorageUrl(blog.cover_image) || DEFAULT_BLOG_IMAGE] : undefined,
-        },
-    };
+            alternates: { canonical: `${SITE_CONFIG.baseUrl}/blog/${slug}` },
+            openGraph: {
+                title: blog.seo?.title || blog.title,
+                description: blog.seo?.description || blog.excerpt,
+                url: `${SITE_CONFIG.baseUrl}/blog/${slug}`,
+                type: "article",
+                images: blog.cover_image ? [getStorageUrl(blog.cover_image) || DEFAULT_BLOG_IMAGE] : undefined,
+            },
+        };
+    } catch (error) {
+        // Log en desarrollo para debugging
+        if (process.env.NODE_ENV === 'development') {
+            console.log(`[blog] Slug no encontrado: ${slug}`);
+        }
+        return {
+            title: "Articulo no encontrado"
+        };
+    }
 }
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     const { slug } = await params;
-    const blog = await getBlogBySlug(slug);
 
-    if (!blog) {
+    let blog;
+    try {
+        blog = await getBlogBySlug(slug);
+    } catch (error) {
+        // Log en desarrollo para debugging
+        if (process.env.NODE_ENV === 'development') {
+            console.log(`[blog] Slug no encontrado: ${slug}`);
+        }
         notFound();
     }
 
@@ -70,19 +84,20 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
         author: {
             "@type": "Organization",
             name: "Grupo DIAPSA",
-            url: "https://grupodiapsa.com",
+            url: SITE_CONFIG.baseUrl,
         },
         publisher: {
             "@type": "Organization",
             name: "Grupo DIAPSA",
+            url: SITE_CONFIG.baseUrl,
             logo: {
                 "@type": "ImageObject",
-                url: "https://grupodiapsa.com/images/logo-diapsa.webp",
+                url: `${SITE_CONFIG.baseUrl}/images/logo-diapsa.webp`,
             },
         },
         mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://grupodiapsa.com/blog/${slug}`,
+            "@id": `${SITE_CONFIG.baseUrl}/blog/${slug}`,
         },
         inLanguage: "es-MX",
     };

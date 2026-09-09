@@ -8,28 +8,20 @@
 import { useState, useRef, FormEvent } from 'react';
 import { useContactForm } from '@/lib/hooks/useContactForm';
 import { sanitizeContactFormData } from '@/lib/utils/sanitizeFormData';
-import InputField, { TextareaField, SelectField } from '@/components/atoms/InputField';
+import InputField, { TextareaField } from '@/components/atoms/InputField';
 import LoadingSpinner from '@/components/atoms/LoadingSpinner';
 import SuccessMessage from '@/components/atoms/SuccessMessage';
 import RateLimitNotice, { RateLimitBanner } from '@/components/molecules/RateLimitNotice';
 import { FormErrors } from '@/components/atoms/FormFieldError';
 import type { ContactFormGeneral as ContactFormGeneralType } from '@/types/contact';
 
+// País por defecto: se dejó de preguntar en el formulario (2026-08-24).
+const PAIS_POR_DEFECTO = 'México';
+
 interface ContactFormGeneralProps {
   onSuccess?: () => void;
   className?: string;
 }
-
-const countries = [
-  { value: 'México', label: 'México' },
-  { value: 'Estados Unidos', label: 'Estados Unidos' },
-  { value: 'Colombia', label: 'Colombia' },
-  { value: 'Argentina', label: 'Argentina' },
-  { value: 'Chile', label: 'Chile' },
-  { value: 'Perú', label: 'Perú' },
-  { value: 'España', label: 'España' },
-  { value: 'Otro', label: 'Otro' },
-];
 
 export default function ContactFormGeneral({
   onSuccess,
@@ -51,7 +43,7 @@ export default function ContactFormGeneral({
     email: '',
     phone: '',
     company: '',
-    country: '',
+    country: PAIS_POR_DEFECTO,
     form_type: 'general',
     custom_fields: {
       message: '',
@@ -137,7 +129,7 @@ export default function ContactFormGeneral({
         email: '',
         phone: '',
         company: '',
-        country: '',
+        country: PAIS_POR_DEFECTO,
         form_type: 'general',
         custom_fields: {
           message: '',
@@ -231,7 +223,9 @@ export default function ContactFormGeneral({
         />
       </div>
 
-      {/* Datos de empresa */}
+      {/* Empresa y teléfono. El selector de país se retiró (2026-08-24): casi
+          todo el tráfico es de México y cada campo extra cuesta conversión. Se
+          sigue enviando "México" por defecto para no cambiar el backend. */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Company */}
         <InputField
@@ -243,30 +237,19 @@ export default function ContactFormGeneral({
           disabled={loading}
         />
 
-        {/* Country */}
-        <SelectField
-          label="País"
-          name="country"
-          options={countries}
-          value={formData.country}
+        {/* Phone */}
+        <InputField
+          label="Teléfono"
+          name="phone"
+          type="tel"
+          value={formData.phone}
           onChange={handleChange}
-          placeholder="Selecciona tu país"
+          onBlur={(e) => handleBlur('phone', e.target.value)}
+          error={getFieldError('phone')}
+          helperText="Formato: +52 55 1234 5678"
           disabled={loading}
         />
       </div>
-
-      {/* Phone */}
-      <InputField
-        label="Teléfono"
-        name="phone"
-        type="tel"
-        value={formData.phone}
-        onChange={handleChange}
-        onBlur={(e) => handleBlur('phone', e.target.value)}
-        error={getFieldError('phone')}
-        helperText="Formato: +52 55 1234 5678"
-        disabled={loading}
-      />
 
       {/* Message */}
       <TextareaField
@@ -279,43 +262,9 @@ export default function ContactFormGeneral({
         disabled={loading}
       />
 
-      {/* Preferred contact method */}
-      <div>
-        <p className="block text-sm font-semibold text-primary mb-2">
-          Medio de contacto preferido
-        </p>
-        <div className="flex gap-3">
-          {[
-            { value: 'email', label: 'Email' },
-            { value: 'phone', label: 'Teléfono' },
-          ].map((opt) => {
-            const isSelected = formData.custom_fields?.preferred_contact === opt.value;
-            return (
-              <label
-                key={opt.value}
-                className={`flex items-center gap-2 cursor-pointer px-4 py-2 rounded-sm border text-sm font-semibold transition-all duration-200 select-none
-                  ${isSelected
-                    ? 'bg-primary text-white border-primary'
-                    : 'bg-white text-gray-600 border-gray-200 hover:border-primary/40 hover:text-primary'
-                  }
-                  ${loading ? 'opacity-50 cursor-not-allowed' : ''}
-                `}
-              >
-                <input
-                  type="radio"
-                  name="preferred_contact"
-                  value={opt.value}
-                  checked={isSelected}
-                  onChange={handleChange}
-                  disabled={loading}
-                  className="sr-only"
-                />
-                {opt.label}
-              </label>
-            );
-          })}
-        </div>
-      </div>
+      {/* "Medio de contacto preferido" se retiró (2026-08-24): no cambiaba nada
+          operativamente, porque se responde por donde el prospecto dejó dato.
+          Se sigue enviando "email" por defecto. */}
 
       {/* Honeypot field - hidden */}
       <input

@@ -10,6 +10,7 @@ import { getStorageUrl } from "@/lib/api/config";
 import { getSuccessCaseBySlug } from "@/lib/api/posts";
 import { formatDate } from "@/lib/utils/formatDate";
 import ContactForm from "@/components/organisms/ContactForm";
+import { SITE_CONFIG } from "@/lib/constants";
 
 interface SuccessCasePageProps {
     params: Promise<{ slug: string }>;
@@ -88,44 +89,61 @@ export async function generateMetadata({
     params,
 }: SuccessCasePageProps): Promise<Metadata> {
     const { slug } = await params;
-    const caso = await getSuccessCaseBySlug(slug);
 
-    if (!caso) return { title: "Caso de exito no encontrado" };
+    try {
+        const caso = await getSuccessCaseBySlug(slug);
 
-    const keywords = [
-        caso.success_case.industry,
-        caso.success_case.service,
-        "caso de exito",
-        "mantenimiento predictivo",
-        "monitoreo de condicion",
-        "servicios de mantenimiento",
-        "confiabilidad industrial",
-        "mantenimiento predictivo Sudamerica",
-        "DIAPSA",
-        "resultados",
-    ];
+        const keywords = [
+            caso.success_case.industry,
+            caso.success_case.service,
+            "caso de exito",
+            "mantenimiento predictivo",
+            "monitoreo de condicion",
+            "servicios de mantenimiento",
+            "confiabilidad industrial",
+            "mantenimiento predictivo Sudamerica",
+            "DIAPSA",
+            "resultados",
+        ];
 
-    return {
-        title: caso.seo.title,
-        description: caso.seo.description,
-        keywords,
-        alternates: { canonical: `/casos-exito/${slug}` },
-        openGraph: {
+        return {
             title: caso.seo.title,
             description: caso.seo.description,
-            url: `/casos-exito/${slug}`,
-            type: "article",
-        },
-    };
+            keywords,
+            alternates: { canonical: `${SITE_CONFIG.baseUrl}/casos-exito/${slug}` },
+            openGraph: {
+                title: caso.seo.title,
+                description: caso.seo.description,
+                url: `${SITE_CONFIG.baseUrl}/casos-exito/${slug}`,
+                type: "article",
+            },
+        };
+    } catch (error) {
+        // Log en desarrollo para debugging
+        if (process.env.NODE_ENV === 'development') {
+            console.log(`[casos-exito] Slug no encontrado: ${slug}`);
+        }
+        return {
+            title: "Caso de exito no encontrado"
+        };
+    }
 }
 
 export default async function CasoExitoDetailPage({
     params,
 }: SuccessCasePageProps) {
     const { slug } = await params;
-    const caso = await getSuccessCaseBySlug(slug);
 
-    if (!caso) notFound();
+    let caso;
+    try {
+        caso = await getSuccessCaseBySlug(slug);
+    } catch (error) {
+        // Log en desarrollo para debugging
+        if (process.env.NODE_ENV === 'development') {
+            console.log(`[casos-exito] Slug no encontrado: ${slug}`);
+        }
+        notFound();
+    }
 
     const coverImage = getStorageUrl(caso.cover_image) || "/images/fondo-mantenimiento.webp";
     const publishedAt = formatDate(caso.published_at);

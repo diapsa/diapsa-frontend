@@ -3,7 +3,7 @@ import PageHeader from "@/components/organisms/PageHeader";
 import ContactFormExpo from "@/components/organisms/ContactFormExpo";
 
 export const metadata: Metadata = {
-  title: "¡Gracias por Visitarnos en Expo Manufactura! | DIAPSA",
+  title: "Gracias por Visitarnos en Expo Manufactura",
   description:
     "Déjanos tus datos para enviarte más información sobre nuestros servicios de mantenimiento predictivo, cursos de capacitación y soluciones industriales.",
   keywords: [

@@ -1,27 +1,15 @@
-'use client';
+import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+export const metadata: Metadata = {
+    title: "Folleto Digital",
+    description: "Descubre nuestros servicios de mantenimiento predictivo, productos especializados y capacitación profesional.",
+    robots: {
+        index: false, // Redirect page, no index
+    },
+};
 
 export default function FolletoDigitalPage() {
-    const router = useRouter();
-
-    useEffect(() => {
-        // Abrir PDF en nueva pestaña
-        const pdfWindow = window.open('/files/brochure.pdf', '_blank');
-
-        // Si el navegador bloqueó el pop-up, redirigir directamente
-        if (!pdfWindow || pdfWindow.closed || typeof pdfWindow.closed === 'undefined') {
-            window.location.href = '/files/brochure.pdf';
-        } else {
-            // Si se abrió correctamente, redirigir al home
-            router.push('/');
-        }
-    }, [router]);
-
-    return (
-        <div className="flex items-center justify-center min-h-screen">
-            <p className="text-lg">Abriendo folleto digital...</p>
-        </div>
-    );
+    // Server-side redirect to PDF
+    redirect('/files/brochure.pdf');
 }

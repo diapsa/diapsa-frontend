@@ -18,7 +18,7 @@ const OG_IMAGE = "/images/og-images/og-image-diagnostico-situacional.jpg";
 type IconComponent = ComponentType<{ className?: string }>;
 
 export const metadata: Metadata = {
-    title: "Diagnóstico Situacional | Grupo DIAPSA",
+    title: "Diagnóstico Situacional de Maquinaria Industrial",
     description:
         "Conoce el estado real de tus activos industriales con un análisis exhaustivo realizado por especialistas. El punto de partida de todo programa de mantenimiento predictivo eficiente.",
     keywords: [

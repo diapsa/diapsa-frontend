@@ -6,7 +6,7 @@ import Image from "next/image";
 const OG_IMAGE = "/images/og-images/og-image.jpg";
 
 export const metadata: Metadata = {
-  title: "Servicios | Grupo DIAPSA",
+  title: "Servicios de Mantenimiento Predictivo",
   description:
     "Servicios de mantenimiento predictivo, monitoreo de condicion, monitoreo continuo, diagnostico industrial e inteligencia operativa para Mexico y Sudamerica.",
   keywords: [
