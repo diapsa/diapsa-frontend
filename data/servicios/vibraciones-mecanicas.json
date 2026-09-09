@@ -60,6 +60,16 @@
         "id": "modalidades",
         "title": "Puntual o continuo",
         "content": "Rutas periódicas con analizador portátil para la mayoría de los activos, y sensores en línea con monitoreo continuo las 24 horas para los equipos donde una falla no da tiempo de reaccionar."
+      },
+      {
+        "id": "aviso-inmediato",
+        "title": "Si aparece algo grave",
+        "content": "Un hallazgo crítico no espera al reporte: lo comunicamos de inmediato al responsable de mantenimiento con la evidencia y la severidad, y el equipo entra a seguimiento con reinspecciones hasta que se corrige. Así les damos seguimiento a las alarmas reales de nuestros clientes."
+      },
+      {
+        "id": "plataforma-idap",
+        "title": "Tus datos viven en IDAP",
+        "content": "Cada medición queda registrada en IDAP, nuestra plataforma en línea: historial por equipo, tendencias, estados y reportes consultables cuando los necesites. No dependes de buscar un PDF en el correo para saber cómo va tu planta."
       }
     ]
   },
@@ -79,6 +89,10 @@
     {
       "question": "¿Qué normas regulan el análisis de vibraciones?",
       "answer": "Las más usadas son ISO 10816 e ISO 20816, que fijan los límites de severidad de vibración por tipo de máquina, e ISO 18436-2, que certifica la competencia de los analistas por categorías (I a IV)."
+    },
+    {
+      "question": "¿Qué necesito para pedir una cotización?",
+      "answer": "Solo el listado de tus equipos: nombre o TAG, tipo de máquina (bomba, motor, ventilador, reductor), potencia aproximada y la ubicación de la planta. Con eso preparamos la propuesta de ruta de medición. Si no tienes el listado a la mano, lo armamos contigo en una llamada."
     },
     {
       "question": "¿Cuánto cuesta un servicio de análisis de vibraciones?",
