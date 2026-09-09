@@ -91,6 +91,37 @@ export default async function Home() {
   return (
     <main>
       <Hero />
+      {/* La home sigue el mismo orden que el menú:
+          Monitoreo → Cursos → Más servicios → Casos de Éxito → Empresa.
+          Nota: Detección de Gas y Equipos están en el menú pero aún no
+          tienen sección propia en la home. */}
+
+      {/* Cada sección aparece al entrar en pantalla (fundido + subida corta).
+          El Hero queda fuera a propósito: animar lo que ya está visible al
+          cargar retrasa la primera impresión y penaliza el LCP. */}
+
+      {/* Monitoreo */}
+      <Reveal><ServicesOverview /></Reveal>
+
+      {/* Cursos */}
+      <Reveal><CursosTeaser /></Reveal>
+
+      {/* Detección de Gas y Equipos — las otras dos puertas del menú */}
+      <Reveal><GasYEquiposSection /></Reveal>
+
+      {/* Bloque de credibilidad: logos de clientes + los números de DIAPSA.
+          AboutUs volvió aquí arriba el 2026-08-26. Había quedado casi al final
+          por seguir el orden del menú (Empresa es la última entrada), pero sus
+          cifras (+50,000 fallas, +1,500 servicios, +20 años) son argumento de
+          venta, no información institucional: se pierden hasta abajo. */}
+      <Reveal><Clients /></Reveal>
+
+      {/* Cobertura regional. Estaba pegada al Hero, donde frenaba el paso
+          hacia los servicios con un bloque de puro texto (decisión de
+          Emiliano, 2026-09-09). Aquí abajo funciona mejor: después de los
+          logos de clientes, que ya dieron la prueba, y antes de la historia
+          de la empresa, con la que hace bloque institucional. */}
+      <Reveal>
       <section className="bg-white py-12 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-secondary font-bold uppercase tracking-widest text-xs mb-4">
@@ -116,30 +147,8 @@ export default async function Home() {
           </p>
         </div>
       </section>
-      {/* La home sigue el mismo orden que el menú:
-          Monitoreo → Cursos → Más servicios → Casos de Éxito → Empresa.
-          Nota: Detección de Gas y Equipos están en el menú pero aún no
-          tienen sección propia en la home. */}
+      </Reveal>
 
-      {/* Cada sección aparece al entrar en pantalla (fundido + subida corta).
-          El Hero queda fuera a propósito: animar lo que ya está visible al
-          cargar retrasa la primera impresión y penaliza el LCP. */}
-
-      {/* Monitoreo */}
-      <Reveal><ServicesOverview /></Reveal>
-
-      {/* Cursos */}
-      <Reveal><CursosTeaser /></Reveal>
-
-      {/* Detección de Gas y Equipos — las otras dos puertas del menú */}
-      <Reveal><GasYEquiposSection /></Reveal>
-
-      {/* Bloque de credibilidad: logos de clientes + los números de DIAPSA.
-          AboutUs volvió aquí arriba el 2026-08-26. Había quedado casi al final
-          por seguir el orden del menú (Empresa es la última entrada), pero sus
-          cifras (+50,000 fallas, +1,500 servicios, +20 años) son argumento de
-          venta, no información institucional: se pierden hasta abajo. */}
-      <Reveal><Clients /></Reveal>
       <Reveal><AboutUs /></Reveal>
 
       {/* Más servicios */}
