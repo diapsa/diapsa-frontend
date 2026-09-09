@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { getServicioPorArticulo } from "@/lib/recursos";
 import Link from "next/link";
 import JsonLd, { createBreadcrumbSchema } from "@/components/atoms/JsonLd";
 import ArticleIndex, { type ArticleIndexItem } from "@/components/molecules/ArticleIndex";
@@ -102,6 +103,8 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
         inLanguage: "es-MX",
     };
     const preparedContent = prepareTiptapContent(blog.content);
+    // Servicio de DIAPSA que ejecuta la técnica que explica el artículo.
+    const servicioRelacionado = getServicioPorArticulo(slug);
     const articleIndexItems: ArticleIndexItem[] = [
         { id: "contenido", label: "Contenido" },
         ...preparedContent.h2Items,
@@ -142,6 +145,33 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     <section id="contenido" className="scroll-mt-28 border-t border-gray-100 pt-8 lg:pt-10">
                         <TiptapRenderer content={preparedContent.content} />
                     </section>
+
+                    {/* Servicio que corresponde al tema del artículo. Quien
+                        acaba de leer sobre una técnica es el mejor momento
+                        para ofrecerle el servicio que la ejecuta, y el enlace
+                        le pasa relevancia a esa página en buscadores. */}
+                    {servicioRelacionado && (
+                        <aside className="mt-10 rounded-sm border-l-4 border-secondary bg-gray-50 p-6 lg:p-8">
+                            <p className="text-xs font-bold uppercase tracking-widest text-secondary">
+                                Servicio relacionado
+                            </p>
+                            <h2 className="mt-2 text-2xl font-extrabold leading-snug text-primary lg:text-3xl">
+                                {servicioRelacionado.titulo}
+                            </h2>
+                            <p className="mt-3 text-base leading-relaxed text-tertiary text-justify lg:text-lg">
+                                {servicioRelacionado.resumen}
+                            </p>
+                            <Link
+                                href={servicioRelacionado.href}
+                                className="mt-5 inline-flex items-center gap-2 rounded-xs bg-primary px-6 py-3 font-bold text-white transition-all duration-300 hover:bg-secondary hover:text-primary"
+                            >
+                                Ver el servicio
+                                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </Link>
+                        </aside>
+                    )}
 
                     <div className="mt-8 border-t border-gray-100 pt-6">
                         <Link

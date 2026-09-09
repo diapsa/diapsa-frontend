@@ -1,0 +1,62 @@
+[
+  {
+    "articulo": {
+      "slug": "analisis-de-vibraciones-guia-completa-de-fallas-parametros-y-normas-iso",
+      "titulo": "Análisis de vibraciones: guía completa de fallas, parámetros y normas ISO",
+      "resumen": "Qué mide cada parámetro, cómo se interpretan las fallas más comunes y qué dicen las normas ISO al respecto."
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas",
+      "titulo": "Análisis de Vibraciones Mecánicas",
+      "resumen": "Rutas de medición e interpretación espectral en tu planta, con analistas Categoría III ISO 18436-2."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "termografia-industrial-una-herramienta-clave-para-el-mantenimiento-predictivo",
+      "titulo": "Termografía industrial: una herramienta clave para el mantenimiento predictivo",
+      "resumen": "Cómo la inspección térmica detecta problemas eléctricos y mecánicos antes de que se vuelvan falla."
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/termografia-infrarroja",
+      "titulo": "Termografía Infrarroja",
+      "resumen": "Inspección termográfica de tableros, motores y procesos con reporte de hallazgos priorizado."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "nfpa-70b-2023-el-mantenimiento-electrico-dejo-de-ser-opcional",
+      "titulo": "NFPA 70B 2023: el mantenimiento eléctrico dejó de ser opcional",
+      "resumen": "Qué exige la norma y cómo se traduce en un programa de mantenimiento eléctrico auditable."
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/estudios-electricos",
+      "titulo": "Estudios Eléctricos Especializados",
+      "resumen": "Calidad de energía, coordinación de protecciones y diagnóstico de tu sistema eléctrico."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "mantenimiento-predictivo-que-es-tecnicas-y-ejemplos-reales",
+      "titulo": "Mantenimiento predictivo: qué es, técnicas y ejemplos reales",
+      "resumen": "Las técnicas que componen un programa predictivo y cómo se aplican en planta."
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion",
+      "titulo": "Monitoreo de Condición",
+      "resumen": "El programa completo: vibraciones, termografía, ultrasonido, aceite y estudios eléctricos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "tipos-de-mantenimiento-industrial",
+      "titulo": "Tipos de mantenimiento industrial",
+      "resumen": "Correctivo, preventivo y predictivo: en qué se diferencian y cuándo conviene cada uno."
+    },
+    "servicio": {
+      "href": "/servicios/diapsa-start",
+      "titulo": "DIAPSA START",
+      "resumen": "El programa para implementar monitoreo de condición en tu planta paso a paso."
+    }
+  }
+]
