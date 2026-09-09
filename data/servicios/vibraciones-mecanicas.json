@@ -207,5 +207,16 @@
         "link": "#"
       }
     ]
+  },
+  "recurso": {
+    "titulo": "Mira un informe real antes de contratar",
+    "descripcion": "Este es el entregable que recibe nuestro cliente, con los datos de su planta omitidos. Un informe de inspección integral sobre un ventilador de aerocondensador: lo que medimos, contra qué lo comparamos y qué recomendamos hacer.",
+    "incluye": [
+      "Niveles de vibración punto por punto, en velocidad y aceleración, contra los rangos de severidad ISO",
+      "Imágenes termográficas con temperaturas, emisividad y distancia de captura",
+      "Lecturas de ultrasonido con su criterio de severidad",
+      "Diagnóstico del analista y la recomendación concreta de intervención"
+    ],
+    "archivo": "/documentos/informe-ejemplo-diapsa.pdf"
   }
 }
