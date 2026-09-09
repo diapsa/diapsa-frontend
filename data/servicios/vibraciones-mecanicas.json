@@ -73,6 +73,77 @@
       }
     ]
   },
+  "tabla": {
+    "titulo": "Cada falla tiene su firma",
+    "subtitulo": "Esto es lo que busca un analista al abrir un espectro. La frecuencia donde aparece la amplitud, y en qué dirección, es lo que separa un desbalanceo de una desalineación o de un rodamiento en degradación.",
+    "columnas": [
+      "Falla",
+      "Dónde aparece",
+      "Dirección",
+      "Cómo se confirma"
+    ],
+    "filas": [
+      [
+        "Desbalanceo",
+        "1x RPM",
+        "Radial",
+        "Amplitud dominante en la primera armónica, fase estable y diferencia cercana a 90 grados entre horizontal y vertical."
+      ],
+      [
+        "Desalineación",
+        "2x RPM",
+        "Axial y radial",
+        "Componente axial elevada y desfase cercano a 180 grados entre ambos lados del acoplamiento."
+      ],
+      [
+        "Holgura mecánica",
+        "Armónicas múltiples",
+        "Radial",
+        "Serie larga de armónicas de la velocidad de giro, piso de ruido elevado y en ocasiones subarmónicas."
+      ],
+      [
+        "Rodamiento dañado",
+        "Frecuencias no síncronas",
+        "Radial",
+        "Frecuencias propias del rodamiento que no son múltiplo de la velocidad. Se detecta antes en espectro envolvente que en velocidad."
+      ],
+      [
+        "Engranaje",
+        "Frecuencia de engrane",
+        "Radial y axial",
+        "Frecuencia de engrane acompañada de bandas laterales separadas por la velocidad del eje afectado."
+      ],
+      [
+        "Paso de álabes",
+        "Número de álabes por RPM",
+        "Radial",
+        "Aparece en bombas y ventiladores, y crece ante recirculación, cavitación o problemas de flujo."
+      ],
+      [
+        "Resonancia",
+        "Frecuencia natural del sistema",
+        "Variable",
+        "Amplitud muy alta en una frecuencia fija que cambia de comportamiento al variar la velocidad de operación."
+      ],
+      [
+        "Origen eléctrico",
+        "Dos veces la frecuencia de línea",
+        "Radial",
+        "En motores, se distingue porque la amplitud desaparece de inmediato al cortar la alimentación."
+      ]
+    ],
+    "nota": "Los esquemas de la última columna son ilustrativos: representan la relación de amplitudes que delata cada falla, no la medición de un equipo en particular. El diagnóstico definitivo siempre considera la máquina, su velocidad de operación, la línea base histórica y el resto de las técnicas aplicadas.",
+    "patrones": [
+      "1x",
+      "2x",
+      "armonicas",
+      "no-sincrona",
+      "engrane",
+      "alabes",
+      "resonancia",
+      "electrica"
+    ]
+  },
   "faq": [
     {
       "question": "¿Qué es el análisis de vibraciones?",
@@ -102,16 +173,16 @@
   "certificacion": "Analistas Categoría III · ISO 18436-2",
   "galeria": [
     {
-      "src": "/images/gallery/campo-img-4.jpg",
-      "alt": "Analista de DIAPSA midiendo vibración en un motor eléctrico con analizador de vibraciones"
+      "src": "/images/gallery/campo-img-3.jpg",
+      "alt": "Analistas de DIAPSA midiendo vibracion en bombas y motores de un skid de proceso"
+    },
+    {
+      "src": "/images/gallery/campo-img-8.jpg",
+      "alt": "Analista de DIAPSA tomando lecturas de vibracion en un compresor industrial"
     },
     {
       "src": "/images/gallery/campo-img-2.jpg",
-      "alt": "Técnicos de DIAPSA realizando análisis de vibraciones en un tren motor-ventilador industrial"
-    },
-    {
-      "src": "/images/gallery/campo-img-5.jpg",
-      "alt": "Medición de vibración en motor vertical durante una ruta de monitoreo de condición"
+      "alt": "Equipo de DIAPSA midiendo vibracion en un tren motor ventilador en planta"
     }
   ],
   "cta": {
