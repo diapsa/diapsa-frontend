@@ -51,6 +51,8 @@ export interface ServiceTabla {
   columnas: string[];
   /** Cada fila con tantas celdas como columnas. */
   filas: string[][];
+  /** Clave del patrón espectral a dibujar en cada fila, en el mismo orden. */
+  patrones?: string[];
   nota?: string;
 }
 

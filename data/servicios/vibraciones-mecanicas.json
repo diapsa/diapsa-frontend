@@ -132,7 +132,17 @@
         "En motores, se distingue porque la amplitud desaparece de inmediato al cortar la alimentación."
       ]
     ],
-    "nota": "Tabla de referencia general. El diagnóstico definitivo siempre considera la máquina, su velocidad de operación, la línea base histórica y el resto de las técnicas aplicadas."
+    "nota": "Los esquemas de la última columna son ilustrativos: representan la relación de amplitudes que delata cada falla, no la medición de un equipo en particular. El diagnóstico definitivo siempre considera la máquina, su velocidad de operación, la línea base histórica y el resto de las técnicas aplicadas.",
+    "patrones": [
+      "1x",
+      "2x",
+      "armonicas",
+      "no-sincrona",
+      "engrane",
+      "alabes",
+      "resonancia",
+      "electrica"
+    ]
   },
   "faq": [
     {

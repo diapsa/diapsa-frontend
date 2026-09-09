@@ -1,4 +1,5 @@
 import type { ServiceTabla } from "@/types/servicio";
+import PatronEspectral from "../atoms/PatronEspectral";
 
 /**
  * ServiceTable
@@ -46,6 +47,11 @@ export default function ServiceTable({ tabla }: Props) {
                     {columna}
                   </th>
                 ))}
+                {tabla.patrones && (
+                  <th scope="col" className="px-5 py-4 text-sm font-bold uppercase tracking-wider">
+                    Se ve así
+                  </th>
+                )}
               </tr>
             </thead>
             <tbody>
@@ -68,6 +74,11 @@ export default function ServiceTable({ tabla }: Props) {
                       {celda}
                     </td>
                   ))}
+                  {tabla.patrones && (
+                    <td className="px-5 py-4 align-middle border-t border-gray-200">
+                      <PatronEspectral patron={tabla.patrones[indice]} etiqueta={fila[0]} />
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>
