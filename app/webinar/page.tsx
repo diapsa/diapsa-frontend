@@ -2,18 +2,19 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/organisms/PageHeader";
 import ContactFormWebinarCustom from "@/components/organisms/ContactFormWebinarCustom";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Webinar DIAPSA | Capacitación en Mantenimiento Predictivo",
+  title: "Webinar Herramientas Predictivas",
   description:
-    "Únete a nuestro webinar gratuito sobre mantenimiento predictivo industrial. Aprende de expertos y mejora las estrategias de mantenimiento de tu planta.",
+    "Webinar gratuito el 6 de octubre a las 11:00 a.m.: qué herramienta predictiva usar en cada equipo de tu planta y cómo interpretar lo que te dice.",
   alternates: {
     canonical: "/webinar",
   },
   openGraph: {
-    title: "Webinar DIAPSA | Capacitación en Mantenimiento Predictivo",
+    title: "Webinar Herramientas Predictivas | Grupo DIAPSA",
     description:
-      "Únete a nuestro webinar gratuito sobre mantenimiento predictivo industrial.",
+      "Webinar gratuito el 6 de octubre a las 11:00 a.m. sobre herramientas de mantenimiento predictivo.",
     url: "/webinar",
     type: "website",
   },
@@ -24,17 +25,69 @@ export default function WebinarPage() {
     <main className="min-h-screen bg-white">
       <PageHeader
         title="WEBINAR GRATUITO"
-        subtitle="Aprende las mejores prácticas en mantenimiento predictivo industrial"
+        subtitle="Herramientas Predictivas · Martes 6 de octubre, 11:00 a.m."
       />
 
       <section className="py-12 lg:py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-4xl">
           {/* Webinar Details */}
           <div className="mb-12">
-            <div className="bg-white rounded-lg shadow-lg p-8 md:p-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-primary mb-6">
-                Introducción al Mantenimiento Predictivo 4.0
-              </h2>
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              {/* Foto real de una sesión de DIAPSA. La página no tenía ninguna
+                  imagen: sólo texto sobre fondo gris. */}
+              <div className="relative aspect-[21/9] w-full">
+                <Image
+                  src="/images/gallery/capacitacion-img-2.jpg"
+                  alt="Sesión de capacitación de Grupo DIAPSA con participantes usando herramientas de diagnóstico"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 896px"
+                  priority
+                />
+                <div className="absolute inset-0 bg-primary/45" />
+                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10">
+                  <span className="inline-flex w-fit items-center gap-2 rounded-full bg-secondary px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary">
+                    Webinar gratuito
+                  </span>
+                  <h2 className="mt-3 text-2xl lg:text-4xl font-extrabold text-white leading-tight drop-shadow">
+                    Herramientas Predictivas
+                  </h2>
+                </div>
+              </div>
+
+              {/* Cuándo es. Antes la fecha no aparecía por ningún lado de la
+                  página: sólo un "Por confirmar" escondido en el formulario. */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 sm:gap-10 border-b border-gray-200 bg-gray-50 px-8 py-5">
+                <div className="flex items-center gap-3">
+                  <svg className="h-6 w-6 shrink-0 text-secondary" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                  </svg>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-tertiary">Fecha</p>
+                    <p className="font-bold text-primary">Martes 6 de octubre</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg className="h-6 w-6 shrink-0 text-secondary" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-tertiary">Hora</p>
+                    <p className="font-bold text-primary">11:00 a.m. (centro de México)</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg className="h-6 w-6 shrink-0 text-secondary" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                  </svg>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-tertiary">Modalidad</p>
+                    <p className="font-bold text-primary">En línea</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 md:p-10">
 
               <div className="prose prose-gray max-w-none mb-6">
                 <p className="text-gray-700 mb-4">
@@ -185,6 +238,7 @@ export default function WebinarPage() {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
           </div>
 
@@ -194,8 +248,8 @@ export default function WebinarPage() {
               Regístrate Gratis
             </h3>
             <ContactFormWebinarCustom
-              webinarTitle="Introducción al Mantenimiento Predictivo 4.0"
-              webinarDate="Por confirmar"
+              webinarTitle="Herramientas Predictivas"
+              webinarDate="Martes 6 de octubre de 2026, 11:00 a.m."
             />
           </div>
 
