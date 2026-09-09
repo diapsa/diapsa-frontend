@@ -10,6 +10,7 @@ import JsonLd, {
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
 import ServiceTable from "@/components/organisms/ServiceTable";
+import IconoTarjeta from "@/components/atoms/IconoTarjeta";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -270,10 +271,11 @@ export default async function ServicePage({
                                 key={item.id}
                                 className="bg-white rounded-sm border border-gray-100 p-6 lg:p-8 shadow-sm"
                             >
+                                {/* El ícono le da ritmo a la cuadrícula: ocho
+                                    tarjetas de prosa idéntica eran un muro
+                                    donde nada guiaba la vista. */}
                                 <div className="flex items-center gap-4 mb-5">
-                                    {/* <span className="flex w-11 h-11 bg-primary text-secondary rounded-sm items-center justify-center text-lg font-extrabold">
-                                        {String(index + 1).padStart(2, "0")}
-                                    </span> */}
+                                    <IconoTarjeta id={item.id} />
 
                                     <h3 className="text-xl lg:text-2xl font-bold text-primary leading-snug">
                                         {item.title}
