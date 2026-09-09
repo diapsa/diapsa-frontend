@@ -45,6 +45,15 @@ export interface GaleriaFoto {
   alt: string;
 }
 
+export interface ServiceTabla {
+  titulo: string;
+  subtitulo?: string;
+  columnas: string[];
+  /** Cada fila con tantas celdas como columnas. */
+  filas: string[][];
+  nota?: string;
+}
+
 export interface ServiceCta {
   title: string;
   text: string;
@@ -72,4 +81,6 @@ export interface Servicio {
   certificacion?: string;
   /** Fotos reales de campo; si existen, la página muestra la franja "DIAPSA en campo". */
   galeria?: GaleriaFoto[];
+  /** Tabla técnica de referencia. */
+  tabla?: ServiceTabla;
 }
