@@ -266,38 +266,36 @@ export default async function ServicePage({
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="mb-12">
                         <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-4 leading-tight">
-                            Informacion tecnica <span className="text-secondary">visible y accionable</span>
+                            En corto: <span className="text-secondary">cómo trabajamos</span>
                         </h2>
 
                         <p className="text-tertiary text-lg max-w-2xl leading-relaxed text-justify">
-                            Estos son los puntos clave del servicio, organizados para entender donde se aplica,
-                            que impacto tiene y bajo que criterio se ejecuta.
+                            Lo esencial del servicio en seis puntos. El detalle está en la tabla de fallas,
+                            en el informe de ejemplo y en el flujo de trabajo, más abajo.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    {/* Ficha compacta, no tarjetas. Antes eran ocho bloques
+                        de prosa con borde y sombra que en pantalla angosta se
+                        apilaban en una torre de texto. Ahora cada punto es un
+                        renglón corto: se escanea en segundos y el detalle vive
+                        donde se cuenta mejor, en la tabla, el informe y el
+                        diagrama de flujo. */}
+                    <dl className="grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-2">
                         {detailItems.map((item) => (
-                            <article
-                                key={item.id}
-                                className="bg-white rounded-sm border border-gray-100 p-6 lg:p-8 shadow-sm"
-                            >
-                                {/* El ícono le da ritmo a la cuadrícula: ocho
-                                    tarjetas de prosa idéntica eran un muro
-                                    donde nada guiaba la vista. */}
-                                <div className="flex items-center gap-4 mb-5">
-                                    <IconoTarjeta id={item.id} />
-
-                                    <h3 className="text-xl lg:text-2xl font-bold text-primary leading-snug">
+                            <div key={item.id} className="flex gap-4">
+                                <IconoTarjeta id={item.id} />
+                                <div>
+                                    <dt className="text-lg font-bold leading-snug text-primary">
                                         {item.title}
-                                    </h3>
+                                    </dt>
+                                    <dd className="mt-1.5 text-base leading-relaxed text-tertiary">
+                                        {item.content}
+                                    </dd>
                                 </div>
-
-                                <p className="text-tertiary text-base leading-relaxed text-justify">
-                                    {item.content}
-                                </p>
-                            </article>
+                            </div>
                         ))}
-                    </div>
+                    </dl>
                 </div>
             </section>
 

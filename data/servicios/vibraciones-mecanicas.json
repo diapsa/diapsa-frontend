@@ -34,42 +34,32 @@
       {
         "id": "aplicaciones",
         "title": "Dónde se aplica",
-        "content": "Motores eléctricos, bombas, ventiladores, compresores, reductores, torres de enfriamiento y turbinas. En general, cualquier equipo rotativo crítico: si su paro detiene la línea, es candidato a medirse de forma periódica."
-      },
-      {
-        "id": "fallas",
-        "title": "Fallas que detecta",
-        "content": "Desbalanceo, desalineación, holguras mecánicas, rodamientos en degradación, problemas de engranes y bandas, resonancia estructural, ejes doblados y fallas de origen eléctrico en motores. Es la técnica con mayor cobertura de modos de falla en equipo rotativo."
+        "content": "Motores, bombas, ventiladores, compresores, reductores y turbinas. Todo equipo rotativo cuyo paro detenga la línea."
       },
       {
         "id": "metodologia",
-        "title": "Metodología y normas",
-        "content": "Medimos y evaluamos conforme a ISO 10816 e ISO 20816 con analizadores de vibraciones certificados. Los espectros los interpreta un analista con certificación Categoría III según ISO 18436-2, no solo un software."
+        "title": "Normas y certificación",
+        "content": "Evaluamos conforme a ISO 10816 e ISO 20816. Los espectros los interpreta un analista Categoría III ISO 18436-2, no un software."
       },
       {
         "id": "beneficios",
-        "title": "Beneficios",
-        "content": "Menos paros no programados, refacciones compradas con anticipación en lugar de con urgencia, intervenciones agendadas en ventanas de producción y mayor vida útil de los componentes críticos."
-      },
-      {
-        "id": "entregable",
-        "title": "Qué recibes",
-        "content": "Cada equipo medido se entrega con su nivel de severidad, el espectro que lo respalda, el diagnóstico del posible modo de falla y una recomendación concreta: qué intervenir, con qué urgencia y qué vigilar en la siguiente ruta."
+        "title": "Qué ganas",
+        "content": "Menos paros no programados, refacciones compradas con tiempo e intervenciones agendadas en ventana de producción."
       },
       {
         "id": "modalidades",
         "title": "Puntual o continuo",
-        "content": "Rutas periódicas con analizador portátil para la mayoría de los activos, y sensores en línea con monitoreo continuo las 24 horas para los equipos donde una falla no da tiempo de reaccionar."
+        "content": "Rutas periódicas con analizador portátil, o sensores en línea las 24 horas donde la falla no da tiempo de reaccionar."
       },
       {
         "id": "aviso-inmediato",
         "title": "Si aparece algo grave",
-        "content": "Un hallazgo crítico no espera al reporte: lo comunicamos de inmediato al responsable de mantenimiento con la evidencia y la severidad, y el equipo entra a seguimiento con reinspecciones hasta que se corrige. Así les damos seguimiento a las alarmas reales de nuestros clientes."
+        "content": "Aviso inmediato al responsable, con evidencia y severidad. El equipo entra a reinspección hasta que se corrige."
       },
       {
         "id": "plataforma-idap",
         "title": "Tus datos viven en IDAP",
-        "content": "Cada medición queda registrada en IDAP, nuestra plataforma en línea: historial por equipo, tendencias, estados y reportes consultables cuando los necesites. No dependes de buscar un PDF en el correo para saber cómo va tu planta."
+        "content": "Historial por equipo, tendencias y reportes consultables en línea cuando los necesites, sin buscar un PDF en el correo."
       }
     ]
   },
