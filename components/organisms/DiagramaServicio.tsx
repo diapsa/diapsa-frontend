@@ -38,8 +38,8 @@ const TECNICAS = [
 
 // Señales que ya sólo aparecen cuando la falla está encima.
 const TARDIAS = [
-  { x: 700, y: 330, nombre: "Ruido audible" },
-  { x: 748, y: 356, nombre: "Calor por contacto" },
+  { x: 700, y: 330, etiquetaX: 700, etiquetaY: 268, nombre: "Ruido audible" },
+  { x: 748, y: 356, etiquetaX: 790, etiquetaY: 312, nombre: "Calor por contacto" },
 ];
 
 function CurvaPF() {
@@ -101,8 +101,8 @@ function CurvaPF() {
 
           {/* Punto F */}
           <circle cx="790" cy="386" r="7" className="fill-red-600 stroke-white" strokeWidth="2" />
-          <rect x="776" y="344" width="28" height="24" rx="3" className="fill-red-600" />
-          <text x="790" y="361" textAnchor="middle" className="fill-white text-[15px] font-extrabold">
+          <rect x="806" y="360" width="28" height="24" rx="3" className="fill-red-600" />
+          <text x="820" y="377" textAnchor="middle" className="fill-white text-[15px] font-extrabold">
             F
           </text>
           <text x="790" y="438" textAnchor="middle" className="fill-red-600 text-[12px] font-bold">
@@ -143,12 +143,21 @@ function CurvaPF() {
           ))}
 
           {/* Señales tardías */}
-          {TARDIAS.map((t, i) => (
+          {TARDIAS.map((t) => (
             <g key={t.nombre}>
               <circle cx={t.x} cy={t.y} r="5.5" className="fill-red-600 stroke-white" strokeWidth="2" />
+              <line
+                x1={t.x}
+                y1={t.y - 9}
+                x2={t.etiquetaX}
+                y2={t.etiquetaY + 6}
+                className="stroke-red-600/50"
+                strokeWidth="1.5"
+              />
               <text
-                x={t.x + 12}
-                y={t.y + (i === 0 ? -6 : 4)}
+                x={t.etiquetaX}
+                y={t.etiquetaY}
+                textAnchor="middle"
                 className="fill-red-600 text-[12px] font-semibold"
               >
                 {t.nombre}
