@@ -243,7 +243,7 @@ function FlujoServicio() {
                 {indice + 1}
               </span>
             </div>
-            <h3 className="mt-4 text-base font-bold leading-snug text-primary">{paso.titulo}</h3>
+            <h3 className="mt-4 text-lg font-bold leading-snug text-primary">{paso.titulo}</h3>
             <p className="mt-2 text-sm leading-relaxed text-tertiary">{paso.texto}</p>
           </div>
         </li>
