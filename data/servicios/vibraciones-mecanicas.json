@@ -63,6 +63,10 @@
       }
     ]
   },
+  "fotoPuntos": {
+    "src": "/images/gallery/campo-img-1.jpg",
+    "alt": "Especialistas de Grupo DIAPSA revisando un equipo rotativo en planta con instrumento de medición"
+  },
   "diagramas": [
     "curva-pf",
     "flujo-servicio"

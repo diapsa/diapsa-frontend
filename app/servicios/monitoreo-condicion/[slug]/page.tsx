@@ -11,7 +11,7 @@ import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
 import ServiceTable from "@/components/organisms/ServiceTable";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
-import IconoTarjeta from "@/components/atoms/IconoTarjeta";
+import ServicePuntos from "@/components/organisms/ServicePuntos";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -275,27 +275,11 @@ export default async function ServicePage({
                         </p>
                     </div>
 
-                    {/* Ficha compacta, no tarjetas. Antes eran ocho bloques
-                        de prosa con borde y sombra que en pantalla angosta se
-                        apilaban en una torre de texto. Ahora cada punto es un
-                        renglón corto: se escanea en segundos y el detalle vive
-                        donde se cuenta mejor, en la tabla, el informe y el
-                        diagrama de flujo. */}
-                    <dl className="grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-2">
-                        {detailItems.map((item) => (
-                            <div key={item.id} className="flex gap-4">
-                                <IconoTarjeta id={item.id} />
-                                <div>
-                                    <dt className="text-lg font-bold leading-snug text-primary">
-                                        {item.title}
-                                    </dt>
-                                    <dd className="mt-1.5 text-base leading-relaxed text-tertiary">
-                                        {item.content}
-                                    </dd>
-                                </div>
-                            </div>
-                        ))}
-                    </dl>
+                    {/* Un punto abierto a la vez. Mostrar los seis con su
+                        descripción dejaba 107 palabras de golpe; así se ven
+                        unas 30. Ninguna de las ocho referencias del sector
+                        revisadas muestra todo el texto simultáneamente. */}
+                    <ServicePuntos puntos={detailItems} foto={service.fotoPuntos} />
                 </div>
             </section>
 

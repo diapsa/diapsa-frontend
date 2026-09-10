@@ -106,4 +106,6 @@ export interface Servicio {
   entregable?: ServiceEntregable;
   /** Diagramas a dibujar, por clave: "curva-pf", "flujo-servicio". */
   diagramas?: string[];
+  /** Foto que acompaña a los puntos clave del servicio. */
+  fotoPuntos?: GaleriaFoto;
 }
