@@ -361,6 +361,36 @@ export default async function ServicePage({
                 </section>
             )}
 
+            {/* Artículo del blog sobre el mismo tema. Sirve al lector que
+                todavía está aprendiendo y no listo para cotizar, y enlaza dos
+                páginas que competían por la misma búsqueda sin apoyarse. */}
+            {articuloRelacionado && (
+                <section className="w-full bg-white py-12 lg:py-16">
+                    <div className="max-w-4xl mx-auto px-6">
+                        <div className="rounded-sm border-l-4 border-secondary bg-white p-6 lg:p-8 shadow-sm">
+                            <p className="text-xs font-bold uppercase tracking-widest text-secondary">
+                                Guía relacionada
+                            </p>
+                            <h2 className="mt-2 text-2xl lg:text-3xl font-extrabold text-primary leading-snug">
+                                {articuloRelacionado.titulo}
+                            </h2>
+                            <p className="mt-3 text-tertiary text-base lg:text-lg leading-relaxed text-justify">
+                                {articuloRelacionado.resumen}
+                            </p>
+                            <Link
+                                href={`/blog/${articuloRelacionado.slug}`}
+                                className="mt-5 inline-flex items-center gap-2 border-2 border-primary text-primary font-bold px-6 py-2.5 rounded-xs hover:bg-primary hover:text-white transition-all duration-300"
+                            >
+                                Leer la guía
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+            )}
+
             {/* Llamado a la acción específico del servicio. Va justo después
                 del FAQ porque la última pregunta ("¿cuánto cuesta?") deja al
                 lector a un paso de pedir cotización: WhatsApp para el que
@@ -394,35 +424,6 @@ export default async function ServicePage({
                 </section>
             )}
 
-            {/* Artículo del blog sobre el mismo tema. Sirve al lector que
-                todavía está aprendiendo y no listo para cotizar, y enlaza dos
-                páginas que competían por la misma búsqueda sin apoyarse. */}
-            {articuloRelacionado && (
-                <section className="w-full bg-white py-12 lg:py-16">
-                    <div className="max-w-4xl mx-auto px-6">
-                        <div className="rounded-sm border-l-4 border-secondary bg-white p-6 lg:p-8 shadow-sm">
-                            <p className="text-xs font-bold uppercase tracking-widest text-secondary">
-                                Guía relacionada
-                            </p>
-                            <h2 className="mt-2 text-2xl lg:text-3xl font-extrabold text-primary leading-snug">
-                                {articuloRelacionado.titulo}
-                            </h2>
-                            <p className="mt-3 text-tertiary text-base lg:text-lg leading-relaxed text-justify">
-                                {articuloRelacionado.resumen}
-                            </p>
-                            <Link
-                                href={`/blog/${articuloRelacionado.slug}`}
-                                className="mt-5 inline-flex items-center gap-2 border-2 border-primary text-primary font-bold px-6 py-2.5 rounded-xs hover:bg-primary hover:text-white transition-all duration-300"
-                            >
-                                Leer la guía
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </Link>
-                        </div>
-                    </div>
-                </section>
-            )}
 
             <CursosTeaser />
 
