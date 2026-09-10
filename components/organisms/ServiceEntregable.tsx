@@ -54,7 +54,7 @@ export default function ServiceEntregable({ entregable, servicio }: Props) {
   }
 
   return (
-    <section className="w-full overflow-hidden bg-gray-50 py-16 lg:py-24">
+    <section className="w-full overflow-hidden bg-gray-50 py-12 lg:py-20">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16">
         {/* Texto */}
         <div>

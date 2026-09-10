@@ -257,7 +257,7 @@ function FlujoServicio() {
 export default function DiagramaServicio({ clave }: Props) {
   if (clave === "curva-pf") {
     return (
-      <section className="w-full bg-gray-50 py-16 lg:py-24">
+      <section className="w-full bg-gray-50 py-12 lg:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-10 max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-widest text-secondary">
@@ -280,7 +280,7 @@ export default function DiagramaServicio({ clave }: Props) {
 
   if (clave === "flujo-servicio") {
     return (
-      <section className="w-full bg-gray-50 py-16 lg:py-24">
+      <section className="w-full bg-gray-50 py-12 lg:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-10 max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-widest text-secondary">

@@ -190,7 +190,7 @@ export default async function ServicePage({
                 </div>
             )}
             {/* Content Section */}
-            <section className="w-full bg-white py-16 lg:py-24">
+            <section className="w-full bg-white py-12 lg:py-20">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
                         <div>
@@ -262,7 +262,7 @@ export default async function ServicePage({
                 <DiagramaServicio clave="curva-pf" />
             )}
 
-            <section className="w-full bg-white py-16 lg:py-24">
+            <section className="w-full bg-white py-12 lg:py-20">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="mb-12">
                         <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-4 leading-tight">
@@ -323,7 +323,7 @@ export default async function ServicePage({
             {/* Evidencia visual: fotos reales de analistas de DIAPSA en campo.
                 Valen más que cualquier adjetivo; vienen del JSON del servicio. */}
             {service.galeria && service.galeria.length > 0 && (
-                <section className="w-full bg-white py-16 lg:py-24">
+                <section className="w-full bg-white py-12 lg:py-20">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="mb-10">
                             <h2 className="text-3xl lg:text-4xl font-extrabold text-primary leading-tight">
@@ -355,7 +355,7 @@ export default async function ServicePage({
                 alimentan el schema FAQPage de arriba. <details> nativo:
                 acordeón sin JavaScript y contenido siempre en el HTML. */}
             {service.faq && service.faq.length > 0 && (
-                <section className="w-full bg-gray-50 py-16 lg:py-24">
+                <section className="w-full bg-gray-50 py-12 lg:py-20">
                     <div className="max-w-4xl mx-auto px-6">
                         <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-10 leading-tight">
                             Preguntas <span className="text-secondary">frecuentes</span>
