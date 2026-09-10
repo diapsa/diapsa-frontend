@@ -350,7 +350,7 @@ export default async function ServicePage({
                 alimentan el schema FAQPage de arriba. <details> nativo:
                 acordeón sin JavaScript y contenido siempre en el HTML. */}
             {service.faq && service.faq.length > 0 && (
-                <section className="w-full bg-white py-16 lg:py-24">
+                <section className="w-full bg-gray-50 py-16 lg:py-24">
                     <div className="max-w-4xl mx-auto px-6">
                         <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-10 leading-tight">
                             Preguntas <span className="text-secondary">frecuentes</span>
@@ -414,7 +414,7 @@ export default async function ServicePage({
                 todavía está aprendiendo y no listo para cotizar, y enlaza dos
                 páginas que competían por la misma búsqueda sin apoyarse. */}
             {articuloRelacionado && (
-                <section className="w-full bg-gray-50 py-12 lg:py-16">
+                <section className="w-full bg-white py-12 lg:py-16">
                     <div className="max-w-4xl mx-auto px-6">
                         <div className="rounded-sm border-l-4 border-secondary bg-white p-6 lg:p-8 shadow-sm">
                             <p className="text-xs font-bold uppercase tracking-widest text-secondary">
