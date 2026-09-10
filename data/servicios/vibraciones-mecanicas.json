@@ -73,6 +73,10 @@
       }
     ]
   },
+  "diagramas": [
+    "curva-pf",
+    "flujo-servicio"
+  ],
   "entregable": {
     "etiqueta": "El entregable",
     "titulo": "Esto es lo que recibes",

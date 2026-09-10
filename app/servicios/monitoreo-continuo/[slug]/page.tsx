@@ -10,6 +10,7 @@ import JsonLd, {
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
 import ServiceTable from "@/components/organisms/ServiceTable";
+import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import IconoTarjeta from "@/components/atoms/IconoTarjeta";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
@@ -252,7 +253,11 @@ export default async function ServicePage({
 
             <ServiceProof certificacion={service.certificacion} />
 
-            <section className="w-full bg-gray-50 py-16 lg:py-24">
+            {service.diagramas?.includes("curva-pf") && (
+                <DiagramaServicio clave="curva-pf" />
+            )}
+
+            <section className="w-full bg-white py-16 lg:py-24">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="mb-12">
                         <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-4 leading-tight">
@@ -301,50 +306,9 @@ export default async function ServicePage({
 
             {service.tabla && <ServiceTable tabla={service.tabla} />}
 
-            <section className="w-full bg-primary py-16 lg:py-24">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-                        <div>
-                            <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4 leading-tight">
-                                Del dato al <span className="text-secondary">criterio de mantenimiento</span>
-                            </h2>
-
-                            <p className="text-white/80 text-lg leading-relaxed max-w-2xl text-justify">
-                                El objetivo no es solo medir: es interpretar la condicion real del equipo,
-                                documentar hallazgos y convertirlos en decisiones claras para reducir riesgo
-                                operativo.
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div className="border-l-2 border-secondary pl-4">
-                                <span className="block text-2xl font-extrabold text-secondary">
-                                    Medir
-                                </span>
-                                <span className="block text-sm text-white/80 leading-relaxed mt-2">
-                                    Recoleccion de informacion tecnica en equipos criticos.
-                                </span>
-                            </div>
-                            <div className="border-l-2 border-secondary pl-4">
-                                <span className="block text-2xl font-extrabold text-secondary">
-                                    Evaluar
-                                </span>
-                                <span className="block text-sm text-white/80 leading-relaxed mt-2">
-                                    Lectura de patrones, desviaciones y posibles modos de falla.
-                                </span>
-                            </div>
-                            <div className="border-l-2 border-secondary pl-4">
-                                <span className="block text-2xl font-extrabold text-secondary">
-                                    Actuar
-                                </span>
-                                <span className="block text-sm text-white/80 leading-relaxed mt-2">
-                                    Recomendaciones para priorizar intervenciones y reducir incertidumbre.
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {service.diagramas?.includes("flujo-servicio") && (
+                <DiagramaServicio clave="flujo-servicio" />
+            )}
 
             {/* Related Products */}
             {/* <RelatedProducts

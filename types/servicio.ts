@@ -104,4 +104,6 @@ export interface Servicio {
   tabla?: ServiceTabla;
   /** El informe que recibe el cliente, mostrado y descargable a cambio de contacto. */
   entregable?: ServiceEntregable;
+  /** Diagramas a dibujar, por clave: "curva-pf", "flujo-servicio". */
+  diagramas?: string[];
 }
