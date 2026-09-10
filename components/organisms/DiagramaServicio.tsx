@@ -263,7 +263,7 @@ export default function DiagramaServicio({ clave }: Props) {
             <p className="text-xs font-bold uppercase tracking-widest text-secondary">
               Curva P-F
             </p>
-            <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">
+            <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
               El objetivo no es ver la falla, es alargar el tiempo que tienes
             </h2>
             <p className="mt-3 text-justify text-lg leading-relaxed text-tertiary">
@@ -286,7 +286,7 @@ export default function DiagramaServicio({ clave }: Props) {
             <p className="text-xs font-bold uppercase tracking-widest text-secondary">
               Cómo trabajamos
             </p>
-            <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">
+            <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
               Del dato a la decisión
             </h2>
             <p className="mt-3 text-justify text-lg leading-relaxed text-tertiary">

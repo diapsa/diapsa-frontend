@@ -194,7 +194,7 @@ export default async function ServicePage({
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
                         <div>
-                            <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-4 leading-tight">
+                            <h2 className="text-3xl lg:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">
                                 {overviewTitle}
                             </h2>
 
@@ -265,7 +265,7 @@ export default async function ServicePage({
             <section className="w-full bg-white py-12 lg:py-20">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="mb-12">
-                        <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-4 leading-tight">
+                        <h2 className="text-3xl lg:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">
                             En corto: <span className="text-secondary">cómo trabajamos</span>
                         </h2>
 
@@ -326,7 +326,7 @@ export default async function ServicePage({
                 <section className="w-full bg-white py-12 lg:py-20">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="mb-10">
-                            <h2 className="text-3xl lg:text-4xl font-extrabold text-primary leading-tight">
+                            <h2 className="text-3xl lg:text-[2.75rem] font-extrabold text-primary leading-tight">
                                 DIAPSA <span className="text-secondary">en campo</span>
                             </h2>
                             <p className="text-tertiary text-lg mt-2 max-w-2xl text-justify">
@@ -357,7 +357,7 @@ export default async function ServicePage({
             {service.faq && service.faq.length > 0 && (
                 <section className="w-full bg-gray-50 py-12 lg:py-20">
                     <div className="max-w-4xl mx-auto px-6">
-                        <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-10 leading-tight">
+                        <h2 className="text-3xl lg:text-[2.75rem] font-extrabold text-primary mb-10 leading-tight">
                             Preguntas <span className="text-secondary">frecuentes</span>
                         </h2>
                         <div className="divide-y divide-gray-200 border-y border-gray-200">
@@ -389,7 +389,7 @@ export default async function ServicePage({
             {service.cta && (
                 <section className="w-full bg-secondary py-14 lg:py-20">
                     <div className="max-w-4xl mx-auto px-6 text-center">
-                        <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-4 leading-tight">
+                        <h2 className="text-3xl lg:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">
                             {service.cta.title}
                         </h2>
                         <p className="text-primary/80 text-lg leading-relaxed max-w-2xl mx-auto mb-8 text-justify">

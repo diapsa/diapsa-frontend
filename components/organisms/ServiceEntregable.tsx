@@ -61,7 +61,7 @@ export default function ServiceEntregable({ entregable, servicio }: Props) {
           <p className="text-xs font-bold uppercase tracking-widest text-secondary">
             {entregable.etiqueta}
           </p>
-          <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">
+          <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
             {entregable.titulo}
           </h2>
           <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">
