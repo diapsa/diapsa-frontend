@@ -9,7 +9,7 @@ import JsonLd, {
 } from "@/components/atoms/JsonLd";
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
-import ServiceTable from "@/components/organisms/ServiceTable";
+import ModosDeFalla from "@/components/organisms/ModosDeFalla";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
@@ -291,7 +291,7 @@ export default async function ServicePage({
                 <ServiceEntregable entregable={service.entregable} servicio={service.header.title} />
             )}
 
-            {service.tabla && <ServiceTable tabla={service.tabla} />}
+            {service.tabla && <ModosDeFalla tabla={service.tabla} />}
 
             {service.diagramas?.includes("flujo-servicio") && (
                 <DiagramaServicio clave="flujo-servicio" />
