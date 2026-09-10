@@ -10,6 +10,7 @@ import JsonLd, {
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
 import ModosDeFalla from "@/components/organisms/ModosDeFalla";
+import EscalaSeveridad from "@/components/organisms/EscalaSeveridad";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
@@ -287,6 +288,17 @@ export default async function ServicePage({
             )}
 
             {service.tabla && <ModosDeFalla tabla={service.tabla} />}
+
+            {/* Después de los modos de falla, porque la pregunta que sigue a
+                "qué falla es" siempre es "¿y ese número es mucho?". */}
+            {service.escalas && (
+                <EscalaSeveridad
+                    escalas={service.escalas.lista}
+                    titulo={service.escalas.titulo}
+                    subtitulo={service.escalas.subtitulo}
+                    nota={service.escalas.nota}
+                />
+            )}
 
             {service.diagramas?.includes("flujo-servicio") && (
                 <DiagramaServicio clave="flujo-servicio" />

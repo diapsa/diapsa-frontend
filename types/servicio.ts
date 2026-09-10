@@ -62,6 +62,24 @@ export interface ServiceEntregable {
   archivo: string;
 }
 
+export interface ZonaSeveridad {
+  /** bueno | observacion | precaucion | alarma */
+  clave: string;
+  etiqueta: string;
+  /** Rango legible, ej. "0 a 7.1". */
+  rango: string;
+  /** Peso relativo para el ancho de la barra. */
+  peso: number;
+  accion?: string;
+}
+
+export interface ServiceEscala {
+  parametro: string;
+  unidad: string;
+  norma?: string;
+  zonas: ZonaSeveridad[];
+}
+
 export interface ServiceTabla {
   titulo: string;
   subtitulo?: string;
@@ -108,4 +126,11 @@ export interface Servicio {
   diagramas?: string[];
   /** Foto que acompaña a los puntos clave del servicio. */
   fotoPuntos?: GaleriaFoto;
+  /** Rangos de severidad con los que se califica cada lectura. */
+  escalas?: {
+    titulo: string;
+    subtitulo?: string;
+    nota?: string;
+    lista: ServiceEscala[];
+  };
 }
