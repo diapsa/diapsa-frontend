@@ -16,19 +16,30 @@ type Props = {
 };
 
 /* ------------------------------------------------------------------ */
-/* Curva P-F: cuánta anticipación da cada técnica                      */
+/* Curva P-F: el intervalo que se busca alargar                        */
 /* ------------------------------------------------------------------ */
 
-// Puntos sobre la curva donde cada técnica empieza a detectar la falla.
+/**
+ * La lectura correcta de la curva no es "así se deteriora el equipo", sino
+ * "este es el tiempo que tienes, y tu trabajo es alargarlo". Por eso el
+ * diagrama marca los tres campos (proactivo, monitoreo de condición y
+ * correctivo) y remata con el intervalo P-F como la medida a maximizar.
+ */
+
+// Técnicas que detectan dentro del campo de monitoreo de condición.
 // El orden es el que se acepta en la industria; las posiciones son
 // indicativas, no una escala de tiempo real.
 const TECNICAS = [
-  { x: 236, y: 104, nombre: "Ultrasonido", destacado: false, arriba: true },
-  { x: 330, y: 128, nombre: "Análisis de vibraciones", destacado: true, arriba: true },
-  { x: 430, y: 166, nombre: "Análisis de aceite", destacado: false, arriba: true },
-  { x: 530, y: 218, nombre: "Termografía", destacado: false, arriba: false },
-  { x: 622, y: 274, nombre: "Ruido audible", destacado: false, arriba: false },
-  { x: 700, y: 322, nombre: "Calor y vibración perceptibles", destacado: false, arriba: false },
+  { x: 352, y: 150, etiquetaY: 96, nombre: "Ultrasonido", destacado: false },
+  { x: 436, y: 190, etiquetaY: 136, nombre: "Vibraciones mecánicas", destacado: true },
+  { x: 524, y: 236, etiquetaY: 182, nombre: "Análisis de lubricante", destacado: false },
+  { x: 610, y: 288, etiquetaY: 234, nombre: "Termografía infrarroja", destacado: false },
+];
+
+// Señales que ya sólo aparecen cuando la falla está encima.
+const TARDIAS = [
+  { x: 700, y: 330, nombre: "Ruido audible" },
+  { x: 748, y: 356, nombre: "Calor por contacto" },
 ];
 
 function CurvaPF() {
@@ -36,75 +47,89 @@ function CurvaPF() {
     <figure className="w-full">
       <div className="overflow-x-auto">
         <svg
-          viewBox="0 0 860 430"
-          className="h-auto w-full min-w-[680px]"
+          viewBox="0 0 900 500"
+          className="h-auto w-full min-w-[760px]"
           role="img"
-          aria-label="Curva P-F: la condición del equipo cae con el tiempo y cada técnica de monitoreo detecta la falla en un momento distinto. El ultrasonido y el análisis de vibraciones detectan primero; el ruido audible y el calor, cuando la falla ya está avanzada."
+          aria-label="Curva P-F. La capacidad funcional del equipo cae con el tiempo. Antes del punto P está el campo proactivo. Entre el punto P, donde la falla se vuelve detectable, y el punto F, donde ocurre la falla funcional, está el intervalo P-F: primero detectan el ultrasonido y el análisis de vibraciones, después el análisis de lubricante y la termografía; el ruido audible y el calor por contacto aparecen ya en el campo correctivo. El objetivo del monitoreo de condición es alargar ese intervalo."
         >
           {/* Ejes */}
-          <line x1="70" y1="42" x2="70" y2="366" className="stroke-primary/30" strokeWidth="2" />
-          <line x1="70" y1="366" x2="812" y2="366" className="stroke-primary/30" strokeWidth="2" />
-          <text x="70" y="30" className="fill-primary text-[13px] font-bold">
-            Condición del equipo
+          <line x1="88" y1="52" x2="88" y2="392" className="stroke-primary/30" strokeWidth="2" />
+          <line x1="88" y1="392" x2="858" y2="392" className="stroke-primary/30" strokeWidth="2" />
+          <text x="88" y="38" className="fill-primary text-[13px] font-bold">
+            Capacidad funcional
           </text>
-          <text x="812" y="392" textAnchor="end" className="fill-primary text-[13px] font-bold">
+          <text x="858" y="418" textAnchor="end" className="fill-primary text-[13px] font-bold">
             Tiempo
           </text>
 
-          {/* Zona de oportunidad: desde que se detecta hasta que falla */}
-          <rect x="330" y="42" width="418" height="324" className="fill-secondary/10" />
-          <text x="539" y="62" textAnchor="middle" className="fill-secondary text-[12px] font-bold uppercase tracking-wider">
-            Tiempo para actuar
+          {/* Los tres campos */}
+          <rect x="88" y="52" width="212" height="340" className="fill-primary/5" />
+          <rect x="300" y="52" width="360" height="340" className="fill-secondary/10" />
+          <rect x="660" y="52" width="198" height="340" className="fill-red-600/5" />
+
+          <text x="194" y="72" textAnchor="middle" className="fill-primary/70 text-[11px] font-bold uppercase tracking-wider">
+            Campo proactivo
           </text>
+          <text x="480" y="72" textAnchor="middle" className="fill-secondary text-[11px] font-bold uppercase tracking-wider">
+            Campo de monitoreo de condición
+          </text>
+          <text x="759" y="72" textAnchor="middle" className="fill-red-600 text-[11px] font-bold uppercase tracking-wider">
+            Campo correctivo
+          </text>
+
+          {/* Divisiones */}
+          <line x1="300" y1="52" x2="300" y2="392" className="stroke-red-600" strokeWidth="2" strokeDasharray="7 6" />
+          <line x1="660" y1="52" x2="660" y2="392" className="stroke-red-600" strokeWidth="2" strokeDasharray="7 6" />
 
           {/* La curva */}
           <path
-            d="M 92 88 C 220 96, 330 118, 430 168 S 640 300, 748 358"
+            d="M 106 108 C 190 112, 250 116, 300 124 C 400 142, 520 232, 610 292 S 742 366, 790 386"
             className="fill-none stroke-primary"
             strokeWidth="3.5"
             strokeLinecap="round"
           />
 
-          {/* Punto P: donde la falla empieza a ser detectable */}
-          <circle cx="150" cy="92" r="6" className="fill-primary" />
-          <text x="150" y="78" textAnchor="middle" className="fill-primary text-[13px] font-extrabold">
+          {/* Punto P */}
+          <circle cx="300" cy="124" r="7" className="fill-red-600 stroke-white" strokeWidth="2" />
+          <rect x="286" y="88" width="28" height="24" rx="3" className="fill-secondary" />
+          <text x="300" y="105" textAnchor="middle" className="fill-primary text-[15px] font-extrabold">
             P
           </text>
-          <text x="150" y="418" textAnchor="middle" className="fill-tertiary text-[11px]">
-            Falla potencial
+          <text x="300" y="438" textAnchor="middle" className="fill-primary text-[12px] font-bold">
+            Aquí la falla ya es detectable
           </text>
-          <line x1="150" y1="98" x2="150" y2="366" className="stroke-primary/25" strokeWidth="1.5" strokeDasharray="4 4" />
 
-          {/* Punto F: falla funcional */}
-          <circle cx="748" cy="358" r="6" className="fill-red-600" />
-          <text x="748" y="344" textAnchor="middle" className="fill-red-600 text-[13px] font-extrabold">
+          {/* Punto F */}
+          <circle cx="790" cy="386" r="7" className="fill-red-600 stroke-white" strokeWidth="2" />
+          <rect x="776" y="344" width="28" height="24" rx="3" className="fill-red-600" />
+          <text x="790" y="361" textAnchor="middle" className="fill-white text-[15px] font-extrabold">
             F
           </text>
-          <text x="748" y="418" textAnchor="middle" className="fill-tertiary text-[11px]">
+          <text x="790" y="438" textAnchor="middle" className="fill-red-600 text-[12px] font-bold">
             Falla funcional
           </text>
 
-          {/* Técnicas sobre la curva */}
+          {/* Técnicas de monitoreo */}
           {TECNICAS.map((t) => (
             <g key={t.nombre}>
               <circle
                 cx={t.x}
                 cy={t.y}
-                r={t.destacado ? 8 : 5.5}
+                r={t.destacado ? 8.5 : 6}
                 className={t.destacado ? "fill-secondary stroke-white" : "fill-primary/70 stroke-white"}
                 strokeWidth="2"
               />
               <line
                 x1={t.x}
-                y1={t.arriba ? t.y - 10 : t.y + 10}
+                y1={t.y - 10}
                 x2={t.x}
-                y2={t.arriba ? t.y - 28 : t.y + 26}
+                y2={t.etiquetaY + 6}
                 className={t.destacado ? "stroke-secondary" : "stroke-primary/40"}
                 strokeWidth="1.5"
               />
               <text
                 x={t.x}
-                y={t.arriba ? t.y - 34 : t.y + 40}
+                y={t.etiquetaY}
                 textAnchor="middle"
                 className={
                   t.destacado
@@ -116,14 +141,39 @@ function CurvaPF() {
               </text>
             </g>
           ))}
+
+          {/* Señales tardías */}
+          {TARDIAS.map((t, i) => (
+            <g key={t.nombre}>
+              <circle cx={t.x} cy={t.y} r="5.5" className="fill-red-600 stroke-white" strokeWidth="2" />
+              <text
+                x={t.x + 12}
+                y={t.y + (i === 0 ? -6 : 4)}
+                className="fill-red-600 text-[12px] font-semibold"
+              >
+                {t.nombre}
+              </text>
+            </g>
+          ))}
+
+          {/* El intervalo, que es lo que se busca alargar */}
+          <line x1="300" y1="462" x2="790" y2="462" className="stroke-secondary" strokeWidth="2.5" />
+          <path d="M 300 462 l 12 -6 v 12 z" className="fill-secondary" />
+          <path d="M 790 462 l -12 -6 v 12 z" className="fill-secondary" />
+          <rect x="418" y="450" width="254" height="24" rx="3" className="fill-white" />
+          <text x="545" y="467" textAnchor="middle" className="fill-primary text-[13px] font-extrabold">
+            Intervalo P-F: el tiempo que tienes
+          </text>
         </svg>
       </div>
       <figcaption className="mt-4 max-w-3xl text-justify text-sm leading-relaxed text-tertiary">
-        Curva P-F, el esquema con el que se explica el mantenimiento predictivo. Una falla no
-        aparece de golpe: se incuba. Mientras más temprano se detecta, más tiempo hay para
-        conseguir la refacción, agendar el paro y evitar el daño mayor. Cuando la máquina ya
-        suena o se calienta, ese margen casi se acabó. Las posiciones son indicativas y varían
-        según el equipo y el modo de falla.
+        Una falla no aparece de golpe: se incuba. El intervalo P-F es el tiempo entre el momento
+        en que la falla ya se puede detectar y el momento en que el equipo deja de servir, y ese
+        tiempo es lo que se busca alargar. Mientras más temprano detecte la técnica, más largo es
+        el intervalo y más margen tienes para conseguir la refacción, agendar el paro y evitar el
+        daño colateral. Cuando el equipo ya suena o se calienta al tacto, el margen se acabó y
+        sólo queda corregir. Las posiciones son indicativas y varían según el equipo y el modo de
+        falla.
       </figcaption>
     </figure>
   );
@@ -202,11 +252,16 @@ export default function DiagramaServicio({ clave }: Props) {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-10 max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-widest text-secondary">
-              Por qué medir antes
+              Curva P-F
             </p>
             <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">
-              Cuánta anticipación te da cada técnica
+              El objetivo no es ver la falla, es alargar el tiempo que tienes
             </h2>
+            <p className="mt-3 text-justify text-lg leading-relaxed text-tertiary">
+              Si no haces nada, el equipo se degrada hasta fallar. La técnica que elijas decide
+              qué tan pronto te enteras, y eso es exactamente lo que alarga tu margen de
+              maniobra.
+            </p>
           </div>
           <CurvaPF />
         </div>
