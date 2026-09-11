@@ -11,6 +11,7 @@ import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
 import ModosDeFalla from "@/components/organisms/ModosDeFalla";
 import EscalaSeveridad from "@/components/organisms/EscalaSeveridad";
+import FichaCompras from "@/components/organisms/FichaCompras";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
@@ -340,6 +341,11 @@ export default async function ServicePage({
                     </div>
                 </section>
             )}
+
+            {/* Va antes de las preguntas porque el comprador llega hasta
+                aquí buscando exactamente esto y no debería tener que leer
+                el FAQ completo para encontrarlo. */}
+            {service.fichaCompras && <FichaCompras ficha={service.fichaCompras} />}
 
             {/* Preguntas frecuentes: responden las búsquedas de cola larga
                 ("qué es", "cada cuánto", "qué norma", "cuánto cuesta") y

@@ -80,6 +80,20 @@ export interface ServiceEscala {
   zonas: ZonaSeveridad[];
 }
 
+export interface BloqueCompras {
+  /** documentacion | tiempos | cotizacion | cobertura */
+  icono: string;
+  titulo: string;
+  puntos: string[];
+}
+
+export interface ServiceFichaCompras {
+  titulo: string;
+  subtitulo?: string;
+  nota?: string;
+  bloques: BloqueCompras[];
+}
+
 export interface ServiceTabla {
   titulo: string;
   subtitulo?: string;
@@ -126,6 +140,8 @@ export interface Servicio {
   diagramas?: string[];
   /** Foto que acompaña a los puntos clave del servicio. */
   fotoPuntos?: GaleriaFoto;
+  /** Lo que pregunta el área de compras: papeles, tiempos, cobro y cobertura. */
+  fichaCompras?: ServiceFichaCompras;
   /** Rangos de severidad con los que se califica cada lectura. */
   escalas?: {
     titulo: string;
