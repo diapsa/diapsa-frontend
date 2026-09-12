@@ -227,7 +227,7 @@ export default async function ServicePage({
             <ServiceProof certificacion={service.certificacion} />
 
             {service.diagramas?.includes("flujo-servicio") && (
-                <DiagramaServicio clave="flujo-servicio" paso={paso()} />
+                <DiagramaServicio clave="flujo-servicio" paso={paso()} flujo={service.flujo} />
             )}
 
             {/* Qué recibes. Va después del flujo porque es su desenlace: el

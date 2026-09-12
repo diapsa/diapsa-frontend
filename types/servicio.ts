@@ -92,6 +92,11 @@ export interface ServiceTabla {
   nota?: string;
 }
 
+export interface FlujoPaso {
+  titulo: string;
+  texto: string;
+}
+
 export interface ServiceCta {
   title: string;
   text: string;
@@ -126,6 +131,10 @@ export interface Servicio {
   /** Diagramas a dibujar, por clave: "flujo-servicio". La curva P-F y los
       modos de falla viven en la guía del blog (types/guia.ts), no aquí. */
   diagramas?: string[];
+  /** Textos de los cinco pasos del flujo, si el servicio los redacta a su
+      manera. Los íconos se mantienen por posición. Si falta, se usan los
+      de vibraciones. */
+  flujo?: FlujoPaso[];
   /** Foto que acompaña a los puntos clave del servicio. */
   fotoPuntos?: GaleriaFoto;
   /** Si es verdadero, cierra con la pared de logotipos de clientes. */
