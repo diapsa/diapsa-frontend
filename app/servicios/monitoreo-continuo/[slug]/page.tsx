@@ -11,7 +11,7 @@ import JsonLd, {
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
 import ModosDeFalla from "@/components/organisms/ModosDeFalla";
-import EscalaSeveridad from "@/components/organisms/EscalaSeveridad";
+import Semaforo from "@/components/organisms/Semaforo";
 import FichaCompras from "@/components/organisms/FichaCompras";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
@@ -229,12 +229,11 @@ export default async function ServicePage({
 
             {/* Después de los modos de falla, porque la pregunta que sigue a
                 "qué falla es" siempre es "¿y ese número es mucho?". */}
-            {service.escalas && (
-                <EscalaSeveridad
-                    escalas={service.escalas.lista}
-                    titulo={service.escalas.titulo}
-                    subtitulo={service.escalas.subtitulo}
-                    nota={service.escalas.nota}
+            {service.semaforo && (
+                <Semaforo
+                    titulo={service.semaforo.titulo}
+                    subtitulo={service.semaforo.subtitulo}
+                    zonas={service.semaforo.zonas}
                     paso={paso()}
                 />
             )}

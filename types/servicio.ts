@@ -60,22 +60,12 @@ export interface ServiceEntregable {
   datoTexto: string;
 }
 
-export interface ZonaSeveridad {
-  /** bueno | observacion | precaucion | alarma */
+export interface ZonaSemaforo {
+  /** bueno | precaucion | alarma */
   clave: string;
   etiqueta: string;
-  /** Rango legible, ej. "0 a 7.1". */
-  rango: string;
-  /** Peso relativo para el ancho de la barra. */
-  peso: number;
-  accion?: string;
-}
-
-export interface ServiceEscala {
-  parametro: string;
-  unidad: string;
-  norma?: string;
-  zonas: ZonaSeveridad[];
+  /** Qué significa ese color y qué pasa cuando un equipo sale en él. */
+  texto: string;
 }
 
 export interface BloqueCompras {
@@ -140,11 +130,10 @@ export interface Servicio {
   fotoPuntos?: GaleriaFoto;
   /** Lo que pregunta el área de compras: papeles, tiempos, cobro y cobertura. */
   fichaCompras?: ServiceFichaCompras;
-  /** Rangos de severidad con los que se califica cada lectura. */
-  escalas?: {
+  /** Los tres colores con los que sale cada equipo en el informe. */
+  semaforo?: {
     titulo: string;
     subtitulo?: string;
-    nota?: string;
-    lista: ServiceEscala[];
+    zonas: ZonaSemaforo[];
   };
 }

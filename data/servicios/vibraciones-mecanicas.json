@@ -179,66 +179,24 @@
       "electrica"
     ]
   },
-  "escalas": {
-    "titulo": "¿A partir de qué número hay que preocuparse?",
-    "subtitulo": "Estos son los rangos con los que calificamos cada punto medido. Son los mismos que aparecen en los informes que entregamos, para que puedas contrastar cualquier lectura contra el criterio y no contra una opinión.",
-    "nota": "Rangos de referencia para maquinaria rotativa de uso general. El criterio final considera el tipo de máquina, su velocidad de operación, la clase de montaje y la línea base histórica del equipo, conforme a ISO 10816 e ISO 20816.",
-    "lista": [
+  "semaforo": {
+    "titulo": "Cada equipo sale en uno de tres colores",
+    "subtitulo": "Así viene en el informe, para que cualquiera en planta lo lea de un vistazo sin interpretar números.",
+    "zonas": [
       {
-        "parametro": "Velocidad de vibración",
-        "unidad": "mm/s",
-        "norma": "Amplitud global, referencia ISO 10816 e ISO 20816",
-        "zonas": [
-          {
-            "clave": "bueno",
-            "etiqueta": "Bueno",
-            "rango": "0 a 7.1",
-            "peso": 7.1,
-            "accion": "Continúa en ruta normal"
-          },
-          {
-            "clave": "precaucion",
-            "etiqueta": "Precaución",
-            "rango": "7.1 a 18",
-            "peso": 10.9,
-            "accion": "Programar intervención"
-          },
-          {
-            "clave": "alarma",
-            "etiqueta": "Alarma",
-            "rango": "Mayor a 18",
-            "peso": 7,
-            "accion": "Atención inmediata"
-          }
-        ]
+        "clave": "bueno",
+        "etiqueta": "Bueno",
+        "texto": "El equipo opera dentro de lo normal. Sigue en la ruta de medición."
       },
       {
-        "parametro": "Aceleración",
-        "unidad": "g",
-        "norma": "Amplitud global, sensible a falla de rodamiento y engrane",
-        "zonas": [
-          {
-            "clave": "bueno",
-            "etiqueta": "Bueno",
-            "rango": "0 a 0.9",
-            "peso": 0.9,
-            "accion": "Continúa en ruta normal"
-          },
-          {
-            "clave": "precaucion",
-            "etiqueta": "Precaución",
-            "rango": "0.9 a 1.7",
-            "peso": 0.8,
-            "accion": "Programar intervención"
-          },
-          {
-            "clave": "alarma",
-            "etiqueta": "Alarma",
-            "rango": "Mayor a 1.7",
-            "peso": 0.7,
-            "accion": "Atención inmediata"
-          }
-        ]
+        "clave": "precaucion",
+        "etiqueta": "Precaución",
+        "texto": "Hay una falla en desarrollo. Se programa la intervención en la próxima ventana de producción."
+      },
+      {
+        "clave": "alarma",
+        "etiqueta": "Alarma",
+        "texto": "La falla avanzó. Aviso inmediato al responsable y el equipo entra a reinspección hasta que se corrige."
       }
     ]
   },
