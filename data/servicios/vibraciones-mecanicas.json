@@ -238,29 +238,27 @@
     ]
   },
   "fichaCompras": {
-    "_BORRADOR": "OJO: los valores de esta ficha son de ejemplo, puestos para maquetar. Emiliano debe confirmar REPSE, seguros, tiempos y unidad de cobro antes de publicar.",
     "titulo": "Los papeles y los tiempos, sin que tengas que preguntarlos",
     "subtitulo": "Si tu área de compras necesita documentación antes de darnos de alta como proveedor, esto es lo que entregamos. Si falta algo de tu lista, dínoslo y lo resolvemos antes de cotizar.",
-    "nota": "Toda la documentación se entrega actualizada al momento del alta y se renueva durante la vigencia del contrato. Si tu planta exige un formato o plataforma de proveedores en particular, lo atendemos.",
+    "nota": "Toda la documentación se entrega actualizada al momento del alta y se renueva durante la vigencia del contrato. Si tu planta exige un formato, una plataforma de proveedores o documentación de seguridad propia para el ingreso, lo atendemos antes de la primera visita.",
     "bloques": [
       {
         "icono": "documentacion",
         "titulo": "Documentación",
         "puntos": [
           "Registro REPSE vigente",
-          "Alta y pago de IMSS del personal en sitio",
-          "Póliza de responsabilidad civil",
-          "DC-3 de capacitación en seguridad",
-          "Constancia de situación fiscal"
+          "Alta y pago de IMSS del personal que entra a sitio",
+          "Constancia de situación fiscal actualizada",
+          "Documentación de seguridad que exija tu planta para el ingreso"
         ]
       },
       {
         "icono": "tiempos",
         "titulo": "Tiempos comprometidos",
         "puntos": [
-          "Cotización en 48 horas con el listado de equipos",
-          "Informe dentro de los 5 días hábiles siguientes a la medición",
-          "Hallazgo crítico comunicado el mismo día",
+          "Informe entregado en menos de 2 días hábiles desde la inspección",
+          "Hallazgo crítico comunicado en cuanto se detecta, sin esperar al informe",
+          "Cotización a partir del listado de equipos y puntos por medir",
           "Atención de urgencia según disponibilidad de ruta"
         ]
       },
@@ -268,10 +266,10 @@
         "icono": "cotizacion",
         "titulo": "Cómo se cotiza",
         "puntos": [
-          "Por equipo y por disciplina aplicada",
+          "Por equipo o por punto de medición, según convenga al alcance",
           "Servicio único, programa anual o por evento",
           "El precio baja por volumen de equipos en la misma visita",
-          "Sin costo de alta ni de plataforma"
+          "El traslado se cotiza según la ubicación de la planta"
         ]
       },
       {
@@ -280,8 +278,7 @@
         "puntos": [
           "Base en Saltillo, Coahuila",
           "Servicio en todo México",
-          "Proyectos en Sudamérica",
-          "Traslado incluido dentro del área metropolitana"
+          "Proyectos en Sudamérica"
         ]
       }
     ]
