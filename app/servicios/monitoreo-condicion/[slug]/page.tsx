@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/organisms/PageHeader";
+import Antetitulo from "@/components/atoms/Antetitulo";
 import Image from "next/image";
 import type { Servicio } from "@/types/servicio";
 import JsonLd, {
@@ -9,7 +10,10 @@ import JsonLd, {
 } from "@/components/atoms/JsonLd";
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
-import ServiceTable from "@/components/organisms/ServiceTable";
+import ClientesLogos from "@/components/organisms/ClientesLogos";
+import DiagramaServicio from "@/components/organisms/DiagramaServicio";
+import ServicePuntos from "@/components/organisms/ServicePuntos";
+import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
@@ -146,6 +150,20 @@ export default async function ServicePage({
     // contenido extra del JSON. Se renderizan todos: la cuadrícula de 3
     // columnas simplemente agrega renglones.
     const detailItems = service.content.items;
+    // Foto que acompaña a los puntos clave; si el servicio no trae una
+    // específica se usa la imagen principal del contenido.
+    // Es la imagen de respaldo: cada punto puede traer la suya en el JSON.
+    const fotoPuntos =
+        service.fotoPuntos ??
+        (service.content.image ? { src: service.content.image, alt: service.header.title } : undefined);
+
+    // La página es comercial y corta, al estilo de Dynamox y Fracttal: qué
+    // hacemos, cómo trabajamos, qué recibes, cómo contratar. Lo educativo
+    // (curva P-F, modos de falla, severidad) vive en la guía del blog que se
+    // enlaza abajo. El número se asigna al renderizar, así que las secciones
+    // opcionales que un servicio no traiga no dejan huecos en la cuenta.
+    let numero = 0;
+    const paso = () => String(++numero).padStart(2, "0");
 
     return (
         <main>
@@ -186,159 +204,37 @@ export default async function ServicePage({
                     </div>
                 </div>
             )}
-            {/* Content Section */}
-            <section className="w-full bg-white py-16 lg:py-24">
+            {/* 01 Qué hacemos. Antes eran dos secciones: esta, con un párrafo
+                genérico y tres pasos numerados, y otra más abajo con los seis
+                puntos clave y su propia foto. Los tres pasos repetían el flujo
+                de trabajo que ya viene después, así que se quitaron, y los
+                puntos se trajeron aquí: una sección, una foto. */}
+            <section className="w-full bg-white py-12 lg:py-20">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-                        <div>
-                            <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-4 leading-tight">
-                                {overviewTitle}
-                            </h2>
-
-                            <p className="text-tertiary text-lg leading-relaxed max-w-2xl text-justify">
-                                {overviewSubtitle}
-                            </p>
-
-                            <p className="text-tertiary text-base lg:text-lg leading-relaxed max-w-2xl mt-5 text-justify">
-                                Integramos levantamiento en campo, lectura tecnica de la condicion del activo
-                                y recomendaciones accionables para que mantenimiento pueda priorizar
-                                intervenciones con mejor criterio operativo.
-                            </p>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
-                                <div className="border-l-2 border-secondary pl-4">
-                                    <span className="block text-2xl font-extrabold text-secondary">
-                                        01
-                                    </span>
-                                    <span className="block text-xs uppercase tracking-wider text-tertiary">
-                                        Inspeccion en campo
-                                    </span>
-                                </div>
-                                <div className="border-l-2 border-secondary pl-4">
-                                    <span className="block text-2xl font-extrabold text-secondary">
-                                        02
-                                    </span>
-                                    <span className="block text-xs uppercase tracking-wider text-tertiary">
-                                        Analisis tecnico
-                                    </span>
-                                </div>
-                                <div className="border-l-2 border-secondary pl-4">
-                                    <span className="block text-2xl font-extrabold text-secondary">
-                                        03
-                                    </span>
-                                    <span className="block text-xs uppercase tracking-wider text-tertiary">
-                                        Acciones recomendadas
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            {service.content.image ? (
-                                <div className="relative w-full h-86 sm:h-110 lg:h-130 rounded-sm overflow-hidden shadow-xl">
-                                    <Image
-                                        src={service.content.image}
-                                        alt={service.header.title}
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 1024px) 100vw, 50vw"
-                                    />
-                                    <div className="absolute inset-0 bg-primary/20" />
-                                </div>
-                            ) : (
-                                <div className="hidden lg:block w-full h-124" />
-                            )}
-                        </div>
+                    <div className="mb-10 max-w-3xl">
+                        <Antetitulo paso={paso()}>Qué hacemos</Antetitulo>
+                        <h2 className="mt-2 text-3xl lg:text-[2.75rem] font-extrabold text-primary leading-tight">
+                            {overviewTitle}
+                        </h2>
+                        <p className="mt-3 text-tertiary text-lg leading-relaxed text-justify">
+                            {overviewSubtitle}
+                        </p>
                     </div>
+                    <ServicePuntos puntos={detailItems} foto={fotoPuntos} />
                 </div>
             </section>
 
             <ServiceProof certificacion={service.certificacion} />
 
-            <section className="w-full bg-gray-50 py-16 lg:py-24">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="mb-12">
-                        <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-4 leading-tight">
-                            Informacion tecnica <span className="text-secondary">visible y accionable</span>
-                        </h2>
+            {service.diagramas?.includes("flujo-servicio") && (
+                <DiagramaServicio clave="flujo-servicio" paso={paso()} />
+            )}
 
-                        <p className="text-tertiary text-lg max-w-2xl leading-relaxed text-justify">
-                            Estos son los puntos clave del servicio, organizados para entender donde se aplica,
-                            que impacto tiene y bajo que criterio se ejecuta.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        {detailItems.map((item) => (
-                            <article
-                                key={item.id}
-                                className="bg-white rounded-sm border border-gray-100 p-6 lg:p-8 shadow-sm"
-                            >
-                                <div className="flex items-center gap-4 mb-5">
-                                    {/* <span className="flex w-11 h-11 bg-primary text-secondary rounded-sm items-center justify-center text-lg font-extrabold">
-                                        {String(index + 1).padStart(2, "0")}
-                                    </span> */}
-
-                                    <h3 className="text-xl lg:text-2xl font-bold text-primary leading-snug">
-                                        {item.title}
-                                    </h3>
-                                </div>
-
-                                <p className="text-tertiary text-base leading-relaxed text-justify">
-                                    {item.content}
-                                </p>
-                            </article>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {service.tabla && <ServiceTable tabla={service.tabla} />}
-
-            <section className="w-full bg-primary py-16 lg:py-24">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-                        <div>
-                            <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4 leading-tight">
-                                Del dato al <span className="text-secondary">criterio de mantenimiento</span>
-                            </h2>
-
-                            <p className="text-white/80 text-lg leading-relaxed max-w-2xl text-justify">
-                                El objetivo no es solo medir: es interpretar la condicion real del equipo,
-                                documentar hallazgos y convertirlos en decisiones claras para reducir riesgo
-                                operativo.
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div className="border-l-2 border-secondary pl-4">
-                                <span className="block text-2xl font-extrabold text-secondary">
-                                    Medir
-                                </span>
-                                <span className="block text-sm text-white/80 leading-relaxed mt-2">
-                                    Recoleccion de informacion tecnica en equipos criticos.
-                                </span>
-                            </div>
-                            <div className="border-l-2 border-secondary pl-4">
-                                <span className="block text-2xl font-extrabold text-secondary">
-                                    Evaluar
-                                </span>
-                                <span className="block text-sm text-white/80 leading-relaxed mt-2">
-                                    Lectura de patrones, desviaciones y posibles modos de falla.
-                                </span>
-                            </div>
-                            <div className="border-l-2 border-secondary pl-4">
-                                <span className="block text-2xl font-extrabold text-secondary">
-                                    Actuar
-                                </span>
-                                <span className="block text-sm text-white/80 leading-relaxed mt-2">
-                                    Recomendaciones para priorizar intervenciones y reducir incertidumbre.
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* Qué recibes. Va después del flujo porque es su desenlace: el
+                último paso del proceso es el informe, y aquí se enseña. */}
+            {service.entregable && (
+                <ServiceEntregable entregable={service.entregable} paso={paso()} />
+            )}
 
             {/* Related Products */}
             {/* <RelatedProducts
@@ -350,10 +246,10 @@ export default async function ServicePage({
             {/* Evidencia visual: fotos reales de analistas de DIAPSA en campo.
                 Valen más que cualquier adjetivo; vienen del JSON del servicio. */}
             {service.galeria && service.galeria.length > 0 && (
-                <section className="w-full bg-white py-16 lg:py-24">
+                <section className="w-full bg-gray-50 py-12 lg:py-20">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="mb-10">
-                            <h2 className="text-3xl lg:text-4xl font-extrabold text-primary leading-tight">
+                            <h2 className="text-3xl lg:text-[2.75rem] font-extrabold text-primary leading-tight">
                                 DIAPSA <span className="text-secondary">en campo</span>
                             </h2>
                             <p className="text-tertiary text-lg mt-2 max-w-2xl text-justify">
@@ -377,14 +273,19 @@ export default async function ServicePage({
                 </section>
             )}
 
+            {/* Cierre con prueba, no con trámite: quién ya confía. Los datos
+                de contratación van en una línea dentro de la banda de
+                cotización, más abajo. */}
+            {service.mostrarClientes && <ClientesLogos paso={paso()} />}
+
             {/* Preguntas frecuentes: responden las búsquedas de cola larga
                 ("qué es", "cada cuánto", "qué norma", "cuánto cuesta") y
                 alimentan el schema FAQPage de arriba. <details> nativo:
                 acordeón sin JavaScript y contenido siempre en el HTML. */}
             {service.faq && service.faq.length > 0 && (
-                <section className="w-full bg-white py-16 lg:py-24">
+                <section className="w-full bg-gray-50 py-12 lg:py-20">
                     <div className="max-w-4xl mx-auto px-6">
-                        <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-10 leading-tight">
+                        <h2 className="text-3xl lg:text-[2.75rem] font-extrabold text-primary mb-10 leading-tight">
                             Preguntas <span className="text-secondary">frecuentes</span>
                         </h2>
                         <div className="divide-y divide-gray-200 border-y border-gray-200">
@@ -409,48 +310,16 @@ export default async function ServicePage({
                 </section>
             )}
 
-            {/* Llamado a la acción específico del servicio. Va justo después
-                del FAQ porque la última pregunta ("¿cuánto cuesta?") deja al
-                lector a un paso de pedir cotización: WhatsApp para el que
-                escribe, ancla al formulario para el que prefiere correo. */}
-            {service.cta && (
-                <section className="w-full bg-secondary py-14 lg:py-20">
-                    <div className="max-w-4xl mx-auto px-6 text-center">
-                        <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-4 leading-tight">
-                            {service.cta.title}
-                        </h2>
-                        <p className="text-primary/80 text-lg leading-relaxed max-w-2xl mx-auto mb-8 text-justify">
-                            {service.cta.text}
-                        </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <a
-                                href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent(service.cta.whatsappMessage)}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-3.5 rounded-xs hover:bg-white hover:text-primary transition-all duration-300 shadow-md"
-                            >
-                                Cotizar por WhatsApp
-                            </a>
-                            <a
-                                href="#contacto"
-                                className="inline-flex items-center gap-2 border-2 border-primary text-primary font-bold px-8 py-3 rounded-xs hover:bg-primary hover:text-white transition-all duration-300"
-                            >
-                                Prefiero el formulario
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            )}
-
-            {/* Artículo del blog sobre el mismo tema. Sirve al lector que
-                todavía está aprendiendo y no listo para cotizar, y enlaza dos
-                páginas que competían por la misma búsqueda sin apoyarse. */}
+            {/* Artículo del blog sobre el mismo tema. Ahí vive lo educativo
+                que esta página ya no carga: curva P-F, modos de falla,
+                severidad. Sirve al lector que todavía está aprendiendo y no
+                listo para cotizar. */}
             {articuloRelacionado && (
-                <section className="w-full bg-gray-50 py-12 lg:py-16">
+                <section className="w-full bg-white py-12 lg:py-16">
                     <div className="max-w-4xl mx-auto px-6">
                         <div className="rounded-sm border-l-4 border-secondary bg-white p-6 lg:p-8 shadow-sm">
                             <p className="text-xs font-bold uppercase tracking-widest text-secondary">
-                                Guía relacionada
+                                Para entender la técnica a fondo
                             </p>
                             <h2 className="mt-2 text-2xl lg:text-3xl font-extrabold text-primary leading-snug">
                                 {articuloRelacionado.titulo}
@@ -471,6 +340,54 @@ export default async function ServicePage({
                     </div>
                 </section>
             )}
+
+            {/* Llamado a la acción específico del servicio. Va justo después
+                del FAQ porque la última pregunta ("¿cuánto cuesta?") deja al
+                lector a un paso de pedir cotización: WhatsApp para el que
+                escribe, ancla al formulario para el que prefiere correo. */}
+            {service.cta && (
+                <section className="w-full bg-secondary py-14 lg:py-20">
+                    <div className="max-w-4xl mx-auto px-6 text-center">
+                        <h2 className="text-3xl lg:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">
+                            {service.cta.title}
+                        </h2>
+                        <p className="text-primary/80 text-lg leading-relaxed max-w-2xl mx-auto mb-8 text-justify">
+                            {service.cta.text}
+                        </p>
+                        {/* Lo que el área de compras pregunta primero, en una
+                            línea y confirmado: sin sección aparte. */}
+                        {service.cta.datos && service.cta.datos.length > 0 && (
+                            <ul className="mb-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+                                {service.cta.datos.map((dato) => (
+                                    <li key={dato} className="flex items-center gap-2 text-sm font-semibold text-primary">
+                                        <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                        </svg>
+                                        {dato}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <a
+                                href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent(service.cta.whatsappMessage)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-3.5 rounded-xs hover:bg-white hover:text-primary transition-all duration-300 shadow-md"
+                            >
+                                Cotizar por WhatsApp
+                            </a>
+                            <a
+                                href="#contacto"
+                                className="inline-flex items-center gap-2 border-2 border-primary text-primary font-bold px-8 py-3 rounded-xs hover:bg-primary hover:text-white transition-all duration-300"
+                            >
+                                Prefiero el formulario
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            )}
+
 
             <CursosTeaser />
 

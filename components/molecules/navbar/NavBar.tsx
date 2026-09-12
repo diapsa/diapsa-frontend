@@ -4,24 +4,66 @@ import { useEffect, useState } from "react";
 import Button from "@/components/atoms/Button";
 import Logo from "@/components/atoms/Logo";
 import NavLink from "@/components/atoms/NavLink";
-import Dropdown from "@/components/atoms/Dropdown";
+import MegaMenu, { type ColumnaMenu } from "./MegaMenu";
 import Link from "next/link";
 import services from '@/data/servicios.json'
+import menuCursos from '@/data/menu-cursos.json'
 
 // Menú de 5 entradas (2026-08-25). Antes había 7, con "Monitoreo" y "Detección
 // de Gas" sueltos arriba y un cajón de sastre llamado "Más servicios". Ahora
 // todos los servicios viven bajo una sola entrada: Servicios.
 
-// Todo lo institucional cuelga de "Empresa" en vez de ocupar la tira principal.
-const empresaLinks = [
-    { label: "Acerca de Nosotros", href: "/acerca-de" },
-    { label: "Metodología", href: "/metodologia" },
-    { label: "Galería", href: "/acerca-de#galeria" },
-    { label: "Blog", href: "/blog" },
-    { label: "Webinar", href: "/webinar" },
-    { label: "Folleto digital", href: "/folletodigital" },
-    { label: "Contacto", href: "/contacto" },
+// Servicios se despliega en un panel a lo ancho (2026-09-12), al estilo de
+// Dynamox y Fracttal: tres columnas con todos los servicios a la vista, cada
+// uno con ícono y una línea que dice qué es. Antes era una lista angosta con
+// un subpanel lateral que escondía las disciplinas detrás de dos niveles.
+const [monitoreoCondicion, monitoreoContinuo, ...sueltos] = services;
+const columnasServicios: ColumnaMenu[] = [
+    {
+        titulo: monitoreoCondicion.label,
+        href: monitoreoCondicion.href,
+        items: monitoreoCondicion.children ?? [],
+        ancho: 2,
+    },
+    {
+        titulo: monitoreoContinuo.label,
+        href: monitoreoContinuo.href,
+        items: monitoreoContinuo.children ?? [],
+    },
+    {
+        titulo: "Más servicios",
+        items: sueltos,
+    },
 ];
+
+// Cursos se despliega igual que Servicios: los quince cursos del catálogo
+// en tres grupos, los mismos que usa la página /cursos (certificados,
+// talleres, estratégicos). Los slugs son los publicados en producción; el
+// catálogo vive en el CMS, pero el menú no puede esperar a una llamada.
+const columnasCursos = menuCursos as ColumnaMenu[];
+
+// Todo lo institucional cuelga de "Empresa" en vez de ocupar la tira principal.
+const columnasEmpresa: ColumnaMenu[] = [
+    {
+        titulo: "Conócenos",
+        items: [
+            { label: "Acerca de Nosotros", href: "/acerca-de", descripcion: "Quiénes somos y desde cuándo", icono: "empresa" },
+            { label: "Metodología", href: "/metodologia", descripcion: "Cómo llevamos un programa predictivo", icono: "metodologia" },
+            { label: "Galería", href: "/acerca-de#galeria", descripcion: "Nuestra gente y nuestros equipos en campo", icono: "galeria" },
+        ],
+    },
+    {
+        titulo: "Recursos",
+        items: [
+            { label: "Blog", href: "/blog", descripcion: "Guías técnicas de mantenimiento predictivo", icono: "blog" },
+            { label: "Webinar", href: "/webinar", descripcion: "Próxima sesión en línea, sin costo", icono: "camaras" },
+            { label: "Folleto digital", href: "/folletodigital", descripcion: "Todos los servicios en un solo documento", icono: "folleto" },
+            { label: "Contacto", href: "/contacto", descripcion: "Escríbenos o llámanos", icono: "contacto" },
+        ],
+    },
+];
+// El menú móvil sigue usando la lista plana.
+const empresaLinks = columnasEmpresa.flatMap((c) => c.items);
 
 export default function NavBar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -50,23 +92,15 @@ export default function NavBar() {
 
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex items-center gap-5 xl:gap-7 text-white whitespace-nowrap">
-                            <Dropdown
-                                trigger="Servicios"
-                                items={services}
-                            />
-                            <NavLink href="/cursos">
-                                Cursos
-                            </NavLink>
+                            <MegaMenu trigger="Servicios" columnas={columnasServicios} />
+                            <MegaMenu trigger="Cursos" columnas={columnasCursos} />
                             <NavLink href="/productos">
                                 Equipos
                             </NavLink>
                             <NavLink href="/casos-exito">
                                 Casos de Éxito
                             </NavLink>
-                            <Dropdown
-                                trigger="Empresa"
-                                items={empresaLinks}
-                            />
+                            <MegaMenu trigger="Empresa" columnas={columnasEmpresa} />
                         </div>
                     </div>
 
@@ -184,13 +218,34 @@ export default function NavBar() {
                                 ))}
                             </div>
 
-                            <Link
-                                href="/cursos"
-                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Cursos
-                            </Link>
+                            {/* Cursos: los mismos grupos que en escritorio */}
+                            <div className="py-2">
+                                <p className="text-white/60 text-xs uppercase font-semibold px-4 mb-2">
+                                    Cursos
+                                </p>
+                                <Link
+                                    href="/cursos"
+                                    className="text-white hover:text-secondary transition-colors py-2.5 px-6 block rounded-lg hover:bg-white/5"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    Todos los cursos
+                                </Link>
+                                {columnasCursos.map((columna) => (
+                                    <div key={columna.titulo}>
+                                        <p className="text-white/50 text-xs px-6 pt-2 pb-1">{columna.titulo}</p>
+                                        {columna.items.map((item) => (
+                                            <Link
+                                                key={item.href}
+                                                href={item.href}
+                                                className="text-white/80 hover:text-secondary transition-colors py-2 pl-10 pr-6 block text-sm rounded-lg hover:bg-white/5"
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                            >
+                                                {item.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                ))}
+                            </div>
                             <Link
                                 href="/productos"
                                 className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
