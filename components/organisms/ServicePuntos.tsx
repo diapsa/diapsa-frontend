@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import IconoTarjeta from "../atoms/IconoTarjeta";
+import GraficoPunto from "../atoms/GraficoPunto";
 import type { ContentItem, FotoPunto } from "@/types/servicio";
 
 /**
@@ -32,6 +33,7 @@ type Props = {
 
 export default function ServicePuntos({ puntos, foto }: Props) {
   const [activo, setActivo] = useState(0);
+  const grafico = puntos[activo]?.grafico;
   const fotoActiva = puntos[activo]?.foto ?? foto;
   const contener = fotoActiva?.ajuste === "contener";
   const fondo =
@@ -77,9 +79,20 @@ export default function ServicePuntos({ puntos, foto }: Props) {
         })}
       </ul>
 
+      {/* Gráfico esquemático, si el punto lo pide. Mismo marco que la foto
+          para que el cambio entre puntos no salte. */}
+      {grafico && (
+        <div
+          key={`grafico-${grafico}`}
+          className="relative aspect-[4/3] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5 motion-safe:animate-[fadeIn_.4s_ease-out]"
+        >
+          <GraficoPunto clave={grafico} />
+        </div>
+      )}
+
       {/* Imagen del punto activo. La clave fuerza a React a montar un nodo
           nuevo al cambiar de punto, y con eso se dispara el fundido. */}
-      {fotoActiva && (
+      {!grafico && fotoActiva && (
         <div
           key={fotoActiva.src}
           className={`relative aspect-[4/3] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5 motion-safe:animate-[fadeIn_.4s_ease-out] ${

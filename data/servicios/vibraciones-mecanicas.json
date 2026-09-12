@@ -44,6 +44,7 @@
         "id": "beneficios",
         "title": "Qué ganas",
         "content": "Menos paros no programados, refacciones compradas con tiempo e intervenciones agendadas en ventana de producción.",
+        "grafico": "paros",
         "foto": {
           "src": "/images/servicios/vibraciones-mecanicas/planta-en-operacion.jpg",
           "alt": "Línea de proceso en acero inoxidable operando en una planta de alimentos"

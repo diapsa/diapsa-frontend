@@ -24,6 +24,8 @@ export interface ContentItem {
   content: string;
   /** Imagen que se muestra cuando este punto está seleccionado. */
   foto?: FotoPunto;
+  /** Gráfico esquemático en lugar de foto, por clave: "paros". Tiene prioridad sobre foto. */
+  grafico?: string;
 }
 
 export interface ServiceContent {
