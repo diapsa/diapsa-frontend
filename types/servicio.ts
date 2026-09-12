@@ -97,6 +97,14 @@ export interface FlujoPaso {
   texto: string;
 }
 
+export interface ServiceComparador {
+  titulo: string;
+  texto?: string;
+  visual: GaleriaFoto;
+  termica: GaleriaFoto;
+  pie?: string;
+}
+
 export interface ServiceCta {
   title: string;
   text: string;
@@ -139,4 +147,6 @@ export interface Servicio {
   fotoPuntos?: GaleriaFoto;
   /** Si es verdadero, cierra con la pared de logotipos de clientes. */
   mostrarClientes?: boolean;
+  /** Par visual y térmico de la misma escena (termografía). */
+  comparador?: ServiceComparador;
 }

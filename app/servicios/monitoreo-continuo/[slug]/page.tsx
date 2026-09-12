@@ -11,6 +11,7 @@ import JsonLd, {
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
 import ClientesLogos from "@/components/organisms/ClientesLogos";
+import ComparadorTermico from "@/components/organisms/ComparadorTermico";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
@@ -218,6 +219,13 @@ export default async function ServicePage({
                     <ServicePuntos puntos={detailItems} foto={fotoPuntos} />
                 </div>
             </section>
+
+            {/* Diferenciador de termografía: la misma escena a simple vista y
+                con cámara térmica. Va pegado a "Qué hacemos" porque es la
+                demostración de lo que ahí se afirma. */}
+            {service.comparador && (
+                <ComparadorTermico comparador={service.comparador} paso={paso()} />
+            )}
 
             <ServiceProof certificacion={service.certificacion} />
 

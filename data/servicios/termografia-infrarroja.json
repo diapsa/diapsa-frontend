@@ -76,6 +76,19 @@
     "src": "/images/gallery/campo-img-7.jpg",
     "alt": "Termógrafo de DIAPSA inspeccionando un tablero eléctrico con cámara térmica"
   },
+  "comparador": {
+    "titulo": "El problema no se ve. La cámara sí lo ve.",
+    "texto": "Los mismos aisladores de una subestación, fotografiados en la misma inspección. A simple vista no hay nada que reportar; en la imagen térmica el conector marcado está a 45 grados mientras los vecinos siguen fríos. Ese es el hallazgo que evita el paro.",
+    "visual": {
+      "src": "/images/servicios/termografia-infrarroja/par-visual.jpg",
+      "alt": "Aisladores y conectores de una subestación eléctrica vistos a simple vista"
+    },
+    "termica": {
+      "src": "/images/servicios/termografia-infrarroja/termograma-punto-caliente.jpg",
+      "alt": "Los mismos aisladores en imagen térmica, con el conector caliente marcado por la cámara"
+    },
+    "pie": "Imágenes de una inspección real de DIAPSA, con la identificación de la planta omitida. La temperatura se lee en operación y con carga; por eso la inspección no requiere detener nada."
+  },
   "diagramas": [
     "flujo-servicio"
   ],
