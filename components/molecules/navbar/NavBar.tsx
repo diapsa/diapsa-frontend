@@ -7,6 +7,7 @@ import NavLink from "@/components/atoms/NavLink";
 import MegaMenu, { type ColumnaMenu } from "./MegaMenu";
 import Link from "next/link";
 import services from '@/data/servicios.json'
+import menuCursos from '@/data/menu-cursos.json'
 
 // Menú de 5 entradas (2026-08-25). Antes había 7, con "Monitoreo" y "Detección
 // de Gas" sueltos arriba y un cajón de sastre llamado "Más servicios". Ahora
@@ -34,6 +35,12 @@ const columnasServicios: ColumnaMenu[] = [
         items: sueltos,
     },
 ];
+
+// Cursos se despliega igual que Servicios: los quince cursos del catálogo
+// en tres grupos, los mismos que usa la página /cursos (certificados,
+// talleres, estratégicos). Los slugs son los publicados en producción; el
+// catálogo vive en el CMS, pero el menú no puede esperar a una llamada.
+const columnasCursos = menuCursos as ColumnaMenu[];
 
 // Todo lo institucional cuelga de "Empresa" en vez de ocupar la tira principal.
 const columnasEmpresa: ColumnaMenu[] = [
@@ -86,9 +93,7 @@ export default function NavBar() {
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex items-center gap-5 xl:gap-7 text-white whitespace-nowrap">
                             <MegaMenu trigger="Servicios" columnas={columnasServicios} />
-                            <NavLink href="/cursos">
-                                Cursos
-                            </NavLink>
+                            <MegaMenu trigger="Cursos" columnas={columnasCursos} />
                             <NavLink href="/productos">
                                 Equipos
                             </NavLink>
@@ -213,13 +218,34 @@ export default function NavBar() {
                                 ))}
                             </div>
 
-                            <Link
-                                href="/cursos"
-                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Cursos
-                            </Link>
+                            {/* Cursos: los mismos grupos que en escritorio */}
+                            <div className="py-2">
+                                <p className="text-white/60 text-xs uppercase font-semibold px-4 mb-2">
+                                    Cursos
+                                </p>
+                                <Link
+                                    href="/cursos"
+                                    className="text-white hover:text-secondary transition-colors py-2.5 px-6 block rounded-lg hover:bg-white/5"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    Todos los cursos
+                                </Link>
+                                {columnasCursos.map((columna) => (
+                                    <div key={columna.titulo}>
+                                        <p className="text-white/50 text-xs px-6 pt-2 pb-1">{columna.titulo}</p>
+                                        {columna.items.map((item) => (
+                                            <Link
+                                                key={item.href}
+                                                href={item.href}
+                                                className="text-white/80 hover:text-secondary transition-colors py-2 pl-10 pr-6 block text-sm rounded-lg hover:bg-white/5"
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                            >
+                                                {item.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                ))}
+                            </div>
                             <Link
                                 href="/productos"
                                 className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
