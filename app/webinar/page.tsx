@@ -58,24 +58,38 @@ export default function WebinarPage() {
               {/* Cuándo es. Antes la fecha no aparecía por ningún lado de la
                   página: sólo un "Por confirmar" escondido en el formulario. */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 sm:gap-10 border-b border-gray-200 bg-gray-50 px-8 py-5">
-                <div className="flex items-center gap-3">
+                {/* La fecha agenda el evento. Antes era un div muerto, y la
+                    analítica registró gente pulsándolo: en una página de evento,
+                    con un icono de calendario al lado, se espera poder guardarlo.
+                    Quien lo agenda, además, es quien acaba asistiendo. */}
+                <a
+                  href="/webinar-herramientas-predictivas.ics"
+                  download
+                  className="group flex items-center gap-3 rounded-md px-2 py-1 -mx-2 transition-colors hover:bg-secondary/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
                   <svg className="h-6 w-6 shrink-0 text-secondary" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
                   </svg>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-tertiary">Fecha</p>
-                    <p className="font-bold text-primary">Martes 6 de octubre</p>
+                    <p className="font-bold text-primary group-hover:underline">Martes 6 de octubre</p>
+                    <p className="text-xs font-medium text-secondary">Agregar a mi calendario</p>
                   </div>
-                </div>
-                <div className="flex items-center gap-3">
+                </a>
+                {/* La hora lleva al mismo sitio: quien quiere guardarlo tanto
+                    puede pulsar el día como la hora, y las dos deben responder. */}
+                <a
+                  href="/webinar-herramientas-predictivas.ics"
+                  download
+                  className="group flex items-center gap-3 rounded-md px-2 py-1 -mx-2 transition-colors hover:bg-secondary/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
                   <svg className="h-6 w-6 shrink-0 text-secondary" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-tertiary">Hora</p>
-                    <p className="font-bold text-primary">11:00 a.m. (centro de México)</p>
+                    <p className="font-bold text-primary group-hover:underline">11:00 a.m. (centro de México)</p>
+                    <p className="text-xs font-medium text-secondary">Dura 60 min + preguntas</p>
                   </div>
-                </div>
+                </a>
                 <div className="flex items-center gap-3">
                   <svg className="h-6 w-6 shrink-0 text-secondary" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />

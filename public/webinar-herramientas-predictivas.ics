@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Grupo DIAPSA//Webinar//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:webinar-herramientas-predictivas-20261006@grupodiapsa.com.mx
+DTSTAMP:20260912T000000Z
+DTSTART:20261006T170000Z
+DTEND:20261006T183000Z
+SUMMARY:Webinar gratuito: Herramientas Predictivas — Grupo DIAPSA
+DESCRIPTION:Cómo implementar estrategias efectivas de mantenimiento predictivo con las tecnologías disponibles hoy. 60 minutos más sesión de preguntas.\n\nEl enlace de acceso llega por correo antes de la sesión.\n\nhttps://www.grupodiapsa.com.mx/webinar
+URL:https://www.grupodiapsa.com.mx/webinar
+LOCATION:En línea
+ORGANIZER;CN=Grupo DIAPSA:mailto:info@grupodiapsa.com.mx
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:El webinar de Herramientas Predictivas empieza en una hora
+END:VALARM
+END:VEVENT
+END:VCALENDAR
