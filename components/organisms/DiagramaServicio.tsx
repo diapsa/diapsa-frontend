@@ -1,4 +1,5 @@
 import Antetitulo from "../atoms/Antetitulo";
+import GraficoAhorro from "../atoms/GraficoAhorro";
 
 /**
  * DiagramaServicio
@@ -294,6 +295,26 @@ export default function DiagramaServicio({ clave, paso }: Props) {
             </p>
           </div>
           <FlujoServicio />
+
+          {/* En qué se traduce el proceso. Los cinco pasos explican el
+              método; esto enseña el resultado: el mismo problema cuesta
+              mucho menos cuando se atiende a tiempo. */}
+          <div className="mt-12 grid grid-cols-1 items-center gap-8 rounded-sm border border-gray-200 bg-white p-6 lg:mt-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] lg:gap-12 lg:p-10">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-secondary">
+                En qué se traduce
+              </p>
+              <h3 className="mt-2 text-2xl font-extrabold leading-tight text-primary lg:text-3xl">
+                El proceso cambia un paro inesperado por una intervención planeada
+              </h3>
+              <p className="mt-3 text-justify text-base leading-relaxed text-tertiary">
+                La falla es la misma. Lo que cambia es cuándo la atiendes: con aviso, la
+                refacción llega a tiempo y el trabajo cabe en una ventana de producción.
+                Sin aviso, pagas la línea parada, el daño que arrastró y todo lo urgente.
+              </p>
+            </div>
+            <GraficoAhorro />
+          </div>
         </div>
       </section>
     );
