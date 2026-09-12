@@ -10,8 +10,6 @@ import JsonLd, {
 } from "@/components/atoms/JsonLd";
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
-import ModosDeFalla from "@/components/organisms/ModosDeFalla";
-import Semaforo from "@/components/organisms/Semaforo";
 import FichaCompras from "@/components/organisms/FichaCompras";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
@@ -153,9 +151,10 @@ export default async function ServicePage({
         service.fotoPuntos ??
         (service.content.image ? { src: service.content.image, alt: service.header.title } : undefined);
 
-    // La página cuenta un argumento en orden: qué es, por qué medir, qué
-    // detectamos, cómo lo calificamos, cómo trabajamos, qué recibes, cómo
-    // contratar. El número se asigna al renderizar, así que las secciones
+    // La página es comercial y corta, al estilo de Dynamox y Fracttal: qué
+    // hacemos, cómo trabajamos, qué recibes, cómo contratar. Lo educativo
+    // (curva P-F, modos de falla, severidad) vive en la guía del blog que se
+    // enlaza abajo. El número se asigna al renderizar, así que las secciones
     // opcionales que un servicio no traiga no dejan huecos en la cuenta.
     let numero = 0;
     const paso = () => String(++numero).padStart(2, "0");
@@ -199,7 +198,7 @@ export default async function ServicePage({
                     </div>
                 </div>
             )}
-            {/* 01 Qué es. Antes eran dos secciones: esta, con un párrafo
+            {/* 01 Qué hacemos. Antes eran dos secciones: esta, con un párrafo
                 genérico y tres pasos numerados, y otra más abajo con los seis
                 puntos clave y su propia foto. Los tres pasos repetían el flujo
                 de trabajo que ya viene después, así que se quitaron, y los
@@ -207,7 +206,7 @@ export default async function ServicePage({
             <section className="w-full bg-white py-12 lg:py-20">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="mb-10 max-w-3xl">
-                        <Antetitulo paso={paso()}>Qué es</Antetitulo>
+                        <Antetitulo paso={paso()}>Qué hacemos</Antetitulo>
                         <h2 className="mt-2 text-3xl lg:text-[2.75rem] font-extrabold text-primary leading-tight">
                             {overviewTitle}
                         </h2>
@@ -220,23 +219,6 @@ export default async function ServicePage({
             </section>
 
             <ServiceProof certificacion={service.certificacion} />
-
-            {service.diagramas?.includes("curva-pf") && (
-                <DiagramaServicio clave="curva-pf" paso={paso()} />
-            )}
-
-            {service.tabla && <ModosDeFalla tabla={service.tabla} paso={paso()} />}
-
-            {/* Después de los modos de falla, porque la pregunta que sigue a
-                "qué falla es" siempre es "¿y ese número es mucho?". */}
-            {service.semaforo && (
-                <Semaforo
-                    titulo={service.semaforo.titulo}
-                    subtitulo={service.semaforo.subtitulo}
-                    zonas={service.semaforo.zonas}
-                    paso={paso()}
-                />
-            )}
 
             {service.diagramas?.includes("flujo-servicio") && (
                 <DiagramaServicio clave="flujo-servicio" paso={paso()} />
@@ -322,15 +304,16 @@ export default async function ServicePage({
                 </section>
             )}
 
-            {/* Artículo del blog sobre el mismo tema. Sirve al lector que
-                todavía está aprendiendo y no listo para cotizar, y enlaza dos
-                páginas que competían por la misma búsqueda sin apoyarse. */}
+            {/* Artículo del blog sobre el mismo tema. Ahí vive lo educativo
+                que esta página ya no carga: curva P-F, modos de falla,
+                severidad. Sirve al lector que todavía está aprendiendo y no
+                listo para cotizar. */}
             {articuloRelacionado && (
                 <section className="w-full bg-white py-12 lg:py-16">
                     <div className="max-w-4xl mx-auto px-6">
                         <div className="rounded-sm border-l-4 border-secondary bg-white p-6 lg:p-8 shadow-sm">
                             <p className="text-xs font-bold uppercase tracking-widest text-secondary">
-                                Guía relacionada
+                                Para entender la técnica a fondo
                             </p>
                             <h2 className="mt-2 text-2xl lg:text-3xl font-extrabold text-primary leading-snug">
                                 {articuloRelacionado.titulo}

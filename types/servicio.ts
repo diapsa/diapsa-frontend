@@ -120,20 +120,13 @@ export interface Servicio {
   certificacion?: string;
   /** Fotos reales de campo; si existen, la página muestra la franja "DIAPSA en campo". */
   galeria?: GaleriaFoto[];
-  /** Tabla técnica de referencia. */
-  tabla?: ServiceTabla;
-  /** El informe que recibe el cliente, mostrado y descargable a cambio de contacto. */
+  /** El informe que recibe el cliente: se enseña y se dice qué trae. */
   entregable?: ServiceEntregable;
-  /** Diagramas a dibujar, por clave: "curva-pf", "flujo-servicio". */
+  /** Diagramas a dibujar, por clave: "flujo-servicio". La curva P-F y los
+      modos de falla viven en la guía del blog (types/guia.ts), no aquí. */
   diagramas?: string[];
   /** Foto que acompaña a los puntos clave del servicio. */
   fotoPuntos?: GaleriaFoto;
   /** Lo que pregunta el área de compras: papeles, tiempos, cobro y cobertura. */
   fichaCompras?: ServiceFichaCompras;
-  /** Los tres colores con los que sale cada equipo en el informe. */
-  semaforo?: {
-    titulo: string;
-    subtitulo?: string;
-    zonas: ZonaSemaforo[];
-  };
 }

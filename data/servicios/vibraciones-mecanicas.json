@@ -27,19 +27,14 @@
   },
   "seoDescription": "Detectamos desbalanceo, desalineación y fallas de rodamientos antes del paro. Analistas Categoría III ISO 18436-2 con más de 20 años en planta.",
   "content": {
-    "title": "¿Qué es el Análisis de Vibraciones?",
-    "subtitle": "Cada falla en desarrollo deja una firma distinta en el espectro de vibración. Medirla y saber leerla permite detectar el problema semanas o meses antes de que pare el equipo.",
+    "title": "Encontramos la falla antes de que pare tu línea",
+    "subtitle": "Medimos la vibración de tus equipos rotativos, un analista certificado interpreta el espectro y te decimos qué equipo atender, por qué y con qué urgencia.",
     "image": "/images/gallery/campo-img-4.jpg",
     "items": [
       {
         "id": "aplicaciones",
         "title": "Dónde se aplica",
         "content": "Motores, bombas, ventiladores, compresores, reductores y turbinas. Todo equipo rotativo cuyo paro detenga la línea."
-      },
-      {
-        "id": "metodologia",
-        "title": "Normas y certificación",
-        "content": "Evaluamos conforme a ISO 10816 e ISO 20816. Los espectros los interpreta un analista Categoría III ISO 18436-2, no un software."
       },
       {
         "id": "beneficios",
@@ -50,11 +45,6 @@
         "id": "modalidades",
         "title": "Puntual o continuo",
         "content": "Rutas periódicas con analizador portátil, o sensores en línea las 24 horas donde la falla no da tiempo de reaccionar."
-      },
-      {
-        "id": "aviso-inmediato",
-        "title": "Si aparece algo grave",
-        "content": "Aviso inmediato al responsable, con evidencia y severidad. El equipo entra a reinspección hasta que se corrige."
       },
       {
         "id": "plataforma-idap",
@@ -68,7 +58,6 @@
     "alt": "Especialistas de Grupo DIAPSA revisando un equipo rotativo en planta con instrumento de medición"
   },
   "diagramas": [
-    "curva-pf",
     "flujo-servicio"
   ],
   "entregable": {
@@ -89,116 +78,6 @@
     "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA, con el estado por disciplina, los niveles de vibración medidos contra los rangos ISO y las imágenes termográficas",
     "dato": "3",
     "datoTexto": "disciplinas en un solo informe"
-  },
-  "tabla": {
-    "titulo": "Cada falla tiene su firma",
-    "subtitulo": "Esto es lo que busca un analista al abrir un espectro. La frecuencia donde aparece la amplitud, y en qué dirección, es lo que separa un desbalanceo de una desalineación o de un rodamiento en degradación.",
-    "columnas": [
-      "Falla",
-      "Dónde aparece",
-      "Dirección",
-      "Cómo se confirma",
-      "Por qué pasa",
-      "Qué se hace"
-    ],
-    "filas": [
-      [
-        "Desbalanceo",
-        "1x RPM",
-        "Radial",
-        "Amplitud dominante en la primera armónica, fase estable y diferencia cercana a 90 grados entre horizontal y vertical.",
-        "Masa desigual en el rotor por desgaste, incrustación, pérdida de material o un montaje fuera de tolerancia.",
-        "Balanceo en sitio, en uno o dos planos según el rotor."
-      ],
-      [
-        "Desalineación",
-        "2x RPM",
-        "Axial y radial",
-        "Componente axial elevada y desfase cercano a 180 grados entre ambos lados del acoplamiento.",
-        "Montaje fuera de tolerancia, asentamiento de la base, dilatación térmica o tubería que jala al equipo.",
-        "Alineación con láser en condición de operación y revisión de la tubería."
-      ],
-      [
-        "Holgura mecánica",
-        "Armónicas múltiples",
-        "Radial",
-        "Serie larga de armónicas de la velocidad de giro, piso de ruido elevado y en ocasiones subarmónicas.",
-        "Tornillería floja, base agrietada o ajuste fuera de tolerancia entre el alojamiento y el rodamiento.",
-        "Apriete con torque y verificación de las tolerancias del alojamiento."
-      ],
-      [
-        "Rodamiento dañado",
-        "Frecuencias no síncronas",
-        "Radial",
-        "Frecuencias propias del rodamiento que no son múltiplo de la velocidad. Se detecta antes en espectro envolvente que en velocidad.",
-        "Lubricación deficiente o contaminada, montaje forzado, o paso de corriente por el rodamiento.",
-        "Programar el cambio verificando las tolerancias de los alojamientos."
-      ],
-      [
-        "Engranaje",
-        "Frecuencia de engrane",
-        "Radial y axial",
-        "Frecuencia de engrane acompañada de bandas laterales separadas por la velocidad del eje afectado.",
-        "Desgaste de flancos, diente dañado, juego excesivo o desalineación del tren de engranes.",
-        "Inspección del engrane, revisión de lubricación y ajuste del juego."
-      ],
-      [
-        "Paso de álabes",
-        "Número de álabes por RPM",
-        "Radial",
-        "Aparece en bombas y ventiladores, y crece ante recirculación, cavitación o problemas de flujo.",
-        "Recirculación, cavitación, obstrucción o distancia insuficiente entre el impulsor y la voluta.",
-        "Revisar condiciones de succión y el punto de operación contra la curva."
-      ],
-      [
-        "Resonancia",
-        "Frecuencia natural del sistema",
-        "Variable",
-        "Amplitud muy alta en una frecuencia fija que cambia de comportamiento al variar la velocidad de operación.",
-        "Una frecuencia natural de la estructura o del soporte queda cerca de la velocidad de operación.",
-        "Rigidizar el soporte o mover la velocidad de operación fuera de la zona."
-      ],
-      [
-        "Origen eléctrico",
-        "Dos veces la frecuencia de línea",
-        "Radial",
-        "En motores, se distingue porque la amplitud desaparece de inmediato al cortar la alimentación.",
-        "Barras de rotor rotas, excentricidad del entrehierro o desbalance entre fases.",
-        "Prueba eléctrica del motor y termografía del tablero de alimentación."
-      ]
-    ],
-    "nota": "Los esquemas de la última columna son ilustrativos: representan la relación de amplitudes que delata cada falla, no la medición de un equipo en particular. El diagnóstico definitivo siempre considera la máquina, su velocidad de operación, la línea base histórica y el resto de las técnicas aplicadas.",
-    "patrones": [
-      "1x",
-      "2x",
-      "armonicas",
-      "no-sincrona",
-      "engrane",
-      "alabes",
-      "resonancia",
-      "electrica"
-    ]
-  },
-  "semaforo": {
-    "titulo": "Cada equipo sale en uno de tres colores",
-    "subtitulo": "Así viene en el informe, para que cualquiera en planta lo lea de un vistazo sin interpretar números.",
-    "zonas": [
-      {
-        "clave": "bueno",
-        "etiqueta": "Bueno",
-        "texto": "El equipo opera dentro de lo normal. Sigue en la ruta de medición."
-      },
-      {
-        "clave": "precaucion",
-        "etiqueta": "Precaución",
-        "texto": "Hay una falla en desarrollo. Se programa la intervención en la próxima ventana de producción."
-      },
-      {
-        "clave": "alarma",
-        "etiqueta": "Alarma",
-        "texto": "La falla avanzó. Aviso inmediato al responsable y el equipo entra a reinspección hasta que se corrige."
-      }
-    ]
   },
   "fichaCompras": {
     "titulo": "Los papeles y los tiempos, sin que tengas que preguntarlos",
