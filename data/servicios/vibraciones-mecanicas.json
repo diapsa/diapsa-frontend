@@ -36,9 +36,8 @@
         "title": "Dónde se aplica",
         "content": "Motores, bombas, ventiladores, compresores, reductores y turbinas. Todo equipo rotativo cuyo paro detenga la línea.",
         "foto": {
-          "src": "/images/motor.png",
-          "alt": "Motor eléctrico en corte, con el rotor y el devanado a la vista",
-          "ajuste": "contener"
+          "src": "/images/gallery/campo-img-5.jpg",
+          "alt": "Analista de DIAPSA midiendo vibración en un motor vertical con un colector portátil"
         }
       },
       {
@@ -55,9 +54,8 @@
         "title": "Puntual o continuo",
         "content": "Rutas periódicas con analizador portátil, o sensores en línea las 24 horas donde la falla no da tiempo de reaccionar.",
         "foto": {
-          "src": "/images/monitoreo-continuo/wireless-vibration-sensor-kcf.png",
-          "alt": "Sensor inalámbrico de vibración para monitoreo continuo",
-          "ajuste": "contener"
+          "src": "/images/gallery/campo-img-6.jpg",
+          "alt": "Analista de DIAPSA en ruta de medición sobre una plataforma de planta, con la sonda en el equipo"
         }
       },
       {
@@ -65,8 +63,10 @@
         "title": "Tus datos viven en IDAP",
         "content": "Historial por equipo, tendencias y reportes consultables en línea cuando los necesites, sin buscar un PDF en el correo.",
         "foto": {
-          "src": "/images/idap/idap-dashboard.png",
-          "alt": "Tablero de IDAP con el estado de los equipos por semáforo y las últimas mediciones"
+          "src": "/images/idap/mockup.png",
+          "alt": "Pantallas de IDAP con el tablero, la lista de equipos y el historial de inspecciones",
+          "ajuste": "contener",
+          "fondo": "oscuro"
         }
       }
     ]

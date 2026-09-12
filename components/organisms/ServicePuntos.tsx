@@ -34,6 +34,10 @@ export default function ServicePuntos({ puntos, foto }: Props) {
   const [activo, setActivo] = useState(0);
   const fotoActiva = puntos[activo]?.foto ?? foto;
   const contener = fotoActiva?.ajuste === "contener";
+  const fondo =
+    fotoActiva?.fondo === "oscuro"
+      ? "bg-primary"
+      : "bg-gradient-to-br from-gray-50 to-gray-200";
 
   return (
     <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-14 lg:items-center">
@@ -79,7 +83,7 @@ export default function ServicePuntos({ puntos, foto }: Props) {
         <div
           key={fotoActiva.src}
           className={`relative aspect-[4/3] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5 motion-safe:animate-[fadeIn_.4s_ease-out] ${
-            contener ? "bg-gradient-to-br from-gray-50 to-gray-200" : ""
+            contener ? fondo : ""
           }`}
         >
           <Image

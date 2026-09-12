@@ -14,6 +14,8 @@ export interface FotoPunto {
   alt: string;
   /** "contener" para renders con fondo transparente; si falta, la imagen va a sangre. */
   ajuste?: "cubrir" | "contener";
+  /** Fondo detrás de un render contenido: claro (degradado gris) u oscuro (azul marino). */
+  fondo?: "claro" | "oscuro";
 }
 
 export interface ContentItem {
