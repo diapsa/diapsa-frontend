@@ -1,3 +1,5 @@
+import Antetitulo from "../atoms/Antetitulo";
+
 /**
  * DiagramaServicio
  * Diagramas técnicos dibujados en SVG para las páginas de servicio.
@@ -13,6 +15,7 @@
 
 type Props = {
   clave: string;
+  paso?: string;
 };
 
 /* ------------------------------------------------------------------ */
@@ -254,15 +257,13 @@ function FlujoServicio() {
 
 /* ------------------------------------------------------------------ */
 
-export default function DiagramaServicio({ clave }: Props) {
+export default function DiagramaServicio({ clave, paso }: Props) {
   if (clave === "curva-pf") {
     return (
       <section className="w-full bg-gray-50 py-12 lg:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-10 max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-widest text-secondary">
-              Curva P-F
-            </p>
+            <Antetitulo paso={paso}>Por qué medir</Antetitulo>
             <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
               El objetivo no es ver la falla, es alargar el tiempo que tienes
             </h2>
@@ -283,9 +284,7 @@ export default function DiagramaServicio({ clave }: Props) {
       <section className="w-full bg-gray-50 py-12 lg:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-10 max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-widest text-secondary">
-              Cómo trabajamos
-            </p>
+            <Antetitulo paso={paso}>Cómo trabajamos</Antetitulo>
             <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
               Del dato a la decisión
             </h2>

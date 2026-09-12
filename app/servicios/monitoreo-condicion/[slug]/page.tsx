@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/organisms/PageHeader";
+import Antetitulo from "@/components/atoms/Antetitulo";
 import Image from "next/image";
 import type { Servicio } from "@/types/servicio";
 import JsonLd, {
@@ -151,6 +152,18 @@ export default async function ServicePage({
     // contenido extra del JSON. Se renderizan todos: la cuadrícula de 3
     // columnas simplemente agrega renglones.
     const detailItems = service.content.items;
+    // Foto que acompaña a los puntos clave; si el servicio no trae una
+    // específica se usa la imagen principal del contenido.
+    const fotoPuntos =
+        service.fotoPuntos ??
+        (service.content.image ? { src: service.content.image, alt: service.header.title } : undefined);
+
+    // La página cuenta un argumento en orden: qué es, por qué medir, qué
+    // detectamos, cómo lo calificamos, cómo trabajamos, qué recibes, cómo
+    // contratar. El número se asigna al renderizar, así que las secciones
+    // opcionales que un servicio no traiga no dejan huecos en la cuenta.
+    let numero = 0;
+    const paso = () => String(++numero).padStart(2, "0");
 
     return (
         <main>
@@ -191,109 +204,33 @@ export default async function ServicePage({
                     </div>
                 </div>
             )}
-            {/* Content Section */}
+            {/* 01 Qué es. Antes eran dos secciones: esta, con un párrafo
+                genérico y tres pasos numerados, y otra más abajo con los seis
+                puntos clave y su propia foto. Los tres pasos repetían el flujo
+                de trabajo que ya viene después, así que se quitaron, y los
+                puntos se trajeron aquí: una sección, una foto. */}
             <section className="w-full bg-white py-12 lg:py-20">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-                        <div>
-                            <h2 className="text-3xl lg:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">
-                                {overviewTitle}
-                            </h2>
-
-                            <p className="text-tertiary text-lg leading-relaxed max-w-2xl text-justify">
-                                {overviewSubtitle}
-                            </p>
-
-                            <p className="text-tertiary text-base lg:text-lg leading-relaxed max-w-2xl mt-5 text-justify">
-                                Integramos levantamiento en campo, lectura tecnica de la condicion del activo
-                                y recomendaciones accionables para que mantenimiento pueda priorizar
-                                intervenciones con mejor criterio operativo.
-                            </p>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
-                                <div className="border-l-2 border-secondary pl-4">
-                                    <span className="block text-2xl font-extrabold text-secondary">
-                                        01
-                                    </span>
-                                    <span className="block text-xs uppercase tracking-wider text-tertiary">
-                                        Inspeccion en campo
-                                    </span>
-                                </div>
-                                <div className="border-l-2 border-secondary pl-4">
-                                    <span className="block text-2xl font-extrabold text-secondary">
-                                        02
-                                    </span>
-                                    <span className="block text-xs uppercase tracking-wider text-tertiary">
-                                        Analisis tecnico
-                                    </span>
-                                </div>
-                                <div className="border-l-2 border-secondary pl-4">
-                                    <span className="block text-2xl font-extrabold text-secondary">
-                                        03
-                                    </span>
-                                    <span className="block text-xs uppercase tracking-wider text-tertiary">
-                                        Acciones recomendadas
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            {service.content.image ? (
-                                <div className="relative w-full h-86 sm:h-110 lg:h-130 rounded-sm overflow-hidden shadow-xl">
-                                    <Image
-                                        src={service.content.image}
-                                        alt={service.header.title}
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 1024px) 100vw, 50vw"
-                                    />
-                                    <div className="absolute inset-0 bg-primary/20" />
-                                </div>
-                            ) : (
-                                <div className="hidden lg:block w-full h-124" />
-                            )}
-                        </div>
+                    <div className="mb-10 max-w-3xl">
+                        <Antetitulo paso={paso()}>Qué es</Antetitulo>
+                        <h2 className="mt-2 text-3xl lg:text-[2.75rem] font-extrabold text-primary leading-tight">
+                            {overviewTitle}
+                        </h2>
+                        <p className="mt-3 text-tertiary text-lg leading-relaxed text-justify">
+                            {overviewSubtitle}
+                        </p>
                     </div>
+                    <ServicePuntos puntos={detailItems} foto={fotoPuntos} />
                 </div>
             </section>
 
             <ServiceProof certificacion={service.certificacion} />
 
             {service.diagramas?.includes("curva-pf") && (
-                <DiagramaServicio clave="curva-pf" />
+                <DiagramaServicio clave="curva-pf" paso={paso()} />
             )}
 
-            <section className="w-full bg-white py-12 lg:py-20">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="mb-12">
-                        <h2 className="text-3xl lg:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">
-                            En corto: <span className="text-secondary">cómo trabajamos</span>
-                        </h2>
-
-                        <p className="text-tertiary text-lg max-w-2xl leading-relaxed text-justify">
-                            Lo esencial del servicio en seis puntos. El detalle está en la tabla de fallas,
-                            en el informe de ejemplo y en el flujo de trabajo, más abajo.
-                        </p>
-                    </div>
-
-                    {/* Un punto abierto a la vez. Mostrar los seis con su
-                        descripción dejaba 107 palabras de golpe; así se ven
-                        unas 30. Ninguna de las ocho referencias del sector
-                        revisadas muestra todo el texto simultáneamente. */}
-                    <ServicePuntos puntos={detailItems} foto={service.fotoPuntos} />
-                </div>
-            </section>
-
-            {/* El informe va aquí, dentro del contenido, no como banda al
-                final: viene justo después de las tarjetas donde se explica
-                qué se entrega, así que enseñarlo es la continuación natural
-                de la lectura. */}
-            {service.entregable && (
-                <ServiceEntregable entregable={service.entregable} servicio={service.header.title} />
-            )}
-
-            {service.tabla && <ModosDeFalla tabla={service.tabla} />}
+            {service.tabla && <ModosDeFalla tabla={service.tabla} paso={paso()} />}
 
             {/* Después de los modos de falla, porque la pregunta que sigue a
                 "qué falla es" siempre es "¿y ese número es mucho?". */}
@@ -303,11 +240,18 @@ export default async function ServicePage({
                     titulo={service.escalas.titulo}
                     subtitulo={service.escalas.subtitulo}
                     nota={service.escalas.nota}
+                    paso={paso()}
                 />
             )}
 
             {service.diagramas?.includes("flujo-servicio") && (
-                <DiagramaServicio clave="flujo-servicio" />
+                <DiagramaServicio clave="flujo-servicio" paso={paso()} />
+            )}
+
+            {/* Qué recibes. Va después del flujo porque es su desenlace: el
+                último paso del proceso es el informe, y aquí se enseña. */}
+            {service.entregable && (
+                <ServiceEntregable entregable={service.entregable} paso={paso()} />
             )}
 
             {/* Related Products */}
@@ -320,7 +264,7 @@ export default async function ServicePage({
             {/* Evidencia visual: fotos reales de analistas de DIAPSA en campo.
                 Valen más que cualquier adjetivo; vienen del JSON del servicio. */}
             {service.galeria && service.galeria.length > 0 && (
-                <section className="w-full bg-white py-12 lg:py-20">
+                <section className="w-full bg-gray-50 py-12 lg:py-20">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="mb-10">
                             <h2 className="text-3xl lg:text-[2.75rem] font-extrabold text-primary leading-tight">
@@ -350,7 +294,7 @@ export default async function ServicePage({
             {/* Va antes de las preguntas porque el comprador llega hasta
                 aquí buscando exactamente esto y no debería tener que leer
                 el FAQ completo para encontrarlo. */}
-            {service.fichaCompras && <FichaCompras ficha={service.fichaCompras} />}
+            {service.fichaCompras && <FichaCompras ficha={service.fichaCompras} paso={paso()} />}
 
             {/* Preguntas frecuentes: responden las búsquedas de cola larga
                 ("qué es", "cada cuánto", "qué norma", "cuánto cuesta") y

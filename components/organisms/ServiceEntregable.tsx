@@ -1,66 +1,34 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import { submitContact } from "@/lib/api/contacts";
+import Antetitulo from "../atoms/Antetitulo";
 import type { ServiceEntregable as Entregable } from "@/types/servicio";
 
 /**
  * ServiceEntregable
- * Muestra el informe que recibe el cliente y lo entrega a cambio de contacto.
+ * Enseña el informe que recibe el cliente y dice qué trae. Nada más.
  *
- * Por qué se rehízo: la primera versión era una banda de texto pegada al final
- * de la página, con una lista de viñetas describiendo el informe. Describirlo
- * no sirve de nada: hay que ENSEÑARLO. Ahora las páginas reales se ven, en
- * escalonado, con una máscara que corta la segunda y deja la sensación de que
- * hay más. El formulario sólo aparece cuando el visitante lo pide, para que la
- * sección se lea como contenido y no como un muro de captura.
+ * Por qué ya no se descarga: la versión anterior pedía nombre, correo y
+ * empresa a cambio del PDF. Eso convierte la sección en una captura de datos
+ * y el visitante lo nota; además obligaba a publicar un informe de un cliente
+ * real, aunque anonimizado. Ahora es una afirmación: esto es lo que recibes,
+ * así se ve, esto contiene. Las páginas siguen siendo reales, escalonadas y
+ * con un ligero movimiento al pasar el cursor, porque describir un informe
+ * convence menos que verlo.
  *
- * Movimiento: las páginas entran con un ligero desplazamiento y se levantan al
- * pasar el cursor. Todo bajo `motion-safe`, así que quien pidió menos
- * movimiento en su sistema no ve ninguna animación.
+ * Componente de servidor: sin estado, sin formulario, sin JavaScript.
  */
 
 type Props = {
   entregable: Entregable;
-  /** Servicio del que proviene la descarga, para identificar el origen del lead. */
-  servicio: string;
+  paso?: string;
 };
 
-type Estado = "vitrina" | "formulario" | "enviando" | "listo";
-
-export default function ServiceEntregable({ entregable, servicio }: Props) {
-  const [estado, setEstado] = useState<Estado>("vitrina");
-  const [nombre, setNombre] = useState("");
-  const [correo, setCorreo] = useState("");
-  const [empresa, setEmpresa] = useState("");
-
-  async function alEnviar(evento: React.FormEvent) {
-    evento.preventDefault();
-    setEstado("enviando");
-    try {
-      await submitContact({
-        name: nombre,
-        email: correo,
-        company: empresa,
-        form_type: "general",
-        custom_fields: { origen: "descarga de material", recurso: entregable.archivo, servicio },
-      });
-    } catch (error) {
-      // Perder el lead es malo; dejar al visitante sin lo prometido es peor.
-      console.error("[entregable] No se pudo registrar la descarga:", error);
-    }
-    setEstado("listo");
-  }
-
+export default function ServiceEntregable({ entregable, paso }: Props) {
   return (
-    <section className="w-full overflow-hidden bg-gray-50 py-12 lg:py-20">
+    <section className="w-full overflow-hidden bg-white py-12 lg:py-20">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16">
         {/* Texto */}
         <div>
-          <p className="text-xs font-bold uppercase tracking-widest text-secondary">
-            {entregable.etiqueta}
-          </p>
+          <Antetitulo paso={paso}>{entregable.etiqueta}</Antetitulo>
           <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
             {entregable.titulo}
           </h2>
@@ -68,74 +36,23 @@ export default function ServiceEntregable({ entregable, servicio }: Props) {
             {entregable.descripcion}
           </p>
 
-          {estado === "vitrina" && (
-            <button
-              type="button"
-              onClick={() => setEstado("formulario")}
-              className="mt-8 inline-flex items-center gap-3 rounded-xs bg-primary px-8 py-3.5 font-bold text-white transition-all duration-300 hover:bg-secondary hover:text-primary"
-            >
-              {entregable.textoBoton}
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v13.5m0 0l-4.5-4.5M12 16.5l4.5-4.5M3.75 20.25h16.5" />
-              </svg>
-            </button>
-          )}
-
-          {(estado === "formulario" || estado === "enviando") && (
-            <form onSubmit={alEnviar} className="mt-8 max-w-md motion-safe:animate-[fadeIn_.35s_ease-out]">
-              <p className="text-sm text-tertiary">Tres datos y te lo entregamos al instante.</p>
-              <div className="mt-4 space-y-3">
-                <input
-                  aria-label="Nombre"
-                  placeholder="Nombre"
-                  required
-                  value={nombre}
-                  onChange={(e) => setNombre(e.target.value)}
-                  className="w-full rounded-xs border border-gray-300 bg-white px-4 py-2.5 text-primary focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-                />
-                <input
-                  aria-label="Correo"
-                  type="email"
-                  placeholder="Correo"
-                  required
-                  value={correo}
-                  onChange={(e) => setCorreo(e.target.value)}
-                  className="w-full rounded-xs border border-gray-300 bg-white px-4 py-2.5 text-primary focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-                />
-                <input
-                  aria-label="Empresa"
-                  placeholder="Empresa"
-                  required
-                  value={empresa}
-                  onChange={(e) => setEmpresa(e.target.value)}
-                  className="w-full rounded-xs border border-gray-300 bg-white px-4 py-2.5 text-primary focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={estado === "enviando"}
-                className="mt-4 w-full rounded-xs bg-secondary px-8 py-3.5 font-bold text-primary transition-all duration-300 hover:bg-primary hover:text-white disabled:opacity-60"
-              >
-                {estado === "enviando" ? "Preparando tu descarga" : entregable.textoBoton}
-              </button>
-            </form>
-          )}
-
-          {estado === "listo" && (
-            <div className="mt-8 max-w-md rounded-sm border-l-4 border-secondary bg-white p-6 shadow-sm motion-safe:animate-[fadeIn_.35s_ease-out]">
-              <p className="text-xl font-extrabold text-primary">Tu informe está listo</p>
-              <p className="mt-1 leading-relaxed text-tertiary">
-                Si la descarga no comienza sola, usa el botón.
-              </p>
-              <a
-                href={entregable.archivo}
-                download
-                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xs bg-primary px-8 py-3.5 font-bold text-white transition-all duration-300 hover:bg-secondary hover:text-primary"
-              >
-                Descargar el informe
-              </a>
-            </div>
-          )}
+          <ul className="mt-7 space-y-3">
+            {entregable.contenido.map((punto) => (
+              <li key={punto} className="flex items-start gap-3 text-base leading-relaxed text-primary">
+                <svg
+                  className="mt-1.5 h-4 w-4 shrink-0 text-secondary"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                <span>{punto}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Vitrina: las páginas reales, escalonadas */}
@@ -162,7 +79,6 @@ export default function ServiceEntregable({ entregable, servicio }: Props) {
               height={890}
               className="h-auto w-full"
               sizes="(max-width: 1024px) 90vw, 460px"
-              priority={false}
             />
           </div>
 

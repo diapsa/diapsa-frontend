@@ -50,16 +50,14 @@ export interface ServiceEntregable {
   etiqueta: string;
   titulo: string;
   descripcion: string;
-  /** Texto del botón, ej. "Descargar el informe de ejemplo". */
-  textoBoton: string;
+  /** Qué trae el informe, un renglón por punto. Se muestra como lista. */
+  contenido: string[];
   /** Imágenes de las páginas del informe, en orden. Se muestran dos. */
   paginas: string[];
   altPaginas: string;
   /** Cifra del sello flotante, ej. "3". */
   dato: string;
   datoTexto: string;
-  /** Ruta pública del archivo descargable. */
-  archivo: string;
 }
 
 export interface ZonaSeveridad {

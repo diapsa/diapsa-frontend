@@ -1,3 +1,4 @@
+import Antetitulo from "../atoms/Antetitulo";
 import type { ServiceFichaCompras } from "@/types/servicio";
 
 /**
@@ -17,6 +18,7 @@ import type { ServiceFichaCompras } from "@/types/servicio";
 
 type Props = {
   ficha: ServiceFichaCompras;
+  paso?: string;
 };
 
 const ICONOS: Record<string, string> = {
@@ -29,14 +31,12 @@ const ICONOS: Record<string, string> = {
     "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z",
 };
 
-export default function FichaCompras({ ficha }: Props) {
+export default function FichaCompras({ ficha, paso }: Props) {
   return (
-    <section className="w-full bg-gray-50 py-12 lg:py-20">
+    <section className="w-full bg-white py-12 lg:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-10 max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-secondary">
-            Para el área de compras
-          </p>
+          <Antetitulo paso={paso}>Cómo contratar</Antetitulo>
           <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
             {ficha.titulo}
           </h2>

@@ -1,3 +1,4 @@
+import Antetitulo from "../atoms/Antetitulo";
 import type { ServiceEscala } from "@/types/servicio";
 
 /**
@@ -21,6 +22,7 @@ type Props = {
   titulo: string;
   subtitulo?: string;
   nota?: string;
+  paso?: string;
 };
 
 const COLORES: Record<string, { barra: string; punto: string; texto: string }> = {
@@ -30,14 +32,12 @@ const COLORES: Record<string, { barra: string; punto: string; texto: string }> =
   alarma: { barra: "bg-red-600", punto: "bg-red-600", texto: "text-red-700" },
 };
 
-export default function EscalaSeveridad({ escalas, titulo, subtitulo, nota }: Props) {
+export default function EscalaSeveridad({ escalas, titulo, subtitulo, nota, paso }: Props) {
   return (
     <section className="w-full bg-white py-12 lg:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-10 max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-secondary">
-            Criterio de severidad
-          </p>
+          <Antetitulo paso={paso}>Cómo lo calificamos</Antetitulo>
           <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
             {titulo}
           </h2>

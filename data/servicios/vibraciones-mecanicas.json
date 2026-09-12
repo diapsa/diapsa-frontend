@@ -72,18 +72,23 @@
     "flujo-servicio"
   ],
   "entregable": {
-    "etiqueta": "El entregable",
+    "etiqueta": "Qué recibes",
     "titulo": "Esto es lo que recibes",
-    "descripcion": "No un archivo de mediciones para que lo interpretes tú. Un informe donde cada equipo trae su estado, el nivel medido contra la norma, el diagnóstico del analista y qué hacer al respecto. Este es uno real, con los datos de la planta omitidos.",
-    "textoBoton": "Descargar el informe de ejemplo",
+    "descripcion": "No un archivo de mediciones para que lo interpretes tú. Un informe donde cada equipo trae su estado, el nivel medido contra la norma, el diagnóstico del analista y qué hacer al respecto. Las páginas que ves son de un informe real, con los datos de la planta omitidos.",
+    "contenido": [
+      "Estado de cada equipo en semáforo, para leerlo de un vistazo",
+      "Nivel medido contra el rango ISO que le corresponde",
+      "Diagnóstico del analista con la causa probable",
+      "Acción recomendada y con qué urgencia",
+      "Historial y tendencia consultables en IDAP"
+    ],
     "paginas": [
       "/images/informe/pagina-1.png",
       "/images/informe/pagina-2.png"
     ],
     "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA, con el estado por disciplina, los niveles de vibración medidos contra los rangos ISO y las imágenes termográficas",
     "dato": "3",
-    "datoTexto": "disciplinas en un solo informe",
-    "archivo": "/documentos/informe-ejemplo-diapsa.pdf"
+    "datoTexto": "disciplinas en un solo informe"
   },
   "tabla": {
     "titulo": "Cada falla tiene su firma",

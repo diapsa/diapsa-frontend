@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import PatronEspectral from "../atoms/PatronEspectral";
+import Antetitulo from "../atoms/Antetitulo";
 import type { ServiceTabla } from "@/types/servicio";
 
 /**
@@ -21,9 +22,10 @@ import type { ServiceTabla } from "@/types/servicio";
 
 type Props = {
   tabla: ServiceTabla;
+  paso?: string;
 };
 
-export default function ModosDeFalla({ tabla }: Props) {
+export default function ModosDeFalla({ tabla, paso }: Props) {
   const [activo, setActivo] = useState(0);
   const fila = tabla.filas[activo];
   const patron = tabla.patrones?.[activo];
@@ -32,9 +34,7 @@ export default function ModosDeFalla({ tabla }: Props) {
     <section className="w-full bg-primary py-12 lg:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-8 max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-secondary">
-            Modos de falla
-          </p>
+          <Antetitulo paso={paso}>Qué detectamos</Antetitulo>
           <h2 className="mt-2 text-3xl font-extrabold leading-tight text-white lg:text-[2.75rem]">
             {tabla.titulo}
           </h2>
