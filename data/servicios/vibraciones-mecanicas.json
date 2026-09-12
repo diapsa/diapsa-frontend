@@ -27,123 +27,78 @@
   },
   "seoDescription": "Detectamos desbalanceo, desalineación y fallas de rodamientos antes del paro. Analistas Categoría III ISO 18436-2 con más de 20 años en planta.",
   "content": {
-    "title": "¿Qué es el Análisis de Vibraciones?",
-    "subtitle": "Cada falla en desarrollo deja una firma distinta en el espectro de vibración. Medirla y saber leerla permite detectar el problema semanas o meses antes de que pare el equipo.",
+    "title": "Encontramos la falla antes de que pare tu línea",
+    "subtitle": "Medimos la vibración de tus equipos rotativos, un analista certificado interpreta el espectro y te decimos qué equipo atender, por qué y con qué urgencia.",
     "image": "/images/gallery/campo-img-4.jpg",
     "items": [
       {
         "id": "aplicaciones",
         "title": "Dónde se aplica",
-        "content": "Motores eléctricos, bombas, ventiladores, compresores, reductores, torres de enfriamiento y turbinas. En general, cualquier equipo rotativo crítico: si su paro detiene la línea, es candidato a medirse de forma periódica."
-      },
-      {
-        "id": "fallas",
-        "title": "Fallas que detecta",
-        "content": "Desbalanceo, desalineación, holguras mecánicas, rodamientos en degradación, problemas de engranes y bandas, resonancia estructural, ejes doblados y fallas de origen eléctrico en motores. Es la técnica con mayor cobertura de modos de falla en equipo rotativo."
-      },
-      {
-        "id": "metodologia",
-        "title": "Metodología y normas",
-        "content": "Medimos y evaluamos conforme a ISO 10816 e ISO 20816 con analizadores de vibraciones certificados. Los espectros los interpreta un analista con certificación Categoría III según ISO 18436-2, no solo un software."
+        "content": "Motores, bombas, ventiladores, compresores, reductores y turbinas. Todo equipo rotativo cuyo paro detenga la línea.",
+        "foto": {
+          "src": "/images/servicios/vibraciones-mecanicas/motor-con-sensor.jpg",
+          "alt": "Motor eléctrico con transmisión por bandas y sensor de vibración montado en la carcasa"
+        }
       },
       {
         "id": "beneficios",
-        "title": "Beneficios",
-        "content": "Menos paros no programados, refacciones compradas con anticipación en lugar de con urgencia, intervenciones agendadas en ventanas de producción y mayor vida útil de los componentes críticos."
-      },
-      {
-        "id": "entregable",
-        "title": "Qué recibes",
-        "content": "Cada equipo medido se entrega con su nivel de severidad, el espectro que lo respalda, el diagnóstico del posible modo de falla y una recomendación concreta: qué intervenir, con qué urgencia y qué vigilar en la siguiente ruta."
+        "title": "Qué ganas",
+        "content": "Menos paros no programados, refacciones compradas con tiempo e intervenciones agendadas en ventana de producción.",
+        "grafico": "paros",
+        "foto": {
+          "src": "/images/servicios/vibraciones-mecanicas/planta-en-operacion.jpg",
+          "alt": "Línea de proceso en acero inoxidable operando en una planta de alimentos"
+        }
       },
       {
         "id": "modalidades",
         "title": "Puntual o continuo",
-        "content": "Rutas periódicas con analizador portátil para la mayoría de los activos, y sensores en línea con monitoreo continuo las 24 horas para los equipos donde una falla no da tiempo de reaccionar."
-      },
-      {
-        "id": "aviso-inmediato",
-        "title": "Si aparece algo grave",
-        "content": "Un hallazgo crítico no espera al reporte: lo comunicamos de inmediato al responsable de mantenimiento con la evidencia y la severidad, y el equipo entra a seguimiento con reinspecciones hasta que se corrige. Así les damos seguimiento a las alarmas reales de nuestros clientes."
+        "content": "Rutas periódicas con analizador portátil, o sensores en línea las 24 horas donde la falla no da tiempo de reaccionar.",
+        "foto": {
+          "src": "/images/servicios/vibraciones-mecanicas/instalacion-de-sensor.jpg",
+          "alt": "Analista de DIAPSA instalando un sensor inalámbrico de vibración en un motor"
+        }
       },
       {
         "id": "plataforma-idap",
         "title": "Tus datos viven en IDAP",
-        "content": "Cada medición queda registrada en IDAP, nuestra plataforma en línea: historial por equipo, tendencias, estados y reportes consultables cuando los necesites. No dependes de buscar un PDF en el correo para saber cómo va tu planta."
+        "content": "Historial por equipo, tendencias y reportes consultables en línea cuando los necesites, sin buscar un PDF en el correo.",
+        "foto": {
+          "src": "/images/idap/mockup.png",
+          "alt": "Pantallas de IDAP con el tablero, la lista de equipos y el historial de inspecciones",
+          "ajuste": "contener",
+          "fondo": "oscuro"
+        }
       }
     ]
   },
-  "tabla": {
-    "titulo": "Cada falla tiene su firma",
-    "subtitulo": "Esto es lo que busca un analista al abrir un espectro. La frecuencia donde aparece la amplitud, y en qué dirección, es lo que separa un desbalanceo de una desalineación o de un rodamiento en degradación.",
-    "columnas": [
-      "Falla",
-      "Dónde aparece",
-      "Dirección",
-      "Cómo se confirma"
-    ],
-    "filas": [
-      [
-        "Desbalanceo",
-        "1x RPM",
-        "Radial",
-        "Amplitud dominante en la primera armónica, fase estable y diferencia cercana a 90 grados entre horizontal y vertical."
-      ],
-      [
-        "Desalineación",
-        "2x RPM",
-        "Axial y radial",
-        "Componente axial elevada y desfase cercano a 180 grados entre ambos lados del acoplamiento."
-      ],
-      [
-        "Holgura mecánica",
-        "Armónicas múltiples",
-        "Radial",
-        "Serie larga de armónicas de la velocidad de giro, piso de ruido elevado y en ocasiones subarmónicas."
-      ],
-      [
-        "Rodamiento dañado",
-        "Frecuencias no síncronas",
-        "Radial",
-        "Frecuencias propias del rodamiento que no son múltiplo de la velocidad. Se detecta antes en espectro envolvente que en velocidad."
-      ],
-      [
-        "Engranaje",
-        "Frecuencia de engrane",
-        "Radial y axial",
-        "Frecuencia de engrane acompañada de bandas laterales separadas por la velocidad del eje afectado."
-      ],
-      [
-        "Paso de álabes",
-        "Número de álabes por RPM",
-        "Radial",
-        "Aparece en bombas y ventiladores, y crece ante recirculación, cavitación o problemas de flujo."
-      ],
-      [
-        "Resonancia",
-        "Frecuencia natural del sistema",
-        "Variable",
-        "Amplitud muy alta en una frecuencia fija que cambia de comportamiento al variar la velocidad de operación."
-      ],
-      [
-        "Origen eléctrico",
-        "Dos veces la frecuencia de línea",
-        "Radial",
-        "En motores, se distingue porque la amplitud desaparece de inmediato al cortar la alimentación."
-      ]
-    ],
-    "nota": "Los esquemas de la última columna son ilustrativos: representan la relación de amplitudes que delata cada falla, no la medición de un equipo en particular. El diagnóstico definitivo siempre considera la máquina, su velocidad de operación, la línea base histórica y el resto de las técnicas aplicadas.",
-    "patrones": [
-      "1x",
-      "2x",
-      "armonicas",
-      "no-sincrona",
-      "engrane",
-      "alabes",
-      "resonancia",
-      "electrica"
-    ]
+  "fotoPuntos": {
+    "src": "/images/gallery/campo-img-1.jpg",
+    "alt": "Especialistas de Grupo DIAPSA revisando un equipo rotativo en planta con instrumento de medición"
   },
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "No un archivo de mediciones para que lo interpretes tú. Un informe donde cada equipo trae su estado, el nivel medido contra la norma, el diagnóstico del analista y qué hacer al respecto. Las páginas que ves son de un informe real, con los datos de la planta omitidos.",
+    "contenido": [
+      "Estado de cada equipo en semáforo, para leerlo de un vistazo",
+      "Nivel medido contra el rango ISO que le corresponde",
+      "Diagnóstico del analista con la causa probable",
+      "Acción recomendada y con qué urgencia",
+      "Historial y tendencia consultables en IDAP"
+    ],
+    "paginas": [
+      "/images/informe/pagina-1.png",
+      "/images/informe/pagina-2.png"
+    ],
+    "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA, con el estado por disciplina, los niveles de vibración medidos contra los rangos ISO y las imágenes termográficas",
+    "dato": "3",
+    "datoTexto": "disciplinas en un solo informe"
+  },
+  "mostrarClientes": true,
   "faq": [
     {
       "question": "¿Qué es el análisis de vibraciones?",
@@ -188,7 +143,12 @@
   "cta": {
     "title": "¿Cuántos equipos rotativos críticos tiene tu planta?",
     "text": "Compártenos tu listado de equipos y te preparamos una ruta de medición con propuesta a la medida, sin compromiso.",
-    "whatsappMessage": "Hola, quiero cotizar análisis de vibraciones para mi planta."
+    "whatsappMessage": "Hola, quiero cotizar análisis de vibraciones para mi planta.",
+    "datos": [
+      "Registro REPSE vigente",
+      "Informe en menos de 2 días hábiles",
+      "Servicio en todo México"
+    ]
   },
   "relatedProducts": {
     "title": "Productos Relacionados",

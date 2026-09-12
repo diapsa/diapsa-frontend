@@ -5,35 +5,51 @@
         "children": [
             {
                 "label": "Análisis de Vibraciones Mecánicas",
-                "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+                "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas",
+                "descripcion": "Fallas en equipo rotativo, semanas antes del paro",
+                "icono": "vibraciones"
             },
             {
                 "label": "Termografía Infrarroja",
-                "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+                "href": "/servicios/monitoreo-condicion/termografia-infrarroja",
+                "descripcion": "Puntos calientes en tableros, motores y proceso",
+                "icono": "termografia"
             },
             {
                 "label": "Estudios Eléctricos Especializados",
-                "href": "/servicios/monitoreo-condicion/estudios-electricos"
+                "href": "/servicios/monitoreo-condicion/estudios-electricos",
+                "descripcion": "Calidad de energía y condición de motores",
+                "icono": "electricos"
             },
             {
                 "label": "Diagnóstico Integral de Maquinaria",
-                "href": "/servicios/monitoreo-condicion/diagnostico-de-maquinaria"
+                "href": "/servicios/monitoreo-condicion/diagnostico-de-maquinaria",
+                "descripcion": "Varias técnicas sobre un mismo equipo crítico",
+                "icono": "diagnostico"
             },
             {
                 "label": "Análisis de Ultrasonido",
-                "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+                "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
+                "descripcion": "Fugas, rodamientos y descargas eléctricas por sonido",
+                "icono": "ultrasonido"
             },
             {
                 "label": "Análisis de Aceite",
-                "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+                "href": "/servicios/monitoreo-condicion/analisis-de-aceite",
+                "descripcion": "Desgaste y contaminación del lubricante",
+                "icono": "aceite"
             },
             {
                 "label": "Tierras Físicas",
-                "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+                "href": "/servicios/monitoreo-condicion/tierras-fisicas",
+                "descripcion": "Medición y certificación del sistema de tierras",
+                "icono": "tierras"
             },
             {
                 "label": "Estudios de Arco Eléctrico",
-                "href": "/servicios/monitoreo-condicion/arco-electrico"
+                "href": "/servicios/monitoreo-condicion/arco-electrico",
+                "descripcion": "Nivel de riesgo y etiquetado por tablero",
+                "icono": "arco"
             }
         ]
     },
@@ -43,32 +59,46 @@
         "children": [
             {
                 "label": "Proyectos de Cámaras Térmicas",
-                "href": "/servicios/monitoreo-continuo/camaras-termicas"
+                "href": "/servicios/monitoreo-continuo/camaras-termicas",
+                "descripcion": "Vigilancia térmica permanente de áreas críticas",
+                "icono": "camaras"
             },
             {
                 "label": "Sensores de Vibración",
-                "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+                "href": "/servicios/monitoreo-continuo/sensores-vibracion",
+                "descripcion": "Monitoreo inalámbrico las 24 horas",
+                "icono": "sensores-vibracion"
             },
             {
                 "label": "Sensores Acústicos",
-                "href": "/servicios/monitoreo-continuo/sensores-acusticos"
+                "href": "/servicios/monitoreo-continuo/sensores-acusticos",
+                "descripcion": "Fugas y descargas detectadas en línea",
+                "icono": "acusticos"
             }
         ]
     },
     {
         "label": "DIAPSA START",
-        "href": "/servicios/diapsa-start"
+        "href": "/servicios/diapsa-start",
+        "descripcion": "Monitoreo de condición desde cero, paso a paso",
+        "icono": "start"
     },
     {
         "label": "Conoce IDAP",
-        "href": "/servicios/idap"
+        "href": "/servicios/idap",
+        "descripcion": "La plataforma donde viven tus informes y tendencias",
+        "icono": "idap"
     },
     {
         "label": "Detección de Gas",
-        "href": "/servicios/deteccion-gas"
+        "href": "/servicios/deteccion-gas",
+        "descripcion": "Cumplimiento PPCIEM y emisiones de metano",
+        "icono": "gas"
     },
     {
         "label": "Diagnostico Situacional",
-        "href": "/servicios/diagnostico-situacional"
+        "href": "/servicios/diagnostico-situacional",
+        "descripcion": "Referencia objetiva del estado de tus activos",
+        "icono": "situacional"
     }
 ]

@@ -9,10 +9,23 @@ export interface ServiceHeader {
   backgroundImage: string;
 }
 
+export interface FotoPunto {
+  src: string;
+  alt: string;
+  /** "contener" para renders con fondo transparente; si falta, la imagen va a sangre. */
+  ajuste?: "cubrir" | "contener";
+  /** Fondo detrás de un render contenido: claro (degradado gris) u oscuro (azul marino). */
+  fondo?: "claro" | "oscuro";
+}
+
 export interface ContentItem {
   id: string;
   title: string;
   content: string;
+  /** Imagen que se muestra cuando este punto está seleccionado. */
+  foto?: FotoPunto;
+  /** Gráfico esquemático en lugar de foto, por clave: "paros". Tiene prioridad sobre foto. */
+  grafico?: string;
 }
 
 export interface ServiceContent {
@@ -45,6 +58,29 @@ export interface GaleriaFoto {
   alt: string;
 }
 
+export interface ServiceEntregable {
+  /** Antetítulo corto, ej. "El entregable". */
+  etiqueta: string;
+  titulo: string;
+  descripcion: string;
+  /** Qué trae el informe, un renglón por punto. Se muestra como lista. */
+  contenido: string[];
+  /** Imágenes de las páginas del informe, en orden. Se muestran dos. */
+  paginas: string[];
+  altPaginas: string;
+  /** Cifra del sello flotante, ej. "3". */
+  dato: string;
+  datoTexto: string;
+}
+
+export interface ZonaSemaforo {
+  /** bueno | precaucion | alarma */
+  clave: string;
+  etiqueta: string;
+  /** Qué significa ese color y qué pasa cuando un equipo sale en él. */
+  texto: string;
+}
+
 export interface ServiceTabla {
   titulo: string;
   subtitulo?: string;
@@ -61,6 +97,8 @@ export interface ServiceCta {
   text: string;
   /** Mensaje prellenado para el enlace de WhatsApp. */
   whatsappMessage: string;
+  /** Tres datos de contratación confirmados, ej. "Registro REPSE vigente". */
+  datos?: string[];
 }
 
 export interface Servicio {
@@ -83,6 +121,13 @@ export interface Servicio {
   certificacion?: string;
   /** Fotos reales de campo; si existen, la página muestra la franja "DIAPSA en campo". */
   galeria?: GaleriaFoto[];
-  /** Tabla técnica de referencia. */
-  tabla?: ServiceTabla;
+  /** El informe que recibe el cliente: se enseña y se dice qué trae. */
+  entregable?: ServiceEntregable;
+  /** Diagramas a dibujar, por clave: "flujo-servicio". La curva P-F y los
+      modos de falla viven en la guía del blog (types/guia.ts), no aquí. */
+  diagramas?: string[];
+  /** Foto que acompaña a los puntos clave del servicio. */
+  fotoPuntos?: GaleriaFoto;
+  /** Si es verdadero, cierra con la pared de logotipos de clientes. */
+  mostrarClientes?: boolean;
 }

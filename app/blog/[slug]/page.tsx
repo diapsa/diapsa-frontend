@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getServicioPorArticulo } from "@/lib/recursos";
+import { getGuiaPorArticulo } from "@/lib/guias";
+import ComplementosGuia from "@/components/organisms/ComplementosGuia";
 import Link from "next/link";
 import JsonLd, { createBreadcrumbSchema } from "@/components/atoms/JsonLd";
 import ArticleIndex, { type ArticleIndexItem } from "@/components/molecules/ArticleIndex";
@@ -105,6 +107,9 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     const preparedContent = prepareTiptapContent(blog.content);
     // Servicio de DIAPSA que ejecuta la técnica que explica el artículo.
     const servicioRelacionado = getServicioPorArticulo(slug);
+    // Bloques técnicos dibujados en código (curva P-F, modos de falla,
+    // semáforo) que se agregan a esta guía, si los tiene.
+    const guia = getGuiaPorArticulo(slug);
     const articleIndexItems: ArticleIndexItem[] = [
         { id: "contenido", label: "Contenido" },
         ...preparedContent.h2Items,
@@ -145,6 +150,8 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     <section id="contenido" className="scroll-mt-28 border-t border-gray-100 pt-8 lg:pt-10">
                         <TiptapRenderer content={preparedContent.content} />
                     </section>
+
+                    {guia && <ComplementosGuia guia={guia} />}
 
                     {/* Servicio que corresponde al tema del artículo. Quien
                         acaba de leer sobre una técnica es el mejor momento
