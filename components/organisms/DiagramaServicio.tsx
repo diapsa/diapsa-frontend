@@ -1,5 +1,6 @@
 import Antetitulo from "../atoms/Antetitulo";
 import GraficoAhorro from "../atoms/GraficoAhorro";
+import type { FlujoPaso } from "@/types/servicio";
 
 /**
  * DiagramaServicio
@@ -17,6 +18,8 @@ import GraficoAhorro from "../atoms/GraficoAhorro";
 type Props = {
   clave: string;
   paso?: string;
+  /** Textos propios del servicio para los cinco pasos del flujo. */
+  flujo?: FlujoPaso[];
 };
 
 /* ------------------------------------------------------------------ */
@@ -224,13 +227,15 @@ const PASOS = [
   },
 ];
 
-function FlujoServicio() {
+function FlujoServicio({ textos }: { textos?: FlujoPaso[] }) {
+  // Cada servicio puede redactar sus pasos; el ícono se conserva por posición.
+  const pasos = PASOS.map((paso, i) => ({ ...paso, ...(textos?.[i] ?? {}) }));
   return (
     <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:gap-3">
-      {PASOS.map((paso, indice) => (
+      {pasos.map((paso, indice) => (
         <li key={paso.titulo} className="relative">
           {/* Conector hacia el siguiente paso, sólo en escritorio */}
-          {indice < PASOS.length - 1 && (
+          {indice < pasos.length - 1 && (
             <span
               aria-hidden="true"
               className="absolute -right-2 top-9 hidden h-0.5 w-4 bg-secondary/50 lg:block"
@@ -258,7 +263,7 @@ function FlujoServicio() {
 
 /* ------------------------------------------------------------------ */
 
-export default function DiagramaServicio({ clave, paso }: Props) {
+export default function DiagramaServicio({ clave, paso, flujo }: Props) {
   if (clave === "curva-pf") {
     return (
       <section className="w-full bg-gray-50 py-12 lg:py-20">
@@ -294,7 +299,7 @@ export default function DiagramaServicio({ clave, paso }: Props) {
               cinco pasos de cada servicio.
             </p>
           </div>
-          <FlujoServicio />
+          <FlujoServicio textos={flujo} />
 
           {/* En qué se traduce el proceso. Los cinco pasos explican el
               método; esto enseña el resultado: el mismo problema cuesta

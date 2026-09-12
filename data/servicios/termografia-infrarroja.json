@@ -22,29 +22,172 @@
   ],
   "header": {
     "title": "Termografía Infrarroja",
-    "subtitle": "Detección temprana de fallas mediante análisis térmico de precisión",
+    "subtitle": "Puntos calientes en tableros, subestaciones y motores, detectados con el equipo en operación",
     "backgroundImage": "/images/fondo-hero.webp"
   },
+  "seoDescription": "Termografía infrarroja industrial en México: inspección de tableros, subestaciones y motores con cámara térmica y termógrafos certificados. Informe en menos de 2 días hábiles.",
   "content": {
-    "title": null,
-    "subtitle": null,
-    "image": "/images/disciplinas/termografia.jpg",
+    "title": "Vemos el calor antes de que se vuelva falla",
+    "subtitle": "Inspeccionamos tableros, subestaciones y equipos con cámara térmica, en operación y con carga, y te decimos qué punto caliente atender, por qué y con qué urgencia.",
+    "image": "/images/servicios/termografia-infrarroja/termograma-subestacion.jpg",
     "items": [
       {
         "id": "aplicaciones",
-        "title": "Aplicaciones",
-        "content": "La termografía infrarroja se utiliza para detectar puntos calientes en equipos eléctricos, pérdidas de energía en sistemas térmicos, y anomalías en maquinaria industrial. Esta tecnología permite identificar problemas antes de que se conviertan en fallas críticas."
+        "title": "Dónde se aplica",
+        "content": "Tableros y centros de carga, subestaciones y transformadores, motores, rodamientos, hornos, aislamientos y trampas de vapor. Todo lo que se calienta antes de fallar.",
+        "foto": {
+          "src": "/images/servicios/termografia-infrarroja/termograma-subestacion.jpg",
+          "alt": "Termograma de una subestación eléctrica con los aisladores y conexiones en color según su temperatura"
+        }
       },
       {
         "id": "beneficios",
-        "title": "Beneficios",
-        "content": "Reduce costos de mantenimiento, previene paros no programados, aumenta la vida útil de los equipos, mejora la eficiencia energética y garantiza la seguridad operacional de sus instalaciones."
+        "title": "Qué ganas",
+        "content": "Menos paros por falla eléctrica, menos riesgo de incendio en tableros y evidencia para cumplir con NFPA 70B y con tu aseguradora.",
+        "grafico": "paros",
+        "foto": {
+          "src": "/images/servicios/termografia-infrarroja/subestacion.jpg",
+          "alt": "Subestación eléctrica en operación bajo cielo despejado"
+        }
       },
       {
-        "id": "metodologia",
-        "title": "Metodología",
-        "content": "Utilizamos cámaras termográficas de última generación y seguimos estándares internacionales como ISO 18434-1 y ASNT para garantizar resultados precisos y confiables en cada inspección."
+        "id": "modalidades",
+        "title": "Puntual o continuo",
+        "content": "Rutas periódicas con cámara térmica y termógrafo certificado, o cámaras fijas que vigilan las 24 horas donde un incendio no da tiempo de reaccionar.",
+        "foto": {
+          "src": "/images/gallery/campo-img-7.jpg",
+          "alt": "Termógrafo de DIAPSA con equipo de protección contra arco eléctrico inspeccionando un tablero con cámara térmica"
+        }
+      },
+      {
+        "id": "plataforma-idap",
+        "title": "Tus datos viven en IDAP",
+        "content": "Cada hallazgo con su imagen térmica y visual, historial por equipo y tendencias consultables en línea cuando las necesites.",
+        "foto": {
+          "src": "/images/idap/mockup.png",
+          "alt": "Pantallas de IDAP con el tablero, la lista de equipos y el historial de inspecciones",
+          "ajuste": "contener",
+          "fondo": "oscuro"
+        }
       }
+    ]
+  },
+  "fotoPuntos": {
+    "src": "/images/gallery/campo-img-7.jpg",
+    "alt": "Termógrafo de DIAPSA inspeccionando un tablero eléctrico con cámara térmica"
+  },
+  "comparador": {
+    "titulo": "El problema no se ve. La cámara sí lo ve.",
+    "texto": "Los mismos aisladores de una subestación, fotografiados en la misma inspección. A simple vista no hay nada que reportar; en la imagen térmica el conector marcado está a 45 grados mientras los vecinos siguen fríos. Ese es el hallazgo que evita el paro.",
+    "visual": {
+      "src": "/images/servicios/termografia-infrarroja/par-visual.jpg",
+      "alt": "Aisladores y conectores de una subestación eléctrica vistos a simple vista"
+    },
+    "termica": {
+      "src": "/images/servicios/termografia-infrarroja/termograma-punto-caliente.jpg",
+      "alt": "Los mismos aisladores en imagen térmica, con el conector caliente marcado por la cámara"
+    },
+    "pie": "Imágenes de una inspección real de DIAPSA, con la identificación de la planta omitida. La temperatura se lee en operación y con carga; por eso la inspección no requiere detener nada."
+  },
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujo": [
+    {
+      "titulo": "Inspección en campo",
+      "texto": "Ruta por tableros y equipos con cámara térmica, en operación y con carga, sin abrir nada que no haga falta."
+    },
+    {
+      "titulo": "Análisis de imágenes",
+      "texto": "Un termógrafo certificado compara cada imagen contra la fase vecina, el ambiente y la carga del momento."
+    },
+    {
+      "titulo": "Diagnóstico",
+      "texto": "Se nombra el componente, la causa probable y la severidad por diferencia de temperatura, no solo un color rojo."
+    },
+    {
+      "titulo": "Recomendación",
+      "texto": "Qué apretar, limpiar o reemplazar, con qué urgencia y qué vigilar en la siguiente ruta."
+    },
+    {
+      "titulo": "Seguimiento",
+      "texto": "El punto con hallazgo entra a reinspección hasta que se corrige y la temperatura vuelve a lo normal."
+    }
+  ],
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "No una carpeta de fotos térmicas para que las interpretes tú. Un informe donde cada hallazgo trae su imagen térmica y su foto visual, la temperatura contra la referencia, el diagnóstico del termógrafo y qué hacer al respecto. Las páginas que ves son de un informe real, con los datos de la planta omitidos.",
+    "contenido": [
+      "Imagen térmica y foto visual de cada hallazgo, lado a lado",
+      "Temperatura máxima y diferencia contra la referencia",
+      "Estado de cada equipo en semáforo, para leerlo de un vistazo",
+      "Componente afectado y causa probable",
+      "Acción recomendada y con qué urgencia"
+    ],
+    "paginas": [
+      "/images/informe/pagina-1.png",
+      "/images/informe/pagina-2.png"
+    ],
+    "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA, con el estado por disciplina y las imágenes termográficas de los hallazgos",
+    "dato": "3",
+    "datoTexto": "disciplinas en un solo informe",
+    "idap": {
+      "src": "/images/idap/capturas/inspeccion-termografia.jpg",
+      "alt": "Inspección integral en IDAP: pestaña de termografía con la imagen térmica del motor, la temperatura máxima, la ambiente y los valores de cada punto marcado",
+      "texto": "Así se ve la misma inspección dentro de IDAP: la imagen térmica con los puntos marcados, la temperatura máxima contra la ambiente y el estado del equipo, junto a las otras disciplinas medidas ese día."
+    }
+  },
+  "mostrarClientes": true,
+  "faq": [
+    {
+      "question": "¿Qué es la termografía infrarroja industrial?",
+      "answer": "Es la inspección de equipos con una cámara que ve la temperatura en lugar de la luz. Un componente que se está degradando, una conexión floja o un rodamiento sin lubricación se calientan antes de fallar, y la cámara lo muestra sin tocar el equipo ni detenerlo."
+    },
+    {
+      "question": "¿Qué fallas detecta la termografía?",
+      "answer": "Conexiones flojas o sulfatadas en tableros, desbalance de fases, fusibles y contactores degradados, transformadores con puntos calientes, rodamientos y acoplamientos sobrecalentados, refractario dañado en hornos, aislamiento perdido en tuberías y trampas de vapor que no cierran."
+    },
+    {
+      "question": "¿Se puede hacer con la planta operando?",
+      "answer": "Sí, y de hecho debe hacerse así. La inspección se realiza con el equipo en operación y con carga, porque un tablero sin carga no muestra los puntos calientes. No hay que parar nada."
+    },
+    {
+      "question": "¿Cada cuánto conviene inspeccionar?",
+      "answer": "Para tableros y subestaciones, una vez al año es la práctica mínima que recomienda NFPA 70B, y cada seis meses en plantas con carga alta o ambientes agresivos. Los equipos con hallazgo se reinspeccionan hasta que se corrigen."
+    },
+    {
+      "question": "¿Qué norma respalda el servicio?",
+      "answer": "Nuestros termógrafos están certificados conforme a ISO 18436-7 y la evaluación de severidad sigue los criterios de NFPA 70B y de la norma ISO 18434-1 para termografía en monitoreo de condición."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "El listado de tableros, subestaciones y equipos que quieres cubrir, o el número aproximado, y si la planta exige documentación de ingreso. Con eso preparamos la propuesta con el número de puntos y la ruta."
+    }
+  ],
+  "certificacion": "Termógrafos certificados · ISO 18436-7",
+  "galeria": [
+    {
+      "src": "/images/servicios/termografia-infrarroja/subestacion.jpg",
+      "alt": "Subestación eléctrica inspeccionada por DIAPSA"
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/termograma-aislador.jpg",
+      "alt": "Termograma de un aislador de subestación con la conexión superior marcada por la cámara"
+    },
+    {
+      "src": "/images/disciplinas/termografia.jpg",
+      "alt": "Cámara térmica en manos de un termógrafo de DIAPSA durante una inspección en planta"
+    }
+  ],
+  "cta": {
+    "title": "¿Cuántos tableros y equipos críticos tiene tu planta?",
+    "text": "Compártenos tu listado de tableros, subestaciones y equipos y te preparamos una ruta de inspección con propuesta a la medida, sin compromiso.",
+    "whatsappMessage": "Hola, quiero cotizar termografía infrarroja para mi planta.",
+    "datos": [
+      "Registro REPSE vigente",
+      "Informe en menos de 2 días hábiles",
+      "Servicio en todo México"
     ]
   },
   "relatedProducts": {
