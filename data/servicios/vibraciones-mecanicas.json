@@ -34,22 +34,40 @@
       {
         "id": "aplicaciones",
         "title": "Dónde se aplica",
-        "content": "Motores, bombas, ventiladores, compresores, reductores y turbinas. Todo equipo rotativo cuyo paro detenga la línea."
+        "content": "Motores, bombas, ventiladores, compresores, reductores y turbinas. Todo equipo rotativo cuyo paro detenga la línea.",
+        "foto": {
+          "src": "/images/motor.png",
+          "alt": "Motor eléctrico en corte, con el rotor y el devanado a la vista",
+          "ajuste": "contener"
+        }
       },
       {
         "id": "beneficios",
         "title": "Qué ganas",
-        "content": "Menos paros no programados, refacciones compradas con tiempo e intervenciones agendadas en ventana de producción."
+        "content": "Menos paros no programados, refacciones compradas con tiempo e intervenciones agendadas en ventana de producción.",
+        "foto": {
+          "src": "/images/gallery/campo-img-1.jpg",
+          "alt": "Especialistas de Grupo DIAPSA revisando un equipo rotativo en planta con instrumento de medición"
+        }
       },
       {
         "id": "modalidades",
         "title": "Puntual o continuo",
-        "content": "Rutas periódicas con analizador portátil, o sensores en línea las 24 horas donde la falla no da tiempo de reaccionar."
+        "content": "Rutas periódicas con analizador portátil, o sensores en línea las 24 horas donde la falla no da tiempo de reaccionar.",
+        "foto": {
+          "src": "/images/monitoreo-continuo/wireless-vibration-sensor-kcf.png",
+          "alt": "Sensor inalámbrico de vibración para monitoreo continuo",
+          "ajuste": "contener"
+        }
       },
       {
         "id": "plataforma-idap",
         "title": "Tus datos viven en IDAP",
-        "content": "Historial por equipo, tendencias y reportes consultables en línea cuando los necesites, sin buscar un PDF en el correo."
+        "content": "Historial por equipo, tendencias y reportes consultables en línea cuando los necesites, sin buscar un PDF en el correo.",
+        "foto": {
+          "src": "/images/idap/idap-dashboard.png",
+          "alt": "Tablero de IDAP con el estado de los equipos por semáforo y las últimas mediciones"
+        }
       }
     ]
   },
@@ -79,52 +97,7 @@
     "dato": "3",
     "datoTexto": "disciplinas en un solo informe"
   },
-  "fichaCompras": {
-    "titulo": "Los papeles y los tiempos, sin que tengas que preguntarlos",
-    "subtitulo": "Si tu área de compras necesita documentación antes de darnos de alta como proveedor, esto es lo que entregamos. Si falta algo de tu lista, dínoslo y lo resolvemos antes de cotizar.",
-    "nota": "Toda la documentación se entrega actualizada al momento del alta y se renueva durante la vigencia del contrato. Si tu planta exige un formato, una plataforma de proveedores o documentación de seguridad propia para el ingreso, lo atendemos antes de la primera visita.",
-    "bloques": [
-      {
-        "icono": "documentacion",
-        "titulo": "Documentación",
-        "puntos": [
-          "Registro REPSE vigente",
-          "Alta y pago de IMSS del personal que entra a sitio",
-          "Constancia de situación fiscal actualizada",
-          "Documentación de seguridad que exija tu planta para el ingreso"
-        ]
-      },
-      {
-        "icono": "tiempos",
-        "titulo": "Tiempos comprometidos",
-        "puntos": [
-          "Informe entregado en menos de 2 días hábiles desde la inspección",
-          "Hallazgo crítico comunicado en cuanto se detecta, sin esperar al informe",
-          "Cotización a partir del listado de equipos y puntos por medir",
-          "Atención de urgencia según disponibilidad de ruta"
-        ]
-      },
-      {
-        "icono": "cotizacion",
-        "titulo": "Cómo se cotiza",
-        "puntos": [
-          "Por equipo o por punto de medición, según convenga al alcance",
-          "Servicio único, programa anual o por evento",
-          "El precio baja por volumen de equipos en la misma visita",
-          "El traslado se cotiza según la ubicación de la planta"
-        ]
-      },
-      {
-        "icono": "cobertura",
-        "titulo": "Cobertura",
-        "puntos": [
-          "Base en Saltillo, Coahuila",
-          "Servicio en todo México",
-          "Proyectos en Sudamérica"
-        ]
-      }
-    ]
-  },
+  "mostrarClientes": true,
   "faq": [
     {
       "question": "¿Qué es el análisis de vibraciones?",
@@ -169,7 +142,12 @@
   "cta": {
     "title": "¿Cuántos equipos rotativos críticos tiene tu planta?",
     "text": "Compártenos tu listado de equipos y te preparamos una ruta de medición con propuesta a la medida, sin compromiso.",
-    "whatsappMessage": "Hola, quiero cotizar análisis de vibraciones para mi planta."
+    "whatsappMessage": "Hola, quiero cotizar análisis de vibraciones para mi planta.",
+    "datos": [
+      "Registro REPSE vigente",
+      "Informe en menos de 2 días hábiles",
+      "Servicio en todo México"
+    ]
   },
   "relatedProducts": {
     "title": "Productos Relacionados",

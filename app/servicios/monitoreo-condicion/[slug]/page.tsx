@@ -10,7 +10,7 @@ import JsonLd, {
 } from "@/components/atoms/JsonLd";
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
-import FichaCompras from "@/components/organisms/FichaCompras";
+import ClientesLogos from "@/components/organisms/ClientesLogos";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
@@ -152,6 +152,7 @@ export default async function ServicePage({
     const detailItems = service.content.items;
     // Foto que acompaña a los puntos clave; si el servicio no trae una
     // específica se usa la imagen principal del contenido.
+    // Es la imagen de respaldo: cada punto puede traer la suya en el JSON.
     const fotoPuntos =
         service.fotoPuntos ??
         (service.content.image ? { src: service.content.image, alt: service.header.title } : undefined);
@@ -272,10 +273,10 @@ export default async function ServicePage({
                 </section>
             )}
 
-            {/* Va antes de las preguntas porque el comprador llega hasta
-                aquí buscando exactamente esto y no debería tener que leer
-                el FAQ completo para encontrarlo. */}
-            {service.fichaCompras && <FichaCompras ficha={service.fichaCompras} paso={paso()} />}
+            {/* Cierre con prueba, no con trámite: quién ya confía. Los datos
+                de contratación van en una línea dentro de la banda de
+                cotización, más abajo. */}
+            {service.mostrarClientes && <ClientesLogos paso={paso()} />}
 
             {/* Preguntas frecuentes: responden las búsquedas de cola larga
                 ("qué es", "cada cuánto", "qué norma", "cuánto cuesta") y
@@ -353,6 +354,20 @@ export default async function ServicePage({
                         <p className="text-primary/80 text-lg leading-relaxed max-w-2xl mx-auto mb-8 text-justify">
                             {service.cta.text}
                         </p>
+                        {/* Lo que el área de compras pregunta primero, en una
+                            línea y confirmado: sin sección aparte. */}
+                        {service.cta.datos && service.cta.datos.length > 0 && (
+                            <ul className="mb-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+                                {service.cta.datos.map((dato) => (
+                                    <li key={dato} className="flex items-center gap-2 text-sm font-semibold text-primary">
+                                        <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                        </svg>
+                                        {dato}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a
                                 href={`https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent(service.cta.whatsappMessage)}`}

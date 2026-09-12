@@ -9,10 +9,19 @@ export interface ServiceHeader {
   backgroundImage: string;
 }
 
+export interface FotoPunto {
+  src: string;
+  alt: string;
+  /** "contener" para renders con fondo transparente; si falta, la imagen va a sangre. */
+  ajuste?: "cubrir" | "contener";
+}
+
 export interface ContentItem {
   id: string;
   title: string;
   content: string;
+  /** Imagen que se muestra cuando este punto está seleccionado. */
+  foto?: FotoPunto;
 }
 
 export interface ServiceContent {
@@ -68,20 +77,6 @@ export interface ZonaSemaforo {
   texto: string;
 }
 
-export interface BloqueCompras {
-  /** documentacion | tiempos | cotizacion | cobertura */
-  icono: string;
-  titulo: string;
-  puntos: string[];
-}
-
-export interface ServiceFichaCompras {
-  titulo: string;
-  subtitulo?: string;
-  nota?: string;
-  bloques: BloqueCompras[];
-}
-
 export interface ServiceTabla {
   titulo: string;
   subtitulo?: string;
@@ -98,6 +93,8 @@ export interface ServiceCta {
   text: string;
   /** Mensaje prellenado para el enlace de WhatsApp. */
   whatsappMessage: string;
+  /** Tres datos de contratación confirmados, ej. "Registro REPSE vigente". */
+  datos?: string[];
 }
 
 export interface Servicio {
@@ -127,6 +124,6 @@ export interface Servicio {
   diagramas?: string[];
   /** Foto que acompaña a los puntos clave del servicio. */
   fotoPuntos?: GaleriaFoto;
-  /** Lo que pregunta el área de compras: papeles, tiempos, cobro y cobertura. */
-  fichaCompras?: ServiceFichaCompras;
+  /** Si es verdadero, cierra con la pared de logotipos de clientes. */
+  mostrarClientes?: boolean;
 }
