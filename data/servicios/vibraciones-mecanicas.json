@@ -96,7 +96,12 @@
     ],
     "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA, con el estado por disciplina, los niveles de vibración medidos contra los rangos ISO y las imágenes termográficas",
     "dato": "3",
-    "datoTexto": "disciplinas en un solo informe"
+    "datoTexto": "disciplinas en un solo informe",
+    "idap": {
+      "src": "/images/idap/capturas/inspeccion-vibraciones.jpg",
+      "alt": "Inspección integral en IDAP: pestaña de vibraciones con la velocidad y la aceleración de cada punto en las tres direcciones, calificadas en semáforo",
+      "texto": "Así se ve la misma inspección dentro de IDAP: cada punto con su velocidad y aceleración en las tres direcciones, calificado en semáforo contra el criterio, junto a las otras disciplinas medidas ese día."
+    }
   },
   "mostrarClientes": true,
   "faq": [

@@ -71,6 +71,13 @@ export interface ServiceEntregable {
   /** Cifra del sello flotante, ej. "3". */
   dato: string;
   datoTexto: string;
+  /** Captura de la misma inspección dentro de IDAP. Si existe, la vitrina
+      ofrece las dos vistas, IDAP y PDF, y arranca en IDAP. */
+  idap?: {
+    src: string;
+    alt: string;
+    texto?: string;
+  };
 }
 
 export interface ZonaSemaforo {
