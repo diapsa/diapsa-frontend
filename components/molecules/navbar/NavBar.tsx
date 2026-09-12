@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Button from "@/components/atoms/Button";
 import Logo from "@/components/atoms/Logo";
 import NavLink from "@/components/atoms/NavLink";
-import Dropdown from "@/components/atoms/Dropdown";
+import MegaMenu, { type ColumnaMenu } from "./MegaMenu";
 import Link from "next/link";
 import services from '@/data/servicios.json'
 
@@ -12,16 +12,51 @@ import services from '@/data/servicios.json'
 // de Gas" sueltos arriba y un cajón de sastre llamado "Más servicios". Ahora
 // todos los servicios viven bajo una sola entrada: Servicios.
 
-// Todo lo institucional cuelga de "Empresa" en vez de ocupar la tira principal.
-const empresaLinks = [
-    { label: "Acerca de Nosotros", href: "/acerca-de" },
-    { label: "Metodología", href: "/metodologia" },
-    { label: "Galería", href: "/acerca-de#galeria" },
-    { label: "Blog", href: "/blog" },
-    { label: "Webinar", href: "/webinar" },
-    { label: "Folleto digital", href: "/folletodigital" },
-    { label: "Contacto", href: "/contacto" },
+// Servicios se despliega en un panel a lo ancho (2026-09-12), al estilo de
+// Dynamox y Fracttal: tres columnas con todos los servicios a la vista, cada
+// uno con ícono y una línea que dice qué es. Antes era una lista angosta con
+// un subpanel lateral que escondía las disciplinas detrás de dos niveles.
+const [monitoreoCondicion, monitoreoContinuo, ...sueltos] = services;
+const columnasServicios: ColumnaMenu[] = [
+    {
+        titulo: monitoreoCondicion.label,
+        href: monitoreoCondicion.href,
+        items: monitoreoCondicion.children ?? [],
+        ancho: 2,
+    },
+    {
+        titulo: monitoreoContinuo.label,
+        href: monitoreoContinuo.href,
+        items: monitoreoContinuo.children ?? [],
+    },
+    {
+        titulo: "Más servicios",
+        items: sueltos,
+    },
 ];
+
+// Todo lo institucional cuelga de "Empresa" en vez de ocupar la tira principal.
+const columnasEmpresa: ColumnaMenu[] = [
+    {
+        titulo: "Conócenos",
+        items: [
+            { label: "Acerca de Nosotros", href: "/acerca-de", descripcion: "Quiénes somos y desde cuándo", icono: "empresa" },
+            { label: "Metodología", href: "/metodologia", descripcion: "Cómo llevamos un programa predictivo", icono: "metodologia" },
+            { label: "Galería", href: "/acerca-de#galeria", descripcion: "Nuestra gente y nuestros equipos en campo", icono: "galeria" },
+        ],
+    },
+    {
+        titulo: "Recursos",
+        items: [
+            { label: "Blog", href: "/blog", descripcion: "Guías técnicas de mantenimiento predictivo", icono: "blog" },
+            { label: "Webinar", href: "/webinar", descripcion: "Próxima sesión en línea, sin costo", icono: "camaras" },
+            { label: "Folleto digital", href: "/folletodigital", descripcion: "Todos los servicios en un solo documento", icono: "folleto" },
+            { label: "Contacto", href: "/contacto", descripcion: "Escríbenos o llámanos", icono: "contacto" },
+        ],
+    },
+];
+// El menú móvil sigue usando la lista plana.
+const empresaLinks = columnasEmpresa.flatMap((c) => c.items);
 
 export default function NavBar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -50,10 +85,7 @@ export default function NavBar() {
 
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex items-center gap-5 xl:gap-7 text-white whitespace-nowrap">
-                            <Dropdown
-                                trigger="Servicios"
-                                items={services}
-                            />
+                            <MegaMenu trigger="Servicios" columnas={columnasServicios} />
                             <NavLink href="/cursos">
                                 Cursos
                             </NavLink>
@@ -63,10 +95,7 @@ export default function NavBar() {
                             <NavLink href="/casos-exito">
                                 Casos de Éxito
                             </NavLink>
-                            <Dropdown
-                                trigger="Empresa"
-                                items={empresaLinks}
-                            />
+                            <MegaMenu trigger="Empresa" columnas={columnasEmpresa} />
                         </div>
                     </div>
 
