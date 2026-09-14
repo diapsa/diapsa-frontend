@@ -12,7 +12,7 @@ import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
 import ClientesLogos from "@/components/organisms/ClientesLogos";
 import ComparadorTermico from "@/components/organisms/ComparadorTermico";
-import ComparadorSonoro from "@/components/organisms/ComparadorSonoro";
+import GraficaSonora from "@/components/organisms/GraficaSonora";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
@@ -228,9 +228,10 @@ export default async function ServicePage({
                 <ComparadorTermico comparador={service.comparador} paso={paso()} />
             )}
 
-            {/* Diferenciador de ultrasonido: se oye la diferencia. */}
+            {/* Diferenciador de ultrasonido: la diferencia entre una señal
+                sana y una con falla, dibujada, con la escala de decibeles. */}
             {service.comparadorSonoro && (
-                <ComparadorSonoro comparador={service.comparadorSonoro} paso={paso()} />
+                <GraficaSonora comparador={service.comparadorSonoro} paso={paso()} />
             )}
 
             <ServiceProof certificacion={service.certificacion} />
