@@ -29,7 +29,11 @@ jobs:
 
                 cd ${{ secrets.APP_PATH }}
 
+                # npm install reescribe package-lock.json en el servidor y
+                # después git pull se niega a pisarlo. El lock bueno es el
+                # del repositorio: se descarta el local antes de traer código.
                 echo "Pulling latest code"
+                git checkout -- package-lock.json || true
                 git pull origin main
 
                 echo "Installing dependencies"
