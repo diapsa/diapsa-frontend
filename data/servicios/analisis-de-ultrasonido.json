@@ -22,31 +22,352 @@
   ],
   "header": {
     "title": "Análisis de Ultrasonido",
-    "subtitle": "Detección de fugas, descargas eléctricas y fallas mecánicas",
+    "subtitle": "Rodamientos, fugas y descargas eléctricas detectados por el sonido que el oído no alcanza",
     "backgroundImage": "/images/fondo-hero.webp"
   },
+  "seoDescription": "Ultrasonido industrial en México: detección de fallas en rodamientos, fugas de aire comprimido y descargas eléctricas con analistas certificados. Informe en menos de 2 días hábiles.",
   "content": {
-    "title": "¿Qué es el Análisis de Ultrasonido?",
-    "subtitle": "Tecnología ultrasónica para mantenimiento predictivo",
-    "image": "/images/disciplinas/ultrasonido-img.jpg",
+    "title": "Oímos la falla antes de que se sienta",
+    "subtitle": "Un rodamiento que empieza a fallar, una fuga de aire o una descarga en un tablero suenan mucho antes de verse o de calentar. Con el detector de ultrasonido los oímos, los medimos en decibeles y te decimos qué atender y con qué urgencia.",
+    "image": "/images/servicios/analisis-de-ultrasonido/ultraprobe-en-motor.jpg",
     "items": [
       {
         "id": "aplicaciones",
-        "title": "Aplicaciones",
-        "content": "El ultrasonido industrial detecta fugas de aire comprimido, vapor y gases, identifica descargas parciales en equipos eléctricos, evalúa el estado de rodamientos, y detecta cavitación en bombas y válvulas."
+        "title": "Dónde se aplica",
+        "content": "Rodamientos de motores y bombas, fugas de aire comprimido, vapor y gases, descargas parciales y efecto corona en tableros y subestaciones, trampas de vapor y válvulas que no cierran.",
+        "foto": {
+          "src": "/images/servicios/analisis-de-ultrasonido/ultraprobe-en-motor.jpg",
+          "alt": "Detector de ultrasonido apoyado en el rodamiento de un motor de bomba durante una ruta de medición"
+        }
       },
       {
         "id": "beneficios",
-        "title": "Beneficios",
-        "content": "Reduce pérdidas energéticas por fugas, previene fallas eléctricas catastróficas, optimiza la lubricación de rodamientos, mejora la eficiencia de sistemas neumáticos e hidráulicos, y aumenta la seguridad operacional."
+        "title": "Qué ganas",
+        "content": "Menos paros por rodamiento, lubricación en el momento justo y no por calendario, aire comprimido que deja de escaparse y tableros que no llegan al arco.",
+        "grafico": "paros",
+        "foto": {
+          "src": "/images/servicios/analisis-de-ultrasonido/analista-con-audifonos.jpg",
+          "alt": "Analista de DIAPSA con audífonos midiendo ultrasonido en un equipo de planta"
+        }
       },
       {
-        "id": "metodologia",
-        "title": "Metodología",
-        "content": "Empleamos detectores ultrasónicos de última generación y seguimos protocolos de inspección certificados. Nuestros técnicos están certificados en ultrasonido Nivel II según ASNT SNT-TC-1A."
+        "id": "modalidades",
+        "title": "Puntual o continuo",
+        "content": "Rutas periódicas con detector y audífonos por un analista certificado, o sensores acústicos en línea donde una fuga o un rodamiento no pueden esperar a la siguiente visita.",
+        "foto": {
+          "src": "/images/servicios/analisis-de-ultrasonido/analista-con-audifonos.jpg",
+          "alt": "Analista de DIAPSA con audífonos y detector de ultrasonido frente a una bomba"
+        }
+      },
+      {
+        "id": "plataforma-idap",
+        "title": "Tus datos viven en IDAP",
+        "content": "Cada punto con su nivel contra la línea base, la grabación de lo que se oyó, historial y tendencias consultables en línea cuando las necesites.",
+        "foto": {
+          "src": "/images/idap/mockup.png",
+          "alt": "Pantallas de IDAP con el tablero, la lista de equipos y el historial de inspecciones",
+          "ajuste": "contener",
+          "fondo": "oscuro"
+        }
       }
     ]
   },
+  "fotoPuntos": {
+    "src": "/images/servicios/analisis-de-ultrasonido/analista-con-audifonos.jpg",
+    "alt": "Analista de DIAPSA con audífonos midiendo ultrasonido"
+  },
+  "comparadorSonoro": {
+    "titulo": "Un rodamiento sano y uno con falla no suenan igual",
+    "texto": "Dos grabaciones reales de la misma ruta de inspección, tomadas con el detector de ultrasonido y traídas al rango audible. El primero es un ventilador en condición normal. El segundo es la bomba que salió en alarma ese día. Dale a reproducir y escucha la diferencia: parejo contra crepitante.",
+    "clips": [
+      {
+        "etiqueta": "Condición normal",
+        "titulo": "Motor de ventilador",
+        "nivel": "20 dB",
+        "estado": "normal",
+        "descripcion": "Siseo uniforme, sin picos. El rodamiento gira sobre su película de lubricante y no hay contacto metal con metal. Sigue en ruta.",
+        "src": "/audio/ultrasonido/rodamiento-normal.mp3",
+        "envolvente": [
+          0.541,
+          0.856,
+          0.72,
+          0.762,
+          0.761,
+          0.816,
+          0.852,
+          0.765,
+          0.87,
+          0.793,
+          0.801,
+          0.866,
+          0.721,
+          0.77,
+          0.743,
+          0.796,
+          0.792,
+          0.865,
+          0.78,
+          0.679,
+          0.74,
+          0.674,
+          0.761,
+          0.763,
+          0.719,
+          0.913,
+          0.902,
+          0.79,
+          0.709,
+          0.775,
+          0.853,
+          0.765,
+          0.694,
+          0.785,
+          0.848,
+          0.865,
+          0.868,
+          0.841,
+          0.897,
+          0.855,
+          0.844,
+          0.827,
+          0.791,
+          0.773,
+          0.757,
+          0.819,
+          0.802,
+          0.779,
+          0.767,
+          0.831,
+          0.762,
+          0.795,
+          0.767,
+          0.942,
+          0.762,
+          0.753,
+          0.864,
+          0.682,
+          0.766,
+          0.774,
+          0.82,
+          0.851,
+          0.946,
+          0.836,
+          0.837,
+          0.972,
+          0.849,
+          0.859,
+          0.737,
+          0.745,
+          0.844,
+          0.813,
+          0.799,
+          0.814,
+          0.927,
+          0.839,
+          0.697,
+          0.881,
+          0.836,
+          0.864,
+          0.845,
+          0.849,
+          0.767,
+          0.847,
+          0.917,
+          0.827,
+          0.906,
+          0.865,
+          0.886,
+          0.814,
+          0.855,
+          0.806,
+          0.968,
+          0.892,
+          0.895,
+          1.0,
+          0.818,
+          0.901,
+          0.815,
+          0.95,
+          0.892,
+          0.83,
+          0.838,
+          0.767,
+          0.792,
+          0.955,
+          0.834,
+          0.855,
+          0.912,
+          0.829,
+          0.765,
+          0.868,
+          0.978,
+          0.774,
+          0.842,
+          0.945,
+          0.825,
+          0.943,
+          0.897,
+          0.859
+        ]
+      },
+      {
+        "etiqueta": "Con hallazgo",
+        "titulo": "Motor de bomba de lubricación",
+        "nivel": "62 dB",
+        "estado": "alarma",
+        "descripcion": "Crepitar áspero con impactos. Más de cuarenta decibeles por encima de un equipo sano: el rodamiento ya trabaja con daño. Se recomendó su cambio en la siguiente ventana.",
+        "src": "/audio/ultrasonido/rodamiento-hallazgo.mp3",
+        "envolvente": [
+          0.517,
+          0.936,
+          0.89,
+          0.846,
+          0.903,
+          0.874,
+          0.901,
+          0.985,
+          0.897,
+          0.666,
+          0.881,
+          0.681,
+          0.811,
+          0.882,
+          0.825,
+          0.728,
+          0.979,
+          0.876,
+          0.776,
+          0.904,
+          0.82,
+          0.92,
+          0.797,
+          0.802,
+          0.791,
+          0.912,
+          0.826,
+          0.756,
+          0.885,
+          0.889,
+          0.789,
+          0.754,
+          0.813,
+          0.746,
+          0.842,
+          0.705,
+          0.784,
+          0.762,
+          0.891,
+          0.723,
+          0.838,
+          0.724,
+          0.762,
+          0.815,
+          0.731,
+          0.987,
+          0.77,
+          0.746,
+          0.82,
+          0.77,
+          0.824,
+          0.838,
+          0.714,
+          0.766,
+          0.742,
+          0.605,
+          0.781,
+          0.834,
+          0.795,
+          0.727,
+          1.0,
+          0.752,
+          0.989,
+          0.676,
+          0.714,
+          0.712,
+          0.758,
+          0.722,
+          0.684,
+          0.725,
+          0.912,
+          0.775,
+          0.857,
+          0.876,
+          0.718,
+          0.727,
+          0.846,
+          0.807,
+          0.804,
+          0.761,
+          0.706,
+          0.85,
+          0.79,
+          0.722,
+          0.784,
+          0.75,
+          0.775,
+          0.771,
+          0.814,
+          0.693,
+          0.74,
+          0.816,
+          0.821,
+          0.807,
+          0.893,
+          0.838,
+          0.855,
+          0.823,
+          0.801,
+          0.711,
+          0.808,
+          0.85,
+          0.732,
+          0.781,
+          0.755,
+          0.797,
+          0.779,
+          0.767,
+          0.787,
+          0.99,
+          0.813,
+          0.873,
+          0.694,
+          0.845,
+          0.966,
+          0.817,
+          0.781,
+          0.861,
+          0.869,
+          0.842
+        ]
+      }
+    ],
+    "pie": "Grabaciones de una inspección real de DIAPSA, recortadas a cinco segundos y con la identificación de la planta y de los equipos omitida. Los niveles son los medidos ese día."
+  },
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujo": [
+    {
+      "titulo": "Medición en campo",
+      "texto": "Ruta por rodamientos, tableros y líneas de aire con detector y audífonos, en operación normal."
+    },
+    {
+      "titulo": "Escucha y nivel",
+      "texto": "El analista oye el sonido heterodinado y registra el nivel en decibeles contra la línea base de cada punto."
+    },
+    {
+      "titulo": "Diagnóstico",
+      "texto": "Se nombra el componente y la causa: rodamiento, falta de lubricación, fuga o descarga, con su severidad."
+    },
+    {
+      "titulo": "Recomendación",
+      "texto": "Qué lubricar, reparar o reemplazar, con qué urgencia y qué vigilar en la siguiente ruta."
+    },
+    {
+      "titulo": "Seguimiento",
+      "texto": "El punto con hallazgo entra a reinspección hasta que el nivel vuelve a su línea base."
+    }
+  ],
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "Esto es lo que recibes",
@@ -54,9 +375,9 @@
     "contenido": [
       "Nivel en decibeles de cada punto contra su línea base",
       "Estado de cada equipo en semáforo, para leerlo de un vistazo",
+      "Grabación del sonido de cada hallazgo, para volver a oírlo",
       "Componente afectado y causa probable: rodamiento, fuga o descarga",
-      "Acción recomendada y con qué urgencia",
-      "Historial y tendencia consultables en IDAP"
+      "Acción recomendada y con qué urgencia"
     ],
     "paginas": [
       "/images/informe/pagina-1.png",
@@ -79,6 +400,58 @@
         ]
       }
     }
+  },
+  "mostrarClientes": true,
+  "faq": [
+    {
+      "question": "¿Qué es el ultrasonido industrial?",
+      "answer": "Es la escucha de sonidos por encima de lo que el oído humano alcanza, entre 20 y 100 kilohercios, con un detector que los traduce a un rango audible y los mide en decibeles. La fricción, la turbulencia y las descargas eléctricas producen ultrasonido mucho antes de producir ruido, calor o vibración perceptibles."
+    },
+    {
+      "question": "¿Qué fallas detecta?",
+      "answer": "Rodamientos en las primeras etapas de daño y con falta o exceso de lubricante, fugas de aire comprimido, vapor, gases y vacío, descargas parciales, efecto corona y arco incipiente en tableros y subestaciones, trampas de vapor que no cierran y válvulas con paso interno."
+    },
+    {
+      "question": "¿Cómo se sabe si un rodamiento está mal?",
+      "answer": "Cada rodamiento tiene una línea base. Un aumento de 8 decibeles sobre ella indica falta de lubricación; de 12 a 16, daño incipiente; más de 35, daño avanzado. Además del número, el analista escucha: un rodamiento sano sisea parejo y uno dañado crepita con impactos."
+    },
+    {
+      "question": "¿Se puede hacer con la planta operando?",
+      "answer": "Sí, es la única forma de hacerlo. La medición se realiza con el equipo en operación normal, sin abrir ni detener nada, y una ruta completa toma unas horas."
+    },
+    {
+      "question": "¿Sirve para ahorrar aire comprimido?",
+      "answer": "Sí. Las fugas de aire comprimido son de las pérdidas más caras y menos vistas de una planta. El detector las ubica una por una, aun con el ruido de fondo de la producción, y el informe las lista con su tamaño estimado para que se reparen por prioridad."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "El listado de equipos rotativos, tableros y líneas de aire que quieres cubrir, o el número aproximado, y si la planta exige documentación de ingreso. Con eso preparamos la propuesta con el número de puntos y la ruta."
+    }
+  ],
+  "certificacion": "Analistas Nivel II · ASNT SNT-TC-1A",
+  "galeria": [
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/pantalla-38-db.jpg",
+      "alt": "Pantalla del detector de ultrasonido marcando 38 decibeles en un rodamiento"
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/ultraprobe-en-sensor.jpg",
+      "alt": "Detector de ultrasonido apoyado en el punto de medición de un equipo"
+    },
+    {
+      "src": "/images/gallery/campo-img-4.jpg",
+      "alt": "Analistas de DIAPSA en una ruta de medición en planta"
+    }
+  ],
+  "cta": {
+    "title": "¿Cuántos rodamientos y tableros críticos tiene tu planta?",
+    "text": "Compártenos tu listado de equipos, tableros y líneas de aire y te preparamos una ruta de medición con propuesta a la medida, sin compromiso.",
+    "whatsappMessage": "Hola, quiero cotizar análisis de ultrasonido para mi planta.",
+    "datos": [
+      "Registro REPSE vigente",
+      "Informe en menos de 2 días hábiles",
+      "Servicio en todo México"
+    ]
   },
   "relatedProducts": {
     "title": "Productos Relacionados",
