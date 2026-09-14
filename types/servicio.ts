@@ -83,6 +83,11 @@ export interface ServiceEntregable {
     /** Tamaño natural de la captura, para que Next reserve el espacio. */
     ancho?: number;
     alto?: number;
+    /** Si viene, en lugar de la captura se muestra la recreación animada
+        (EscenaIdap) abierta en esa disciplina. La captura queda de respaldo. */
+    escena?: "term" | "vib" | "us";
+    /** Fotografías térmicas reales para la pestaña de termografía de la escena. */
+    imagenes?: { principal?: string; miniaturas?: string[]; visual?: string };
   };
 }
 

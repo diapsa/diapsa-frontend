@@ -101,9 +101,18 @@
     "idap": {
       "src": "/images/idap/capturas/inspeccion-vibraciones.jpg",
       "alt": "Inspección integral en IDAP: pestaña de vibraciones con la velocidad y la aceleración de cada punto en las tres direcciones, calificadas en semáforo",
-      "texto": "Así se ve la misma inspección dentro de IDAP: cada punto con su velocidad y aceleración en las tres direcciones, calificado en semáforo contra el criterio, junto a las otras disciplinas medidas ese día.",
+      "texto": "Así se ve la misma inspección dentro de IDAP: la inspección llega desde campo, cada disciplina se llena con sus valores y se califica en semáforo, y en la pestaña de vibraciones quedan los puntos en las tres direcciones, los espectros y la recomendación con su porqué. Pasa el cursor por una disciplina para abrirla.",
       "ancho": 1945,
-      "alto": 1350
+      "alto": 1350,
+      "escena": "vib",
+      "imagenes": {
+        "principal": "/images/idap/inspeccion/termica-1.jpg",
+        "miniaturas": [
+          "/images/idap/inspeccion/termica-1.jpg",
+          "/images/idap/inspeccion/termica-2.jpg",
+          "/images/idap/inspeccion/termica-3.jpg"
+        ]
+      }
     }
   },
   "mostrarClientes": true,

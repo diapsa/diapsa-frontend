@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Antetitulo from "../atoms/Antetitulo";
+import EscenaIdap from "./EscenaIdap";
 import type { ServiceEntregable as Entregable } from "@/types/servicio";
 
 /**
@@ -15,7 +16,9 @@ import type { ServiceEntregable as Entregable } from "@/types/servicio";
  * convence menos que verlo.
  *
  * Debajo, si el servicio trae captura, va la misma inspección como se ve en
- * IDAP, a todo lo ancho. Se probó como pestaña junto al PDF, a media
+ * IDAP, a todo lo ancho; y si trae `escena`, en lugar de la captura va la
+ * recreación animada de la plataforma (EscenaIdap) abierta en la pestaña
+ * de la disciplina de la página. Se probó como pestaña junto al PDF, a media
  * columna, y se veía como un rectángulo oscuro con letra ilegible; una
  * captura de aplicación necesita ancho. La imagen viene recortada al tramo
  * que dice algo a ese tamaño: las disciplinas con su estado y el panel de
@@ -124,14 +127,18 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
               <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
               <span className="ml-3 rounded-sm bg-white/5 px-3 py-0.5 text-[11px] text-white/50">idap.app</span>
             </div>
-            <Image
-              src={entregable.idap.src}
-              alt={entregable.idap.alt}
-              width={entregable.idap.ancho ?? 1945}
-              height={entregable.idap.alto ?? 1240}
-              className="h-auto w-full"
-              sizes="(max-width: 1024px) 100vw, 1024px"
-            />
+            {entregable.idap.escena ? (
+              <EscenaIdap disciplina={entregable.idap.escena} imagenes={entregable.idap.imagenes} />
+            ) : (
+              <Image
+                src={entregable.idap.src}
+                alt={entregable.idap.alt}
+                width={entregable.idap.ancho ?? 1945}
+                height={entregable.idap.alto ?? 1240}
+                className="h-auto w-full"
+                sizes="(max-width: 1024px) 100vw, 1024px"
+              />
+            )}
           </div>
         </div>
       )}
