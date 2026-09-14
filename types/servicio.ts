@@ -26,6 +26,9 @@ export interface ContentItem {
   foto?: FotoPunto;
   /** Gráfico esquemático en lugar de foto, por clave: "paros". Tiene prioridad sobre foto. */
   grafico?: string;
+  /** Escena 3D animada en lugar de foto: "vibracion-espectro" | "vibracion-semaforo".
+      Tiene prioridad sobre grafico y foto; la foto queda de respaldo. */
+  escena?: string;
 }
 
 export interface ServiceContent {
@@ -71,6 +74,21 @@ export interface ServiceEntregable {
   /** Cifra del sello flotante, ej. "3". */
   dato: string;
   datoTexto: string;
+  /** Captura de la misma inspección dentro de IDAP. Si existe, la vitrina
+      ofrece las dos vistas, IDAP y PDF, y arranca en IDAP. */
+  idap?: {
+    src: string;
+    alt: string;
+    texto?: string;
+    /** Tamaño natural de la captura, para que Next reserve el espacio. */
+    ancho?: number;
+    alto?: number;
+    /** Si viene, en lugar de la captura se muestra la recreación animada
+        (EscenaIdap) abierta en esa disciplina. La captura queda de respaldo. */
+    escena?: "term" | "vib" | "us";
+    /** Fotografías térmicas reales para la pestaña de termografía de la escena. */
+    imagenes?: { principal?: string; miniaturas?: string[]; visual?: string };
+  };
 }
 
 export interface ZonaSemaforo {
@@ -90,6 +108,19 @@ export interface ServiceTabla {
   /** Clave del patrón espectral a dibujar en cada fila, en el mismo orden. */
   patrones?: string[];
   nota?: string;
+}
+
+export interface FlujoPaso {
+  titulo: string;
+  texto: string;
+}
+
+export interface ServiceComparador {
+  titulo: string;
+  texto?: string;
+  visual: GaleriaFoto;
+  termica: GaleriaFoto;
+  pie?: string;
 }
 
 export interface ServiceCta {
@@ -126,8 +157,14 @@ export interface Servicio {
   /** Diagramas a dibujar, por clave: "flujo-servicio". La curva P-F y los
       modos de falla viven en la guía del blog (types/guia.ts), no aquí. */
   diagramas?: string[];
+  /** Textos de los cinco pasos del flujo, si el servicio los redacta a su
+      manera. Los íconos se mantienen por posición. Si falta, se usan los
+      de vibraciones. */
+  flujo?: FlujoPaso[];
   /** Foto que acompaña a los puntos clave del servicio. */
   fotoPuntos?: GaleriaFoto;
   /** Si es verdadero, cierra con la pared de logotipos de clientes. */
   mostrarClientes?: boolean;
+  /** Par visual y térmico de la misma escena (termografía). */
+  comparador?: ServiceComparador;
 }

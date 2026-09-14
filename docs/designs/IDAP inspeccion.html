@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>IDAP — Inspección integral (animación)</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0b0f19; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+    #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
+    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #0b0f19; z-index: 9999; }
+    #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
+    #__bundler_placeholder { color: #999; font-size: 14px; }
+  </style>
+  <noscript>
+    <style>#__bundler_loading { display: none; }</style>
+    <div style="position:fixed;bottom:12px;left:12px;font:13px/1.4 -apple-system,BlinkMacSystemFont,sans-serif;color:#999;background:rgba(255,255,255,0.9);padding:6px 12px;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.08);z-index:10000;">
+      This page requires JavaScript to display.
+    </div>
+  </noscript>
+</head>
+<body>
+  <div id="__bundler_thumbnail">
+  <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <rect x="70" y="120" width="260" height="160" rx="24" fill="#111827" stroke="rgba(255,255,255,.15)" stroke-width="4"></rect>
+    <rect x="100" y="150" width="60" height="40" rx="8" fill="#ef4444"></rect>
+    <rect x="170" y="150" width="60" height="40" rx="8" fill="#facc15"></rect>
+    <rect x="240" y="150" width="60" height="40" rx="8" fill="#ef4444"></rect>
+    <rect x="100" y="210" width="200" height="40" rx="8" fill="none" stroke="#fc9f01" stroke-width="4"></rect>
+  </svg>
+</div>
+  <div id="__bundler_loading">Unpacking...</div>
+
+  <script>
+    
+document.addEventListener('DOMContentLoaded', async function() {
+  const loading = document.getElementById('__bundler_loading');
+  function setStatus(msg) { if (loading) loading.textContent = msg; }
+
+  const FONT_MIME = /^(font[/]|application[/](x-)?font-|application[/]vnd\.ms-fontobject)/i;
+  const MIME_TOKEN = /^[\w.+-]+[/][\w.+-]+$/;
+  function toBase64(bytes) {
+    let bin = '';
+    for (let i = 0; i < bytes.length; i += 0x8000) {
+      bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    }
+    return btoa(bin);
+  }
+
+  // Error sink persists across replaceWith since it's on window, not the DOM.
+  window.addEventListener('error', function(e) {
+    // Failed resource loads (CSP-blocked links, scripts, images) fire plain
+    // events at the element — warn only; real JS errors carry message/error.
+    if (!e.message && !e.error && e.target && e.target !== window) {
+      console.warn('[bundle] resource failed to load:',
+        e.target.tagName, String(e.target.src || e.target.href || ''));
+      return;
+    }
+    var p = document.body || document.documentElement;
+    var d = document.getElementById('__bundler_err') || p.appendChild(document.createElement('div'));
+    d.id = '__bundler_err';
+    d.style.cssText = 'position:fixed;bottom:12px;left:12px;right:12px;font:12px/1.4 ui-monospace,monospace;background:#2a1215;color:#ff8a80;padding:10px 14px;border-radius:8px;border:1px solid #5c2b2e;z-index:99999;white-space:pre-wrap;max-height:40vh;overflow:auto';
+    d.textContent = (d.textContent ? d.textContent + String.fromCharCode(10) : '') +
+      '[bundle] ' + (e.message || e.type) +
+      (e.filename ? ' (' + e.filename.slice(0, 60) + ':' + e.lineno + ')' : '');
+  }, true);
+
+  try {
+    const manifestEl = document.querySelector('script[type="__bundler/manifest"]');
+    const templateEl = document.querySelector('script[type="__bundler/template"]');
+    if (!manifestEl || !templateEl) {
+      setStatus('Error: missing bundle data');
+      console.error('[bundler] Missing script tags — manifestEl:', !!manifestEl, 'templateEl:', !!templateEl);
+      return;
+    }
+
+    const manifest = JSON.parse(manifestEl.textContent);
+    let template = JSON.parse(templateEl.textContent);
+
+    // Nested page bundles (iframe targets). Each ships ONCE, in the ROOT
+    // document's manifest; frame srcs carry an about:blank#<uuid> marker
+    // instead of a substitutable uuid. Every document mints the blobs for
+    // its OWN frames — from local text at the root, or text obtained from
+    // its DIRECT parent over the relay protocol below — so each frame
+    // navigation stays same-origin with its initiator and a deduped page
+    // loads at any depth on any host, including a file:// download's
+    // opaque origins (where a blob minted by one document cannot be
+    // navigated to by another).
+    const pageOrderEl = document.querySelector('script[type="__bundler/page_order"]');
+    const pageOrder = pageOrderEl ? JSON.parse(pageOrderEl.textContent) : [];
+    const pageSet = new Set(pageOrder);
+    const pageTexts = {};
+
+    // ── Nested-page text protocol (parent-chain relay) ──
+    // Page bundles ship once, in the ROOT document's manifest. Every
+    // document mints the blobs for its OWN frames, obtaining page text
+    // through a strict parent-chain relay: a document only ever SENDS to
+    // its direct parent (which, for every document the publisher's own
+    // runtime minted, is another publisher document) and only ACCEPTS
+    // text from that direct parent; requests from below are honored only
+    // for the document's own child frames, and the ROOT never sends
+    // upward at all. That last rule is load-bearing: the artifact host's
+    // frame-ancestors allows claude.ai (and friends) to frame an
+    // artifact, so window.top can be a FOREIGN document — a top-addressed
+    // protocol would hand page uuids to that ancestor and accept forged
+    // "page text" from it, minting attacker HTML as an artifact-origin
+    // blob document. The chain never touches the ancestor: requests stop
+    // at the root, replies are origin-addressed per hop (never '*' when
+    // an origin exists), and both directions are origin-gated (on https
+    // a foreign sender's origin can never equal this document's; in
+    // opaque contexts — file:// — everything serializes as 'null', where
+    // an embedded EXTERNAL frame still fails the gate by carrying its
+    // own real origin, and a sandboxed child of such a frame is excluded
+    // by the own-child-frames check plus uuid unguessability). Shape is
+    // deny-by-default: one request form, one reply form, no error
+    // replies.
+    // window.origin is the SERIALIZED SECURITY origin ('null' in opaque
+    // contexts such as a sandboxed preview iframe) — location.origin is
+    // computed from the URL and stays 'https://…' even when the document
+    // is sandboxed, which would misgate every opaque chain.
+    const OWN_TARGET = /^https?:[/][/]/.test(window.origin || '')
+      ? window.origin
+      : '*';
+    function trustedOrigin(e) {
+      if (e.origin === window.origin) return true; // https chains; opaque==opaque
+      // file:// trees: Chrome serializes the file document's origin as
+      // 'file://' while the blob: documents it mints serialize as 'null',
+      // so the two legitimate shapes can never string-match — accept the
+      // pair in both directions. https origins never serialize as either,
+      // and sender identity (own child frame / direct parent) is checked
+      // separately.
+      return (
+        (e.origin === 'null' &&
+          (window.origin === 'file://' ||
+            window.location.protocol === 'file:')) ||
+        (/^file:/.test(e.origin) && window.origin === 'null')
+      );
+    }
+    // Non-empty only in the root document (nested bundles ship an empty
+    // island), so it doubles as the root marker: the root answers from
+    // local text and treats a miss as authoritative — never relaying to
+    // its (possibly foreign) parent.
+    const isPageRoot = pageOrder.length > 0;
+    const blobUrls = {};
+    const resourceBlobs = {};
+    const UUID_SHAPE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+    const pendingFrames = {}; // uuid -> [{el, frag}] awaiting text for own frames
+    const pendingRelays = {}; // uuid -> [childWindow] awaiting text to pass down
+    function mountPage(el, frag, text) {
+      const pageBlob = new Blob([text], { type: 'text/html' });
+      const u = URL.createObjectURL(pageBlob);
+      resourceBlobs[u] = pageBlob;
+      el.src = u + frag;
+    }
+    function deliverPage(uuid, text) {
+      const frames = pendingFrames[uuid];
+      delete pendingFrames[uuid];
+      if (frames) for (const f of frames) mountPage(f.el, f.frag, text);
+      const relays = pendingRelays[uuid];
+      delete pendingRelays[uuid];
+      if (relays) {
+        for (const cw of relays) {
+          try { cw.postMessage({ __bundler_page: uuid, __bundler_text: text }, OWN_TARGET); } catch (err) { /* gone */ }
+        }
+      }
+    }
+    function ownFrameWindows() {
+      const out = [];
+      for (const f of Array.from(document.querySelectorAll('iframe'))) {
+        try { if (f.contentWindow) out.push(f.contentWindow); } catch (err) { /* detached */ }
+      }
+      return out;
+    }
+    window.addEventListener('message', function (e) {
+      const d = e.data;
+      if (!d || typeof d !== 'object' || !e.source) return;
+      // Origin gate first; the structural checks below (own-child-frames
+      // for requests, direct-parent + solicited-uuid for replies, the
+      // root's never-relay rule) are what hold in fully opaque chains
+      // where origin strings can't discriminate — a sandboxed root's
+      // FOREIGN wrapper still fails all three even though both serialize
+      // as real-vs-'null' rather than matching.
+      if (!trustedOrigin(e)) return;
+      if (typeof d.__bundler_need === 'string' && UUID_SHAPE.test(d.__bundler_need)) {
+        // Requests are honored only for this document's own child frames.
+        if (ownFrameWindows().indexOf(e.source) < 0) return;
+        const uuid = d.__bundler_need;
+        const text = pageTexts[uuid];
+        if (typeof text === 'string') {
+          try { e.source.postMessage({ __bundler_page: uuid, __bundler_text: text }, OWN_TARGET); } catch (err) { /* gone */ }
+          return;
+        }
+        if (isPageRoot || window.parent === window) return; // authoritative miss
+        const waiting = pendingRelays[uuid];
+        if (waiting) {
+          if (waiting.indexOf(e.source) < 0) waiting.push(e.source);
+          return;
+        }
+        // Never-answered uuids would otherwise accumulate forever under a
+        // request spray; past the cap (far above any real page count) new
+        // relays are dropped rather than remembered.
+        if (Object.keys(pendingRelays).length >= 128) return;
+        pendingRelays[uuid] = [e.source];
+        window.parent.postMessage({ __bundler_need: uuid }, OWN_TARGET);
+      } else if (
+        typeof d.__bundler_page === 'string' &&
+        UUID_SHAPE.test(d.__bundler_page) &&
+        typeof d.__bundler_text === 'string'
+      ) {
+        // The shape test is load-bearing beyond tidiness: the solicited
+        // check below uses the in operator, which matches prototype keys
+        // ('__proto__', 'constructor') — an unshaped key would reach
+        // deliverPage and throw, painting the error banner.
+        // Text is accepted only from the direct parent — the document
+        // that minted this one.
+        if (e.source !== window.parent || window.parent === window) return;
+        if (!(d.__bundler_page in pendingFrames) && !(d.__bundler_page in pendingRelays)) return;
+        deliverPage(d.__bundler_page, d.__bundler_text);
+      }
+    });
+
+    const uuids = Object.keys(manifest);
+    setStatus('Unpacking ' + uuids.length + ' assets...');
+
+    await Promise.all(uuids.map(async (uuid) => {
+      const entry = manifest[uuid];
+      try {
+        const binaryStr = atob(entry.data);
+        const bytes = new Uint8Array(binaryStr.length);
+        for (let i = 0; i < binaryStr.length; i++) bytes[i] = binaryStr.charCodeAt(i);
+
+        let finalBytes = bytes;
+        if (entry.compressed) {
+          if (typeof DecompressionStream !== 'undefined') {
+            const ds = new DecompressionStream('gzip');
+            const writer = ds.writable.getWriter();
+            const reader = ds.readable.getReader();
+            writer.write(bytes);
+            writer.close();
+            const chunks = [];
+            let totalLen = 0;
+            while (true) {
+              const { done, value } = await reader.read();
+              if (done) break;
+              chunks.push(value);
+              totalLen += value.length;
+            }
+            finalBytes = new Uint8Array(totalLen);
+            let offset = 0;
+            for (const chunk of chunks) { finalBytes.set(chunk, offset); offset += chunk.length; }
+          } else {
+            console.warn('DecompressionStream not available, asset ' + uuid + ' may not render');
+          }
+        }
+
+        if (pageSet.has(uuid)) {
+          pageTexts[uuid] = new TextDecoder().decode(finalBytes);
+          return;
+        }
+        if (FONT_MIME.test(entry.mime) && MIME_TOKEN.test(entry.mime)) {
+          // Strict artifact hosts allow font-src data: but not blob:.
+          blobUrls[uuid] = 'data:' + entry.mime + ';base64,' +
+            (entry.compressed ? toBase64(finalBytes) : entry.data);
+        } else {
+          const blob = new Blob([finalBytes], { type: entry.mime });
+          blobUrls[uuid] = URL.createObjectURL(blob);
+          resourceBlobs[blobUrls[uuid]] = blob;
+        }
+      } catch (err) {
+        console.error('Failed to decode asset ' + uuid + ':', err);
+        const blob = new Blob([], { type: entry.mime });
+        blobUrls[uuid] = URL.createObjectURL(blob);
+        resourceBlobs[blobUrls[uuid]] = blob;
+      }
+    }));
+
+    const extResEl = document.querySelector('script[type="__bundler/ext_resources"]');
+    const extResources = extResEl ? JSON.parse(extResEl.textContent) : [];
+    const resourceMap = {};
+    for (const entry of extResources) {
+      if (blobUrls[entry.uuid]) resourceMap[entry.id] = blobUrls[entry.uuid];
+    }
+
+    // Artifact-host CSP (connect-src 'self') refuses fetch() of blob: URLs —
+    // consumers read these Blobs directly. Survives the swap like the error sink.
+    window.__resourceBlobs = resourceBlobs;
+
+    setStatus('Rendering...');
+    // Page uuids have no blob here — they ride inside about:blank#<uuid>
+    // frame markers the pass below resolves after the swap.
+    for (const uuid of uuids) {
+      if (pageSet.has(uuid)) continue;
+      template = template.split(uuid).join(blobUrls[uuid]);
+    }
+
+    // Strip integrity + crossorigin — blob URLs from a file:// document inherit
+    // a null origin, so crossorigin forces a CORS fetch that SRI then rejects.
+    // The manifest bytes are ours; SRI protects against CDN compromise, not this.
+    template = template.replace(/\s+integrity="[^"]*"/gi, '').replace(/\s+crossorigin="[^"]*"/gi, '');
+
+    const resourceScript = '<script>window.__resources = ' +
+      JSON.stringify(resourceMap).replace(/<\//g, '<\\/') +
+      ';</' + 'script>';
+    // Inject after <head> so the DOCTYPE stays first; prepending the script
+    // would push the parser into quirks mode. DOMParser always emits a <head>
+    // (synthesizing one if the source HTML omitted it) but may carry
+    // attributes through, so match the full opening tag. slice() rather than
+    // replace() keeps us clear of $-pattern substitution in resourceScript.
+    const headOpen = template.match(/<head[^>]*>/i);
+    if (headOpen) {
+      const i = headOpen.index + headOpen[0].length;
+      template = template.slice(0, i) + resourceScript + template.slice(i);
+    }
+
+    // Parse the template and swap the root element. Scripts inserted via
+    // DOMParser/replaceWith are inert per spec — re-create each with
+    // createElement so they execute, awaiting onload for src scripts to
+    // preserve ordering (React before ReactDOM before Babel before text/babel).
+    const doc = new DOMParser().parseFromString(template, 'text/html');
+    document.documentElement.replaceWith(doc.documentElement);
+
+    // Resolve page-frame markers: mint this document's own blob for each
+    // framed page — from local text when this is the root, otherwise by
+    // asking the direct parent over the relay protocol above. An
+    // unanswered request leaves the frame on about:blank, the same
+    // degraded state as a refused embed.
+    {
+      const MARKER = /^about:blank#([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})(#.*)?$/;
+      const needed = [];
+      for (const el of Array.from(document.querySelectorAll('iframe'))) {
+        const m = MARKER.exec(el.getAttribute('src') || '');
+        if (!m) continue;
+        const text = pageTexts[m[1]];
+        if (typeof text === 'string') {
+          mountPage(el, m[2] || '', text);
+        } else if (window.parent !== window && !isPageRoot) {
+          const had = pendingFrames[m[1]];
+          (pendingFrames[m[1]] = had || []).push({ el: el, frag: m[2] || '' });
+          if (!had) needed.push(m[1]);
+        }
+      }
+      for (const uuid of needed) {
+        window.parent.postMessage({ __bundler_need: uuid }, OWN_TARGET);
+      }
+    }
+
+    const dead = Array.from(document.scripts);
+    for (const old of dead) {
+      const s = document.createElement('script');
+      for (const a of old.attributes) s.setAttribute(a.name, a.value);
+      s.textContent = old.textContent;
+      // text/babel scripts with a src: read and inline. transformScriptTags
+      // does XHR against the src, but blob:null/ from a file:// origin is
+      // silently dropped. Inlining makes it a plain inline babel script,
+      // which transformScriptTags handles unconditionally.
+      if ((s.type === 'text/babel' || s.type === 'text/jsx') && s.src) {
+        const pre = resourceBlobs[s.src.split('#')[0]];
+        s.textContent = pre ? await pre.text() : await (await fetch(s.src)).text();
+        s.removeAttribute('src');
+      }
+      const p = s.src ? new Promise(function(r) { s.onload = s.onerror = r; }) : null;
+      old.replaceWith(s);
+      if (p) await p;
+    }
+    // Babel standalone auto-transforms type=text/babel on DOMContentLoaded,
+    // which fired before we swapped the document. Trigger manually if present.
+    if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
+      window.Babel.transformScriptTags();
+    }
+  } catch (err) {
+    setStatus('Error unpacking: ' + err.message);
+    console.error('Bundle unpack error:', err);
+  }
+});
+
+  </script>
+
+  <script type="__bundler/manifest">
+{}
+  </script>
+
+  <script type="__bundler/ext_resources">
+[]
+  </script>
+
+  <script type="__bundler/page_order">
+[]
+  </script>
+
+  <script type="__bundler/template">
+"<!DOCTYPE html>\n<html lang=\"es\"><head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<title>IDAP — Inspección integral (animación)<\u002Ftitle>\n<style>\n:root{color-scheme:dark}\nhtml,body{margin:0;background:#0b0f19}\n.idap-wrap{container-type:inline-size;width:100%;max-width:1024px;margin:0 auto}\n.idap{position:relative;aspect-ratio:1024/650;overflow:hidden;background:#0b0f19;color:#fff;\n  font-family:Geist,Inter,\"Segoe UI\",system-ui,-apple-system,sans-serif;font-size:1.5625cqw;line-height:1.3;\n  box-sizing:border-box;padding:1.5em;display:flex;flex-direction:column;gap:1em;\n  --line:rgba(255,255,255,.08);--card:#111827;--mut:#c5cbd2;--dim:#8b939e;--sk:#1c2434;\n  --g:#22c55e;--y:#facc15;--r:#ef4444;--b:#38bdf8;--o:#fc9f01;--or:#f97316;\n  font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}\n.idap *{box-sizing:border-box}\n.idap.noanim *{transition:none!important;animation:none!important}\n@media (prefers-reduced-motion: reduce){.idap,.idap *{transition:none!important;animation:none!important}}\n@keyframes fadeUp{from{opacity:0;transform:translateY(.5em)}}\n@keyframes fadeIn{from{opacity:0}}\n@keyframes draw{from{stroke-dashoffset:1}}\n@keyframes rise{from{bottom:0}}\n@keyframes drop{from{opacity:0;transform:translate(-50%,-1em)}}\n@keyframes growX{from{transform:scaleX(0)}}\n@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,255,255,.8)}100%{box-shadow:0 0 0 .7em rgba(255,255,255,0)}}\n\n/* header */\n.hd{display:flex;align-items:flex-end;justify-content:space-between;gap:1em}\n.hd h1{margin:0;font-size:1.25em;font-weight:600;letter-spacing:-.01em}\n.hd .sub{margin-top:.2em;color:var(--mut);font-size:.8125em;display:flex;gap:.5em;align-items:center}\n.hd .sub .dot{width:.25em;height:.25em;border-radius:50%;background:var(--dim)}\n.badges{display:flex;gap:.5em;flex-wrap:wrap}\n.badge{font-size:.6875em;font-weight:600;padding:.35em .7em;border-radius:999px;border:1px solid var(--line);color:var(--mut);white-space:nowrap;line-height:1}\n.badge.r{color:var(--r);border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.1)}\n.badge.y{color:var(--y);border-color:rgba(250,204,21,.35);background:rgba(250,204,21,.1)}\n.badge.g{color:var(--g);border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.1)}\n\n/* toast */\n.toast{position:absolute;top:1em;left:50%;transform:translate(-50%,-160%);opacity:0;display:flex;align-items:center;gap:.5em;\n  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:.5em .9em;font-size:.75em;color:var(--mut);\n  transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .35s;z-index:5;pointer-events:none;box-shadow:0 .5em 1.5em rgba(0,0,0,.4)}\n.toast.in{transform:translate(-50%,0);opacity:1}\n.toast svg{width:1.2em;height:1.2em;color:var(--b)}\n.toast.in svg{animation:spin .9s linear 2}\n@keyframes spin{to{transform:rotate(360deg)}}\n\n/* discipline cards */\n.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1em}\n.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.875em 1em;display:flex;flex-direction:column;gap:.55em;cursor:pointer;\n  transition:border-color .2s,background .2s;position:relative}\n.card:hover,.card.active{border-color:rgba(255,255,255,.18);background:#141c2c}\n.card .lab{display:flex;align-items:center;justify-content:space-between;font-size:.75em;color:var(--mut);font-weight:500}\n.card .lab svg{width:1.25em;height:1.25em;color:var(--dim)}\n.card .vals{display:flex;align-items:baseline;gap:.75em;min-height:1.6em;flex-wrap:wrap;white-space:nowrap}\n.card .v{font-size:1.25em;font-weight:600;letter-spacing:-.01em;line-height:1.1}\n.card .s{font-size:.75em;color:var(--dim)}\n.card .st{min-height:1.5em;display:flex}\n.card .badge{opacity:0;transform:scale(.6)}\n.card .badge.pop{animation:pop .5s cubic-bezier(.34,1.56,.64,1) forwards}\n@keyframes pop{0%{opacity:0;transform:scale(.6)}60%{opacity:1;transform:scale(1.12)}100%{opacity:1;transform:scale(1)}}\n\n/* skeleton */\n.sk{display:inline-block;height:.9em;border-radius:.3em;background:var(--sk);vertical-align:middle}\n.card .v .sk{width:3.6em;height:1em}\n.card .s .sk{width:5em;height:.8em}\n.card .st .sk{width:4.5em;height:1.3em;border-radius:999px}\n.card.on .sk,.on>.sk{display:none}\n.card .v .n,.card .s .n{display:none}\n.card.on .n{display:inline}\n\n/* tabs */\n.tabs{display:flex;gap:1.5em;border-bottom:1px solid var(--line);font-size:.8125em}\n.tab{padding:.6em 0;color:var(--dim);position:relative;cursor:pointer;transition:color .25s;background:none;border:0;font:inherit;font-weight:500}\n.tab::after{content:\"\";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.8,.2,1)}\n.tab.active{color:#fff}\n.tab.active::after{transform:scaleX(1)}\n\n/* panel */\n.panel{flex:1;min-height:0;position:relative;overflow:hidden}\n.pane{display:none;height:100%}\n.pane.show{display:block}\n.grid3{display:grid;grid-template-columns:1.55fr 1fr 1.15fr;gap:1em;height:100%}\n.blk{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.875em 1em;display:flex;flex-direction:column;gap:.75em;min-width:0}\n.blk h3{margin:0;font-size:.75em;font-weight:500;color:var(--mut);display:flex;align-items:center;gap:.5em}\n.blk h3 svg{width:1.2em;height:1.2em;color:var(--dim)}\n.th{display:flex;align-items:center;justify-content:space-between;gap:.75em}\n.pt{display:flex;flex-direction:column;gap:.4em}\n.pt .pl{font-size:.6875em;color:var(--dim)}\n.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5em}\n.tiles.one{grid-template-columns:1fr}\n.tile{border-radius:8px;border:1px solid var(--line);background:var(--sk);padding:.5em .6em;display:flex;flex-direction:column;gap:.15em;min-height:3.4em;\n  transition:background .35s,border-color .35s}\n.tile .k{font-size:.625em;color:var(--dim);font-weight:600;letter-spacing:.06em}\n.tile .val{font-size:1em;font-weight:600;opacity:0;transition:opacity .3s;line-height:1.1}\n.tile .val small{font-size:.65em;font-weight:500;color:var(--mut);margin-left:.25em}\n.tile.on .val{opacity:1}\n.tile.on.g{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.45)}\n.tile.on.g .val,.tile.on.g .k{color:var(--g)}\n.tile.on.y{background:rgba(250,204,21,.14);border-color:rgba(250,204,21,.5)}\n.tile.on.y .val,.tile.on.y .k{color:var(--y)}\n.tile.on.r{background:rgba(239,68,68,.14);border-color:rgba(239,68,68,.5)}\n.tile.on.r .val,.tile.on.r .k{color:var(--r)}\n.tile.on.pink .val{color:#f87171}\n.tile.on.rbd{border-color:rgba(239,68,68,.6)}\n/* spectra */\n.spec{flex:1;min-height:0;display:flex;flex-direction:column;gap:.3em;border-top:1px solid var(--line);padding-top:.55em;position:relative}\n.sgraph{flex:1;min-height:3.2em;position:relative}\n.sgraph svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}\n.sgraph .bar,.sgraph .pk{transform-box:fill-box;transform-origin:bottom}\n.spec:not(.on) .bar{transform:scaleY(0)}\n.spec:not(.pk-on) .pk{transform:scaleY(0)}\n.spec.on .bar{animation:growY .3s ease-out both;animation-delay:calc(var(--i)*25ms)}\n.spec.pk-on .pk{animation:bounceY .55s cubic-bezier(.34,1.56,.64,1) both;animation-delay:calc(var(--j)*80ms)}\n@keyframes growY{from{transform:scaleY(0)}}\n@keyframes bounceY{from{transform:scaleY(0)}}\n.sgraph .lim{stroke:rgba(255,255,255,.35);stroke-dasharray:4 4;stroke-width:1;vector-effect:non-scaling-stroke}\n.sgraph .lbl{position:absolute;font-size:.5625em;color:var(--dim);line-height:1;white-space:nowrap}\n.sgraph .lim-l{right:0;transform:translateY(-110%)}\n.sgraph .pkl{transform:translate(-50%,-115%)}\n.saxis{display:flex;justify-content:space-between;align-items:flex-start;gap:.5em;border-top:1px solid rgba(255,255,255,.15);padding-top:.25em;font-size:.5625em;color:var(--dim);min-height:1.2em}\n.saxis .fx{margin-left:auto}\n.brk{position:relative;flex:1;max-width:57%;margin-left:18%;height:.5em;border:1px solid var(--dim);border-top:0;border-radius:0 0 .25em .25em}\n.brk span{position:absolute;left:50%;top:100%;transform:translateX(-50%);white-space:nowrap;padding-top:.2em}\n.spec.hl .pk{filter:brightness(1.35) drop-shadow(0 0 3px rgba(250,204,21,.8))}\n.reco{transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,box-shadow .3s}\n.reco.hl{box-shadow:0 0 0 2px var(--o),0 0 1em rgba(252,159,1,.45)}\n.tile.pulse{animation:pulse .65s ease-in-out 2}\n@keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(250,204,21,0)}50%{transform:scale(1.04);box-shadow:0 0 0 .4em rgba(250,204,21,.18)}}\n.ref{font-size:.6875em;color:var(--dim)}\n.th .ref{white-space:nowrap;flex:none}\n.rows{display:flex;flex-direction:column}\n.row{display:flex;justify-content:space-between;align-items:baseline;gap:.75em;padding:.42em 0;border-bottom:1px solid var(--line);font-size:.75em}\n.row:last-child{border-bottom:0}\n.row>span:first-child{color:var(--dim)}\n.row b{font-weight:600;text-align:right}\n.rows.big .row b{font-size:1.2em}\n.rows.big .row{padding:.3em 0}\n.red{color:var(--r)}.yy{color:var(--y);font-weight:600}\n.ghost{white-space:nowrap;flex:none;background:none;border:1px solid var(--line);color:var(--mut);border-radius:8px;padding:.4em .75em;font:inherit;font-size:.6875em;cursor:pointer}\n.circ{width:1.75em;height:1.75em;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--mut);display:grid;place-items:center;padding:0;cursor:pointer;flex:none}\n.circ svg{width:.9em;height:.9em}\n\n/* recommendation */\n.reco{border:1px solid var(--o);background:var(--card);border-radius:12px;padding:.875em 1em;display:flex;flex-direction:column;gap:.55em;\n  transform:translateX(120%);opacity:0;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s;min-width:0}\n.reco.in{transform:none;opacity:1}\n.reco .eyebrow,.reco .rl{display:block;font-size:.6875em;color:var(--o);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3em}\n.reco .rl{color:var(--dim)}\n.reco p{margin:0;font-size:.875em;font-weight:500;line-height:1.35;text-wrap:pretty}\n.reco p.why{font-size:.75em;font-weight:400;color:var(--mut)}\n.reco .row{padding:.32em 0;font-size:.6875em}\n.reco .trend{display:block;width:100%;height:2.2em;overflow:visible}\n.reco .rb{opacity:0}\n.reco.in .rb{opacity:1;animation:fadeUp .4s ease-out both;animation-delay:calc(.6s + var(--i)*.2s)}\n.reco.in .trend polyline{stroke-dasharray:1;stroke-dashoffset:0;animation:draw .9s ease-out both;animation-delay:1.35s}\n.reco.in .trend circle{animation:fadeIn .3s both;animation-delay:2.15s}\n.reco .st{margin-top:auto}\n\n/* termografía */\n.pane[data-pane=term]{font-size:.95em}\n.tgrid{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:minmax(0,1fr) auto;gap:.75em;height:100%}\n.pane .blk{padding:.7em .875em;gap:.6em}\n.tspots{grid-column:1/-1}\n.vwrap{display:flex;align-items:center;justify-content:center;gap:.6em}\n.viewer{position:relative;height:8.4em;aspect-ratio:4/3;background:#000;border-radius:10px;overflow:hidden;flex:none}\n.pat{position:absolute;inset:0;background:\n  radial-gradient(ellipse 28% 30% at 55% 45%,#ef4444 0,#f97316 30%,rgba(250,204,21,.9) 55%,rgba(34,197,94,.6) 80%,transparent 100%),\n  radial-gradient(ellipse 60% 45% at 45% 55%,#22c55e 0,#0ea5e9 45%,#1e3a8a 75%,#0a0f2a 100%),#0a0f2a}\n.thumb .pat{background:radial-gradient(ellipse 45% 40% at 55% 45%,#f97316 0,#facc15 35%,#22c55e 60%,#1e3a8a 100%)}\n.viewer img,.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}\nimg[data-slot]:not([src]){display:none}\n.viewer:has(img[src]) .pat,.thumb:has(img[src]) .pat{display:none}\n.scale{position:absolute;top:.45em;right:.45em;display:flex;flex-direction:column;align-items:center;gap:.2em;font-size:.5625em;font-weight:600;text-shadow:0 0 .3em #000}\n.scale i{width:.7em;height:6em;border-radius:.3em;background:linear-gradient(to top,#1d4ed8,#22c55e,#facc15,#ef4444,#fff)}\n.mark{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;font-size:.5625em}\n.mark .dot{width:1em;height:1em;border-radius:50%;border:2px solid #fff;background:rgba(0,0,0,.35);flex:none}\n.mark .ln{width:1.4em;height:1px;background:#fff}\n.mark span{background:rgba(0,0,0,.6);color:#fff;padding:.25em .5em;border-radius:.3em;white-space:nowrap;font-weight:600}\n.thumbs{display:flex;gap:.5em;justify-content:center}\n.thumb{position:relative;width:3.6em;aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#000;border:1px solid var(--line)}\n.thumb.sel{border:2px solid var(--o)}\n.thumb.vis{display:none}\n.thumb.vis.has{display:block}\n.thumb.vis span{position:absolute;left:0;right:0;bottom:0;font-size:.5em;text-align:center;background:rgba(0,0,0,.6);padding:.2em}\n.pgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6em}\n.pane .blk .tile{min-height:0;padding:.45em .6em}\n.pane[data-pane=term].show .viewer{animation:fadeIn .4s both}\n.pane[data-pane=term].show .mark{animation:fadeIn .3s .35s both}\n.pane[data-pane=term].show .mark .dot{animation:ping .8s .45s 2}\n.pane[data-pane=term].show .thumb{animation:fadeUp .35s both;animation-delay:calc(.55s + var(--i)*.12s)}\n.pane[data-pane=term].show .tright .row{animation:fadeUp .35s both;animation-delay:calc(.8s + var(--i)*.1s)}\n.pane[data-pane=term].show .tspots .tile{animation:fadeUp .35s both;animation-delay:calc(1.3s + var(--i)*.1s)}\n\n/* ultrasonido */\n.pane[data-pane=us]{font-size:.92em}\n.ugrid{display:grid;grid-template-columns:1fr 1.25fr .8fr;grid-template-rows:auto minmax(0,1fr) auto;gap:.65em;height:100%}\n.uwave,.usev{grid-column:1/-1}\n.wrow{display:flex;gap:.9em;align-items:stretch}\n.scope{height:5.6em;aspect-ratio:3/1;background:#070b16;border:1px solid var(--line);border-radius:8px;overflow:hidden;flex:none;cursor:crosshair}\n.scope canvas{display:block;width:100%;height:100%}\n.legend{display:flex;flex-direction:column;gap:.35em;justify-content:center;font-size:.6875em;color:var(--mut);min-width:0}\n.legend div{display:flex;align-items:center;gap:.45em}\n.legend i{width:1.2em;height:2px;border-radius:1px;display:inline-block}\n.legend .ref{font-size:.9em;margin-top:.3em;text-wrap:pretty}\n.uread{gap:.45em}\n.uread .tile{flex:none;min-height:auto}\n.bar{height:.4em;border-radius:999px;background:#0b0f19;overflow:hidden;margin-top:.3em}\n.bar i{display:block;height:100%;border-radius:999px;background:var(--r)}\n.uind .row{padding:.3em 0;font-size:.7em}\n.uind .row b{display:flex;align-items:center;gap:.5em}\n.uind .row .ref{font-weight:400;font-size:.85em}\n.uind .badge{font-size:.85em}\n.meter{display:flex;gap:.5em;align-items:stretch;flex:1;min-height:5em}\n.mticks{position:relative;width:1.4em;font-size:.6em;color:var(--dim)}\n.mticks span{position:absolute;right:0;transform:translateY(50%)}\n.mbar{position:relative;width:1.4em;border-radius:.4em;overflow:visible;display:flex;flex-direction:column-reverse}\n.mbar .b{display:block;width:100%}\n.mbar .b.g{height:22.9%;background:var(--g);border-radius:0 0 .4em .4em}\n.mbar .b.y{height:22.8%;background:var(--y)}\n.mbar .b.o{height:22.9%;background:var(--or)}\n.mbar .b.r{height:31.4%;background:var(--r);border-radius:.4em .4em 0 0}\n.needle{position:absolute;left:-.3em;right:-.3em;bottom:91.4%;height:2px;background:#fff;box-shadow:0 0 .3em rgba(0,0,0,.8)}\n.needle span{position:absolute;left:calc(100% + .5em);top:50%;transform:translateY(-50%);font-size:.7em;font-weight:600;white-space:nowrap}\n.umeter{align-items:stretch}\n.sev{position:relative;padding-top:1.7em}\n.segs{display:flex;height:1.7em;border-radius:.4em;overflow:hidden;transform-origin:left}\n.segs span{flex:1;display:flex;align-items:center;justify-content:center;font-size:.5625em;font-weight:600;color:#0b0f19;text-align:center;padding:0 .3em;line-height:1.1}\n.segs span:nth-child(1){background:var(--g)}\n.segs span:nth-child(2){background:var(--y)}\n.segs span:nth-child(3){background:var(--or)}\n.segs span:nth-child(4){background:var(--r);color:#fff}\n.smark{position:absolute;top:0;left:87%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;font-size:.625em;font-weight:600}\n.smark i{width:0;height:0;border-left:.5em solid transparent;border-right:.5em solid transparent;border-top:.6em solid #fff;margin-top:.15em}\n.pane[data-pane=us].show .uread .tile{animation:fadeUp .35s both;animation-delay:calc(.2s + var(--i)*.15s)}\n.pane[data-pane=us].show .uind .row{animation:fadeUp .35s both;animation-delay:calc(.5s + var(--i)*.1s)}\n.pane[data-pane=us].show .needle{animation:rise 1s cubic-bezier(.2,.8,.2,1) both;animation-delay:1s}\n.pane[data-pane=us].show .segs{animation:growX .6s cubic-bezier(.2,.8,.2,1) both;animation-delay:2.05s}\n.pane[data-pane=us].show .smark{animation:drop .45s cubic-bezier(.34,1.56,.64,1) both;animation-delay:2.6s}\n\n@container (max-width:699px){\n  .idap{aspect-ratio:auto;font-size:14px;padding:1em;gap:.875em}\n  .hd{flex-direction:column;align-items:flex-start;gap:.6em}\n  .cards{grid-template-columns:1fr}\n  .panel{overflow:visible}\n  .grid3,.tgrid,.ugrid{grid-template-columns:1fr;grid-template-rows:none;height:auto}\n  .tspots,.uwave,.usev{grid-column:auto}\n  .pgrid{grid-template-columns:1fr 1fr}\n  .wrow{flex-direction:column}\n  .scope{width:100%;height:auto}\n  .meter{min-height:8em}\n  .reco{transform:translateY(40%)}\n  .tabs{gap:1em;overflow-x:auto;overflow-y:hidden;padding-bottom:1px}\n}\n<\u002Fstyle>\n\n<\u002Fhead>\n<body>\n<div class=\"idap-wrap\">\n<div class=\"idap\" id=\"idap\" role=\"img\" aria-label=\"Inspección integral del equipo Motor en IDAP: termografía en alarma, vibraciones en precaución, ultrasonido en alarma. Recomendación: programar cambio de rodamiento del lado de carga en la próxima ventana de producción.\">\n\n  <div class=\"toast\" id=\"toast\" aria-hidden=\"true\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12a9 9 0 0 1-15.5 6.3L3 16\"><\u002Fpath><path d=\"M3 21v-5h5\"><\u002Fpath><path d=\"M3 12a9 9 0 0 1 15.5-6.3L21 8\"><\u002Fpath><path d=\"M21 3v5h-5\"><\u002Fpath><\u002Fsvg>\n    Inspección recibida desde campo\n  <\u002Fdiv>\n\n  <header class=\"hd\">\n    <div>\n      <h1>Inspección integral<\u002Fh1>\n      <div class=\"sub\"><span>Motor<\u002Fspan><span class=\"dot\"><\u002Fspan><span>14 mar 2026 · 10:32<\u002Fspan><\u002Fdiv>\n    <\u002Fdiv>\n    <div class=\"badges\">\n      <span class=\"badge\">Integral<\u002Fspan>\n      <span class=\"badge\">3 disciplinas evaluadas<\u002Fspan>\n      <span class=\"badge r\">Alarma<\u002Fspan>\n    <\u002Fdiv>\n  <\u002Fheader>\n\n  <div class=\"cards\" id=\"cards\">\n    <div class=\"card\" data-tab=\"term\" tabindex=\"0\">\n      <div class=\"lab\">Termografía\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0z\"><\u002Fpath><\u002Fsvg><\u002Fdiv>\n      <div class=\"vals\">\n        <span class=\"v\"><span class=\"sk\"><\u002Fspan><span class=\"n\">T máx. <b data-count=\"91.4\" data-dec=\"1\">0.0<\u002Fb> °C<\u002Fspan><\u002Fspan>\n        <span class=\"s\"><span class=\"sk\"><\u002Fspan><span class=\"n\">Ambiente <b data-count=\"28.0\" data-dec=\"1\">0.0<\u002Fb> °C<\u002Fspan><\u002Fspan>\n      <\u002Fdiv>\n      <div class=\"st\"><span class=\"sk\"><\u002Fspan><span class=\"badge r\">Alarma<\u002Fspan><\u002Fdiv>\n    <\u002Fdiv>\n    <div class=\"card\" data-tab=\"vib\" tabindex=\"0\">\n      <div class=\"lab\">Vibraciones\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 12h3l3-8 4 16 4-12 2 4h4\"><\u002Fpath><\u002Fsvg><\u002Fdiv>\n      <div class=\"vals\">\n        <span class=\"v\"><span class=\"sk\"><\u002Fspan><span class=\"n\"><b data-count=\"6\" data-dec=\"0\">0<\u002Fb> lecturas<\u002Fspan><\u002Fspan>\n        <span class=\"s\"><span class=\"sk\"><\u002Fspan><span class=\"n\"><b data-count=\"1.3\" data-dec=\"1\">0.0<\u002Fb> mm/s<\u002Fspan><\u002Fspan>\n      <\u002Fdiv>\n      <div class=\"st\"><span class=\"sk\"><\u002Fspan><span class=\"badge y\">Precaución<\u002Fspan><\u002Fdiv>\n    <\u002Fdiv>\n    <div class=\"card\" data-tab=\"us\" tabindex=\"0\">\n      <div class=\"lab\">Ultrasonido\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11 5 6 9H3v6h3l5 4z\"><\u002Fpath><path d=\"M15.5 8.5a5 5 0 0 1 0 7\"><\u002Fpath><path d=\"M18.5 5.5a9 9 0 0 1 0 13\"><\u002Fpath><\u002Fsvg><\u002Fdiv>\n      <div class=\"vals\">\n        <span class=\"v\"><span class=\"sk\"><\u002Fspan><span class=\"n\"><b data-count=\"2\" data-dec=\"0\">0<\u002Fb> puntos medidos<\u002Fspan><\u002Fspan>\n        <span class=\"s\"><span class=\"sk\"><\u002Fspan><span class=\"n\"><b data-count=\"47\" data-dec=\"0\">0<\u002Fb> dB<\u002Fspan><\u002Fspan>\n      <\u002Fdiv>\n      <div class=\"st\"><span class=\"sk\"><\u002Fspan><span class=\"badge r\">Alarma<\u002Fspan><\u002Fdiv>\n    <\u002Fdiv>\n  <\u002Fdiv>\n\n  <nav class=\"tabs\" id=\"tabs\">\n    <button class=\"tab active\" data-tab=\"res\">Resumen<\u002Fbutton>\n    <button class=\"tab\" data-tab=\"term\">Termografía<\u002Fbutton>\n    <button class=\"tab\" data-tab=\"vib\">Vibraciones<\u002Fbutton>\n    <button class=\"tab\" data-tab=\"us\">Ultrasonido<\u002Fbutton>\n  <\u002Fnav>\n\n  <div class=\"panel\" id=\"panel\">\n    <!-- Vibraciones / Resumen -->\n    <div class=\"pane show\" data-pane=\"vib\">\n      <div class=\"grid3\">\n        <div class=\"blk\">\n          <h3>Amplitud global (Velocidad)<\u002Fh3>\n          <div class=\"pt\"><span class=\"pl\">Punto 1<\u002Fspan>\n            <div class=\"tiles\">\n              <div class=\"tile g\" data-vel=\"0\"><span class=\"k\">A<\u002Fspan><span class=\"val\">0.418<small>mm/s<\u002Fsmall><\u002Fspan><\u002Fdiv>\n              <div class=\"tile g\" data-vel=\"1\"><span class=\"k\">H<\u002Fspan><span class=\"val\">1.13<small>mm/s<\u002Fsmall><\u002Fspan><\u002Fdiv>\n              <div class=\"tile g\" data-vel=\"2\"><span class=\"k\">V<\u002Fspan><span class=\"val\">0.759<small>mm/s<\u002Fsmall><\u002Fspan><\u002Fdiv>\n            <\u002Fdiv><\u002Fdiv>\n          <div class=\"pt\"><span class=\"pl\">Punto 2<\u002Fspan>\n            <div class=\"tiles\">\n              <div class=\"tile g\" data-vel=\"3\"><span class=\"k\">A<\u002Fspan><span class=\"val\">1.23<small>mm/s<\u002Fsmall><\u002Fspan><\u002Fdiv>\n              <div class=\"tile g\" data-vel=\"4\"><span class=\"k\">H<\u002Fspan><span class=\"val\">1.12<small>mm/s<\u002Fsmall><\u002Fspan><\u002Fdiv>\n              <div class=\"tile g\" data-vel=\"5\"><span class=\"k\">V<\u002Fspan><span class=\"val\">1.25<small>mm/s<\u002Fsmall><\u002Fspan><\u002Fdiv>\n            <\u002Fdiv><\u002Fdiv>\n          <div class=\"spec\" id=\"specV\">\n            <span class=\"ref\">Espectro de velocidad, punto 2 dirección H<\u002Fspan>\n            <div class=\"sgraph\">\n              <svg viewBox=\"0 0 400 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><g class=\"bars\"><\u002Fg><line class=\"lim\" x1=\"0\" x2=\"400\" y1=\"33.3\" y2=\"33.3\"><\u002Fline><\u002Fsvg>\n              <span class=\"lbl lim-l\" style=\"top:33.3%\">alarma<\u002Fspan>\n              <span class=\"lbl pkl\" style=\"left:16.25%;top:42%\">1x<\u002Fspan>\n              <span class=\"lbl pkl\" style=\"left:31.25%;top:58%\">2x<\u002Fspan>\n              <span class=\"lbl pkl\" style=\"left:46.25%;top:70%\">3x<\u002Fspan>\n            <\u002Fdiv>\n            <div class=\"saxis\"><span class=\"fx\">Frecuencia<\u002Fspan><\u002Fdiv>\n          <\u002Fdiv>\n        <\u002Fdiv>\n        <div class=\"blk\">\n          <h3>Amplitud global (Aceleración)<\u002Fh3>\n          <div class=\"pt\"><span class=\"pl\">Punto 1<\u002Fspan>\n            <div class=\"tiles one\"><div class=\"tile g\" id=\"acc1\"><span class=\"k\">RMS<\u002Fspan><span class=\"val\">0.38<small>g<\u002Fsmall><\u002Fspan><\u002Fdiv><\u002Fdiv><\u002Fdiv>\n          <div class=\"pt\"><span class=\"pl\">Punto 2<\u002Fspan>\n            <div class=\"tiles one\"><div class=\"tile y\" id=\"acc2\"><span class=\"k\">RMS<\u002Fspan><span class=\"val\">1.49<small>g<\u002Fsmall><\u002Fspan><\u002Fdiv><\u002Fdiv><\u002Fdiv>\n          <div class=\"spec\" id=\"specA\">\n            <span class=\"ref\">Espectro envolvente, punto 2<\u002Fspan>\n            <div class=\"sgraph\">\n              <svg viewBox=\"0 0 400 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><g class=\"bars\"><\u002Fg><line class=\"lim\" x1=\"0\" x2=\"400\" y1=\"33.3\" y2=\"33.3\"><\u002Fline><g class=\"pks\"><\u002Fg><\u002Fsvg>\n              <span class=\"lbl lim-l\" style=\"top:33.3%\">precaución<\u002Fspan>\n              <span class=\"lbl pkl\" style=\"left:18.75%;top:20%\">BPFO<\u002Fspan>\n            <\u002Fdiv>\n            <div class=\"saxis\"><div class=\"brk\"><span>Armónicos de falla de rodamiento<\u002Fspan><\u002Fdiv><span class=\"fx\">Frecuencia<\u002Fspan><\u002Fdiv>\n          <\u002Fdiv>\n        <\u002Fdiv>\n        <aside class=\"reco\" id=\"reco\">\n          <div class=\"rb\" style=\"--i:0\">\n            <span class=\"eyebrow\">Recomendación<\u002Fspan>\n            <p>Programar cambio de rodamiento del lado de carga en la próxima ventana de producción<\u002Fp>\n          <\u002Fdiv>\n          <div class=\"rb\" style=\"--i:1\">\n            <span class=\"rl\">Por qué<\u002Fspan>\n            <p class=\"why\">Aceleración RMS de <b class=\"yy\">1.49 g<\u002Fb> en el punto 2, por encima del criterio de precaución de 0.90 g<\u002Fp>\n          <\u002Fdiv>\n          <div class=\"rb rows\" style=\"--i:2\">\n            <div class=\"row\"><span>Componente<\u002Fspan><b>Rodamiento, lado de carga<\u002Fb><\u002Fdiv>\n            <div class=\"row\"><span>Urgencia<\u002Fspan><b>Próxima ventana de producción<\u002Fb><\u002Fdiv>\n            <div class=\"row\"><span>Seguimiento<\u002Fspan><b>Reinspección en 30 días<\u002Fb><\u002Fdiv>\n          <\u002Fdiv>\n          <div class=\"rb\" style=\"--i:3\">\n            <span class=\"rl\">Tendencia<\u002Fspan>\n            <svg class=\"trend\" viewBox=\"0 0 120 36\" preserveAspectRatio=\"none\" aria-hidden=\"true\">\n              <defs><linearGradient id=\"tg\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"0\"><stop offset=\"0\" stop-color=\"#22c55e\"><\u002Fstop><stop offset=\".72\" stop-color=\"#22c55e\"><\u002Fstop><stop offset=\"1\" stop-color=\"#facc15\"><\u002Fstop><\u002FlinearGradient><\u002Fdefs>\n              <polyline pathLength=\"1\" points=\"4,29 27,27 50,25.5 73,22.5 96,18 116,7\" fill=\"none\" stroke=\"url(#tg)\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\u002Fpolyline>\n              <circle cx=\"116\" cy=\"7\" r=\"3\" fill=\"#facc15\"><\u002Fcircle>\n            <\u002Fsvg>\n            <span class=\"ref\">Últimas 6 inspecciones<\u002Fspan>\n          <\u002Fdiv>\n          <div class=\"rb st\" style=\"--i:4\"><span class=\"badge y\">Precaución<\u002Fspan><\u002Fdiv>\n        <\u002Faside>\n      <\u002Fdiv>\n    <\u002Fdiv>\n\n    <!-- Termografía -->\n    <div class=\"pane\" data-pane=\"term\">\n      <div class=\"tgrid\">\n        <div class=\"blk tleft\">\n          <div class=\"th\">\n            <h3><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0z\"><\u002Fpath><\u002Fsvg>Termografía<\u002Fh3>\n            <button class=\"ghost\" type=\"button\">Abrir evidencia<\u002Fbutton>\n          <\u002Fdiv>\n          <div class=\"vwrap\">\n            <button class=\"circ\" type=\"button\" aria-label=\"Anterior\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m15 6-6 6 6 6\"><\u002Fpath><\u002Fsvg><\u002Fbutton>\n            <div class=\"viewer\">\n              <div class=\"pat\"><\u002Fdiv>\n              <img data-slot=\"termica-principal\" alt=\"Imagen térmica principal\">\n              <div class=\"scale\"><span>91.4 °C<\u002Fspan><i><\u002Fi><span>28.0 °C<\u002Fspan><\u002Fdiv>\n              <div class=\"mark\" style=\"left:55%;top:45%\"><i class=\"dot\"><\u002Fi><i class=\"ln\"><\u002Fi><span>P1 91.4 °C<\u002Fspan><\u002Fdiv>\n            <\u002Fdiv>\n            <button class=\"circ\" type=\"button\" aria-label=\"Siguiente\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 6 6 6-6 6\"><\u002Fpath><\u002Fsvg><\u002Fbutton>\n          <\u002Fdiv>\n          <div class=\"thumbs\">\n            <div class=\"thumb sel\" style=\"--i:0\"><div class=\"pat\"><\u002Fdiv><img data-slot=\"termica-1\" alt=\"\"><\u002Fdiv>\n            <div class=\"thumb\" style=\"--i:1\"><div class=\"pat\"><\u002Fdiv><img data-slot=\"termica-2\" alt=\"\"><\u002Fdiv>\n            <div class=\"thumb\" style=\"--i:2\"><div class=\"pat\"><\u002Fdiv><img data-slot=\"termica-3\" alt=\"\"><\u002Fdiv>\n            <div class=\"thumb vis\" id=\"thVis\" style=\"--i:3\"><img data-slot=\"visual\" alt=\"\"><span>A simple vista<\u002Fspan><\u002Fdiv>\n          <\u002Fdiv>\n        <\u002Fdiv>\n        <div class=\"blk tright\">\n          <h3>Indicadores principales<\u002Fh3>\n          <div class=\"rows big\">\n            <div class=\"row\" style=\"--i:0\"><span>Temperatura máxima<\u002Fspan><b class=\"red\">91.4 °C<\u002Fb><\u002Fdiv>\n            <div class=\"row\" style=\"--i:1\"><span>Temperatura mínima<\u002Fspan><b>—<\u002Fb><\u002Fdiv>\n            <div class=\"row\" style=\"--i:2\"><span>Temperatura ambiente<\u002Fspan><b>28.0 °C<\u002Fb><\u002Fdiv>\n            <div class=\"row\" style=\"--i:3\"><span>Emisividad utilizada<\u002Fspan><b>0.87<\u002Fb><\u002Fdiv>\n            <div class=\"row\" style=\"--i:4\"><span>Distancia de captura<\u002Fspan><b>2.00 m<\u002Fb><\u002Fdiv>\n          <\u002Fdiv>\n        <\u002Fdiv>\n        <div class=\"blk tspots\">\n          <div class=\"th\"><h3>Valores de spots<\u002Fh3><span class=\"ref\">4 puntos marcados<\u002Fspan><\u002Fdiv>\n          <div class=\"pgrid\">\n            <div class=\"tile on pink\" style=\"--i:0\"><span class=\"k\">LADO LIBRE<\u002Fspan><span class=\"val\">56.6<small>°C<\u002Fsmall><\u002Fspan><\u002Fdiv>\n            <div class=\"tile on pink\" style=\"--i:1\"><span class=\"k\">BOBINADO/CUERPO<\u002Fspan><span class=\"val\">54.2<small>°C<\u002Fsmall><\u002Fspan><\u002Fdiv>\n            <div class=\"tile on pink rbd\" style=\"--i:2\"><span class=\"k\">L. CARGA<\u002Fspan><span class=\"val\">91.4<small>°C<\u002Fsmall><\u002Fspan><\u002Fdiv>\n            <div class=\"tile on pink\" style=\"--i:3\"><span class=\"k\">EJE<\u002Fspan><span class=\"val\">60.9<small>°C<\u002Fsmall><\u002Fspan><\u002Fdiv>\n          <\u002Fdiv>\n        <\u002Fdiv>\n      <\u002Fdiv>\n    <\u002Fdiv>\n\n    <!-- Ultrasonido -->\n    <div class=\"pane\" data-pane=\"us\">\n      <div class=\"ugrid\">\n        <div class=\"blk uwave\">\n          <h3>Forma de onda<\u002Fh3>\n          <div class=\"wrow\">\n            <div class=\"scope\" id=\"scope\"><canvas id=\"cv\" aria-hidden=\"true\"><\u002Fcanvas><\u002Fdiv>\n            <div class=\"legend\">\n              <div><i style=\"background:var(--g)\"><\u002Fi>Línea base 15 dB<\u002Fdiv>\n              <div><i style=\"background:var(--r)\"><\u002Fi>Punto 1, 47 dB<\u002Fdiv>\n              <span class=\"ref\">Impactos periódicos, patrón típico de rodamiento dañado<\u002Fspan>\n            <\u002Fdiv>\n          <\u002Fdiv>\n        <\u002Fdiv>\n        <div class=\"blk uread\">\n          <div class=\"tile on r\" style=\"--i:0\"><span class=\"k\">PUNTO 1<\u002Fspan><span class=\"val\">47<small>dB<\u002Fsmall><\u002Fspan><div class=\"bar\"><i style=\"width:100%\"><\u002Fi><\u002Fdiv><span class=\"ref\">Referencia 23 dB<\u002Fspan><\u002Fdiv>\n          <div class=\"tile on r\" style=\"--i:1\"><span class=\"k\">PUNTO 2<\u002Fspan><span class=\"val\">47<small>dB<\u002Fsmall><\u002Fspan><div class=\"bar\"><i style=\"width:100%\"><\u002Fi><\u002Fdiv><span class=\"ref\">Referencia 23 dB<\u002Fspan><\u002Fdiv>\n        <\u002Fdiv>\n        <div class=\"blk uind\">\n          <h3>Indicadores principales<\u002Fh3>\n          <div class=\"rows\">\n            <div class=\"row\" style=\"--i:0\"><span>Nivel máximo<\u002Fspan><b><span class=\"red\">47.0 dB<\u002Fspan><span class=\"ref\">Ref. ≤ 23 dB<\u002Fspan><\u002Fb><\u002Fdiv>\n            <div class=\"row\" style=\"--i:1\"><span>Línea base del componente<\u002Fspan><b>15 dB<\u002Fb><\u002Fdiv>\n            <div class=\"row\" style=\"--i:2\"><span>Puntos medidos<\u002Fspan><b>2<\u002Fb><\u002Fdiv>\n            <div class=\"row\" style=\"--i:3\"><span>Estado<\u002Fspan><b><span class=\"red\">Alarma<\u002Fspan><span class=\"badge r\">Alarma<\u002Fspan><\u002Fb><\u002Fdiv>\n          <\u002Fdiv>\n        <\u002Fdiv>\n        <div class=\"blk umeter\">\n          <h3>Nivel<\u002Fh3>\n          <div class=\"meter\">\n            <div class=\"mticks\"><span style=\"bottom:68.6%\">39<\u002Fspan><span style=\"bottom:45.7%\">31<\u002Fspan><span style=\"bottom:22.9%\">23<\u002Fspan><span style=\"bottom:0\">15<\u002Fspan><\u002Fdiv>\n            <div class=\"mbar\"><i class=\"b g\"><\u002Fi><i class=\"b y\"><\u002Fi><i class=\"b o\"><\u002Fi><i class=\"b r\"><\u002Fi><div class=\"needle\"><span>47 dB<\u002Fspan><\u002Fdiv><\u002Fdiv>\n          <\u002Fdiv>\n        <\u002Fdiv>\n        <div class=\"blk usev\">\n          <h3>Criterios de severidad<\u002Fh3>\n          <div class=\"sev\">\n            <div class=\"segs\"><span>Bueno, 15 a 23<\u002Fspan><span>Observación, 24 a 31<\u002Fspan><span>Precaución, 32 a 39<\u002Fspan><span>Alarma, mayor a 39<\u002Fspan><\u002Fdiv>\n            <div class=\"smark\"><span>47 dB<\u002Fspan><i><\u002Fi><\u002Fdiv>\n          <\u002Fdiv>\n        <\u002Fdiv>\n      <\u002Fdiv>\n    <\u002Fdiv>\n  <\u002Fdiv>\n<\u002Fdiv>\n<\u002Fdiv>\n\n<script>\n(function(){\n  var root=document.getElementById('idap'),toast=document.getElementById('toast'),reco=document.getElementById('reco'),panel=document.getElementById('panel'),tabsEl=document.getElementById('tabs');\n  var cards=[].slice.call(root.querySelectorAll('.card')),tabs=[].slice.call(root.querySelectorAll('.tab')),panes=[].slice.call(root.querySelectorAll('.pane'));\n  var counts=cards.map(function(c){return [].slice.call(c.querySelectorAll('[data-count]'))});\n  var badges=cards.map(function(c){return c.querySelector('.st .badge')});\n  var vel=[].slice.call(root.querySelectorAll('[data-vel]')),acc1=document.getElementById('acc1'),acc2=document.getElementById('acc2');\n  var usPane=root.querySelector('[data-pane=us]'),scope=document.getElementById('scope'),cv=document.getElementById('cv'),ctx=cv.getContext('2d');\n  var thVis=document.getElementById('thVis'),visImg=thVis.querySelector('img');\n  var specV=document.getElementById('specV'),specA=document.getElementById('specA');\n  (function buildSpectra(){\n    var seed=7;function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}\n    var NS='http://www.w3.org/2000/svg';\n    function rect(g,x,w,h,fill,cls,idx,prop){var r=document.createElementNS(NS,'rect');r.setAttribute('x',x);r.setAttribute('y',100-h);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('fill',fill);r.setAttribute('class',cls);r.style.setProperty(prop,idx);g.appendChild(r)}\n    function fill(spec,peaks,pkClass){\n      var g=spec.querySelector('.bars'),pg=spec.querySelector('.pks')||g;\n      for(var i=0;i<40;i++){var at=peaks.filter(function(p){return p.i===i})[0];\n        if(at&&pkClass==='bar'){rect(g,i*10+2,6,at.h,at.fill,'bar',i,'--i')}\n        else{rect(g,i*10+2,6,6+rnd()*16,'#334155','bar',i,'--i')}}\n      if(pkClass==='pk')peaks.forEach(function(p,j){rect(pg,p.i*10+2,6,p.h,p.fill,'pk',j,'--j')});\n    }\n    fill(specV,[{i:6,h:58,fill:'#22c55e'},{i:12,h:40,fill:'#22c55e'},{i:18,h:28,fill:'#22c55e'}],'bar');\n    fill(specA,[{i:7,h:78,fill:'#facc15'},{i:14,h:52,fill:'rgba(250,204,21,.65)'},{i:21,h:40,fill:'rgba(250,204,21,.6)'},{i:28,h:30,fill:'rgba(250,204,21,.55)'}],'pk');\n  })();\n  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;\n  var DUR=12,HOLD=9;\n  var TL={toastIn:.7,toastOut:2.3,count:[2.4,2.65,2.9],countDur:1,tab:4.2,vel:4.5,velStep:.2,acc1:5.9,acc2:6.2,spec:5.6,pk:6.9,reco:7.4,fade:11.2};\n  var t=reduce?HOLD:0,paused=false,forced=null,last=null,lastPointer='mouse',phase=0,scopeHov=false;\n  function ease(p){return 1-Math.pow(1-p,3)}\n  function clamp(x){return x<0?0:x>1?1:x}\n\n  function render(){\n    var op=t<.4?t/.4:t>TL.fade?1-(t-TL.fade)/(DUR-TL.fade):1;\n    root.style.opacity=(reduce||forced)?1:Math.max(0,op);\n    toast.classList.toggle('in',!reduce&&t>=TL.toastIn&&t<TL.toastOut);\n    cards.forEach(function(c,i){\n      var p=clamp((t-TL.count[i])/TL.countDur),on=t>=TL.count[i];\n      c.classList.toggle('on',on);\n      counts[i].forEach(function(b){var f=parseFloat(b.dataset.count),d=+b.dataset.dec;b.textContent=(f*ease(p)).toFixed(d)});\n      badges[i].classList.toggle('pop',p>=1);\n    });\n    var tab=forced||(t>=TL.tab?'vib':'res');\n    tabs.forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab)});\n    var pane=tab==='res'?'vib':tab;\n    panes.forEach(function(p){p.classList.toggle('show',p.dataset.pane===pane)});\n    cards.forEach(function(c){c.classList.toggle('active',forced===c.dataset.tab)});\n    var fin=!!forced;\n    vel.forEach(function(el,k){el.classList.toggle('on',fin||t>=TL.vel+k*TL.velStep)});\n    acc1.classList.toggle('on',fin||t>=TL.acc1);\n    acc2.classList.toggle('on',fin||t>=TL.acc2);\n    acc2.classList.toggle('pulse',!fin&&t>=TL.acc2&&t<TL.acc2+1.4);\n    reco.classList.toggle('in',fin||t>=TL.reco);\n    [specV,specA].forEach(function(s){s.classList.toggle('on',fin||t>=TL.spec);s.classList.toggle('pk-on',fin||t>=TL.pk)});\n    thVis.classList.toggle('has',!!visImg.getAttribute('src'));\n  }\n\n  /* oscilloscope */\n  function drawScope(){\n    var w=scope.clientWidth,h=scope.clientHeight,dpr=window.devicePixelRatio||1;\n    if(!w||!h)return;\n    var W=Math.round(w*dpr),H=Math.round(h*dpr);\n    if(cv.width!==W||cv.height!==H){cv.width=W;cv.height=H}\n    ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);\n    ctx.strokeStyle='rgba(255,255,255,.06)';ctx.lineWidth=1;ctx.beginPath();\n    var i,x,y;\n    for(i=1;i<12;i++){x=Math.round(i*w/12)+.5;ctx.moveTo(x,0);ctx.lineTo(x,h)}\n    for(i=1;i<4;i++){y=Math.round(i*h/4)+.5;ctx.moveTo(0,y);ctx.lineTo(w,y)}\n    ctx.stroke();\n    var mid=h/2,A=h*.07,P=w/4.5,k=200/w; /* k normalises frequency to the scope width */\n    function green(s){return mid+A*Math.sin(s*.11*k*3)+A*.35*Math.sin(s*.27*k*3+1)}\n    function red(s){\n      var base=3*A*(Math.sin(s*.09*k*3)*.55+Math.sin(s*.23*k*3+2)*.3+Math.sin(s*.61*k*3+.7)*.15);\n      var d=((s%P)+P)%P;if(d>P/2)d-=P;\n      var spike=Math.exp(-Math.abs(d)/(P*.014))*4.5*A;\n      return mid+base-spike;\n    }\n    ctx.lineJoin='round';\n    ctx.strokeStyle=scopeHov?'rgba(34,197,94,.25)':'#22c55e';ctx.lineWidth=1.5;ctx.beginPath();\n    for(x=0;x<=w;x+=2){y=green(x+phase);x?ctx.lineTo(x,y):ctx.moveTo(x,y)}\n    ctx.stroke();\n    if(scopeHov){\n      var first=((P-(phase%P))%P+P)%P;\n      ctx.strokeStyle='rgba(239,68,68,.28)';ctx.lineWidth=1;ctx.beginPath();\n      for(x=first;x<=w;x+=P){ctx.moveTo(x+.5,0);ctx.lineTo(x+.5,h)}\n      ctx.stroke();\n    }\n    ctx.strokeStyle=scopeHov?'#f87171':'#ef4444';ctx.lineWidth=scopeHov?2:1.5;ctx.beginPath();\n    for(x=0;x<=w;x+=1){y=red(x+phase);x?ctx.lineTo(x,y):ctx.moveTo(x,y)}\n    ctx.stroke();\n    if(scopeHov){\n      ctx.fillStyle='#fff';\n      for(x=first;x<=w;x+=P){ctx.beginPath();ctx.arc(x,red(x+phase),2.5,0,Math.PI*2);ctx.fill()}\n    }\n  }\n\n  function frame(now){\n    var dt=last==null?0:Math.min(.1,(now-last)/1000);\n    if(!reduce){\n      if(!paused){t+=dt;if(t>=DUR){t-=DUR;root.classList.add('noanim');render();void root.offsetWidth;root.classList.remove('noanim');}}\n      phase+=dt*70;\n    }\n    last=now;render();\n    if(usPane.classList.contains('show'))drawScope();\n    requestAnimationFrame(frame);\n  }\n\n  function setForced(tab){forced=tab;paused=!!tab;render();}\n  function inLower(el){return !!el&&(panel.contains(el)||tabsEl.contains(el))}\n  cards.forEach(function(c){\n    c.addEventListener('pointerdown',function(e){lastPointer=e.pointerType});\n    c.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')setForced(c.dataset.tab)});\n    c.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse'&&!inLower(e.relatedTarget))setForced(null)});\n    c.addEventListener('click',function(e){if(lastPointer!=='mouse'){e.stopPropagation();setForced(forced===c.dataset.tab?null:c.dataset.tab)}});\n    c.addEventListener('focus',function(){setForced(c.dataset.tab)});\n    c.addEventListener('blur',function(){setForced(null)});\n  });\n  [panel,tabsEl].forEach(function(el){el.addEventListener('pointerleave',function(e){\n    if(e.pointerType==='mouse'&&forced&&!inLower(e.relatedTarget)&&!cards.some(function(c){return c.contains(e.relatedTarget)}))setForced(null)})});\n  tabs.forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();setForced(forced===b.dataset.tab?null:b.dataset.tab)})});\n  root.addEventListener('click',function(e){if(forced&&!inLower(e.target))setForced(null)});\n  var hlT;\n  specA.addEventListener('pointerenter',function(){reco.classList.add('hl');clearTimeout(hlT);hlT=setTimeout(function(){reco.classList.remove('hl')},900)});\n  reco.addEventListener('pointerenter',function(){specA.classList.add('hl')});\n  reco.addEventListener('pointerleave',function(){specA.classList.remove('hl')});\n  scope.addEventListener('pointerenter',function(){scopeHov=true});\n  scope.addEventListener('pointerleave',function(){scopeHov=false});\n\n  render();\n  requestAnimationFrame(frame);\n})();\n<\u002Fscript>\n\n\n<\u002Fbody><\u002Fhtml>"
+  </script>
+</body>
+</html>

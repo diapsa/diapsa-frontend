@@ -35,6 +35,7 @@
         "id": "aplicaciones",
         "title": "Dónde se aplica",
         "content": "Motores, bombas, ventiladores, compresores, reductores y turbinas. Todo equipo rotativo cuyo paro detenga la línea.",
+        "escena": "vibracion-espectro",
         "foto": {
           "src": "/images/servicios/vibraciones-mecanicas/motor-con-sensor.jpg",
           "alt": "Motor eléctrico con transmisión por bandas y sensor de vibración montado en la carcasa"
@@ -96,7 +97,23 @@
     ],
     "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA, con el estado por disciplina, los niveles de vibración medidos contra los rangos ISO y las imágenes termográficas",
     "dato": "3",
-    "datoTexto": "disciplinas en un solo informe"
+    "datoTexto": "disciplinas en un solo informe",
+    "idap": {
+      "src": "/images/idap/capturas/inspeccion-vibraciones.jpg",
+      "alt": "Inspección integral en IDAP: pestaña de vibraciones con la velocidad y la aceleración de cada punto en las tres direcciones, calificadas en semáforo",
+      "texto": "Así se ve la misma inspección dentro de IDAP: la inspección llega desde campo, cada disciplina se llena con sus valores y se califica en semáforo, y en la pestaña de vibraciones quedan los puntos en las tres direcciones, los espectros y la recomendación con su porqué. Pasa el cursor por una disciplina para abrirla.",
+      "ancho": 1945,
+      "alto": 1350,
+      "escena": "vib",
+      "imagenes": {
+        "principal": "/images/idap/inspeccion/termica-1.jpg",
+        "miniaturas": [
+          "/images/idap/inspeccion/termica-1.jpg",
+          "/images/idap/inspeccion/termica-2.jpg",
+          "/images/idap/inspeccion/termica-3.jpg"
+        ]
+      }
+    }
   },
   "mostrarClientes": true,
   "faq": [
