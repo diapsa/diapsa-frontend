@@ -12,6 +12,7 @@ import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
 import ClientesLogos from "@/components/organisms/ClientesLogos";
 import ComparadorTermico from "@/components/organisms/ComparadorTermico";
+import ComparadorSonoro from "@/components/organisms/ComparadorSonoro";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
@@ -225,6 +226,11 @@ export default async function ServicePage({
                 demostración de lo que ahí se afirma. */}
             {service.comparador && (
                 <ComparadorTermico comparador={service.comparador} paso={paso()} />
+            )}
+
+            {/* Diferenciador de ultrasonido: se oye la diferencia. */}
+            {service.comparadorSonoro && (
+                <ComparadorSonoro comparador={service.comparadorSonoro} paso={paso()} />
             )}
 
             <ServiceProof certificacion={service.certificacion} />
