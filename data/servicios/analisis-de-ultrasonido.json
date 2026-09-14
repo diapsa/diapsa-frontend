@@ -78,7 +78,7 @@
   },
   "comparadorSonoro": {
     "titulo": "Un rodamiento sano y uno con falla no suenan igual",
-    "texto": "Dos grabaciones reales de la misma ruta de inspección, tomadas con el detector de ultrasonido y traídas al rango audible. El primero es un ventilador en condición normal. El segundo es la bomba que salió en alarma ese día. Dale a reproducir y escucha la diferencia: parejo contra crepitante.",
+    "texto": "Dos señales reales de la misma ruta de inspección, tomadas con el detector de ultrasonido. Arriba, un ventilador en condición normal: señal pareja, sin picos. Abajo, la bomba que salió en alarma ese día: señal áspera con impactos. Y en la escala, cuántos decibeles sobre la línea base separan la lubricación a tiempo del daño avanzado.",
     "clips": [
       {
         "etiqueta": "Condición normal",
@@ -86,7 +86,6 @@
         "nivel": "20 dB",
         "estado": "normal",
         "descripcion": "Siseo uniforme, sin picos. El rodamiento gira sobre su película de lubricante y no hay contacto metal con metal. Sigue en ruta.",
-        "src": "/audio/ultrasonido/rodamiento-normal.mp3",
         "envolvente": [
           0.541,
           0.856,
@@ -216,7 +215,6 @@
         "nivel": "62 dB",
         "estado": "alarma",
         "descripcion": "Crepitar áspero con impactos. Más de cuarenta decibeles por encima de un equipo sano: el rodamiento ya trabaja con daño. Se recomendó su cambio en la siguiente ventana.",
-        "src": "/audio/ultrasonido/rodamiento-hallazgo.mp3",
         "envolvente": [
           0.517,
           0.936,
@@ -341,7 +339,7 @@
         ]
       }
     ],
-    "pie": "Grabaciones de una inspección real de DIAPSA, recortadas a cinco segundos y con la identificación de la planta y de los equipos omitida. Los niveles son los medidos ese día."
+    "pie": "Señales de una inspección real de DIAPSA, con la identificación de la planta y de los equipos omitida. Los niveles son los medidos ese día. La escala sigue el criterio habitual del ultrasonido en rodamientos: 8 decibeles sobre la línea base indican falta de lubricación, 16 daño incipiente y 35 daño avanzado."
   },
   "diagramas": [
     "flujo-servicio"
@@ -375,7 +373,7 @@
     "contenido": [
       "Nivel en decibeles de cada punto contra su línea base",
       "Estado de cada equipo en semáforo, para leerlo de un vistazo",
-      "Grabación del sonido de cada hallazgo, para volver a oírlo",
+      "Nivel de cada hallazgo contra los umbrales de lubricación y daño",
       "Componente afectado y causa probable: rodamiento, fuga o descarga",
       "Acción recomendada y con qué urgencia"
     ],
