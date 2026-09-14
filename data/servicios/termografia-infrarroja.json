@@ -135,7 +135,9 @@
     "idap": {
       "src": "/images/idap/capturas/inspeccion-termografia.jpg",
       "alt": "Inspección integral en IDAP: pestaña de termografía con la imagen térmica del motor, la temperatura máxima, la ambiente y los valores de cada punto marcado",
-      "texto": "Así se ve la misma inspección dentro de IDAP: la imagen térmica con los puntos marcados, la temperatura máxima contra la ambiente y el estado del equipo, junto a las otras disciplinas medidas ese día."
+      "texto": "Así se ve la misma inspección dentro de IDAP: la imagen térmica con los puntos marcados, la temperatura máxima contra la ambiente y el estado del equipo, junto a las otras disciplinas medidas ese día.",
+      "ancho": 1945,
+      "alto": 1240
     }
   },
   "mostrarClientes": true,

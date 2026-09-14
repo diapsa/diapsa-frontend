@@ -77,6 +77,9 @@ export interface ServiceEntregable {
     src: string;
     alt: string;
     texto?: string;
+    /** Tamaño natural de la captura, para que Next reserve el espacio. */
+    ancho?: number;
+    alto?: number;
   };
 }
 
