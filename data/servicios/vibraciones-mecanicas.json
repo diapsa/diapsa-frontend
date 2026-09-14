@@ -35,6 +35,7 @@
         "id": "aplicaciones",
         "title": "Dónde se aplica",
         "content": "Motores, bombas, ventiladores, compresores, reductores y turbinas. Todo equipo rotativo cuyo paro detenga la línea.",
+        "escena": "vibracion-espectro",
         "foto": {
           "src": "/images/servicios/vibraciones-mecanicas/motor-con-sensor.jpg",
           "alt": "Motor eléctrico con transmisión por bandas y sensor de vibración montado en la carcasa"

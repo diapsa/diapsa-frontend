@@ -26,6 +26,9 @@ export interface ContentItem {
   foto?: FotoPunto;
   /** Gráfico esquemático en lugar de foto, por clave: "paros". Tiene prioridad sobre foto. */
   grafico?: string;
+  /** Escena 3D animada en lugar de foto: "vibracion-espectro" | "vibracion-semaforo".
+      Tiene prioridad sobre grafico y foto; la foto queda de respaldo. */
+  escena?: string;
 }
 
 export interface ServiceContent {

@@ -34,7 +34,8 @@
       {
         "id": "donde-aplica",
         "title": "Dónde se aplica",
-        "content": "Equipos rotativos críticos donde una falla evoluciona más rápido que la ruta de medición periódica: bombas de proceso, ventiladores, compresores, reductores y motores cuya parada detiene la línea o pone en riesgo la operación."
+        "content": "Equipos rotativos críticos donde una falla evoluciona más rápido que la ruta de medición periódica: bombas de proceso, ventiladores, compresores, reductores y motores cuya parada detiene la línea o pone en riesgo la operación.",
+        "escena": "vibracion-semaforo"
       },
       {
         "id": "que-incluye",
