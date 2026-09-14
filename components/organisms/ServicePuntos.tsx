@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import IconoTarjeta from "../atoms/IconoTarjeta";
 import GraficoPunto from "../atoms/GraficoPunto";
+import EscenaVibracion from "./EscenaVibracion";
 import type { ContentItem, FotoPunto } from "@/types/servicio";
 
 /**
@@ -33,6 +34,7 @@ type Props = {
 
 export default function ServicePuntos({ puntos, foto }: Props) {
   const [activo, setActivo] = useState(0);
+  const escena = puntos[activo]?.escena;
   const grafico = puntos[activo]?.grafico;
   const fotoActiva = puntos[activo]?.foto ?? foto;
   const contener = fotoActiva?.ajuste === "contener";
@@ -79,9 +81,19 @@ export default function ServicePuntos({ puntos, foto }: Props) {
         })}
       </ul>
 
+      {/* Escena 3D animada, si el punto la pide. Mismo marco que la foto. */}
+      {escena && (
+        <div
+          key={`escena-${escena}`}
+          className="relative aspect-[4/3] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5 motion-safe:animate-[fadeIn_.4s_ease-out]"
+        >
+          <EscenaVibracion variante={escena === "vibracion-semaforo" ? "semaforo" : "espectro"} />
+        </div>
+      )}
+
       {/* Gráfico esquemático, si el punto lo pide. Mismo marco que la foto
           para que el cambio entre puntos no salte. */}
-      {grafico && (
+      {!escena && grafico && (
         <div
           key={`grafico-${grafico}`}
           className="relative aspect-[4/3] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5 motion-safe:animate-[fadeIn_.4s_ease-out]"
@@ -92,7 +104,7 @@ export default function ServicePuntos({ puntos, foto }: Props) {
 
       {/* Imagen del punto activo. La clave fuerza a React a montar un nodo
           nuevo al cambiar de punto, y con eso se dispara el fundido. */}
-      {!grafico && fotoActiva && (
+      {!escena && !grafico && fotoActiva && (
         <div
           key={fotoActiva.src}
           className={`relative aspect-[4/3] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5 motion-safe:animate-[fadeIn_.4s_ease-out] ${

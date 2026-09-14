@@ -47,6 +47,39 @@
       }
     ]
   },
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "No una lista de decibeles para que la interpretes tú. Un informe donde cada punto trae su nivel contra la línea base del componente, el diagnóstico del analista y qué hacer al respecto. Las páginas que ves son de un informe real, con los datos de la planta omitidos.",
+    "contenido": [
+      "Nivel en decibeles de cada punto contra su línea base",
+      "Estado de cada equipo en semáforo, para leerlo de un vistazo",
+      "Componente afectado y causa probable: rodamiento, fuga o descarga",
+      "Acción recomendada y con qué urgencia",
+      "Historial y tendencia consultables en IDAP"
+    ],
+    "paginas": [
+      "/images/informe/pagina-1.png",
+      "/images/informe/pagina-2.png"
+    ],
+    "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA, con el estado por disciplina y los niveles de ultrasonido medidos",
+    "dato": "3",
+    "datoTexto": "disciplinas en un solo informe",
+    "idap": {
+      "src": "/images/idap/capturas/inspeccion-vibraciones.jpg",
+      "alt": "Inspección integral en IDAP con la pestaña de ultrasonido",
+      "texto": "Así se ve la misma inspección dentro de IDAP: la inspección llega desde campo, cada disciplina se llena con sus valores y se califica en semáforo, y en la pestaña de ultrasonido quedan la forma de onda con los impactos del rodamiento, los niveles contra la línea base y los criterios de severidad. Pasa el cursor por una disciplina para abrirla.",
+      "escena": "us",
+      "imagenes": {
+        "principal": "/images/idap/inspeccion/termica-1.jpg",
+        "miniaturas": [
+          "/images/idap/inspeccion/termica-1.jpg",
+          "/images/idap/inspeccion/termica-2.jpg",
+          "/images/idap/inspeccion/termica-3.jpg"
+        ]
+      }
+    }
+  },
   "relatedProducts": {
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",

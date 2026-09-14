@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Antetitulo from "../atoms/Antetitulo";
+import EscenaIdap from "./EscenaIdap";
 import type { ServiceEntregable as Entregable } from "@/types/servicio";
 
 /**
@@ -13,6 +14,15 @@ import type { ServiceEntregable as Entregable } from "@/types/servicio";
  * así se ve, esto contiene. Las páginas siguen siendo reales, escalonadas y
  * con un ligero movimiento al pasar el cursor, porque describir un informe
  * convence menos que verlo.
+ *
+ * Debajo, si el servicio trae captura, va la misma inspección como se ve en
+ * IDAP, a todo lo ancho; y si trae `escena`, en lugar de la captura va la
+ * recreación animada de la plataforma (EscenaIdap) abierta en la pestaña
+ * de la disciplina de la página. Se probó como pestaña junto al PDF, a media
+ * columna, y se veía como un rectángulo oscuro con letra ilegible; una
+ * captura de aplicación necesita ancho. La imagen viene recortada al tramo
+ * que dice algo a ese tamaño: las disciplinas con su estado y el panel de
+ * la disciplina de la página.
  *
  * Componente de servidor: sin estado, sin formulario, sin JavaScript.
  */
@@ -93,6 +103,45 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
           </div>
         </div>
       </div>
+
+      {/* La misma inspección dentro de IDAP, a todo lo ancho */}
+      {entregable.idap && (
+        <div className="mx-auto mt-16 max-w-7xl px-6 lg:mt-24">
+          <div className="mb-8 max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-widest text-secondary">Y en la plataforma</p>
+            <h3 className="mt-2 text-2xl font-extrabold leading-tight text-primary lg:text-3xl">
+              Así se ve la misma inspección en IDAP
+            </h3>
+            {entregable.idap.texto && (
+              <p className="mt-3 text-justify text-base leading-relaxed text-tertiary lg:text-lg">
+                {entregable.idap.texto}
+              </p>
+            )}
+          </div>
+
+          {/* Marco de navegador oscuro, como se ve la plataforma */}
+          <div className="mx-auto max-w-5xl overflow-hidden rounded-md bg-[#0b0f19] shadow-2xl ring-1 ring-black/20">
+            <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-2.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+              <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+              <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+              <span className="ml-3 rounded-sm bg-white/5 px-3 py-0.5 text-[11px] text-white/50">idap.app</span>
+            </div>
+            {entregable.idap.escena ? (
+              <EscenaIdap disciplina={entregable.idap.escena} imagenes={entregable.idap.imagenes} />
+            ) : (
+              <Image
+                src={entregable.idap.src}
+                alt={entregable.idap.alt}
+                width={entregable.idap.ancho ?? 1945}
+                height={entregable.idap.alto ?? 1240}
+                className="h-auto w-full"
+                sizes="(max-width: 1024px) 100vw, 1024px"
+              />
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
