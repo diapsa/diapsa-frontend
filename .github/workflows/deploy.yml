@@ -42,6 +42,14 @@ jobs:
                 echo "Reloading PM2"
                 pm2 reload ecosystem.config.js --update-env
 
+                # El hosting (cPanel) pone un caché de NGINX delante de Node y
+                # respeta el s-maxage de un año que Next manda en las páginas
+                # estáticas. Sin esto, tras un deploy las URLs ya visitadas
+                # siguen sirviendo el HTML viejo. Si uapi no existe, avisa y
+                # no tumba el deploy.
+                echo "Clearing NGINX cache (cPanel)"
+                uapi --output=jsonpretty NginxCaching clear_cache || echo "uapi no disponible: limpiar el cache de NGINX a mano en cPanel"
+
 # Pendientes
 # cache de node_modules
 # staging branch
