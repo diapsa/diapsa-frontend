@@ -131,9 +131,7 @@ export interface ClipSonoro {
   /** Nivel medido, ej. "20 dB". */
   nivel: string;
   estado: "normal" | "alarma";
-  /** Ruta pública del mp3. */
-  src: string;
-  /** Envolvente precalculada, 120 valores entre 0 y 1, para dibujar la onda sin descargar el audio. */
+  /** Envolvente de la grabación real, 120 valores entre 0 y 1, con la que se dibuja la onda. */
   envolvente: number[];
 }
 
@@ -188,6 +186,6 @@ export interface Servicio {
   mostrarClientes?: boolean;
   /** Par visual y térmico de la misma escena (termografía). */
   comparador?: ServiceComparador;
-  /** Dos grabaciones reales, normal y con hallazgo (ultrasonido). */
+  /** Gráfica de referencia con dos señales reales, normal y con hallazgo (ultrasonido). */
   comparadorSonoro?: ServiceComparadorSonoro;
 }
