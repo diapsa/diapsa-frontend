@@ -180,15 +180,15 @@
   "galeria": [
     {
       "src": "/images/servicios/termografia-infrarroja/subestacion.jpg",
-      "alt": "Subestación eléctrica inspeccionada por DIAPSA"
+      "alt": "Inspección termográfica de una subestación eléctrica con la carga en operación."
     },
     {
       "src": "/images/servicios/termografia-infrarroja/termograma-aislador.jpg",
-      "alt": "Termograma de un aislador de subestación con la conexión superior marcada por la cámara"
+      "alt": "Termograma de un aislador con un punto caliente marcado y su temperatura medida."
     },
     {
       "src": "/images/disciplinas/termografia.jpg",
-      "alt": "Cámara térmica en manos de un termógrafo de DIAPSA durante una inspección en planta"
+      "alt": "Analista certificado tomando termogramas durante una ruta de inspección."
     }
   ],
   "cta": {

@@ -1,0 +1,212 @@
+{
+  "id": "alineacion-balanceo",
+  "slug": "alineacion-balanceo",
+  "type": "tecnologia",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo de Condición",
+      "link": "/servicios/monitoreo-condicion"
+    },
+    {
+      "label": "Alineación y Balanceo",
+      "link": "/servicios/monitoreo-condicion/alineacion-balanceo"
+    }
+  ],
+  "header": {
+    "title": "Alineación y Balanceo",
+    "subtitle": "Corregimos en campo las dos causas que más vibración generan en equipo rotativo",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoDescription": "Alineación láser de ejes y balanceo dinámico en sitio para motores, bombas y ventiladores. Se mide antes, se corrige y se vuelve a medir para probar el resultado.",
+  "content": {
+    "title": "El análisis las encuentra; esto las corrige",
+    "subtitle": "Desalineación y desbalanceo son, juntas, la causa de buena parte de la vibración en máquinas rotativas. El análisis las identifica en el espectro, pero identificarlas no las arregla. Aquí las corregimos en su propia base, con alineación láser y balanceo en sitio, y se vuelve a medir para probar que quedó.",
+    "image": "/images/disciplinas/alineacion-balaceo.jpg",
+    "items": [
+      {
+        "id": "aplicaciones",
+        "title": "Dónde se aplica",
+        "content": "Cualquier equipo acoplado: motor con bomba, con ventilador, con compresor o con caja de engranes. Y cualquier rotor que gire desbalanceado: impulsores, ventiladores, poleas y volantes. También en equipo nuevo o recién reparado, antes de arrancarlo.",
+        "foto": {
+          "src": "/images/disciplinas/alineacion-balaceo.jpg",
+          "alt": "Analista de DIAPSA midiendo sobre un motor acoplado antes de corregir la alineación"
+        }
+      },
+      {
+        "id": "beneficios",
+        "title": "Qué ganas",
+        "content": "Menos vibración desde el primer arranque y, sobre todo, lo que te ahorras después: un equipo desalineado o desbalanceado se come primero los rodamientos, luego los sellos, después el acople y el eje, y al final el motor. Corregirlo cuesta una jornada; el resto de esa fila cuesta bastante más.",
+        "grafico": "alineacion",
+        "foto": {
+          "src": "/images/gallery/campo/vibracion-analista-motor.webp",
+          "alt": "Medición de vibración sobre un motor eléctrico en operación"
+        }
+      },
+      {
+        "id": "como",
+        "title": "Cómo lo hacemos",
+        "content": "Alineación con equipo láser, que mide el desfase real entre los ejes y dice cuánto calzar y cuánto mover en cada pata, con la máquina en su sitio y sin desmontar el acople. Balanceo dinámico en campo, en uno o dos planos, con el rotor montado en su propia chumacera.",
+        "foto": {
+          "src": "/images/gallery/campo/vibracion-analizador-motor.webp",
+          "alt": "Analizador y sensor montados en el punto de medición de un motor"
+        }
+      },
+      {
+        "id": "plataforma-idap",
+        "title": "Tus datos viven en IDAP",
+        "content": "El estado antes de la corrección, el valor alcanzado y la tolerancia aplicada quedan registrados. La próxima vez que ese equipo se mida, hay contra qué comparar.",
+        "foto": {
+          "src": "/images/idap/mockup.png",
+          "alt": "Pantallas de IDAP con el historial de un equipo",
+          "ajuste": "contener",
+          "fondo": "oscuro"
+        }
+      }
+    ]
+  },
+  "fotoPuntos": {
+    "src": "/images/disciplinas/alineacion-balaceo.jpg",
+    "alt": "Analista de DIAPSA frente a un motor acoplado durante un trabajo de alineación"
+  },
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujo": [
+    {
+      "titulo": "Medición inicial",
+      "texto": "Antes de tocar nada se mide la vibración y se registra cómo está el equipo, para que después haya contra qué comparar."
+    },
+    {
+      "titulo": "Diagnóstico",
+      "texto": "Se confirma si lo que hay es desalineación, desbalanceo o las dos. Corregir lo que no era no baja la vibración y sí cuesta tiempo."
+    },
+    {
+      "titulo": "Corrección en sitio",
+      "texto": "Alineación láser calzando y moviendo según lo que indica la medición, o balanceo del rotor en su propia base, sin desmontarlo."
+    },
+    {
+      "titulo": "Verificación",
+      "texto": "Se vuelve a medir con el equipo operando y se compara contra el estado inicial. Si no bajó, no está terminado."
+    },
+    {
+      "titulo": "Registro",
+      "texto": "El antes y el después quedan en el informe y en IDAP como la nueva línea base del equipo."
+    }
+  ],
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "Un informe que prueba el resultado con números, no con una firma de conformidad. El corazón es esta ficha: lo que se midió antes de tocar el equipo, lo que quedó después y contra qué tolerancia se comparó.",
+    "contenido": [
+      "Estado del equipo antes de la corrección, medido",
+      "Valores de desalineación encontrados y la tolerancia aplicada",
+      "Calzas colocadas y movimientos hechos en cada pata",
+      "Grado de balanceo alcanzado en el rotor",
+      "Estado después, medido en los mismos puntos que al principio"
+    ],
+    "resultado": {
+      "etiqueta": "Ficha de resultado",
+      "equipo": "Motor de bomba · 1,780 rpm",
+      "estado": "Dentro de tolerancia",
+      "filas": [
+        {
+          "concepto": "Desalineación paralela",
+          "antes": "0.38 mm",
+          "despues": "0.03 mm"
+        },
+        {
+          "concepto": "Desalineación angular",
+          "antes": "0.72 mm/100",
+          "despues": "0.05 mm/100"
+        },
+        {
+          "concepto": "Grado de balanceo del rotor",
+          "antes": "G 16",
+          "despues": "G 6.3"
+        },
+        {
+          "concepto": "Vibración global",
+          "antes": "7.4 mm/s",
+          "despues": "1.8 mm/s"
+        },
+        {
+          "concepto": "Temperatura del acople",
+          "antes": "62 °C",
+          "despues": "41 °C"
+        }
+      ],
+      "nota": "Tolerancia aplicada de 0.06 milímetros en paralela y 0.06 por cada 100 en angular, la que corresponde a un equipo de 1,800 revoluciones por minuto, y grado de balanceo G 6.3 según ISO 21940. Ejemplo ilustrativo del formato en que se entrega el resultado; no son cifras de un cliente en particular."
+    }
+  },
+  "mostrarClientes": true,
+  "servicioRelacionado": {
+    "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas",
+    "etiqueta": "Se contrata junto con",
+    "titulo": "Análisis de Vibraciones Mecánicas",
+    "texto": "Alinear y balancear sin medir antes es apostar. El análisis de vibraciones es lo que dice cuál de las dos fallas tiene el equipo, cuánta hay y si después de corregir realmente bajó. Por eso la mayoría de los trabajos de alineación y balanceo salen de una ruta de medición.",
+    "enlace": "Ver análisis de vibraciones"
+  },
+  "faq": [
+    {
+      "question": "¿Cuál es la diferencia entre alineación y balanceo?",
+      "answer": "La alineación corrige la relación entre dos ejes acoplados: que el del motor y el de la bomba queden en la misma línea, sin desfase ni ángulo entre ellos. El balanceo corrige la distribución de masa de un solo rotor que gira, para que su centro de masa coincida con su centro de giro. Son problemas distintos y se corrigen distinto, aunque los dos se manifiesten como vibración."
+    },
+    {
+      "question": "¿Cómo sé cuál de las dos necesita mi equipo?",
+      "answer": "Por el espectro de vibración. El desbalanceo aparece principalmente a la velocidad de giro y la desalineación suele mostrarse al doble, con componente axial. Por eso el trabajo empieza siempre midiendo: es la medición la que decide qué se corrige, no la sospecha."
+    },
+    {
+      "question": "¿Se puede balancear sin desmontar el rotor?",
+      "answer": "Sí, y es lo habitual. El balanceo en sitio se hace con el rotor montado en su propia chumacera y girando a su velocidad de trabajo, que además es la condición real en la que va a operar. Solo cuando el equipo no puede girar en sitio, o la geometría no lo permite, se recurre a una máquina balanceadora."
+    },
+    {
+      "question": "¿Qué tolerancia de alineación aplican?",
+      "answer": "La que indique el fabricante del equipo cuando la tiene documentada y, si no, la que corresponda a su velocidad de giro según la práctica aceptada: a mayor velocidad, tolerancia más cerrada. La tolerancia usada queda escrita en el informe junto con el valor alcanzado, para que se pueda revisar."
+    },
+    {
+      "question": "¿Cuánto tiempo toma?",
+      "answer": "Una alineación normal se resuelve en una jornada, contando la medición inicial, la corrección y la verificación. Un balanceo en sitio puede tomar más, porque requiere varios arranques para ir corrigiendo. El tiempo real depende del acceso al equipo y de la ventana que dé operación."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "El tipo de equipo y su potencia, la velocidad de giro, si está acoplado directo o por bandas, y si ya tienes una medición de vibración que muestre el problema. Con eso preparamos la propuesta."
+    }
+  ],
+  "certificacion": "Ejecutado por analistas de vibración certificados · ISO 18436-2",
+  "galeria": [
+    {
+      "src": "/images/disciplinas/alineacion-balaceo.jpg",
+      "alt": "Analista de DIAPSA midiendo sobre un motor acoplado antes de corregir la alineación."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-punto-medicion.webp",
+      "alt": "Registro del punto en el analizador: el mismo punto antes y después, para que los valores sean comparables."
+    },
+    {
+      "src": "/images/gallery/campo-img-5.jpg",
+      "alt": "Trabajo de campo de los analistas de DIAPSA sobre equipo rotativo en planta."
+    },
+    {
+      "src": "/images/gallery/campo-img-9.jpg",
+      "alt": "Intervención en sitio, con el equipo en su base y sin desmontar el acople."
+    }
+  ],
+  "cta": {
+    "title": "¿Tienes un equipo que vibra desde que lo instalaron?",
+    "text": "Cuéntanos qué equipo es y qué medición tienes, y te preparamos una propuesta de corrección con verificación incluida.",
+    "whatsappMessage": "Hola, quiero cotizar alineación y balanceo para un equipo de mi planta.",
+    "datos": [
+      "Registro REPSE vigente",
+      "Se mide antes y después",
+      "Servicio en todo México"
+    ]
+  }
+}

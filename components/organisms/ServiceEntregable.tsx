@@ -15,6 +15,11 @@ import type { ServiceEntregable as Entregable } from "@/types/servicio";
  * con un ligero movimiento al pasar el cursor, porque describir un informe
  * convence menos que verlo.
  *
+ * Los servicios correctivos no entregan un informe de inspección sino la
+ * prueba de que el equipo quedó mejor, así que en lugar de la vitrina de
+ * páginas muestran `resultado`: una ficha con el valor de antes y el de
+ * después, renglón por renglón. Es el mismo bloque, con otra vitrina.
+ *
  * Debajo, si el servicio trae captura, va la misma inspección como se ve en
  * IDAP, a todo lo ancho; y si trae `escena`, en lugar de la captura va la
  * recreación animada de la plataforma (EscenaIdap) abierta en la pestaña
@@ -65,7 +70,47 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
           </ul>
         </div>
 
-        {/* Vitrina: las páginas reales, escalonadas */}
+        {/* Vitrina A: la ficha de resultado, para lo correctivo */}
+        {entregable.resultado ? (
+          <div className="mx-auto w-full max-w-xl overflow-hidden rounded-sm bg-white shadow-2xl ring-1 ring-black/10">
+            <div className="bg-primary px-5 py-4 lg:px-6">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">
+                {entregable.resultado.etiqueta}
+              </p>
+              <div className="mt-1 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                <p className="text-lg font-extrabold text-white lg:text-xl">{entregable.resultado.equipo}</p>
+                <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-300">
+                  {entregable.resultado.estado}
+                </span>
+              </div>
+            </div>
+
+            <div className="px-5 py-2 lg:px-6">
+              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 py-2 text-[10px] font-bold uppercase tracking-wider text-tertiary lg:gap-x-6">
+                <span aria-hidden="true" />
+                <span className="text-right">Antes</span>
+                <span className="text-right">Después</span>
+              </div>
+              {entregable.resultado.filas.map((f) => (
+                <div
+                  key={f.concepto}
+                  className="grid grid-cols-[1fr_auto_auto] items-baseline gap-x-4 border-t border-gray-100 py-3 lg:gap-x-6"
+                >
+                  <span className="text-sm leading-snug text-primary">{f.concepto}</span>
+                  <span className="text-right text-sm font-semibold tabular-nums text-red-500">{f.antes}</span>
+                  <span className="text-right text-base font-extrabold tabular-nums text-emerald-600">
+                    {f.despues}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <p className="border-t border-gray-200 bg-gray-50 px-5 py-3 text-justify text-xs leading-relaxed text-tertiary lg:px-6">
+              {entregable.resultado.nota}
+            </p>
+          </div>
+        ) : entregable.paginas && entregable.paginas.length > 1 ? (
+        /* Vitrina B: las páginas reales del informe, escalonadas */
         <div className="group relative mx-auto w-full max-w-xl">
           {/* Página 2 al fondo, girada, asomando por detrás */}
           <div className="absolute right-0 top-6 hidden w-[78%] rotate-[4deg] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5 transition-transform duration-500 motion-safe:group-hover:rotate-[6deg] motion-safe:group-hover:-translate-y-2 sm:block">
@@ -84,7 +129,7 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
           <div className="relative w-[88%] overflow-hidden rounded-sm shadow-2xl ring-1 ring-black/10 transition-transform duration-500 motion-safe:group-hover:-translate-y-1.5">
             <Image
               src={entregable.paginas[0]}
-              alt={entregable.altPaginas}
+              alt={entregable.altPaginas ?? ""}
               width={1253}
               height={890}
               className="h-auto w-full"
@@ -93,15 +138,14 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
           </div>
 
           {/* Sello flotante con lo que trae el informe */}
-          <div className="absolute -bottom-4 right-0 rounded-sm bg-primary px-5 py-3 text-white shadow-xl sm:right-4">
-            <p className="text-2xl font-extrabold leading-none text-secondary">
-              {entregable.dato}
-            </p>
-            <p className="mt-1 text-xs uppercase tracking-wider text-white/80">
-              {entregable.datoTexto}
-            </p>
-          </div>
+          {entregable.dato && (
+            <div className="absolute -bottom-4 right-0 rounded-sm bg-primary px-5 py-3 text-white shadow-xl sm:right-4">
+              <p className="text-2xl font-extrabold leading-none text-secondary">{entregable.dato}</p>
+              <p className="mt-1 text-xs uppercase tracking-wider text-white/80">{entregable.datoTexto}</p>
+            </div>
+          )}
         </div>
+        ) : null}
       </div>
 
       {/* La misma inspección dentro de IDAP, a todo lo ancho */}
@@ -110,7 +154,7 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
           <div className="mb-8 max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-widest text-secondary">Y en la plataforma</p>
             <h3 className="mt-2 text-2xl font-extrabold leading-tight text-primary lg:text-3xl">
-              Así se ve la misma inspección en IDAP
+              {entregable.idap.titulo ?? "Así se ve la misma inspección en IDAP"}
             </h3>
             {entregable.idap.texto && (
               <p className="mt-3 text-justify text-base leading-relaxed text-tertiary lg:text-lg">
