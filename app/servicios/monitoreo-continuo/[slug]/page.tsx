@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/organisms/PageHeader";
 import Antetitulo from "@/components/atoms/Antetitulo";
-import Image from "next/image";
 import type { Servicio } from "@/types/servicio";
 import JsonLd, {
     createServiceSchema,
@@ -11,6 +10,7 @@ import JsonLd, {
 import ContactForm from "@/components/organisms/ContactForm";
 import ServiceProof from "@/components/organisms/ServiceProof";
 import ClientesLogos from "@/components/organisms/ClientesLogos";
+import GaleriaCampo from "@/components/organisms/GaleriaCampo";
 import ComparadorTermico from "@/components/organisms/ComparadorTermico";
 import GraficaSonora from "@/components/organisms/GraficaSonora";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
@@ -254,39 +254,47 @@ export default async function ServicePage({
             /> */}
 
             {/* Evidencia visual: fotos reales de analistas de DIAPSA en campo.
-                Valen más que cualquier adjetivo; vienen del JSON del servicio. */}
+                Valen más que cualquier adjetivo; vienen del JSON del servicio.
+                En carrusel, para que quepan más de tres y se vean grandes. */}
             {service.galeria && service.galeria.length > 0 && (
-                <section className="w-full bg-gray-50 py-12 lg:py-20">
-                    <div className="max-w-7xl mx-auto px-6">
-                        <div className="mb-10">
-                            <h2 className="text-3xl lg:text-[2.75rem] font-extrabold text-primary leading-tight">
-                                DIAPSA <span className="text-secondary">en campo</span>
-                            </h2>
-                            <p className="text-tertiary text-lg mt-2 max-w-2xl text-justify">
-                                Nuestros analistas, nuestros equipos y mediciones reales. Sin fotos de banco de imágenes.
-                            </p>
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
-                            {service.galeria.map((foto) => (
-                                <div key={foto.src} className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-md">
-                                    <Image
-                                        src={foto.src}
-                                        alt={foto.alt}
-                                        fill
-                                        className="object-cover hover:scale-105 transition-transform duration-500"
-                                        sizes="(max-width: 640px) 100vw, 33vw"
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                <GaleriaCampo fotos={service.galeria} />
             )}
 
             {/* Cierre con prueba, no con trámite: quién ya confía. Los datos
                 de contratación van en una línea dentro de la banda de
                 cotización, más abajo. */}
             {service.mostrarClientes && <ClientesLogos paso={paso()} />}
+
+            {/* El servicio que se compra junto con este. Va después de la
+                prueba y antes del FAQ: quien llegó hasta aquí ya está
+                convencido de la técnica y es cuando tiene sentido enseñarle
+                la pieza que le falta. El enlace es recíproco por JSON. */}
+            {service.servicioRelacionado && (
+                <section className="w-full bg-gray-50 py-12 lg:py-16">
+                    <div className="max-w-4xl mx-auto px-6">
+                        <div className="rounded-sm border-l-4 border-primary bg-white p-6 lg:p-8 shadow-sm">
+                            <p className="text-xs font-bold uppercase tracking-widest text-primary/60">
+                                {service.servicioRelacionado.etiqueta}
+                            </p>
+                            <h2 className="mt-2 text-2xl lg:text-3xl font-extrabold text-primary leading-snug">
+                                {service.servicioRelacionado.titulo}
+                            </h2>
+                            <p className="mt-3 text-tertiary text-base lg:text-lg leading-relaxed text-justify">
+                                {service.servicioRelacionado.texto}
+                            </p>
+                            <Link
+                                href={service.servicioRelacionado.href}
+                                className="mt-5 inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-2.5 rounded-xs hover:bg-secondary transition-colors duration-300"
+                            >
+                                {service.servicioRelacionado.enlace}
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* Preguntas frecuentes: responden las búsquedas de cola larga
                 ("qué es", "cada cuánto", "qué norma", "cuánto cuesta") y

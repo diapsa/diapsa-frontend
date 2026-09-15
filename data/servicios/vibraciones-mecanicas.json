@@ -145,16 +145,32 @@
   "certificacion": "Analistas Categoría III · ISO 18436-2",
   "galeria": [
     {
+      "src": "/images/gallery/campo/vibracion-analista-motor.webp",
+      "alt": "Analista de DIAPSA tomando la vibración de un motor eléctrico con el equipo en operación normal."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-analizador-motor.webp",
+      "alt": "Analizador y acelerómetro en el punto de medición del motor: misma posición en cada visita para que los datos sean comparables."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-bomba-verde.webp",
+      "alt": "Medición sobre la carcasa de una bomba, en las tres direcciones que exige la norma."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-punto-medicion.webp",
+      "alt": "Registro del punto en el analizador, que después se sube a IDAP con su historial."
+    },
+    {
       "src": "/images/gallery/campo-img-3.jpg",
-      "alt": "Analistas de DIAPSA midiendo vibracion en bombas y motores de un skid de proceso"
+      "alt": "Ruta de medición de vibraciones en planta, equipo por equipo."
     },
     {
       "src": "/images/gallery/campo-img-8.jpg",
-      "alt": "Analista de DIAPSA tomando lecturas de vibracion en un compresor industrial"
+      "alt": "Trabajo de campo de los analistas de DIAPSA en instalaciones industriales."
     },
     {
       "src": "/images/gallery/campo-img-2.jpg",
-      "alt": "Equipo de DIAPSA midiendo vibracion en un tren motor ventilador en planta"
+      "alt": "Inspección de maquinaria rotativa durante una jornada de monitoreo de condición."
     }
   ],
   "cta": {
@@ -184,5 +200,12 @@
         "link": "#"
       }
     ]
+  },
+  "servicioRelacionado": {
+    "href": "/servicios/monitoreo-condicion/alineacion-balanceo",
+    "etiqueta": "Se contrata junto con",
+    "titulo": "Alineación y Balanceo",
+    "texto": "Cuando el espectro señala desalineación o desbalanceo, el diagnóstico ya está hecho y falta la corrección. La hacemos en campo, con alineación láser y balanceo en sitio, midiendo antes y después para probar que la vibración bajó de verdad.",
+    "enlace": "Ver alineación y balanceo"
   }
 }

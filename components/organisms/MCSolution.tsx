@@ -1,12 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import dataAB from "@/data/servicios/alineacion-balanceo.json";
+import dataAC from "@/data/servicios/analisis-de-aceite.json";
+import dataAE from "@/data/servicios/arco-electrico.json";
 import dataUl from "@/data/servicios/analisis-de-ultrasonido.json";
 import dataDM from "@/data/servicios/diagnostico-de-maquinaria.json";
 import dataEE from "@/data/servicios/estudios-electricos.json";
+import dataTF from "@/data/servicios/tierras-fisicas.json";
 import dataTI from "@/data/servicios/termografia-infrarroja.json";
 import dataVM from "@/data/servicios/vibraciones-mecanicas.json";
 
-const services = [dataDM, dataEE, dataTI, dataUl, dataVM];
+// Las nueve del menú, en el mismo orden que el menú, para que quien vio el
+// desplegable encuentre aquí la misma secuencia. Nueve entra exacto en tres
+// columnas; si se agrega una décima, hay que revisar la rejilla.
+const services = [dataVM, dataAB, dataTI, dataEE, dataDM, dataUl, dataAC, dataTF, dataAE];
 
 const operationalResults = [
     {
@@ -100,19 +107,25 @@ export default function MCSolution() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-                    {services.map((s) => (
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    {services.map((s, i) => {
+                        // En dos columnas, una lista impar deja la última sola:
+                        // se centra en lugar de quedar pegada a la izquierda.
+                        const sola = services.length % 2 === 1 && i === services.length - 1;
+                        return (
                         <Link
                             key={s.id}
                             href={`/servicios/monitoreo-condicion/${s.slug}`}
-                            className="relative aspect-square rounded-sm overflow-hidden group cursor-pointer"
+                            className={`relative aspect-square rounded-sm overflow-hidden group cursor-pointer ${
+                                sola ? "col-span-2 mx-auto w-[calc(50%-0.5rem)] sm:col-span-1 sm:mx-0 sm:w-auto" : ""
+                            }`}
                         >
                             <Image
                                 src={s.content.image}
                                 alt={`Imagen de ${s.header.title}`}
                                 fill
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                                sizes="(max-width: 640px) 50vw, 33vw"
                             />
                             <div className="absolute inset-0 bg-primary/60 flex flex-col items-center justify-center p-5 transition-all duration-300 group-hover:bg-primary/80">
                                 <p className="text-white text-base font-bold text-center leading-snug">
@@ -126,7 +139,8 @@ export default function MCSolution() {
                                 </span>
                             </div>
                         </Link>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
         </section>

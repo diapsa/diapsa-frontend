@@ -79,6 +79,16 @@ body {
   }
 }
 
+/* Para barras horizontales: la misma idea que crecer, de izquierda a derecha. */
+@keyframes crecerX {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 @keyframes slideInFromTop {
   from {
     transform: translateY(-8px);

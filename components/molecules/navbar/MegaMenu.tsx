@@ -122,15 +122,25 @@ export default function MegaMenu({ trigger, columnas }: Props) {
               className={indice > 0 ? "border-l border-gray-200 pl-10" : ""}
               style={{ gridColumn: `span ${columna.ancho ?? 1}` }}
             >
-              <div className="mb-4 flex items-baseline justify-between gap-4">
+              <div className="mb-4 flex items-center justify-between gap-4">
                 <p className="text-sm font-semibold text-tertiary">{columna.titulo}</p>
                 {columna.href && (
                   <Link
                     href={columna.href}
                     onClick={cerrarYa}
-                    className="text-xs font-bold uppercase tracking-wider text-secondary hover:underline"
+                    className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-secondary/40 bg-secondary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-secondary transition-colors duration-200 hover:border-secondary hover:bg-secondary hover:text-white"
                   >
                     Ver todo
+                    <svg
+                      className="h-3 w-3 shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
                   </Link>
                 )}
               </div>
@@ -147,10 +157,10 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                     >
                       <IconoMenu icono={item.icono} />
                       <span className="min-w-0">
-                        <span className="flex items-center gap-1.5 font-semibold leading-snug text-primary transition-colors duration-200 group-hover:text-secondary">
+                        <span className="flex min-h-[2.75rem] items-start gap-1.5 font-semibold leading-snug text-primary transition-colors duration-200 group-hover:text-secondary">
                           {item.label}
                           <svg
-                            className="h-4 w-4 shrink-0 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
+                            className="mt-0.5 h-4 w-4 shrink-0 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
                             fill="none"
                             stroke="currentColor"
                             strokeWidth={2.2}
@@ -161,7 +171,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                           </svg>
                         </span>
                         {item.descripcion && (
-                          <span className="mt-0.5 block text-sm leading-snug text-tertiary">
+                          <span className="block hyphens-auto text-justify text-sm leading-snug text-tertiary">
                             {item.descripcion}
                           </span>
                         )}
