@@ -43,7 +43,7 @@
       {
         "id": "beneficios",
         "title": "Qué ganas",
-        "content": "Saber qué componente se está desgastando y a qué ritmo, antes de que la vibración o la temperatura lo acusen. Cambiar el aceite cuando su condición lo pide y no por calendario, que casi siempre es tirar aceite bueno o quedarse con uno agotado. Y en la falla que sí viene, tiempo: para conseguir la refacción y programar el paro en vez de sufrirlo.",
+        "content": "Encontrar barato lo que si esperas sale caro. En una ruta de 25 equipos rotativos de una central de ciclo combinado, 20 salieron con alguna acción requerida y solo 3 limpios; y la mayoría de esos hallazgos era contaminación, que se corrige filtrando el sistema, no cambiando el equipo. Eso es lo que compra el análisis: llegar cuando todavía se arregla con un filtro.",
         "grafico": "paros",
         "foto": {
           "src": "/images/servicios/medicion-bomba-planta.webp",
@@ -53,7 +53,7 @@
       {
         "id": "como",
         "title": "Cómo lo hacemos",
-        "content": "La muestra se toma con el equipo en operación y caliente, siempre del mismo punto y con el mismo procedimiento, para que cada muestra se pueda comparar con la anterior. Va al laboratorio identificada con el equipo, el aceite que usa y las horas que lleva. Y los resultados no se te entregan como llegan del laboratorio: un especialista los interpreta contra los límites de ese equipo y contra su propio historial.",
+        "content": "La muestra se toma con el equipo en operación y caliente, siempre del mismo punto y con el mismo procedimiento, para que cada muestra se pueda comparar con la anterior. Se analiza en laboratorio acreditado ISO/IEC 17025: 21 elementos en tres grupos (metales de desgaste, contaminantes y aditivos), conteo de partículas bajo ISO 4406, agua por Karl Fischer, viscosidad, número ácido total y oxidación por FTIR. Y los resultados no se te entregan como llegan del laboratorio: un especialista los interpreta contra los límites de ese equipo y contra su propio historial.",
         "foto": {
           "src": "/images/gallery/campo/vibracion-bomba-verde.webp",
           "alt": "Analista de DIAPSA sobre una bomba en operación durante una ruta de monitoreo de condición"
@@ -86,7 +86,7 @@
     },
     {
       "titulo": "Análisis en laboratorio",
-      "texto": "Metales de desgaste y contaminantes por espectrometría, viscosidad, agua, oxidación y conteo de partículas. En transformadores, cromatografía de los gases disueltos."
+      "texto": "En laboratorio acreditado ISO/IEC 17025: espectrometría, viscosidad, agua, oxidación y conteo de partículas. En transformadores, cromatografía de los gases disueltos."
     },
     {
       "titulo": "Interpretación",
@@ -107,11 +107,39 @@
     "descripcion": "No la hoja de valores del laboratorio para que la interpretes tú. Un informe donde cada equipo trae su estado en semáforo, cada parámetro fuera de rango dice qué significa y de dónde viene, y el especialista recomienda qué hacer con el aceite y qué hacer con el equipo.",
     "contenido": [
       "Estado de cada equipo en semáforo, para leerlo de un vistazo",
+      "Resumen de la ruta: cuántos equipos en alarma, precaución, observación y buenos",
       "Cada parámetro medido contra el límite que corresponde a ese equipo y a ese aceite",
       "Metales de desgaste encontrados y de qué componente vienen",
       "Contaminación detectada (agua, polvo, combustible, refrigerante) y su fuente probable",
       "Acción recomendada y con qué urgencia",
-      "Tendencia contra las muestras anteriores, consultable en IDAP"
+      "Evolución contra la muestra anterior: si la acción tomada corrigió o no"
+    ]
+  },
+  "certificacion": "Analizado en laboratorio acreditado · ISO/IEC 17025",
+  "semaforo": {
+    "titulo": "Cada equipo sale con un color y una instrucción",
+    "subtitulo": "El informe no te deja con una tabla de valores para que decidas tú. Cada equipo se califica en uno de cuatro niveles, y cada nivel trae escrito qué hacer y con qué urgencia. Así se prioriza una ruta de veinte o treinta equipos sin leerla completa.",
+    "zonas": [
+      {
+        "clave": "bueno",
+        "etiqueta": "Bueno",
+        "texto": "El lubricante está sano y el desgaste dentro de lo esperado. Se continúa con el monitoreo en el intervalo programado."
+      },
+      {
+        "clave": "observacion",
+        "etiqueta": "Observación",
+        "texto": "Hay un valor que se movió y conviene vigilar, pero todavía no amerita intervenir. Se adelanta la siguiente muestra para confirmar la tendencia."
+      },
+      {
+        "clave": "precaucion",
+        "etiqueta": "Precaución",
+        "texto": "Hay contaminación o desgaste fuera de parámetro. Se programa el mantenimiento: filtrado, cambio de aceite o revisión del componente, en la próxima ventana."
+      },
+      {
+        "clave": "alarma",
+        "etiqueta": "Alarma",
+        "texto": "La condición compromete la vida del equipo. Se toma acción ahora y se vuelve a muestrear después para verificar que el valor bajó."
+      }
     ]
   },
   "mostrarClientes": true,
@@ -131,6 +159,14 @@
     {
       "question": "¿Qué es el análisis de gases disueltos (DGA)?",
       "answer": "Es el análisis de aceite aplicado al transformador. Cuando adentro hay sobrecalentamiento, descargas parciales o arqueo, el aceite dieléctrico y el papel aislante se descomponen y liberan gases: hidrógeno, metano, etileno, acetileno y monóxido de carbono, entre otros. Cada tipo de falla produce una combinación distinta. Analizarlos permite saber si hay una falla incubándose y de qué tipo, sin abrir ni desenergizar el equipo."
+    },
+    {
+      "question": "¿Cuánto tardan los resultados?",
+      "answer": "Entre una y dos semanas desde que se toma la muestra: el traslado al laboratorio se lleva unos días y el análisis completo otros tantos, según las pruebas que lleve cada equipo. El DGA de transformadores suele ir en el extremo largo de ese rango. Si un resultado sale en condición de alarma no se espera al informe completo: se avisa en cuanto el laboratorio lo reporta."
+    },
+    {
+      "question": "¿Qué normas y pruebas aplican?",
+      "answer": "El análisis se hace en laboratorio acreditado bajo ISO/IEC 17025. La limpieza del aceite se reporta con el código ISO 4406, que es el estándar de conteo de partículas; el agua se mide por Karl Fischer en partes por millón; la oxidación, nitración y sulfatación por infrarrojo (ASTM E2412); y se reportan además viscosidad a 40 o 100 grados, número ácido total y 21 elementos por espectrometría, agrupados en metales de desgaste, contaminantes y aditivos."
     },
     {
       "question": "¿Conviene cambiar el aceite por horas o por condición?",
@@ -165,8 +201,8 @@
     "whatsappMessage": "Hola, quiero información sobre análisis de aceite y DGA para mi planta.",
     "datos": [
       "Registro REPSE vigente",
-      "Muestreo con el equipo en operación",
-      "Servicio en todo México"
+      "Laboratorio acreditado ISO/IEC 17025",
+      "Resultados en una a dos semanas"
     ]
   },
   "relatedProducts": {
