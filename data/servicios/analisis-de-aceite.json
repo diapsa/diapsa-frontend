@@ -113,7 +113,48 @@
       "Contaminación detectada (agua, polvo, combustible, refrigerante) y su fuente probable",
       "Acción recomendada y con qué urgencia",
       "Evolución contra la muestra anterior: si la acción tomada corrigió o no"
-    ]
+    ],
+    "informe": {
+      "etiqueta": "Informe de condición",
+      "titulo": "25 equipos evaluados",
+      "resumen": [
+        { "clave": "alarma", "etiqueta": "Alarma", "total": 3 },
+        { "clave": "precaucion", "etiqueta": "Precaución", "total": 17 },
+        { "clave": "observacion", "etiqueta": "Observación", "total": 2 },
+        { "clave": "bueno", "etiqueta": "Buenos", "total": 3 }
+      ],
+      "filas": [
+        {
+          "equipo": "Motor de ventilador de torre",
+          "componente": "Sistema de lubricación del reductor",
+          "clave": "alarma",
+          "estado": "Alarma",
+          "accion": "Agua y partículas en nivel crítico. Deshidratar al vacío, filtrar y revisar respiraderos y sellos para cerrar la entrada del contaminante."
+        },
+        {
+          "equipo": "Bomba de agua de condensado",
+          "componente": "Sistema de lubricación del motor",
+          "clave": "precaucion",
+          "estado": "Precaución",
+          "accion": "Conteo de partículas al alza contra la muestra anterior. Programar filtrado según especificación del fabricante."
+        },
+        {
+          "equipo": "Compresor de aire",
+          "componente": "Sistema de lubricación del motor",
+          "clave": "observacion",
+          "estado": "Observación",
+          "accion": "Contaminación elevada pero sin llegar a condición crítica. No filtrar todavía; adelantar la siguiente muestra para confirmar la tendencia."
+        },
+        {
+          "equipo": "Compresor de gas",
+          "componente": "Sistema de lubricación del motor",
+          "clave": "bueno",
+          "estado": "Bueno",
+          "accion": "Salud, contaminación y desgaste dentro de parámetros. Continuar con el programa de muestreo."
+        }
+      ],
+      "nota": "Extracto de un informe real, con la planta y los números de equipo omitidos. Las cifras corresponden a esa ruta y no son un promedio del servicio."
+    }
   },
   "certificacion": "Analizado en laboratorio acreditado · ISO/IEC 17025",
   "semaforo": {
