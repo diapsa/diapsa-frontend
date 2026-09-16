@@ -1,4 +1,5 @@
 import Antetitulo from "../atoms/Antetitulo";
+import { nivel } from "@/lib/semaforo";
 import type { ZonaSemaforo } from "@/types/servicio";
 
 /**
@@ -27,12 +28,10 @@ type Props = {
   paso?: string;
 };
 
-const LAMPARA: Record<string, { fondo: string; halo: string; texto: string }> = {
-  bueno: { fondo: "bg-emerald-500", halo: "shadow-emerald-500/40", texto: "text-emerald-700" },
-  observacion: { fondo: "bg-sky-500", halo: "shadow-sky-500/40", texto: "text-sky-700" },
-  precaucion: { fondo: "bg-amber-400", halo: "shadow-amber-400/40", texto: "text-amber-700" },
-  alarma: { fondo: "bg-red-600", halo: "shadow-red-600/40", texto: "text-red-700" },
-};
+/* Los colores viven en lib/semaforo.ts, compartidos con la ficha del informe
+   que va justo arriba: ahí el lector ve las etiquetas de colores sobre
+   equipos reales y aquí abajo lee qué obliga cada color. Si las dos tablas
+   se separaran, se perdería esa relación. */
 
 export default function Semaforo({ titulo, subtitulo, zonas, paso }: Props) {
   return (
@@ -54,7 +53,7 @@ export default function Semaforo({ titulo, subtitulo, zonas, paso }: Props) {
           }`}
         >
           {zonas.map((zona) => {
-            const color = LAMPARA[zona.clave] ?? LAMPARA.bueno;
+            const color = nivel(zona.clave).lampara;
             return (
               <li
                 key={zona.clave}

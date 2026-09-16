@@ -61,6 +61,18 @@ export interface GaleriaFoto {
   alt: string;
 }
 
+export interface ServiceInforme {
+  /** Antetítulo de la ficha, ej. "Resumen de la ruta". */
+  etiqueta: string;
+  /** Encabezado, ej. "25 equipos evaluados". */
+  titulo: string;
+  /** Cuántos equipos salieron en cada nivel. La clave es la del semáforo. */
+  resumen: { clave: string; etiqueta: string; total: number }[];
+  /** Renglones de ejemplo, tal como salen en el informe. */
+  filas: { equipo: string; componente: string; clave: string; estado: string; accion: string }[];
+  nota: string;
+}
+
 export interface ServiceEntregable {
   /** Antetítulo corto, ej. "El entregable". */
   etiqueta: string;
@@ -75,6 +87,12 @@ export interface ServiceEntregable {
   /** Cifra del sello flotante, ej. "3". */
   dato?: string;
   datoTexto?: string;
+  /** Ficha del informe de una ruta: cuántos equipos salieron en cada nivel
+      del semáforo y algunos renglones de ejemplo. Para los servicios que
+      entregan una ruta completa en vez de una inspección suelta, y donde lo
+      que hay que enseñar es cómo queda priorizada. Si viene, sustituye a la
+      vitrina de páginas. */
+  informe?: ServiceInforme;
   /** Ficha con el antes y el después del equipo, para los servicios
       correctivos: ahí el entregable no es un informe de inspección sino la
       prueba de que el valor bajó. Si viene, sustituye a la vitrina de
