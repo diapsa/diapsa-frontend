@@ -157,35 +157,21 @@
     }
   },
   "certificacion": "Analizado en laboratorio acreditado · ISO/IEC 17025",
-  "contraste": {
-    "etiqueta": "Antes del laboratorio",
-    "titulo": "Una muestra mal tomada no da un resultado malo: da uno falso",
-    "texto": "El laboratorio mide con precisión lo que le llega. Si lo que le llega no representa al equipo, el informe sale impecable y equivocado, y las decisiones que se toman con él salen igual. Por eso el muestreo es parte del servicio y no el trámite que lo antecede.",
-    "bienEtiqueta": "Así la muestra sirve",
-    "malEtiqueta": "Así no dice nada",
-    "filas": [
-      {
-        "bien": "De una zona viva, donde el aceite está en turbulencia y lleva en suspensión lo que interesa ver.",
-        "mal": "Del drenaje o del fondo del cárter, donde se acumuló sedimento viejo que no habla del estado de hoy."
-      },
-      {
-        "bien": "Con el equipo operando y a temperatura de trabajo.",
-        "mal": "Con el equipo frío y parado, cuando las partículas ya se asentaron y el agua ya se separó."
-      },
-      {
-        "bien": "Siempre del mismo punto y con el mismo procedimiento, para que la serie se pueda comparar.",
-        "mal": "De donde se pueda ese día, lo que convierte cada muestra en una medición suelta sin tendencia."
-      },
-      {
-        "bien": "Del lado libre y del lado carga cuando el equipo lo pide: dos chumaceras pueden estar en condiciones distintas.",
-        "mal": "Un solo punto por equipo, que promedia dos historias diferentes y esconde la que va mal."
-      },
-      {
-        "bien": "En frasco limpio e identificado con el equipo, el aceite que usa y las horas que lleva.",
-        "mal": "En el envase que había a la mano, que aporta sus propias partículas al conteo."
-      }
+  "tendencia": {
+    "titulo": "La misma chumacera, seis muestras, y lo que pasó al intervenir",
+    "texto": "Una muestra suelta dice poco; el programa vale por la serie. Esta es real: el conteo de partículas subió durante un año hasta la alarma, se intervino, y las tres muestras siguientes confirman que bajó y se mantuvo. Sin la serie, la alarma habría sido una sorpresa y la mejora, una suposición.",
+    "equipo": "Chumacera de bomba de proceso · aceite ISO 100",
+    "medida": "Partículas mayores a 4 micras por mililitro",
+    "muestras": [
+      { "fecha": "dic 24", "valor": 1118, "codigo": "17/14/9", "clave": "bueno" },
+      { "fecha": "feb 25", "valor": 7371, "codigo": "20/18/14", "clave": "precaucion" },
+      { "fecha": "jun 25", "valor": 27288, "codigo": "22/20/13", "clave": "alarma" },
+      { "fecha": "oct 25", "valor": 4112, "codigo": "19/16/11", "clave": "observacion" },
+      { "fecha": "feb 26", "valor": 3151, "codigo": "19/17/14", "clave": "observacion" },
+      { "fecha": "jun 26", "valor": 2877, "codigo": "19/17/14", "clave": "observacion" }
     ],
-    "nota": "Es la razón por la que el muestreo lo hace un técnico nuestro y no se deja al personal de planta: no es abrir una válvula, es tomarla en el punto y en la condición donde el resultado significa algo."
+    "accion": { "indice": 3, "texto": "Acción correctiva" },
+    "nota": "Historial real de una chumacera, con la planta y el equipo omitidos. Los valores y los códigos ISO 4406 son los que reportó el laboratorio en cada muestra; el color de cada barra es el estado con que la calificó. Entre la tercera y la cuarta muestra el equipo pasó de alarma a observación."
   },
   "mostrarClientes": true,
   "faq": [

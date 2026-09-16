@@ -131,17 +131,20 @@ export interface ZonaSemaforo {
   texto: string;
 }
 
-export interface ServiceContraste {
-  /** Antetítulo corto, ej. "Antes del laboratorio". */
-  etiqueta: string;
+export interface ServiceTendencia {
   titulo: string;
   texto?: string;
-  /** Encabezados de las dos columnas, ej. "Así sirve" y "Así no". */
-  bienEtiqueta: string;
-  malEtiqueta: string;
-  /** Cada renglón enfrenta la práctica correcta con la que la invalida. */
-  filas: { bien: string; mal: string }[];
-  nota?: string;
+  /** Qué equipo es, sin identificarlo, ej. "Chumacera de bomba de proceso". */
+  equipo: string;
+  /** Qué se grafica y en qué unidad. */
+  medida: string;
+  /** Muestras en orden cronológico. La clave es la del semáforo y es el
+      color con el que el laboratorio calificó esa muestra. */
+  muestras: { fecha: string; valor: number; codigo: string; clave: string }[];
+  /** Índice de la primera muestra tomada después de la acción, y qué se hizo. */
+  accion: { indice: number; texto: string };
+  /** De dónde salen las cifras, para que se puedan auditar. */
+  nota: string;
 }
 
 export interface ServiceSemaforo {
@@ -297,10 +300,9 @@ export interface Servicio {
   /** Con qué colores sale calificado cada equipo y qué hacer en cada uno.
       Responde la pregunta que sigue al resultado: ¿y ahora qué hago? */
   semaforo?: ServiceSemaforo;
-  /** Lo que hace válido el trabajo contra lo que lo invalida, enfrentado.
-      Para los servicios donde el valor está en el procedimiento y no en el
-      instrumento, que es difícil de vender porque no se ve. */
-  contraste?: ServiceContraste;
+  /** La misma máquina muestra tras muestra, con la acción correctiva en
+      medio: la prueba de que el programa funcionó (aceite). */
+  tendencia?: ServiceTendencia;
   /** Fotos reales de campo; si existen, la página muestra la franja "DIAPSA en campo". */
   galeria?: GaleriaFoto[];
   /** Otro servicio que se compra junto con este. Va en las dos direcciones:

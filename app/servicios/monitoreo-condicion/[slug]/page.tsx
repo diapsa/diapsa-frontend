@@ -17,7 +17,7 @@ import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import Semaforo from "@/components/organisms/Semaforo";
-import ReglasContraste from "@/components/organisms/ReglasContraste";
+import GraficaTendencia from "@/components/organisms/GraficaTendencia";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
@@ -254,13 +254,12 @@ export default async function ServicePage({
                 <ServiceEntregable entregable={service.entregable} paso={paso()} />
             )}
 
-            {/* Lo que hace válido el trabajo, enfrentado a lo que lo
-                invalida. Va después del entregable porque responde la duda
-                que deja ver datos: ¿y esto es confiable? En aceite eso es el
-                muestreo, donde el servicio se gana o se pierde antes de que
-                la muestra llegue al laboratorio. */}
-            {service.contraste && (
-                <ReglasContraste contraste={service.contraste} paso={paso()} />
+            {/* Diferenciador de aceite: la misma máquina muestra tras
+                muestra, con la acción correctiva en medio. Va después del
+                entregable porque es lo que el informe permite ver con el
+                tiempo, y es la única prueba de que el servicio funcionó. */}
+            {service.tendencia && (
+                <GraficaTendencia tendencia={service.tendencia} paso={paso()} />
             )}
 
             {/* La escala con la que se califica cada equipo, para los
