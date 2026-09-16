@@ -38,11 +38,25 @@ type Props = {
 };
 
 export default function ServiceEntregable({ entregable, paso }: Props) {
+  // Un servicio puede no tener todavía vitrina: ni ficha de resultado ni
+  // páginas del informe. Sin esto, la rejilla de dos columnas deja la mitad
+  // derecha en blanco y la sección se ve a medio hacer. En ese caso el texto
+  // pasa a una sola columna de ancho de lectura.
+  const conVitrina = Boolean(
+    entregable.resultado || (entregable.paginas && entregable.paginas.length > 1)
+  );
+
   return (
     <section className="w-full overflow-hidden bg-white py-12 lg:py-20">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16">
-        {/* Texto */}
-        <div>
+      <div
+        className={`mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:gap-16 ${
+          conVitrina ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]" : ""
+        }`}
+      >
+        {/* Texto. Sin vitrina se limita el ancho de lectura, pero se mantiene
+            el borde izquierdo de las demás secciones: centrarlo rompería la
+            alineación de toda la página. */}
+        <div className={conVitrina ? "" : "max-w-3xl"}>
           <Antetitulo paso={paso}>{entregable.etiqueta}</Antetitulo>
           <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
             {entregable.titulo}
