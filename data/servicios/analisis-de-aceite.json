@@ -25,33 +25,149 @@
     "subtitle": "El lubricante cuenta lo que pasa dentro del equipo",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Análisis de aceite lubricante y DGA de transformadores: detecta desgaste interno, contaminación y degradación del lubricante antes de que la falla avance.",
+  "seoDescription": "Análisis de aceite lubricante y análisis de gases disueltos (DGA) en transformadores. Muestreo en planta, laboratorio y resultados interpretados por especialistas: desgaste interno, contaminación y degradación del aceite antes de que la falla avance.",
   "content": {
-    "title": "¿Qué revela el análisis de aceite?",
-    "subtitle": "El aceite circula por donde ninguna otra técnica llega: arrastra las partículas del desgaste interno, la contaminación que entró y la historia térmica del equipo. Analizarlo es leer esa evidencia a tiempo.",
-    "image": "/images/monitoreo-condicion/rodamiento-con-sobre-lubricacion.avif",
+    "title": "Vemos el desgaste desde adentro, sin abrir el equipo",
+    "subtitle": "El aceite circula por donde ninguna otra técnica llega: arrastra las partículas del desgaste interno, la contaminación que entró y la historia térmica del equipo. Vibraciones y termografía detectan la falla cuando ya mueve o calienta la máquina; el aceite la delata antes, por lo que trae disuelto. Analizarlo es leer esa evidencia a tiempo.",
+    "image": "/images/gallery/campo-img-5.jpg",
     "items": [
       {
-        "id": "donde-aplica",
+        "id": "aplicaciones",
         "title": "Dónde se aplica",
-        "content": "Reductores, compresores, turbinas, sistemas hidráulicos y motores de combustión con cárter. En transformadores, el análisis de gases disueltos (DGA) sobre el aceite dieléctrico detecta sobrecalentamientos, descargas parciales y arqueos internos sin abrir el equipo."
+        "content": "Reductores y cajas de engranes, compresores, turbinas, sistemas hidráulicos y motores de combustión con cárter: todo equipo con lubricante en circulación. Y en transformadores, el análisis de gases disueltos (DGA) sobre el aceite dieléctrico detecta sobrecalentamiento, descargas parciales y arqueo interno sin abrir ni desenergizar el equipo.",
+        "foto": {
+          "src": "/images/gallery/campo-img-5.jpg",
+          "alt": "Analista de DIAPSA junto a un motor vertical dentro de la planta, durante una ruta de inspección"
+        }
       },
       {
-        "id": "que-detecta",
-        "title": "Qué detecta",
-        "content": "Partículas de desgaste y de qué componente vienen, contaminación por agua, polvo o refrigerante, degradación del lubricante (viscosidad, oxidación, aditivos agotados) y, vía DGA, fallas incipientes dentro del transformador clasificadas por tipo de gas generado."
+        "id": "beneficios",
+        "title": "Qué ganas",
+        "content": "Saber qué componente se está desgastando y a qué ritmo, antes de que la vibración o la temperatura lo acusen. Cambiar el aceite cuando su condición lo pide y no por calendario, que casi siempre es tirar aceite bueno o quedarse con uno agotado. Y en la falla que sí viene, tiempo: para conseguir la refacción y programar el paro en vez de sufrirlo.",
+        "grafico": "paros",
+        "foto": {
+          "src": "/images/servicios/medicion-bomba-planta.webp",
+          "alt": "Medición sobre un motor eléctrico en planta, con el equipo operando"
+        }
       },
       {
-        "id": "entregable",
-        "title": "Qué recibes",
-        "content": "Resultados de laboratorio interpretados por nuestros especialistas, no solo la hoja de valores: severidad por equipo, causa probable, recomendación concreta (cambiar, filtrar, corregir la fuente de contaminación o intervenir el componente) y la tendencia contra muestras anteriores."
+        "id": "como",
+        "title": "Cómo lo hacemos",
+        "content": "La muestra se toma con el equipo en operación y caliente, siempre del mismo punto y con el mismo procedimiento, para que cada muestra se pueda comparar con la anterior. Va al laboratorio identificada con el equipo, el aceite que usa y las horas que lleva. Y los resultados no se te entregan como llegan del laboratorio: un especialista los interpreta contra los límites de ese equipo y contra su propio historial.",
+        "foto": {
+          "src": "/images/gallery/campo/vibracion-bomba-verde.webp",
+          "alt": "Analista de DIAPSA sobre una bomba en operación durante una ruta de monitoreo de condición"
+        }
+      },
+      {
+        "id": "plataforma-idap",
+        "title": "Tus datos viven en IDAP",
+        "content": "Cada muestra queda registrada por equipo: el valor de cada parámetro, cómo se calificó y la muestra anterior contra la que se comparó. La tendencia, que en aceite vale más que cualquier valor aislado, se consulta ahí, junto con las demás disciplinas del mismo equipo.",
+        "foto": {
+          "src": "/images/idap/mockup.png",
+          "alt": "Pantallas de IDAP con el historial de un equipo",
+          "ajuste": "contener",
+          "fondo": "oscuro"
+        }
       }
     ]
   },
+  "fotoPuntos": {
+    "src": "/images/gallery/campo-img-5.jpg",
+    "alt": "Analista de DIAPSA junto a un motor vertical dentro de la planta, durante una ruta de inspección"
+  },
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujo": [
+    {
+      "titulo": "Muestreo en planta",
+      "texto": "Con el equipo en operación, del mismo punto y con el mismo procedimiento cada vez, para que las muestras sean comparables entre sí."
+    },
+    {
+      "titulo": "Análisis en laboratorio",
+      "texto": "Metales de desgaste y contaminantes por espectrometría, viscosidad, agua, oxidación y conteo de partículas. En transformadores, cromatografía de los gases disueltos."
+    },
+    {
+      "titulo": "Interpretación",
+      "texto": "Un especialista lee los resultados contra los límites del equipo y contra la muestra anterior. Un valor alto no es un diagnóstico; la tendencia y la combinación de parámetros sí."
+    },
+    {
+      "titulo": "Recomendación",
+      "texto": "Qué hacer con ese aceite y con ese equipo: seguir, filtrar, cambiar, cerrar la entrada de contaminación o intervenir el componente que se está desgastando."
+    },
+    {
+      "titulo": "Tendencia",
+      "texto": "La siguiente muestra se compara con esta. El programa vale por la serie, no por una muestra suelta."
+    }
+  ],
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "No la hoja de valores del laboratorio para que la interpretes tú. Un informe donde cada equipo trae su estado en semáforo, cada parámetro fuera de rango dice qué significa y de dónde viene, y el especialista recomienda qué hacer con el aceite y qué hacer con el equipo.",
+    "contenido": [
+      "Estado de cada equipo en semáforo, para leerlo de un vistazo",
+      "Cada parámetro medido contra el límite que corresponde a ese equipo y a ese aceite",
+      "Metales de desgaste encontrados y de qué componente vienen",
+      "Contaminación detectada (agua, polvo, combustible, refrigerante) y su fuente probable",
+      "Acción recomendada y con qué urgencia",
+      "Tendencia contra las muestras anteriores, consultable en IDAP"
+    ]
+  },
+  "mostrarClientes": true,
+  "faq": [
+    {
+      "question": "¿Qué detecta el análisis de aceite que otras técnicas no?",
+      "answer": "El desgaste interno en su etapa más temprana. Las partículas de metal aparecen en el aceite mucho antes de que el daño sea suficiente para cambiar la vibración o la temperatura del equipo. Además dice de qué componente vienen: hierro de engranes, rodamientos o ejes; cobre de bujes, jaulas o enfriadores; aluminio de pistones o alojamientos; plomo y estaño de cojinetes. Y detecta lo que no debería estar ahí: agua, polvo, combustible o refrigerante."
+    },
+    {
+      "question": "¿Cada cuánto hay que muestrear?",
+      "answer": "Depende de la criticidad del equipo, de su régimen de trabajo y de qué tan agresivo es el ambiente. Como referencia: equipo crítico, cada mes o cada tres meses; el resto, cada tres a seis; transformadores, una vez al año en DGA y más seguido si la muestra anterior salió con gases en aumento. El programa se define equipo por equipo y se va ajustando con los resultados."
+    },
+    {
+      "question": "¿Cómo se toma la muestra? ¿Hay que parar el equipo?",
+      "answer": "No. La muestra se toma con el equipo en operación y a temperatura de trabajo, que es cuando el aceite lleva en suspensión lo que interesa ver. Se extrae del mismo punto cada vez, con bomba de vacío o desde una válvula de muestreo, en frascos limpios y con la identificación del equipo, del aceite y de las horas. Una muestra mal tomada da un resultado que no sirve; por eso el procedimiento importa tanto como el laboratorio."
+    },
+    {
+      "question": "¿Qué es el análisis de gases disueltos (DGA)?",
+      "answer": "Es el análisis de aceite aplicado al transformador. Cuando adentro hay sobrecalentamiento, descargas parciales o arqueo, el aceite dieléctrico y el papel aislante se descomponen y liberan gases: hidrógeno, metano, etileno, acetileno y monóxido de carbono, entre otros. Cada tipo de falla produce una combinación distinta. Analizarlos permite saber si hay una falla incubándose y de qué tipo, sin abrir ni desenergizar el equipo."
+    },
+    {
+      "question": "¿Conviene cambiar el aceite por horas o por condición?",
+      "answer": "Por condición, y el análisis es lo que la mide. Cambiar por calendario o por horas casi siempre significa una de dos cosas: tirar aceite que todavía servía o seguir operando con uno que ya perdió sus propiedades. El análisis dice cuándo el aceite realmente pide cambio, y cuándo basta con filtrarlo o con corregir lo que lo está contaminando."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "La lista de equipos a vigilar con el tipo de aceite que usa cada uno y, si hay transformadores, su capacidad y voltaje. Si ya tienes análisis anteriores, sirven para arrancar con historial. Con eso preparamos el programa de muestreo y la propuesta."
+    }
+  ],
+  "galeria": [
+    {
+      "src": "/images/gallery/campo-img-5.jpg",
+      "alt": "Analista de DIAPSA en ruta de inspección junto a un motor vertical, dentro de la planta."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-bomba-verde.webp",
+      "alt": "Analista de DIAPSA sobre una bomba en operación durante una ruta de monitoreo de condición."
+    },
+    {
+      "src": "/images/servicios/medicion-bomba-planta.webp",
+      "alt": "Medición sobre un motor eléctrico en planta, con el equipo operando."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-analista-motor.webp",
+      "alt": "Medición sobre un motor eléctrico en operación, en la misma ruta en que se toman las muestras."
+    }
+  ],
   "cta": {
-    "title": "¿Hace cuánto no le preguntas a tu aceite cómo está el equipo?",
-    "text": "Cuéntanos qué equipos y transformadores quieres vigilar y te armamos el programa de muestreo y análisis.",
-    "whatsappMessage": "Hola, quiero información sobre análisis de aceite y DGA para mi planta."
+    "title": "¿Cuántos reductores, compresores y transformadores críticos tiene tu planta?",
+    "text": "Cuéntanos qué equipos quieres vigilar y qué aceite usan, y te armamos el programa de muestreo y análisis con su propuesta.",
+    "whatsappMessage": "Hola, quiero información sobre análisis de aceite y DGA para mi planta.",
+    "datos": [
+      "Registro REPSE vigente",
+      "Muestreo con el equipo en operación",
+      "Servicio en todo México"
+    ]
   },
   "relatedProducts": {
     "title": "Productos Relacionados",
