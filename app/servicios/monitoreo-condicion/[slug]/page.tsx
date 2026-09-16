@@ -17,6 +17,7 @@ import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import Semaforo from "@/components/organisms/Semaforo";
+import ReglasContraste from "@/components/organisms/ReglasContraste";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
@@ -253,11 +254,18 @@ export default async function ServicePage({
                 <ServiceEntregable entregable={service.entregable} paso={paso()} />
             )}
 
-            {/* Cómo sale calificado cada equipo. Va pegado al entregable
-                porque es cómo se lee lo que acaba de enseñarse: primero el
-                informe, luego la escala con la que califica, y en cada color
-                la acción que toca. El comprador no pregunta qué medimos;
-                pregunta qué hace con el resultado. */}
+            {/* Lo que hace válido el trabajo, enfrentado a lo que lo
+                invalida. Va después del entregable porque responde la duda
+                que deja ver datos: ¿y esto es confiable? En aceite eso es el
+                muestreo, donde el servicio se gana o se pierde antes de que
+                la muestra llegue al laboratorio. */}
+            {service.contraste && (
+                <ReglasContraste contraste={service.contraste} paso={paso()} />
+            )}
+
+            {/* La escala con la que se califica cada equipo, para los
+                servicios que la expliquen aparte en lugar de enseñarla
+                aplicada dentro del entregable. */}
             {service.semaforo && (
                 <Semaforo
                     titulo={service.semaforo.titulo}

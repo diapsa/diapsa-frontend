@@ -157,31 +157,35 @@
     }
   },
   "certificacion": "Analizado en laboratorio acreditado · ISO/IEC 17025",
-  "semaforo": {
-    "titulo": "Cada equipo sale con un color y una instrucción",
-    "subtitulo": "El informe no te deja con una tabla de valores para que decidas tú. Cada equipo se califica en uno de cuatro niveles, y cada nivel trae escrito qué hacer y con qué urgencia. Así se prioriza una ruta de veinte o treinta equipos sin leerla completa.",
-    "zonas": [
+  "contraste": {
+    "etiqueta": "Antes del laboratorio",
+    "titulo": "Una muestra mal tomada no da un resultado malo: da uno falso",
+    "texto": "El laboratorio mide con precisión lo que le llega. Si lo que le llega no representa al equipo, el informe sale impecable y equivocado, y las decisiones que se toman con él salen igual. Por eso el muestreo es parte del servicio y no el trámite que lo antecede.",
+    "bienEtiqueta": "Así la muestra sirve",
+    "malEtiqueta": "Así no dice nada",
+    "filas": [
       {
-        "clave": "bueno",
-        "etiqueta": "Bueno",
-        "texto": "El lubricante está sano y el desgaste dentro de lo esperado. Se continúa con el monitoreo en el intervalo programado."
+        "bien": "De una zona viva, donde el aceite está en turbulencia y lleva en suspensión lo que interesa ver.",
+        "mal": "Del drenaje o del fondo del cárter, donde se acumuló sedimento viejo que no habla del estado de hoy."
       },
       {
-        "clave": "observacion",
-        "etiqueta": "Observación",
-        "texto": "Hay un valor que se movió y conviene vigilar, pero todavía no amerita intervenir. Se adelanta la siguiente muestra para confirmar la tendencia."
+        "bien": "Con el equipo operando y a temperatura de trabajo.",
+        "mal": "Con el equipo frío y parado, cuando las partículas ya se asentaron y el agua ya se separó."
       },
       {
-        "clave": "precaucion",
-        "etiqueta": "Precaución",
-        "texto": "Hay contaminación o desgaste fuera de parámetro. Se programa el mantenimiento: filtrado, cambio de aceite o revisión del componente, en la próxima ventana."
+        "bien": "Siempre del mismo punto y con el mismo procedimiento, para que la serie se pueda comparar.",
+        "mal": "De donde se pueda ese día, lo que convierte cada muestra en una medición suelta sin tendencia."
       },
       {
-        "clave": "alarma",
-        "etiqueta": "Alarma",
-        "texto": "La condición compromete la vida del equipo. Se toma acción ahora y se vuelve a muestrear después para verificar que el valor bajó."
+        "bien": "Del lado libre y del lado carga cuando el equipo lo pide: dos chumaceras pueden estar en condiciones distintas.",
+        "mal": "Un solo punto por equipo, que promedia dos historias diferentes y esconde la que va mal."
+      },
+      {
+        "bien": "En frasco limpio e identificado con el equipo, el aceite que usa y las horas que lleva.",
+        "mal": "En el envase que había a la mano, que aporta sus propias partículas al conteo."
       }
-    ]
+    ],
+    "nota": "Es la razón por la que el muestreo lo hace un técnico nuestro y no se deja al personal de planta: no es abrir una válvula, es tomarla en el punto y en la condición donde el resultado significa algo."
   },
   "mostrarClientes": true,
   "faq": [

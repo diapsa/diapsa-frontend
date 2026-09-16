@@ -131,6 +131,19 @@ export interface ZonaSemaforo {
   texto: string;
 }
 
+export interface ServiceContraste {
+  /** Antetítulo corto, ej. "Antes del laboratorio". */
+  etiqueta: string;
+  titulo: string;
+  texto?: string;
+  /** Encabezados de las dos columnas, ej. "Así sirve" y "Así no". */
+  bienEtiqueta: string;
+  malEtiqueta: string;
+  /** Cada renglón enfrenta la práctica correcta con la que la invalida. */
+  filas: { bien: string; mal: string }[];
+  nota?: string;
+}
+
 export interface ServiceSemaforo {
   titulo: string;
   subtitulo?: string;
@@ -284,6 +297,10 @@ export interface Servicio {
   /** Con qué colores sale calificado cada equipo y qué hacer en cada uno.
       Responde la pregunta que sigue al resultado: ¿y ahora qué hago? */
   semaforo?: ServiceSemaforo;
+  /** Lo que hace válido el trabajo contra lo que lo invalida, enfrentado.
+      Para los servicios donde el valor está en el procedimiento y no en el
+      instrumento, que es difícil de vender porque no se ve. */
+  contraste?: ServiceContraste;
   /** Fotos reales de campo; si existen, la página muestra la franja "DIAPSA en campo". */
   galeria?: GaleriaFoto[];
   /** Otro servicio que se compra junto con este. Va en las dos direcciones:
