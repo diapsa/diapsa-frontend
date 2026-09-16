@@ -106,11 +106,17 @@ export interface ServiceEntregable {
 }
 
 export interface ZonaSemaforo {
-  /** bueno | precaucion | alarma */
+  /** bueno | observacion | precaucion | alarma */
   clave: string;
   etiqueta: string;
   /** Qué significa ese color y qué pasa cuando un equipo sale en él. */
   texto: string;
+}
+
+export interface ServiceSemaforo {
+  titulo: string;
+  subtitulo?: string;
+  zonas: ZonaSemaforo[];
 }
 
 export interface ServiceTabla {
@@ -257,6 +263,9 @@ export interface Servicio {
   cta?: ServiceCta;
   /** Certificación a resaltar en la banda de cifras, ej. "Analistas Categoría III · ISO 18436-2". */
   certificacion?: string;
+  /** Con qué colores sale calificado cada equipo y qué hacer en cada uno.
+      Responde la pregunta que sigue al resultado: ¿y ahora qué hago? */
+  semaforo?: ServiceSemaforo;
   /** Fotos reales de campo; si existen, la página muestra la franja "DIAPSA en campo". */
   galeria?: GaleriaFoto[];
   /** Otro servicio que se compra junto con este. Va en las dos direcciones:

@@ -16,6 +16,7 @@ import GraficaSonora from "@/components/organisms/GraficaSonora";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
+import Semaforo from "@/components/organisms/Semaforo";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
@@ -250,6 +251,20 @@ export default async function ServicePage({
                 último paso del proceso es el informe, y aquí se enseña. */}
             {service.entregable && (
                 <ServiceEntregable entregable={service.entregable} paso={paso()} />
+            )}
+
+            {/* Cómo sale calificado cada equipo. Va pegado al entregable
+                porque es cómo se lee lo que acaba de enseñarse: primero el
+                informe, luego la escala con la que califica, y en cada color
+                la acción que toca. El comprador no pregunta qué medimos;
+                pregunta qué hace con el resultado. */}
+            {service.semaforo && (
+                <Semaforo
+                    titulo={service.semaforo.titulo}
+                    subtitulo={service.semaforo.subtitulo}
+                    zonas={service.semaforo.zonas}
+                    paso={paso()}
+                />
             )}
 
             {/* Related Products */}

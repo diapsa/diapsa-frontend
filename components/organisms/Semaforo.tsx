@@ -3,8 +3,8 @@ import type { ZonaSemaforo } from "@/types/servicio";
 
 /**
  * Semaforo
- * Los tres colores con los que sale cada equipo en el informe, y qué pasa
- * en cada uno.
+ * Los colores con los que sale cada equipo en el informe, y qué pasa en cada
+ * uno.
  *
  * Por qué sustituye a la escala numérica: la versión anterior mostraba los
  * rangos en mm/s y en g con referencia a ISO 10816 e ISO 20816. Al jefe de
@@ -12,7 +12,12 @@ import type { ZonaSemaforo } from "@/types/servicio";
  * verde, ámbar o rojo y qué hacer en cada caso. Los números viven dentro del
  * informe, donde sí hacen falta.
  *
- * Sin texto de norma, sin unidades, sin nota al pie. Tres lámparas.
+ * Sin texto de norma, sin unidades, sin nota al pie. Lámparas.
+ *
+ * La escala no es igual en todas las disciplinas: vibraciones califica en
+ * tres niveles y aceite en cuatro, porque el informe de condición separa
+ * "observación" (vigilar) de "precaución" (programar mantenimiento). La
+ * rejilla se acomoda a las que vengan.
  */
 
 type Props = {
@@ -24,6 +29,7 @@ type Props = {
 
 const LAMPARA: Record<string, { fondo: string; halo: string; texto: string }> = {
   bueno: { fondo: "bg-emerald-500", halo: "shadow-emerald-500/40", texto: "text-emerald-700" },
+  observacion: { fondo: "bg-sky-500", halo: "shadow-sky-500/40", texto: "text-sky-700" },
   precaucion: { fondo: "bg-amber-400", halo: "shadow-amber-400/40", texto: "text-amber-700" },
   alarma: { fondo: "bg-red-600", halo: "shadow-red-600/40", texto: "text-red-700" },
 };
@@ -42,7 +48,11 @@ export default function Semaforo({ titulo, subtitulo, zonas, paso }: Props) {
           )}
         </div>
 
-        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <ul
+          className={`grid grid-cols-1 gap-6 ${
+            zonas.length === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-3"
+          }`}
+        >
           {zonas.map((zona) => {
             const color = LAMPARA[zona.clave] ?? LAMPARA.bueno;
             return (
