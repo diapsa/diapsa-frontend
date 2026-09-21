@@ -82,11 +82,22 @@ export interface HojaInforme {
   condicion: { clave: string; etiqueta: string };
   diagnostico: string;
   recomendaciones: string[];
-  /** Encabezados de columna: una por muestra, en orden. */
-  fechas: string[];
+  /** Encabezados de columna: una por muestra, en orden (aceite). */
+  fechas?: string[];
   /** Un renglón por análisis, con tantos valores como fechas. `resaltar`
       marca por índice las celdas que el laboratorio señaló. */
-  resultados: { analisis: string; unidad?: string; limite: string; valores: string[]; resaltar?: number[] }[];
+  resultados?: { analisis: string; unidad?: string; limite: string; valores: string[]; resaltar?: number[] }[];
+  /** La tabla de prioridades del reporte ejecutivo (tierras): nivel, qué
+      puntos y qué hacer. `clave` es la del semáforo, para el color. */
+  prioridades?: { nivel: string; clave: string; puntos: string; accion: string }[];
+  /** Rótulos de cada bloque, si el servicio los nombra distinto. */
+  etiquetas?: Partial<{
+    condicion: string;
+    diagnostico: string;
+    recomendaciones: string;
+    historial: string;
+    prioridades: string;
+  }>;
   evidencia?: GaleriaFoto[];
   nota: string;
 }
@@ -300,6 +311,22 @@ export interface GrupoSonoro {
   estimado?: EstimadoFalla;
 }
 
+export interface ServiceMapaPuntos {
+  etiqueta: string;
+  titulo: string;
+  texto: string;
+  /** Un punto por cuadro, en el orden de la ruta. `valor` en ohms como texto,
+      vacío si no se pudo medir. `clave`: cumple | observacion | falla. */
+  puntos: { tipo: string; valor: string; clave: string; x?: number; y?: number }[];
+  /** Zonas del plano esquemático, en porcentaje del marco. Si vienen, los
+      puntos se dibujan encima con sus `x`, `y`; si no, en rejilla. */
+  zonas?: { nombre: string; x: number; y: number; w: number; h: number }[];
+  leyenda: { clave: string; texto: string }[];
+  /** El punto que falló, explicado en una línea. */
+  hallazgo?: { etiqueta: string; texto: string };
+  nota: string;
+}
+
 export interface ServiceComparadorSonoro {
   titulo: string;
   texto?: string;
@@ -365,4 +392,6 @@ export interface Servicio {
   comparador?: ServiceComparador;
   /** Gráfica de referencia con dos señales reales, normal y con hallazgo (ultrasonido). */
   comparadorSonoro?: ServiceComparadorSonoro;
+  /** Diferenciador de tierras: todos los puntos de una ruta en una vista. */
+  mapaPuntos?: ServiceMapaPuntos;
 }

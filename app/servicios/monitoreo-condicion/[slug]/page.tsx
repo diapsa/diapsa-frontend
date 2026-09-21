@@ -13,6 +13,7 @@ import ClientesLogos from "@/components/organisms/ClientesLogos";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
 import ComparadorTermico from "@/components/organisms/ComparadorTermico";
 import GraficaSonora from "@/components/organisms/GraficaSonora";
+import MapaPuntos from "@/components/organisms/MapaPuntos";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import PorQueMuestrear from "@/components/organisms/PorQueMuestrear";
@@ -249,6 +250,12 @@ export default async function ServicePage({
                 sana y una con falla, dibujada, con la escala de decibeles. */}
             {service.comparadorSonoro && (
                 <GraficaSonora comparador={service.comparadorSonoro} paso={paso()} />
+            )}
+
+            {/* Diferenciador de tierras: la ruta completa en cuadros, con el
+                valor de cada punto y el que falló a la vista. */}
+            {service.mapaPuntos && (
+                <MapaPuntos mapa={service.mapaPuntos} paso={paso()} />
             )}
 
             <ServiceProof certificacion={service.certificacion} />
