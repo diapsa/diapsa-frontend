@@ -21,41 +21,544 @@
     }
   ],
   "header": {
-    "title": "Servicio de Tierras Físicas",
-    "subtitle": "Medición y diagnóstico del sistema de puesta a tierra",
+    "title": "Tierras Físicas",
+    "subtitle": "Medición de la red de puesta a tierra conforme a NOM-022-STPS-2015",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Medición de resistencia de tierras físicas y diagnóstico del sistema de puesta a tierra conforme a NOM-022-STPS: protege a tu personal y a tus equipos.",
+  "seoDescription": "Medición de resistencia de tierras físicas y continuidad de la red de puesta a tierra conforme a NOM-022-STPS-2015. Registros, transformadores, tanques y pararrayos punto por punto, con reporte ejecutivo listo para la STPS.",
   "content": {
-    "title": "¿Para qué medir las tierras físicas?",
-    "subtitle": "Un sistema de tierras degradado no avisa: el equipo opera normal hasta el día de la descarga o la falla. Medirlo periódicamente es la única forma de saber que sigue protegiendo, y es una obligación normativa auditable.",
-    "image": "/images/disciplinas/tierras-fisicas.jpg",
+    "title": "La corriente de una falla necesita por dónde irse",
+    "subtitle": "Cuando un cable toca una carcasa o cae un rayo, la corriente busca el camino más fácil a tierra. Si la red de tierras está en buen estado, ese camino es el electrodo. Si no, puede ser una persona o una tarjeta electrónica. Medirla es la única forma de saber que sigue protegiendo, y es una obligación que la STPS revisa.",
+    "image": "/images/servicios/tierras-fisicas/registro-abierto.webp",
     "items": [
       {
-        "id": "donde-aplica",
+        "id": "aplicaciones",
         "title": "Dónde se aplica",
-        "content": "Subestaciones, tableros, estructuras, pararrayos y equipos sensibles en cualquier planta industrial. Aplica especialmente donde se manejan sustancias inflamables o electricidad estática, que es justo lo que la NOM-022-STPS obliga a controlar y documentar."
-      },
-      {
-        "id": "que-incluye",
-        "title": "Qué incluye el servicio",
-        "content": "Medición de resistencia de los electrodos de tierra, verificación de continuidad de la red, inspección del estado físico de electrodos, conectores y soldaduras, y reporte con valores contra los límites normativos, listo para presentarse ante la STPS."
+        "content": "Registros de tierra, subestaciones y cuartos eléctricos, transformadores, tanques de combustible y químicos, estructuras metálicas y sistemas de pararrayos. Toda planta industrial, y con más razón donde hay sustancias inflamables o electricidad estática, que es lo que la NOM-022-STPS-2015 obliga a controlar.",
+        "foto": {
+          "src": "/images/servicios/tierras-fisicas/ruta-registros.webp",
+          "alt": "Analista de DIAPSA recorriendo los registros de tierra de una planta"
+        }
       },
       {
         "id": "beneficios",
-        "title": "Beneficios",
-        "content": "Protección real del personal ante descargas, menos daños en equipos electrónicos y de control por sobretensiones, cumplimiento normativo demostrable en auditorías e inspecciones, y corrección dirigida: sabes exactamente qué electrodo o conexión rehabilitar."
+        "title": "Qué ganas",
+        "content": "Saber punto por punto qué electrodo protege y cuál no. En una ruta de 25 puntos de una planta metalmecánica, 24 cumplieron y uno tenía el electrodo quebrado y sin lectura: un pararrayos sin camino a tierra. Sin la medición, ese punto sigue pareciendo bueno hasta el día del rayo. Con ella, se sustituye el electrodo y queda documentado.",
+        "foto": {
+          "src": "/images/servicios/tierras-fisicas/registro-electrodo.webp",
+          "alt": "Registro de tierra abierto con el electrodo y su conexión a la vista"
+        }
+      },
+      {
+        "id": "como",
+        "title": "Cómo lo hacemos",
+        "content": "Con telurómetro certificado y el método de caída de potencial: se clavan electrodos auxiliares de corriente y de potencial y se mide la resistencia en varias distancias hasta confirmar el valor. Se verifica la continuidad desde tableros, estructuras y equipos hasta el electrodo, y se inspecciona el estado físico de cada registro: tapa, conexión, oxidación, humedad y señalización.",
+        "foto": {
+          "src": "/images/servicios/tierras-fisicas/electrodo-auxiliar.webp",
+          "alt": "Analista de DIAPSA colocando el electrodo auxiliar para la medición por caída de potencial"
+        }
+      },
+      {
+        "id": "plataforma-idap",
+        "title": "Tus datos viven en IDAP",
+        "content": "Cada punto queda registrado con su valor, su límite, su estado físico y sus fotos. La siguiente medición se compara con esta, así que un electrodo que se va degradando se ve venir antes de que deje de cumplir.",
+        "foto": {
+          "src": "/images/idap/mockup.png",
+          "alt": "Pantallas de IDAP con el historial de un equipo",
+          "ajuste": "contener",
+          "fondo": "oscuro"
+        }
       }
     ]
   },
   "cta": {
     "title": "¿Tu reporte de tierras está vigente para la STPS?",
-    "text": "Dinos cuántos puntos de medición tiene tu planta y te cotizamos la medición con reporte normativo.",
-    "whatsappMessage": "Hola, quiero información sobre medición de tierras físicas para mi planta."
+    "text": "Dinos cuántos puntos de puesta a tierra tiene tu planta y te armamos la ruta de medición con su reporte normativo.",
+    "whatsappMessage": "Hola, quiero información sobre medición de tierras físicas para mi planta.",
+    "datos": [
+      "Registro REPSE vigente",
+      "Telurómetro con calibración vigente",
+      "Reporte conforme a NOM-022-STPS-2015"
+    ]
   },
   "relatedProducts": {
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
-  }
+  },
+  "porQue": {
+    "foto": {
+      "src": "/images/servicios/tierras-fisicas/registro-abierto.webp",
+      "alt": "Analista de DIAPSA abriendo un registro de tierra para inspeccionar el electrodo"
+    },
+    "pie": "Inspección de un registro de puesta a tierra, en una ruta real de DIAPSA.",
+    "preguntas": [
+      {
+        "pregunta": "¿La red de tierras sigue protegiendo?",
+        "texto": "Un electrodo se corroe, un conector se afloja, una obra corta el cable. Nada de eso se nota en la operación: el equipo sigue trabajando igual hasta el día de la falla o del rayo. La resistencia se mide contra un límite y dice si el camino a tierra existe.",
+        "siSaleMal": "Se rehabilita el electrodo o la conexión, con el punto exacto identificado, antes de que alguien lo descubra con el cuerpo."
+      },
+      {
+        "pregunta": "¿Todo lo que debería estar conectado lo está?",
+        "texto": "De nada sirve un buen electrodo si el tablero, el tanque o la estructura no llegan a él. La continuidad se verifica desde cada equipo hasta la red, punto por punto.",
+        "siSaleMal": "Se repone la conexión faltante y se documenta, porque una carcasa sin tierra es el riesgo eléctrico más común en planta."
+      },
+      {
+        "pregunta": "¿Puedes demostrarlo ante la STPS?",
+        "texto": "La NOM-022-STPS-2015 obliga a medir la red de tierras y a conservar el registro. Lo que se presenta es el reporte: cada punto con su valor, su límite, su estado físico y quién lo midió.",
+        "siSaleMal": "Sin reporte vigente no hay evidencia de cumplimiento. Con él, hasta el hallazgo queda documentado junto con su corrección."
+      }
+    ],
+    "comoSeHace": {
+      "titulo": "Así se mide",
+      "pasos": [
+        {
+          "foto": {
+            "src": "/images/servicios/tierras-fisicas/registro-abierto.webp",
+            "alt": "Registro de tierra abierto para inspección"
+          },
+          "texto": "Se abre cada registro y se revisa el electrodo, la conexión y el estado de la tapa: oxidación, humedad, obstrucciones y señalización."
+        },
+        {
+          "foto": {
+            "src": "/images/servicios/tierras-fisicas/electrodo-auxiliar.webp",
+            "alt": "Electrodo auxiliar clavado para la prueba de caída de potencial"
+          },
+          "texto": "Se clavan los electrodos auxiliares y se mide la resistencia por caída de potencial en varias distancias, con telurómetro certificado."
+        },
+        {
+          "foto": {
+            "src": "/images/servicios/tierras-fisicas/continuidad-tablero.webp",
+            "alt": "Analista de DIAPSA verificando la continuidad a tierra en un tablero eléctrico"
+          },
+          "texto": "Se verifica la continuidad desde tableros, estructuras y equipos hasta el electrodo, y cada punto queda con foto y valor."
+        }
+      ]
+    }
+  },
+  "mapaPuntos": {
+    "etiqueta": "Lo que detectamos",
+    "titulo": "Tu planta completa en un plano, y los puntos que fallan a primera vista",
+    "texto": "Una ruta de 25 puntos repartidos por toda la instalación: registros generales, transformadores, tanques, estructuras y pararrayos. Cada marcador es un punto medido. Los verdes cumplen. Los rojos son los cuatro motivos por los que un punto deja de proteger: resistencia por arriba del límite, sin continuidad con el equipo o electrodo dañado sin lectura.",
+    "puntos": [
+      {
+        "tipo": "Almacén de químicos",
+        "valor": "1.20",
+        "clave": "cumple",
+        "x": 7,
+        "y": 56
+      },
+      {
+        "tipo": "Registro general",
+        "valor": "1.70",
+        "clave": "cumple",
+        "x": 8,
+        "y": 18
+      },
+      {
+        "tipo": "Registro general",
+        "valor": "1.36",
+        "clave": "cumple",
+        "x": 18,
+        "y": 22
+      },
+      {
+        "tipo": "Bombas contra incendio",
+        "valor": "0.33",
+        "clave": "cumple",
+        "x": 84,
+        "y": 82
+      },
+      {
+        "tipo": "Pararrayos",
+        "valor": "0.89",
+        "clave": "cumple",
+        "x": 8,
+        "y": 82
+      },
+      {
+        "tipo": "Pararrayos",
+        "valor": "12.4",
+        "clave": "falla",
+        "x": 18,
+        "y": 78
+      },
+      {
+        "tipo": "Registro general",
+        "valor": "0.19",
+        "clave": "cumple",
+        "x": 19,
+        "y": 56
+      },
+      {
+        "tipo": "Nave de producción",
+        "valor": "0.19",
+        "clave": "cumple",
+        "x": 34,
+        "y": 16
+      },
+      {
+        "tipo": "Nave de producción",
+        "valor": "0.18",
+        "clave": "cumple",
+        "x": 44,
+        "y": 16
+      },
+      {
+        "tipo": "Nave de producción",
+        "valor": "1.48",
+        "clave": "cumple",
+        "x": 54,
+        "y": 16
+      },
+      {
+        "tipo": "Nave de producción",
+        "valor": "31.6",
+        "clave": "falla",
+        "x": 34,
+        "y": 34
+      },
+      {
+        "tipo": "Nave de producción",
+        "valor": "0.44",
+        "clave": "cumple",
+        "x": 44,
+        "y": 34
+      },
+      {
+        "tipo": "Transformador",
+        "valor": "0.51",
+        "clave": "cumple",
+        "x": 63,
+        "y": 22
+      },
+      {
+        "tipo": "Transformador",
+        "valor": "0.55",
+        "clave": "cumple",
+        "x": 63,
+        "y": 36
+      },
+      {
+        "tipo": "Transformador",
+        "valor": "0.57",
+        "clave": "cumple",
+        "x": 63,
+        "y": 50
+      },
+      {
+        "tipo": "Cuarto de transformadores",
+        "valor": "0.50",
+        "clave": "cumple",
+        "x": 54,
+        "y": 50
+      },
+      {
+        "tipo": "Pararrayos",
+        "valor": "0.40",
+        "clave": "cumple",
+        "x": 34,
+        "y": 78
+      },
+      {
+        "tipo": "Tanque de diésel",
+        "valor": "Sin continuidad",
+        "clave": "falla",
+        "x": 77,
+        "y": 40
+      },
+      {
+        "tipo": "Estructura",
+        "valor": "2.06",
+        "clave": "cumple",
+        "x": 52,
+        "y": 78
+      },
+      {
+        "tipo": "Pararrayos",
+        "valor": "0.39",
+        "clave": "cumple",
+        "x": 62,
+        "y": 84
+      },
+      {
+        "tipo": "Residuos peligrosos",
+        "valor": "0.46",
+        "clave": "cumple",
+        "x": 17,
+        "y": 42
+      },
+      {
+        "tipo": "Pararrayos de subestación",
+        "valor": "1.08",
+        "clave": "cumple",
+        "x": 78,
+        "y": 18
+      },
+      {
+        "tipo": "Tanque de argón",
+        "valor": "0.54",
+        "clave": "cumple",
+        "x": 86,
+        "y": 46
+      },
+      {
+        "tipo": "Tanque de nitrógeno",
+        "valor": "0.49",
+        "clave": "cumple",
+        "x": 93,
+        "y": 58
+      },
+      {
+        "tipo": "Pararrayos",
+        "valor": "",
+        "clave": "falla",
+        "x": 92,
+        "y": 16
+      }
+    ],
+    "leyenda": [
+      {
+        "clave": "cumple",
+        "texto": "Verde: resistencia por debajo del límite (25 Ω en la red general, 10 Ω en pararrayos), con continuidad y electrodo en buen estado."
+      },
+      {
+        "clave": "falla",
+        "texto": "Rojo: resistencia por arriba del límite, sin continuidad entre el equipo y el electrodo, o electrodo dañado sin lectura."
+      }
+    ],
+    "hallazgo": {
+      "etiqueta": "Los cuatro puntos en rojo",
+      "texto": "El pararrayos de transportes tiene el electrodo quebrado y no da lectura: sin camino a tierra para un rayo. El pararrayos del estacionamiento mide 12.4 Ω, por arriba de los 10 Ω que le aplican. Una nave de producción mide 31.6 Ω, por arriba de 25 Ω. Y el tanque de diésel tiene electrodo, pero no hay continuidad entre el tanque y él: el tanque está sin tierra aunque el registro parezca bueno. Cada uno lleva su acción en el reporte: sustituir el electrodo, agregar electrodos en paralelo o tratar el terreno, y reponer la conexión."
+    },
+    "nota": "Ejemplo compuesto. La ruta de 25 puntos y el electrodo quebrado son reales, de septiembre de 2026, con la planta y las áreas omitidas; los otros tres puntos en rojo se tomaron de hallazgos de otras rutas para ilustrar los tres motivos de no conformidad. El plano es esquemático, no está a escala. Los límites son los que aplica DIAPSA conforme a la NOM-022-STPS-2015.",
+    "zonas": [
+      {
+        "nombre": "Oficinas y comedores",
+        "x": 3,
+        "y": 5,
+        "w": 21,
+        "h": 24
+      },
+      {
+        "nombre": "Almacenes",
+        "x": 3,
+        "y": 33,
+        "w": 21,
+        "h": 30
+      },
+      {
+        "nombre": "Estacionamiento",
+        "x": 3,
+        "y": 67,
+        "w": 21,
+        "h": 27
+      },
+      {
+        "nombre": "Naves de producción",
+        "x": 28,
+        "y": 5,
+        "w": 40,
+        "h": 55
+      },
+      {
+        "nombre": "Pruebas y rayos X",
+        "x": 28,
+        "y": 64,
+        "w": 40,
+        "h": 30
+      },
+      {
+        "nombre": "Subestación",
+        "x": 72,
+        "y": 5,
+        "w": 13,
+        "h": 24
+      },
+      {
+        "nombre": "Transportes",
+        "x": 88,
+        "y": 5,
+        "w": 9,
+        "h": 24
+      },
+      {
+        "nombre": "Tanques",
+        "x": 72,
+        "y": 33,
+        "w": 25,
+        "h": 30
+      },
+      {
+        "nombre": "Contra incendio",
+        "x": 72,
+        "y": 67,
+        "w": 25,
+        "h": 27
+      }
+    ]
+  },
+  "certificacion": "NOM-022-STPS-2015 · Telurómetro con calibración vigente · Reporte validado por Unidad Verificadora",
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujo": [
+    {
+      "titulo": "Levantamiento",
+      "texto": "Se identifican todos los puntos de la red: registros, electrodos, bajantes de pararrayos, tableros y equipos que deben estar aterrizados."
+    },
+    {
+      "titulo": "Medición en campo",
+      "texto": "Resistencia por caída de potencial con telurómetro certificado, continuidad hasta cada equipo y revisión física de cada registro, con foto."
+    },
+    {
+      "titulo": "Evaluación",
+      "texto": "Cada valor contra su límite normativo, y cada registro contra su estado físico: tapa, conexión, oxidación, humedad, señalización."
+    },
+    {
+      "titulo": "Plan de acción",
+      "texto": "Los hallazgos ordenados por prioridad: qué corregir de inmediato, qué programar y qué mantener, con la acción concreta de cada punto."
+    },
+    {
+      "titulo": "Seguimiento",
+      "texto": "El punto corregido se vuelve a medir, y la siguiente ruta se compara con esta para ver qué electrodo se está degradando."
+    }
+  ],
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "Un reporte ejecutivo que se lee en una página, y esta es la de una ruta real tal como llega: cuántos puntos se midieron y cuántos cumplen, el resultado general, las prioridades de acción con qué hacer en cada punto y el plan de cierre. Detrás va la tabla completa, punto por punto, con valor, continuidad, resultado y fotos.",
+    "contenido": [
+      "Resumen ejecutivo: puntos evaluados, conformes y porcentaje de cumplimiento",
+      "Tabla completa punto por punto: valor en ohms, continuidad, resultado y observaciones",
+      "Prioridades de acción con la corrección concreta de cada punto",
+      "Fotos de cada registro y de cada lectura como evidencia",
+      "Referencia normativa y método, listos para presentarse ante la STPS"
+    ],
+    "hoja": {
+      "etiqueta": "Reporte ejecutivo",
+      "titulo": "Evaluación de la red de puesta a tierra",
+      "subtitulo": "NOM-022-STPS-2015 · septiembre de 2026",
+      "datos": [
+        {
+          "etiqueta": "Puntos evaluados",
+          "valor": "25"
+        },
+        {
+          "etiqueta": "Conformes",
+          "valor": "24"
+        },
+        {
+          "etiqueta": "Cumplimiento",
+          "valor": "96 %"
+        }
+      ],
+      "condicion": {
+        "clave": "bueno",
+        "etiqueta": "Favorable"
+      },
+      "etiquetas": {
+        "condicion": "Condición general",
+        "diagnostico": "Resultado general",
+        "recomendaciones": "Plan de cierre",
+        "prioridades": "Prioridades de acción"
+      },
+      "diagnostico": "Los 24 puntos con medición presentan continuidad y valores entre 0.18 y 5.91 ohms. El punto 25, un pararrayos, se identifica como no conforme por el estado físico del electrodo y requiere atención correctiva prioritaria.",
+      "recomendaciones": [
+        "Atender primero el punto 25 y volver a medir después de la corrección.",
+        "Cerrar las observaciones físicas de los demás registros y conservar la evidencia.",
+        "Integrar la medición a un calendario preventivo para mantener la trazabilidad."
+      ],
+      "prioridades": [
+        {
+          "nivel": "Alta",
+          "clave": "alarma",
+          "puntos": "Punto 25",
+          "accion": "Sustituir el electrodo, rehabilitar el registro y repetir la medición."
+        },
+        {
+          "nivel": "Media",
+          "clave": "precaucion",
+          "puntos": "Punto 23",
+          "accion": "Vaciar y limpiar el registro, revisar corrosión y asegurar la tapa."
+        },
+        {
+          "nivel": "Baja",
+          "clave": "observacion",
+          "puntos": "1, 5 y 11",
+          "accion": "Rehabilitar tapas, retirar obstrucciones e inspeccionar conexiones."
+        },
+        {
+          "nivel": "Preventiva",
+          "clave": "bueno",
+          "puntos": "6, 18, 20, 21 y 24",
+          "accion": "Limpiar, retirar humedad y residuos, revisar cable y conexiones."
+        }
+      ],
+      "evidencia": [
+        {
+          "src": "/images/servicios/tierras-fisicas/medicion-registro.webp",
+          "alt": "Medición de resistencia en un registro de tierra"
+        },
+        {
+          "src": "/images/servicios/tierras-fisicas/lectura-ohm.webp",
+          "alt": "Lectura del telurómetro: 0.58 ohms"
+        }
+      ],
+      "nota": "Reporte real de septiembre de 2026, con la planta y las áreas omitidas."
+    }
+  },
+  "mostrarClientes": true,
+  "faq": [
+    {
+      "question": "¿Qué dice la NOM-022-STPS-2015 sobre tierras físicas?",
+      "answer": "Que el centro de trabajo debe contar con una red de puesta a tierra, medir su resistencia y continuidad, conservar el registro de esas mediciones y señalizar las bajantes de pararrayos. Es lo que un inspector de la STPS pide ver. El reporte de DIAPSA está estructurado para responder punto por punto a esa revisión."
+    },
+    {
+      "question": "¿Cuál es el valor máximo permitido?",
+      "answer": "En los reportes de DIAPSA se aplica un límite de 25 ohms para la red general y de 10 ohms para sistemas de pararrayos, y se compara cada punto contra el que le corresponde. Un valor alto no siempre es un electrodo malo: puede ser el terreno, la humedad o una conexión floja, y el reporte dice cuál es el caso."
+    },
+    {
+      "question": "¿Cada cuánto hay que medir?",
+      "answer": "Como referencia, una vez al año, y después de cualquier obra civil, cambio en la instalación eléctrica o evento de descarga. Los electrodos se degradan despacio, así que comparar la medición de este año con la anterior es lo que permite ver cuál se está yendo antes de que deje de cumplir."
+    },
+    {
+      "question": "¿Hay que parar la planta o desenergizar?",
+      "answer": "No para la medición de resistencia, que se hace en los registros con el equipo operando. La verificación de continuidad en tableros se coordina con el personal eléctrico de la planta y sigue los procedimientos de seguridad del área."
+    },
+    {
+      "question": "¿Cómo se mide la resistencia?",
+      "answer": "Por caída de potencial: se hace circular corriente entre el electrodo bajo prueba y un electrodo auxiliar, y se mide el potencial en varias distancias intermedias hasta que el valor se estabiliza. Ese valor estable es la resistencia del electrodo. Se hace con telurómetro con calibración vigente y se documenta cada lectura con foto."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "Cuántos puntos de puesta a tierra tiene tu planta, o un plano o listado aproximado si no lo sabes, y si hay sistemas de pararrayos, tanques o subestaciones. Con eso se arma la ruta y la propuesta; si tienes un reporte anterior, sirve para comparar."
+    }
+  ],
+  "galeria": [
+    {
+      "src": "/images/servicios/tierras-fisicas/ruta-registros.webp",
+      "alt": "Recorrido por los registros de tierra de una planta, con el equipo de medición."
+    },
+    {
+      "src": "/images/servicios/tierras-fisicas/registro-abierto.webp",
+      "alt": "Inspección del electrodo y la conexión dentro de un registro."
+    },
+    {
+      "src": "/images/servicios/tierras-fisicas/electrodo-auxiliar.webp",
+      "alt": "Colocación del electrodo auxiliar para la prueba de caída de potencial."
+    },
+    {
+      "src": "/images/servicios/tierras-fisicas/medicion-registro-2.webp",
+      "alt": "Medición de resistencia a tierra en un registro de planta."
+    },
+    {
+      "src": "/images/servicios/tierras-fisicas/continuidad-tablero.webp",
+      "alt": "Verificación de continuidad a tierra en un tablero eléctrico."
+    },
+    {
+      "src": "/images/servicios/tierras-fisicas/medicion-registro.webp",
+      "alt": "Analista de DIAPSA conectando el telurómetro al electrodo."
+    }
+  ]
 }

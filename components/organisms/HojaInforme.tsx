@@ -32,7 +32,17 @@ export default function HojaInforme({ hoja }: Props) {
   const condicion = nivel(hoja.condicion.clave);
   // La columna de límite solo si algún renglón trae uno; en la versión
   // corta de la hoja no hay, y una columna vacía descuadra la tabla.
-  const conLimite = hoja.resultados.some((r) => r.limite);
+  const conLimite = hoja.resultados?.some((r) => r.limite) ?? false;
+  // Los rótulos de cada bloque, con los de aceite de respaldo. Tierras
+  // usa la misma hoja con otros nombres: resultado general, plan de cierre.
+  const T = {
+    condicion: "Condición del aceite",
+    diagnostico: "Diagnóstico",
+    recomendaciones: "Recomendaciones",
+    historial: "Historial de muestras",
+    prioridades: "Prioridades de acción",
+    ...hoja.etiquetas,
+  };
 
   return (
     <div className="group relative mx-auto w-full max-w-2xl">
@@ -65,7 +75,7 @@ export default function HojaInforme({ hoja }: Props) {
         <div className="px-5 py-5 lg:px-7">
           {/* Condición */}
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-tertiary">Condición del aceite</p>
+            <p className="text-[11px] font-bold uppercase tracking-widest text-tertiary">{T.condicion}</p>
             <span
               className={`rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider ${condicion.chip}`}
             >
@@ -74,11 +84,11 @@ export default function HojaInforme({ hoja }: Props) {
           </div>
 
           {/* Diagnóstico */}
-          <p className="mt-5 text-[11px] font-bold uppercase tracking-widest text-tertiary">Diagnóstico</p>
+          <p className="mt-5 text-[11px] font-bold uppercase tracking-widest text-tertiary">{T.diagnostico}</p>
           <p className="mt-2 text-justify text-sm leading-relaxed text-primary">{hoja.diagnostico}</p>
 
           {/* Recomendaciones */}
-          <p className="mt-5 text-[11px] font-bold uppercase tracking-widest text-tertiary">Recomendaciones</p>
+          <p className="mt-5 text-[11px] font-bold uppercase tracking-widest text-tertiary">{T.recomendaciones}</p>
           <ol className="mt-2 space-y-1.5">
             {hoja.recomendaciones.map((r, i) => (
               <li key={r} className="flex gap-3 text-sm leading-relaxed text-primary">
@@ -92,9 +102,10 @@ export default function HojaInforme({ hoja }: Props) {
         </div>
 
         {/* Resultados de laboratorio: todas las muestras del equipo */}
+        {hoja.fechas && hoja.resultados && (
         <div className="border-t border-gray-200 px-5 py-5 lg:px-7">
           <p className="text-[11px] font-bold uppercase tracking-widest text-tertiary">
-            Historial de muestras
+            {T.historial}
           </p>
           <div className="-mx-5 mt-3 overflow-x-auto px-5 lg:-mx-7 lg:px-7">
             <table className="w-full min-w-[30rem] border-collapse text-xs">
@@ -138,6 +149,25 @@ export default function HojaInforme({ hoja }: Props) {
             </table>
           </div>
         </div>
+        )}
+
+        {/* Prioridades de acción: la tabla del reporte ejecutivo de tierras */}
+        {hoja.prioridades && hoja.prioridades.length > 0 && (
+          <div className="border-t border-gray-200 px-5 py-5 lg:px-7">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-tertiary">{T.prioridades}</p>
+            <ul className="mt-3 divide-y divide-gray-100">
+              {hoja.prioridades.map((p) => (
+                <li key={p.nivel} className="grid grid-cols-[6.5rem_1fr] gap-x-4 py-2.5 text-sm sm:grid-cols-[7.5rem_5rem_1fr]">
+                  <span className={`font-bold ${nivel(p.clave).lampara.texto}`}>{p.nivel}</span>
+                  <span className="text-tertiary sm:text-right">{p.puntos}</span>
+                  <span className="col-span-2 mt-1 text-justify leading-relaxed text-primary sm:col-span-1 sm:mt-0">
+                    {p.accion}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Evidencia */}
         {hoja.evidencia && hoja.evidencia.length > 0 && (
