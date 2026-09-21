@@ -172,7 +172,7 @@ export interface ServicePorQue {
       laboratorio, y qué se hace si cada una sale mal. */
   preguntas: { pregunta: string; texto: string; siSaleMal: string }[];
   /** Cómo se toma la muestra, en fotos reales con una línea cada una. */
-  comoSeHace: { titulo: string; pasos: { foto: GaleriaFoto; texto: string }[] };
+  comoSeHace?: { titulo: string; pasos: { foto: GaleriaFoto; texto: string }[] };
 }
 
 
@@ -337,6 +337,38 @@ export interface ServiceApartadoFotos {
   nota?: string;
 }
 
+export interface EtiquetaArco {
+  equipo: string;
+  tension: string;
+  energia: string;
+  distanciaTrabajo: string;
+  fronteraArco: string;
+  nivel: string;
+  ropa: string;
+  guantes: string;
+  fronteraLimitada: string;
+  fronteraRestringida: string;
+}
+
+export interface ServiceArco {
+  etiqueta: string;
+  titulo: string;
+  texto: string;
+  etiquetasTitulo: string;
+  etiquetasTexto: string;
+  /** Dos etiquetas reales: la del tablero de más riesgo y una típica. */
+  etiquetas: EtiquetaArco[];
+  barrasTitulo: string;
+  barrasTexto: string;
+  /** Un tablero por barra, energía incidente en cal/cm² y su categoría. */
+  barras: { nombre: string; tension: string; energia: number; nivel: string }[];
+  /** Tope de la escala de barras, para que los umbrales quepan. */
+  escala: number;
+  umbrales: { valor: number; texto: string }[];
+  leyenda: { nivel: string; texto: string }[];
+  nota: string;
+}
+
 export interface ServiceComparadorSonoro {
   titulo: string;
   texto?: string;
@@ -407,4 +439,7 @@ export interface Servicio {
   comparadorSonoro?: ServiceComparadorSonoro;
   /** Diferenciador de tierras: todos los puntos de una ruta en una vista. */
   mapaPuntos?: ServiceMapaPuntos;
+  /** Diferenciador de arco eléctrico: la etiqueta de cada tablero y todos
+      los tableros ordenados por energía incidente. */
+  arco?: ServiceArco;
 }
