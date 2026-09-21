@@ -14,6 +14,7 @@ import GaleriaCampo from "@/components/organisms/GaleriaCampo";
 import ComparadorTermico from "@/components/organisms/ComparadorTermico";
 import GraficaSonora from "@/components/organisms/GraficaSonora";
 import MapaPuntos from "@/components/organisms/MapaPuntos";
+import ApartadoFotos from "@/components/organisms/ApartadoFotos";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import PorQueMuestrear from "@/components/organisms/PorQueMuestrear";
@@ -276,6 +277,12 @@ export default async function ServicePage({
                 tiempo, y es la única prueba de que el servicio funcionó. */}
             {service.tendencia && (
                 <GraficaTendencia tendencia={service.tendencia} paso={paso()} />
+            )}
+
+            {/* Una variante del servicio con fotos propias, después de la
+                prueba principal y antes del cierre. */}
+            {service.apartadoFotos && (
+                <ApartadoFotos apartado={service.apartadoFotos} paso={paso()} />
             )}
 
             {/* La escala con la que se califica cada equipo, para los

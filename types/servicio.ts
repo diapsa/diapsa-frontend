@@ -327,6 +327,16 @@ export interface ServiceMapaPuntos {
   nota: string;
 }
 
+export interface ServiceApartadoFotos {
+  etiqueta: string;
+  titulo: string;
+  texto: string;
+  /** Datos duros en fichas, ej. "Transformador de 1,000 kVA en carga". */
+  datos?: string[];
+  fotos: { src: string; alt: string; pie?: string }[];
+  nota?: string;
+}
+
 export interface ServiceComparadorSonoro {
   titulo: string;
   texto?: string;
@@ -374,6 +384,9 @@ export interface Servicio {
   galeria?: GaleriaFoto[];
   /** Otro servicio que se compra junto con este. Va en las dos direcciones:
       si A apunta a B, B debe apuntar a A. */
+  /** Una variante del servicio contada con fotos: otro equipo u otra
+      técnica que no merece página propia pero sí verse (aceite: DGA). */
+  apartadoFotos?: ServiceApartadoFotos;
   servicioRelacionado?: { href: string; etiqueta: string; titulo: string; texto: string; enlace: string };
   /** El informe que recibe el cliente: se enseña y se dice qué trae. */
   entregable?: ServiceEntregable;

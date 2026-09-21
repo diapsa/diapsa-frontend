@@ -391,5 +391,34 @@
         }
       ]
     }
+  },
+  "apartadoFotos": {
+    "etiqueta": "También en transformadores",
+    "titulo": "El aceite del transformador también avisa: gases disueltos",
+    "texto": "Cuando dentro de un transformador hay sobrecalentamiento, descargas parciales o arqueo, el aceite dieléctrico y el papel aislante se descomponen y liberan gases. Cada tipo de falla produce una combinación distinta. Una muestra tomada con jeringa, sin que el aceite toque el aire, dice si hay una falla incubándose y de qué tipo. Se toma con el transformador en carga, con traje contra arco eléctrico, y no requiere abrirlo ni desenergizarlo.",
+    "datos": [
+      "Transformador de 1,000 kVA en carga",
+      "Muestra con jeringa, sin contacto con el aire",
+      "Traje contra arco eléctrico",
+      "Sin desenergizar"
+    ],
+    "fotos": [
+      {
+        "src": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
+        "alt": "Analista de DIAPSA con traje contra arco eléctrico frente al gabinete abierto de un transformador",
+        "pie": "El gabinete se abre con el transformador en operación. El traje contra arco eléctrico es obligatorio: no se trabaja dentro de un equipo energizado sin él."
+      },
+      {
+        "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
+        "alt": "Analista de DIAPSA arrodillado ante las boquillas de un transformador tipo pedestal, tomando la muestra",
+        "pie": "La muestra se toma de la válvula de muestreo del tanque, con el equipo a plena carga, que es cuando los gases están en el aceite."
+      },
+      {
+        "src": "/images/servicios/analisis-de-aceite/dga-jeringa.webp",
+        "alt": "Jeringa de vidrio con la muestra de aceite dieléctrico, sin burbujas de aire",
+        "pie": "Con jeringa de vidrio y sin burbujas, porque los gases se escapan al aire. Así viaja al laboratorio para la cromatografía."
+      }
+    ],
+    "nota": "Fotos de una toma real en un transformador de 1,000 kVA, con la planta y el equipo omitidos."
   }
 }
