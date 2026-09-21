@@ -15,6 +15,7 @@ import ComparadorTermico from "@/components/organisms/ComparadorTermico";
 import GraficaSonora from "@/components/organisms/GraficaSonora";
 import MapaPuntos from "@/components/organisms/MapaPuntos";
 import ApartadoFotos from "@/components/organisms/ApartadoFotos";
+import EtiquetasArco from "@/components/organisms/EtiquetasArco";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import PorQueMuestrear from "@/components/organisms/PorQueMuestrear";
@@ -258,6 +259,10 @@ export default async function ServicePage({
             {service.mapaPuntos && (
                 <MapaPuntos mapa={service.mapaPuntos} paso={paso()} />
             )}
+
+            {/* Diferenciador de arco eléctrico: la etiqueta reconstruida y
+                los tableros ordenados por energía incidente. */}
+            {service.arco && <EtiquetasArco arco={service.arco} paso={paso()} />}
 
             <ServiceProof certificacion={service.certificacion} />
 

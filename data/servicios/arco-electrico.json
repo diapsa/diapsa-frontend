@@ -22,40 +22,417 @@
   ],
   "header": {
     "title": "Estudios de Arco Eléctrico",
-    "subtitle": "Conoce el riesgo de cada tablero antes de que alguien lo descubra trabajando",
+    "subtitle": "Cuánta energía liberaría un arco en cada tablero, y con qué se puede abrir",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Estudio de arco eléctrico conforme a IEEE 1584 y NFPA 70E: energía incidente por tablero, etiquetado de riesgo y EPP requerido para proteger a tu personal.",
+  "seoDescription": "Estudio de arco eléctrico conforme a IEEE 1584 y NFPA 70E: energía incidente por tablero, categoría de EPP, fronteras de protección y etiqueta de advertencia para cada equipo. Cumplimiento de NOM-029-STPS-2011 para trabajos con equipo energizado.",
   "content": {
-    "title": "¿Qué es un estudio de arco eléctrico?",
-    "subtitle": "Calcula cuánta energía liberaría un arco en cada punto de tu instalación eléctrica y qué protección necesita quien trabaje ahí. Sin el estudio, el EPP y las distancias de seguridad son una suposición.",
-    "image": "/images/disciplinas/analisis.jpg",
+    "title": "Cada tablero tiene un riesgo distinto, y hoy nadie sabe cuál",
+    "subtitle": "Un arco eléctrico libera en milisegundos una energía que quema a metros de distancia. Cuánta, depende de cada tablero: de su corriente de cortocircuito y de qué tan rápido dispara su protección. El estudio calcula ese número para cada punto de la planta y lo convierte en lo que importa: qué ropa hay que traer para abrirlo y a qué distancia empieza el peligro.",
+    "image": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
     "items": [
       {
-        "id": "donde-aplica",
+        "id": "aplicaciones",
         "title": "Dónde se aplica",
-        "content": "Tableros de distribución, centros de control de motores, subestaciones e interruptores principales: todo punto donde el personal opera, mide o mantiene equipo energizado. Es el complemento natural del estudio de corto circuito y coordinación de protecciones."
-      },
-      {
-        "id": "que-incluye",
-        "title": "Qué incluye el estudio",
-        "content": "Levantamiento de la instalación, cálculo de energía incidente conforme a IEEE 1584, determinación de las fronteras de protección y del EPP requerido según NFPA 70E, etiquetado de advertencia por tablero y recomendaciones para reducir el nivel de riesgo donde salga alto."
+        "content": "Interruptores principales, tableros de distribución, centros de control de motores, subestaciones y transformadores: todo punto donde alguien opera, mide o da mantenimiento con el equipo energizado. Aplica en baja y media tensión, y es el complemento del estudio de cortocircuito y coordinación de protecciones.",
+        "foto": {
+          "src": "/images/servicios/subestacion-inspeccion.webp",
+          "alt": "Subestación eléctrica industrial durante una inspección"
+        }
       },
       {
         "id": "beneficios",
-        "title": "Beneficios",
-        "content": "Personal protegido con el equipo correcto para el riesgo real de cada punto, cumplimiento en materia de seguridad eléctrica ante auditorías, tableros etiquetados que eliminan las adivinanzas, y un mapa claro de dónde conviene invertir para bajar el riesgo."
+        "title": "Qué ganas",
+        "content": "Saber en qué tableros el riesgo es bajo y en cuáles no. En una planta de 18 barras, 16 salieron en categoría 1 y solo 2, el interruptor principal y el secundario del transformador principal, en categoría 2 con casi 6 cal/cm². Sin el estudio, o todos trabajan con el traje pesado o nadie lo trae donde sí hace falta. Con él, cada tablero lleva su etiqueta.",
+        "foto": {
+          "src": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
+          "alt": "Analista con traje contra arco eléctrico frente a un gabinete energizado"
+        }
+      },
+      {
+        "id": "como",
+        "title": "Cómo lo hacemos",
+        "content": "Levantamiento en campo del diagrama unifilar, los datos de placa y los ajustes de cada protección. Modelado del sistema en software de análisis de redes (SKM PowerTools) y simulación de fallas en cada barra para obtener la corriente de cortocircuito y la energía incidente. Con eso, la categoría de EPP y las fronteras según NFPA 70E, y una etiqueta por tablero.",
+        "foto": {
+          "src": "/images/servicios/tierras-fisicas/continuidad-tablero.webp",
+          "alt": "Ingeniero de DIAPSA levantando datos en un centro de control de motores"
+        }
+      },
+      {
+        "id": "plataforma-idap",
+        "title": "Tus datos viven en IDAP",
+        "content": "Cada tablero queda con su energía incidente, su categoría y su etiqueta. Cuando cambie una protección o se agregue carga, se sabe qué barras hay que recalcular en lugar de rehacer el estudio completo.",
+        "foto": {
+          "src": "/images/idap/mockup.png",
+          "alt": "Pantallas de IDAP con el historial de un equipo",
+          "ajuste": "contener",
+          "fondo": "oscuro"
+        }
       }
     ]
   },
   "cta": {
     "title": "¿Sabes cuánta energía liberaría un arco en tu tablero principal?",
-    "text": "Compártenos un diagrama unifilar o el número de tableros y te preparamos la propuesta del estudio.",
-    "whatsappMessage": "Hola, quiero información sobre el estudio de arco eléctrico para mi planta."
+    "text": "Compártenos el diagrama unifilar o el número de tableros y subestaciones, y te preparamos la propuesta del estudio con sus etiquetas.",
+    "whatsappMessage": "Hola, quiero información sobre el estudio de arco eléctrico para mi planta.",
+    "datos": [
+      "Registro REPSE vigente",
+      "Cálculo conforme a IEEE 1584 y NFPA 70E",
+      "Etiqueta por tablero incluida"
+    ]
   },
   "relatedProducts": {
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
-  }
+  },
+  "porQue": {
+    "foto": {
+      "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
+      "alt": "Técnico con traje contra arco eléctrico trabajando en un transformador energizado"
+    },
+    "pie": "Intervención en un equipo energizado con el traje que corresponde a su categoría de riesgo. Foto real de una ruta de DIAPSA.",
+    "preguntas": [
+      {
+        "pregunta": "¿Cuánta energía liberaría un arco en cada tablero?",
+        "texto": "Se mide en calorías por centímetro cuadrado a la distancia a la que trabaja una persona. Por arriba de 1.2 cal/cm² la ropa normal se enciende. El estudio calcula ese valor tablero por tablero, con la corriente de cortocircuito de la planta y el tiempo que tarda cada protección en disparar.",
+        "siSaleMal": "Un tablero con energía alta se puede bajar ajustando la protección para que dispare más rápido, o se decide que ahí no se trabaja energizado."
+      },
+      {
+        "pregunta": "¿Con qué ropa se puede abrir y a qué distancia?",
+        "texto": "El número se convierte en una categoría de equipo de protección (ropa de 4, 8, 25 o 40 cal/cm²) y en tres fronteras: la de arco, donde la quemadura sería de segundo grado, y las de choque, limitada y restringida.",
+        "siSaleMal": "Sin el estudio, el EPP es una suposición: o todos cargan el traje pesado, o nadie lo trae en el único tablero que sí lo exige."
+      },
+      {
+        "pregunta": "¿Está etiquetado y documentado?",
+        "texto": "La NOM-029-STPS-2011 exige análisis de riesgo y equipo de protección para trabajos con equipo energizado; NFPA 70E exige la etiqueta en cada tablero. El estudio entrega las dos cosas: el informe y la etiqueta lista para pegar.",
+        "siSaleMal": "Sin etiqueta, cada intervención es un riesgo para la persona y una falta ante la STPS. Con ella, el trabajador sabe qué traer antes de abrir."
+      }
+    ]
+  },
+  "arco": {
+    "etiqueta": "Lo que produce el estudio",
+    "titulo": "Una etiqueta por tablero, y toda la planta ordenada por riesgo",
+    "texto": "Un estudio real de 18 barras. A la izquierda, cada tablero con su energía incidente, de mayor a menor: dos salen en categoría 2 y los otros dieciséis en categoría 1. A la derecha, la etiqueta que se pega en el tablero de más riesgo y la de uno típico, con los mismos renglones que la real.",
+    "barrasTitulo": "Energía incidente por tablero",
+    "barrasTexto": "El peor caso de cada barra, en calorías por centímetro cuadrado a la distancia de trabajo.",
+    "barras": [
+      {
+        "nombre": "Interruptor principal",
+        "tension": "480 V",
+        "energia": 5.88,
+        "nivel": "2"
+      },
+      {
+        "nombre": "Secundario del transformador principal",
+        "tension": "480 V",
+        "energia": 5.72,
+        "nivel": "2"
+      },
+      {
+        "nombre": "Interruptor de área de proceso",
+        "tension": "480 V",
+        "energia": 0.72,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Tablero de distribución",
+        "tension": "480 V",
+        "energia": 0.71,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Interruptor secundario de proceso",
+        "tension": "440 V",
+        "energia": 0.66,
+        "nivel": "1"
+      },
+      {
+        "nombre": "CCM de planta 1",
+        "tension": "480 V",
+        "energia": 0.38,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Primario del transformador de planta 2",
+        "tension": "480 V",
+        "energia": 0.37,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Secundario del transformador de planta 2",
+        "tension": "208 V",
+        "energia": 0.29,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Tablero de banda 2",
+        "tension": "480 V",
+        "energia": 0.27,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Tablero de banda 1",
+        "tension": "480 V",
+        "energia": 0.26,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Tablero de proceso 1",
+        "tension": "440 V",
+        "energia": 0.26,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Tablero de proceso 2",
+        "tension": "440 V",
+        "energia": 0.26,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Primario del transformador de proceso",
+        "tension": "440 V",
+        "energia": 0.26,
+        "nivel": "1"
+      },
+      {
+        "nombre": "CCM de planta 2",
+        "tension": "208 V",
+        "energia": 0.21,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Primario del transformador principal",
+        "tension": "13.2 kV",
+        "energia": 0.12,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Secundario del transformador de proceso",
+        "tension": "220 V",
+        "energia": 0.09,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Tablero de planta 2",
+        "tension": "208 V",
+        "energia": 0.08,
+        "nivel": "1"
+      },
+      {
+        "nombre": "Tablero de proceso",
+        "tension": "220 V",
+        "energia": 0.04,
+        "nivel": "1"
+      }
+    ],
+    "escala": 8.5,
+    "umbrales": [
+      {
+        "valor": 1.2,
+        "texto": "1.2 · ropa normal"
+      },
+      {
+        "valor": 4,
+        "texto": "4 · tope cat. 1"
+      },
+      {
+        "valor": 8,
+        "texto": "8 · tope cat. 2"
+      }
+    ],
+    "leyenda": [
+      {
+        "nivel": "1",
+        "texto": "Categoría 1: ropa ignífuga de 4 cal/cm²"
+      },
+      {
+        "nivel": "2",
+        "texto": "Categoría 2: ropa ignífuga de 8 cal/cm²"
+      }
+    ],
+    "etiquetasTitulo": "La etiqueta que se pega en cada tablero",
+    "etiquetasTexto": "Reconstruidas con los valores reales de dos tableros del mismo estudio.",
+    "etiquetas": [
+      {
+        "equipo": "Interruptor principal",
+        "tension": "480 V",
+        "energia": "5.88",
+        "distanciaTrabajo": "46",
+        "fronteraArco": "124",
+        "nivel": "2",
+        "ropa": "Camisa y pantalón ignífugos o ropa completa de 8 cal/cm²",
+        "guantes": "00",
+        "fronteraLimitada": "100",
+        "fronteraRestringida": "30"
+      },
+      {
+        "equipo": "CCM de planta 1",
+        "tension": "480 V",
+        "energia": "0.38",
+        "distanciaTrabajo": "46",
+        "fronteraArco": "22",
+        "nivel": "1",
+        "ropa": "Camisa y pantalón ignífugos o ropa completa de 4 cal/cm²",
+        "guantes": "00",
+        "fronteraLimitada": "100",
+        "fronteraRestringida": "30"
+      }
+    ],
+    "nota": "Estudio real de 2024 en una planta de proceso, con la planta y los nombres de los tableros omitidos; cada barra se nombra por su función. Corriente de cortocircuito trifásica de 18 kA. Cálculo conforme a IEEE 1584 y categorías de EPP conforme a NFPA 70E."
+  },
+  "certificacion": "IEEE 1584 · NFPA 70E · NOM-029-STPS-2011",
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujo": [
+    {
+      "titulo": "Levantamiento",
+      "texto": "En campo se confirma el diagrama unifilar y se toman los datos de placa de transformadores, cables y cada dispositivo de protección con sus ajustes."
+    },
+    {
+      "titulo": "Modelado",
+      "texto": "La instalación se modela en software de análisis de redes eléctricas y se simulan fallas en cada barra, en todos los escenarios de operación."
+    },
+    {
+      "titulo": "Cálculo",
+      "texto": "Corriente de cortocircuito, tiempo de disparo y energía incidente por barra conforme a IEEE 1584, a la distancia de trabajo que corresponde."
+    },
+    {
+      "titulo": "EPP y fronteras",
+      "texto": "Cada valor se convierte en categoría de equipo de protección y en fronteras de arco, limitada y restringida, conforme a NFPA 70E."
+    },
+    {
+      "titulo": "Etiquetas e informe",
+      "texto": "Una etiqueta de advertencia por tablero, lista para pegar, y el informe con la tabla completa y las recomendaciones para bajar el riesgo."
+    }
+  ],
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "El informe del estudio con su resumen de una página y, detrás, la tabla completa de barras y las etiquetas. Esta es la de un estudio real tal como llega: cuántas barras se analizaron, la categoría máxima encontrada, las recomendaciones y qué EPP corresponde a cada grupo.",
+    "contenido": [
+      "Energía incidente, corriente de cortocircuito y tiempo de disparo por barra",
+      "Categoría de EPP y las tres fronteras de protección por tablero",
+      "Una etiqueta de advertencia por tablero, lista para imprimir y pegar",
+      "Recomendaciones para bajar el riesgo donde salga alto",
+      "Referencia normativa: IEEE 1584, NFPA 70E y NOM-029-STPS-2011"
+    ],
+    "hoja": {
+      "etiqueta": "Informe del estudio",
+      "titulo": "Estudio de arco eléctrico",
+      "subtitulo": "IEEE 1584 · NFPA 70E · septiembre de 2024",
+      "datos": [
+        {
+          "etiqueta": "Barras analizadas",
+          "valor": "18"
+        },
+        {
+          "etiqueta": "Cortocircuito trifásico",
+          "valor": "18 kA"
+        },
+        {
+          "etiqueta": "Categoría máxima",
+          "valor": "2"
+        }
+      ],
+      "condicion": {
+        "clave": "precaucion",
+        "etiqueta": "Categoría 2 en dos barras"
+      },
+      "etiquetas": {
+        "condicion": "Resultado",
+        "diagnostico": "Comentario del estudio",
+        "recomendaciones": "Recomendaciones generales",
+        "prioridades": "EPP por grupo de tableros"
+      },
+      "diagnostico": "En el peor caso de cada escenario, la mayor categoría de riesgo de la planta es la 2, con energía incidente de hasta 5.88 cal/cm² en el interruptor principal y en el secundario del transformador principal. Las otras dieciséis barras quedan en categoría 1.",
+      "recomendaciones": [
+        "Todo el personal que trabaje con equipo eléctrico usa de forma habitual camisa y pantalón ignífugos de 8 cal/cm², casco tipo G y lentes de seguridad.",
+        "Respetar las distancias de las etiquetas; si no se puede, no se trabaja con el tablero energizado.",
+        "Los equipos por arriba de 1,000 V se desenergizan antes de cualquier intervención.",
+        "Actualizar el estudio cuando cambien las protecciones, los equipos o la configuración."
+      ],
+      "prioridades": [
+        {
+          "nivel": "Categoría 2",
+          "clave": "precaucion",
+          "puntos": "2 barras",
+          "accion": "Interruptor principal y secundario del transformador principal: ropa de 8 cal/cm², frontera de arco a 124 cm."
+        },
+        {
+          "nivel": "Categoría 1",
+          "clave": "bueno",
+          "puntos": "16 barras",
+          "accion": "Ropa ignífuga de 4 cal/cm², frontera de arco entre 5 y 33 cm según el tablero."
+        },
+        {
+          "nivel": "Media tensión",
+          "clave": "alarma",
+          "puntos": "13.2 kV",
+          "accion": "Primario del transformador principal: desenergizar antes de intervenir, guantes clase 2, frontera limitada a 150 cm."
+        }
+      ],
+      "evidencia": [
+        {
+          "src": "/images/servicios/subestacion-inspeccion.webp",
+          "alt": "Subestación eléctrica durante el levantamiento"
+        },
+        {
+          "src": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
+          "alt": "Intervención en gabinete energizado con traje contra arco eléctrico"
+        }
+      ],
+      "nota": "Informe real de septiembre de 2024, con la planta y los nombres de los tableros omitidos."
+    }
+  },
+  "mostrarClientes": true,
+  "faq": [
+    {
+      "question": "¿Qué es la energía incidente y por qué se mide en cal/cm²?",
+      "answer": "Es la energía térmica que recibiría una persona parada a la distancia de trabajo si ocurriera un arco en ese tablero. Se expresa en calorías por centímetro cuadrado porque así se clasifica la ropa de protección: una prenda de 8 cal/cm² aguanta un arco de hasta 8 cal/cm² sin que la piel debajo sufra una quemadura de segundo grado. Por arriba de 1.2 cal/cm² la ropa normal se enciende."
+    },
+    {
+      "question": "¿Qué normas aplican en México?",
+      "answer": "La NOM-029-STPS-2011 obliga a hacer un análisis de riesgo y a dotar de equipo de protección al personal que trabaja con equipo energizado. El cálculo de energía incidente se hace conforme a IEEE 1584 y las categorías de EPP y fronteras conforme a NFPA 70E, que es la referencia que usan las aseguradoras y los auditores corporativos."
+    },
+    {
+      "question": "¿Qué necesito tener para hacer el estudio?",
+      "answer": "El diagrama unifilar actualizado, los datos de placa de transformadores y cables, los ajustes de las protecciones y la corriente de cortocircuito disponible en la acometida, que la da la compañía suministradora. Lo que falte se levanta en campo; si el unifilar no existe o está desactualizado, se reconstruye como parte del trabajo."
+    },
+    {
+      "question": "¿Hay que desenergizar la planta?",
+      "answer": "No. El levantamiento se hace con la planta operando: se leen placas, ajustes y configuración. El cálculo se hace en software. Solo se abre equipo energizado cuando hace falta confirmar un dato, y se hace con el EPP que corresponde."
+    },
+    {
+      "question": "¿Qué se hace con un tablero que sale en categoría alta?",
+      "answer": "Primero se revisa si la protección puede ajustarse para disparar más rápido, porque la energía depende del tiempo de arco; muchas veces con eso baja una categoría. Si no, se define que ese tablero no se interviene energizado, o se instalan medidas como interruptores con modo de mantenimiento. El informe lo dice tablero por tablero."
+    },
+    {
+      "question": "¿Cada cuánto se actualiza?",
+      "answer": "NFPA 70E pide revisarlo cuando cambie la instalación y al menos cada cinco años. En la práctica, cualquier cambio de protección, de transformador o de carga importante invalida el resultado de las barras afectadas, y esas se recalculan."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "El diagrama unifilar o, si no lo tienes, el número aproximado de tableros y subestaciones y los niveles de tensión. Con eso se dimensiona el levantamiento y el estudio."
+    }
+  ],
+  "galeria": [
+    {
+      "src": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
+      "alt": "Intervención en un gabinete energizado con traje contra arco eléctrico."
+    },
+    {
+      "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
+      "alt": "Trabajo en las boquillas de un transformador con el EPP de su categoría."
+    },
+    {
+      "src": "/images/servicios/subestacion-inspeccion.webp",
+      "alt": "Subestación eléctrica industrial durante el levantamiento."
+    },
+    {
+      "src": "/images/servicios/tierras-fisicas/continuidad-tablero.webp",
+      "alt": "Levantamiento de datos en un centro de control de motores."
+    }
+  ]
 }
