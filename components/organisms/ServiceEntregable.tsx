@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Antetitulo from "../atoms/Antetitulo";
 import EscenaIdap from "./EscenaIdap";
+import HojaInforme from "./HojaInforme";
 import { nivel } from "@/lib/semaforo";
 import type { ServiceEntregable as Entregable } from "@/types/servicio";
 
@@ -44,7 +45,8 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
   // derecha en blanco y la sección se ve a medio hacer. En ese caso el texto
   // pasa a una sola columna de ancho de lectura.
   const conVitrina = Boolean(
-    entregable.informe ||
+    entregable.hoja ||
+      entregable.informe ||
       entregable.resultado ||
       (entregable.paginas && entregable.paginas.length > 1)
   );
@@ -53,7 +55,11 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
     <section className="w-full overflow-hidden bg-white py-12 lg:py-20">
       <div
         className={`mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:gap-16 ${
-          conVitrina ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]" : ""
+          entregable.hoja
+            ? "lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]"
+            : conVitrina
+              ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]"
+              : ""
         }`}
       >
         {/* Texto. Sin vitrina se limita el ancho de lectura, pero se mantiene
@@ -96,7 +102,10 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
             los que salieron mal. Los colores son los mismos del semáforo que
             va justo abajo, y esa es la relación: aquí se ven aplicados, ahí
             se explica qué obliga cada uno. */}
-        {entregable.informe ? (
+        {entregable.hoja ? (
+          /* Vitrina D: la hoja de un equipo, tal como sale en el informe */
+          <HojaInforme hoja={entregable.hoja} />
+        ) : entregable.informe ? (
           <div className="mx-auto w-full max-w-xl overflow-hidden rounded-sm bg-white shadow-2xl ring-1 ring-black/10">
             <div className="bg-primary px-5 py-4 lg:px-6">
               <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">

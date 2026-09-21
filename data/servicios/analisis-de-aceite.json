@@ -28,16 +28,16 @@
   "seoDescription": "Análisis de aceite lubricante y análisis de gases disueltos (DGA) en transformadores. Muestreo en planta, laboratorio y resultados interpretados por especialistas: desgaste interno, contaminación y degradación del aceite antes de que la falla avance.",
   "content": {
     "title": "Vemos el desgaste desde adentro, sin abrir el equipo",
-    "subtitle": "El aceite circula por donde ninguna otra técnica llega: arrastra las partículas del desgaste interno, la contaminación que entró y la historia térmica del equipo. Vibraciones y termografía detectan la falla cuando ya mueve o calienta la máquina; el aceite la delata antes, por lo que trae disuelto. Analizarlo es leer esa evidencia a tiempo.",
-    "image": "/images/gallery/campo-img-5.jpg",
+    "subtitle": "Una muestra de aceite contesta tres preguntas sobre el equipo sin abrirlo y sin pararlo: si se está desgastando por dentro, si le está entrando algo que no debe y si el aceite todavía sirve. Vibraciones y termografía ven la falla cuando ya mueve o calienta la máquina; el aceite la delata antes, por lo que trae disuelto.",
+    "image": "/images/servicios/analisis-de-aceite/muestreo-motor-azul.webp",
     "items": [
       {
         "id": "aplicaciones",
         "title": "Dónde se aplica",
         "content": "Reductores y cajas de engranes, compresores, turbinas, sistemas hidráulicos y motores de combustión con cárter: todo equipo con lubricante en circulación. Y en transformadores, el análisis de gases disueltos (DGA) sobre el aceite dieléctrico detecta sobrecalentamiento, descargas parciales y arqueo interno sin abrir ni desenergizar el equipo.",
         "foto": {
-          "src": "/images/gallery/campo-img-5.jpg",
-          "alt": "Analista de DIAPSA junto a un motor vertical dentro de la planta, durante una ruta de inspección"
+          "src": "/images/servicios/analisis-de-aceite/muestreo-motor-vertical.webp",
+          "alt": "Analista de DIAPSA tomando una muestra de aceite en un motor vertical, con la planta al fondo"
         }
       },
       {
@@ -55,8 +55,8 @@
         "title": "Cómo lo hacemos",
         "content": "La muestra se toma con el equipo en operación y caliente, siempre del mismo punto y con el mismo procedimiento, para que cada muestra se pueda comparar con la anterior. Se analiza en laboratorio acreditado ISO/IEC 17025: 21 elementos en tres grupos (metales de desgaste, contaminantes y aditivos), conteo de partículas bajo ISO 4406, agua por Karl Fischer, viscosidad, número ácido total y oxidación por FTIR. Y los resultados no se te entregan como llegan del laboratorio: un especialista los interpreta contra los límites de ese equipo y contra su propio historial.",
         "foto": {
-          "src": "/images/gallery/campo/vibracion-bomba-verde.webp",
-          "alt": "Analista de DIAPSA sobre una bomba en operación durante una ruta de monitoreo de condición"
+          "src": "/images/servicios/analisis-de-aceite/muestreo-motor-gas.webp",
+          "alt": "Analista de DIAPSA tomando la muestra dentro del compartimento de un motor de gas"
         }
       },
       {
@@ -71,10 +71,6 @@
         }
       }
     ]
-  },
-  "fotoPuntos": {
-    "src": "/images/gallery/campo-img-5.jpg",
-    "alt": "Analista de DIAPSA junto a un motor vertical dentro de la planta, durante una ruta de inspección"
   },
   "diagramas": [
     "flujo-servicio"
@@ -104,74 +100,175 @@
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "Esto es lo que recibes",
-    "descripcion": "No la hoja de valores del laboratorio para que la interpretes tú. Un informe donde cada equipo trae su estado en semáforo, cada parámetro fuera de rango dice qué significa y de dónde viene, y el especialista recomienda qué hacer con el aceite y qué hacer con el equipo.",
+    "descripcion": "Una hoja por equipo, y esta es una de ellas tal como llega: el equipo y su condición en un color, lo que escribió el especialista y qué hacer, y el historial de todas sus muestras para ver si mejora o empeora.",
     "contenido": [
-      "Estado de cada equipo en semáforo, para leerlo de un vistazo",
-      "Resumen de la ruta: cuántos equipos en alarma, precaución, observación y buenos",
-      "Cada parámetro medido contra el límite que corresponde a ese equipo y a ese aceite",
-      "Metales de desgaste encontrados y de qué componente vienen",
-      "Contaminación detectada (agua, polvo, combustible, refrigerante) y su fuente probable",
-      "Acción recomendada y con qué urgencia",
-      "Evolución contra la muestra anterior: si la acción tomada corrigió o no"
+      "Una hoja por equipo, con su condición en semáforo",
+      "Diagnóstico y recomendaciones escritos por el especialista",
+      "El historial de muestras del equipo en la misma hoja",
+      "Fotos de la toma como evidencia"
     ],
-    "informe": {
-      "etiqueta": "Informe de condición",
-      "titulo": "25 equipos evaluados",
-      "resumen": [
-        { "clave": "alarma", "etiqueta": "Alarma", "total": 3 },
-        { "clave": "precaucion", "etiqueta": "Precaución", "total": 17 },
-        { "clave": "observacion", "etiqueta": "Observación", "total": 2 },
-        { "clave": "bueno", "etiqueta": "Buenos", "total": 3 }
-      ],
-      "filas": [
+    "hoja": {
+      "etiqueta": "Informe técnico de análisis de aceite",
+      "titulo": "Compresor de gas · Sistema de lubricación",
+      "subtitulo": "Análisis de equipos críticos · junio de 2026",
+      "datos": [
         {
-          "equipo": "Motor de ventilador de torre",
-          "componente": "Sistema de lubricación del reductor",
-          "clave": "alarma",
-          "estado": "Alarma",
-          "accion": "Agua y partículas en nivel crítico. Deshidratar al vacío, filtrar y revisar respiraderos y sellos para cerrar la entrada del contaminante."
+          "etiqueta": "Equipo",
+          "valor": "Compresor de gas"
         },
         {
-          "equipo": "Bomba de agua de condensado",
-          "componente": "Sistema de lubricación del motor",
-          "clave": "precaucion",
-          "estado": "Precaución",
-          "accion": "Conteo de partículas al alza contra la muestra anterior. Programar filtrado según especificación del fabricante."
+          "etiqueta": "Aceite",
+          "valor": "Turbina ISO 46"
         },
         {
-          "equipo": "Compresor de aire",
-          "componente": "Sistema de lubricación del motor",
-          "clave": "observacion",
-          "estado": "Observación",
-          "accion": "Contaminación elevada pero sin llegar a condición crítica. No filtrar todavía; adelantar la siguiente muestra para confirmar la tendencia."
-        },
-        {
-          "equipo": "Compresor de gas",
-          "componente": "Sistema de lubricación del motor",
-          "clave": "bueno",
-          "estado": "Bueno",
-          "accion": "Salud, contaminación y desgaste dentro de parámetros. Continuar con el programa de muestreo."
+          "etiqueta": "Muestra",
+          "valor": "8 de junio de 2026"
         }
       ],
-      "nota": "Extracto de un informe real, con la planta y los números de equipo omitidos. Las cifras corresponden a esa ruta y no son un promedio del servicio."
+      "condicion": {
+        "clave": "observacion",
+        "etiqueta": "Observación"
+      },
+      "diagnostico": "Contaminación controlada, código ISO 18/16/14. El conteo de partículas bajó respecto a la muestra anterior y la tendencia es de mejora. Se mantiene en observación por un ligero incremento de agua.",
+      "recomendaciones": [
+        "Continuar con el programa de muestreo.",
+        "No requiere intervención inmediata.",
+        "Revisar respiraderos y sellos, por donde entra el agua."
+      ],
+      "fechas": [
+        "dic 24",
+        "feb 25",
+        "jun 25",
+        "oct 25",
+        "feb 26",
+        "jun 26"
+      ],
+      "resultados": [
+        {
+          "analisis": "Código ISO 4406",
+          "limite": "",
+          "valores": [
+            "18/15/12",
+            "15/13/10",
+            "21/19/13",
+            "19/16/13",
+            "19/17/14",
+            "18/16/14"
+          ],
+          "resaltar": [
+            2
+          ]
+        }
+      ],
+      "evidencia": [
+        {
+          "src": "/images/servicios/analisis-de-aceite/muestreo-cabezal.webp",
+          "alt": "Toma de la muestra en el punto de muestreo del equipo"
+        },
+        {
+          "src": "/images/servicios/analisis-de-aceite/toma-de-muestra.webp",
+          "alt": "Extracción del aceite con el equipo en operación"
+        }
+      ],
+      "nota": "Hoja real de un informe de junio de 2026, con la planta y el número de equipo omitidos."
     }
   },
-  "certificacion": "Analizado en laboratorio acreditado · ISO/IEC 17025",
+  "certificacion": "Laboratorio acreditado ISO/IEC 17025 · Analista certificado ICML MLA III",
   "tendencia": {
     "titulo": "La misma chumacera, seis muestras, y lo que pasó al intervenir",
     "texto": "Una muestra suelta dice poco; el programa vale por la serie. Esta es real: el conteo de partículas subió durante un año hasta la alarma, se intervino, y las tres muestras siguientes confirman que bajó y se mantuvo. Sin la serie, la alarma habría sido una sorpresa y la mejora, una suposición.",
     "equipo": "Chumacera de bomba de proceso · aceite ISO 100",
     "medida": "Partículas mayores a 4 micras por mililitro",
     "muestras": [
-      { "fecha": "dic 24", "valor": 1118, "codigo": "17/14/9", "clave": "bueno" },
-      { "fecha": "feb 25", "valor": 7371, "codigo": "20/18/14", "clave": "precaucion" },
-      { "fecha": "jun 25", "valor": 27288, "codigo": "22/20/13", "clave": "alarma" },
-      { "fecha": "oct 25", "valor": 4112, "codigo": "19/16/11", "clave": "observacion" },
-      { "fecha": "feb 26", "valor": 3151, "codigo": "19/17/14", "clave": "observacion" },
-      { "fecha": "jun 26", "valor": 2877, "codigo": "19/17/14", "clave": "observacion" }
+      {
+        "fecha": "dic 24",
+        "valor": 1118,
+        "codigo": "17/14/9",
+        "clave": "bueno"
+      },
+      {
+        "fecha": "feb 25",
+        "valor": 7371,
+        "codigo": "20/18/14",
+        "clave": "precaucion"
+      },
+      {
+        "fecha": "jun 25",
+        "valor": 27288,
+        "codigo": "22/20/13",
+        "clave": "alarma"
+      },
+      {
+        "fecha": "oct 25",
+        "valor": 4112,
+        "codigo": "19/16/11",
+        "clave": "observacion"
+      },
+      {
+        "fecha": "feb 26",
+        "valor": 3151,
+        "codigo": "19/17/14",
+        "clave": "observacion"
+      },
+      {
+        "fecha": "jun 26",
+        "valor": 2877,
+        "codigo": "19/17/14",
+        "clave": "observacion"
+      }
     ],
-    "accion": { "indice": 3, "texto": "Acción correctiva" },
-    "nota": "Historial real de una chumacera, con la planta y el equipo omitidos. Los valores y los códigos ISO 4406 son los que reportó el laboratorio en cada muestra; el color de cada barra es el estado con que la calificó. Entre la tercera y la cuarta muestra el equipo pasó de alarma a observación."
+    "accion": {
+      "indice": 3,
+      "texto": "Acción correctiva"
+    },
+    "nota": "Historial real de una chumacera, con la planta y el equipo omitidos. Los valores y los códigos ISO 4406 son los que reportó el laboratorio en cada muestra; el color de cada barra es el estado con que la calificó. Entre la tercera y la cuarta muestra el equipo pasó de alarma a observación.",
+    "estimado": {
+      "titulo": "Lo que se evitó en esa chumacera",
+      "texto": "La serie de arriba prueba que la suciedad bajó. Esto es lo que eso significó en dinero. La muestra en alarma se atendió con un filtrado en sitio; si se hubiera dejado correr, la chumacera trabaja con abrasivo dentro hasta que se raya el eje.",
+      "unidad": "en ese equipo",
+      "frase": "dejar que llegara a la falla",
+      "escenarios": [
+        {
+          "etiqueta": "Atendido con el hallazgo en mano",
+          "partidas": [
+            {
+              "texto": "Filtrado del aceite en sitio",
+              "monto": 450
+            },
+            {
+              "texto": "Muestra y análisis de laboratorio",
+              "monto": 180
+            },
+            {
+              "texto": "Mano de obra en ventana programada",
+              "monto": 220
+            }
+          ]
+        },
+        {
+          "etiqueta": "Si se hubiera dejado correr",
+          "partidas": [
+            {
+              "texto": "Juego de chumaceras y sellos",
+              "monto": 1900
+            },
+            {
+              "texto": "Rectificado o cambio del eje",
+              "monto": 1100
+            },
+            {
+              "texto": "Mano de obra de emergencia y flete urgente",
+              "monto": 800
+            },
+            {
+              "texto": "Doce horas con la bomba de proceso detenida",
+              "monto": 18000
+            }
+          ]
+        }
+      ],
+      "supuesto": "Bomba de proceso con producción valuada en 1,500 dólares por hora detenida y doce horas entre la falla y el arranque. La hora de paro es el renglón que manda: si en tu planta vale distinto, el número cambia y la conclusión no. Ejemplo ilustrativo sobre un historial real de muestras."
+    }
   },
   "mostrarClientes": true,
   "faq": [
@@ -210,20 +307,24 @@
   ],
   "galeria": [
     {
-      "src": "/images/gallery/campo-img-5.jpg",
-      "alt": "Analista de DIAPSA en ruta de inspección junto a un motor vertical, dentro de la planta."
+      "src": "/images/servicios/analisis-de-aceite/muestreo-motor-vertical.webp",
+      "alt": "Toma de muestra en un motor vertical, con el equipo en operación y la planta al fondo."
     },
     {
-      "src": "/images/gallery/campo/vibracion-bomba-verde.webp",
-      "alt": "Analista de DIAPSA sobre una bomba en operación durante una ruta de monitoreo de condición."
+      "src": "/images/servicios/analisis-de-aceite/muestreo-motor-gas.webp",
+      "alt": "Muestreo dentro del compartimento de un motor de gas, en el punto de toma del sistema de lubricación."
     },
     {
-      "src": "/images/servicios/medicion-bomba-planta.webp",
-      "alt": "Medición sobre un motor eléctrico en planta, con el equipo operando."
+      "src": "/images/servicios/analisis-de-aceite/muestreo-bomba-verde.webp",
+      "alt": "Toma de muestra en una bomba de proceso, desde el punto de muestreo del equipo."
     },
     {
-      "src": "/images/gallery/campo/vibracion-analista-motor.webp",
-      "alt": "Medición sobre un motor eléctrico en operación, en la misma ruta en que se toman las muestras."
+      "src": "/images/servicios/analisis-de-aceite/toma-de-muestra.webp",
+      "alt": "Extracción de la muestra de aceite con el equipo caliente y en operación."
+    },
+    {
+      "src": "/images/servicios/analisis-de-aceite/muestreo-cabezal.webp",
+      "alt": "Frasco de muestra identificado, listo para el laboratorio."
     }
   ],
   "cta": {
@@ -233,12 +334,62 @@
     "datos": [
       "Registro REPSE vigente",
       "Laboratorio acreditado ISO/IEC 17025",
-      "Resultados en una a dos semanas"
+      "Analista certificado ICML MLA III"
     ]
   },
   "relatedProducts": {
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
+  },
+  "porQue": {
+    "foto": {
+      "src": "/images/servicios/analisis-de-aceite/muestreo-motor-azul.webp",
+      "alt": "Analista de DIAPSA tomando una muestra de aceite sobre un motor en operación, durante una ruta de monitoreo"
+    },
+    "pie": "Toma de muestra sobre un motor en operación, en una ruta real de análisis de aceite de DIAPSA.",
+    "preguntas": [
+      {
+        "pregunta": "¿Se está desgastando por dentro?",
+        "texto": "Las piezas que rozan sueltan partículas de metal y el aceite las arrastra. El laboratorio mide cuánto metal hay y de qué pieza viene: hierro de engranes y rodamientos, cobre de bujes, plomo y estaño de cojinetes.",
+        "siSaleMal": "Se interviene la pieza que se está gastando, en una ventana programada y antes de que arrastre a las demás."
+      },
+      {
+        "pregunta": "¿Le está entrando algo que no debe?",
+        "texto": "Agua, polvo o refrigerante se cuelan por sellos, respiraderos y tapones, y son la causa más común del desgaste. El análisis los detecta y dice por dónde entran.",
+        "siSaleMal": "Se cierra la entrada y se filtra el aceite. Casi siempre es la corrección más barata de toda la lista."
+      },
+      {
+        "pregunta": "¿El aceite todavía sirve?",
+        "texto": "Con el uso el aceite se oxida, cambia de viscosidad y agota sus aditivos. El análisis dice si sigue protegiendo o si ya nada más está circulando.",
+        "siSaleMal": "Se cambia el aceite cuando lo pide su condición, ni antes ni después: no se tira aceite bueno ni se opera con uno agotado."
+      }
+    ],
+    "comoSeHace": {
+      "titulo": "Así se toma la muestra",
+      "pasos": [
+        {
+          "foto": {
+            "src": "/images/servicios/analisis-de-aceite/toma-de-muestra.webp",
+            "alt": "Analista de DIAPSA extrayendo aceite de un motor en operación"
+          },
+          "texto": "Con el equipo en operación y a temperatura de trabajo, que es cuando el aceite lleva en suspensión lo que interesa ver."
+        },
+        {
+          "foto": {
+            "src": "/images/servicios/analisis-de-aceite/muestreo-bomba-verde.webp",
+            "alt": "Analista de DIAPSA tomando la muestra en el punto de muestreo de una bomba"
+          },
+          "texto": "Siempre del mismo punto y con el mismo procedimiento, para que cada muestra se pueda comparar con la anterior."
+        },
+        {
+          "foto": {
+            "src": "/images/servicios/analisis-de-aceite/muestreo-cabezal.webp",
+            "alt": "Analista de DIAPSA con el frasco de muestra junto a un cabezal de tuberías"
+          },
+          "texto": "Identificada con el equipo, el aceite y las horas, y enviada a un laboratorio acreditado ISO/IEC 17025."
+        }
+      ]
+    }
   }
 }

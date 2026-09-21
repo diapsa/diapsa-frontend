@@ -15,6 +15,7 @@ import ComparadorTermico from "@/components/organisms/ComparadorTermico";
 import GraficaSonora from "@/components/organisms/GraficaSonora";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
+import PorQueMuestrear from "@/components/organisms/PorQueMuestrear";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import Semaforo from "@/components/organisms/Semaforo";
 import GraficaTendencia from "@/components/organisms/GraficaTendencia";
@@ -225,7 +226,15 @@ export default async function ServicePage({
                             {overviewSubtitle}
                         </p>
                     </div>
-                    <ServicePuntos puntos={detailItems} foto={fotoPuntos} />
+                    {/* En aceite el acordeón de puntos no explica el
+                        servicio a quien entra sin saber qué es un análisis
+                        de lubricante. En su lugar: qué contesta la muestra
+                        y cómo se toma, con fotos reales de una ruta. */}
+                    {service.porQue ? (
+                        <PorQueMuestrear porQue={service.porQue} />
+                    ) : (
+                        <ServicePuntos puntos={detailItems} foto={fotoPuntos} />
+                    )}
                 </div>
             </section>
 
