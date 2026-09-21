@@ -77,6 +77,7 @@ export default function PorQueMuestrear({ porQue }: Props) {
       </div>
 
       {/* Cómo se toma la muestra, en fotos de la misma ruta */}
+      {porQue.comoSeHace && (
       <div className="mt-12 lg:mt-16">
         <p className="text-xs font-bold uppercase tracking-widest text-secondary">{porQue.comoSeHace.titulo}</p>
         <ol className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-3 lg:gap-8">
@@ -102,6 +103,7 @@ export default function PorQueMuestrear({ porQue }: Props) {
           ))}
         </ol>
       </div>
+      )}
     </div>
   );
 }
