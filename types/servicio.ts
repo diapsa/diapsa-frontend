@@ -61,6 +61,36 @@ export interface GaleriaFoto {
   alt: string;
 }
 
+export interface ServiceInforme {
+  /** Antetítulo de la ficha, ej. "Resumen de la ruta". */
+  etiqueta: string;
+  /** Encabezado, ej. "25 equipos evaluados". */
+  titulo: string;
+  /** Cuántos equipos salieron en cada nivel. La clave es la del semáforo. */
+  resumen: { clave: string; etiqueta: string; total: number }[];
+  /** Renglones de ejemplo, tal como salen en el informe. */
+  filas: { equipo: string; componente: string; clave: string; estado: string; accion: string }[];
+  nota: string;
+}
+
+export interface HojaInforme {
+  etiqueta: string;
+  titulo: string;
+  subtitulo: string;
+  /** Datos del equipo, como el encabezado de la hoja. Sin identificar la planta. */
+  datos: { etiqueta: string; valor: string }[];
+  condicion: { clave: string; etiqueta: string };
+  diagnostico: string;
+  recomendaciones: string[];
+  /** Encabezados de columna: una por muestra, en orden. */
+  fechas: string[];
+  /** Un renglón por análisis, con tantos valores como fechas. `resaltar`
+      marca por índice las celdas que el laboratorio señaló. */
+  resultados: { analisis: string; unidad?: string; limite: string; valores: string[]; resaltar?: number[] }[];
+  evidencia?: GaleriaFoto[];
+  nota: string;
+}
+
 export interface ServiceEntregable {
   /** Antetítulo corto, ej. "El entregable". */
   etiqueta: string;
@@ -75,6 +105,16 @@ export interface ServiceEntregable {
   /** Cifra del sello flotante, ej. "3". */
   dato?: string;
   datoTexto?: string;
+  /** Ficha del informe de una ruta: cuántos equipos salieron en cada nivel
+      del semáforo y algunos renglones de ejemplo. Para los servicios que
+      entregan una ruta completa en vez de una inspección suelta, y donde lo
+      que hay que enseñar es cómo queda priorizada. Si viene, sustituye a la
+      vitrina de páginas. */
+  informe?: ServiceInforme;
+  /** La hoja de un equipo tal como sale en el informe: condición,
+      diagnóstico, recomendaciones, tabla de laboratorio y evidencia. Si
+      viene, sustituye a las demás vitrinas. */
+  hoja?: HojaInforme;
   /** Ficha con el antes y el después del equipo, para los servicios
       correctivos: ahí el entregable no es un informe de inspección sino la
       prueba de que el valor bajó. Si viene, sustituye a la vitrina de
@@ -106,11 +146,48 @@ export interface ServiceEntregable {
 }
 
 export interface ZonaSemaforo {
-  /** bueno | precaucion | alarma */
+  /** bueno | observacion | precaucion | alarma */
   clave: string;
   etiqueta: string;
   /** Qué significa ese color y qué pasa cuando un equipo sale en él. */
   texto: string;
+}
+
+export interface ServicePorQue {
+  /** El servicio ocurriendo: un analista tomando la muestra en campo. */
+  foto: GaleriaFoto;
+  pie?: string;
+  /** Las tres preguntas que contesta una muestra, sin valores de
+      laboratorio, y qué se hace si cada una sale mal. */
+  preguntas: { pregunta: string; texto: string; siSaleMal: string }[];
+  /** Cómo se toma la muestra, en fotos reales con una línea cada una. */
+  comoSeHace: { titulo: string; pasos: { foto: GaleriaFoto; texto: string }[] };
+}
+
+
+export interface ServiceTendencia {
+  titulo: string;
+  texto?: string;
+  /** Qué equipo es, sin identificarlo, ej. "Chumacera de bomba de proceso". */
+  equipo: string;
+  /** Qué se grafica y en qué unidad. */
+  medida: string;
+  /** Muestras en orden cronológico. La clave es la del semáforo y es el
+      color con el que el laboratorio calificó esa muestra. */
+  muestras: { fecha: string; valor: number; codigo: string; clave: string }[];
+  /** Índice de la primera muestra tomada después de la acción, y qué se hizo. */
+  accion: { indice: number; texto: string };
+  /** De dónde salen las cifras, para que se puedan auditar. */
+  nota: string;
+  /** Lo que costó atenderlo contra lo que habría costado la falla. Va dentro
+      de la misma tarjeta: la serie sin el costo se queda en dato técnico. */
+  estimado?: EstimadoFalla;
+}
+
+export interface ServiceSemaforo {
+  titulo: string;
+  subtitulo?: string;
+  zonas: ZonaSemaforo[];
 }
 
 export interface ServiceTabla {
@@ -257,6 +334,15 @@ export interface Servicio {
   cta?: ServiceCta;
   /** Certificación a resaltar en la banda de cifras, ej. "Analistas Categoría III · ISO 18436-2". */
   certificacion?: string;
+  /** Con qué colores sale calificado cada equipo y qué hacer en cada uno.
+      Responde la pregunta que sigue al resultado: ¿y ahora qué hago? */
+  semaforo?: ServiceSemaforo;
+  /** La misma máquina muestra tras muestra, con la acción correctiva en
+      medio: la prueba de que el programa funcionó (aceite). */
+  tendencia?: ServiceTendencia;
+  /** Sustituye al acordeón de puntos en la apertura: qué contesta una
+      muestra y cómo se toma, con fotos reales (aceite). */
+  porQue?: ServicePorQue;
   /** Fotos reales de campo; si existen, la página muestra la franja "DIAPSA en campo". */
   galeria?: GaleriaFoto[];
   /** Otro servicio que se compra junto con este. Va en las dos direcciones:
