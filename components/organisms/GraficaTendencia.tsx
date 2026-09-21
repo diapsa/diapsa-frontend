@@ -1,4 +1,5 @@
 import Antetitulo from "../atoms/Antetitulo";
+import GraficoEstimado from "../atoms/GraficoEstimado";
 import { nivel } from "@/lib/semaforo";
 import type { ServiceTendencia } from "@/types/servicio";
 
@@ -166,6 +167,10 @@ export default function GraficaTendencia({ tendencia, paso }: Props) {
           </div>
 
           <p className="mt-6 max-w-3xl text-justify text-xs leading-relaxed text-white/40">{tendencia.nota}</p>
+
+          {/* La serie prueba que bajó; el costo dice por qué importa. Va
+              dentro de la misma tarjeta para que se lean como una sola cosa. */}
+          {tendencia.estimado && <GraficoEstimado estimado={tendencia.estimado} />}
         </div>
       </div>
     </section>
