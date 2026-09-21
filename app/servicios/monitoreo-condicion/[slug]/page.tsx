@@ -15,7 +15,10 @@ import ComparadorTermico from "@/components/organisms/ComparadorTermico";
 import GraficaSonora from "@/components/organisms/GraficaSonora";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
+import PorQueMuestrear from "@/components/organisms/PorQueMuestrear";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
+import Semaforo from "@/components/organisms/Semaforo";
+import GraficaTendencia from "@/components/organisms/GraficaTendencia";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
@@ -223,7 +226,15 @@ export default async function ServicePage({
                             {overviewSubtitle}
                         </p>
                     </div>
-                    <ServicePuntos puntos={detailItems} foto={fotoPuntos} />
+                    {/* En aceite el acordeón de puntos no explica el
+                        servicio a quien entra sin saber qué es un análisis
+                        de lubricante. En su lugar: qué contesta la muestra
+                        y cómo se toma, con fotos reales de una ruta. */}
+                    {service.porQue ? (
+                        <PorQueMuestrear porQue={service.porQue} />
+                    ) : (
+                        <ServicePuntos puntos={detailItems} foto={fotoPuntos} />
+                    )}
                 </div>
             </section>
 
@@ -250,6 +261,26 @@ export default async function ServicePage({
                 último paso del proceso es el informe, y aquí se enseña. */}
             {service.entregable && (
                 <ServiceEntregable entregable={service.entregable} paso={paso()} />
+            )}
+
+            {/* Diferenciador de aceite: la misma máquina muestra tras
+                muestra, con la acción correctiva en medio. Va después del
+                entregable porque es lo que el informe permite ver con el
+                tiempo, y es la única prueba de que el servicio funcionó. */}
+            {service.tendencia && (
+                <GraficaTendencia tendencia={service.tendencia} paso={paso()} />
+            )}
+
+            {/* La escala con la que se califica cada equipo, para los
+                servicios que la expliquen aparte en lugar de enseñarla
+                aplicada dentro del entregable. */}
+            {service.semaforo && (
+                <Semaforo
+                    titulo={service.semaforo.titulo}
+                    subtitulo={service.semaforo.subtitulo}
+                    zonas={service.semaforo.zonas}
+                    paso={paso()}
+                />
             )}
 
             {/* Related Products */}

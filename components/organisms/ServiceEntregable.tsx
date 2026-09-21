@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Antetitulo from "../atoms/Antetitulo";
 import EscenaIdap from "./EscenaIdap";
+import HojaInforme from "./HojaInforme";
+import { nivel } from "@/lib/semaforo";
 import type { ServiceEntregable as Entregable } from "@/types/servicio";
 
 /**
@@ -38,11 +40,32 @@ type Props = {
 };
 
 export default function ServiceEntregable({ entregable, paso }: Props) {
+  // Un servicio puede no tener todavía vitrina: ni ficha de resultado ni
+  // páginas del informe. Sin esto, la rejilla de dos columnas deja la mitad
+  // derecha en blanco y la sección se ve a medio hacer. En ese caso el texto
+  // pasa a una sola columna de ancho de lectura.
+  const conVitrina = Boolean(
+    entregable.hoja ||
+      entregable.informe ||
+      entregable.resultado ||
+      (entregable.paginas && entregable.paginas.length > 1)
+  );
+
   return (
     <section className="w-full overflow-hidden bg-white py-12 lg:py-20">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16">
-        {/* Texto */}
-        <div>
+      <div
+        className={`mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:gap-16 ${
+          entregable.hoja
+            ? "lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]"
+            : conVitrina
+              ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]"
+              : ""
+        }`}
+      >
+        {/* Texto. Sin vitrina se limita el ancho de lectura, pero se mantiene
+            el borde izquierdo de las demás secciones: centrarlo rompería la
+            alineación de toda la página. */}
+        <div className={conVitrina ? "" : "max-w-3xl"}>
           <Antetitulo paso={paso}>{entregable.etiqueta}</Antetitulo>
           <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
             {entregable.titulo}
@@ -70,8 +93,73 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
           </ul>
         </div>
 
-        {/* Vitrina A: la ficha de resultado, para lo correctivo */}
-        {entregable.resultado ? (
+        {/* Vitrina C: la ficha del informe de una ruta.
+            Las páginas de los laboratorios explican cómo leer un informe pero
+            no enseñan el suyo: ni Bureau Veritas, ni Trico, ni TestOil ponen
+            una sola captura ni una etiqueta de color. Aquí se enseña, porque
+            lo que compra el cliente no es la medición sino la ruta ya
+            priorizada: cuántos equipos hay en cada nivel y qué toca hacer con
+            los que salieron mal. Los colores son los mismos del semáforo que
+            va justo abajo, y esa es la relación: aquí se ven aplicados, ahí
+            se explica qué obliga cada uno. */}
+        {entregable.hoja ? (
+          /* Vitrina D: la hoja de un equipo, tal como sale en el informe */
+          <HojaInforme hoja={entregable.hoja} />
+        ) : entregable.informe ? (
+          <div className="mx-auto w-full max-w-xl overflow-hidden rounded-sm bg-white shadow-2xl ring-1 ring-black/10">
+            <div className="bg-primary px-5 py-4 lg:px-6">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">
+                {entregable.informe.etiqueta}
+              </p>
+              <p className="mt-1 text-lg font-extrabold text-white lg:text-xl">
+                {entregable.informe.titulo}
+              </p>
+              <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
+                {entregable.informe.resumen.map((r) => {
+                  const color = nivel(r.clave);
+                  return (
+                    <li key={r.clave} className="flex items-baseline gap-2">
+                      <span
+                        aria-hidden="true"
+                        className={`h-2 w-2 shrink-0 translate-y-[-1px] rounded-full ${color.punto}`}
+                      />
+                      <span className={`text-xl font-extrabold tabular-nums ${color.cifra}`}>
+                        {r.total}
+                      </span>
+                      <span className="text-[11px] uppercase tracking-wider text-white/60">
+                        {r.etiqueta}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
+            <ul className="px-5 lg:px-6">
+              {entregable.informe.filas.map((f) => (
+                <li key={f.equipo} className="border-t border-gray-100 py-4 first:border-t-0">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <p className="text-sm font-bold leading-snug text-primary">{f.equipo}</p>
+                      <p className="mt-0.5 text-xs text-tertiary">{f.componente}</p>
+                    </div>
+                    <span
+                      className={`shrink-0 rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider ${nivel(f.clave).chip}`}
+                    >
+                      {f.estado}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm leading-relaxed text-tertiary">{f.accion}</p>
+                </li>
+              ))}
+            </ul>
+
+            <p className="border-t border-gray-200 bg-gray-50 px-5 py-3 text-justify text-xs leading-relaxed text-tertiary lg:px-6">
+              {entregable.informe.nota}
+            </p>
+          </div>
+        ) : /* Vitrina A: la ficha de resultado, para lo correctivo */
+        entregable.resultado ? (
           <div className="mx-auto w-full max-w-xl overflow-hidden rounded-sm bg-white shadow-2xl ring-1 ring-black/10">
             <div className="bg-primary px-5 py-4 lg:px-6">
               <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">
