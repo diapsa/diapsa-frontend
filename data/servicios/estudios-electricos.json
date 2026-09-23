@@ -16,53 +16,453 @@
       "link": "/servicios/monitoreo-condicion"
     },
     {
-      "label": "Estudios Eléctricos",
+      "label": "Estudios Eléctricos Especializados",
       "link": "/servicios/monitoreo-condicion/estudios-electricos"
     }
   ],
   "header": {
     "title": "Estudios Eléctricos Especializados",
-    "subtitle": "Análisis y diagnóstico de sistemas eléctricos industriales",
+    "subtitle": "Pruebas a transformadores, interruptores, cables y motores en el paro, antes de que fallen en operación",
     "backgroundImage": "/images/fondo-hero.webp"
   },
   "content": {
-    "title": "¿Qué son los Estudios Eléctricos?",
-    "subtitle": "Garantía de confiabilidad y seguridad eléctrica",
-    "image": "/images/servicios/subestacion-inspeccion.webp",
+    "title": "Lo que el equipo no puede decir energizado, se prueba en el paro",
+    "subtitle": "Un transformador, un interruptor o un motor se degradan por dentro sin cambiar nada por fuera: el aislamiento absorbe humedad, un contacto se desgasta, un devanado se afloja. Las pruebas eléctricas miden esa condición interna con el equipo desenergizado, la comparan contra la placa, la norma y la prueba anterior, y dicen si el equipo vuelve a entrar con confianza o si toca intervenirlo.",
+    "image": "/images/servicios/estudios-electricos/tablero-interruptores.webp",
     "items": [
       {
         "id": "aplicaciones",
-        "title": "Aplicaciones",
-        "content": "Realizamos análisis de calidad de energía, estudios de coordinación de protecciones, evaluación de sistemas de puesta a tierra, medición de armónicos, análisis de motores eléctricos y pruebas de equipos de media y alta tensión."
+        "title": "Dónde se aplica",
+        "content": "Transformadores de potencia y distribución, en aceite y secos; interruptores de baja y media tensión, en vacío, SF6 o aceite, y sus tableros; cables de media tensión y sus terminales; motores y generadores de baja y media tensión. En paros programados, en recepción de equipo nuevo o reparado, y en puesta en servicio.",
+        "foto": {
+          "src": "/images/servicios/estudios-electricos/tablero-interruptores.webp",
+          "alt": "Tablero de interruptores de media tensión con las gavetas extraídas para pruebas"
+        }
       },
       {
         "id": "beneficios",
-        "title": "Beneficios",
-        "content": "Mejora la confiabilidad del sistema eléctrico, reduce consumos energéticos, previene fallas y accidentes, optimiza la operación de equipos eléctricos, cumple con normativas de seguridad y calidad."
+        "title": "Qué ganas",
+        "content": "Saber antes de arrancar qué equipo está sano y cuál no. Un índice de polarización bajo en un transformador dice que el aislamiento tiene humedad y se seca antes de que falle en carga; un contacto de interruptor con alta resistencia se corrige antes de que se caliente y se suelde. Cada prueba deja un número contra su límite, y el historial de esos números es lo que permite planear el reemplazo con años de anticipación.",
+        "foto": {
+          "src": "/images/servicios/estudios-electricos/prueba-transformador.webp",
+          "alt": "Ingeniero probando un transformador en banco de pruebas"
+        }
       },
       {
-        "id": "metodologia",
-        "title": "Metodología",
-        "content": "Aplicamos normas IEEE, IEC y NOM vigentes. Utilizamos analizadores de redes certificados y software especializado. Nuestros ingenieros cuentan con certificaciones en sistemas eléctricos de potencia."
+        "id": "como",
+        "title": "Cómo lo hacemos",
+        "content": "Con el equipo desenergizado, bloqueado y aterrizado. Cada prueba sigue el procedimiento de la norma que le corresponde (IEEE 43 e IEEE 62 para aislamiento, IEEE C57 para transformadores, NETA para criterios de aceptación) con instrumentos calibrados ante laboratorio acreditado por la EMA. Los valores se corrigen a temperatura y se comparan contra placa, contra norma y contra la prueba anterior del mismo equipo.",
+        "foto": {
+          "src": "/images/servicios/estudios-electricos/megger-interruptores.webp",
+          "alt": "Técnico haciendo la prueba de resistencia de aislamiento a interruptores principales de una subestación"
+        }
+      },
+      {
+        "id": "plataforma-idap",
+        "title": "Tus datos viven en IDAP",
+        "content": "Cada equipo guarda el resultado de cada prueba, paro tras paro. El índice de polarización que baja un poco cada año, o la resistencia de contacto que sube, se ven como tendencia y no como sorpresa.",
+        "foto": {
+          "src": "/images/idap/mockup.png",
+          "alt": "Pantallas de IDAP con el historial de un equipo",
+          "ajuste": "contener",
+          "fondo": "oscuro"
+        }
       }
+    ]
+  },
+  "seoDescription": "Pruebas eléctricas especializadas a transformadores, interruptores, cables y motores: resistencia de aislamiento e índice de polarización, factor de potencia, TTR, resistencia de contactos, hipot y comparación de impulsos. Diagnóstico en paro programado y puesta en servicio.",
+  "porQue": {
+    "foto": {
+      "src": "/images/servicios/estudios-electricos/megger-interruptores.webp",
+      "alt": "Técnico con el probador de aislamiento conectado a los interruptores principales de una subestación"
+    },
+    "pie": "Prueba de resistencia de aislamiento a los interruptores principales de una subestación. Foto: MTA Capital Construction, CC BY 2.0.",
+    "preguntas": [
+      {
+        "pregunta": "¿El aislamiento todavía aguanta?",
+        "texto": "El aislamiento de un transformador, un cable o un motor se degrada con la humedad, la temperatura y los años. La resistencia de aislamiento, el índice de polarización y el factor de potencia del aislamiento miden cuánto le queda, con un número contra un límite de norma.",
+        "siSaleMal": "Se seca, se limpia o se programa el cambio del componente antes de que el aislamiento falle con el equipo en carga."
+      },
+      {
+        "pregunta": "¿El interruptor abre y cierra como debe?",
+        "texto": "Un interruptor que no se opera en meses puede tener contactos desgastados o un mecanismo lento. La resistencia de contactos en microohms y los tiempos de apertura y cierre dicen si va a despejar una falla en el tiempo que la protección supone.",
+        "siSaleMal": "Se limpian o ajustan los contactos y se atiende el mecanismo, porque un interruptor lento convierte una falla pequeña en un arco."
+      },
+      {
+        "pregunta": "¿Puedes arrancar con confianza después del paro?",
+        "texto": "Cada paro y cada equipo nuevo o reparado es una oportunidad de saber en qué estado entra. Las pruebas de puesta en servicio, relación de transformación, resistencia de devanados, comparación de impulsos, hipot, dejan el registro de que el equipo arranca sano.",
+        "siSaleMal": "El equipo con resultado fuera de límite no entra hasta corregirse, y el que entra lo hace con su expediente de pruebas para la aseguradora y la auditoría."
+      }
+    ],
+    "comoSeHace": {
+      "titulo": "Así se prueba",
+      "pasos": [
+        {
+          "foto": {
+            "src": "/images/servicios/estudios-electricos/inyeccion-primaria-tablero.webp",
+            "alt": "Técnico frente a un tablero de media tensión con el equipo de inyección conectado"
+          },
+          "texto": "Con el tablero desenergizado y bloqueado, se extrae el interruptor o se conecta el instrumento en el equipo bajo prueba. Foto: MTA Capital Construction, CC BY 2.0."
+        },
+        {
+          "foto": {
+            "src": "/images/servicios/estudios-electricos/inyeccion-secundaria.webp",
+            "alt": "Equipo de inyección de corriente conectado a un tablero para probar interruptores"
+          },
+          "texto": "Cada prueba sigue su procedimiento: aislamiento, resistencia de contactos, tiempos, inyección a relevadores. Los valores se registran en sitio. Foto: MTA Capital Construction, CC BY 2.0."
+        },
+        {
+          "foto": {
+            "src": "/images/servicios/estudios-electricos/hipot-alta-tension.webp",
+            "alt": "Transformadores de prueba de alta tensión para prueba de alto potencial"
+          },
+          "texto": "Para cables y equipo de media tensión, la prueba de alto potencial aplica una tensión mayor a la de servicio y confirma que el aislamiento la resiste. Foto: Variation 25.2, CC BY-SA 4.0."
+        }
+      ]
+    }
+  },
+  "tecnicas": {
+    "etiqueta": "Qué se prueba",
+    "titulo": "Cuatro grupos de equipo, y las pruebas que le corresponden a cada uno",
+    "texto": "Cada tarjeta lista las pruebas por su nombre, como las conoce el mantenimiento eléctrico, y enseña cómo se ve un hallazgo en el reporte: el valor medido, su referencia y la acción.",
+    "items": [
+      {
+        "nombre": "Transformadores",
+        "texto": "En aceite y secos, de distribución y de potencia. Las pruebas leen el estado del aislamiento y de los devanados sin abrir el tanque.",
+        "equipos": "Transformadores de 13.8 a 115 kV en aceite, transformadores secos de baja y media tensión, y sus boquillas.",
+        "mide": [
+          "Resistencia de aislamiento",
+          "Índice de polarización",
+          "Factor de potencia del aislamiento",
+          "Relación de transformación (TTR)",
+          "Resistencia de devanados",
+          "Corriente de excitación"
+        ],
+        "frecuencia": "Cada paro programado, o cada 1 a 3 años",
+        "entregable": "Hoja de pruebas por transformador con valores, límites y tendencia",
+        "enlace": {
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite",
+          "texto": "Ver análisis de aceite y gases disueltos"
+        },
+        "ejemplo": {
+          "etiqueta": "Ejemplo de hallazgo",
+          "equipo": "Transformador 2,500 kVA · 13.8 / 0.48 kV",
+          "estado": "Precaución",
+          "clave": "precaucion",
+          "lineas": [
+            {
+              "k": "Índice de polarización",
+              "v": "1.4 (mín. 2.0)"
+            },
+            {
+              "k": "Factor de potencia",
+              "v": "0.9 % (máx. 0.5 %)"
+            },
+            {
+              "k": "Relación TTR",
+              "v": "0.1 % de desviación"
+            },
+            {
+              "k": "Devanados",
+              "v": "Balanceados"
+            }
+          ],
+          "accion": "Aislamiento con humedad. Deshidratar el aceite al vacío, revisar respiraderos y repetir la prueba antes de energizar."
+        }
+      },
+      {
+        "nombre": "Interruptores y tableros",
+        "texto": "Interruptores de baja y media tensión, en vacío, SF6 o aceite, y los tableros que los alojan. Se prueba que abran, cierren y aíslen como deben.",
+        "equipos": "Interruptores y tableros de 480 V a 34.5 kV, seccionadores y barras.",
+        "mide": [
+          "Resistencia de contactos",
+          "Tiempos de apertura y cierre",
+          "Resistencia de aislamiento",
+          "Alto potencial (hipot)",
+          "Inyección secundaria a relevadores"
+        ],
+        "frecuencia": "Cada paro programado, o cada 1 a 3 años",
+        "entregable": "Hoja de pruebas por interruptor con contactos, tiempos y aislamiento",
+        "ejemplo": {
+          "etiqueta": "Ejemplo de hallazgo",
+          "equipo": "Interruptor de vacío · 15 kV · 1,200 A",
+          "estado": "Alarma",
+          "clave": "alarma",
+          "lineas": [
+            {
+              "k": "Contacto fase B",
+              "v": "185 µΩ"
+            },
+            {
+              "k": "Fases A y C",
+              "v": "42 y 45 µΩ"
+            },
+            {
+              "k": "Tiempo de apertura",
+              "v": "48 ms (máx. 35)"
+            },
+            {
+              "k": "Aislamiento",
+              "v": "> 10 GΩ"
+            }
+          ],
+          "accion": "Contacto de fase B desgastado y mecanismo lento. Limpiar y ajustar contactos, lubricar el mecanismo y repetir tiempos antes de reponer."
+        }
+      },
+      {
+        "nombre": "Cables de media tensión",
+        "texto": "Alimentadores y sus terminales y empalmes, que son donde fallan. Las pruebas encuentran el aislamiento débil antes de que perfore.",
+        "equipos": "Cables de 5 a 35 kV, terminales y empalmes, en recepción de instalación nueva y en paro.",
+        "mide": [
+          "Resistencia de aislamiento",
+          "Alto potencial en CD o VLF",
+          "Tangente delta",
+          "Continuidad y secuencia de fases"
+        ],
+        "frecuencia": "En recepción, y cada 3 a 5 años",
+        "entregable": "Hoja de pruebas por circuito con aislamiento, hipot y tangente delta",
+        "ejemplo": {
+          "etiqueta": "Ejemplo de hallazgo",
+          "equipo": "Alimentador 13.8 kV · 320 m · XLPE",
+          "estado": "Bueno",
+          "clave": "bueno",
+          "lineas": [
+            {
+              "k": "Aislamiento",
+              "v": "12 GΩ por fase"
+            },
+            {
+              "k": "VLF 30 min",
+              "v": "Sin falla"
+            },
+            {
+              "k": "Tangente delta",
+              "v": "Estable con la tensión"
+            },
+            {
+              "k": "Terminales",
+              "v": "Sin tracking"
+            }
+          ],
+          "accion": "Circuito en condición de servicio. Continuar con el programa; siguiente prueba en el paro de dentro de tres años."
+        }
+      },
+      {
+        "nombre": "Motores y generadores",
+        "texto": "Máquinas rotativas de baja y media tensión. Las pruebas leen el aislamiento y los devanados con el motor parado, y complementan el monitoreo en operación.",
+        "equipos": "Motores de baja y media tensión, generadores, y motores reparados antes de reinstalarse.",
+        "mide": [
+          "Resistencia de aislamiento",
+          "Índice de polarización",
+          "Comparación de impulsos (surge)",
+          "Resistencia de devanados",
+          "Factor de potencia del aislamiento"
+        ],
+        "frecuencia": "Cada paro programado, y en recepción de reparación",
+        "entregable": "Hoja de pruebas por motor con aislamiento, surge y devanados",
+        "enlace": {
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas",
+          "texto": "Ver vibraciones mecánicas"
+        },
+        "ejemplo": {
+          "etiqueta": "Ejemplo de hallazgo",
+          "equipo": "Motor 400 HP · 4.16 kV",
+          "estado": "Observación",
+          "clave": "observacion",
+          "lineas": [
+            {
+              "k": "Aislamiento a 40 °C",
+              "v": "850 MΩ"
+            },
+            {
+              "k": "Índice de polarización",
+              "v": "2.1 (mín. 2.0)"
+            },
+            {
+              "k": "Surge entre fases",
+              "v": "3 % de desviación"
+            },
+            {
+              "k": "Devanados",
+              "v": "Balanceados"
+            }
+          ],
+          "accion": "Aislamiento al límite. Limpiar y secar el devanado en el siguiente paro; repetir la prueba en seis meses para confirmar la tendencia."
+        }
+      }
+    ],
+    "nota": "Los hallazgos de las tarjetas son ejemplos simulados para mostrar la forma del reporte, no casos de un cliente. Las pruebas y sus criterios siguen IEEE 43, IEEE 62, IEEE C57 y las tablas de aceptación de NETA."
+  },
+  "certificacion": "Criterios NETA · IEEE 43 e IEEE C57 · Instrumentos calibrados ante laboratorio acreditado por la EMA",
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujo": [
+    {
+      "titulo": "Programa del paro",
+      "texto": "Se listan los equipos del paro y las pruebas que le tocan a cada uno según su tipo, su edad y su historial."
+    },
+    {
+      "titulo": "Desenergizar y aterrizar",
+      "texto": "Bloqueo y etiquetado, verificación de ausencia de tensión y puesta a tierra de trabajo, antes de conectar cualquier instrumento."
+    },
+    {
+      "titulo": "Pruebas por equipo",
+      "texto": "Cada prueba con su procedimiento de norma e instrumento calibrado; los valores se corrigen a temperatura de referencia."
+    },
+    {
+      "titulo": "Comparación",
+      "texto": "Cada valor contra la placa, contra la tabla de aceptación y contra la prueba anterior del mismo equipo. La tendencia pesa más que el valor suelto."
+    },
+    {
+      "titulo": "Reporte y arranque",
+      "texto": "Hoja de pruebas por equipo con veredicto, el hallazgo con su acción, y el registro de que el equipo entró sano."
+    }
+  ],
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "Una hoja de pruebas por equipo, con cada valor medido, su límite y su tendencia, y un resumen del paro con los equipos que entran sanos y los que requieren acción. Esta es la forma que tiene, con datos simulados.",
+    "contenido": [
+      "Hoja de pruebas por equipo: valor medido, límite de norma y prueba anterior",
+      "Veredicto por equipo: entra en servicio, entra con seguimiento o requiere intervención",
+      "Hallazgos con causa probable y acción, ordenados por prioridad",
+      "Certificados de calibración de los instrumentos usados",
+      "Expediente listo para aseguradora y auditoría"
+    ],
+    "hoja": {
+      "etiqueta": "Reporte de pruebas eléctricas",
+      "titulo": "Paro programado · Subestación de 13.8 kV",
+      "subtitulo": "Transformadores, interruptores, cables y motores · ejemplo",
+      "datos": [
+        {
+          "etiqueta": "Equipos probados",
+          "valor": "14"
+        },
+        {
+          "etiqueta": "Pruebas realizadas",
+          "valor": "38"
+        },
+        {
+          "etiqueta": "Requieren acción",
+          "valor": "3"
+        }
+      ],
+      "condicion": {
+        "clave": "precaucion",
+        "etiqueta": "Con hallazgos"
+      },
+      "etiquetas": {
+        "condicion": "Condición del paro",
+        "diagnostico": "Resumen",
+        "recomendaciones": "Antes de energizar",
+        "prioridades": "Hallazgos por prioridad"
+      },
+      "diagnostico": "Once equipos dentro de límites y en condición de servicio. Un interruptor de vacío con resistencia de contacto alta en fase B y tiempo de apertura fuera de especificación, un transformador con índice de polarización bajo por humedad, y un motor de 400 HP con aislamiento al límite.",
+      "recomendaciones": [
+        "No reponer el interruptor de vacío hasta corregir el contacto de fase B y repetir tiempos.",
+        "Deshidratar el aceite del transformador y repetir el índice de polarización antes de energizar.",
+        "El motor entra en servicio con seguimiento; repetir aislamiento y surge en seis meses."
+      ],
+      "prioridades": [
+        {
+          "nivel": "Alta",
+          "clave": "alarma",
+          "puntos": "1 equipo",
+          "accion": "Interruptor de vacío 15 kV: contacto de fase B en 185 µΩ y apertura en 48 ms."
+        },
+        {
+          "nivel": "Media",
+          "clave": "precaucion",
+          "puntos": "1 equipo",
+          "accion": "Transformador 2,500 kVA: índice de polarización 1.4 y factor de potencia 0.9 %."
+        },
+        {
+          "nivel": "Baja",
+          "clave": "observacion",
+          "puntos": "1 equipo",
+          "accion": "Motor 400 HP: aislamiento de 850 MΩ e índice de polarización 2.1, al límite."
+        }
+      ],
+      "evidencia": [
+        {
+          "src": "/images/servicios/estudios-electricos/prueba-transformador.webp",
+          "alt": "Prueba a un transformador en banco. Foto: Gnoeee, CC BY-SA 4.0."
+        },
+        {
+          "src": "/images/servicios/estudios-electricos/tablero-interruptores.webp",
+          "alt": "Tablero de interruptores en pruebas. Foto: MTA Capital Construction, CC BY 2.0."
+        }
+      ],
+      "nota": "Ejemplo simulado con la estructura del reporte real. Los equipos, valores y hallazgos no corresponden a ningún cliente."
+    }
+  },
+  "mostrarClientes": true,
+  "faq": [
+    {
+      "question": "¿Hay que desenergizar?",
+      "answer": "Sí. A diferencia de la termografía, el ultrasonido o las pruebas dinámicas, que se hacen en operación, estas pruebas se hacen con el equipo desenergizado, bloqueado y aterrizado. Por eso se programan en el paro, y por eso conviene aprovechar cada paro para probar todo lo que se pueda."
+    },
+    {
+      "question": "¿Qué es el índice de polarización y por qué importa?",
+      "answer": "Es la relación entre la resistencia de aislamiento medida a diez minutos y a un minuto. Un aislamiento seco y sano sigue subiendo con el tiempo, así que da un índice de 2 o más; uno con humedad o contaminado se queda plano, con índice cercano a 1. Es la prueba más sencilla y más reveladora sobre el estado de un devanado, y su tendencia año con año vale más que el valor suelto."
+    },
+    {
+      "question": "¿Qué normas aplican?",
+      "answer": "IEEE 43 para resistencia de aislamiento en máquinas rotativas, IEEE 62 y IEEE C57.12.90 para pruebas a transformadores, IEEE 400 para cables de media tensión, y las tablas de aceptación de NETA ATS y NETA MTS, que son la referencia que usan las aseguradoras y los contratos de mantenimiento en México."
+    },
+    {
+      "question": "¿Qué pasa con un equipo que sale fuera de límite?",
+      "answer": "Depende de la prueba. Un aislamiento con humedad se seca o se deshidrata y se vuelve a probar; un contacto con alta resistencia se limpia o se ajusta; un cable que falla el hipot se localiza y se repara el tramo. El reporte dice qué hacer y si el equipo puede entrar en servicio mientras tanto o no."
+    },
+    {
+      "question": "¿Sirve para recibir equipo nuevo o reparado?",
+      "answer": "Es uno de sus mejores usos. Un transformador o un motor recién reparado se prueba antes de instalarlo, y el resultado se compara con el protocolo de fábrica o del taller. Si algo no coincide, se reclama antes de que el equipo esté en servicio y la garantía en discusión."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "El listado de equipos a probar con su tipo, tensión y potencia, la fecha del paro y su duración, y si hay pruebas anteriores, esos reportes para comparar. Con eso se arma el programa de pruebas y la propuesta."
+    }
+  ],
+  "galeria": [
+    {
+      "src": "/images/servicios/estudios-electricos/megger-interruptores.webp",
+      "alt": "Prueba de resistencia de aislamiento a interruptores principales de una subestación. Foto: MTA Capital Construction, CC BY 2.0."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/inyeccion-primaria-tablero.webp",
+      "alt": "Pruebas de inyección primaria a interruptores de un tablero de media tensión. Foto: MTA Capital Construction, CC BY 2.0."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/tablero-interruptores.webp",
+      "alt": "Tablero de interruptores con las gavetas extraídas para pruebas. Foto: MTA Capital Construction, CC BY 2.0."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/prueba-transformador.webp",
+      "alt": "Prueba a un transformador en banco de pruebas. Foto: Gnoeee, CC BY-SA 4.0."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/hipot-alta-tension.webp",
+      "alt": "Transformadores de prueba de alta tensión para prueba de alto potencial. Foto: Variation 25.2, CC BY-SA 4.0."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/estator-generador.webp",
+      "alt": "Estator de un generador durante mantenimiento del devanado. Foto: Astronomyinertia, CC BY-SA 3.0."
+    }
+  ],
+  "cta": {
+    "title": "¿Cuándo es tu próximo paro programado?",
+    "text": "Compártenos el listado de transformadores, interruptores, cables y motores a probar y la fecha del paro, y te armamos el programa de pruebas con su propuesta.",
+    "whatsappMessage": "Hola, quiero información sobre pruebas eléctricas especializadas para el paro de mi planta.",
+    "datos": [
+      "Registro REPSE vigente",
+      "Instrumentos calibrados ante laboratorio acreditado por la EMA",
+      "Criterios de aceptación NETA"
     ]
   },
   "relatedProducts": {
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
-    "items": [
-      {
-        "name": "Analizador de Redes",
-        "description": "Medición de calidad de energía",
-        "image": "/images/productos/placeholder-1.jpg",
-        "link": "#"
-      },
-      {
-        "name": "Sistema de Monitoreo",
-        "description": "Supervisión continua de parámetros eléctricos",
-        "image": "/images/productos/placeholder-2.jpg",
-        "link": "#"
-      }
-    ]
+    "items": []
   }
 }

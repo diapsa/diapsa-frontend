@@ -102,6 +102,18 @@ export interface HojaInforme {
   nota: string;
 }
 
+export interface ResumenRuta {
+  etiqueta: string;
+  titulo: string;
+  subtitulo: string;
+  cifras: { etiqueta: string; valor: string }[];
+  /** Un renglón por estado, en el orden de la barra. `clave` del semáforo
+      u "otro" para fuera de operación y no medido. */
+  estados: { nombre: string; clave: string; total: number; texto: string }[];
+  prioridades: string[];
+  nota: string;
+}
+
 export interface ServiceEntregable {
   /** Antetítulo corto, ej. "El entregable". */
   etiqueta: string;
@@ -126,6 +138,9 @@ export interface ServiceEntregable {
       diagnóstico, recomendaciones, tabla de laboratorio y evidencia. Si
       viene, sustituye a las demás vitrinas. */
   hoja?: HojaInforme;
+  /** La portada de una ruta: cifras, barra por estado y prioridades
+      (diagnóstico integral). Si viene, sustituye a las demás vitrinas. */
+  resumenRuta?: ResumenRuta;
   /** Ficha con el antes y el después del equipo, para los servicios
       correctivos: ahí el entregable no es un informe de inspección sino la
       prueba de que el valor bajó. Si viene, sustituye a la vitrina de
@@ -164,9 +179,22 @@ export interface ZonaSemaforo {
   texto: string;
 }
 
+export interface ServiceEscena360 {
+  centro: { nombre: string; foto: string; alt: string };
+  /** Cuatro técnicas, en el orden en que se encienden. `clave` es la del semáforo. */
+  /** Cuatro técnicas, en el orden en que se activan: aceite, ultrasonido,
+      vibraciones, termografía. `nombre` es el título del panel. */
+  satelites: { nombre: string; valor: string; detalle?: string; estado: string; clave: string }[];
+  resultado: { titulo: string; coinciden: string; texto: string };
+  pie: string;
+}
+
 export interface ServicePorQue {
   /** El servicio ocurriendo: un analista tomando la muestra en campo. */
   foto: GaleriaFoto;
+  /** Si viene, en lugar de la foto va la escena 360: la máquina al centro y
+      las técnicas en órbita (diagnóstico integral). */
+  escena360?: ServiceEscena360;
   pie?: string;
   /** Las tres preguntas que contesta una muestra, sin valores de
       laboratorio, y qué se hace si cada una sale mal. */
@@ -369,6 +397,50 @@ export interface ServiceArco {
   nota: string;
 }
 
+export interface ServiceTecnicas {
+  etiqueta: string;
+  titulo: string;
+  texto: string;
+  items: {
+    nombre: string;
+    texto: string;
+    equipos: string;
+    mide: string[];
+    frecuencia: string;
+    entregable: string;
+    /** A la página de la disciplina, si existe. */
+    enlace?: { href: string; texto: string };
+    /** Un renglón del reporte, como ejemplo. `clave` es la del semáforo. */
+    ejemplo: { etiqueta: string; equipo: string; estado: string; clave: string; lineas: { k: string; v: string }[]; accion: string };
+  }[];
+  nota: string;
+}
+
+export interface ServiceHojaIntegral {
+  etiqueta: string;
+  titulo: string;
+  texto: string;
+  equipo: { nombre: string; foto: string; alt: string; datos: { k: string; v: string }[] };
+  /** Estado actual, nivel de riesgo y prioridad, como los tres recuadros del PDF. */
+  estado: { k: string; v: string; clave: string }[];
+  disciplinas: { nombre: string; estado: string; clave: string; nota?: string }[];
+  hallazgos: { texto: string; estado: string; clave: string; evolucion: string; nota?: string }[];
+  riesgoGlobal?: { texto: string; clave: string };
+  recomendaciones: string[];
+  /** Una banda por disciplina: imágenes, tabla de lecturas, rangos de severidad. Opcional: la versión corta no las lleva. */
+  bloques?: {
+    nombre: string;
+    estado: string;
+    clave: string;
+    imagenes?: { src: string; alt: string }[];
+    tabla?: { columnas: string[]; filas: { celdas: string[]; clave?: string }[] };
+    texto?: string;
+    rangos?: { titulo: string; filas: { estado: string; clave: string; texto: string }[] };
+    indicadores?: { k: string; v: string }[];
+  }[];
+  nota: string;
+}
+
 export interface ServiceComparadorSonoro {
   titulo: string;
   texto?: string;
@@ -442,4 +514,10 @@ export interface Servicio {
   /** Diferenciador de arco eléctrico: la etiqueta de cada tablero y todos
       los tableros ordenados por energía incidente. */
   arco?: ServiceArco;
+  /** Estudios eléctricos: las técnicas del programa, una tarjeta cada una,
+      con un hallazgo de ejemplo. */
+  tecnicas?: ServiceTecnicas;
+  /** Diagnóstico integral: la hoja de una máquina del informe integral,
+      como la genera IDAP. */
+  hojaIntegral?: ServiceHojaIntegral;
 }
