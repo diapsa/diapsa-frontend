@@ -16,6 +16,8 @@ import GraficaSonora from "@/components/organisms/GraficaSonora";
 import MapaPuntos from "@/components/organisms/MapaPuntos";
 import ApartadoFotos from "@/components/organisms/ApartadoFotos";
 import EtiquetasArco from "@/components/organisms/EtiquetasArco";
+import TecnicasElectricas from "@/components/organisms/TecnicasElectricas";
+import HojaIntegral from "@/components/organisms/HojaIntegral";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import PorQueMuestrear from "@/components/organisms/PorQueMuestrear";
@@ -263,6 +265,14 @@ export default async function ServicePage({
             {/* Diferenciador de arco eléctrico: la etiqueta reconstruida y
                 los tableros ordenados por energía incidente. */}
             {service.arco && <EtiquetasArco arco={service.arco} paso={paso()} />}
+
+            {/* Estudios eléctricos: el programa por técnicas, con un
+                hallazgo de ejemplo en cada una. */}
+            {service.tecnicas && <TecnicasElectricas tecnicas={service.tecnicas} paso={paso()} />}
+
+            {/* Diagnóstico integral: la hoja de una máquina tal como la
+                genera IDAP, con las disciplinas como renglones de una ficha. */}
+            {service.hojaIntegral && <HojaIntegral hoja={service.hojaIntegral} paso={paso()} />}
 
             <ServiceProof certificacion={service.certificacion} />
 

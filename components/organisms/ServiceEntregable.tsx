@@ -2,6 +2,7 @@ import Image from "next/image";
 import Antetitulo from "../atoms/Antetitulo";
 import EscenaIdap from "./EscenaIdap";
 import HojaInforme from "./HojaInforme";
+import ResumenRuta from "./ResumenRuta";
 import { nivel } from "@/lib/semaforo";
 import type { ServiceEntregable as Entregable } from "@/types/servicio";
 
@@ -45,7 +46,8 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
   // derecha en blanco y la sección se ve a medio hacer. En ese caso el texto
   // pasa a una sola columna de ancho de lectura.
   const conVitrina = Boolean(
-    entregable.hoja ||
+    entregable.resumenRuta ||
+      entregable.hoja ||
       entregable.informe ||
       entregable.resultado ||
       (entregable.paginas && entregable.paginas.length > 1)
@@ -102,7 +104,10 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
             los que salieron mal. Los colores son los mismos del semáforo que
             va justo abajo, y esa es la relación: aquí se ven aplicados, ahí
             se explica qué obliga cada uno. */}
-        {entregable.hoja ? (
+        {entregable.resumenRuta ? (
+          /* Vitrina E: la portada de una ruta, con la barra por estado */
+          <ResumenRuta resumen={entregable.resumenRuta} />
+        ) : entregable.hoja ? (
           /* Vitrina D: la hoja de un equipo, tal como sale en el informe */
           <HojaInforme hoja={entregable.hoja} />
         ) : entregable.informe ? (
