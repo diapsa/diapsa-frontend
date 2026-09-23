@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Escena360 from "./Escena360";
 import type { ServicePorQue } from "@/types/servicio";
 
 /**
@@ -32,7 +33,11 @@ export default function PorQueMuestrear({ porQue }: Props) {
   return (
     <div>
       <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14">
-        {/* La foto: el servicio ocurriendo */}
+        {/* La foto: el servicio ocurriendo. En diagnóstico integral, en su
+            lugar va la escena 360 con la máquina y las técnicas en órbita. */}
+        {porQue.escena360 ? (
+          <Escena360 escena={porQue.escena360} />
+        ) : (
         <figure>
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5">
             <Image
@@ -50,6 +55,7 @@ export default function PorQueMuestrear({ porQue }: Props) {
             </figcaption>
           )}
         </figure>
+        )}
 
         {/* Las tres preguntas que contesta la muestra */}
         <ol className="divide-y divide-gray-200">
