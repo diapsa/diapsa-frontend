@@ -419,6 +419,14 @@
   ],
   "galeria": [
     {
+      "src": "/images/servicios/termografia-infrarroja/campo-63.webp",
+      "alt": "Analista de DIAPSA con traje de protección contra arco eléctrico, listo para trabajar frente a equipo energizado."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-05.webp",
+      "alt": "Careta y traje de protección contra arco: el equipo que el estudio define para cada tablero."
+    },
+    {
       "src": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
       "alt": "Intervención en un gabinete energizado con traje contra arco eléctrico."
     },
@@ -434,5 +442,29 @@
       "src": "/images/servicios/tierras-fisicas/continuidad-tablero.webp",
       "alt": "Levantamiento de datos en un centro de control de motores."
     }
-  ]
+  ],
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué determina?",
+    "equiposTitulo": "Dónde aplica",
+    "equipos": [
+      "Subestaciones",
+      "Tableros de media tensión",
+      "Tableros de baja tensión",
+      "Centros de control de motores",
+      "Tableros de distribución",
+      "Interruptores",
+      "Transformadores"
+    ],
+    "fallasTitulo": "Lo que determina",
+    "fallas": [
+      "Energía incidente por tablero",
+      "Categoría de equipo de protección",
+      "Frontera de protección contra arco",
+      "Distancias de aproximación",
+      "Coordinación de protecciones",
+      "Etiqueta de cada equipo",
+      "Cumplimiento de NOM-029-STPS y NFPA 70E"
+    ]
+  }
 }

@@ -426,28 +426,44 @@
   ],
   "galeria": [
     {
-      "src": "/images/servicios/estudios-electricos/megger-interruptores.webp",
-      "alt": "Prueba de resistencia de aislamiento a interruptores principales de una subestación. Foto: MTA Capital Construction, CC BY 2.0."
+      "src": "/images/servicios/estudios-electricos/campo-analista-tablero.webp",
+      "alt": "Analista de DIAPSA conectando el analizador en un tablero de distribución energizado."
     },
     {
-      "src": "/images/servicios/estudios-electricos/inyeccion-primaria-tablero.webp",
-      "alt": "Pruebas de inyección primaria a interruptores de un tablero de media tensión. Foto: MTA Capital Construction, CC BY 2.0."
+      "src": "/images/servicios/estudios-electricos/campo-forma-de-onda.webp",
+      "alt": "Forma de onda de corriente en el analizador, medida directamente en el interruptor."
     },
     {
-      "src": "/images/servicios/estudios-electricos/tablero-interruptores.webp",
-      "alt": "Tablero de interruptores con las gavetas extraídas para pruebas. Foto: MTA Capital Construction, CC BY 2.0."
+      "src": "/images/servicios/estudios-electricos/campo-armonicos-pantalla.webp",
+      "alt": "Lectura de armónicos por fase: el dato que explica calentamientos y disparos sin causa aparente."
     },
     {
-      "src": "/images/servicios/estudios-electricos/prueba-transformador.webp",
-      "alt": "Prueba a un transformador en banco de pruebas. Foto: Gnoeee, CC BY-SA 4.0."
+      "src": "/images/servicios/estudios-electricos/campo-tablero-transductores.webp",
+      "alt": "Transductores de corriente flexibles instalados en las tres fases de un interruptor principal."
     },
     {
-      "src": "/images/servicios/estudios-electricos/hipot-alta-tension.webp",
-      "alt": "Transformadores de prueba de alta tensión para prueba de alto potencial. Foto: Variation 25.2, CC BY-SA 4.0."
+      "src": "/images/servicios/estudios-electricos/campo-medicion-alimentador.webp",
+      "alt": "Medición de corriente en un alimentador con pinza, dentro del tablero."
     },
     {
-      "src": "/images/servicios/estudios-electricos/estator-generador.webp",
-      "alt": "Estator de un generador durante mantenimiento del devanado. Foto: Astronomyinertia, CC BY-SA 3.0."
+      "src": "/images/servicios/estudios-electricos/campo-transformador-seco.webp",
+      "alt": "Revisión de un transformador seco antes de las pruebas."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/campo-motor-caja-conexiones.webp",
+      "alt": "Pruebas eléctricas en la caja de conexiones de un motor, con equipo de protección."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/campo-motor-prueba.webp",
+      "alt": "Registro de la prueba al motor desde el piso, con las puntas conectadas en su caja de conexiones."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/campo-motor-bomba.webp",
+      "alt": "Analista de DIAPSA conectado a las terminales del motor de una bomba de proceso."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/campo-caja-terminales.webp",
+      "alt": "Caja de terminales del motor abierta y conectada para la prueba."
     }
   ],
   "cta": {
@@ -464,5 +480,29 @@
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué detecta?",
+    "equiposTitulo": "Equipos",
+    "equipos": [
+      "Transformadores en aceite",
+      "Transformadores secos",
+      "Interruptores de baja y media tensión",
+      "Tableros y barras",
+      "Cables de media tensión",
+      "Motores eléctricos"
+    ],
+    "fallasTitulo": "Fallas que detecta",
+    "fallas": [
+      "Aislamiento deteriorado",
+      "Humedad en devanados",
+      "Relación de transformación alterada",
+      "Devanados dañados",
+      "Contactos desgastados",
+      "Tiempos de apertura fuera de rango",
+      "Protecciones que no disparan",
+      "Fallas en empalmes y terminales"
+    ]
   }
 }

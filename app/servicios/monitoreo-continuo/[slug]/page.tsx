@@ -15,6 +15,10 @@ import ComparadorTermico from "@/components/organisms/ComparadorTermico";
 import GraficaSonora from "@/components/organisms/GraficaSonora";
 import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
+import PorQueMuestrear from "@/components/organisms/PorQueMuestrear";
+import TendenciaIntervencion from "@/components/organisms/TendenciaIntervencion";
+import Cobertura from "@/components/organisms/Cobertura";
+import ValorParo from "@/components/organisms/ValorParo";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -217,9 +221,17 @@ export default async function ServicePage({
                             {overviewSubtitle}
                         </p>
                     </div>
-                    <ServicePuntos puntos={detailItems} foto={fotoPuntos} />
+                    {/* Igual que en monitoreo de condición: si el servicio trae
+                        `porQue`, la apertura es la foto real con las tres
+                        preguntas que contesta y cómo se hace. */}
+                    {service.porQue ? (
+                        <PorQueMuestrear porQue={service.porQue} />
+                    ) : (
+                        <ServicePuntos puntos={detailItems} foto={fotoPuntos} />
+                    )}
                 </div>
             </section>
+
 
             {/* Diferenciador de termografía: la misma escena a simple vista y
                 con cámara térmica. Va pegado a "Qué hacemos" porque es la
@@ -236,15 +248,52 @@ export default async function ServicePage({
 
             <ServiceProof certificacion={service.certificacion} />
 
-            {service.diagramas?.includes("flujo-servicio") && (
-                <DiagramaServicio clave="flujo-servicio" paso={paso()} flujo={service.flujo} />
+            {/* Lo que nos hace diferentes: pestañas con imagen, como en las
+                páginas de producto del sector. */}
+            {service.diferencias && (
+                <section className="w-full bg-gray-50 py-12 lg:py-20">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="mb-10 max-w-3xl">
+                            <Antetitulo paso={paso()}>{service.diferencias.etiqueta}</Antetitulo>
+                            <h2 className="mt-2 text-3xl lg:text-[2.75rem] font-extrabold text-primary leading-tight">
+                                {service.diferencias.titulo}
+                            </h2>
+                        </div>
+                        <ServicePuntos puntos={service.diferencias.items} />
+                    </div>
+                </section>
             )}
+
+            {service.diagramas?.includes("flujo-servicio") && (
+                <DiagramaServicio
+                    clave="flujo-servicio"
+                    paso={paso()}
+                    flujo={service.flujo}
+                    encabezado={service.flujoEncabezado}
+                    sinAhorro={!!service.valor}
+                />
+            )}
+
+            {/* En qué se traduce, en dinero, con las cifras del visitante. Va
+                después del cómo y antes de la prueba: primero el valor, luego
+                el caso real que lo respalda. */}
+            {service.valor && <ValorParo valor={service.valor} paso={paso()} />}
+
+            {/* Diferenciador de sensores: un punto real día por día, la
+                intervención y su efecto en toda la línea. */}
+            {service.tendenciaIntervencion && (
+                <TendenciaIntervencion tendencia={service.tendenciaIntervencion} paso={paso()} />
+            )}
+
+
 
             {/* Qué recibes. Va después del flujo porque es su desenlace: el
                 último paso del proceso es el informe, y aquí se enseña. */}
             {service.entregable && (
                 <ServiceEntregable entregable={service.entregable} paso={paso()} />
             )}
+
+            {service.cobertura && <Cobertura cobertura={service.cobertura} paso={paso()} />}
 
             {/* Related Products */}
             {/* <RelatedProducts

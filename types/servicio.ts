@@ -141,6 +141,8 @@ export interface ServiceEntregable {
   /** La portada de una ruta: cifras, barra por estado y prioridades
       (diagnóstico integral). Si viene, sustituye a las demás vitrinas. */
   resumenRuta?: ResumenRuta;
+  /** La alerta tal como llega al teléfono (sensores). Sustituye a las demás vitrinas. */
+  alerta?: AlertaSensor;
   /** Ficha con el antes y el después del equipo, para los servicios
       correctivos: ahí el entregable no es un informe de inspección sino la
       prueba de que el valor bajó. Si viene, sustituye a la vitrina de
@@ -195,10 +197,15 @@ export interface ServicePorQue {
   /** Si viene, en lugar de la foto va la escena 360: la máquina al centro y
       las técnicas en órbita (diagnóstico integral). */
   escena360?: ServiceEscena360;
+  /** Si es "sensores", en lugar de la foto va la escena "del sensor a tu
+      teléfono"; la foto queda como imagen de espera. */
+  escena?: "sensores";
   pie?: string;
   /** Las tres preguntas que contesta una muestra, sin valores de
       laboratorio, y qué se hace si cada una sale mal. */
-  preguntas: { pregunta: string; texto: string; siSaleMal: string }[];
+  preguntas: { pregunta: string; texto: string; siSaleMal?: string }[];
+  /** Sello destacado bajo la escena, ej. quién instala y analiza. */
+  destacado?: { titulo: string; texto: string };
   /** Cómo se toma la muestra, en fotos reales con una línea cada una. */
   comoSeHace?: { titulo: string; pasos: { foto: GaleriaFoto; texto: string }[] };
 }
@@ -441,6 +448,73 @@ export interface ServiceHojaIntegral {
   nota: string;
 }
 
+export interface AlertaSensor {
+  hora: string;
+  origen: string;
+  equipo: string;
+  estado: { clave: "bueno" | "observacion" | "precaucion" | "alarma"; etiqueta: string };
+  /** Valores relativos de la tendencia; el último es el que dispara la alerta. */
+  tendencia: number[];
+  que: string;
+  acciones: string[];
+  firma: string;
+  nota?: string;
+}
+
+export interface ServiceTendenciaIntervencion {
+  etiqueta: string;
+  titulo: string;
+  texto: string;
+  /** El punto que se grafica día por día. */
+  punto: string;
+  medida: string;
+  eje: string;
+  /** Estándar del punto (promedio de la línea base) y ancho de su banda, 0.2 = ±20 %. */
+  base: number;
+  banda: number;
+  /** Un valor por día; `null` el día de la intervención, sin dato. */
+  serie: { dia: string; valor: number | null }[];
+  intervencion: { dia: string; texto: string };
+  /** Medianas antes y después del punto graficado. */
+  antes: number;
+  despues: number;
+  /** Todos los canales de la línea, antes y después, con el cambio en %. */
+  canales: { nombre: string; antes: number; despues: number; cambio: number }[];
+  /** Si viene, sustituye a la tabla de canales: tres resultados grandes. */
+  resultados?: { cifra: string; texto: string; tono?: "bien" | "mal" }[];
+  lectura: string;
+  nota: string;
+}
+
+
+export interface ServiceValor {
+  etiqueta: string;
+  titulo: string;
+  texto: string;
+  /** Valores de ejemplo con los que abre la calculadora. */
+  inicial: { costoHora: number; horasParo: number; paros: number };
+  /** Horas de producción que se pierden si la reparación se planea. */
+  horasPlaneada: number;
+  supuesto: string;
+  nota: string;
+}
+
+export interface ServiceCobertura {
+  etiqueta: string;
+  titulo: string;
+  equiposTitulo: string;
+  equipos: string[];
+  fallasTitulo: string;
+  fallas: string[];
+}
+
+export interface ServiceDiferencias {
+  etiqueta: string;
+  titulo: string;
+  /** Pestañas con imagen, como el acordeón de puntos. */
+  items: ContentItem[];
+}
+
 export interface ServiceComparadorSonoro {
   titulo: string;
   texto?: string;
@@ -520,4 +594,15 @@ export interface Servicio {
   /** Diagnóstico integral: la hoja de una máquina del informe integral,
       como la genera IDAP. */
   hojaIntegral?: ServiceHojaIntegral;
+  /** Sensores de vibración: un punto día por día con su estándar, la
+      intervención y su efecto en toda la línea. */
+  tendenciaIntervencion?: ServiceTendenciaIntervencion;
+  /** "Qué nos hace diferentes": pestañas con imagen (monitoreo continuo). */
+  diferencias?: ServiceDiferencias;
+  /** Qué equipos se vigilan y qué fallas se detectan, en fichas. */
+  cobertura?: ServiceCobertura;
+  /** Encabezado propio del flujo "Cómo trabajamos". */
+  flujoEncabezado?: { titulo: string; texto: string };
+  /** En qué se traduce, en dinero, con las cifras del visitante. */
+  valor?: ServiceValor;
 }

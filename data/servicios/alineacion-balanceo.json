@@ -208,5 +208,30 @@
       "Se mide antes y después",
       "Servicio en todo México"
     ]
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué corrige?",
+    "equiposTitulo": "Equipos",
+    "equipos": [
+      "Motor con bomba",
+      "Motor con ventilador",
+      "Motor con compresor",
+      "Motor con reductor",
+      "Ventiladores e impulsores",
+      "Rotores de motor",
+      "Sopladores",
+      "Poleas"
+    ],
+    "fallasTitulo": "Lo que corrige",
+    "fallas": [
+      "Desalineación angular",
+      "Desalineación paralela",
+      "Pata coja",
+      "Desbalance estático",
+      "Desbalance dinámico",
+      "Vibración alta por desbalance o desalineación",
+      "Desgaste prematuro de rodamientos y sellos"
+    ]
   }
 }
