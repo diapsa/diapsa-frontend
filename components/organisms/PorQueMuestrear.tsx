@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Escena360 from "./Escena360";
 import EscenaSensores from "./EscenaSensores";
+import EscenaTermicas from "./EscenaTermicas";
 import type { ServicePorQue } from "@/types/servicio";
 
 /**
@@ -34,17 +35,17 @@ export default function PorQueMuestrear({ porQue }: Props) {
   // Sensores: la escena manda. Va a lo ancho de la página, con el sello de
   // quién instala y tres ideas de una línea debajo, sin párrafos. La escena
   // ya explica el servicio; el texto solo tiene que confirmar lo que se ve.
-  if (porQue.escena === "sensores") {
+  if (porQue.escena === "sensores" || porQue.escena === "termicas") {
     return (
       <div>
         <div className="mx-auto w-full max-w-5xl">
-          <EscenaSensores foto={porQue.foto} />
+          {porQue.escena === "termicas" ? <EscenaTermicas foto={porQue.foto} /> : <EscenaSensores foto={porQue.foto} />}
         </div>
 
         {porQue.destacado && (
           <div className="mx-auto mt-10 flex max-w-5xl flex-col gap-4 rounded-sm bg-primary px-6 py-6 text-white sm:flex-row sm:items-center sm:gap-6 lg:px-8">
             <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-secondary text-lg font-extrabold text-primary" aria-hidden="true">
-              III
+              {porQue.destacado.insignia ?? "III"}
             </span>
             <div>
               <p className="text-xl font-extrabold leading-snug lg:text-2xl">{porQue.destacado.titulo}</p>

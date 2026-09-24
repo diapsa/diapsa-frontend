@@ -22,14 +22,14 @@
   ],
   "header": {
     "title": "Proyectos de Cámaras Térmicas",
-    "subtitle": "Vigilancia térmica continua de equipos y tableros críticos",
+    "subtitle": "Vigilancia térmica continua para los equipos críticos que no pueden esperar a la siguiente ruta",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Cámaras térmicas fijas que vigilan tableros, motores y procesos las 24 horas y alertan ante calentamientos anómalos antes de la falla o el incendio.",
+  "seoDescription": "Cámaras térmicas fijas para equipos críticos: medición continua de temperatura, parámetros ajustados con algoritmos e IA que identifican patrones de falla, y alerta con el termograma. Tableros, subestaciones, motores, hornos y almacenes.",
   "content": {
-    "title": "¿Qué es un proyecto de cámara térmica?",
-    "subtitle": "Una cámara radiométrica fija mide la temperatura de tus puntos críticos de forma continua y dispara una alerta en cuanto algo se calienta fuera de lo normal, sin esperar a la siguiente inspección.",
-    "image": "/images/disciplinas/termografia.jpg",
+    "title": "Para los equipos donde medir una vez al mes no alcanza",
+    "subtitle": "No es para toda la planta: es para los equipos críticos, donde una falla para la línea o puede causar un incendio. Ahí la cámara mide sin parar, y los algoritmos e IA aprenden cómo se comporta cada punto para reconocer el patrón de una falla antes de que ocurra.",
+    "image": "/images/servicios/termografia-infrarroja/campo-02.webp",
     "items": [
       {
         "id": "donde-aplica",
@@ -51,7 +51,12 @@
   "cta": {
     "title": "¿Qué puntos de tu planta deberían vigilarse en continuo?",
     "text": "Cuéntanos qué equipos o tableros te preocupan y te proponemos el proyecto: cuántas cámaras, dónde y con qué umbrales.",
-    "whatsappMessage": "Hola, quiero información sobre proyectos de cámaras térmicas para mi planta."
+    "whatsappMessage": "Hola, quiero información sobre proyectos de cámaras térmicas para mi planta.",
+    "datos": [
+      "Para equipos críticos",
+      "Parámetros con algoritmos e IA",
+      "Alertas revisadas por termógrafos de DIAPSA"
+    ]
   },
   "relatedProducts": {
     "title": "Productos Relacionados",
@@ -79,5 +84,254 @@
       "Inicio de incendio",
       "Temperatura de proceso fuera de rango"
     ]
-  }
+  },
+  "certificacion": "Para equipos críticos · Parámetros con algoritmos e IA · Diseño y revisión por termógrafos de DIAPSA",
+  "porQue": {
+    "foto": {
+      "src": "/images/servicios/termografia-infrarroja/campo-02.webp",
+      "alt": "Termograma de un tablero con un punto a 476 °C"
+    },
+    "preguntas": [
+      {
+        "pregunta": "Solo donde es indispensable",
+        "texto": "Equipos críticos, sin respaldo o con riesgo de incendio."
+      },
+      {
+        "pregunta": "Medición constante",
+        "texto": "Cada punto, todo el día, con su historial guardado."
+      },
+      {
+        "pregunta": "Patrones, no solo límites",
+        "texto": "La alerta llega por el patrón de la falla, con menos falsas alarmas."
+      }
+    ],
+    "escena": "termicas",
+    "destacado": {
+      "titulo": "Para equipos críticos, donde medir sin parar es indispensable",
+      "texto": "Los algoritmos e IA aprenden cómo se comporta cada punto y reconocen el patrón de una falla. Un termógrafo de DIAPSA lo confirma antes de avisarte, o la alerta llega directo a tu sistema.",
+      "insignia": "IA"
+    }
+  },
+  "diferencias": {
+    "etiqueta": "Por qué DIAPSA",
+    "titulo": "¿Qué nos hace diferentes?",
+    "items": [
+      {
+        "id": "termografos",
+        "title": "Lo diseñan termógrafos, no instaladores",
+        "content": "Qué punto vigilar, desde qué ángulo, con qué lente y qué emisividad: lo decide quien lleva años leyendo termogramas en planta. Una cámara mal apuntada mide lo que no importa.",
+        "foto": {
+          "src": "/images/servicios/termografia-infrarroja/campo-06.webp",
+          "alt": "Termógrafo de DIAPSA inspeccionando interruptores dentro de un tablero"
+        }
+      },
+      {
+        "id": "ia",
+        "title": "Parámetros con algoritmos e IA",
+        "content": "Los algoritmos aprenden cómo se comporta cada punto según su carga, la hora y la temperatura ambiente. Así distinguen una tarde de calor de una conexión que se está aflojando, y avisan por el patrón, no solo por el número.",
+        "foto": {
+          "src": "/images/servicios/termografia-infrarroja/campo-31.webp",
+          "alt": "Termograma de una conexión con su temperatura máxima marcada"
+        }
+      },
+      {
+        "id": "alcance",
+        "title": "Solo en los equipos que lo justifican",
+        "content": "No se llena la planta de cámaras. Se vigilan los equipos críticos y los puntos donde es indispensable medir sin parar: tableros principales, subestaciones, hornos, bandas y almacenes con riesgo de incendio. El resto sigue en ruta.",
+        "foto": {
+          "src": "/images/servicios/termografia-infrarroja/campo-36.webp",
+          "alt": "Inspección termográfica en una nave de proceso"
+        }
+      },
+      {
+        "id": "monitoreo",
+        "title": "Monitoreo DIAPSA o directo a ti",
+        "content": "Si lo quieres, un termógrafo de DIAPSA revisa cada alerta y te llega con el diagnóstico y la acción. Si tienes cuarto de control, las alertas van directo a tu sistema. Puedes tener las dos.",
+        "foto": {
+          "src": "/images/servicios/termografia-infrarroja/campo-68.webp",
+          "alt": "Termograma con el punto caliente marcado en la pantalla de la cámara"
+        }
+      },
+      {
+        "id": "camara",
+        "title": "La cámara que pide el proyecto",
+        "content": "No vendemos una marca. Se elige la resolución, el lente y la protección que pide cada punto: un tablero interior no necesita lo mismo que un horno o un patio de materiales.",
+        "foto": {
+          "src": "/images/servicios/termografia-infrarroja/campo-21.webp",
+          "alt": "Cámara térmica apuntando a un equipo eléctrico tras la reja de protección"
+        }
+      }
+    ]
+  },
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujoEncabezado": {
+    "titulo": "Del punto crítico a la alerta, en cinco pasos",
+    "texto": "No vendemos cámaras: vendemos saber a tiempo que algo se está calentando. Así se arma el proyecto."
+  },
+  "flujo": [
+    {
+      "titulo": "Equipos críticos",
+      "texto": "Un termógrafo define contigo qué equipos justifican vigilancia continua: los que paran la línea, los que no tienen respaldo y los de riesgo de incendio."
+    },
+    {
+      "titulo": "Diseño",
+      "texto": "Para cada punto: cámara, lente, ubicación, ángulo y protección. Se asegura la vista directa, porque la cámara no ve a través de puertas ni cristal."
+    },
+    {
+      "titulo": "Instalación",
+      "texto": "Montaje, conexión y configuración de las áreas de medición en cada imagen, con la operación en marcha."
+    },
+    {
+      "titulo": "Algoritmos e IA",
+      "texto": "Con los primeros días de datos, los algoritmos aprenden el comportamiento normal de cada punto y se fijan los parámetros que reconocen el patrón de una falla."
+    },
+    {
+      "titulo": "Vigilancia y aviso",
+      "texto": "La alerta llega con el termograma, el patrón detectado y qué hacer: revisada por un termógrafo de DIAPSA o directo a tu sistema."
+    }
+  ],
+  "valor": {
+    "etiqueta": "En qué se traduce",
+    "titulo": "El mismo punto caliente, dos finales muy distintos",
+    "texto": "Una conexión floja se va a calentar igual. Lo que cambia es si te enteras en la siguiente ruta o en el momento en que empieza.",
+    "sinEtiqueta": "Solo con ruta",
+    "conEtiqueta": "Con la cámara",
+    "sin": "Te enteras tarde",
+    "con": "Te enteras a tiempo",
+    "filas": [
+      {
+        "concepto": "Cuándo te enteras",
+        "sin": "En la siguiente ruta, o cuando ya hay olor a quemado",
+        "con": "Cuando empieza a subir, con la imagen del punto"
+      },
+      {
+        "concepto": "Qué se daña",
+        "sin": "La conexión se funde y arrastra el interruptor o el tablero",
+        "con": "Se reaprieta o se cambia una pieza"
+      },
+      {
+        "concepto": "Riesgo",
+        "sin": "Arco eléctrico o incendio con gente cerca",
+        "con": "Se baja la carga y se atiende sin riesgo"
+      },
+      {
+        "concepto": "Producción",
+        "sin": "Paro de todo lo que alimenta ese tablero",
+        "con": "Intervención en una ventana programada"
+      },
+      {
+        "concepto": "Aseguradora",
+        "sin": "Un siniestro que explicar",
+        "con": "Un historial de temperatura que demuestra el cuidado"
+      }
+    ],
+    "cierre": "Lo que separa las dos columnas es el aviso. Eso es lo que te da la cámara."
+  },
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "La alerta llega así: qué es y qué hacer",
+    "descripcion": "No una imagen para interpretar. La alerta trae el punto, cuánto subió contra sus vecinos y la acción. Este es un ejemplo simulado.",
+    "contenido": [
+      "Termograma del punto en el momento de la alerta",
+      "El patrón detectado y contra qué se compara",
+      "Qué hacer, en orden",
+      "Historial de temperatura de cada punto vigilado"
+    ],
+    "alerta": {
+      "hora": "03:12",
+      "origen": "DIAPSA · Alerta térmica",
+      "equipo": "Tablero de fuerza · interruptor principal",
+      "estado": {
+        "clave": "alarma",
+        "etiqueta": "Crítico"
+      },
+      "tendencia": [
+        48,
+        49,
+        48,
+        50,
+        49,
+        51,
+        52,
+        55,
+        59,
+        66,
+        74,
+        83,
+        91
+      ],
+      "que": "La fase B sube más rápido que la carga: de 49 a 91 °C en tres horas, mientras A y C siguen en 50 °C. El patrón es de conexión floja, no de sobrecarga.",
+      "acciones": [
+        "Bajar la carga del circuito si es posible.",
+        "Reapretar o cambiar la conexión en la próxima ventana.",
+        "Confirmar con termografía de mano después de la corrección."
+      ],
+      "firma": "Revisada por un termógrafo de DIAPSA",
+      "insignia": "IR",
+      "nota": "Ejemplo simulado: el equipo, las temperaturas y la hora no corresponden a ningún cliente."
+    }
+  },
+  "galeria": [
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-09.webp",
+      "alt": "Termógrafo de DIAPSA inspeccionando un centro de control de motores."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-25.webp",
+      "alt": "Termograma de un motor con el calentamiento concentrado en un costado."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-12.webp",
+      "alt": "Termograma de conexiones con la temperatura máxima medida en pantalla."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-35.webp",
+      "alt": "Termografía de un equipo de proceso desde la plataforma de mantenimiento."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-49.webp",
+      "alt": "Inspección de un tablero de control junto al motor que alimenta."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-57.webp",
+      "alt": "Termograma en pantalla con la distribución de temperatura del equipo."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-32.webp",
+      "alt": "Termograma de un punto caliente en equipo eléctrico."
+    }
+  ],
+  "faq": [
+    {
+      "question": "¿Para qué equipos conviene una cámara fija?",
+      "answer": "Para los críticos: los que paran la línea si fallan, los que no tienen respaldo, los que se calientan rápido y los que tienen riesgo de incendio, como tableros principales, subestaciones, hornos, bandas y almacenes de material combustible. Donde basta revisar una vez al mes, la ruta con cámara de mano es más económica."
+    },
+    {
+      "question": "¿Sustituye a la ruta de termografía?",
+      "answer": "No, la complementa. Las cámaras van en los puntos que no pueden esperar a la siguiente ruta: los críticos, los que se calientan rápido y los de riesgo de incendio. El resto de la planta sigue en ruta con cámara de mano, que es más económica por punto."
+    },
+    {
+      "question": "¿Cómo se usan los algoritmos y la IA?",
+      "answer": "Aprenden el comportamiento normal de cada punto según su carga, la hora y la temperatura ambiente, y reconocen el patrón de una falla: una fase que se calienta más que sus vecinas, una temperatura que sube más rápido que la carga o un calentamiento que se repite a la misma hora. Así la alerta llega por el patrón y no solo por un límite fijo, con menos falsas alarmas. Cada alerta la puede confirmar un termógrafo de DIAPSA."
+    },
+    {
+      "question": "¿Qué cámara instalan?",
+      "answer": "La que pide cada punto. Se elige por resolución, lente, rango de temperatura y protección contra el ambiente: polvo, humedad o calor de proceso. Siempre radiométrica, es decir, que mide la temperatura de cada píxel y no solo muestra la imagen."
+    },
+    {
+      "question": "¿Quién recibe las alertas?",
+      "answer": "Tú decides. Un termógrafo de DIAPSA puede revisar cada alerta y avisarte con el diagnóstico y la acción, o las alertas pueden llegar directo a tu sistema o a tu equipo. También se pueden tener las dos."
+    },
+    {
+      "question": "¿La cámara ve dentro de un tablero cerrado?",
+      "answer": "No. La radiación infrarroja no atraviesa lámina ni vidrio común, así que la cámara necesita vista directa al punto. En tableros se resuelve con la ubicación de la cámara o con ventanas de inspección infrarroja; lo definimos en el diseño."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "La lista de equipos o áreas que te preocupan, fotos de cómo están y si tienes un sistema al que deban llegar las alertas. Con eso proponemos cuántas cámaras, dónde y cómo se monitorean."
+    }
+  ],
+  "mostrarClientes": true
 }
