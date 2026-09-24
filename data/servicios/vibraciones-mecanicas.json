@@ -145,32 +145,80 @@
   "certificacion": "Analistas Categoría III · ISO 18436-2",
   "galeria": [
     {
-      "src": "/images/gallery/campo/vibracion-analista-motor.webp",
-      "alt": "Analista de DIAPSA tomando la vibración de un motor eléctrico con el equipo en operación normal."
-    },
-    {
-      "src": "/images/gallery/campo/vibracion-analizador-motor.webp",
-      "alt": "Analizador y acelerómetro en el punto de medición del motor: misma posición en cada visita para que los datos sean comparables."
-    },
-    {
-      "src": "/images/gallery/campo/vibracion-bomba-verde.webp",
-      "alt": "Medición sobre la carcasa de una bomba, en las tres direcciones que exige la norma."
-    },
-    {
       "src": "/images/gallery/campo/vibracion-punto-medicion.webp",
       "alt": "Registro del punto en el analizador, que después se sube a IDAP con su historial."
     },
     {
+      "src": "/images/gallery/campo/vibracion-analizador-mano.webp",
+      "alt": "Analista de DIAPSA con el colector de vibraciones en mano, leyendo el espectro en campo."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-motor-bomba-azul.webp",
+      "alt": "Medición en el motor de una bomba de proceso, con el equipo en operación."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-bomba-roja.webp",
+      "alt": "Ruta de vibraciones en el cuarto de bombas contra incendio."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-motor-vertical.webp",
+      "alt": "Medición sobre un motor vertical desde la rejilla de mantenimiento."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-torre-enfriamiento.webp",
+      "alt": "Inspección dentro de una torre de enfriamiento, sobre el andador del ventilador."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-ventilador-torre.webp",
+      "alt": "Medición del motor del ventilador en la cubierta de una torre de enfriamiento."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-inspeccion-torre.webp",
+      "alt": "Equipo de DIAPSA con arnés revisando el ventilador de una torre de enfriamiento."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-motor-en-altura.webp",
+      "alt": "Medición en altura desde plataforma elevadora, sobre un equipo de proceso."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-generador.webp",
+      "alt": "Medición de vibraciones en un generador de emergencia."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-motor-ventilador.webp",
+      "alt": "Toma de datos en el motor de un ventilador industrial."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-transmision-bandas.webp",
+      "alt": "Medición en una transmisión por bandas de una máquina de proceso."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-maquina-proceso.webp",
+      "alt": "Analista de DIAPSA revisando la lectura en una línea de producción."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-motor-grande.webp",
+      "alt": "Lectura del espectro junto a un motor de gran potencia."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-bomba-vertical.webp",
+      "alt": "Medición en una bomba vertical de agua de enfriamiento."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-motor-torre.webp",
+      "alt": "Colector y acelerómetro sobre el motor de una torre de enfriamiento."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-espacio-reducido.webp",
+      "alt": "Medición en un espacio reducido, bajo la tubería de proceso."
+    },
+    {
+      "src": "/images/gallery/campo/vibracion-aplicando-recomendaciones.webp",
+      "alt": "Personal de la planta aplicando las recomendaciones del informe de vibraciones."
+    },
+    {
       "src": "/images/gallery/campo-img-3.jpg",
       "alt": "Ruta de medición de vibraciones en planta, equipo por equipo."
-    },
-    {
-      "src": "/images/gallery/campo-img-8.jpg",
-      "alt": "Trabajo de campo de los analistas de DIAPSA en instalaciones industriales."
-    },
-    {
-      "src": "/images/gallery/campo-img-2.jpg",
-      "alt": "Inspección de maquinaria rotativa durante una jornada de monitoreo de condición."
     }
   ],
   "cta": {
@@ -207,5 +255,39 @@
     "titulo": "Alineación y Balanceo",
     "texto": "Cuando el espectro señala desalineación o desbalanceo, el diagnóstico ya está hecho y falta la corrección. La hacemos en campo, con alineación láser y balanceo en sitio, midiendo antes y después para probar que la vibración bajó de verdad.",
     "enlace": "Ver alineación y balanceo"
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué detecta?",
+    "equiposTitulo": "Equipos",
+    "equipos": [
+      "Motores eléctricos",
+      "Bombas",
+      "Ventiladores y extractores",
+      "Compresores",
+      "Reductores y cajas de engranes",
+      "Sopladores",
+      "Turbinas",
+      "Generadores",
+      "Molinos",
+      "Agitadores y mezcladoras",
+      "Torres de enfriamiento",
+      "Transportadores"
+    ],
+    "fallasTitulo": "Fallas que detecta",
+    "fallas": [
+      "Desbalance",
+      "Desalineación",
+      "Holgura mecánica",
+      "Desgaste de rodamientos",
+      "Falla de lubricación",
+      "Resonancia",
+      "Eje doblado",
+      "Desgaste de engranes",
+      "Problemas de bandas",
+      "Cavitación",
+      "Excentricidad",
+      "Pata coja"
+    ]
   }
 }

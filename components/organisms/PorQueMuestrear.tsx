@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Escena360 from "./Escena360";
+import EscenaSensores from "./EscenaSensores";
 import type { ServicePorQue } from "@/types/servicio";
 
 /**
@@ -30,6 +31,43 @@ type Props = {
 };
 
 export default function PorQueMuestrear({ porQue }: Props) {
+  // Sensores: la escena manda. Va a lo ancho de la página, con el sello de
+  // quién instala y tres ideas de una línea debajo, sin párrafos. La escena
+  // ya explica el servicio; el texto solo tiene que confirmar lo que se ve.
+  if (porQue.escena === "sensores") {
+    return (
+      <div>
+        <div className="mx-auto w-full max-w-5xl">
+          <EscenaSensores foto={porQue.foto} />
+        </div>
+
+        {porQue.destacado && (
+          <div className="mx-auto mt-10 flex max-w-5xl flex-col gap-4 rounded-sm bg-primary px-6 py-6 text-white sm:flex-row sm:items-center sm:gap-6 lg:px-8">
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-secondary text-lg font-extrabold text-primary" aria-hidden="true">
+              III
+            </span>
+            <div>
+              <p className="text-xl font-extrabold leading-snug lg:text-2xl">{porQue.destacado.titulo}</p>
+              <p className="mt-1 text-justify text-sm leading-relaxed text-white/75 lg:text-base">{porQue.destacado.texto}</p>
+            </div>
+          </div>
+        )}
+
+        <ol className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3">
+          {porQue.preguntas.map((p, i) => (
+            <li key={p.pregunta} className="border-t-2 border-secondary pt-4">
+              <span className="text-xs font-extrabold text-secondary" aria-hidden="true">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-1 text-lg font-extrabold leading-snug text-primary">{p.pregunta}</h3>
+              <p className="mt-1.5 text-justify text-sm leading-relaxed text-tertiary">{p.texto}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14">
@@ -70,12 +108,14 @@ export default function PorQueMuestrear({ porQue }: Props) {
               <div className="min-w-0">
                 <h3 className="text-xl font-extrabold leading-snug text-primary lg:text-2xl">{p.pregunta}</h3>
                 <p className="mt-2 text-justify text-base leading-relaxed text-tertiary">{p.texto}</p>
+                {p.siSaleMal && (
                 <p className="mt-2 text-justify text-sm leading-relaxed text-primary">
                   <span className="mr-2 text-[11px] font-bold uppercase tracking-wider text-secondary">
                     Si sale mal
                   </span>
                   {p.siSaleMal}
                 </p>
+                )}
               </div>
             </li>
           ))}

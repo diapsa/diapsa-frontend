@@ -560,5 +560,31 @@
       "src": "/images/servicios/tierras-fisicas/medicion-registro.webp",
       "alt": "Analista de DIAPSA conectando el telurómetro al electrodo."
     }
-  ]
+  ],
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué encuentra?",
+    "equiposTitulo": "Dónde se mide",
+    "equipos": [
+      "Subestaciones",
+      "Tableros y centros de carga",
+      "Transformadores",
+      "Estructuras metálicas",
+      "Pararrayos",
+      "Tanques y equipos con electricidad estática",
+      "Cuartos de equipo electrónico",
+      "Motores y maquinaria"
+    ],
+    "fallasTitulo": "Lo que encuentra",
+    "fallas": [
+      "Resistencia fuera de límite",
+      "Electrodos corroídos",
+      "Conexiones flojas o rotas",
+      "Falta de continuidad",
+      "Registros dañados",
+      "Equipos sin aterrizar",
+      "Riesgo de descarga al personal",
+      "Incumplimiento de NOM-022-STPS"
+    ]
+  }
 }
