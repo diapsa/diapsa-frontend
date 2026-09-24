@@ -199,13 +199,13 @@ export interface ServicePorQue {
   escena360?: ServiceEscena360;
   /** Si es "sensores", en lugar de la foto va la escena "del sensor a tu
       teléfono"; la foto queda como imagen de espera. */
-  escena?: "sensores";
+  escena?: "sensores" | "termicas";
   pie?: string;
   /** Las tres preguntas que contesta una muestra, sin valores de
       laboratorio, y qué se hace si cada una sale mal. */
   preguntas: { pregunta: string; texto: string; siSaleMal?: string }[];
   /** Sello destacado bajo la escena, ej. quién instala y analiza. */
-  destacado?: { titulo: string; texto: string };
+  destacado?: { titulo: string; texto: string; insignia?: string };
   /** Cómo se toma la muestra, en fotos reales con una línea cada una. */
   comoSeHace?: { titulo: string; pasos: { foto: GaleriaFoto; texto: string }[] };
 }
@@ -462,6 +462,8 @@ export interface AlertaSensor {
   que: string;
   acciones: string[];
   firma: string;
+  /** Texto del círculo junto a la firma; por omisión "III". */
+  insignia?: string;
   nota?: string;
 }
 
@@ -498,6 +500,9 @@ export interface ServiceValor {
   /** Título de cada columna: la falla sin aviso y con el sensor. */
   sin: string;
   con: string;
+  /** Rótulo pequeño sobre cada columna; por omisión "Sin aviso" y "Con el sensor". */
+  sinEtiqueta?: string;
+  conEtiqueta?: string;
   /** Un renglón por concepto, con cómo se ve en cada columna. */
   filas: { concepto: string; sin: string; con: string }[];
   cierre: string;

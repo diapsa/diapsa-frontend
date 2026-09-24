@@ -75,7 +75,7 @@ export default function AlertaSensor({ alerta: a }: Props) {
             {/* Quién la revisó */}
             <div className="flex items-center gap-3 rounded-2xl bg-primary px-4 py-3 text-white">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-secondary text-xs font-extrabold text-primary" aria-hidden="true">
-                III
+                {a.insignia ?? "III"}
               </span>
               <p className="text-xs font-semibold leading-snug">{a.firma}</p>
             </div>

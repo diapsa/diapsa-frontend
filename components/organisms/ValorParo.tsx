@@ -49,11 +49,11 @@ export default function ValorParo({ valor: v, paso }: Props) {
           <div className="grid grid-cols-2 lg:grid-cols-[minmax(0,0.6fr)_minmax(0,1fr)_minmax(0,1fr)]">
             <div className="hidden bg-gray-50 lg:block" />
             <div className="bg-red-600 px-4 py-4 text-white lg:px-6">
-              <p className="text-[11px] font-bold uppercase tracking-widest text-white/80">Sin aviso</p>
+              <p className="text-[11px] font-bold uppercase tracking-widest text-white/80">{v.sinEtiqueta ?? "Sin aviso"}</p>
               <p className="mt-0.5 text-base font-extrabold leading-snug lg:text-xl">{v.sin}</p>
             </div>
             <div className="bg-emerald-600 px-4 py-4 text-white lg:px-6">
-              <p className="text-[11px] font-bold uppercase tracking-widest text-white/80">Con el sensor</p>
+              <p className="text-[11px] font-bold uppercase tracking-widest text-white/80">{v.conEtiqueta ?? "Con el sensor"}</p>
               <p className="mt-0.5 text-base font-extrabold leading-snug lg:text-xl">{v.con}</p>
             </div>
           </div>
