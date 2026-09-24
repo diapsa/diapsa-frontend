@@ -512,15 +512,37 @@
   },
   "valor": {
     "etiqueta": "En qué se traduce",
-    "titulo": "Lo que vale enterarte a tiempo",
-    "texto": "La falla es la misma. Lo que cambia es cuándo te enteras: con aviso, la refacción llega a tiempo y la reparación cabe en una ventana programada. Pon tus cifras.",
-    "inicial": {
-      "costoHora": 80000,
-      "horasParo": 12,
-      "paros": 2
-    },
-    "horasPlaneada": 2,
-    "supuesto": "Valores de ejemplo, cámbialos por los tuyos. Con aviso, la reparación se hace en una ventana de 2 horas.",
-    "nota": "Solo cuenta horas de producción. No incluye el daño que arrastra la falla, la refacción y el flete urgentes ni las horas extra, que en un paro sin aviso suelen sumar todavía más."
+    "titulo": "La misma falla, dos cuentas muy distintas",
+    "texto": "Un rodamiento se va a dañar igual. Lo que cambia es si te enteras cuando ya paró la línea o semanas antes.",
+    "sin": "La falla te encuentra",
+    "con": "La ves venir",
+    "filas": [
+      {
+        "concepto": "Cuándo paras",
+        "sin": "Cuando la máquina decide, a mitad del turno",
+        "con": "En la ventana que tú eliges"
+      },
+      {
+        "concepto": "Refacción",
+        "sin": "Urgente, con flete exprés",
+        "con": "Pedida con tiempo, a precio normal"
+      },
+      {
+        "concepto": "Daño",
+        "sin": "El rodamiento se lleva el eje, el sello o el motor",
+        "con": "Solo cambias la pieza que falló"
+      },
+      {
+        "concepto": "Tu gente",
+        "sin": "Horas extra y todos apagando el fuego",
+        "con": "Trabajo planeado, en su horario"
+      },
+      {
+        "concepto": "Producción",
+        "sin": "Horas de línea parada y pedidos atrasados",
+        "con": "La producción sigue según el plan"
+      }
+    ],
+    "cierre": "Lo que separa las dos columnas es el aviso. Eso es lo que te da el sensor."
   }
 }

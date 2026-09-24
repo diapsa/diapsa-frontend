@@ -121,13 +121,13 @@
     }
   },
   "tecnicas": {
-    "etiqueta": "Qué se prueba",
-    "titulo": "Calidad de la energía, y las pruebas que le corresponden a cada equipo",
-    "texto": "La primera tarjeta se mide con la planta operando; las otras cuatro, en el paro. Cada una enseña cómo se ve un hallazgo en el reporte: el valor medido, su referencia y la acción.",
+    "etiqueta": "Qué medimos",
+    "titulo": "Con la planta operando, y en el paro",
+    "texto": "La calidad de la energía, con la planta operando. Y en el paro, las pruebas a cada equipo.",
     "items": [
       {
         "nombre": "Calidad de la energía",
-        "texto": "Lo que pasa en tu red eléctrica mientras produces. Se registra con la planta operando, sin paro y sin desconectar nada.",
+        "texto": "Una semana de registro en tus tableros, sin paro y sin desconectar nada.",
         "equipos": "Tableros generales, subestaciones, centros de control de motores y circuitos con variadores, UPS o bancos de capacitores.",
         "mide": [
           "Armónicos de tensión y corriente",
@@ -163,7 +163,8 @@
             }
           ],
           "accion": "Armónicos por variadores sin filtro y factor de potencia penalizable. Filtro en los variadores y banco de capacitores desintonizado."
-        }
+        },
+        "enOperacion": true
       },
       {
         "nombre": "Transformadores",
@@ -207,7 +208,8 @@
             }
           ],
           "accion": "Aislamiento con humedad. Deshidratar el aceite al vacío, revisar respiraderos y repetir la prueba antes de energizar."
-        }
+        },
+        "resumen": "Aislamiento y devanados, en aceite y secos."
       },
       {
         "nombre": "Interruptores y tableros",
@@ -246,7 +248,8 @@
             }
           ],
           "accion": "Contacto de fase B desgastado y mecanismo lento. Limpiar y ajustar contactos, lubricar el mecanismo y repetir tiempos antes de reponer."
-        }
+        },
+        "resumen": "Que abran, cierren y aíslen como deben."
       },
       {
         "nombre": "Cables de media tensión",
@@ -284,7 +287,8 @@
             }
           ],
           "accion": "Circuito en condición de servicio. Continuar con el programa; siguiente prueba en el paro de dentro de tres años."
-        }
+        },
+        "resumen": "Que el aislamiento resista antes de energizar."
       },
       {
         "nombre": "Motores y generadores",
@@ -327,7 +331,8 @@
             }
           ],
           "accion": "Aislamiento al límite. Limpiar y secar el devanado en el siguiente paro; repetir la prueba en seis meses para confirmar la tendencia."
-        }
+        },
+        "resumen": "El estado del aislamiento y del devanado."
       }
     ],
     "nota": "Los hallazgos de las tarjetas son ejemplos simulados para mostrar la forma del reporte, no casos de un cliente. Las pruebas y sus criterios siguen IEEE 43, IEEE 62, IEEE C57 y las tablas de aceptación de NETA."

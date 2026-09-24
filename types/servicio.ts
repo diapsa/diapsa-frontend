@@ -413,6 +413,10 @@ export interface ServiceTecnicas {
     texto: string;
     equipos: string;
     mide: string[];
+    /** Se mide con la planta operando: va arriba, a lo ancho. */
+    enOperacion?: boolean;
+    /** Una línea para la tarjeta chica; si no viene, se usa `texto`. */
+    resumen?: string;
     frecuencia: string;
     entregable: string;
     /** A la página de la disciplina, si existe. */
@@ -491,12 +495,12 @@ export interface ServiceValor {
   etiqueta: string;
   titulo: string;
   texto: string;
-  /** Valores de ejemplo con los que abre la calculadora. */
-  inicial: { costoHora: number; horasParo: number; paros: number };
-  /** Horas de producción que se pierden si la reparación se planea. */
-  horasPlaneada: number;
-  supuesto: string;
-  nota: string;
+  /** Título de cada columna: la falla sin aviso y con el sensor. */
+  sin: string;
+  con: string;
+  /** Un renglón por concepto, con cómo se ve en cada columna. */
+  filas: { concepto: string; sin: string; con: string }[];
+  cierre: string;
 }
 
 export interface ServiceCobertura {

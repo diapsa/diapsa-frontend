@@ -1,24 +1,19 @@
-"use client";
-
-import { useState } from "react";
 import Antetitulo from "../atoms/Antetitulo";
 import type { ServiceValor } from "@/types/servicio";
 
 /**
  * ValorParo
- * "En qué se traduce", en dinero: lo que cuesta un paro por falla sin aviso
- * contra la misma reparación hecha en una ventana programada, con las cifras
- * de la planta de quien lee.
+ * "En qué se traduce": la misma falla, contada dos veces. Una cuando te
+ * encuentra sin aviso y otra cuando el sensor la ve venir, renglón por
+ * renglón: cuándo paras, qué pagas por la refacción, qué se daña y cómo
+ * trabaja tu gente.
  *
- * Por qué es una calculadora y no una gráfica. No hay cifras de un cliente
- * que se puedan publicar, y un "ahorra 30 %" genérico no convence a nadie
- * que conozca su planta. Aquí el visitante mueve tres números que sí conoce
- * (lo que le cuesta una hora parada, cuánto dura un paro y cuántos tiene al
- * año) y ve el resultado. Los valores iniciales son un ejemplo y lo dice.
- *
- * El cálculo es conservador a propósito: solo cuenta horas de producción.
- * El daño colateral, la refacción urgente y las horas extra quedan fuera y
- * se dice al pie, porque suman y no se pueden estimar sin conocer el equipo.
+ * Por qué no es una calculadora. La primera versión pedía al visitante el
+ * costo de su hora parada y devolvía un total en pesos; se sentía como un
+ * formulario y el número dependía de supuestos que nadie iba a creer. Esta
+ * versión no promete cifras: pone lado a lado las dos cuentas que todo jefe
+ * de mantenimiento ya conoce, y deja que él ponga el precio. Componente de
+ * servidor, todo viene del JSON.
  */
 
 type Props = {
@@ -26,56 +21,20 @@ type Props = {
   paso?: string;
 };
 
-const pesos = (n: number) =>
-  n.toLocaleString("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 });
-
-function Control({
-  etiqueta,
-  valor,
-  min,
-  max,
-  paso,
-  mostrar,
-  alCambiar,
-}: {
-  etiqueta: string;
-  valor: number;
-  min: number;
-  max: number;
-  paso: number;
-  mostrar: string;
-  alCambiar: (n: number) => void;
-}) {
+function Marca({ bien }: { bien: boolean }) {
   return (
-    <label className="block">
-      <span className="flex items-baseline justify-between gap-3">
-        <span className="text-sm font-semibold text-primary">{etiqueta}</span>
-        <span className="text-lg font-extrabold tabular-nums text-primary">{mostrar}</span>
-      </span>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={paso}
-        value={valor}
-        onChange={(e) => alCambiar(Number(e.target.value))}
-        className="mt-2 w-full accent-secondary"
-      />
-    </label>
+    <span
+      className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-extrabold text-white ${
+        bien ? "bg-emerald-500" : "bg-red-500"
+      }`}
+      aria-hidden="true"
+    >
+      {bien ? "✓" : "✕"}
+    </span>
   );
 }
 
 export default function ValorParo({ valor: v, paso }: Props) {
-  const [costoHora, setCostoHora] = useState(v.inicial.costoHora);
-  const [horasParo, setHorasParo] = useState(v.inicial.horasParo);
-  const [paros, setParos] = useState(v.inicial.paros);
-
-  const sinAviso = costoHora * horasParo;
-  const conAviso = costoHora * v.horasPlaneada;
-  const porParo = Math.max(0, sinAviso - conAviso);
-  const alAnio = porParo * paros;
-  const pct = sinAviso > 0 ? (conAviso / sinAviso) * 100 : 0;
-
   return (
     <section className="w-full bg-white py-12 lg:py-20">
       <div className="mx-auto max-w-7xl px-6">
@@ -85,69 +44,40 @@ export default function ValorParo({ valor: v, paso }: Props) {
           <p className="mt-3 text-justify text-lg leading-relaxed text-tertiary">{v.texto}</p>
         </div>
 
-        <div className="grid grid-cols-1 overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
-          {/* Las cifras de tu planta */}
-          <div className="space-y-7 bg-gray-50 p-6 lg:p-10">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">Pon las cifras de tu planta</p>
-            <Control
-              etiqueta="Una hora de línea parada"
-              valor={costoHora}
-              min={10000}
-              max={500000}
-              paso={5000}
-              mostrar={pesos(costoHora)}
-              alCambiar={setCostoHora}
-            />
-            <Control
-              etiqueta="Horas que dura un paro por falla"
-              valor={horasParo}
-              min={2}
-              max={72}
-              paso={1}
-              mostrar={`${horasParo} h`}
-              alCambiar={setHorasParo}
-            />
-            <Control
-              etiqueta="Paros por falla al año en tus equipos críticos"
-              valor={paros}
-              min={1}
-              max={12}
-              paso={1}
-              mostrar={String(paros)}
-              alCambiar={setParos}
-            />
-            <p className="text-justify text-xs leading-relaxed text-tertiary">{v.supuesto}</p>
+        <div className="overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5">
+          {/* Encabezados de las dos columnas */}
+          <div className="grid grid-cols-2 lg:grid-cols-[minmax(0,0.6fr)_minmax(0,1fr)_minmax(0,1fr)]">
+            <div className="hidden bg-gray-50 lg:block" />
+            <div className="bg-red-600 px-4 py-4 text-white lg:px-6">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-white/80">Sin aviso</p>
+              <p className="mt-0.5 text-base font-extrabold leading-snug lg:text-xl">{v.sin}</p>
+            </div>
+            <div className="bg-emerald-600 px-4 py-4 text-white lg:px-6">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-white/80">Con el sensor</p>
+              <p className="mt-0.5 text-base font-extrabold leading-snug lg:text-xl">{v.con}</p>
+            </div>
           </div>
 
-          {/* El resultado */}
-          <div className="flex flex-col justify-center bg-primary p-6 text-white lg:p-10">
-            <div className="space-y-4">
-              <div>
-                <div className="flex items-baseline justify-between text-sm">
-                  <span className="text-white/75">Sin aviso: la falla te encuentra</span>
-                  <span className="font-bold tabular-nums">{pesos(sinAviso)}</span>
-                </div>
-                <div className="mt-1.5 h-4 w-full rounded-sm bg-red-500" />
-              </div>
-              <div>
-                <div className="flex items-baseline justify-between text-sm">
-                  <span className="text-white/75">Con aviso: la reparas en ventana</span>
-                  <span className="font-bold tabular-nums">{pesos(conAviso)}</span>
-                </div>
-                <div className="mt-1.5 h-4 w-full rounded-sm bg-white/10">
-                  <div className="h-full rounded-sm bg-emerald-400 transition-all duration-300" style={{ width: `${Math.max(pct, 1.5)}%` }} />
-                </div>
-              </div>
-            </div>
+          {/* Una fila por concepto */}
+          <ul className="divide-y divide-gray-100">
+            {v.filas.map((f) => (
+              <li key={f.concepto} className="grid grid-cols-2 lg:grid-cols-[minmax(0,0.6fr)_minmax(0,1fr)_minmax(0,1fr)]">
+                <p className="col-span-2 bg-gray-50 px-4 pt-4 text-[11px] font-bold uppercase tracking-widest text-tertiary lg:col-span-1 lg:flex lg:items-center lg:px-6 lg:py-5">
+                  {f.concepto}
+                </p>
+                <p className="flex gap-2.5 bg-red-50/60 px-4 py-3 text-sm leading-snug text-primary lg:px-6 lg:py-5 lg:text-base">
+                  <Marca bien={false} />
+                  {f.sin}
+                </p>
+                <p className="flex gap-2.5 bg-emerald-50/60 px-4 py-3 text-sm leading-snug text-primary lg:px-6 lg:py-5 lg:text-base">
+                  <Marca bien />
+                  {f.con}
+                </p>
+              </li>
+            ))}
+          </ul>
 
-            <div className="mt-8 border-t border-white/15 pt-6">
-              <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">Cada paro que se ve venir</p>
-              <p className="mt-1 text-3xl font-extrabold tabular-nums lg:text-4xl">{pesos(porParo)}</p>
-              <p className="mt-5 text-[11px] font-bold uppercase tracking-widest text-secondary">Al año, con tus cifras</p>
-              <p className="mt-1 text-4xl font-extrabold tabular-nums text-secondary lg:text-5xl">{pesos(alAnio)}</p>
-            </div>
-            <p className="mt-6 text-justify text-xs leading-relaxed text-white/60">{v.nota}</p>
-          </div>
+          <p className="bg-primary px-6 py-5 text-center text-base font-extrabold text-white lg:text-lg">{v.cierre}</p>
         </div>
       </div>
     </section>
