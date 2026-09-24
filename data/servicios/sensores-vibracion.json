@@ -22,14 +22,14 @@
   ],
   "header": {
     "title": "Sensores de Vibración",
-    "subtitle": "Monitoreo de vibración inalámbrico las 24 horas",
+    "subtitle": "Tus equipos críticos medidos cada 10 minutos, con un analista viendo la tendencia",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Sensores de vibración inalámbricos que vigilan tus equipos rotativos las 24 horas y alertan ante cambios de condición, con análisis remoto por especialistas.",
+  "seoDescription": "Monitoreo continuo con sensores de vibración inalámbricos: lectura cada 10 minutos en equipos críticos, alertas por cambio de tendencia y análisis remoto por especialistas de DIAPSA. Instalación, estación base y plataforma IDAP.",
   "content": {
-    "title": "¿Qué hacen los sensores de vibración?",
-    "subtitle": "Miden la vibración del equipo de forma continua y envían los datos a la nube: cuando la tendencia cambia, el sistema alerta y un analista confirma qué está pasando, semanas antes del paro.",
-    "image": "/images/monitoreo-continuo/wireless-vibration-sensor-kcf.png",
+    "title": "La falla que nace entre dos rutas, la ve el sensor",
+    "subtitle": "El sensor se queda en la máquina, mide cada 10 minutos y un especialista revisa cada cambio antes de avisarte.",
+    "image": "/images/servicios/sensores-vibracion/sensor-motor.webp",
     "items": [
       {
         "id": "donde-aplica",
@@ -52,11 +52,497 @@
   "cta": {
     "title": "¿Qué equipos de tu planta no pueden esperar a la siguiente ruta?",
     "text": "Compártenos tus activos críticos y te proponemos cuántos sensores necesitas, dónde van y qué vas a ver en la plataforma.",
-    "whatsappMessage": "Hola, quiero información sobre sensores de vibración para monitoreo continuo."
+    "whatsappMessage": "Hola, quiero información sobre sensores de vibración para monitoreo continuo.",
+    "datos": [
+      "Especialistas en vibraciones Categoría III",
+      "Instalación sin parar el equipo",
+      "Alertas revisadas por especialista"
+    ]
   },
   "relatedProducts": {
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
+  },
+  "porQue": {
+    "foto": {
+      "src": "/images/servicios/sensores-vibracion/instalacion-sensor.webp",
+      "alt": "Técnica de DIAPSA instalando un sensor de vibración inalámbrico en un equipo de proceso"
+    },
+    "preguntas": [
+      {
+        "pregunta": "Cada 10 minutos",
+        "texto": "De día y de noche. La falla que nace entre dos rutas se ve el mismo día."
+      },
+      {
+        "pregunta": "Cada alerta, revisada",
+        "texto": "Un especialista la confirma contra el espectro antes de que te llegue."
+      },
+      {
+        "pregunta": "Sin exponer a nadie",
+        "texto": "Torres, alturas y zonas calientes se miden sin subir ni entrar."
+      }
+    ],
+    "comoSeHace": {
+      "titulo": "Así se instala",
+      "pasos": [
+        {
+          "foto": {
+            "src": "/images/servicios/sensores-vibracion/sensor-rodamiento.webp",
+            "alt": "Sensor inalámbrico fijado con epóxico sobre el alojamiento de un rodamiento"
+          },
+          "texto": "Cada sensor se fija sobre el alojamiento del rodamiento, en el mismo punto donde el analista mediría a mano, con base de epóxico o tornillo."
+        },
+        {
+          "foto": {
+            "src": "/images/servicios/sensores-vibracion/estacion-base.webp",
+            "alt": "Técnico de DIAPSA con la estación base inalámbrica en planta"
+          },
+          "texto": "Una estación base recibe las lecturas de todos los sensores del área por radio y las envía a la plataforma, sin cablear la planta."
+        },
+        {
+          "foto": {
+            "src": "/images/servicios/sensores-vibracion/sensor-motor.webp",
+            "alt": "Sensor de vibración montado en un motor en operación"
+          },
+          "texto": "Con las primeras semanas de lecturas se fija la línea base de cada equipo y sus umbrales; a partir de ahí, cada cambio de tendencia se revisa."
+        }
+      ]
+    },
+    "escena": "sensores",
+    "destacado": {
+      "titulo": "Instalado y analizado por especialistas en vibraciones Categoría III",
+      "texto": "No por analistas de datos. Quien elige el punto, monta el sensor y revisa cada alerta es un especialista certificado que lee el espectro de la máquina, no solo una gráfica."
+    }
+  },
+  "certificacion": "Instalación y análisis por especialistas en vibraciones Categoría III · Sensores KCF Technologies · IDAP",
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujo": [
+    {
+      "titulo": "Selección de equipos",
+      "texto": "Se eligen los que justifican un sensor: los críticos, los que fallan rápido y los de acceso difícil o peligroso. El resto sigue en ruta."
+    },
+    {
+      "titulo": "Instalación",
+      "texto": "Un especialista Categoría III elige el punto de cada rodamiento y monta el sensor, con el equipo en operación."
+    },
+    {
+      "titulo": "Línea base",
+      "texto": "Las primeras semanas de lecturas definen cómo vibra cada equipo sano; con eso se fijan sus umbrales, no con un valor genérico."
+    },
+    {
+      "titulo": "Vigilancia",
+      "texto": "Lectura cada 10 minutos. Cada cambio de tendencia lo revisa un especialista contra el espectro antes de volverse alerta."
+    },
+    {
+      "titulo": "Aviso y acción",
+      "texto": "La alerta llega con el diagnóstico, la severidad y qué hacer, y se sigue hasta que el equipo regresa a su línea base."
+    }
+  ],
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "La alerta llega así: qué es y qué hacer",
+    "descripcion": "No una gráfica para interpretar. Cada alerta llega revisada por un especialista, con la causa y las acciones. Esta es la de esa misma planta.",
+    "contenido": [
+      "Estado del equipo en semáforo",
+      "Qué es y de dónde viene",
+      "Qué hacer, en orden",
+      "Tendencia cada 10 minutos en IDAP"
+    ],
+    "alerta": {
+      "hora": "07:40",
+      "origen": "DIAPSA · Alerta de vibración",
+      "equipo": "Homogeneizador · tubería de succión",
+      "estado": {
+        "clave": "alarma",
+        "etiqueta": "Crítico"
+      },
+      "tendencia": [
+        30,
+        32,
+        29,
+        33,
+        31,
+        34,
+        33,
+        36,
+        35,
+        38,
+        44,
+        52,
+        61
+      ],
+      "que": "La tubería vibra hasta 20 veces más que la bomba. Es una resonancia de la línea, no una falla de la bomba.",
+      "acciones": [
+        "Revisar el amortiguador de pulsaciones.",
+        "Verificar las condiciones de succión de la bomba.",
+        "Confirmar la resonancia con una prueba de impacto."
+      ],
+      "firma": "Revisada por un especialista en vibraciones Categoría III",
+      "nota": "Basada en el reporte real de la línea, con la planta omitida. La tendencia es ilustrativa."
+    }
+  },
+  "mostrarClientes": true,
+  "faq": [
+    {
+      "question": "¿Sustituye a la ruta de vibraciones?",
+      "answer": "No, la complementa. Los sensores van en los equipos que lo justifican: los críticos, los que fallan rápido y los de acceso difícil. El resto de la planta sigue en ruta periódica, que es más económica por equipo. Lo habitual es combinar las dos."
+    },
+    {
+      "question": "¿Quién instala los sensores?",
+      "answer": "Especialistas en vibraciones Categoría III de DIAPSA, no técnicos de instalación ni analistas de datos. El punto donde va cada sensor decide qué tan bien se ve una falla: tiene que estar sobre la carga del rodamiento y en la dirección correcta. Quien lo monta es el mismo especialista que después lee el espectro."
+    },
+    {
+      "question": "¿Cada cuánto mide el sensor?",
+      "answer": "Toma lecturas de forma programada, típicamente cada 10 minutos, y las envía a la plataforma por radio a través de la estación base. Eso da una tendencia continua en lugar de una lectura al mes."
+    },
+    {
+      "question": "¿Hay que cablear o parar la máquina para instalarlos?",
+      "answer": "No. Los sensores son inalámbricos y de batería, se fijan con epóxico o tornillo sobre el alojamiento del rodamiento y se instalan con el equipo operando. Solo la estación base necesita alimentación."
+    },
+    {
+      "question": "¿Quién recibe las alertas?",
+      "answer": "Las revisa primero un especialista en vibraciones Categoría III de DIAPSA contra el espectro y el historial del equipo, no un analista de datos. A tu equipo le llega la alerta ya interpretada: qué es, qué tan grave y qué hacer. Así se evita la fatiga de alarmas que hace que un sistema de sensores termine ignorado."
+    },
+    {
+      "question": "¿Qué equipos conviene sensorizar?",
+      "answer": "Los que paran la línea si fallan, los que no tienen respaldo, los que tienen historial de fallas rápidas y los que están en lugares peligrosos o de difícil acceso. Se define con un análisis de criticidad al inicio del proyecto."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "El listado de equipos que te preocupan, con su tipo, potencia y ubicación. Con eso proponemos cuántos sensores, dónde van y cuántas estaciones base hacen falta."
+    }
+  ],
+  "galeria": [
+    {
+      "src": "/images/servicios/sensores-vibracion/instalacion-sensor.webp",
+      "alt": "Instalación de un sensor inalámbrico en un equipo de proceso."
+    },
+    {
+      "src": "/images/servicios/sensores-vibracion/instalacion-tuberia.webp",
+      "alt": "Técnica de DIAPSA montando sensores en la línea de proceso."
+    },
+    {
+      "src": "/images/servicios/sensores-vibracion/sensor-rodamiento.webp",
+      "alt": "Sensor fijado sobre el alojamiento de un rodamiento."
+    },
+    {
+      "src": "/images/servicios/sensores-vibracion/sensor-montado.webp",
+      "alt": "Sensor inalámbrico montado sobre una estructura."
+    },
+    {
+      "src": "/images/servicios/sensores-vibracion/preparacion-sensor.webp",
+      "alt": "Preparación de un sensor antes de su montaje."
+    },
+    {
+      "src": "/images/servicios/sensores-vibracion/sensor-en-mano.webp",
+      "alt": "Sensor de vibración inalámbrico antes de la instalación."
+    }
+  ],
+  "tendenciaIntervencion": {
+    "etiqueta": "Caso real",
+    "titulo": "Se reparó el piso, y al día siguiente el sensor dijo cuánto sirvió",
+    "texto": "Una planta de lácteos reparó el piso donde apoya la succión de su homogeneizador. En lugar de suponer que funcionó, lo supo con datos.",
+    "punto": "El punto reparado, día por día",
+    "medida": "Vibración promedio, mm/s",
+    "eje": "Septiembre de 2026",
+    "base": 15.1,
+    "banda": 0.2,
+    "serie": [
+      {
+        "dia": "05 sep",
+        "valor": 10.4
+      },
+      {
+        "dia": "06 sep",
+        "valor": 11.2
+      },
+      {
+        "dia": "07 sep",
+        "valor": 9.8
+      },
+      {
+        "dia": "08 sep",
+        "valor": 14.0
+      },
+      {
+        "dia": "09 sep",
+        "valor": 15.6
+      },
+      {
+        "dia": "10 sep",
+        "valor": 16.7
+      },
+      {
+        "dia": "11 sep",
+        "valor": 15.6
+      },
+      {
+        "dia": "12 sep",
+        "valor": 16.3
+      },
+      {
+        "dia": "13 sep",
+        "valor": 16.1
+      },
+      {
+        "dia": "14 sep",
+        "valor": 16.3
+      },
+      {
+        "dia": "15 sep",
+        "valor": 16.5
+      },
+      {
+        "dia": "16 sep",
+        "valor": 16.7
+      },
+      {
+        "dia": "17 sep",
+        "valor": 14.3
+      },
+      {
+        "dia": "18 sep",
+        "valor": 14.7
+      },
+      {
+        "dia": "19 sep",
+        "valor": null
+      },
+      {
+        "dia": "20 sep",
+        "valor": 7.7
+      },
+      {
+        "dia": "21 sep",
+        "valor": 8.6
+      }
+    ],
+    "intervencion": {
+      "dia": "19 sep",
+      "texto": "Reparación del piso. Sin lecturas por corte de energía."
+    },
+    "antes": 15.12,
+    "despues": 8.33,
+    "canales": [
+      {
+        "nombre": "P1 axial",
+        "antes": 6.8,
+        "despues": 5.85,
+        "cambio": -14
+      },
+      {
+        "nombre": "P1 radial",
+        "antes": 18.78,
+        "despues": 19.01,
+        "cambio": 1
+      },
+      {
+        "nombre": "P2 axial",
+        "antes": 15.12,
+        "despues": 8.33,
+        "cambio": -45
+      },
+      {
+        "nombre": "P2 radial",
+        "antes": 25.87,
+        "despues": 21.84,
+        "cambio": -16
+      },
+      {
+        "nombre": "P3 axial",
+        "antes": 27.35,
+        "despues": 22.73,
+        "cambio": -17
+      },
+      {
+        "nombre": "P3 radial",
+        "antes": 20.29,
+        "despues": 17.13,
+        "cambio": -16
+      },
+      {
+        "nombre": "P4 axial",
+        "antes": 31.35,
+        "despues": 24.19,
+        "cambio": -23
+      },
+      {
+        "nombre": "P4 radial",
+        "antes": 20.35,
+        "despues": 33.5,
+        "cambio": 65
+      },
+      {
+        "nombre": "P5 axial",
+        "antes": 22.8,
+        "despues": 23.65,
+        "cambio": 4
+      },
+      {
+        "nombre": "P5 radial",
+        "antes": 44.86,
+        "despues": 32.25,
+        "cambio": -28
+      },
+      {
+        "nombre": "P6 axial",
+        "antes": 24.73,
+        "despues": 24.31,
+        "cambio": -2
+      },
+      {
+        "nombre": "P6 radial",
+        "antes": 30.03,
+        "despues": 31.11,
+        "cambio": 4
+      }
+    ],
+    "lectura": "En el mismo lapso el motor cambió 2 % y la temperatura de la línea menos de un grado: misma excitación, mismo fluido. La baja generalizada se debe a la reparación. El punto 4 radial subió 65 %: el siguiente paso es revisar su montaje.",
+    "nota": "Datos reales de sensores KCF, septiembre de 2026, con la planta omitida. Misma bomba y misma temperatura antes y después.",
+    "resultados": [
+      {
+        "cifra": "−45 %",
+        "texto": "bajó la vibración en el punto reparado.",
+        "tono": "bien"
+      },
+      {
+        "cifra": "7 de 12",
+        "texto": "puntos de la línea mejoraron, sin volver a medir a mano."
+      },
+      {
+        "cifra": "1 punto",
+        "texto": "empeoró. La siguiente reparación ya sabe a dónde ir.",
+        "tono": "mal"
+      }
+    ]
+  },
+  "diferencias": {
+    "etiqueta": "Por qué DIAPSA",
+    "titulo": "¿Qué nos hace diferentes?",
+    "items": [
+      {
+        "id": "especialistas",
+        "title": "Especialistas Categoría III en campo",
+        "content": "Quien elige el punto y monta cada sensor es un especialista en vibraciones Categoría III, no un instalador ni un analista de datos. El punto decide qué tan bien se ve la falla.",
+        "foto": {
+          "src": "/images/servicios/sensores-vibracion/instalacion-sensor.webp",
+          "alt": "Especialista de DIAPSA instalando un sensor de vibración"
+        }
+      },
+      {
+        "id": "continuo",
+        "title": "Datos cada 10 minutos desde el primer día",
+        "content": "Sensores inalámbricos KCF con estación base, instalados con el equipo operando y sin cablear la planta. La tendencia empieza a correr el mismo día.",
+        "foto": {
+          "src": "/images/servicios/sensores-vibracion/estacion-base.webp",
+          "alt": "Especialista de DIAPSA con la estación base inalámbrica"
+        }
+      },
+      {
+        "id": "estandar",
+        "title": "Un estándar para cada punto",
+        "content": "Con semanas de lecturas se fija cómo vibra cada punto cuando está sano, en cada régimen de operación. Las alarmas salen de ahí, no de un valor genérico.",
+        "foto": {
+          "src": "/images/servicios/sensores-vibracion/sensor-rodamiento.webp",
+          "alt": "Sensor fijado sobre el alojamiento de un rodamiento"
+        }
+      },
+      {
+        "id": "alertas",
+        "title": "Cada alerta, revisada contra el espectro",
+        "content": "Antes de llegarte, un especialista confirma qué es: rodamiento, desbalance, resonancia o una lectura sin importancia. Recibes el diagnóstico y la acción.",
+        "foto": {
+          "src": "/images/servicios/sensores-vibracion/sensor-motor.webp",
+          "alt": "Sensor montado en un motor en operación"
+        }
+      },
+      {
+        "id": "prueba",
+        "title": "La prueba de cada reparación",
+        "content": "Después de intervenir, el sensor dice si sirvió: con la máquina operando igual, se compara cada punto antes y después.",
+        "foto": {
+          "src": "/images/servicios/sensores-vibracion/instalacion-tuberia.webp",
+          "alt": "Sensores instalados en la línea de proceso"
+        }
+      }
+    ]
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Sirve para tus equipos?",
+    "equiposTitulo": "Equipos",
+    "equipos": [
+      "Motores eléctricos",
+      "Bombas centrífugas",
+      "Bombas de desplazamiento positivo",
+      "Homogeneizadores",
+      "Compresores",
+      "Ventiladores",
+      "Sopladores",
+      "Reductores y cajas de engranes",
+      "Torres de enfriamiento",
+      "Transportadores",
+      "Mezcladoras",
+      "Molinos",
+      "Tuberías de proceso"
+    ],
+    "fallasTitulo": "Modos de falla",
+    "fallas": [
+      "Desgaste de rodamientos",
+      "Falla de lubricación",
+      "Desbalance",
+      "Desalineación",
+      "Holgura mecánica",
+      "Holgura estructural",
+      "Resonancia",
+      "Pulsación",
+      "Cavitación",
+      "Desgaste de engranes",
+      "Desgaste de bandas",
+      "Excentricidad",
+      "Soltura de base"
+    ]
+  },
+  "flujoEncabezado": {
+    "titulo": "Del sensor a la decisión, en cinco pasos",
+    "texto": "No vendemos sensores: vendemos saber a tiempo qué le pasa a tu equipo y qué hacer. Así se llega de la lectura al aviso."
+  },
+  "valor": {
+    "etiqueta": "En qué se traduce",
+    "titulo": "La misma falla, dos cuentas muy distintas",
+    "texto": "Un rodamiento se va a dañar igual. Lo que cambia es si te enteras cuando ya paró la línea o semanas antes.",
+    "sin": "La falla te encuentra",
+    "con": "La ves venir",
+    "filas": [
+      {
+        "concepto": "Cuándo paras",
+        "sin": "Cuando la máquina decide, a mitad del turno",
+        "con": "En la ventana que tú eliges"
+      },
+      {
+        "concepto": "Refacción",
+        "sin": "Urgente, con flete exprés",
+        "con": "Pedida con tiempo, a precio normal"
+      },
+      {
+        "concepto": "Daño",
+        "sin": "El rodamiento se lleva el eje, el sello o el motor",
+        "con": "Solo cambias la pieza que falló"
+      },
+      {
+        "concepto": "Tu gente",
+        "sin": "Horas extra y todos apagando el fuego",
+        "con": "Trabajo planeado, en su horario"
+      },
+      {
+        "concepto": "Producción",
+        "sin": "Horas de línea parada y pedidos atrasados",
+        "con": "La producción sigue según el plan"
+      }
+    ],
+    "cierre": "Lo que separa las dos columnas es el aviso. Eso es lo que te da el sensor."
   }
 }

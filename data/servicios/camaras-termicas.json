@@ -57,5 +57,27 @@
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué detecta?",
+    "equiposTitulo": "Equipos",
+    "equipos": [
+      "Tableros y subestaciones",
+      "Transformadores",
+      "Motores y reductores",
+      "Hornos y secadores",
+      "Bandas transportadoras",
+      "Almacenes de material combustible"
+    ],
+    "fallasTitulo": "Fallas que detecta",
+    "fallas": [
+      "Calentamiento en conexiones",
+      "Sobrecarga eléctrica",
+      "Rodamientos con fricción",
+      "Daño en refractario",
+      "Inicio de incendio",
+      "Temperatura de proceso fuera de rango"
+    ]
   }
 }

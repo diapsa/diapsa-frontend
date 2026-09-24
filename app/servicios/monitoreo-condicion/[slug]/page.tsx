@@ -25,6 +25,7 @@ import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import Semaforo from "@/components/organisms/Semaforo";
 import GraficaTendencia from "@/components/organisms/GraficaTendencia";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
+import Cobertura from "@/components/organisms/Cobertura";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
 import { getArticuloPorServicio } from "@/lib/recursos";
@@ -311,6 +312,10 @@ export default async function ServicePage({
                     paso={paso()}
                 />
             )}
+
+            {/* Dónde aplica y qué detecta: la última duda antes de cotizar,
+                "¿sirve para mis equipos?", contestada en fichas. */}
+            {service.cobertura && <Cobertura cobertura={service.cobertura} paso={paso()} />}
 
             {/* Related Products */}
             {/* <RelatedProducts

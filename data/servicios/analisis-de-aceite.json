@@ -420,5 +420,33 @@
       }
     ],
     "nota": "Fotos de una toma real en un transformador de 1,000 kVA, con la planta y el equipo omitidos."
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué detecta?",
+    "equiposTitulo": "Equipos",
+    "equipos": [
+      "Reductores y cajas de engranes",
+      "Compresores",
+      "Sistemas hidráulicos",
+      "Turbinas",
+      "Motores de combustión",
+      "Transformadores",
+      "Bombas",
+      "Chumaceras lubricadas",
+      "Generadores"
+    ],
+    "fallasTitulo": "Fallas que detecta",
+    "fallas": [
+      "Desgaste interno de componentes",
+      "Contaminación por agua",
+      "Contaminación por polvo o partículas",
+      "Oxidación del aceite",
+      "Aditivos agotados",
+      "Aceite equivocado o mezclado",
+      "Dilución por combustible",
+      "Fallas eléctricas internas en transformadores",
+      "Humedad en el aislamiento"
+    ]
   }
 }

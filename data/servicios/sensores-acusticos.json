@@ -57,5 +57,26 @@
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué detecta?",
+    "equiposTitulo": "Equipos",
+    "equipos": [
+      "Redes de aire comprimido",
+      "Líneas de gases",
+      "Trampas de vapor",
+      "Tableros y subestaciones",
+      "Rodamientos"
+    ],
+    "fallasTitulo": "Fallas que detecta",
+    "fallas": [
+      "Fugas de aire comprimido",
+      "Fugas de gas",
+      "Descargas parciales",
+      "Efecto corona",
+      "Trampas de vapor fallando",
+      "Falta de grasa en rodamientos"
+    ]
   }
 }

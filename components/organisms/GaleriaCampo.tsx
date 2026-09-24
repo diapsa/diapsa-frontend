@@ -16,9 +16,11 @@ import type { GaleriaFoto } from "@/types/servicio";
  *
  * Todas las fotos quedan en el HTML y solo se desplaza la tira, así que el
  * buscador las ve todas y el pie de cada una se lee aunque el JavaScript no
- * haya cargado. Se avanza con los botones, con las miniaturas, con las
- * flechas del teclado y arrastrando el dedo. Sin reproducción automática:
- * mueve solo cuando el visitante quiere.
+ * haya cargado. Las fotos cambian solas cada cinco segundos; también se
+ * avanza con los botones, con las flechas del teclado y arrastrando el dedo.
+ * Sin miniaturas: con veinte fotos el mosaico competía con la foto grande.
+ * El cambio automático se detiene con el cursor encima, con el foco dentro
+ * y si el visitante pidió reducir el movimiento.
  *
  * Las fotos vienen del JSON del servicio, todas en 4:3, que es el formato en
  * que salen de la cámara, para que el marco no tenga que recortarlas.
@@ -35,6 +37,7 @@ export default function GaleriaCampo({ fotos, titulo, texto }: Props) {
   const total = fotos.length;
   const marco = useRef<HTMLDivElement>(null);
   const arrastre = useRef<number | null>(null);
+  const [pausa, setPausa] = useState(false);
 
   const ir = (i: number) => setActiva(((i % total) + total) % total);
 
@@ -50,6 +53,15 @@ export default function GaleriaCampo({ fotos, titulo, texto }: Props) {
     return () => nodo.removeEventListener("keydown", alTeclear);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activa, total]);
+
+  // Cambio automático. Se reinicia con cada foto, así que un clic en las
+  // flechas no deja el siguiente cambio a medio tiempo.
+  useEffect(() => {
+    if (pausa || total < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const reloj = window.setTimeout(() => setActiva((a) => (a + 1) % total), 5000);
+    return () => window.clearTimeout(reloj);
+  }, [activa, pausa, total]);
 
   if (total === 0) return null;
 
@@ -78,6 +90,10 @@ export default function GaleriaCampo({ fotos, titulo, texto }: Props) {
           aria-roledescription="carrusel"
           aria-label="Fotografías de DIAPSA en campo"
           className="grid grid-cols-1 gap-6 lg:grid-cols-5 lg:gap-10"
+          onMouseEnter={() => setPausa(true)}
+          onMouseLeave={() => setPausa(false)}
+          onFocus={() => setPausa(true)}
+          onBlur={() => setPausa(false)}
         >
           {/* La foto */}
           <div className="lg:col-span-3">
@@ -140,32 +156,13 @@ export default function GaleriaCampo({ fotos, titulo, texto }: Props) {
             </div>
           </div>
 
-          {/* Pie, cuenta y miniaturas */}
-          <div className="flex flex-col lg:col-span-2">
+          {/* Pie y cuenta */}
+          <div className="flex flex-col lg:col-span-2 lg:justify-center">
             <p className="text-sm font-bold uppercase tracking-widest text-secondary" aria-live="polite">
               {activa + 1} de {total}
             </p>
             <p className="mt-3 text-justify text-lg leading-relaxed text-primary">{foto.alt}</p>
 
-            {total > 1 && (
-              <ul className="mt-6 grid grid-cols-4 gap-2 sm:grid-cols-6 lg:mt-auto lg:grid-cols-4">
-                {fotos.map((f, i) => (
-                  <li key={f.src}>
-                    <button
-                      type="button"
-                      onClick={() => ir(i)}
-                      aria-label={`Ver foto ${i + 1}`}
-                      aria-current={i === activa}
-                      className={`relative block aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-sm transition-opacity duration-200 ${
-                        i === activa ? "ring-2 ring-secondary" : "opacity-50 hover:opacity-90"
-                      }`}
-                    >
-                      <Image src={f.src} alt="" fill className="object-cover" sizes="120px" />
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
           </div>
         </div>
       </div>

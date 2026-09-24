@@ -179,6 +179,194 @@
   "certificacion": "Termógrafos certificados · ISO 18436-7",
   "galeria": [
     {
+      "src": "/images/servicios/termografia-infrarroja/campo-09.webp",
+      "alt": "Termógrafo de DIAPSA inspeccionando un centro de control de motores con las puertas abiertas y la carga en operación."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-25.webp",
+      "alt": "Termograma de un motor: el calentamiento se concentra en un costado de la carcasa, a 122 °C."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-06.webp",
+      "alt": "Inspección termográfica de interruptores dentro de un tablero de baja tensión."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-02.webp",
+      "alt": "Termograma de un tablero con un punto a 476 °C, el tipo de hallazgo que no se ve a simple vista."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-35.webp",
+      "alt": "Termografía de un equipo de proceso desde la plataforma de mantenimiento."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-12.webp",
+      "alt": "Termograma de conexiones con la temperatura máxima medida en pantalla."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-63.webp",
+      "alt": "Termografía con traje de protección contra arco eléctrico, frente a equipo energizado."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-05.webp",
+      "alt": "Analista con careta y traje de protección, con la cámara térmica lista para abrir el tablero."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-73.webp",
+      "alt": "Inspección termográfica en una mina a cielo abierto."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-26.webp",
+      "alt": "Termografía de líneas y postes de distribución en exterior."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-21.webp",
+      "alt": "Cámara térmica apuntando a un equipo eléctrico tras la reja de protección."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-23.webp",
+      "alt": "Termograma con tres puntos calientes en la pantalla de la cámara."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-49.webp",
+      "alt": "Inspección de un tablero de control junto al motor que alimenta."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-31.webp",
+      "alt": "Termograma de una conexión con 57 °C de máxima, marcada para el informe."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-36.webp",
+      "alt": "Inspección termográfica en la nave de proceso, sobre la tubería elevada."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-46.webp",
+      "alt": "Termografía a ras de piso junto a un equipo de proceso."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-47.webp",
+      "alt": "Inspección termográfica junto a un ventilador industrial."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-48.webp",
+      "alt": "Termograma de un motor con el patrón de calentamiento en la carcasa."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-01.webp",
+      "alt": "Termografía de un tablero exterior en la azotea."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-10.webp",
+      "alt": "Inspección de un tablero de alumbrado con la tapa abierta."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-11.webp",
+      "alt": "Cámara térmica frente a un equipo eléctrico, con la imagen en pantalla."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-13.webp",
+      "alt": "Revisión del termograma en el pasillo de tableros."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-15.webp",
+      "alt": "Termografía de tableros en un cuarto eléctrico."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-18.webp",
+      "alt": "Termograma de un tablero de control con los contactores a la vista."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-19.webp",
+      "alt": "Cámara térmica sobre las clemas y contactores de un tablero."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-20.webp",
+      "alt": "Inspección de interruptores de potencia en un tablero."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-29.webp",
+      "alt": "Termograma de contactores en un centro de control de motores."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-32.webp",
+      "alt": "Termograma de un punto caliente en equipo eléctrico."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-34.webp",
+      "alt": "Termografía con cámara compacta en un tablero de distribución."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-37.webp",
+      "alt": "Analista de DIAPSA con la cámara térmica en ruta por la planta."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-39.webp",
+      "alt": "Cámara térmica en mano sobre la estructura de una banda transportadora."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-41.webp",
+      "alt": "Termografía de un motor eléctrico desde la plataforma."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-42.webp",
+      "alt": "Ruta de termografía en la zona de bombas."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-51.webp",
+      "alt": "Equipo de DIAPSA revisando la subestación desde la barandilla de seguridad."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-52.webp",
+      "alt": "Termografía de cerca sobre una conexión dentro de un gabinete."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-53.webp",
+      "alt": "Termograma de un arrancador en un tablero de control."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-55.webp",
+      "alt": "Inspección termográfica en el interior de un tablero."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-57.webp",
+      "alt": "Termograma en pantalla con la distribución de temperatura del equipo."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-59.webp",
+      "alt": "Termografía de un motor dentro del cuarto de máquinas."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-65.webp",
+      "alt": "Revisión de un tablero de fuerza con la puerta abierta."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-66.webp",
+      "alt": "Termografía de las conexiones en la parte baja de un tablero."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-67.webp",
+      "alt": "Cámara térmica sobre las conexiones de un tablero de fuerza."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-68.webp",
+      "alt": "Termograma con el punto caliente marcado en la pantalla de la cámara."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-69.webp",
+      "alt": "Termografía de las rejillas de ventilación de un cuarto eléctrico."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-71.webp",
+      "alt": "Termografía a nivel de piso durante la ruta de inspección."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-72.webp",
+      "alt": "Inspección de un tablero exterior con la cámara térmica."
+    },
+    {
+      "src": "/images/servicios/termografia-infrarroja/campo-04.webp",
+      "alt": "Cámara térmica en uso sobre una pasarela de planta."
+    },
+    {
       "src": "/images/servicios/termografia-infrarroja/subestacion.jpg",
       "alt": "Inspección termográfica de una subestación eléctrica con la carga en operación."
     },
@@ -217,6 +405,36 @@
         "image": "/images/productos/placeholder.jpg",
         "link": "#"
       }
+    ]
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué detecta?",
+    "equiposTitulo": "Equipos",
+    "equipos": [
+      "Tableros y centros de carga",
+      "Subestaciones",
+      "Transformadores",
+      "Interruptores y cuchillas",
+      "Bancos de capacitores",
+      "Motores",
+      "Rodamientos y acoplamientos",
+      "Hornos y refractarios",
+      "Aislamientos térmicos",
+      "Trampas de vapor"
+    ],
+    "fallasTitulo": "Fallas que detecta",
+    "fallas": [
+      "Conexiones flojas o sulfatadas",
+      "Sobrecarga",
+      "Desbalance de fases",
+      "Fusibles en mal estado",
+      "Componentes dañados",
+      "Rodamientos con fricción",
+      "Acoplamientos desalineados",
+      "Daño en refractario",
+      "Aislamiento térmico dañado",
+      "Trampas de vapor fugando"
     ]
   }
 }

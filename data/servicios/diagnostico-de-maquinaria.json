@@ -315,6 +315,10 @@
     {
       "src": "/images/servicios/medicion-bomba-planta.webp",
       "alt": "Medición sobre un motor eléctrico en planta."
+    },
+    {
+      "src": "/images/gallery/campo-img-2.jpg",
+      "alt": "Equipo de DIAPSA midiendo con varias técnicas el mismo ventilador para un diagnóstico integral."
     }
   ],
   "cta": {
@@ -417,5 +421,32 @@
       "Programar el cambio de rodamientos en la siguiente ventana, verificando las tolerancias de los alojamientos."
     ],
     "nota": "Hoja real de una ruta de agosto de 2026, generada en IDAP, con la planta y la clave del equipo omitidas. El informe completo trae además las lecturas de cada técnica."
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué detecta?",
+    "equiposTitulo": "Equipos",
+    "equipos": [
+      "Motores eléctricos",
+      "Bombas",
+      "Compresores",
+      "Reductores y cajas de engranes",
+      "Ventiladores",
+      "Turbinas",
+      "Generadores",
+      "Sistemas hidráulicos"
+    ],
+    "fallasTitulo": "Fallas que detecta",
+    "fallas": [
+      "Desgaste de rodamientos",
+      "Desbalance y desalineación",
+      "Holgura mecánica",
+      "Problemas de lubricación",
+      "Contaminación del aceite",
+      "Desgaste interno",
+      "Calentamiento anormal",
+      "Fugas",
+      "Fallas eléctricas en motores"
+    ]
   }
 }

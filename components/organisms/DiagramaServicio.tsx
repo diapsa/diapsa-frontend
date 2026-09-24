@@ -20,6 +20,10 @@ type Props = {
   paso?: string;
   /** Textos propios del servicio para los cinco pasos del flujo. */
   flujo?: FlujoPaso[];
+  /** Título y entrada propios del flujo, si el servicio los trae. */
+  encabezado?: { titulo: string; texto: string };
+  /** Sin el esquema de ahorro: el servicio trae su propia sección de valor. */
+  sinAhorro?: boolean;
 };
 
 /* ------------------------------------------------------------------ */
@@ -263,7 +267,7 @@ function FlujoServicio({ textos }: { textos?: FlujoPaso[] }) {
 
 /* ------------------------------------------------------------------ */
 
-export default function DiagramaServicio({ clave, paso, flujo }: Props) {
+export default function DiagramaServicio({ clave, paso, flujo, encabezado, sinAhorro }: Props) {
   if (clave === "curva-pf") {
     return (
       <section className="w-full bg-gray-50 py-12 lg:py-20">
@@ -292,11 +296,11 @@ export default function DiagramaServicio({ clave, paso, flujo }: Props) {
           <div className="mb-10 max-w-3xl">
             <Antetitulo paso={paso}>Cómo trabajamos</Antetitulo>
             <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
-              Del dato a la decisión
+              {encabezado?.titulo ?? "Del dato a la decisión"}
             </h2>
             <p className="mt-3 text-justify text-lg leading-relaxed text-tertiary">
-              El objetivo no es medir, es que alguien pueda decidir con lo medido. Estos son los
-              cinco pasos de cada servicio.
+              {encabezado?.texto ??
+                "El objetivo no es medir, es que alguien pueda decidir con lo medido. Estos son los cinco pasos de cada servicio."}
             </p>
           </div>
           <FlujoServicio textos={flujo} />
@@ -304,6 +308,7 @@ export default function DiagramaServicio({ clave, paso, flujo }: Props) {
           {/* En qué se traduce el proceso. Los cinco pasos explican el
               método; esto enseña el resultado: el mismo problema cuesta
               mucho menos cuando se atiende a tiempo. */}
+          {!sinAhorro && (
           <div className="mt-12 grid grid-cols-1 items-center gap-8 rounded-sm border border-gray-200 bg-white p-6 lg:mt-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] lg:gap-12 lg:p-10">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-secondary">
@@ -320,6 +325,7 @@ export default function DiagramaServicio({ clave, paso, flujo }: Props) {
             </div>
             <GraficoAhorro />
           </div>
+          )}
         </div>
       </section>
     );

@@ -2407,6 +2407,62 @@
     {
       "src": "/images/servicios/analisis-de-ultrasonido/ultraprobe-en-sensor.jpg",
       "alt": "Detector apoyado en el punto de medición del equipo, siempre el mismo punto para poder comparar contra la línea base."
+    },
+    {
+      "src": "/images/gallery/campo-img-8.jpg",
+      "alt": "Analista de DIAPSA inspeccionando con ultrasonido un compresor en operación."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-trampas-vapor.webp",
+      "alt": "Analista de DIAPSA escuchando con ultrasonido la línea de vapor, sobre la rejilla de la planta."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-pantalla-espectro.webp",
+      "alt": "Lectura en decibeles del instrumento de ultrasonido junto a una válvula en operación."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-valvulas.webp",
+      "alt": "Inspección por ultrasonido de válvulas en un cabezal de tuberías."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-tuberia-vapor.webp",
+      "alt": "Ruta de ultrasonido en tubería aislada de vapor."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-valvula-actuador.webp",
+      "alt": "Revisión de una válvula con actuador en un espacio reducido, bajo la tubería."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-compresor.webp",
+      "alt": "Medición de ultrasonido sobre la carcasa de un compresor en operación."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-bomba-alimentacion.webp",
+      "alt": "Ultrasonido en los rodamientos de una bomba de agua de alimentación."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-ruta-motores.webp",
+      "alt": "Ruta de ultrasonido en el cuarto de motores, equipo por equipo."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-camara-acustica-subestacion.webp",
+      "alt": "Cámara acústica en una subestación, buscando descargas parciales a distancia segura."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-camara-acustica-motor.webp",
+      "alt": "Cámara acústica apuntando a un motor para ubicar la fuente del ruido."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-camara-acustica-estructura.webp",
+      "alt": "Cámara acústica ubicando una fuga en la estructura de la planta."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-ultrasonido-exterior.webp",
+      "alt": "Inspección por ultrasonido en exteriores, junto a la tubería de proceso."
+    },
+    {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-torre-enfriamiento.webp",
+      "alt": "Ruta de ultrasonido en una torre de enfriamiento."
     }
   ],
   "cta": {
@@ -2441,6 +2497,36 @@
         "image": "/images/productos/placeholder.jpg",
         "link": "#"
       }
+    ]
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué detecta?",
+    "equiposTitulo": "Equipos",
+    "equipos": [
+      "Rodamientos",
+      "Motores",
+      "Bombas",
+      "Compresores",
+      "Válvulas",
+      "Trampas de vapor",
+      "Redes de aire comprimido",
+      "Tableros y subestaciones",
+      "Aisladores y líneas",
+      "Transformadores"
+    ],
+    "fallasTitulo": "Fallas que detecta",
+    "fallas": [
+      "Falta o exceso de grasa",
+      "Desgaste de rodamientos",
+      "Fugas de aire y gases",
+      "Fugas de vacío",
+      "Válvulas que pasan",
+      "Trampas de vapor fallando",
+      "Descargas parciales",
+      "Efecto corona",
+      "Arco superficial (tracking)",
+      "Cavitación"
     ]
   }
 }
