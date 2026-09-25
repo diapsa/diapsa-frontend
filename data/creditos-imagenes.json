@@ -1,0 +1,58 @@
+[
+  {
+    "pagina": "DGA en Línea",
+    "href": "/servicios/monitoreo-continuo/dga-en-linea",
+    "imagenes": [
+      {
+        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
+        "descripcion": "Transformador de potencia",
+        "original": "Substation Power Transformer 1.jpg",
+        "autor": "Yoshieslunchbox",
+        "licencia": "CC BY-SA 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Substation_Power_Transformer_1.jpg",
+        "cambios": "Recortada y redimensionada"
+      },
+      {
+        "src": "/images/servicios/dga-en-linea/transformador-distribucion.webp",
+        "descripcion": "Transformador de distribución",
+        "original": "Essential Energy (NSW) pad mount distribution transformer.jpg",
+        "autor": "Radiotrefoil",
+        "licencia": "CC BY-SA 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Essential_Energy_(NSW)_pad_mount_distribution_transformer.jpg",
+        "cambios": "Recortada y redimensionada"
+      },
+      {
+        "src": "/images/servicios/dga-en-linea/transformador-generacion.webp",
+        "descripcion": "Transformadores de generación",
+        "original": "Jackson Hydro Transformers.jpg",
+        "autor": "ThreePhaseAC",
+        "licencia": "CC BY-SA 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Jackson_Hydro_Transformers.jpg",
+        "cambios": "Recortada y redimensionada"
+      },
+      {
+        "src": "/images/servicios/dga-en-linea/transformador-horno.webp",
+        "descripcion": "Transformador de horno",
+        "original": "Arc Furnace transformer bus.jpg",
+        "autor": "Wtshymanski",
+        "licencia": "CC BY-SA 3.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Arc_Furnace_transformer_bus.jpg",
+        "cambios": "Recortada y redimensionada"
+      },
+      {
+        "src": "/images/servicios/dga-en-linea/reactor.webp",
+        "descripcion": "Reactor en aceite",
+        "original": "Shunt241.jpg",
+        "autor": "Hmvh",
+        "licencia": "CC BY-SA 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Shunt241.jpg",
+        "cambios": "Recortada y redimensionada"
+      }
+    ]
+  }
+]

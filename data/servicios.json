@@ -80,6 +80,12 @@
         "href": "/servicios/monitoreo-continuo/sensores-acusticos",
         "descripcion": "Fugas y descargas detectadas en línea",
         "icono": "acusticos"
+      },
+      {
+        "label": "DGA en Línea",
+        "href": "/servicios/monitoreo-continuo/dga-en-linea",
+        "descripcion": "Gases del transformador medidos todo el día",
+        "icono": "dga"
       }
     ]
   },

@@ -244,7 +244,7 @@ export default function Footer() {
             <p>
               © {currentYear} Grupo DIAPSA. Todos los derechos reservados.
             </p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
               <NavLink
                 href="/aviso-privacidad"
               >
@@ -254,6 +254,11 @@ export default function Footer() {
                 href="/terminos"
               >
                 Términos y Condiciones
+              </NavLink>
+              <NavLink
+                href="/creditos"
+              >
+                Créditos de imágenes
               </NavLink>
             </div>
           </div>

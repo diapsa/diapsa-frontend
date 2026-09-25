@@ -199,7 +199,7 @@ export interface ServicePorQue {
   escena360?: ServiceEscena360;
   /** Si es "sensores", en lugar de la foto va la escena "del sensor a tu
       teléfono"; la foto queda como imagen de espera. */
-  escena?: "sensores" | "termicas" | "huella";
+  escena?: "sensores" | "termicas" | "huella" | "dga";
   pie?: string;
   /** Las tres preguntas que contesta una muestra, sin valores de
       laboratorio, y qué se hace si cada una sale mal. */
@@ -517,6 +517,8 @@ export interface ServiceCobertura {
   equipos: string[];
   fallasTitulo: string;
   fallas: string[];
+  /** Fotos de los equipos donde aplica, con su crédito si no son propias. */
+  fotos?: { nombre: string; src: string; alt: string; credito?: string; fuente?: string }[];
 }
 
 export interface ServiceDiferencias {

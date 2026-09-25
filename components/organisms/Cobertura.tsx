@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Antetitulo from "../atoms/Antetitulo";
 import type { ServiceCobertura } from "@/types/servicio";
 
@@ -43,6 +44,35 @@ export default function Cobertura({ cobertura, paso }: Props) {
           </Antetitulo>
           <h2 className="mt-2 text-3xl font-extrabold leading-tight text-white lg:text-[2.75rem]">{cobertura.titulo}</h2>
         </div>
+        {/* Fotos de los equipos, si el servicio las trae. Cuando no son de
+            DIAPSA llevan su crédito, como pide su licencia. */}
+        {cobertura.fotos && cobertura.fotos.length > 0 && (
+          <ul className="mb-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
+            {cobertura.fotos.map((f) => (
+              <li key={f.src} className="overflow-hidden rounded-sm bg-white/5 ring-1 ring-white/10">
+                <div className="relative aspect-[4/3]">
+                  <Image src={f.src} alt={f.alt} fill sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw" className="object-cover" />
+                </div>
+                <div className="p-3">
+                  <p className="text-sm font-bold leading-snug text-white">{f.nombre}</p>
+                  {f.credito && (
+                    <p className="mt-1 text-[10px] leading-snug text-white/50">
+                      Foto:{" "}
+                      {f.fuente ? (
+                        <a href={f.fuente} target="_blank" rel="noopener noreferrer" className="underline hover:text-white/80">
+                          {f.credito}
+                        </a>
+                      ) : (
+                        f.credito
+                      )}
+                    </p>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           <Lista titulo={cobertura.equiposTitulo} items={cobertura.equipos} />
           <Lista titulo={cobertura.fallasTitulo} items={cobertura.fallas} />
