@@ -26,6 +26,7 @@ import Semaforo from "@/components/organisms/Semaforo";
 import GraficaTendencia from "@/components/organisms/GraficaTendencia";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import Cobertura from "@/components/organisms/Cobertura";
+import ValorParo from "@/components/organisms/ValorParo";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
 import { getArticuloPorServicio } from "@/lib/recursos";
@@ -277,9 +278,34 @@ export default async function ServicePage({
 
             <ServiceProof certificacion={service.certificacion} />
 
-            {service.diagramas?.includes("flujo-servicio") && (
-                <DiagramaServicio clave="flujo-servicio" paso={paso()} flujo={service.flujo} />
+            {/* Lo que nos hace diferentes: pestañas con imagen, igual que en
+                monitoreo continuo. */}
+            {service.diferencias && (
+                <section className="w-full bg-gray-50 py-12 lg:py-20">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="mb-10 max-w-3xl">
+                            <Antetitulo paso={paso()}>{service.diferencias.etiqueta}</Antetitulo>
+                            <h2 className="mt-2 text-3xl lg:text-[2.75rem] font-extrabold text-primary leading-tight">
+                                {service.diferencias.titulo}
+                            </h2>
+                        </div>
+                        <ServicePuntos puntos={service.diferencias.items} />
+                    </div>
+                </section>
             )}
+
+            {service.diagramas?.includes("flujo-servicio") && (
+                <DiagramaServicio
+                    clave="flujo-servicio"
+                    paso={paso()}
+                    flujo={service.flujo}
+                    encabezado={service.flujoEncabezado}
+                    sinAhorro={!!service.valor}
+                />
+            )}
+
+            {/* En qué se traduce: la misma falla con y sin el servicio. */}
+            {service.valor && <ValorParo valor={service.valor} paso={paso()} />}
 
             {/* Qué recibes. Va después del flujo porque es su desenlace: el
                 último paso del proceso es el informe, y aquí se enseña. */}
