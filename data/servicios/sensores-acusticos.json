@@ -22,14 +22,14 @@
   ],
   "header": {
     "title": "Sensores Acústicos",
-    "subtitle": "Detección de fugas y anomalías por ultrasonido y acústica",
+    "subtitle": "Huella acústica con IA para transformadores y subestaciones: escucha las 24 horas lo que anuncia una falla eléctrica",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Sensores acústicos y de ultrasonido para detectar fugas de aire comprimido y gas, descargas eléctricas y fallas tempranas de rodamientos, en continuo.",
+  "seoDescription": "Monitoreo continuo con sensores de huella acústica para transformadores, subestaciones encapsuladas y equipo de media y alta tensión. La IA aprende cómo suena cada equipo sano y detecta descargas parciales, aflojamiento de núcleo y devanados y fallas de enfriamiento.",
   "content": {
-    "title": "¿Qué detectan los sensores acústicos?",
-    "subtitle": "Muchas fallas suenan antes de verse: una fuga, una descarga eléctrica o un rodamiento que empieza a degradarse emiten ultrasonido mucho antes de dar otra señal. Estos sensores lo escuchan por ti, todo el tiempo.",
-    "image": "/images/deteccion-gas/camaras-acusticas-deteccion-gas.png",
+    "title": "Un transformador cambia su sonido antes de fallar",
+    "subtitle": "Una descarga parcial, un núcleo que se afloja o un ventilador de enfriamiento que falla cambian el sonido del equipo mucho antes de dar otra señal. El sensor de huella acústica escucha tus transformadores y subestaciones todo el día, y los algoritmos e IA reconocen el sonido de la falla.",
+    "image": "/images/servicios/sensores-acusticos/campo-08.webp",
     "items": [
       {
         "id": "donde-aplica",
@@ -49,9 +49,14 @@
     ]
   },
   "cta": {
-    "title": "¿Cuánto te está costando lo que no se oye?",
-    "text": "Cuéntanos qué redes y equipos quieres vigilar y te proponemos el proyecto de detección acústica para tu planta.",
-    "whatsappMessage": "Hola, quiero información sobre sensores acústicos para mi planta."
+    "title": "¿Qué transformador de tu planta no puede fallar?",
+    "text": "Cuéntanos qué equipos eléctricos son críticos y te proponemos cuántos sensores de huella acústica necesitas, dónde van y cómo se monitorean.",
+    "whatsappMessage": "Hola, quiero información sobre sensores de huella acústica para transformadores y subestaciones.",
+    "datos": [
+      "Para equipo eléctrico crítico",
+      "Huella acústica con algoritmos e IA",
+      "Alertas revisadas por especialistas de DIAPSA"
+    ]
   },
   "relatedProducts": {
     "title": "Productos Relacionados",
@@ -63,20 +68,329 @@
     "titulo": "¿Dónde aplica y qué detecta?",
     "equiposTitulo": "Equipos",
     "equipos": [
-      "Redes de aire comprimido",
-      "Líneas de gases",
-      "Trampas de vapor",
-      "Tableros y subestaciones",
-      "Rodamientos"
+      "Transformadores de potencia",
+      "Transformadores de distribución",
+      "Subestaciones encapsuladas (GIS)",
+      "Reactores",
+      "Celdas de media tensión"
     ],
     "fallasTitulo": "Fallas que detecta",
     "fallas": [
-      "Fugas de aire comprimido",
-      "Fugas de gas",
       "Descargas parciales",
       "Efecto corona",
-      "Trampas de vapor fallando",
-      "Falta de grasa en rodamientos"
+      "Aflojamiento de núcleo y devanados",
+      "Partículas libres en GIS",
+      "Contactos flojos",
+      "Fallas en ventiladores y bombas de enfriamiento",
+      "Fallas del cambiador de derivaciones"
     ]
-  }
+  },
+  "certificacion": "Para equipo eléctrico crítico · Huella acústica con algoritmos e IA · Revisión por especialistas de DIAPSA",
+  "porQue": {
+    "foto": {
+      "src": "/images/servicios/sensores-acusticos/campo-08.webp",
+      "alt": "Especialista de DIAPSA frente a las boquillas de una subestación de alta tensión"
+    },
+    "preguntas": [
+      {
+        "pregunta": "Para equipo eléctrico crítico",
+        "texto": "Transformadores y subestaciones de los que depende la planta."
+      },
+      {
+        "pregunta": "Escucha constante",
+        "texto": "Todo el día, con la planta operando, sin abrir el equipo."
+      },
+      {
+        "pregunta": "La huella de cada equipo",
+        "texto": "La alerta llega por el sonido de la falla, no solo por el volumen."
+      }
+    ],
+    "escena": "huella",
+    "destacado": {
+      "titulo": "Para equipo eléctrico crítico, donde escuchar sin parar es indispensable",
+      "texto": "La IA aprende la huella acústica de cada transformador sano y reconoce el sonido de una falla. Un especialista de DIAPSA lo confirma antes de avisarte, o la alerta llega directo a tu sistema.",
+      "insignia": "IA"
+    }
+  },
+  "tecnicas": {
+    "etiqueta": "Qué se instala",
+    "titulo": "Un sensor que aprende cómo suena tu equipo",
+    "texto": "Se fija en el tanque o la envolvente del equipo, sin abrirlo, y analiza el sonido ahí mismo.",
+    "segundoGrupo": "Dónde se instala",
+    "items": [
+      {
+        "nombre": "Sensor de huella acústica",
+        "enOperacion": true,
+        "texto": "Montaje magnético, adhesivo o con tornillo sobre el equipo. La IA en el propio sensor separa el sonido normal del de una falla y guarda cada alarma con su grabación.",
+        "mide": [
+          "Sonido del equipo en operación",
+          "Patrones de descarga",
+          "Cambios mecánicos internos",
+          "Enfriamiento",
+          "Historial y grabación de cada alarma"
+        ]
+      },
+      {
+        "nombre": "Transformadores",
+        "texto": "De potencia y distribución.",
+        "resumen": "De potencia y de distribución, en aceite.",
+        "mide": [
+          "Descargas parciales",
+          "Núcleo y devanados",
+          "Ventiladores y bombas",
+          "Cambiador de derivaciones"
+        ]
+      },
+      {
+        "nombre": "Subestaciones encapsuladas",
+        "texto": "Aisladas en gas (GIS).",
+        "resumen": "Aisladas en gas, donde no se puede ver adentro.",
+        "mide": [
+          "Descargas parciales",
+          "Partículas libres",
+          "Contactos flojos"
+        ]
+      },
+      {
+        "nombre": "Equipo de media y alta tensión",
+        "texto": "Reactores y celdas.",
+        "resumen": "Reactores y celdas de media tensión críticas.",
+        "mide": [
+          "Descargas parciales",
+          "Efecto corona",
+          "Vibración anormal"
+        ]
+      }
+    ]
+  },
+  "diferencias": {
+    "etiqueta": "Por qué DIAPSA",
+    "titulo": "¿Qué nos hace diferentes?",
+    "items": [
+      {
+        "id": "especialistas",
+        "title": "Lo diseñan especialistas en equipo eléctrico",
+        "content": "Qué equipo escuchar y en qué punto del tanque va el sensor lo decide quien lleva años inspeccionando subestaciones con ultrasonido, termografía y análisis de aceite.",
+        "foto": {
+          "src": "/images/servicios/sensores-acusticos/campo-00.webp",
+          "alt": "Especialista de DIAPSA inspeccionando una subestación de alta tensión"
+        }
+      },
+      {
+        "id": "ia",
+        "title": "Huella acústica con algoritmos e IA",
+        "content": "Cada transformador tiene su sonido. Los algoritmos aprenden la huella del equipo sano y reconocen el patrón de una falla, como una descarga parcial o un núcleo que se afloja, aunque haya ruido alrededor.",
+        "foto": {
+          "src": "/images/servicios/sensores-acusticos/campo-44.webp",
+          "alt": "Pantalla de un instrumento acústico con la fuente del sonido ubicada"
+        }
+      },
+      {
+        "id": "sinabrir",
+        "title": "Sin abrir el equipo",
+        "content": "El sensor se fija por fuera, en el tanque o la envolvente, con montaje magnético, adhesivo o con tornillo. Escucha lo que pasa adentro sin intervenir el equipo.",
+        "foto": {
+          "src": "/images/servicios/sensores-acusticos/campo-12.webp",
+          "alt": "Especialista de DIAPSA frente a los interruptores de una subestación"
+        }
+      },
+      {
+        "id": "criticos",
+        "title": "Solo en los equipos que lo justifican",
+        "content": "Se instala en los transformadores y subestaciones de los que depende la planta. El resto sigue con sus pruebas y sus rutas de inspección.",
+        "foto": {
+          "src": "/images/servicios/sensores-acusticos/campo-19.webp",
+          "alt": "Ruta de inspección en el patio de una subestación"
+        }
+      },
+      {
+        "id": "monitoreo",
+        "title": "Monitoreo DIAPSA o directo a ti",
+        "content": "Un especialista de DIAPSA revisa cada alerta y te avisa con el diagnóstico y la acción, o las alertas llegan directo a tu sistema de control. Puedes tener las dos.",
+        "foto": {
+          "src": "/images/servicios/sensores-acusticos/campo-21.webp",
+          "alt": "Especialista de DIAPSA bajo los marcos de una subestación"
+        }
+      }
+    ]
+  },
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujoEncabezado": {
+    "titulo": "Del sonido a la alerta, en cinco pasos",
+    "texto": "No vendemos sensores: vendemos enterarte a tiempo de lo que tu transformador ya está diciendo. Así se arma el proyecto."
+  },
+  "flujo": [
+    {
+      "titulo": "Equipos críticos",
+      "texto": "Un especialista define contigo qué transformadores y subestaciones justifican escucha continua: los que alimentan toda la planta y los que no tienen respaldo."
+    },
+    {
+      "titulo": "Diseño",
+      "texto": "Para cada equipo, cuántos sensores y en qué punto del tanque o la envolvente, según su construcción y lo que se quiere escuchar."
+    },
+    {
+      "titulo": "Instalación",
+      "texto": "Montaje magnético, adhesivo o con tornillo por fuera del equipo, y conexión a la plataforma o a tu sistema de control."
+    },
+    {
+      "titulo": "Algoritmos e IA",
+      "texto": "Con los primeros días de datos, los algoritmos aprenden la huella de cada equipo sano y se fijan los parámetros que reconocen el sonido de una falla."
+    },
+    {
+      "titulo": "Vigilancia y aviso",
+      "texto": "La alerta llega con el patrón detectado, su grabación y qué hacer: revisada por un especialista de DIAPSA o directo a tu sistema."
+    }
+  ],
+  "valor": {
+    "etiqueta": "En qué se traduce",
+    "titulo": "El mismo sonido, dos finales muy distintos",
+    "texto": "La descarga o el núcleo flojo ya están sonando dentro del transformador. Lo que cambia es si alguien los escucha a tiempo.",
+    "sinEtiqueta": "Solo con pruebas periódicas",
+    "conEtiqueta": "Con huella acústica",
+    "sin": "Te enteras tarde",
+    "con": "Te enteras a tiempo",
+    "filas": [
+      {
+        "concepto": "Descargas",
+        "sin": "El aislamiento falla y se dispara la subestación",
+        "con": "Se programa la revisión del componente a tiempo"
+      },
+      {
+        "concepto": "Núcleo y devanados",
+        "sin": "El aflojamiento avanza hasta la falla interna",
+        "con": "Se detecta el cambio de sonido y se investiga"
+      },
+      {
+        "concepto": "Enfriamiento",
+        "sin": "El transformador se calienta por un ventilador detenido",
+        "con": "Se repara el ventilador o la bomba antes del calor"
+      },
+      {
+        "concepto": "Riesgo",
+        "sin": "Personal cerca de equipo energizado para revisarlo",
+        "con": "Se escucha todo el día, sin exponer a nadie"
+      },
+      {
+        "concepto": "Producción",
+        "sin": "Paro de todo lo que alimenta ese transformador",
+        "con": "Intervención en una ventana programada"
+      }
+    ],
+    "cierre": "Lo que separa las dos columnas es escuchar a tiempo. Eso es lo que te da la huella acústica."
+  },
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "La alerta llega así: qué es y qué hacer",
+    "descripcion": "No un audio para interpretar. La alerta trae el equipo, el patrón que reconoció la IA y la acción. Este es un ejemplo simulado.",
+    "contenido": [
+      "El patrón detectado y dónde está",
+      "Qué tan grave es, en semáforo",
+      "Qué hacer, en orden",
+      "Historial del sonido de cada punto"
+    ],
+    "alerta": {
+      "hora": "05:47",
+      "origen": "DIAPSA · Alerta acústica",
+      "equipo": "Transformador · subestación principal",
+      "estado": {
+        "clave": "precaucion",
+        "etiqueta": "Precaución"
+      },
+      "tendencia": [
+        22,
+        21,
+        23,
+        22,
+        24,
+        23,
+        25,
+        27,
+        30,
+        34,
+        37,
+        41,
+        44
+      ],
+      "que": "La huella acústica del transformador cambió: aparece un patrón de descarga parcial que crece desde hace tres días, del lado de la fase C.",
+      "acciones": [
+        "Confirmar con ultrasonido y termografía en la próxima ronda.",
+        "Tomar muestra de aceite para gases disueltos.",
+        "Programar la revisión de la boquilla de la fase C."
+      ],
+      "firma": "Revisada por un especialista en ultrasonido de DIAPSA",
+      "insignia": "IA",
+      "nota": "Ejemplo simulado: el equipo, el patrón y la hora no corresponden a ningún cliente."
+    }
+  },
+  "galeria": [
+    {
+      "src": "/images/servicios/sensores-acusticos/campo-08.webp",
+      "alt": "Especialista de DIAPSA frente a las boquillas de una subestación de alta tensión."
+    },
+    {
+      "src": "/images/servicios/sensores-acusticos/campo-00.webp",
+      "alt": "Inspección acústica de las líneas de una subestación."
+    },
+    {
+      "src": "/images/servicios/sensores-acusticos/campo-21.webp",
+      "alt": "Ruta de inspección bajo los marcos de la subestación."
+    },
+    {
+      "src": "/images/servicios/sensores-acusticos/campo-02.webp",
+      "alt": "Inspección de estructuras de alta tensión."
+    },
+    {
+      "src": "/images/servicios/sensores-acusticos/campo-12.webp",
+      "alt": "Especialista de DIAPSA frente a los interruptores de una subestación."
+    },
+    {
+      "src": "/images/servicios/sensores-acusticos/campo-26.webp",
+      "alt": "Inspección de líneas y equipos a lo largo del patio de maniobras."
+    },
+    {
+      "src": "/images/servicios/sensores-acusticos/campo-19.webp",
+      "alt": "Ruta de inspección en el patio de una subestación."
+    },
+    {
+      "src": "/images/servicios/sensores-acusticos/campo-29.webp",
+      "alt": "Especialista de DIAPSA apuntando a los equipos del patio de maniobras."
+    },
+    {
+      "src": "/images/servicios/sensores-acusticos/campo-17.webp",
+      "alt": "Inspección de boquillas y líneas en una subestación."
+    }
+  ],
+  "faq": [
+    {
+      "question": "¿Qué es la huella acústica?",
+      "answer": "Es el sonido característico de un equipo cuando está sano: el zumbido de un transformador, por ejemplo, tiene un patrón propio según su carga y su construcción. El sensor lo escucha todo el día y la IA aprende ese patrón, para reconocer cuando aparece un sonido que no corresponde, como el de una descarga parcial o un núcleo que se afloja."
+    },
+    {
+      "question": "¿Para qué equipos conviene?",
+      "answer": "Para el equipo eléctrico crítico: transformadores de potencia y distribución, subestaciones encapsuladas en gas, reactores y celdas de media tensión de las que depende la planta. Son equipos donde una falla es cara y peligrosa, y donde revisar solo en el paro deja meses sin información."
+    },
+    {
+      "question": "¿Qué fallas eléctricas detecta?",
+      "answer": "Descargas parciales, efecto corona, aflojamiento del núcleo y los devanados, partículas libres y contactos flojos en subestaciones encapsuladas, y fallas en ventiladores y bombas de enfriamiento o en el cambiador de derivaciones. Cada una tiene un sonido distinto, y eso es lo que la IA aprende a separar."
+    },
+    {
+      "question": "¿Sustituye a las pruebas eléctricas o al análisis de aceite?",
+      "answer": "No, los complementa. Las pruebas en el paro dicen en qué estado está el aislamiento, y el análisis de gases disueltos confirma qué pasa dentro del aceite. La huella acústica llena el tiempo entre una prueba y otra: avisa cuando algo cambia para que la siguiente prueba se haga cuando hace falta."
+    },
+    {
+      "question": "¿Hay que abrir o desenergizar el equipo?",
+      "answer": "No para escucharlo: el sensor se fija por fuera, sobre el tanque o la envolvente, con montaje magnético, adhesivo o con tornillo. La instalación se planea con las distancias de seguridad y los procedimientos de cada subestación."
+    },
+    {
+      "question": "¿Quién recibe las alertas?",
+      "answer": "Tú decides. Un especialista de DIAPSA puede revisar cada alerta y avisarte con el diagnóstico y la acción, o las alertas pueden llegar directo a tu sistema de control. También se pueden tener las dos."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "La lista de transformadores y subestaciones que te preocupan con sus datos de placa, fotos de cómo están instalados y si tienes un sistema al que deban llegar las alertas."
+    }
+  ],
+  "mostrarClientes": true
 }

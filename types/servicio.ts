@@ -199,7 +199,7 @@ export interface ServicePorQue {
   escena360?: ServiceEscena360;
   /** Si es "sensores", en lugar de la foto va la escena "del sensor a tu
       teléfono"; la foto queda como imagen de espera. */
-  escena?: "sensores" | "termicas";
+  escena?: "sensores" | "termicas" | "huella";
   pie?: string;
   /** Las tres preguntas que contesta una muestra, sin valores de
       laboratorio, y qué se hace si cada una sale mal. */
@@ -411,20 +411,22 @@ export interface ServiceTecnicas {
   items: {
     nombre: string;
     texto: string;
-    equipos: string;
+    equipos?: string;
     mide: string[];
     /** Se mide con la planta operando: va arriba, a lo ancho. */
     enOperacion?: boolean;
     /** Una línea para la tarjeta chica; si no viene, se usa `texto`. */
     resumen?: string;
-    frecuencia: string;
-    entregable: string;
+    frecuencia?: string;
+    entregable?: string;
     /** A la página de la disciplina, si existe. */
     enlace?: { href: string; texto: string };
     /** Un renglón del reporte, como ejemplo. `clave` es la del semáforo. */
-    ejemplo: { etiqueta: string; equipo: string; estado: string; clave: string; lineas: { k: string; v: string }[]; accion: string };
+    ejemplo?: { etiqueta: string; equipo: string; estado: string; clave: string; lineas: { k: string; v: string }[]; accion: string };
   }[];
-  nota: string;
+  nota?: string;
+  /** Rótulo del grupo de tarjetas chicas cuando hay una grande arriba. */
+  segundoGrupo?: string;
 }
 
 export interface ServiceHojaIntegral {
