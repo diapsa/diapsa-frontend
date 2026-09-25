@@ -293,6 +293,43 @@
       "Sobrecalentamiento del papel aislante",
       "Humedad en el aislamiento",
       "Degradación de la celulosa"
+    ],
+    "fotos": [
+      {
+        "nombre": "Transformadores de potencia",
+        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
+        "alt": "Transformador de potencia en una subestación, con sus boquillas y radiadores",
+        "credito": "Yoshieslunchbox · CC BY-SA 4.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Substation_Power_Transformer_1.jpg"
+      },
+      {
+        "nombre": "Transformadores de distribución críticos",
+        "src": "/images/servicios/dga-en-linea/transformador-distribucion.webp",
+        "alt": "Transformador de distribución tipo pedestal",
+        "credito": "Radiotrefoil · CC BY-SA 4.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Essential_Energy_(NSW)_pad_mount_distribution_transformer.jpg"
+      },
+      {
+        "nombre": "Transformadores de generación",
+        "src": "/images/servicios/dga-en-linea/transformador-generacion.webp",
+        "alt": "Transformadores elevadores en una central hidroeléctrica",
+        "credito": "ThreePhaseAC · CC BY-SA 4.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Jackson_Hydro_Transformers.jpg"
+      },
+      {
+        "nombre": "Transformadores de horno",
+        "src": "/images/servicios/dga-en-linea/transformador-horno.webp",
+        "alt": "Barras de salida de un transformador de horno de arco",
+        "credito": "Wtshymanski · CC BY-SA 3.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Arc_Furnace_transformer_bus.jpg"
+      },
+      {
+        "nombre": "Reactores",
+        "src": "/images/servicios/dga-en-linea/reactor.webp",
+        "alt": "Reactor en aceite con sus radiadores y ventiladores",
+        "credito": "Hmvh · CC BY-SA 4.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Shunt241.jpg"
+      }
     ]
   },
   "galeria": [

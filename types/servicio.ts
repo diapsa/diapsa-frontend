@@ -517,6 +517,8 @@ export interface ServiceCobertura {
   equipos: string[];
   fallasTitulo: string;
   fallas: string[];
+  /** Fotos de los equipos donde aplica, con su crédito si no son propias. */
+  fotos?: { nombre: string; src: string; alt: string; credito?: string; fuente?: string }[];
 }
 
 export interface ServiceDiferencias {
