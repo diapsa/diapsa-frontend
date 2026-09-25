@@ -33,6 +33,7 @@ const serviceSlugs = [
     "camaras-termicas",
     "sensores-vibracion",
     "sensores-acusticos",
+    "dga-en-linea",
 ];
 
 // Generar parámetros estáticos para pre-renderizado

@@ -1,0 +1,369 @@
+{
+  "id": "dga-en-linea",
+  "slug": "dga-en-linea",
+  "type": "tecnologia",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo Continuo",
+      "link": "/servicios/monitoreo-continuo"
+    },
+    {
+      "label": "DGA en Línea",
+      "link": "/servicios/monitoreo-continuo/dga-en-linea"
+    }
+  ],
+  "header": {
+    "title": "Análisis de Gases Disueltos en Línea",
+    "subtitle": "Los gases del aceite de tus transformadores críticos, medidos todo el día: la falla interna se anuncia antes de ocurrir",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoDescription": "DGA en línea para transformadores críticos: monitor de gases disueltos instalado en el transformador, medición varias veces al día, tendencia y velocidad de generación con algoritmos e IA, interpretación con Duval, IEEE C57.104 e IEC 60599 y alerta revisada por especialistas.",
+  "content": {
+    "title": "Un transformador avisa en sus gases antes de fallar",
+    "subtitle": "Un arco interno, una descarga o un punto caliente descomponen el aceite y el papel, y dejan gases disueltos. Con muestras una o dos veces al año, una falla rápida pasa entre dos análisis. El monitor en línea mide esos gases varias veces al día, y los algoritmos e IA reconocen el patrón de la falla.",
+    "image": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
+    "items": []
+  },
+  "porQue": {
+    "foto": {
+      "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
+      "alt": "Transformador de potencia en operación, con sus válvulas de muestreo"
+    },
+    "pie": "Transformador muestreado por DIAPSA a plena carga. En los transformadores críticos, el monitor en línea hace esa medición varias veces al día, sin tomar muestras a mano.",
+    "preguntas": [
+      {
+        "pregunta": "Para transformadores críticos",
+        "texto": "Los que alimentan toda la planta, los que no tienen respaldo y los que ya mostraron gases en una muestra."
+      },
+      {
+        "pregunta": "Gases medidos sin parar",
+        "texto": "Varias veces al día, con el transformador en servicio, y con el historial de cada gas."
+      },
+      {
+        "pregunta": "Patrones con algoritmos e IA",
+        "texto": "No solo cuánto gas hay, sino qué tan rápido se genera y qué tipo de falla indica."
+      }
+    ]
+  },
+  "tecnicas": {
+    "etiqueta": "Qué se instala",
+    "titulo": "Un laboratorio pequeño, pegado al transformador",
+    "texto": "El monitor toma aceite del transformador, extrae los gases, los mide y devuelve el aceite, varias veces al día.",
+    "segundoGrupo": "Según el transformador",
+    "items": [
+      {
+        "nombre": "Monitor de gases en línea",
+        "enOperacion": true,
+        "texto": "Se conecta a las válvulas del tanque y mide con el transformador en servicio. Cada lectura queda en la plataforma, junto a su tendencia y su velocidad de cambio.",
+        "mide": [
+          "Hidrógeno",
+          "Acetileno",
+          "Metano",
+          "Etileno",
+          "Etano",
+          "Monóxido y dióxido de carbono",
+          "Humedad en el aceite"
+        ]
+      },
+      {
+        "nombre": "Un gas clave",
+        "texto": "Alerta temprana general.",
+        "resumen": "Hidrógeno y humedad: la alerta temprana de casi cualquier falla, para transformadores de mediana potencia.",
+        "mide": [
+          "Hidrógeno",
+          "Humedad"
+        ]
+      },
+      {
+        "nombre": "Varios gases",
+        "texto": "Diagnóstico del tipo de falla.",
+        "resumen": "Cada gas por separado, para saber qué tipo de falla es: arco, descarga o sobrecalentamiento.",
+        "mide": [
+          "Gases de falla",
+          "Triángulo de Duval",
+          "Relaciones de gases"
+        ]
+      },
+      {
+        "nombre": "Integración",
+        "texto": "A tu sistema o a IDAP.",
+        "resumen": "Las lecturas y alertas llegan a tu sistema de control o a la plataforma, junto con el resto de tus equipos.",
+        "mide": [
+          "SCADA",
+          "Plataforma DIAPSA",
+          "Historial por transformador"
+        ]
+      }
+    ]
+  },
+  "diferencias": {
+    "etiqueta": "Por qué DIAPSA",
+    "titulo": "¿Qué nos hace diferentes?",
+    "items": [
+      {
+        "id": "especialistas",
+        "title": "Lo interpretan especialistas en transformadores",
+        "content": "Un valor de gas no es un diagnóstico. Quien lo lee conoce el triángulo de Duval, las relaciones de gases y los criterios de IEEE C57.104 e IEC 60599, y sabe qué hacer con cada resultado.",
+        "foto": {
+          "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
+          "alt": "Transformador de potencia en operación"
+        }
+      },
+      {
+        "id": "laboratorio",
+        "title": "El laboratorio confirma lo que el monitor ve",
+        "content": "Cuando el monitor detecta un cambio, se toma una muestra y se analiza en laboratorio acreditado. El monitor vigila todo el día; el laboratorio da el detalle completo.",
+        "foto": {
+          "src": "/images/servicios/analisis-de-aceite/dga-jeringa.webp",
+          "alt": "Toma de muestra de aceite con jeringa en un transformador"
+        }
+      },
+      {
+        "id": "ia",
+        "title": "Parámetros con algoritmos e IA",
+        "content": "Lo que más dice no es cuánto gas hay, sino qué tan rápido aumenta. Los algoritmos siguen la velocidad de generación de cada gas y su combinación, y reconocen el patrón de una falla.",
+        "foto": {
+          "src": "/images/servicios/sensores-acusticos/campo-12.webp",
+          "alt": "Especialista de DIAPSA en una subestación"
+        }
+      },
+      {
+        "id": "criticos",
+        "title": "Solo en los transformadores que lo justifican",
+        "content": "Se instala en los transformadores de los que depende la planta. El resto sigue con su análisis de gases por muestra, que es más económico por equipo.",
+        "foto": {
+          "src": "/images/servicios/sensores-acusticos/campo-08.webp",
+          "alt": "Boquillas de una subestación de alta tensión"
+        }
+      },
+      {
+        "id": "monitoreo",
+        "title": "Monitoreo DIAPSA o directo a ti",
+        "content": "Un especialista de DIAPSA revisa cada alerta y te avisa con el diagnóstico y la acción, o las alertas llegan directo a tu sistema de control. Puedes tener las dos.",
+        "foto": {
+          "src": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
+          "alt": "Gabinete de control de un transformador"
+        }
+      }
+    ]
+  },
+  "certificacion": "Para transformadores críticos · Interpretación con Duval, IEEE C57.104 e IEC 60599 · Algoritmos e IA · Revisión por especialistas de DIAPSA",
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujoEncabezado": {
+    "titulo": "Del gas a la alerta, en cinco pasos",
+    "texto": "No vendemos monitores: vendemos enterarte a tiempo de lo que pasa dentro de tu transformador. Así se arma el proyecto."
+  },
+  "flujo": [
+    {
+      "titulo": "Transformadores críticos",
+      "texto": "Un especialista define contigo qué transformadores justifican medición continua, con su historial de gases, su carga y su importancia."
+    },
+    {
+      "titulo": "Diseño",
+      "texto": "Para cada transformador, el monitor adecuado: un gas clave o varios gases, y el punto de conexión a sus válvulas."
+    },
+    {
+      "titulo": "Instalación",
+      "texto": "Conexión a las válvulas del tanque y a la plataforma, en un paro programado o con el procedimiento que permita cada subestación."
+    },
+    {
+      "titulo": "Algoritmos e IA",
+      "texto": "Con los primeros días de datos se fija el nivel normal de cada gas y su velocidad de cambio, y los parámetros que reconocen el patrón de una falla."
+    },
+    {
+      "titulo": "Vigilancia y aviso",
+      "texto": "La alerta llega con el gas que cambió, qué tan rápido y qué tipo de falla indica: revisada por un especialista de DIAPSA o directo a tu sistema."
+    }
+  ],
+  "valor": {
+    "etiqueta": "En qué se traduce",
+    "titulo": "Los mismos gases, dos finales muy distintos",
+    "texto": "La falla interna ya está dejando gases en el aceite. Lo que cambia es si te enteras en la siguiente muestra o el mismo día.",
+    "sinEtiqueta": "Solo con muestras",
+    "conEtiqueta": "Con DGA en línea",
+    "sin": "Te enteras meses después",
+    "con": "Te enteras el mismo día",
+    "filas": [
+      {
+        "concepto": "Cuándo te enteras",
+        "sin": "En la siguiente muestra, seis o doce meses después",
+        "con": "En cuanto los gases empiezan a subir"
+      },
+      {
+        "concepto": "Falla rápida",
+        "sin": "Un arco interno puede pasar entre dos análisis",
+        "con": "Se ve en horas, con su velocidad de generación"
+      },
+      {
+        "concepto": "Diagnóstico",
+        "sin": "Un valor suelto, sin saber si sube o baja",
+        "con": "La tendencia de cada gas y el tipo de falla"
+      },
+      {
+        "concepto": "Riesgo",
+        "sin": "Falla del transformador con incendio o explosión",
+        "con": "Se baja la carga o se saca de servicio a tiempo"
+      },
+      {
+        "concepto": "Producción",
+        "sin": "Paro de todo lo que alimenta, por semanas",
+        "con": "Intervención programada, con el transformador de respaldo listo"
+      }
+    ],
+    "cierre": "Lo que separa las dos columnas es enterarte a tiempo. Eso es lo que te da el DGA en línea."
+  },
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "La alerta llega así: qué es y qué hacer",
+    "descripcion": "No una tabla de gases para interpretar. La alerta trae el gas que cambió, qué tan rápido y qué tipo de falla indica. Este es un ejemplo simulado.",
+    "contenido": [
+      "El gas que cambió y su velocidad de generación",
+      "El tipo de falla probable",
+      "Qué hacer, en orden",
+      "Historial de cada gas por transformador"
+    ],
+    "alerta": {
+      "hora": "04:18",
+      "origen": "DIAPSA · Alerta de gases",
+      "equipo": "Transformador principal · 13.8 kV",
+      "estado": {
+        "clave": "alarma",
+        "etiqueta": "Crítico"
+      },
+      "tendencia": [
+        3,
+        3,
+        4,
+        3,
+        4,
+        4,
+        5,
+        7,
+        10,
+        14,
+        19,
+        25,
+        32
+      ],
+      "que": "Apareció acetileno y el hidrógeno sube 40 ppm por día. El patrón indica descargas de baja energía dentro del transformador.",
+      "acciones": [
+        "Tomar muestra para laboratorio y confirmar.",
+        "Reducir la carga si el acetileno sigue subiendo.",
+        "Programar pruebas eléctricas e inspección interna."
+      ],
+      "firma": "Revisada por un especialista de DIAPSA",
+      "insignia": "IA",
+      "nota": "Ejemplo simulado: el transformador, los valores y la hora no corresponden a ningún cliente."
+    }
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué detecta?",
+    "equiposTitulo": "Equipos",
+    "equipos": [
+      "Transformadores de potencia",
+      "Transformadores de distribución críticos",
+      "Transformadores de generación",
+      "Transformadores de horno",
+      "Reactores"
+    ],
+    "fallasTitulo": "Fallas que detecta",
+    "fallas": [
+      "Arco interno",
+      "Descargas parciales",
+      "Sobrecalentamiento del aceite",
+      "Sobrecalentamiento del papel aislante",
+      "Humedad en el aislamiento",
+      "Degradación de la celulosa"
+    ]
+  },
+  "galeria": [
+    {
+      "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
+      "alt": "Transformador de potencia muestreado por DIAPSA a plena carga."
+    },
+    {
+      "src": "/images/servicios/analisis-de-aceite/dga-jeringa.webp",
+      "alt": "Toma de muestra con jeringa para análisis de gases disueltos."
+    },
+    {
+      "src": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
+      "alt": "Gabinete de control del transformador."
+    },
+    {
+      "src": "/images/servicios/sensores-acusticos/campo-08.webp",
+      "alt": "Especialista de DIAPSA frente a las boquillas de una subestación de alta tensión."
+    },
+    {
+      "src": "/images/servicios/sensores-acusticos/campo-12.webp",
+      "alt": "Especialista de DIAPSA frente a los interruptores de una subestación."
+    },
+    {
+      "src": "/images/servicios/sensores-acusticos/campo-21.webp",
+      "alt": "Ruta de inspección bajo los marcos de la subestación."
+    }
+  ],
+  "mostrarClientes": true,
+  "servicioRelacionado": {
+    "href": "/servicios/monitoreo-condicion/analisis-de-aceite",
+    "etiqueta": "Se complementa con",
+    "titulo": "Análisis de aceite y gases disueltos por muestra",
+    "texto": "El monitor en línea vigila los transformadores críticos todo el día; el análisis por muestra en laboratorio acreditado cubre el resto y confirma cada alerta con el detalle completo.",
+    "enlace": "Ver análisis de aceite"
+  },
+  "faq": [
+    {
+      "question": "¿Qué es el DGA en línea?",
+      "answer": "Es el análisis de gases disueltos en el aceite del transformador, hecho por un monitor instalado en el propio transformador en lugar de un laboratorio. Toma aceite, extrae los gases, los mide y devuelve el aceite, varias veces al día y con el transformador en servicio."
+    },
+    {
+      "question": "¿Para qué transformadores conviene?",
+      "answer": "Para los críticos: los que alimentan toda la planta, los que no tienen respaldo, los de generación y horno, y los que ya mostraron gases en una muestra. Para el resto, el análisis por muestra una o dos veces al año es más económico."
+    },
+    {
+      "question": "¿Qué gases mide?",
+      "answer": "Depende del monitor. Los de un gas clave miden hidrógeno, que aparece en casi cualquier falla, y la humedad del aceite. Los de varios gases miden además acetileno, metano, etileno, etano y los óxidos de carbono, que permiten saber qué tipo de falla es."
+    },
+    {
+      "question": "¿Sustituye al análisis de gases por muestra?",
+      "answer": "No, lo complementa. El monitor vigila todo el día y avisa cuando algo cambia; la muestra en laboratorio acreditado confirma el diagnóstico con el detalle completo y cubre los transformadores que no tienen monitor."
+    },
+    {
+      "question": "¿Cómo se usan los algoritmos y la IA?",
+      "answer": "Siguen el nivel normal de cada gas y, sobre todo, qué tan rápido aumenta. Con la combinación de gases reconocen el patrón de una falla, como un arco, una descarga o un sobrecalentamiento, con criterios como el triángulo de Duval, IEEE C57.104 e IEC 60599. Cada alerta la puede confirmar un especialista de DIAPSA."
+    },
+    {
+      "question": "¿Quién recibe las alertas?",
+      "answer": "Tú decides. Un especialista de DIAPSA puede revisar cada alerta y avisarte con el diagnóstico y la acción, o las alertas pueden llegar directo a tu sistema de control. También se pueden tener las dos."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "La lista de transformadores críticos con sus datos de placa, los últimos análisis de gases si los tienes, fotos de sus válvulas y si hay un sistema al que deban llegar las alertas."
+    }
+  ],
+  "cta": {
+    "title": "¿Qué transformador de tu planta no puede fallar?",
+    "text": "Compártenos tus transformadores críticos y sus últimos análisis de gases, y te proponemos el monitor adecuado para cada uno y cómo se vigila.",
+    "whatsappMessage": "Hola, quiero información sobre monitoreo de gases disueltos en línea para mis transformadores.",
+    "datos": [
+      "Para transformadores críticos",
+      "Algoritmos e IA",
+      "Alertas revisadas por especialistas de DIAPSA"
+    ]
+  },
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": []
+  }
+}
