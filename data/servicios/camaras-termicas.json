@@ -83,6 +83,33 @@
       "Daño en refractario",
       "Inicio de incendio",
       "Temperatura de proceso fuera de rango"
+    ],
+    "fotos": [
+      {
+        "nombre": "Tableros y subestaciones",
+        "src": "/images/equipos/subestacion.webp",
+        "alt": "Subestación eléctrica de alta tensión"
+      },
+      {
+        "nombre": "Transformadores",
+        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
+        "alt": "Transformador de potencia"
+      },
+      {
+        "nombre": "Hornos y secadores",
+        "src": "/images/equipos/horno.webp",
+        "alt": "Interior de un horno industrial en operación"
+      },
+      {
+        "nombre": "Bandas transportadoras",
+        "src": "/images/equipos/banda.webp",
+        "alt": "Banda transportadora"
+      },
+      {
+        "nombre": "Almacenes de material combustible",
+        "src": "/images/equipos/almacen.webp",
+        "alt": "Almacén con material en racks"
+      }
     ]
   },
   "certificacion": "Para equipos críticos · Parámetros con algoritmos e IA · Diseño y revisión por termógrafos de DIAPSA",

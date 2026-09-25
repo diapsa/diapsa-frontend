@@ -585,6 +585,33 @@
       "Equipos sin aterrizar",
       "Riesgo de descarga al personal",
       "Incumplimiento de NOM-022-STPS"
+    ],
+    "fotos": [
+      {
+        "nombre": "Subestaciones",
+        "src": "/images/equipos/subestacion.webp",
+        "alt": "Subestación eléctrica de alta tensión"
+      },
+      {
+        "nombre": "Tableros y centros de carga",
+        "src": "/images/equipos/tablero-bt.webp",
+        "alt": "Tablero de distribución con sus interruptores"
+      },
+      {
+        "nombre": "Transformadores",
+        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
+        "alt": "Transformador de potencia"
+      },
+      {
+        "nombre": "Tanques y equipos con electricidad estática",
+        "src": "/images/equipos/tanque.webp",
+        "alt": "Tanques industriales de almacenamiento"
+      },
+      {
+        "nombre": "Motores y maquinaria",
+        "src": "/images/equipos/motor.webp",
+        "alt": "Motor eléctrico trifásico"
+      }
     ]
   }
 }

@@ -465,6 +465,33 @@
       "Coordinación de protecciones",
       "Etiqueta de cada equipo",
       "Cumplimiento de NOM-029-STPS y NFPA 70E"
+    ],
+    "fotos": [
+      {
+        "nombre": "Subestaciones",
+        "src": "/images/equipos/subestacion.webp",
+        "alt": "Subestación eléctrica de alta tensión"
+      },
+      {
+        "nombre": "Tableros de media tensión",
+        "src": "/images/equipos/tablero-mt.webp",
+        "alt": "Tableros de media tensión"
+      },
+      {
+        "nombre": "Tableros de baja tensión",
+        "src": "/images/equipos/tablero-bt.webp",
+        "alt": "Tablero de distribución con sus interruptores"
+      },
+      {
+        "nombre": "Centros de control de motores",
+        "src": "/images/equipos/ccm.webp",
+        "alt": "Sala de centros de control de motores"
+      },
+      {
+        "nombre": "Interruptores",
+        "src": "/images/equipos/interruptor.webp",
+        "alt": "Interruptor de potencia en una subestación"
+      }
     ]
   }
 }

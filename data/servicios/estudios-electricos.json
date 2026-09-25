@@ -596,6 +596,33 @@
       "Contactos desgastados",
       "Tiempos de apertura fuera de rango",
       "Fallas en empalmes y terminales"
+    ],
+    "fotos": [
+      {
+        "nombre": "Tableros generales",
+        "src": "/images/equipos/tablero-bt.webp",
+        "alt": "Tablero de distribución con sus interruptores"
+      },
+      {
+        "nombre": "Centros de control de motores",
+        "src": "/images/equipos/ccm.webp",
+        "alt": "Sala de centros de control de motores"
+      },
+      {
+        "nombre": "Transformadores",
+        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
+        "alt": "Transformador de potencia"
+      },
+      {
+        "nombre": "Interruptores de baja y media tensión",
+        "src": "/images/equipos/interruptor.webp",
+        "alt": "Interruptor de potencia en una subestación"
+      },
+      {
+        "nombre": "Cables de media tensión",
+        "src": "/images/equipos/cable-mt.webp",
+        "alt": "Terminales de cables de media tensión"
+      }
     ]
   }
 }

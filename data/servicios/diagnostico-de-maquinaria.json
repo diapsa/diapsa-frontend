@@ -447,6 +447,33 @@
       "Calentamiento anormal",
       "Fugas",
       "Fallas eléctricas en motores"
+    ],
+    "fotos": [
+      {
+        "nombre": "Motores eléctricos",
+        "src": "/images/equipos/motor.webp",
+        "alt": "Motor eléctrico trifásico"
+      },
+      {
+        "nombre": "Bombas",
+        "src": "/images/equipos/bomba.webp",
+        "alt": "Bombas centrífugas en línea con sus motores"
+      },
+      {
+        "nombre": "Compresores",
+        "src": "/images/equipos/compresor.webp",
+        "alt": "Compresor industrial"
+      },
+      {
+        "nombre": "Ventiladores",
+        "src": "/images/equipos/ventilador.webp",
+        "alt": "Ventilador industrial con su motor"
+      },
+      {
+        "nombre": "Turbinas",
+        "src": "/images/equipos/turbina.webp",
+        "alt": "Rotor de una turbina de vapor en mantenimiento"
+      }
     ]
   }
 }
