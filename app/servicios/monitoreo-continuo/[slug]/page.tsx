@@ -19,6 +19,7 @@ import PorQueMuestrear from "@/components/organisms/PorQueMuestrear";
 import TendenciaIntervencion from "@/components/organisms/TendenciaIntervencion";
 import Cobertura from "@/components/organisms/Cobertura";
 import ValorParo from "@/components/organisms/ValorParo";
+import TecnicasElectricas from "@/components/organisms/TecnicasElectricas";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -245,6 +246,9 @@ export default async function ServicePage({
             {service.comparadorSonoro && (
                 <GraficaSonora comparador={service.comparadorSonoro} paso={paso()} />
             )}
+
+            {/* Qué se instala: las tecnologías del servicio, en tarjetas. */}
+            {service.tecnicas && <TecnicasElectricas tecnicas={service.tecnicas} paso={paso()} />}
 
             <ServiceProof certificacion={service.certificacion} />
 

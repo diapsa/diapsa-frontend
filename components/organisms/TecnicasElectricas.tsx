@@ -74,9 +74,9 @@ export default function TecnicasElectricas({ tecnicas, paso }: Props) {
         {enParo.length > 0 && (
           <>
             {enOperacion.length > 0 && (
-              <p className="mb-4 text-[11px] font-bold uppercase tracking-widest text-tertiary">En el paro programado</p>
+              <p className="mb-4 text-[11px] font-bold uppercase tracking-widest text-tertiary">{tecnicas.segundoGrupo ?? "En el paro programado"}</p>
             )}
-            <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            <ol className={`grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6 ${enParo.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
               {enParo.map((t) => (
                 <li key={t.nombre} className="flex flex-col rounded-sm bg-white p-5 ring-1 ring-black/5 lg:p-6">
                   <h3 className="text-lg font-extrabold leading-snug text-primary">{t.nombre}</h3>
