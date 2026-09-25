@@ -47,7 +47,7 @@ export default function Cobertura({ cobertura, paso }: Props) {
         {/* Fotos de los equipos, si el servicio las trae. Cuando no son de
             DIAPSA llevan su crédito, como pide su licencia. */}
         {cobertura.fotos && cobertura.fotos.length > 0 && (
-          <ul className="mb-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
+          <ul className={`mb-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4 ${cobertura.fotos.length === 6 ? "lg:grid-cols-6" : "lg:grid-cols-5"}`}>
             {cobertura.fotos.map((f) => (
               <li key={f.src} className="overflow-hidden rounded-sm bg-white/5 ring-1 ring-white/10">
                 <div className="relative aspect-[4/3]">

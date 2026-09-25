@@ -574,6 +574,16 @@
         "cambios": "Recortada y redimensionada"
       },
       {
+        "src": "/images/equipos/centro-datos.webp",
+        "descripcion": "Pasillo de racks en un centro de datos",
+        "original": "Racks Amravati Data Center.jpg",
+        "autor": "PiDatacenters",
+        "licencia": "CC BY-SA 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "fuente": "https://commons.wikimedia.org/wiki/File:Racks_Amravati_Data_Center.jpg",
+        "cambios": "Recortada y redimensionada"
+      },
+      {
         "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
         "descripcion": "Transformador de potencia",
         "original": "Substation Power Transformer 1.jpg",

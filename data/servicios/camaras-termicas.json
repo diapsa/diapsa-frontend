@@ -25,10 +25,10 @@
     "subtitle": "Vigilancia térmica continua para los equipos críticos que no pueden esperar a la siguiente ruta",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Cámaras térmicas fijas para equipos críticos: medición continua de temperatura, parámetros ajustados con algoritmos e IA que identifican patrones de falla, y alerta con el termograma. Tableros, subestaciones, motores, hornos y almacenes.",
+  "seoDescription": "Cámaras térmicas fijas para equipos críticos: tableros, subestaciones, centros de datos, hornos, bandas y almacenes vigilados las 24 horas, con parámetros de algoritmos e IA que reconocen el patrón de una falla y alerta con el termograma.",
   "content": {
     "title": "Para los equipos donde medir una vez al mes no alcanza",
-    "subtitle": "No es para toda la planta: es para los equipos críticos, donde una falla para la línea o puede causar un incendio. Ahí la cámara mide sin parar, y los algoritmos e IA aprenden cómo se comporta cada punto para reconocer el patrón de una falla antes de que ocurra.",
+    "subtitle": "No es para toda la planta: es para los equipos críticos, donde una falla para la línea, tira un centro de datos o puede causar un incendio. Ahí la cámara mide sin parar, y los algoritmos e IA aprenden cómo se comporta cada punto para reconocer el patrón de una falla antes de que ocurra.",
     "image": "/images/servicios/termografia-infrarroja/campo-02.webp",
     "items": [
       {
@@ -69,6 +69,7 @@
     "equiposTitulo": "Equipos",
     "equipos": [
       "Tableros y subestaciones",
+      "Centros de datos",
       "Transformadores",
       "Motores y reductores",
       "Hornos y secadores",
@@ -82,13 +83,19 @@
       "Rodamientos con fricción",
       "Daño en refractario",
       "Inicio de incendio",
-      "Temperatura de proceso fuera de rango"
+      "Temperatura de proceso fuera de rango",
+      "Puntos calientes en racks y PDU"
     ],
     "fotos": [
       {
         "nombre": "Tableros y subestaciones",
         "src": "/images/equipos/subestacion.webp",
         "alt": "Subestación eléctrica de alta tensión"
+      },
+      {
+        "nombre": "Centros de datos",
+        "src": "/images/equipos/centro-datos.webp",
+        "alt": "Pasillo de racks en un centro de datos"
       },
       {
         "nombre": "Transformadores",
@@ -164,7 +171,7 @@
       {
         "id": "alcance",
         "title": "Solo en los equipos que lo justifican",
-        "content": "No se llena la planta de cámaras. Se vigilan los equipos críticos y los puntos donde es indispensable medir sin parar: tableros principales, subestaciones, hornos, bandas y almacenes con riesgo de incendio. El resto sigue en ruta.",
+        "content": "No se llena la planta de cámaras. Se vigilan los equipos críticos y los puntos donde es indispensable medir sin parar: tableros principales, subestaciones, centros de datos, hornos, bandas y almacenes con riesgo de incendio. El resto sigue en ruta.",
         "foto": {
           "src": "/images/servicios/termografia-infrarroja/campo-36.webp",
           "alt": "Inspección termográfica en una nave de proceso"
@@ -333,7 +340,7 @@
   "faq": [
     {
       "question": "¿Para qué equipos conviene una cámara fija?",
-      "answer": "Para los críticos: los que paran la línea si fallan, los que no tienen respaldo, los que se calientan rápido y los que tienen riesgo de incendio, como tableros principales, subestaciones, hornos, bandas y almacenes de material combustible. Donde basta revisar una vez al mes, la ruta con cámara de mano es más económica."
+      "answer": "Para los críticos: los que paran la línea si fallan, los que no tienen respaldo, los que se calientan rápido y los que tienen riesgo de incendio, como tableros principales, subestaciones, centros de datos (racks, PDU, UPS y aire acondicionado de precisión), hornos, bandas y almacenes de material combustible. Donde basta revisar una vez al mes, la ruta con cámara de mano es más económica."
     },
     {
       "question": "¿Sustituye a la ruta de termografía?",
