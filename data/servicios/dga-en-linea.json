@@ -25,10 +25,10 @@
     "subtitle": "Los gases del aceite de tus transformadores críticos, medidos todo el día: la falla interna se anuncia antes de ocurrir",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "DGA en línea para transformadores críticos: monitor de gases disueltos instalado en el transformador, medición varias veces al día, tendencia y velocidad de generación con algoritmos e IA, interpretación con Duval, IEEE C57.104 e IEC 60599 y alerta revisada por especialistas.",
+  "seoDescription": "DGA en línea para transformadores críticos: monitor de gases disueltos que mide hasta 9 gases y la humedad del aceite cada hora, sin gas portador ni de calibración. Tendencia, TDCG y velocidad de generación con algoritmos e IA, interpretación con Duval, IEEE C57.104 e IEC 60599.",
   "content": {
     "title": "Un transformador avisa en sus gases antes de fallar",
-    "subtitle": "Un arco interno, una descarga o un punto caliente descomponen el aceite y el papel, y dejan gases disueltos. Con muestras una o dos veces al año, una falla rápida pasa entre dos análisis. El monitor en línea mide esos gases varias veces al día, y los algoritmos e IA reconocen el patrón de la falla.",
+    "subtitle": "Un arco interno, una descarga o un punto caliente descomponen el aceite y el papel, y dejan gases disueltos. Con muestras una o dos veces al año, una falla rápida pasa entre dos análisis. El monitor en línea mide esos gases cada hora, y los algoritmos e IA reconocen el patrón de la falla.",
     "image": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
     "items": []
   },
@@ -37,15 +37,15 @@
       "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
       "alt": "Transformador de potencia en operación, con sus válvulas de muestreo"
     },
-    "pie": "Transformador muestreado por DIAPSA a plena carga. En los transformadores críticos, el monitor en línea hace esa medición varias veces al día, sin tomar muestras a mano.",
+    "pie": "Transformador muestreado por DIAPSA a plena carga. En los transformadores críticos, el monitor en línea hace esa medición cada hora, sin tomar muestras a mano.",
     "preguntas": [
       {
         "pregunta": "Para transformadores críticos",
         "texto": "Los que alimentan toda la planta, los que no tienen respaldo y los que ya mostraron gases en una muestra."
       },
       {
-        "pregunta": "Gases medidos sin parar",
-        "texto": "Varias veces al día, con el transformador en servicio, y con el historial de cada gas."
+        "pregunta": "Gases medidos cada hora",
+        "texto": "Con el transformador en servicio, sin gas portador ni de calibración, y con el historial de cada gas."
       },
       {
         "pregunta": "Patrones con algoritmos e IA",
@@ -56,49 +56,57 @@
   "tecnicas": {
     "etiqueta": "Qué se instala",
     "titulo": "Un laboratorio pequeño, pegado al transformador",
-    "texto": "El monitor toma aceite del transformador, extrae los gases, los mide y devuelve el aceite, varias veces al día.",
-    "segundoGrupo": "Según el transformador",
+    "texto": "El monitor toma aceite del transformador, extrae los gases al vacío, los mide y devuelve el aceite. Cada hora.",
+    "segundoGrupo": "Dos niveles, según el transformador",
     "items": [
       {
         "nombre": "Monitor de gases en línea",
         "enOperacion": true,
-        "texto": "Se conecta a las válvulas del tanque y mide con el transformador en servicio. Cada lectura queda en la plataforma, junto a su tendencia y su velocidad de cambio.",
+        "texto": "Mide por espectroscopia fotoacústica, sin gas portador ni de calibración, y calcula el total de gases combustibles y su velocidad de cambio. Funciona con aceite mineral o éster, a la intemperie, de -40 a 70 °C.",
         "mide": [
           "Hidrógeno",
-          "Acetileno",
           "Metano",
-          "Etileno",
           "Etano",
-          "Monóxido y dióxido de carbono",
+          "Etileno",
+          "Acetileno",
+          "Monóxido de carbono",
+          "Dióxido de carbono",
+          "Oxígeno",
           "Humedad en el aceite"
         ]
       },
       {
-        "nombre": "Un gas clave",
-        "texto": "Alerta temprana general.",
-        "resumen": "Hidrógeno y humedad: la alerta temprana de casi cualquier falla, para transformadores de mediana potencia.",
+        "nombre": "Monitoreo esencial",
+        "texto": "5 gases y humedad.",
+        "resumen": "Cinco gases de falla y humedad, para transformadores de distribución y subestaciones compactas.",
         "mide": [
           "Hidrógeno",
+          "Monóxido de carbono",
+          "Metano",
+          "Acetileno",
+          "Etileno",
           "Humedad"
         ]
       },
       {
-        "nombre": "Varios gases",
-        "texto": "Diagnóstico del tipo de falla.",
-        "resumen": "Cada gas por separado, para saber qué tipo de falla es: arco, descarga o sobrecalentamiento.",
+        "nombre": "Monitoreo avanzado",
+        "texto": "9 gases y humedad.",
+        "resumen": "Nueve gases y humedad, para transformadores de potencia y subestaciones críticas, con el diagnóstico completo del tipo de falla.",
         "mide": [
-          "Gases de falla",
+          "9 gases de falla",
+          "Humedad",
           "Triángulo de Duval",
-          "Relaciones de gases"
+          "Velocidad de cambio"
         ]
       },
       {
         "nombre": "Integración",
-        "texto": "A tu sistema o a IDAP.",
-        "resumen": "Las lecturas y alertas llegan a tu sistema de control o a la plataforma, junto con el resto de tus equipos.",
+        "texto": "A tu sistema o a la plataforma.",
+        "resumen": "Las lecturas y alarmas salen por Modbus y por contactos de relé a tu sistema de control, o a la plataforma de DIAPSA.",
         "mide": [
+          "Modbus RTU y TCP",
+          "Salidas de relé",
           "SCADA",
-          "Plataforma DIAPSA",
           "Historial por transformador"
         ]
       }
@@ -129,7 +137,7 @@
       {
         "id": "ia",
         "title": "Parámetros con algoritmos e IA",
-        "content": "Lo que más dice no es cuánto gas hay, sino qué tan rápido aumenta. Los algoritmos siguen la velocidad de generación de cada gas y su combinación, y reconocen el patrón de una falla.",
+        "content": "Lo que más dice no es cuánto gas hay, sino qué tan rápido aumenta. Con una lectura cada hora, los algoritmos siguen la velocidad de generación de cada gas, el total de gases combustibles y su combinación, y reconocen el patrón de una falla.",
         "foto": {
           "src": "/images/servicios/sensores-acusticos/campo-12.webp",
           "alt": "Especialista de DIAPSA en una subestación"
@@ -170,7 +178,7 @@
     },
     {
       "titulo": "Diseño",
-      "texto": "Para cada transformador, el monitor adecuado: un gas clave o varios gases, y el punto de conexión a sus válvulas."
+      "texto": "Para cada transformador, el monitor adecuado: esencial de cinco gases o avanzado de nueve, y el punto de conexión a sus válvulas."
     },
     {
       "titulo": "Instalación",
@@ -324,7 +332,7 @@
   "faq": [
     {
       "question": "¿Qué es el DGA en línea?",
-      "answer": "Es el análisis de gases disueltos en el aceite del transformador, hecho por un monitor instalado en el propio transformador en lugar de un laboratorio. Toma aceite, extrae los gases, los mide y devuelve el aceite, varias veces al día y con el transformador en servicio."
+      "answer": "Es el análisis de gases disueltos en el aceite del transformador, hecho por un monitor instalado en el propio transformador en lugar de un laboratorio. Toma aceite, extrae los gases al vacío, los mide y devuelve el aceite, cada hora y con el transformador en servicio."
     },
     {
       "question": "¿Para qué transformadores conviene?",
@@ -332,11 +340,15 @@
     },
     {
       "question": "¿Qué gases mide?",
-      "answer": "Depende del monitor. Los de un gas clave miden hidrógeno, que aparece en casi cualquier falla, y la humedad del aceite. Los de varios gases miden además acetileno, metano, etileno, etano y los óxidos de carbono, que permiten saber qué tipo de falla es."
+      "answer": "El monitor esencial mide cinco gases de falla, hidrógeno, monóxido de carbono, metano, acetileno y etileno, más la humedad del aceite. El avanzado mide nueve: agrega etano, dióxido de carbono y oxígeno, y calcula el total de gases combustibles y su velocidad de cambio, que permiten saber qué tipo de falla es."
     },
     {
       "question": "¿Sustituye al análisis de gases por muestra?",
       "answer": "No, lo complementa. El monitor vigila todo el día y avisa cuando algo cambia; la muestra en laboratorio acreditado confirma el diagnóstico con el detalle completo y cubre los transformadores que no tienen monitor."
+    },
+    {
+      "question": "¿Necesita mantenimiento o consumibles?",
+      "answer": "Muy poco. Mide por espectroscopia fotoacústica, así que no usa gas portador ni gas de calibración, y se calibra solo. Está hecho para operar sin atención a la intemperie, de -40 a 70 °C, y funciona con aceite mineral o con líquidos éster."
     },
     {
       "question": "¿Cómo se usan los algoritmos y la IA?",
@@ -357,7 +369,7 @@
     "whatsappMessage": "Hola, quiero información sobre monitoreo de gases disueltos en línea para mis transformadores.",
     "datos": [
       "Para transformadores críticos",
-      "Algoritmos e IA",
+      "Gases medidos cada hora",
       "Alertas revisadas por especialistas de DIAPSA"
     ]
   },
