@@ -37,21 +37,26 @@
       "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
       "alt": "Transformador de potencia en operación, con sus válvulas de muestreo"
     },
-    "pie": "Transformador muestreado por DIAPSA a plena carga. En los transformadores críticos, el monitor en línea hace esa medición cada hora, sin tomar muestras a mano.",
     "preguntas": [
       {
         "pregunta": "Para transformadores críticos",
-        "texto": "Los que alimentan toda la planta, los que no tienen respaldo y los que ya mostraron gases en una muestra."
+        "texto": "Los que alimentan la planta y no tienen respaldo."
       },
       {
         "pregunta": "Gases medidos cada hora",
-        "texto": "Con el transformador en servicio, sin gas portador ni de calibración, y con el historial de cada gas."
+        "texto": "Con el transformador en servicio, sin gas portador ni de calibración."
       },
       {
-        "pregunta": "Patrones con algoritmos e IA",
-        "texto": "No solo cuánto gas hay, sino qué tan rápido se genera y qué tipo de falla indica."
+        "pregunta": "Patrones, no solo valores",
+        "texto": "La alerta llega por qué tan rápido crece cada gas y qué falla indica."
       }
-    ]
+    ],
+    "escena": "dga",
+    "destacado": {
+      "titulo": "Para transformadores críticos, donde medir sin parar es indispensable",
+      "texto": "Los algoritmos e IA siguen qué tan rápido crece cada gas y reconocen el patrón de una falla interna. Un especialista de DIAPSA lo confirma antes de avisarte, o la alerta llega directo a tu sistema.",
+      "insignia": "IA"
+    }
   },
   "tecnicas": {
     "etiqueta": "Qué se instala",
@@ -298,37 +303,27 @@
       {
         "nombre": "Transformadores de potencia",
         "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
-        "alt": "Transformador de potencia en una subestación, con sus boquillas y radiadores",
-        "credito": "Yoshieslunchbox · CC BY-SA 4.0",
-        "fuente": "https://commons.wikimedia.org/wiki/File:Substation_Power_Transformer_1.jpg"
+        "alt": "Transformador de potencia en una subestación, con sus boquillas y radiadores"
       },
       {
         "nombre": "Transformadores de distribución críticos",
         "src": "/images/servicios/dga-en-linea/transformador-distribucion.webp",
-        "alt": "Transformador de distribución tipo pedestal",
-        "credito": "Radiotrefoil · CC BY-SA 4.0",
-        "fuente": "https://commons.wikimedia.org/wiki/File:Essential_Energy_(NSW)_pad_mount_distribution_transformer.jpg"
+        "alt": "Transformador de distribución tipo pedestal"
       },
       {
         "nombre": "Transformadores de generación",
         "src": "/images/servicios/dga-en-linea/transformador-generacion.webp",
-        "alt": "Transformadores elevadores en una central hidroeléctrica",
-        "credito": "ThreePhaseAC · CC BY-SA 4.0",
-        "fuente": "https://commons.wikimedia.org/wiki/File:Jackson_Hydro_Transformers.jpg"
+        "alt": "Transformadores elevadores en una central hidroeléctrica"
       },
       {
         "nombre": "Transformadores de horno",
         "src": "/images/servicios/dga-en-linea/transformador-horno.webp",
-        "alt": "Barras de salida de un transformador de horno de arco",
-        "credito": "Wtshymanski · CC BY-SA 3.0",
-        "fuente": "https://commons.wikimedia.org/wiki/File:Arc_Furnace_transformer_bus.jpg"
+        "alt": "Barras de salida de un transformador de horno de arco"
       },
       {
         "nombre": "Reactores",
         "src": "/images/servicios/dga-en-linea/reactor.webp",
-        "alt": "Reactor en aceite con sus radiadores y ventiladores",
-        "credito": "Hmvh · CC BY-SA 4.0",
-        "fuente": "https://commons.wikimedia.org/wiki/File:Shunt241.jpg"
+        "alt": "Reactor en aceite con sus radiadores y ventiladores"
       }
     ]
   },
