@@ -21,6 +21,8 @@
  * crecen al aparecer, bajo motion-safe.
  */
 
+import IlustracionDga from "./IlustracionDga";
+
 type Props = {
   clave: string;
   className?: string;
@@ -159,6 +161,8 @@ function Alineacion() {
 }
 
 export default function GraficoPunto({ clave, className = "" }: Props) {
+  // Las ilustraciones de DGA en línea traen su propio marco.
+  if (clave.startsWith("dga-")) return <IlustracionDga clave={clave} />;
   const esquema = clave === "paros" ? <Paros /> : clave === "alineacion" ? <Alineacion /> : null;
   if (!esquema) return null;
   return <div className={`h-full w-full bg-white p-4 lg:p-6 ${className}`}>{esquema}</div>;

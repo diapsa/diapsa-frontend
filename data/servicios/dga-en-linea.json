@@ -125,46 +125,31 @@
         "id": "especialistas",
         "title": "Lo interpretan especialistas en transformadores",
         "content": "Un valor de gas no es un diagnóstico. Quien lo lee conoce el triángulo de Duval, las relaciones de gases y los criterios de IEEE C57.104 e IEC 60599, y sabe qué hacer con cada resultado.",
-        "foto": {
-          "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
-          "alt": "Transformador de potencia en operación"
-        }
+        "grafico": "dga-duval"
       },
       {
         "id": "laboratorio",
         "title": "El laboratorio confirma lo que el monitor ve",
         "content": "Cuando el monitor detecta un cambio, se toma una muestra y se analiza en laboratorio acreditado. El monitor vigila todo el día; el laboratorio da el detalle completo.",
-        "foto": {
-          "src": "/images/servicios/analisis-de-aceite/dga-jeringa.webp",
-          "alt": "Toma de muestra de aceite con jeringa en un transformador"
-        }
+        "grafico": "dga-laboratorio"
       },
       {
         "id": "ia",
         "title": "Parámetros con algoritmos e IA",
         "content": "Lo que más dice no es cuánto gas hay, sino qué tan rápido aumenta. Con una lectura cada hora, los algoritmos siguen la velocidad de generación de cada gas, el total de gases combustibles y su combinación, y reconocen el patrón de una falla.",
-        "foto": {
-          "src": "/images/servicios/sensores-acusticos/campo-12.webp",
-          "alt": "Especialista de DIAPSA en una subestación"
-        }
+        "grafico": "dga-velocidad"
       },
       {
         "id": "criticos",
         "title": "Solo en los transformadores que lo justifican",
         "content": "Se instala en los transformadores de los que depende la planta. El resto sigue con su análisis de gases por muestra, que es más económico por equipo.",
-        "foto": {
-          "src": "/images/servicios/sensores-acusticos/campo-08.webp",
-          "alt": "Boquillas de una subestación de alta tensión"
-        }
+        "grafico": "dga-criticos"
       },
       {
         "id": "monitoreo",
         "title": "Monitoreo DIAPSA o directo a ti",
         "content": "Un especialista de DIAPSA revisa cada alerta y te avisa con el diagnóstico y la acción, o las alertas llegan directo a tu sistema de control. Puedes tener las dos.",
-        "foto": {
-          "src": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
-          "alt": "Gabinete de control de un transformador"
-        }
+        "grafico": "dga-aviso"
       }
     ]
   },
