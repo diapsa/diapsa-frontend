@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Antetitulo from "../atoms/Antetitulo";
+import IlustracionEquipo from "../atoms/IlustracionEquipo";
 import type { ServiceCobertura } from "@/types/servicio";
 
 /**
@@ -49,9 +50,13 @@ export default function Cobertura({ cobertura, paso }: Props) {
         {cobertura.fotos && cobertura.fotos.length > 0 && (
           <ul className={`mb-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4 ${cobertura.fotos.length === 6 ? "lg:grid-cols-6" : "lg:grid-cols-5"}`}>
             {cobertura.fotos.map((f) => (
-              <li key={f.src} className="overflow-hidden rounded-sm bg-white/5 ring-1 ring-white/10">
+              <li key={f.nombre} className="overflow-hidden rounded-sm bg-white/5 ring-1 ring-white/10">
                 <div className="relative aspect-[4/3]">
-                  <Image src={f.src} alt={f.alt} fill sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw" className="object-cover" />
+                  {f.ilustracion ? (
+                    <IlustracionEquipo clave={f.ilustracion} />
+                  ) : f.src ? (
+                    <Image src={f.src} alt={f.alt ?? f.nombre} fill sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw" className="object-cover" />
+                  ) : null}
                 </div>
                 <div className="p-3">
                   <p className="text-sm font-bold leading-snug text-white">{f.nombre}</p>

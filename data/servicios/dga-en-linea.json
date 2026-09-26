@@ -287,28 +287,23 @@
     "fotos": [
       {
         "nombre": "Transformadores de potencia",
-        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
-        "alt": "Transformador de potencia en una subestación, con sus boquillas y radiadores"
+        "ilustracion": "transformador"
       },
       {
         "nombre": "Transformadores de distribución críticos",
-        "src": "/images/servicios/dga-en-linea/transformador-distribucion.webp",
-        "alt": "Transformador de distribución tipo pedestal"
+        "ilustracion": "transformador-dist"
       },
       {
         "nombre": "Transformadores de generación",
-        "src": "/images/servicios/dga-en-linea/transformador-generacion.webp",
-        "alt": "Transformadores elevadores en una central hidroeléctrica"
+        "ilustracion": "transformador-generacion"
       },
       {
         "nombre": "Transformadores de horno",
-        "src": "/images/servicios/dga-en-linea/transformador-horno.webp",
-        "alt": "Barras de salida de un transformador de horno de arco"
+        "ilustracion": "transformador-horno"
       },
       {
         "nombre": "Reactores",
-        "src": "/images/servicios/dga-en-linea/reactor.webp",
-        "alt": "Reactor en aceite con sus radiadores y ventiladores"
+        "ilustracion": "reactor"
       }
     ]
   },
