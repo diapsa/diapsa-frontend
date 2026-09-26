@@ -94,21 +94,24 @@
     "pie": "Intervención en un equipo energizado con el traje que corresponde a su categoría de riesgo. Foto real de una ruta de DIAPSA.",
     "preguntas": [
       {
-        "pregunta": "¿Cuánta energía liberaría un arco en cada tablero?",
-        "texto": "Se mide en calorías por centímetro cuadrado a la distancia a la que trabaja una persona. Por arriba de 1.2 cal/cm² la ropa normal se enciende. El estudio calcula ese valor tablero por tablero, con la corriente de cortocircuito de la planta y el tiempo que tarda cada protección en disparar.",
-        "siSaleMal": "Un tablero con energía alta se puede bajar ajustando la protección para que dispare más rápido, o se decide que ahí no se trabaja energizado."
+        "pregunta": "Cuánta energía liberaría",
+        "texto": "Calculada tablero por tablero conforme a IEEE 1584, en cal/cm²."
       },
       {
-        "pregunta": "¿Con qué ropa se puede abrir y a qué distancia?",
-        "texto": "El número se convierte en una categoría de equipo de protección (ropa de 4, 8, 25 o 40 cal/cm²) y en tres fronteras: la de arco, donde la quemadura sería de segundo grado, y las de choque, limitada y restringida.",
-        "siSaleMal": "Sin el estudio, el EPP es una suposición: o todos cargan el traje pesado, o nadie lo trae en el único tablero que sí lo exige."
+        "pregunta": "Con qué protección y a qué distancia",
+        "texto": "La categoría de EPP y las fronteras de aproximación de cada tablero."
       },
       {
-        "pregunta": "¿Está etiquetado y documentado?",
-        "texto": "La NOM-029-STPS-2011 exige análisis de riesgo y equipo de protección para trabajos con equipo energizado; NFPA 70E exige la etiqueta en cada tablero. El estudio entrega las dos cosas: el informe y la etiqueta lista para pegar.",
-        "siSaleMal": "Sin etiqueta, cada intervención es un riesgo para la persona y una falta ante la STPS. Con ella, el trabajador sabe qué traer antes de abrir."
+        "pregunta": "Etiquetado y documentado",
+        "texto": "La etiqueta en cada tablero y el informe que pide la NOM-029-STPS."
       }
-    ]
+    ],
+    "escena": "arco",
+    "destacado": {
+      "titulo": "Antes de abrir un tablero energizado, cada persona sabe a qué se expone",
+      "texto": "La NOM-029-STPS-2011 exige el análisis de riesgo y el equipo de protección para trabajar con equipo energizado. El estudio lo resuelve tablero por tablero y lo deja escrito en su etiqueta.",
+      "insignia": "029"
+    }
   },
   "arco": {
     "etiqueta": "Lo que produce el estudio",
