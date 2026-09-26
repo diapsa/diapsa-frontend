@@ -5,7 +5,7 @@ import dataAC from "@/data/servicios/analisis-de-aceite.json";
 import dataAE from "@/data/servicios/arco-electrico.json";
 import dataUl from "@/data/servicios/analisis-de-ultrasonido.json";
 import dataDM from "@/data/servicios/diagnostico-de-maquinaria.json";
-import dataEE from "@/data/servicios/estudios-electricos.json";
+import dataEE from "@/data/servicios/calidad-de-energia.json";
 import dataTF from "@/data/servicios/tierras-fisicas.json";
 import dataTI from "@/data/servicios/termografia-infrarroja.json";
 import dataVM from "@/data/servicios/vibraciones-mecanicas.json";

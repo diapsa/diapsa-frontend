@@ -77,6 +77,18 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
 
+      // --- Servicios renombrados ---
+      {
+        source: '/servicios/monitoreo-condicion/estudios-electricos',
+        destination: '/servicios/monitoreo-condicion/calidad-de-energia',
+        statusCode: 301,
+      },
+      {
+        source: '/servicios/monitoreo-condicion/estudios-electricos/',
+        destination: '/servicios/monitoreo-condicion/calidad-de-energia',
+        statusCode: 301,
+      },
+
       // --- Servicios y soluciones ---
       {
         source: '/servicios-y-soluciones/termografia-infrarroja',

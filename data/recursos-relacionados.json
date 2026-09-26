@@ -30,9 +30,9 @@
       "resumen": "Qué exige la norma y cómo se traduce en un programa de mantenimiento eléctrico auditable."
     },
     "servicio": {
-      "href": "/servicios/monitoreo-condicion/estudios-electricos",
-      "titulo": "Estudios Eléctricos Especializados",
-      "resumen": "Calidad de energía, coordinación de protecciones y diagnóstico de tu sistema eléctrico."
+      "href": "/servicios/monitoreo-condicion/calidad-de-energia",
+      "titulo": "Análisis de Calidad de Energía",
+      "resumen": "Armónicos, factor de potencia y eventos de tensión, medidos con tu planta operando."
     }
   },
   {

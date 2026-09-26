@@ -41,7 +41,7 @@ const serviceSlugs = [
     "analisis-de-aceite",
     "diagnostico-de-maquinaria",
     "analisis-de-ultrasonido",
-    "estudios-electricos",
+    "calidad-de-energia",
     "tierras-fisicas",
     "arco-electrico",
     "alineacion-balanceo",
