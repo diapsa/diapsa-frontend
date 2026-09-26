@@ -144,7 +144,7 @@ export interface ServiceEntregable {
   /** La alerta tal como llega al teléfono (sensores). Sustituye a las demás vitrinas. */
   alerta?: AlertaSensor;
   /** Dos o tres columnas de lo que se obtiene, ej. cumplimiento y seguridad. Sustituye a las demás vitrinas. */
-  pilares?: { titulo: string; icono: "escudo" | "documento"; items: string[] }[];
+  pilares?: { titulo: string; icono: "escudo" | "documento" | "ahorro" | "rayo"; items: string[] }[];
   /** Ficha con el antes y el después del equipo, para los servicios
       correctivos: ahí el entregable no es un informe de inspección sino la
       prueba de que el valor bajó. Si viene, sustituye a la vitrina de
@@ -427,6 +427,11 @@ export interface ServiceTecnicas {
     entregable?: string;
     /** A la página de la disciplina, si existe. */
     enlace?: { href: string; texto: string };
+    /** Esquema chico del problema (calidad de energía): armonicos, fp, desbalance, eventos. */
+    grafico?: "armonicos" | "fp" | "desbalance" | "eventos";
+    /** Qué provoca en la planta y cómo se corrige. Sustituyen a la lista de lo que se mide. */
+    efecto?: string;
+    correccion?: string;
     /** Un renglón del reporte, como ejemplo. `clave` es la del semáforo. */
     ejemplo?: { etiqueta: string; equipo: string; estado: string; clave: string; lineas: { k: string; v: string }[]; accion: string };
   }[];

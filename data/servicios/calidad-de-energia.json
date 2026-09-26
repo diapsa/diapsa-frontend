@@ -142,46 +142,58 @@
       },
       {
         "nombre": "Armónicos",
-        "texto": "La distorsión que meten variadores, UPS y hornos, y que calienta motores y transformadores.",
-        "resumen": "La distorsión que meten variadores, UPS y hornos, y que calienta motores y transformadores.",
+        "texto": "La distorsión que meten variadores, UPS y hornos a la red.",
+        "resumen": "La distorsión que meten variadores, UPS y hornos a la red.",
         "mide": [
           "Distorsión de corriente",
           "Distorsión de tensión",
           "Corriente en el neutro"
-        ]
+        ],
+        "grafico": "armonicos",
+        "efecto": "Motores y transformadores más calientes, neutro sobrecargado y capacitores dañados.",
+        "correccion": "Filtros de armónicos o reactores en las cargas que los generan."
       },
       {
         "nombre": "Factor de potencia",
-        "texto": "Lo que se cobra en el recibo cuando baja de 0.90, y a qué horas cae.",
-        "resumen": "Lo que se cobra en el recibo cuando baja de 0.90, y a qué horas cae.",
+        "texto": "Cuánta de la energía que pagas no hace trabajo útil, y a qué horas cae.",
+        "resumen": "Cuánta de la energía que pagas no hace trabajo útil, y a qué horas cae.",
         "mide": [
           "Factor de potencia",
           "Potencia reactiva",
           "Demanda"
-        ]
+        ],
+        "grafico": "fp",
+        "efecto": "Un cargo en el recibo cada mes que baja de 0.90, y el incumplimiento del Código de Red.",
+        "correccion": "Un banco de capacitores del tamaño correcto, desintonizado si hay armónicos."
       },
       {
         "nombre": "Desbalance",
-        "texto": "Fases con cargas mal repartidas, que calientan motores aunque la corriente parezca normal.",
-        "resumen": "Fases con cargas mal repartidas, que calientan motores aunque la corriente parezca normal.",
+        "texto": "Fases con cargas mal repartidas, aunque la corriente total parezca normal.",
+        "resumen": "Fases con cargas mal repartidas, aunque la corriente total parezca normal.",
         "mide": [
           "Desbalance de tensión",
           "Desbalance de corriente"
-        ]
+        ],
+        "grafico": "desbalance",
+        "efecto": "Motores que se calientan y pierden vida, y protecciones que disparan sin razón aparente.",
+        "correccion": "Redistribuir cargas monofásicas entre las tres fases."
       },
       {
         "nombre": "Caídas y picos",
-        "texto": "Los eventos de tensión que reinician variadores y paran líneas sin causa aparente.",
-        "resumen": "Los eventos de tensión que reinician variadores y paran líneas sin causa aparente.",
+        "texto": "Los eventos de tensión de menos de un segundo que nadie ve.",
+        "resumen": "Los eventos de tensión de menos de un segundo que nadie ve.",
         "mide": [
           "Caídas de tensión",
           "Picos de tensión",
           "Interrupciones"
-        ]
+        ],
+        "grafico": "eventos",
+        "efecto": "Variadores y controles que se reinician y líneas que se paran sin causa aparente.",
+        "correccion": "Cruzar cada evento con lo que pasaba en la planta y corregir el origen."
       }
     ],
     "nota": "Los hallazgos de las tarjetas son ejemplos simulados para mostrar la forma del reporte, no casos de un cliente. Las pruebas y sus criterios siguen IEEE 43, IEEE 62, IEEE C57 y las tablas de aceptación de NETA.",
-    "segundoGrupo": "Lo que se busca en el registro"
+    "segundoGrupo": "Lo que se busca en el registro, y por qué importa"
   },
   "certificacion": "Código de Red · IEEE 519 · Instrumentos calibrados ante laboratorio acreditado por la EMA",
   "diagramas": [
@@ -211,116 +223,38 @@
   ],
   "entregable": {
     "etiqueta": "Qué recibes",
-    "titulo": "Esto es lo que recibes",
-    "descripcion": "Un informe por tablero, con cada parámetro contra su referencia, qué carga lo provoca y cómo se corrige. Esta es la forma que tiene, con datos simulados.",
-    "contenido": [
-      "Calidad de la energía por tablero: armónicos, factor de potencia, desbalance y eventos contra su referencia",
-      "Qué carga provoca cada problema",
-      "Cómo se corrige: filtros, banco de capacitores o redistribución de cargas",
-      "Certificados de calibración de los instrumentos usados"
-    ],
-    "hoja": {
-      "etiqueta": "Estudio de calidad de la energía",
-      "titulo": "Tablero general · 480 V · 7 días de registro",
-      "subtitulo": "Planta de manufactura · ejemplo",
-      "datos": [
-        {
-          "etiqueta": "Registro",
-          "valor": "7 días"
-        },
-        {
-          "etiqueta": "Muestras",
-          "valor": "cada 10 min"
-        },
-        {
-          "etiqueta": "Eventos de tensión",
-          "valor": "4"
-        }
-      ],
-      "condicion": {
-        "clave": "precaucion",
-        "etiqueta": "Con hallazgos"
+    "titulo": "Recibes ahorro, confiabilidad y cumplimiento",
+    "descripcion": "No solo cuánto se desvía cada valor: qué carga lo provoca, cómo se corrige y cuánto te cuesta dejarlo así.",
+    "contenido": [],
+    "pilares": [
+      {
+        "titulo": "Ahorro",
+        "icono": "ahorro",
+        "items": [
+          "Adiós al cargo por bajo factor de potencia",
+          "El banco de capacitores del tamaño correcto",
+          "Menos energía perdida en calor"
+        ]
       },
-      "etiquetas": {
-        "condicion": "Condición del tablero",
-        "diagnostico": "Lo que encontró el analista",
-        "recomendaciones": "Qué hacer",
-        "historial": "Valores por fase contra su referencia"
+      {
+        "titulo": "Confiabilidad",
+        "icono": "rayo",
+        "items": [
+          "La causa de cada disparo y cada paro",
+          "Motores y transformadores más frescos",
+          "Capacitores que no se dañan por armónicos"
+        ]
       },
-      "diagnostico": "La distorsión de corriente llega a 18.4 %, más del doble de la referencia, y la provocan los variadores de las bombas de proceso, que no tienen filtro. El factor de potencia promedio de 0.86 queda debajo del 0.90 que exige la tarifa. La tensión está dentro de rango y se registraron cuatro caídas breves, coincidentes con el arranque del compresor.",
-      "recomendaciones": [
-        "Instalar reactores o filtros de armónicos en los variadores de las bombas.",
-        "Instalar un banco de capacitores desintonizado para llevar el factor de potencia arriba de 0.95.",
-        "Revisar el arranque del compresor para eliminar las caídas de tensión."
-      ],
-      "fechas": [
-        "Fase A",
-        "Fase B",
-        "Fase C"
-      ],
-      "resultados": [
-        {
-          "analisis": "Tensión",
-          "unidad": "V",
-          "limite": "480 ± 10 %",
-          "valores": [
-            "478",
-            "482",
-            "474"
-          ]
-        },
-        {
-          "analisis": "Distorsión de tensión",
-          "unidad": "%",
-          "limite": "≤ 5",
-          "valores": [
-            "3.1",
-            "3.4",
-            "3.0"
-          ]
-        },
-        {
-          "analisis": "Distorsión de corriente",
-          "unidad": "%",
-          "limite": "≤ 8",
-          "valores": [
-            "17.2",
-            "18.4",
-            "16.9"
-          ],
-          "resaltar": [
-            0,
-            1,
-            2
-          ]
-        },
-        {
-          "analisis": "Factor de potencia",
-          "limite": "≥ 0.90",
-          "valores": [
-            "0.87",
-            "0.86",
-            "0.85"
-          ],
-          "resaltar": [
-            0,
-            1,
-            2
-          ]
-        }
-      ],
-      "evidencia": [
-        {
-          "src": "/images/servicios/estudios-electricos/campo-armonicos-pantalla.webp",
-          "alt": "Lectura de armónicos por fase en el analizador"
-        },
-        {
-          "src": "/images/servicios/estudios-electricos/campo-forma-de-onda.webp",
-          "alt": "Forma de onda de corriente distorsionada"
-        }
-      ],
-      "nota": "Ejemplo simulado con la estructura del informe. Los valores no corresponden a ningún cliente; las fotos de evidencia son de mediciones reales de DIAPSA."
-    }
+      {
+        "titulo": "Cumplimiento",
+        "icono": "documento",
+        "items": [
+          "Cada requisito del Código de Red, medido",
+          "Informe por tablero contra IEEE 519, listo para auditoría",
+          "Certificados de calibración de los instrumentos"
+        ]
+      }
+    ]
   },
   "mostrarClientes": true,
   "faq": [

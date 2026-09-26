@@ -112,12 +112,17 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
         {entregable.pilares ? (
           /* Vitrina G: lo que se obtiene, en dos columnas (cumplimiento y seguridad) */
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5">
-            {entregable.pilares.map((p) => (
-              <div key={p.titulo} className="rounded-sm bg-primary p-6 text-white shadow-xl lg:p-7">
+            {entregable.pilares.map((p, n, todos) => (
+              /* Con tres, el último va a lo ancho para no dejar un hueco */
+              <div key={p.titulo} className={`rounded-sm bg-primary p-6 text-white shadow-xl lg:p-7 ${todos.length % 2 === 1 && n === todos.length - 1 ? "sm:col-span-2" : ""}`}>
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-primary" aria-hidden="true">
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                     {p.icono === "escudo" ? (
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l7.5 3v5.25c0 4.5-3.2 8.4-7.5 9.75-4.3-1.35-7.5-5.25-7.5-9.75V6L12 3zm-3 9l2 2 4-4" />
+                    ) : p.icono === "ahorro" ? (
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.25h4.5a2.25 2.25 0 000-4.5h-3a2.25 2.25 0 010-4.5H15M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    ) : p.icono === "rayo" ? (
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 3L4.5 13.5H12L11 21l8.5-10.5H12L13 3z" />
                     ) : (
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l2 2 4-4M7.5 3.75h6.75L18.75 8.25V19.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V4.5a.75.75 0 01.75-.75z" />
                     )}
