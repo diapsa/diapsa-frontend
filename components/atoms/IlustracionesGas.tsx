@@ -2,7 +2,7 @@
  * IlustracionesGas
  * Dibujos de la página de detección de gas: los tres rasgos que hacen de
  * este un servicio aparte (instrumentos, método y auditoría) y la evidencia
- * del registro de una fuga (video OGI, lectura láser, reparación y plano de
+ * del registro de una fuga (imagen acústica, lectura láser, reparación y plano de
  * ubicación). Esquemas en SVG, sin datos de un cliente.
  */
 
@@ -11,26 +11,37 @@ const MID = "#2b5671";
 const GRIS = "#d9e2e8";
 const NARANJA = "#fc9f01";
 
-/* 01 · Instrumentos solo para gas: cámara OGI y láser de metano */
+/* 01 · Instrumentos solo para gas: los dos métodos de detección */
 export function DibujoInstrumentos() {
   return (
     <svg viewBox="0 0 200 110" className="h-full w-full" aria-hidden="true">
-      <rect x="0" y="96" width="200" height="3" rx="1.5" fill={GRIS} />
-      {/* Cámara OGI */}
-      <rect x="18" y="36" width="70" height="44" rx="6" fill={NAVY} />
-      <rect x="88" y="46" width="18" height="24" rx="3" fill={MID} />
-      <circle cx="97" cy="58" r="7" fill="#11222c" stroke={NARANJA} strokeWidth="2" />
-      <rect x="24" y="42" width="38" height="26" rx="2" fill="#3b464c" />
-      <ellipse cx="46" cy="52" rx="8" ry="5" fill="#0d1215" opacity=".8" />
-      <ellipse cx="52" cy="47" rx="6" ry="4" fill="#0d1215" opacity=".5" />
-      <rect x="40" y="80" width="14" height="16" rx="2" fill={MID} />
-      <text x="53" y="30" textAnchor="middle" fontSize="9" fontWeight="700" fill={NAVY}>Cámara OGI</text>
-      {/* Láser */}
-      <rect x="132" y="50" width="42" height="20" rx="5" fill={NAVY} />
-      <rect x="140" y="70" width="12" height="26" rx="3" fill={MID} />
-      <rect x="136" y="54" width="20" height="11" rx="1.5" fill={NARANJA} />
-      <line x1="174" y1="60" x2="198" y2="60" stroke="#dc2f27" strokeWidth="1.5" strokeDasharray="3 2" />
-      <text x="153" y="42" textAnchor="middle" fontSize="9" fontWeight="700" fill={NAVY}>Láser TDLAS</text>
+      <defs>
+        <radialGradient id="gas-mic">
+          <stop offset="0%" stopColor="#ffe14d" />
+          <stop offset="45%" stopColor="#ff8a1f" stopOpacity=".85" />
+          <stop offset="100%" stopColor="#e5261f" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <rect x="0" y="100" width="200" height="3" rx="1.5" fill={GRIS} />
+      {/* Cámara OGI: pantalla en gris con la nube */}
+      <rect x="8" y="34" width="74" height="50" rx="6" fill={NAVY} />
+      <rect x="14" y="40" width="44" height="38" rx="2" fill="#3b464c" />
+      <ellipse cx="36" cy="62" rx="8" ry="5" fill="#0d1215" opacity=".85" />
+      <ellipse cx="42" cy="54" rx="7" ry="5" fill="#0d1215" opacity=".55" />
+      <rect x="82" y="46" width="12" height="24" rx="3" fill={MID} />
+      <rect x="34" y="84" width="14" height="16" rx="2" fill={MID} />
+      <text x="50" y="24" textAnchor="middle" fontSize="9" fontWeight="700" fill={NAVY}>Cámara OGI</text>
+      <text x="100" y="62" textAnchor="middle" fontSize="8" fontWeight="800" fill={MID}>o</text>
+      {/* Cámara acústica con su mapa de sonido y el láser integrado */}
+      <rect x="110" y="34" width="62" height="50" rx="8" fill={NAVY} />
+      <rect x="116" y="40" width="38" height="38" rx="2" fill="#3b464c" />
+      <circle cx="135" cy="60" r="10" fill="url(#gas-mic)" />
+      <circle cx="164" cy="59" r="6" fill="#11222c" stroke={GRIS} strokeWidth="1.2" />
+      <rect x="172" y="40" width="10" height="7" rx="1.5" fill={NARANJA} />
+      <line x1="182" y1="43.5" x2="198" y2="43.5" stroke="#dc2f27" strokeWidth="1.3" strokeDasharray="2.5 2" />
+      <rect x="134" y="84" width="14" height="16" rx="2" fill={MID} />
+      <text x="146" y="20" textAnchor="middle" fontSize="9" fontWeight="700" fill={NAVY}>Cámara acústica</text>
+      <text x="146" y="30" textAnchor="middle" fontSize="7.5" fontWeight="700" fill={NARANJA}>con láser TDLAS</text>
     </svg>
   );
 }
@@ -85,8 +96,8 @@ export function DibujoAuditoria() {
   );
 }
 
-/* Evidencia: cuadro del video OGI con la nube saliendo de la brida */
-export function EvidenciaOgi() {
+/* Evidencia: imagen de la cámara acústica con el punto de la fuga en la brida */
+export function EvidenciaAcustica() {
   return (
     <svg viewBox="0 0 120 90" className="h-full w-full" aria-hidden="true">
       <rect width="120" height="90" fill="#3b464c" />
@@ -94,14 +105,19 @@ export function EvidenciaOgi() {
       <rect x="46" y="46" width="7" height="24" rx="1.5" fill="#56636a" />
       <rect x="67" y="46" width="7" height="24" rx="1.5" fill="#56636a" />
       <rect x="53" y="49" width="14" height="18" fill="#7a878e" />
-      <g fill="#0b1013">
-        <ellipse cx="74" cy="46" rx="8" ry="6" opacity=".85" />
-        <ellipse cx="82" cy="36" rx="11" ry="8" opacity=".6" />
-        <ellipse cx="92" cy="24" rx="14" ry="9" opacity=".35" />
-      </g>
+      <defs>
+        <radialGradient id="gas-ev-sonido">
+          <stop offset="0%" stopColor="#ffe14d" />
+          <stop offset="40%" stopColor="#ff8a1f" stopOpacity=".9" />
+          <stop offset="100%" stopColor="#e5261f" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <circle cx="72" cy="46" r="14" fill="url(#gas-ev-sonido)" />
+      <text x="113" y="12" textAnchor="end" fontSize="7" fontWeight="700" fill="#fff" fontFamily="monospace">46 dB</text>
       <rect x="64" y="38" width="16" height="16" fill="none" stroke={NARANJA} strokeWidth="1.5" />
       <circle cx="9" cy="9" r="3" fill="#ef4444" />
       <text x="15" y="12" fontSize="8" fontWeight="700" fill="#fff" fontFamily="monospace">REC</text>
+      <text x="7" y="84" fontSize="7" fill="#ffffffb0" fontFamily="monospace">0.72 l/min</text>
       <text x="113" y="84" textAnchor="end" fontSize="7" fill="#ffffffb0" fontFamily="monospace">00:14</text>
     </svg>
   );

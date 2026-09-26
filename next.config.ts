@@ -77,6 +77,28 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
 
+      // --- Webinar: variantes con mayúsculas o en plural que se comparten a mano ---
+      {
+        source: '/Webinar',
+        destination: '/webinar',
+        statusCode: 301,
+      },
+      {
+        source: '/WEBINAR',
+        destination: '/webinar',
+        statusCode: 301,
+      },
+      {
+        source: '/webinars',
+        destination: '/webinar',
+        statusCode: 301,
+      },
+      {
+        source: '/Webinars',
+        destination: '/webinar',
+        statusCode: 301,
+      },
+
       // --- Servicios renombrados ---
       {
         source: '/servicios/monitoreo-condicion/estudios-electricos',

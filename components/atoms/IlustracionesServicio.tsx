@@ -1068,6 +1068,25 @@ function ValvulaGas({ nube, gris }: { nube: boolean; gris: boolean }) {
   );
 }
 
+function GasAcustica() {
+  return (
+    <Marco titulo="La cámara acústica ubica la fuga" pie="Esquema: la misma válvula a simple vista y con la cámara acústica">
+      <div className="grid h-full grid-cols-2 gap-3 lg:gap-5">
+        <Tarjeta>
+          <Rotulo color="text-tertiary">A simple vista</Rotulo>
+          <div className="relative mt-2 min-h-0 flex-1"><ValvulaGas nube={false} gris={false} /></div>
+          <Texto fuerte>Nada que ver ni oler</Texto>
+        </Tarjeta>
+        <Tarjeta className="bg-[#e9edf0]">
+          <Rotulo>Con cámara acústica</Rotulo>
+          <div className="relative mt-2 min-h-0 flex-1"><ValvulaGas nube={false} gris /><MapaSonido /></div>
+          <Texto fuerte>La fuga, y de dónde sale</Texto>
+        </Tarjeta>
+      </div>
+    </Marco>
+  );
+}
+
 function GasOgi() {
   return (
     <Marco titulo="La cámara OGI ve la nube de gas" pie="Esquema: la misma válvula a simple vista y con cámara de imagen óptica de gas">
@@ -1080,10 +1099,29 @@ function GasOgi() {
         <Tarjeta className="bg-[#e9edf0]">
           <Rotulo>Con cámara OGI</Rotulo>
           <div className="relative mt-2 min-h-0 flex-1"><ValvulaGas nube gris /></div>
-          <Texto fuerte>La fuga, y de dónde sale</Texto>
+          <Texto fuerte>La nube, y de dónde sale</Texto>
         </Tarjeta>
       </div>
     </Marco>
+  );
+}
+
+/* El punto de la fuga como lo marca la cámara acústica: un mapa de color */
+function MapaSonido() {
+  return (
+    <svg viewBox="0 0 100 70" className="absolute inset-0 h-full w-full" aria-hidden="true">
+      <defs>
+        <radialGradient id="gas-sonido">
+          <stop offset="0%" stopColor="#ffe14d" />
+          <stop offset="35%" stopColor="#ff8a1f" stopOpacity=".9" />
+          <stop offset="70%" stopColor="#e5261f" stopOpacity=".45" />
+          <stop offset="100%" stopColor="#e5261f" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <circle cx="57" cy="40" r="15" fill="url(#gas-sonido)" />
+      <text x="4" y="10" fontSize="7" fontWeight="700" fill="#fff" fontFamily="monospace">SPL 46 dB</text>
+      <text x="96" y="66" textAnchor="end" fontSize="7" fontWeight="700" fill="#fff" fontFamily="monospace">0.72 l/min</text>
+    </svg>
   );
 }
 
@@ -1177,7 +1215,7 @@ function GasReporte() {
         <Tarjeta>
           <Rotulo>Evidencia por fuga</Rotulo>
           <div className="mt-2 grid min-h-0 flex-1 grid-cols-3 gap-1.5">
-            {["Video OGI", "Lectura láser", "Reparación"].map((e) => (
+            {["Imagen acústica", "Lectura láser", "Reparación"].map((e) => (
               <div key={e} className="flex flex-col items-center justify-end rounded-sm bg-[#e9edf0] p-1 pb-1.5">
                 <span className="text-center text-[8px] font-bold leading-tight text-primary lg:text-xs">{e}</span>
               </div>
@@ -1203,6 +1241,7 @@ function GasReporte() {
 
 const MAPA: Record<string, () => React.ReactElement> = {
   "gas-ogi": GasOgi,
+  "gas-acustica": GasAcustica,
   "gas-tdlas": GasTdlas,
   "gas-prioridad": GasPrioridad,
   "gas-ciclo": GasCiclo,
