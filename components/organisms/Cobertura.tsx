@@ -103,10 +103,16 @@ export default function Cobertura({ cobertura, paso }: Props) {
           </ul>
         )}
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-          <Lista titulo={cobertura.equiposTitulo} items={cobertura.equipos} />
-          <Lista titulo={cobertura.fallasTitulo} items={cobertura.fallas} />
-        </div>
+        {cobertura.equipos && cobertura.equipos.length > 0 ? (
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+            <Lista titulo={cobertura.equiposTitulo ?? "Equipos"} items={cobertura.equipos} />
+            <Lista titulo={cobertura.fallasTitulo} items={cobertura.fallas} />
+          </div>
+        ) : (
+          <div className="mx-auto max-w-4xl">
+            <Lista titulo={cobertura.fallasTitulo} items={cobertura.fallas} />
+          </div>
+        )}
       </div>
     </section>
   );

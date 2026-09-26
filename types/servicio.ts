@@ -143,6 +143,8 @@ export interface ServiceEntregable {
   resumenRuta?: ResumenRuta;
   /** La alerta tal como llega al teléfono (sensores). Sustituye a las demás vitrinas. */
   alerta?: AlertaSensor;
+  /** Dos o tres columnas de lo que se obtiene, ej. cumplimiento y seguridad. Sustituye a las demás vitrinas. */
+  pilares?: { titulo: string; icono: "escudo" | "documento"; items: string[] }[];
   /** Ficha con el antes y el después del equipo, para los servicios
       correctivos: ahí el entregable no es un informe de inspección sino la
       prueba de que el valor bajó. Si viene, sustituye a la vitrina de
@@ -513,8 +515,9 @@ export interface ServiceValor {
 export interface ServiceCobertura {
   etiqueta: string;
   titulo: string;
-  equiposTitulo: string;
-  equipos: string[];
+  /** Sin equipos, la sección muestra solo la norma y lo que encuentra. */
+  equiposTitulo?: string;
+  equipos?: string[];
   fallasTitulo: string;
   fallas: string[];
   /** Fotos de los equipos donde aplica, con su crédito si no son propias. */
@@ -620,4 +623,6 @@ export interface Servicio {
   flujoEncabezado?: { titulo: string; texto: string };
   /** En qué se traduce, en dinero, con las cifras del visitante. */
   valor?: ServiceValor;
+  /** Sin el esquema genérico de ahorro bajo los cinco pasos. */
+  ocultarAhorro?: boolean;
 }

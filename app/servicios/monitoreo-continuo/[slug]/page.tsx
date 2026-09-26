@@ -275,7 +275,7 @@ export default async function ServicePage({
                     paso={paso()}
                     flujo={service.flujo}
                     encabezado={service.flujoEncabezado}
-                    sinAhorro={!!service.valor}
+                    sinAhorro={!!service.valor || !!service.ocultarAhorro}
                 />
             )}
 

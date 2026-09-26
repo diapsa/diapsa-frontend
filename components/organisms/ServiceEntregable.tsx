@@ -47,7 +47,8 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
   // derecha en blanco y la sección se ve a medio hacer. En ese caso el texto
   // pasa a una sola columna de ancho de lectura.
   const conVitrina = Boolean(
-    entregable.alerta ||
+    entregable.pilares ||
+      entregable.alerta ||
       entregable.resumenRuta ||
       entregable.hoja ||
       entregable.informe ||
@@ -78,6 +79,7 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
             {entregable.descripcion}
           </p>
 
+          {entregable.contenido.length > 0 && (
           <ul className="mt-7 space-y-3">
             {entregable.contenido.map((punto) => (
               <li key={punto} className="flex items-start gap-3 text-base leading-relaxed text-primary">
@@ -95,6 +97,7 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
               </li>
             ))}
           </ul>
+          )}
         </div>
 
         {/* Vitrina C: la ficha del informe de una ruta.
@@ -106,7 +109,33 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
             los que salieron mal. Los colores son los mismos del semáforo que
             va justo abajo, y esa es la relación: aquí se ven aplicados, ahí
             se explica qué obliga cada uno. */}
-        {entregable.alerta ? (
+        {entregable.pilares ? (
+          /* Vitrina G: lo que se obtiene, en dos columnas (cumplimiento y seguridad) */
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5">
+            {entregable.pilares.map((p) => (
+              <div key={p.titulo} className="rounded-sm bg-primary p-6 text-white shadow-xl lg:p-7">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-primary" aria-hidden="true">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    {p.icono === "escudo" ? (
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l7.5 3v5.25c0 4.5-3.2 8.4-7.5 9.75-4.3-1.35-7.5-5.25-7.5-9.75V6L12 3zm-3 9l2 2 4-4" />
+                    ) : (
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l2 2 4-4M7.5 3.75h6.75L18.75 8.25V19.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V4.5a.75.75 0 01.75-.75z" />
+                    )}
+                  </svg>
+                </span>
+                <p className="mt-4 text-2xl font-extrabold">{p.titulo}</p>
+                <ul className="mt-3 space-y-2">
+                  {p.items.map((i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm leading-snug text-white/85 lg:text-base">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" aria-hidden="true" />
+                      {i}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ) : entregable.alerta ? (
           /* Vitrina F: la alerta como llega al teléfono (sensores) */
           <AlertaSensor alerta={entregable.alerta} />
         ) : entregable.resumenRuta ? (
