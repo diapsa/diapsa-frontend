@@ -11,7 +11,7 @@ const MID = "#2b5671";
 const GRIS = "#d9e2e8";
 const NARANJA = "#fc9f01";
 
-/* 01 · Instrumentos solo para gas: una cámara acústica con láser TDLAS */
+/* 01 · Instrumentos solo para gas: los dos métodos de detección */
 export function DibujoInstrumentos() {
   return (
     <svg viewBox="0 0 200 110" className="h-full w-full" aria-hidden="true">
@@ -22,24 +22,26 @@ export function DibujoInstrumentos() {
           <stop offset="100%" stopColor="#e5261f" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <rect x="0" y="96" width="200" height="3" rx="1.5" fill={GRIS} />
-      {/* Cuerpo con su pantalla y el mapa de sonido */}
-      <rect x="30" y="22" width="92" height="64" rx="10" fill={NAVY} />
-      <rect x="38" y="30" width="56" height="44" rx="3" fill="#3b464c" />
-      <circle cx="68" cy="54" r="12" fill="url(#gas-mic)" />
-      <text x="41" y="38" fontSize="6" fontWeight="700" fill="#fff" fontFamily="monospace">46 dB</text>
-      {/* Arreglo de micrófonos */}
-      <circle cx="108" cy="54" r="11" fill="#11222c" stroke={MID} strokeWidth="2" />
-      {[0, 1, 2, 3, 4, 5].map((i) => {
-        const a = (i * 60 * Math.PI) / 180;
-        return <circle key={i} cx={108 + 6 * Math.cos(a)} cy={54 + 6 * Math.sin(a)} r="1.4" fill={GRIS} />;
-      })}
-      <rect x="60" y="86" width="16" height="10" rx="2" fill={MID} />
-      {/* Láser TDLAS integrado */}
-      <rect x="120" y="30" width="14" height="10" rx="2" fill={NARANJA} />
-      <line x1="134" y1="35" x2="196" y2="35" stroke="#dc2f27" strokeWidth="1.5" strokeDasharray="3 2" />
-      <text x="76" y="14" textAnchor="middle" fontSize="9" fontWeight="700" fill={NAVY}>Cámara acústica</text>
-      <text x="165" y="28" textAnchor="middle" fontSize="8.5" fontWeight="700" fill={NAVY}>Láser TDLAS</text>
+      <rect x="0" y="100" width="200" height="3" rx="1.5" fill={GRIS} />
+      {/* Cámara OGI: pantalla en gris con la nube */}
+      <rect x="8" y="34" width="74" height="50" rx="6" fill={NAVY} />
+      <rect x="14" y="40" width="44" height="38" rx="2" fill="#3b464c" />
+      <ellipse cx="36" cy="62" rx="8" ry="5" fill="#0d1215" opacity=".85" />
+      <ellipse cx="42" cy="54" rx="7" ry="5" fill="#0d1215" opacity=".55" />
+      <rect x="82" y="46" width="12" height="24" rx="3" fill={MID} />
+      <rect x="34" y="84" width="14" height="16" rx="2" fill={MID} />
+      <text x="50" y="24" textAnchor="middle" fontSize="9" fontWeight="700" fill={NAVY}>Cámara OGI</text>
+      <text x="100" y="62" textAnchor="middle" fontSize="8" fontWeight="800" fill={MID}>o</text>
+      {/* Cámara acústica con su mapa de sonido y el láser integrado */}
+      <rect x="110" y="34" width="62" height="50" rx="8" fill={NAVY} />
+      <rect x="116" y="40" width="38" height="38" rx="2" fill="#3b464c" />
+      <circle cx="135" cy="60" r="10" fill="url(#gas-mic)" />
+      <circle cx="164" cy="59" r="6" fill="#11222c" stroke={GRIS} strokeWidth="1.2" />
+      <rect x="172" y="40" width="10" height="7" rx="1.5" fill={NARANJA} />
+      <line x1="182" y1="43.5" x2="198" y2="43.5" stroke="#dc2f27" strokeWidth="1.3" strokeDasharray="2.5 2" />
+      <rect x="134" y="84" width="14" height="16" rx="2" fill={MID} />
+      <text x="146" y="20" textAnchor="middle" fontSize="9" fontWeight="700" fill={NAVY}>Cámara acústica</text>
+      <text x="146" y="30" textAnchor="middle" fontSize="7.5" fontWeight="700" fill={NARANJA}>con láser TDLAS</text>
     </svg>
   );
 }

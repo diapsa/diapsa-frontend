@@ -16,7 +16,7 @@ import { SITE_CONFIG } from "@/lib/constants";
  * con otro cliente (el sector hidrocarburos y su regulación), otra
  * tecnología y otro entregable, y la página tiene que transmitirlo desde el
  * primer vistazo. Por eso tiene su propia forma: apertura oscura con el
- * visor de la cámara acústica, las dos cámaras y el láser lado a lado, el ciclo LDAR
+ * visor de la cámara acústica, los dos métodos de detección lado a lado, el ciclo LDAR
  * como un circuito que se repite, el año regulatorio trimestre por
  * trimestre y el expediente de una fuga como entregable.
  *
@@ -215,7 +215,7 @@ export default function PaginaGas() {
           <div className="max-w-3xl">
             <Etiqueta>Una inspección</Etiqueta>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">De la fuga que no se ve al registro para la ASEA</h2>
-            <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">La cámara acústica encuentra la fuga, su láser TDLAS confirma que es metano, se repara, se vuelve a revisar y queda registrada.</p>
+            <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">La cámara acústica ubica la fuga y su láser TDLAS confirma que es metano; se repara, se vuelve a revisar y queda registrada.</p>
           </div>
           <div className="mx-auto mt-10 w-full max-w-5xl">
             <EscenaGas foto={{ src: "/images/deteccion-gas/gas-valvules.jpg", alt: "Válvulas y bridas de una línea de gas" }} />
@@ -229,8 +229,8 @@ export default function PaginaGas() {
           <Etiqueta clara>{tecnologia.etiqueta}</Etiqueta>
           <h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-tight lg:text-5xl">{tecnologia.titulo}</h2>
           {tecnologia.texto && <p className="mt-4 max-w-3xl text-justify text-lg leading-relaxed text-white/75">{tecnologia.texto}</p>}
-          {/* Las dos cámaras lado a lado; el láser, que confirma lo que
-              encuentra cualquiera de ellas, a lo ancho debajo */}
+          {/* Los dos métodos de detección lado a lado. Si algún día hay un
+              tercero, va a lo ancho debajo. */}
           <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
             {tecnologia.items.map((t, i) => (
               <article
