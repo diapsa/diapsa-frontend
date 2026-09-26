@@ -607,7 +607,21 @@
         "nombre": "Motores y maquinaria",
         "ilustracion": "motor"
       }
-    ]
+    ],
+    "norma": {
+      "etiqueta": "Obligatorio por norma",
+      "titulo": "La NOM-022-STPS-2015 la exige en tu centro de trabajo",
+      "texto": "No es una recomendación de mantenimiento: la norma obliga a tener una red de puesta a tierra que funcione, a medirla y a conservar la evidencia. Es lo primero que revisa un inspector de la STPS y lo que piden las auditorías de seguridad, de clientes y de aseguradoras.",
+      "obligaciones": [
+        "Medir la resistencia de la red de puesta a tierra",
+        "Verificar la continuidad hasta cada equipo",
+        "Revisar el sistema de pararrayos y sus bajantes",
+        "Conservar el registro de las mediciones",
+        "Repetir la medición al menos cada 12 meses",
+        "Corregir los puntos fuera de límite"
+      ],
+      "nota": "Resumen de las obligaciones de la NOM-022-STPS-2015 que cubre el servicio. El reporte de DIAPSA responde a cada una y lo valida una Unidad Verificadora."
+    }
   },
   "diferencias": {
     "etiqueta": "Por qué DIAPSA",
@@ -651,39 +665,39 @@
   },
   "valor": {
     "etiqueta": "En qué se traduce",
-    "titulo": "La misma falla, dos finales muy distintos",
-    "texto": "Una falla a tierra o un rayo van a pasar. Lo que cambia es si la corriente encuentra su camino o lo busca a través de tu gente y tus equipos.",
+    "titulo": "Cumplir la norma, y poder demostrarlo",
+    "texto": "La red de tierras protege a tu gente y a tus equipos, y además es una obligación legal. Lo que cambia con una medición vigente es que tienes la evidencia cuando la STPS, un auditor o la aseguradora la piden.",
     "sinEtiqueta": "Sin medición vigente",
     "conEtiqueta": "Con el reporte de DIAPSA",
-    "sin": "Te enteras con un accidente",
-    "con": "Te enteras antes",
+    "sin": "Incumples sin saberlo",
+    "con": "Cumples y lo demuestras",
     "filas": [
       {
-        "concepto": "Personal",
+        "concepto": "Inspección de la STPS",
+        "sin": "Sin registro vigente: emplazamiento y multa por norma incumplida",
+        "con": "Expediente listo, punto por punto contra la NOM-022"
+      },
+      {
+        "concepto": "Auditorías",
+        "sin": "Hallazgo abierto en la auditoría de seguridad o del cliente",
+        "con": "Evidencia validada por Unidad Verificadora que cierra el punto"
+      },
+      {
+        "concepto": "Aseguradora",
+        "sin": "Un siniestro sin evidencia de mantenimiento se complica",
+        "con": "Historial de mediciones que demuestra el cuidado"
+      },
+      {
+        "concepto": "Responsabilidad",
+        "sin": "Ante un accidente, no puedes demostrar que cumpliste",
+        "con": "Registro fechado de que la red se midió y se corrigió"
+      },
+      {
+        "concepto": "Seguridad",
         "sin": "Un gabinete energizado descarga a quien lo toca",
         "con": "La corriente de falla se va a tierra"
-      },
-      {
-        "concepto": "Protecciones",
-        "sin": "La falla no se despeja y el daño crece",
-        "con": "Las protecciones disparan a tiempo"
-      },
-      {
-        "concepto": "Equipos",
-        "sin": "Sobretensiones que dañan variadores y controladores",
-        "con": "Equipos electrónicos protegidos"
-      },
-      {
-        "concepto": "Rayos",
-        "sin": "La descarga busca camino por la estructura",
-        "con": "El pararrayos la lleva al suelo"
-      },
-      {
-        "concepto": "Inspección",
-        "sin": "Multa por no tener el registro vigente",
-        "con": "Expediente vigente, punto por punto"
       }
     ],
-    "cierre": "Lo que separa las dos columnas es saber que la red funciona. Eso es lo que te da la medición."
+    "cierre": "Lo que separa las dos columnas es un reporte vigente. Eso es lo que te entregamos."
   }
 }

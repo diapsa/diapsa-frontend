@@ -519,6 +519,8 @@ export interface ServiceCobertura {
   fallas: string[];
   /** Fotos de los equipos donde aplica, con su crédito si no son propias. */
   fotos?: { nombre: string; src?: string; alt?: string; ilustracion?: string; credito?: string; fuente?: string }[];
+  /** Cuando el servicio es obligatorio por norma: qué la exige y qué pide. */
+  norma?: { etiqueta: string; titulo: string; texto: string; obligaciones: string[]; nota?: string };
 }
 
 export interface ServiceDiferencias {
