@@ -85,7 +85,12 @@ function EtiquetaArcoVista({ e, destacada }: { e: Etiqueta; destacada?: boolean 
 export default function EtiquetasArco({ arco, paso }: Props) {
   const maximo = Math.max(...arco.barras.map((b) => b.energia), arco.escala);
   const pct = (v: number) => `${Math.min(100, (v / maximo) * 100).toFixed(1)}%`;
-  const ordenadas = [...arco.barras].sort((a, b) => b.energia - a.energia);
+  const todas = [...arco.barras].sort((a, b) => b.energia - a.energia);
+  // Versión corta: las de más energía y un renglón que resume el resto.
+  const ordenadas = arco.maxBarras ? todas.slice(0, arco.maxBarras) : todas;
+  const resto = todas.slice(ordenadas.length);
+  const restoMax = resto.length ? Math.max(...resto.map((b) => b.energia)) : 0;
+  const etiquetas = arco.unaEtiqueta ? arco.etiquetas.slice(0, 1) : arco.etiquetas;
 
   return (
     <section className="w-full bg-white py-12 lg:py-20">
@@ -142,6 +147,11 @@ export default function EtiquetasArco({ arco, paso }: Props) {
                   );
                 })}
               </ol>
+              {resto.length > 0 && (
+                <p className="mt-3 rounded-sm bg-emerald-50 px-3 py-2 text-xs font-semibold text-emerald-800 ring-1 ring-emerald-600/20">
+                  Y {resto.length} tableros más, todos en categoría 1, con menos de {Math.ceil(restoMax * 10) / 10} cal/cm².
+                </p>
+              )}
             </div>
             <p className="mt-2 text-right text-[10px] uppercase tracking-wider text-tertiary">cal/cm² a la distancia de trabajo</p>
 
@@ -159,8 +169,8 @@ export default function EtiquetasArco({ arco, paso }: Props) {
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-secondary">{arco.etiquetasTitulo}</p>
             <p className="mt-1 text-sm text-tertiary">{arco.etiquetasTexto}</p>
-            <div className="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-              {arco.etiquetas.map((e, i) => (
+            <div className={`mt-5 grid grid-cols-1 gap-6 ${etiquetas.length > 1 ? "sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2" : "mx-auto max-w-sm"}`}>
+              {etiquetas.map((e, i) => (
                 <EtiquetaArcoVista key={e.equipo} e={e} destacada={i === 0} />
               ))}
             </div>

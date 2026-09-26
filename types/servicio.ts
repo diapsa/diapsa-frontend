@@ -201,7 +201,7 @@ export interface ServicePorQue {
   escena360?: ServiceEscena360;
   /** Si es "sensores", en lugar de la foto va la escena "del sensor a tu
       teléfono"; la foto queda como imagen de espera. */
-  escena?: "sensores" | "termicas" | "huella" | "dga";
+  escena?: "sensores" | "termicas" | "huella" | "dga" | "arco";
   pie?: string;
   /** Las tres preguntas que contesta una muestra, sin valores de
       laboratorio, y qué se hace si cada una sale mal. */
@@ -404,6 +404,10 @@ export interface ServiceArco {
   umbrales: { valor: number; texto: string }[];
   leyenda: { nivel: string; texto: string }[];
   nota: string;
+  /** Versión corta: solo las barras de más energía y un renglón con el resto. */
+  maxBarras?: number;
+  /** Solo la etiqueta del tablero de más riesgo. */
+  unaEtiqueta?: boolean;
 }
 
 export interface ServiceTecnicas {
@@ -528,8 +532,9 @@ export interface ServiceCobertura {
   /** Sin equipos, la sección muestra solo la norma y lo que encuentra. */
   equiposTitulo?: string;
   equipos?: string[];
-  fallasTitulo: string;
-  fallas: string[];
+  fallasTitulo?: string;
+  /** Sin fallas ni equipos, la sección queda solo con la norma. */
+  fallas?: string[];
   /** Fotos de los equipos donde aplica, con su crédito si no son propias. */
   fotos?: { nombre: string; src?: string; alt?: string; ilustracion?: string; credito?: string; fuente?: string }[];
   /** Cuando el servicio es obligatorio por norma: qué la exige y qué pide. */
