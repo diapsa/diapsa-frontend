@@ -532,8 +532,9 @@ export interface ServiceCobertura {
   /** Sin equipos, la sección muestra solo la norma y lo que encuentra. */
   equiposTitulo?: string;
   equipos?: string[];
-  fallasTitulo: string;
-  fallas: string[];
+  fallasTitulo?: string;
+  /** Sin fallas ni equipos, la sección queda solo con la norma. */
+  fallas?: string[];
   /** Fotos de los equipos donde aplica, con su crédito si no son propias. */
   fotos?: { nombre: string; src?: string; alt?: string; ilustracion?: string; credito?: string; fuente?: string }[];
   /** Cuando el servicio es obligatorio por norma: qué la exige y qué pide. */

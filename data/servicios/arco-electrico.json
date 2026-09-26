@@ -395,50 +395,8 @@
     }
   ],
   "cobertura": {
-    "etiqueta": "Dónde aplica",
-    "titulo": "¿Dónde aplica y qué determina?",
-    "equiposTitulo": "Dónde aplica",
-    "equipos": [
-      "Subestaciones",
-      "Tableros de media tensión",
-      "Tableros de baja tensión",
-      "Centros de control de motores",
-      "Tableros de distribución",
-      "Interruptores",
-      "Transformadores"
-    ],
-    "fallasTitulo": "Lo que determina",
-    "fallas": [
-      "Energía incidente por tablero",
-      "Categoría de equipo de protección",
-      "Frontera de protección contra arco",
-      "Distancias de aproximación",
-      "Coordinación de protecciones",
-      "Etiqueta de cada equipo",
-      "Cumplimiento de NOM-029-STPS y NFPA 70E"
-    ],
-    "fotos": [
-      {
-        "nombre": "Subestaciones",
-        "ilustracion": "subestacion"
-      },
-      {
-        "nombre": "Tableros de media tensión",
-        "ilustracion": "tablero-mt"
-      },
-      {
-        "nombre": "Tableros de baja tensión",
-        "ilustracion": "tablero-bt"
-      },
-      {
-        "nombre": "Centros de control de motores",
-        "ilustracion": "ccm"
-      },
-      {
-        "nombre": "Interruptores",
-        "ilustracion": "interruptor"
-      }
-    ],
+    "etiqueta": "Por qué aplica",
+    "titulo": "¿Por qué aplica?",
     "norma": {
       "etiqueta": "Obligatorio por norma",
       "titulo": "La NOM-029-STPS-2011 lo exige para trabajar con equipo energizado",
