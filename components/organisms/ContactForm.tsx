@@ -24,7 +24,38 @@ const SERVICES = serviciosData.map(servicio => servicio.label);
 // prácticamente todo el tráfico es de México y cada campo extra cuesta leads.
 const PAIS_POR_DEFECTO = "México";
 
-export default function ContactForm() {
+// Página de detección de gas: el asunto ya se sabe y se pregunta, en su
+// lugar, el área de quien escribe y si ya tiene un PPCIEM. Así cada contacto
+// llega clasificado (compras, HSE, compliance) sin un paso extra.
+const AREAS = ["Compras", "HSE / Seguridad y medio ambiente", "Compliance / Cumplimiento regulatorio", "Operación o mantenimiento", "Otra"];
+const PPCIEM = ["Sí, ya tenemos PPCIEM", "Lo estamos armando", "No tenemos", "No aplica: no somos del sector hidrocarburos"];
+const SERVICIO_GAS = "Detección de Gas";
+
+type Props = {
+  /** Variante de la página de detección de gas. */
+  gas?: boolean;
+};
+
+function estadoInicial(gas: boolean): ContactFormMain {
+  return {
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    country: PAIS_POR_DEFECTO,
+    form_type: "main",
+    custom_fields: {
+      subject: gas ? "servicios" : "",
+      coursesOfInterest: [],
+      servicesOfInterest: gas ? [SERVICIO_GAS] : [],
+      message: "",
+      isProvider: "false",
+      prefered_contact: "email",
+    },
+  };
+}
+
+export default function ContactForm({ gas = false }: Props) {
   const {
     submitForm,
     loading,
@@ -39,22 +70,8 @@ export default function ContactForm() {
 
   const { courses, loading: loadingCourses } = useCourses();
 
-  const [formData, setFormData] = useState<ContactFormMain>({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    country: PAIS_POR_DEFECTO,
-    form_type: "main",
-    custom_fields: {
-      subject: "",
-      coursesOfInterest: [],
-      servicesOfInterest: [],
-      message: "",
-      isProvider: "false",
-      prefered_contact: "email",
-    },
-  });
+  const [formData, setFormData] = useState<ContactFormMain>(() => estadoInicial(gas));
+  const [perfil, setPerfil] = useState({ area: "", ppciem: "" });
 
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [aceptaPrivacidad, setAceptaPrivacidad] = useState(false);
@@ -154,6 +171,8 @@ export default function ContactForm() {
     if (!aceptaPrivacidad) {
       newErrors.aceptaPrivacidad = "Debes aceptar el aviso de privacidad";
     }
+    if (gas && !perfil.area) newErrors.area = "Elige tu área";
+    if (gas && !perfil.ppciem) newErrors.ppciem = "Dinos si ya tienen un PPCIEM";
 
     if (Object.keys(newErrors).length > 0) {
       setFieldErrors(newErrors);
@@ -167,6 +186,15 @@ export default function ContactForm() {
         ...formData.custom_fields,
         coursesOfInterest: formData.custom_fields?.coursesOfInterest.join(", ") ?? " ",
         servicesOfInterest: formData.custom_fields?.servicesOfInterest.join(", ") ?? " ",
+        // Gas: el perfil va en su propio campo y al inicio del mensaje, para
+        // que se vea aunque el panel solo muestre el mensaje.
+        ...(gas
+          ? {
+              area: perfil.area,
+              ppciem: perfil.ppciem,
+              message: `[Área: ${perfil.area} · PPCIEM: ${perfil.ppciem}] ${formData.custom_fields?.message ?? ""}`.trim(),
+            }
+          : {}),
       }
     };
 
@@ -177,22 +205,8 @@ export default function ContactForm() {
 
     if (result) {
       // Success - reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        country: PAIS_POR_DEFECTO,
-        form_type: "main",
-        custom_fields: {
-          subject: "",
-          coursesOfInterest: [],
-          servicesOfInterest: [],
-          message: "",
-          isProvider: "false",
-          prefered_contact: "email",
-        },
-      });
+      setFormData(estadoInicial(gas));
+      setPerfil({ area: "", ppciem: "" });
       setAceptaPrivacidad(false);
       setFieldErrors({});
       formRef.current?.reset();
@@ -340,6 +354,39 @@ export default function ContactForm() {
                 cada campo extra cuesta conversión y el país se deduce del
                 teléfono o se pregunta en el primer contacto. Se sigue enviando
                 "México" por defecto para no cambiar el contrato del backend. */}
+            {gas ? (
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <select
+                  id="area"
+                  name="area"
+                  value={perfil.area}
+                  onChange={(e) => setPerfil((p) => ({ ...p, area: e.target.value }))}
+                  required
+                  disabled={loading}
+                  aria-label="Tu área"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
+                >
+                  <option value="">Tu área</option>
+                  {AREAS.map((a) => <option key={a} value={a}>{a}</option>)}
+                </select>
+                <select
+                  id="ppciem"
+                  name="ppciem"
+                  value={perfil.ppciem}
+                  onChange={(e) => setPerfil((p) => ({ ...p, ppciem: e.target.value }))}
+                  required
+                  disabled={loading}
+                  aria-label="¿Ya tienen un PPCIEM?"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
+                >
+                  <option value="">¿Ya tienen un PPCIEM?</option>
+                  {PPCIEM.map((a) => <option key={a} value={a}>{a}</option>)}
+                </select>
+                {(fieldErrors.area || fieldErrors.ppciem) && (
+                  <p className="text-sm text-red-600 sm:col-span-2">{fieldErrors.area || fieldErrors.ppciem}</p>
+                )}
+              </div>
+            ) : (
             <div>
               <select
                 id="subject"
@@ -356,6 +403,7 @@ export default function ContactForm() {
                 <option value="cursos/servicios">Servicios y cursos</option>
               </select>
             </div>
+            )}
 
             {/* Sección de cursos */}
             {mostrarCursos && (loadingCourses || courses.length > 0) && (
@@ -392,7 +440,7 @@ export default function ContactForm() {
             )}
 
             {/* Sección de servicios */}
-            {mostrarServicios && (
+            {mostrarServicios && !gas && (
               <div className="p-4 bg-gray-50 border border-gray-700 rounded-lg">
                 <label className="block text-sm font-semibold mb-3 text-gray-900">
                   Selecciona los servicios de tu interés:

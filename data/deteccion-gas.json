@@ -2,11 +2,11 @@
   "hero": {
     "antetitulo": "Servicio especializado · Emisiones de metano",
     "titulo": "Detección y reparación de fugas de gas",
-    "texto": "Un programa aparte de cualquier ruta de mantenimiento: localizamos cada fuga con cámara OGI, la confirmamos con láser, damos seguimiento hasta que queda cerrada y te entregamos la evidencia que pide la ASEA.",
+    "texto": "Un programa aparte de cualquier ruta de mantenimiento: detectamos cada fuga con cámara OGI o con cámara acústica con láser TDLAS, damos seguimiento hasta que queda cerrada y te entregamos la evidencia que pide la ASEA.",
     "sellos": [
       "PPCIEM · ASEA",
       "Cámara OGI",
-      "Láser TDLAS",
+      "Cámara acústica con TDLAS",
       "LDAR trimestral"
     ]
   },
@@ -17,11 +17,11 @@
     "puntos": [
       {
         "titulo": "Instrumentos solo para gas",
-        "texto": "Cámara de imagen óptica de gas y láser de metano. No son los instrumentos de una ruta predictiva."
+        "texto": "Cámara OGI o cámara acústica con láser TDLAS: los dos métodos de detección que permite la regulación."
       },
       {
         "titulo": "Método LDAR",
-        "texto": "Se inventarían los componentes, se inspeccionan, se confirman las fugas, se reparan y se vuelven a revisar. Cada trimestre."
+        "texto": "Se inventarían los componentes, se detectan las fugas, se reparan por prioridad y se vuelven a revisar. Cada trimestre."
       },
       {
         "titulo": "Hecho para la auditoría",
@@ -42,7 +42,7 @@
         {
           "k": "Instrumentos",
           "a": "Vibraciones, termografía, aceite",
-          "b": "Cámara OGI y láser de metano"
+          "b": "Cámara OGI o cámara acústica con láser TDLAS"
         },
         {
           "k": "Cada cuándo",
@@ -59,31 +59,32 @@
   },
   "tecnologia": {
     "etiqueta": "Tecnología",
-    "titulo": "Dos instrumentos, dos trabajos distintos",
+    "titulo": "Dos métodos de detección, los dos válidos ante la ASEA",
     "items": [
       {
-        "verbo": "Ver",
+        "verbo": "Método 1",
         "nombre": "Cámara OGI",
         "grafico": "gas-ogi",
         "texto": "La cámara de imagen óptica de gas hace visible la nube que sale del componente.",
         "puntos": [
+          "Muestra la nube de gas y hacia dónde se mueve",
           "Recorre la instalación completa en poco tiempo",
-          "Muestra de dónde sale cada fuga",
           "Cada hallazgo queda grabado en video"
         ]
       },
       {
-        "verbo": "Confirmar y medir",
-        "nombre": "Láser TDLAS",
-        "grafico": "gas-tdlas",
-        "texto": "El láser mide el metano a distancia, sin tocar la línea y sin confundirlo con otros gases.",
+        "verbo": "Método 2",
+        "nombre": "Cámara acústica con láser TDLAS",
+        "grafico": "gas-acustica",
+        "texto": "El gas que escapa a presión produce ultrasonido: la cámara lo ubica con su arreglo de micrófonos y lo marca en color sobre la imagen. Su láser TDLAS integrado confirma que es metano.",
         "puntos": [
-          "Confirma que es metano",
-          "Mide la concentración de cada fuga",
-          "Sin subir ni tocar el equipo"
+          "Ubica la fuga a distancia, sin tocar el equipo",
+          "Marca en pantalla el punto exacto de la fuga",
+          "Su láser distingue el metano del aire o el vapor"
         ]
       }
-    ]
+    ],
+    "texto": "La regulación permite detectar con cámara OGI o con cámara acústica con láser TDLAS. Usamos el que mejor se adapta a cada instalación."
   },
   "ciclo": {
     "etiqueta": "El método",
@@ -96,11 +97,11 @@
       },
       {
         "titulo": "Detección",
-        "texto": "Recorrido con cámara OGI por cada componente."
+        "texto": "Con cámara OGI o con cámara acústica con láser TDLAS, componente por componente."
       },
       {
-        "titulo": "Confirmación",
-        "texto": "Láser TDLAS: es metano, y cuánto hay. Prioridad por tamaño y riesgo."
+        "titulo": "Priorización",
+        "texto": "Cada fuga se registra y se ordena por tamaño y riesgo."
       },
       {
         "titulo": "Reparación",
@@ -123,8 +124,8 @@
       "Trimestre 4"
     ],
     "actividades": [
-      "Inspección OGI",
-      "Confirmación láser",
+      "Detección OGI o acústica",
+      "Priorización",
       "Reparación",
       "Reinspección"
     ],
@@ -156,6 +157,10 @@
           "v": "1,250 ppm·m de metano"
         },
         {
+          "k": "Tasa estimada",
+          "v": "0.72 l/min"
+        },
+        {
           "k": "Prioridad",
           "v": "Alta"
         },
@@ -165,7 +170,7 @@
         }
       ],
       "evidencia": [
-        "Video OGI",
+        "Imagen acústica",
         "Lectura láser",
         "Foto de la reparación"
       ],
@@ -239,8 +244,12 @@
       "answer": "Es una cámara de imagen óptica de gas: hace visible la nube de gas que sale de un componente, que a simple vista no se ve. Permite recorrer una instalación completa y grabar cada fuga en video."
     },
     {
-      "question": "¿Para qué sirve el láser si ya se ve la fuga?",
-      "answer": "Para confirmar que es metano y medir cuánto hay. El láser mide la concentración a distancia, sin tocar la línea, y solo reacciona al metano. Con eso cada fuga se clasifica por tamaño y riesgo."
+      "question": "¿Cómo encuentra una fuga la cámara acústica?",
+      "answer": "El gas que escapa por una fuga a presión produce ultrasonido, aunque no se oiga. La cámara tiene un arreglo de micrófonos que ubica ese sonido y lo marca en color sobre la imagen, y su láser TDLAS integrado confirma que lo que suena es metano."
+    },
+    {
+      "question": "¿Cuándo se usa la cámara OGI y cuándo la acústica?",
+      "answer": "Las dos son métodos de detección que permite la regulación. La OGI muestra la nube de gas en video; la acústica ubica la fuga por su sonido y confirma el metano con su láser. Elegimos el método según la instalación al armar el programa."
     },
     {
       "question": "¿Hay que parar la instalación?",
@@ -259,5 +268,31 @@
     "titulo": "¿Tu instalación tiene su programa de fugas al día?",
     "texto": "Cuéntanos qué instalación es y si ya tienes un PPCIEM. Te proponemos el programa LDAR trimestral o una inspección inicial.",
     "whatsapp": "Hola, quiero información sobre la detección de fugas de gas para mi instalación."
-  }
+  },
+  "galeria": [
+    {
+      "src": "/images/deteccion-gas/campo/inspeccion-planta.webp",
+      "alt": "Analista de DIAPSA inspeccionando líneas de gas en una planta de proceso."
+    },
+    {
+      "src": "/images/deteccion-gas/campo/pantalla-gas-natural.webp",
+      "alt": "Fuga localizada en una línea de gas natural, con su tasa estimada en pantalla."
+    },
+    {
+      "src": "/images/deteccion-gas/campo/pantalla-codo.webp",
+      "alt": "Fuga marcada en el codo de una línea de gas, vista en el equipo de detección."
+    },
+    {
+      "src": "/images/deteccion-gas/campo/inspeccion-exterior.webp",
+      "alt": "Inspección de fugas en el exterior de una instalación industrial."
+    },
+    {
+      "src": "/images/deteccion-gas/campo/valvula-espacio-reducido.webp",
+      "alt": "Analista de DIAPSA revisando una válvula en un espacio reducido."
+    },
+    {
+      "src": "/images/deteccion-gas/campo/estacion-compresion.webp",
+      "alt": "Equipo de DIAPSA en una estación de compresión."
+    }
+  ]
 }
