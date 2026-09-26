@@ -306,6 +306,10 @@ export default function PaginaGas() {
               </p>
             ))}
           </div>
+          <Link href="/servicios/deteccion-gas/guia-ppciem" className="mt-8 inline-flex items-center gap-2 font-bold text-secondary hover:underline">
+            Lee la guía: qué exige el PPCIEM y cómo cumplirlo
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
 
@@ -442,7 +446,7 @@ export default function PaginaGas() {
       </section>
 
       <section id="contacto">
-        <ContactForm />
+        <ContactForm gas />
       </section>
     </main>
   );

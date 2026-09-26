@@ -6,12 +6,12 @@ const DESCRIPCION =
     "Detección y reparación de fugas de metano (LDAR): cámara OGI, confirmación con láser TDLAS, reinspección y evidencia para el PPCIEM ante la ASEA. Para el sector hidrocarburos y la industria.";
 
 export const metadata: Metadata = {
-    title: "Detección y Reparación de Fugas de Gas",
+    title: "Programa LDAR trimestral para el PPCIEM",
     description: DESCRIPCION,
-    keywords: ["detección de fugas de gas", "LDAR", "PPCIEM", "ASEA", "cámara OGI", "metano"],
+    keywords: ["programa LDAR trimestral", "inspección trimestral de fugas", "PPCIEM", "ASEA", "detección de fugas de gas", "cámara OGI", "láser TDLAS", "metano"],
     alternates: { canonical: "/servicios/deteccion-gas" },
     openGraph: {
-        title: "Detección y Reparación de Fugas de Gas | Grupo DIAPSA",
+        title: "Programa LDAR trimestral para el PPCIEM | Grupo DIAPSA",
         description: DESCRIPCION,
         url: "/servicios/deteccion-gas",
         type: "website",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         site: "@grupodiapsa",
-        title: "Detección y Reparación de Fugas de Gas | Grupo DIAPSA",
+        title: "Programa LDAR trimestral para el PPCIEM | Grupo DIAPSA",
         description: DESCRIPCION,
         images: [OG_IMAGE],
     },
