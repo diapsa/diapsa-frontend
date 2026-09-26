@@ -4,8 +4,8 @@ import { GRIS, MID, Marco, NARANJA, NAVY, Trafo } from "./IlustracionDga";
  * IlustracionesServicio
  * Ilustraciones de las pestañas "¿Qué nos hace diferentes?" de cámaras
  * térmicas (cam-), sensores de huella acústica (hue-), análisis de aceite
- * (ace-), sensores de vibración (sen-), tierras físicas (tie-) y arco eléctrico
- * (arc-), en lugar de fotos.
+ * (ace-), sensores de vibración (sen-), tierras físicas (tie-), arco eléctrico
+ * (arc-) y diagnóstico integral (int-), en lugar de fotos.
  *
  * Por qué existen: esas pestañas repetían fotos de la galería de la misma
  * página (aceite y acústicos) o fotos de termografía con cámara de mano que
@@ -891,7 +891,163 @@ function ArcReducir() {
   );
 }
 
+/* ============================== DIAGNÓSTICO INTEGRAL ============================== */
+
+const TECNICAS_INT = [
+  { t: "Vibraciones", d: "Espectro de cada punto" },
+  { t: "Termografía", d: "Termograma y foto" },
+  { t: "Ultrasonido", d: "Lectura y grabación" },
+  { t: "Aceite", d: "Muestra al laboratorio" },
+];
+
+function MotorInt() {
+  return (
+    <svg viewBox="0 0 60 44" className="w-16 lg:w-28" aria-hidden="true">
+      <rect x="8" y="10" width="32" height="24" rx="4" fill={NAVY} />
+      {[15, 21, 27].map((y) => <rect key={y} x="12" y={y} width="24" height="2" rx="1" fill={MID} />)}
+      <rect x="40" y="19" width="14" height="6" rx="1.5" fill={MID} />
+      <rect x="4" y="34" width="40" height="5" rx="1.5" fill={MID} />
+    </svg>
+  );
+}
+
+function IntVisita() {
+  return (
+    <Marco titulo="Las cuatro, en la misma visita" pie="Esquema: cuatro técnicas sobre la misma máquina, el mismo día">
+      <div className="flex h-full flex-col justify-center gap-3 lg:gap-5">
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 lg:gap-4">
+          <div className="space-y-2">
+            {TECNICAS_INT.slice(0, 2).map((x) => <Tarjeta key={x.t}><Texto fuerte>{x.t}</Texto><p className="text-[10px] leading-snug text-tertiary lg:text-xs">{x.d}</p></Tarjeta>)}
+          </div>
+          <MotorInt />
+          <div className="space-y-2">
+            {TECNICAS_INT.slice(2).map((x) => <Tarjeta key={x.t}><Texto fuerte>{x.t}</Texto><p className="text-[10px] leading-snug text-tertiary lg:text-xs">{x.d}</p></Tarjeta>)}
+          </div>
+        </div>
+        <p className="mx-auto rounded-full px-3 py-1 text-[10px] font-extrabold text-primary lg:text-sm" style={{ background: NARANJA }}>Mismos puntos, misma ruta, mismo día</p>
+      </div>
+    </Marco>
+  );
+}
+
+function IntCruce() {
+  const lecturas = [
+    { t: "Vibraciones", v: "Falla en pista externa" },
+    { t: "Ultrasonido", v: "+16 dB sobre base" },
+    { t: "Aceite", v: "Hierro al alza" },
+    { t: "Termografía", v: "Aún sin calentar" },
+  ];
+  return (
+    <Marco titulo="Un solo analista cruza las cuatro" pie="Esquema: cuatro lecturas, una sola conclusión">
+      <div className="grid h-full grid-cols-[1.25fr_auto_1fr] items-center gap-2 lg:gap-4">
+        <div className="space-y-1 lg:space-y-2">
+          {lecturas.map((l) => (
+            <div key={l.t} className="rounded-sm bg-white px-2 py-1 shadow-sm ring-1 ring-black/5 lg:px-3 lg:py-2">
+              <Rotulo>{l.t}</Rotulo>
+              <p className="text-[10px] leading-tight text-primary lg:text-sm">{l.v}</p>
+            </div>
+          ))}
+        </div>
+        <svg viewBox="0 0 30 100" className="h-3/4 w-5 lg:w-8" preserveAspectRatio="none" aria-hidden="true">
+          {[12, 37, 63, 88].map((y) => <path key={y} d={`M0 ${y} C 15 ${y}, 15 50, 30 50`} fill="none" stroke={NARANJA} strokeWidth="2" vectorEffect="non-scaling-stroke" />)}
+        </svg>
+        <div className="rounded-sm bg-primary p-3 text-white shadow-lg lg:p-5">
+          <p className="text-[9px] font-bold uppercase tracking-wider text-secondary lg:text-xs">Diagnóstico</p>
+          <p className="mt-1 text-[11px] font-extrabold leading-snug lg:text-base">Rodamiento del lado acoplado, etapa 2 de 4</p>
+          <p className="mt-1 text-[10px] leading-snug text-white/75 lg:text-sm">Cambiar en la siguiente ventana</p>
+        </div>
+      </div>
+    </Marco>
+  );
+}
+
+function IntPieza() {
+  const causas = [
+    { t: "Desbalance", ok: false },
+    { t: "Desalineación", ok: false },
+    { t: "Rodamiento", ok: true },
+  ];
+  return (
+    <Marco titulo="La pieza correcta a la primera" pie="Esquema: una vibración alta tiene varias causas posibles; las otras técnicas dicen cuál es">
+      <div className="flex h-full flex-col justify-center gap-3 lg:gap-5">
+        <div className="mx-auto rounded-sm bg-white px-3 py-2 text-center shadow-sm ring-1 ring-black/5 lg:px-5 lg:py-3">
+          <Rotulo color="text-red-600">Vibración alta</Rotulo>
+          <p className="text-[10px] leading-snug text-primary lg:text-sm">¿Qué la provoca?</p>
+        </div>
+        <div className="grid grid-cols-3 gap-2 lg:gap-4">
+          {causas.map((c) => (
+            <div key={c.t} className={`flex items-center justify-center gap-1.5 rounded-sm px-2 py-2 lg:py-3 ${c.ok ? "bg-emerald-50 ring-2 ring-emerald-500" : "bg-white opacity-60 ring-1 ring-black/5"}`}>
+              <Sello bien={c.ok} />
+              <span className="text-[10px] font-bold text-primary lg:text-sm">{c.t}</span>
+            </div>
+          ))}
+        </div>
+        <p className="text-center text-[10px] leading-snug text-primary lg:text-sm">El ultrasonido y el aceite confirman el rodamiento: no se cambia lo que no estaba mal.</p>
+      </div>
+    </Marco>
+  );
+}
+
+function IntLista() {
+  const filas = [
+    { n: "Motor de ventilador", e: "Alarma", c: "bg-red-600", a: "Cambiar rodamiento en la siguiente ventana" },
+    { n: "Bomba de proceso", e: "Precaución", c: "bg-amber-500", a: "Programar alineación" },
+    { n: "Compresor", e: "Observación", c: "bg-sky-600", a: "Vigilar en la siguiente ruta" },
+    { n: "Reductor", e: "Bueno", c: "bg-emerald-600", a: "Continuar con el programa" },
+  ];
+  return (
+    <Marco titulo="Una sola lista por prioridad" pie="Esquema: todas las máquinas ordenadas por lo que hay que atender primero">
+      <ol className="flex h-full flex-col justify-center gap-1.5 lg:gap-2.5">
+        {filas.map((f, i) => (
+          <li key={f.n} className="grid grid-cols-[auto_1fr_auto] items-center gap-2 rounded-sm bg-white px-2 py-1.5 shadow-sm ring-1 ring-black/5 lg:gap-4 lg:px-4 lg:py-2.5">
+            <span className="text-[11px] font-extrabold text-tertiary lg:text-base">{i + 1}</span>
+            <div className="min-w-0">
+              <p className="text-[10px] font-bold leading-tight text-primary lg:text-sm">{f.n}</p>
+              <p className="text-[9px] leading-tight text-tertiary lg:text-xs">{f.a}</p>
+            </div>
+            <span className={`rounded-full px-2 py-0.5 text-[9px] font-bold text-white lg:text-xs ${f.c}`}>{f.e}</span>
+          </li>
+        ))}
+      </ol>
+    </Marco>
+  );
+}
+
+function IntHistorial() {
+  const series = [
+    { t: "Vibraciones", p: [30, 31, 30, 42, 58] },
+    { t: "Ultrasonido", p: [28, 29, 44, 55, 62] },
+    { t: "Aceite", p: [24, 38, 50, 60, 70] },
+    { t: "Termografía", p: [30, 30, 31, 30, 36] },
+  ];
+  return (
+    <Marco titulo="Cada ruta suma al historial de la máquina" pie="Esquema: las cuatro técnicas de la misma máquina, ruta tras ruta, en IDAP">
+      <div className="flex h-full flex-col justify-center gap-1.5 lg:gap-3">
+        {series.map((s) => (
+          <div key={s.t} className="grid grid-cols-[5.5rem_1fr] items-center gap-2 lg:grid-cols-[8rem_1fr] lg:gap-4">
+            <span className="text-[10px] font-bold text-primary lg:text-sm">{s.t}</span>
+            <svg viewBox="0 0 100 24" preserveAspectRatio="none" className="h-5 w-full lg:h-8" aria-hidden="true">
+              <path d={s.p.map((v, i) => `${i ? "L" : "M"}${i * 25} ${24 - (v / 80) * 22}`).join(" ")} fill="none" stroke={s.p[4] - s.p[0] > 15 ? NARANJA : MID} strokeWidth="2" vectorEffect="non-scaling-stroke" />
+            </svg>
+          </div>
+        ))}
+        <div className="grid grid-cols-[5.5rem_1fr] lg:grid-cols-[8rem_1fr]">
+          <span />
+          <div className="flex justify-between text-[9px] font-bold text-tertiary lg:text-xs">
+            {["Ruta 1", "2", "3", "4", "5"].map((r) => <span key={r}>{r}</span>)}
+          </div>
+        </div>
+      </div>
+    </Marco>
+  );
+}
+
 const MAPA: Record<string, () => React.ReactElement> = {
+  "int-visita": IntVisita,
+  "int-cruce": IntCruce,
+  "int-pieza": IntPieza,
+  "int-lista": IntLista,
+  "int-historial": IntHistorial,
   "arc-unifilar": ArcUnifilar,
   "arc-calculo": ArcCalculo,
   "arc-epp": ArcEpp,

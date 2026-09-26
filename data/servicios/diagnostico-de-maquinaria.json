@@ -78,95 +78,28 @@
   "seoDescription": "Diagnóstico integral de maquinaria crítica: análisis de vibraciones, termografía infrarroja, análisis de aceite y ultrasonido aplicados al mismo equipo y cruzados en un solo diagnóstico, con la causa, la severidad y la acción, no cuatro reportes sueltos.",
   "porQue": {
     "foto": {
-      "src": "/images/gallery/campo/vibracion-analizador-motor.webp",
-      "alt": "Analista de DIAPSA con el analizador de vibraciones sobre un motor en operación"
+      "src": "/images/servicios/diagnostico-integral/campo-analista-motor.webp",
+      "alt": "Analista de DIAPSA con el sensor de vibraciones sobre un motor"
     },
-    "pie": "Medición de vibraciones sobre un motor en operación, en una ruta real de DIAPSA.",
+    "escena": "integral",
     "preguntas": [
       {
-        "pregunta": "¿Qué le pasa a la máquina, y no solo qué síntoma tiene?",
-        "texto": "Una vibración alta puede ser desbalance, desalineación o un rodamiento; un punto caliente puede ser fricción o carga; partículas en el aceite pueden venir de tres piezas distintas. Cada técnica sola deja dudas. Cruzadas sobre el mismo equipo, la causa queda confirmada por dos o tres lados.",
-        "siSaleMal": "Se interviene la pieza correcta a la primera, en lugar de cambiar el rodamiento cuando el problema era la alineación."
+        "pregunta": "Cuatro técnicas, una visita",
+        "texto": "Aceite, ultrasonido, vibraciones y termografía sobre la misma máquina."
       },
       {
-        "pregunta": "¿Cuál atiendo primero?",
-        "texto": "Con cuatro reportes de cuatro proveedores, cada uno trae su propia lista de alarmas y se contradicen. El diagnóstico integral entrega una sola lista de máquinas ordenada por severidad y por lo que cuesta que falle cada una.",
-        "siSaleMal": "El presupuesto de mantenimiento se gasta en la máquina que sí va a parar la línea, no en la que más ruido hizo en un reporte."
+        "pregunta": "La etapa de la falla",
+        "texto": "En cuáles ya aparece dice qué tan avanzada va y cuánto margen queda."
       },
       {
-        "pregunta": "¿Cuánto margen me queda?",
-        "texto": "El aceite avisa meses antes, el ultrasonido semanas, las vibraciones días o semanas y la temperatura al final. Ver en qué técnicas ya aparece la falla dice en qué etapa está y cuánto tiempo hay para conseguir la refacción y agendar el paro.",
-        "siSaleMal": "La intervención se programa en ventana con la refacción en mano, en lugar de hacerse de emergencia con la línea parada."
+        "pregunta": "Un solo diagnóstico",
+        "texto": "La causa, la pieza y qué hacer, no cuatro reportes sueltos."
       }
     ],
-    "comoSeHace": {
-      "titulo": "Las cuatro, en la misma visita",
-      "pasos": [
-        {
-          "foto": {
-            "src": "/images/gallery/campo/vibracion-punto-medicion.webp",
-            "alt": "Sensor de vibración sobre el punto de medición de un equipo"
-          },
-          "texto": "Vibraciones en cada punto de la máquina, con el mismo analizador y en el mismo lugar cada ruta, para que el espectro se pueda comparar."
-        },
-        {
-          "foto": {
-            "src": "/images/servicios/termografia-infrarroja/par-visual.jpg",
-            "alt": "Par visual y térmico de un equipo en operación"
-          },
-          "texto": "Termografía con su foto visual y ultrasonido en los mismos rodamientos y conexiones, en el mismo recorrido."
-        },
-        {
-          "foto": {
-            "src": "/images/servicios/analisis-de-aceite/muestreo-bomba-verde.webp",
-            "alt": "Toma de muestra de aceite en una bomba de proceso"
-          },
-          "texto": "Muestra de aceite del mismo punto, con el equipo caliente, que se va al laboratorio mientras se integra lo demás."
-        }
-      ]
-    },
-    "escena360": {
-      "centro": {
-        "nombre": "Motor de 250 HP con el rodamiento del lado de acoplamiento en corte",
-        "foto": "/images/servicios/motor-render.webp",
-        "alt": "Motor eléctrico en corte, con el rotor y el rodamiento a la vista"
-      },
-      "satelites": [
-        {
-          "nombre": "Análisis de aceite",
-          "valor": "27,288 part/ml",
-          "detalle": "",
-          "estado": "Alarma",
-          "clave": "alarma"
-        },
-        {
-          "nombre": "Ultrasonido",
-          "valor": "38 dB",
-          "detalle": "+16 sobre línea base",
-          "estado": "Precaución",
-          "clave": "precaucion"
-        },
-        {
-          "nombre": "Espectro de vibración",
-          "valor": "7.4 mm/s",
-          "detalle": "",
-          "estado": "Precaución",
-          "clave": "precaucion"
-        },
-        {
-          "nombre": "Termografía",
-          "valor": "62 °C",
-          "detalle": "+21 sobre el lado libre",
-          "estado": "Precaución",
-          "clave": "precaucion"
-        }
-      ],
-      "resultado": {
-        "titulo": "Diagnóstico integrado",
-        "coinciden": "4 de 4 coinciden",
-        "texto": "Rodamiento lado acoplamiento, daño en pista externa, etapa 3 de 4. Cambiar en la siguiente ventana."
-      },
-      "pie": "Cuatro instrumentos distintos miden el mismo rodamiento, en el orden en que cada uno detecta la falla, y dicen lo mismo. Caso compuesto con hallazgos reales de distintas rutas."
+    "destacado": {
+      "titulo": "Saber qué es, qué tan grave y qué hacer, antes de que la máquina pare",
+      "texto": "Cada técnica ve la falla en un momento distinto. Un analista de DIAPSA las cruza en un diagnóstico por máquina, para que la refacción llegue antes que la falla.",
+      "insignia": "4×1"
     }
   },
   "certificacion": "Analistas certificados en vibraciones, termografía, ultrasonido y lubricación · Laboratorio ISO/IEC 17025",
@@ -197,72 +130,31 @@
   ],
   "entregable": {
     "etiqueta": "Qué recibes",
-    "titulo": "Esto es lo que recibes",
-    "descripcion": "Una ficha por máquina como la de arriba y, al frente, la portada de la ruta: cuántos equipos se midieron, cómo quedaron repartidos por estado y qué se atiende primero. Esta es la portada real de esa misma ruta.",
-    "contenido": [
-      "Una ficha por máquina con las cuatro técnicas y un solo diagnóstico",
-      "Portada de la ruta: todos los equipos por estado, de un vistazo",
-      "Lista única de prioridades con acción y ventana",
-      "Espectros, termogramas, audios y laboratorio como respaldo",
-      "Tendencia de cada máquina, ruta tras ruta, en IDAP"
-    ],
-    "resumenRuta": {
-      "etiqueta": "Informe integral · portada",
-      "titulo": "Resumen de la ruta",
-      "subtitulo": "Sistema de enfriamiento · agosto de 2026",
-      "cifras": [
-        {
-          "etiqueta": "Equipos",
-          "valor": "17"
-        },
-        {
-          "etiqueta": "Componentes",
-          "valor": "22"
-        },
-        {
-          "etiqueta": "Piden acción",
-          "valor": "8"
-        }
-      ],
-      "estados": [
-        {
-          "nombre": "Alarma",
-          "clave": "alarma",
-          "total": 2,
-          "texto": "Rodamientos con daño avanzado en motores de ventilador."
-        },
-        {
-          "nombre": "Precaución",
-          "clave": "precaucion",
-          "total": 6,
-          "texto": "Rodamientos, holgura o estructura por programar."
-        },
-        {
-          "nombre": "Observación",
-          "clave": "observacion",
-          "total": 3,
-          "texto": "Primeras detecciones a vigilar en la siguiente ruta."
-        },
-        {
-          "nombre": "Bueno",
-          "clave": "bueno",
-          "total": 8,
-          "texto": "Continuar con el programa."
-        },
-        {
-          "nombre": "Sin medir",
-          "clave": "otro",
-          "total": 3,
-          "texto": "Dos fuera de operación y uno sin acceso; quedan para la siguiente ruta."
-        }
-      ],
-      "prioridades": [
-        "Los dos componentes en alarma: cambio de rodamientos en la siguiente ventana.",
-        "Los seis en precaución: programar rodamientos y revisiones estructurales.",
-        "Los demás siguen en el programa; los tres sin medir se cubren en la siguiente ruta."
-      ],
-      "nota": "Portada real del informe integral de esa ruta, con la planta y las claves de equipo omitidas."
-    }
+    "titulo": "Recibes certeza y ahorro",
+    "descripcion": "Un diagnóstico por máquina en lugar de cuatro reportes, y una sola lista para decidir qué se atiende primero.",
+    "contenido": [],
+    "pilares": [
+      {
+        "titulo": "Certeza",
+        "icono": "documento",
+        "items": [
+          "La causa de cada hallazgo, confirmada por más de una técnica",
+          "La etapa de la falla y cuánto margen queda",
+          "Una sola lista de máquinas por prioridad",
+          "El historial de cada máquina en IDAP"
+        ]
+      },
+      {
+        "titulo": "Ahorro",
+        "icono": "ahorro",
+        "items": [
+          "Las cuatro técnicas en una sola visita",
+          "La pieza correcta a la primera",
+          "Paros programados con la refacción en mano",
+          "El presupuesto en la máquina que sí va a parar"
+        ]
+      }
+    ]
   },
   "mostrarClientes": true,
   "faq": [
@@ -293,28 +185,40 @@
   ],
   "galeria": [
     {
-      "src": "/images/gallery/campo/vibracion-analizador-motor.webp",
-      "alt": "Medición de vibraciones sobre un motor en operación."
+      "src": "/images/servicios/diagnostico-integral/campo-equipo-ruta.webp",
+      "alt": "Equipo de DIAPSA midiendo un motor y su transmisión en la misma visita."
     },
     {
-      "src": "/images/servicios/termografia-infrarroja/par-visual.jpg",
-      "alt": "Par visual y térmico de un equipo en la misma ruta."
+      "src": "/images/servicios/diagnostico-integral/campo-termografia-ruta.webp",
+      "alt": "Termografía de un equipo de proceso, en la misma ruta que las vibraciones."
     },
     {
-      "src": "/images/servicios/analisis-de-ultrasonido/ultraprobe-en-motor.jpg",
-      "alt": "Detector de ultrasonido sobre el rodamiento de un motor."
+      "src": "/images/servicios/diagnostico-integral/campo-bombas-vista-superior.webp",
+      "alt": "Dos analistas midiendo bombas de proceso, vistas desde arriba."
     },
     {
-      "src": "/images/servicios/analisis-de-aceite/muestreo-motor-azul.webp",
-      "alt": "Toma de muestra de aceite en un motor en operación."
+      "src": "/images/servicios/diagnostico-integral/campo-bombas-medicion.webp",
+      "alt": "Medición sobre los motores de un grupo de bombas."
     },
     {
-      "src": "/images/gallery/campo/vibracion-bomba-verde.webp",
-      "alt": "Analista sobre una bomba de proceso durante la ruta."
+      "src": "/images/servicios/diagnostico-integral/campo-analista-motor.webp",
+      "alt": "Analista de DIAPSA con el sensor de vibraciones sobre un motor."
     },
     {
-      "src": "/images/servicios/medicion-bomba-planta.webp",
-      "alt": "Medición sobre un motor eléctrico en planta."
+      "src": "/images/servicios/diagnostico-integral/campo-ruta-bombas.webp",
+      "alt": "Ruta integral en un cuarto de bombas."
+    },
+    {
+      "src": "/images/servicios/diagnostico-integral/campo-ventilador-motor.webp",
+      "alt": "Medición en el motor de un ventilador industrial."
+    },
+    {
+      "src": "/images/servicios/diagnostico-integral/campo-unidad-hidraulica.webp",
+      "alt": "Dos analistas midiendo una unidad hidráulica con su tablero de control."
+    },
+    {
+      "src": "/images/servicios/diagnostico-integral/campo-motor-estructura.webp",
+      "alt": "Medición de un motor montado en estructura, con acceso por arriba."
     },
     {
       "src": "/images/gallery/campo-img-2.jpg",
@@ -334,11 +238,11 @@
   "hojaIntegral": {
     "etiqueta": "Lo que detectamos",
     "titulo": "Así se lee una máquina en el informe integral",
-    "texto": "Cuatro pasos, siempre en el mismo orden: cómo está la máquina, qué vio cada técnica, qué se encontró y qué hacer. Esta es la ficha real de un motor de ventilador: las vibraciones y el ultrasonido ya ven el rodamiento, la termografía todavía no, y eso dice en qué etapa va la falla.",
+    "texto": "La ficha real de un motor de ventilador: qué vio cada técnica, qué se concluye al cruzarlas y qué hacer.",
     "equipo": {
       "nombre": "Ventilador de torre de enfriamiento · Motor",
       "foto": "/images/servicios/diagnostico-integral/ventilador-motor.webp",
-      "alt": "Motor de ventilador de torre de enfriamiento sobre su base, con el punto de medición marcado",
+      "alt": "Motor de ventilador de torre de enfriamiento sobre su base",
       "datos": [
         {
           "k": "Ubicación",
@@ -420,7 +324,8 @@
     "recomendaciones": [
       "Programar el cambio de rodamientos en la siguiente ventana, verificando las tolerancias de los alojamientos."
     ],
-    "nota": "Hoja real de una ruta de agosto de 2026, generada en IDAP, con la planta y la clave del equipo omitidas. El informe completo trae además las lecturas de cada técnica."
+    "nota": "Ficha real de una ruta de agosto de 2026, generada en IDAP, con la planta y la clave del equipo omitidas.",
+    "diagnostico": "Daño en rodamientos en etapa temprana: las vibraciones y el ultrasonido ya lo ven y la termografía todavía no. Hay tiempo para programar el cambio."
   },
   "cobertura": {
     "etiqueta": "Dónde aplica",
@@ -470,5 +375,120 @@
         "ilustracion": "turbina"
       }
     ]
+  },
+  "diferencias": {
+    "etiqueta": "Por qué DIAPSA",
+    "titulo": "¿Qué nos hace diferentes?",
+    "items": [
+      {
+        "id": "visita",
+        "grafico": "int-visita",
+        "title": "Las cuatro, en la misma visita",
+        "content": "Vibraciones, termografía, ultrasonido y aceite sobre la misma máquina, en los mismos puntos y el mismo día. Las lecturas se pueden comparar entre sí y con la ruta anterior, y el costo por equipo es menor que contratarlas por separado."
+      },
+      {
+        "id": "cruce",
+        "grafico": "int-cruce",
+        "title": "Un solo analista cruza las cuatro",
+        "content": "No son cuatro reportes de cuatro proveedores que se contradicen. Un analista pone las cuatro lecturas lado a lado y escribe un diagnóstico por máquina: la causa, la pieza y la etapa de la falla."
+      },
+      {
+        "id": "pieza",
+        "grafico": "int-pieza",
+        "title": "La pieza correcta a la primera",
+        "content": "Una vibración alta puede ser desbalance, desalineación o un rodamiento. Cuando el ultrasonido y el aceite dicen lo mismo, la causa queda confirmada y no se cambia lo que no estaba mal."
+      },
+      {
+        "id": "lista",
+        "grafico": "int-lista",
+        "title": "Una sola lista por prioridad",
+        "content": "Todas las máquinas de la ruta ordenadas por severidad y por lo que cuesta que falle cada una, con la acción y la ventana. El presupuesto se va a la máquina que sí va a parar la línea."
+      },
+      {
+        "id": "historial",
+        "grafico": "int-historial",
+        "title": "Cada ruta suma al historial",
+        "content": "Cada máquina guarda en IDAP sus cuatro técnicas, ruta tras ruta. Cuando una sube, se ve junto a las otras tres, y la tendencia combinada dice cuánto margen queda."
+      }
+    ]
+  },
+  "traduccion": {
+    "etiqueta": "En qué se traduce",
+    "tipo": "etapas",
+    "titulo": "Saber en qué etapa va la falla, y cuánto margen queda",
+    "texto": "Cada técnica ve la falla en un momento distinto. Ver en cuáles ya aparece dice qué tan avanzada está, y cuánto tiempo hay para conseguir la refacción y agendar el paro.",
+    "cierre": "La intervención se programa en ventana, con la refacción en mano, en lugar de hacerse de emergencia con la línea parada."
+  },
+  "motor360": {
+    "etiqueta": "Un rodamiento, cuatro instrumentos",
+    "titulo": "Cuatro técnicas miden lo mismo y dicen lo mismo",
+    "texto": "Cada instrumento mide el mismo rodamiento desde un lado distinto. Cuando coinciden, la causa queda confirmada y la decisión es clara.",
+    "porQue": {
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-analizador-motor.webp",
+        "alt": "Analista de DIAPSA con el analizador de vibraciones sobre un motor en operación"
+      },
+      "pie": "Medición de vibraciones sobre un motor en operación, en una ruta real de DIAPSA.",
+      "preguntas": [
+        {
+          "pregunta": "¿Qué le pasa a la máquina, y no solo qué síntoma tiene?",
+          "texto": "Una vibración alta puede ser desbalance, desalineación o un rodamiento; un punto caliente puede ser fricción o carga; partículas en el aceite pueden venir de tres piezas distintas. Cada técnica sola deja dudas. Cruzadas sobre el mismo equipo, la causa queda confirmada por dos o tres lados.",
+          "siSaleMal": "Se interviene la pieza correcta a la primera, en lugar de cambiar el rodamiento cuando el problema era la alineación."
+        },
+        {
+          "pregunta": "¿Cuál atiendo primero?",
+          "texto": "Con cuatro reportes de cuatro proveedores, cada uno trae su propia lista de alarmas y se contradicen. El diagnóstico integral entrega una sola lista de máquinas ordenada por severidad y por lo que cuesta que falle cada una.",
+          "siSaleMal": "El presupuesto de mantenimiento se gasta en la máquina que sí va a parar la línea, no en la que más ruido hizo en un reporte."
+        },
+        {
+          "pregunta": "¿Cuánto margen me queda?",
+          "texto": "El aceite avisa meses antes, el ultrasonido semanas, las vibraciones días o semanas y la temperatura al final. Ver en qué técnicas ya aparece la falla dice en qué etapa está y cuánto tiempo hay para conseguir la refacción y agendar el paro.",
+          "siSaleMal": "La intervención se programa en ventana con la refacción en mano, en lugar de hacerse de emergencia con la línea parada."
+        }
+      ],
+      "escena360": {
+        "centro": {
+          "nombre": "Motor de 250 HP con el rodamiento del lado de acoplamiento en corte",
+          "foto": "/images/servicios/motor-render.webp",
+          "alt": "Motor eléctrico en corte, con el rotor y el rodamiento a la vista"
+        },
+        "satelites": [
+          {
+            "nombre": "Análisis de aceite",
+            "valor": "27,288 part/ml",
+            "detalle": "",
+            "estado": "Alarma",
+            "clave": "alarma"
+          },
+          {
+            "nombre": "Ultrasonido",
+            "valor": "38 dB",
+            "detalle": "+16 sobre línea base",
+            "estado": "Precaución",
+            "clave": "precaucion"
+          },
+          {
+            "nombre": "Espectro de vibración",
+            "valor": "7.4 mm/s",
+            "detalle": "",
+            "estado": "Precaución",
+            "clave": "precaucion"
+          },
+          {
+            "nombre": "Termografía",
+            "valor": "62 °C",
+            "detalle": "+21 sobre el lado libre",
+            "estado": "Precaución",
+            "clave": "precaucion"
+          }
+        ],
+        "resultado": {
+          "titulo": "Diagnóstico integrado",
+          "coinciden": "4 de 4 coinciden",
+          "texto": "Rodamiento lado acoplamiento, daño en pista externa, etapa 3 de 4. Cambiar en la siguiente ventana."
+        },
+        "pie": "Cuatro instrumentos distintos miden el mismo rodamiento, en el orden en que cada uno detecta la falla, y dicen lo mismo. Caso compuesto con hallazgos reales de distintas rutas."
+      }
+    }
   }
 }
