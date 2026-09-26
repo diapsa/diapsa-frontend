@@ -3,8 +3,8 @@ import { GRIS, MID, Marco, NARANJA, NAVY, Trafo } from "./IlustracionDga";
 /**
  * IlustracionesServicio
  * Ilustraciones de las pestañas "¿Qué nos hace diferentes?" de cámaras
- * térmicas (cam-), sensores de huella acústica (hue-) y análisis de aceite
- * (ace-), en lugar de fotos.
+ * térmicas (cam-), sensores de huella acústica (hue-), análisis de aceite
+ * (ace-) y sensores de vibración (sen-), en lugar de fotos.
  *
  * Por qué existen: esas pestañas repetían fotos de la galería de la misma
  * página (aceite y acústicos) o fotos de termografía con cámara de mano que
@@ -454,7 +454,149 @@ function AceTransformadores() {
   );
 }
 
+/* ============================== SENSORES DE VIBRACIÓN ============================== */
+
+function SenEspecialistas() {
+  return (
+    <Marco titulo="El punto de cada sensor lo elige un Categoría III" pie="Esquema: dónde se ve bien la falla de un rodamiento">
+      <div className="grid h-full grid-cols-[1.2fr_1fr] items-center gap-3 lg:gap-6">
+        <div className="relative h-full">
+          <svg viewBox="0 0 100 70" className="absolute inset-0 h-full w-full" aria-hidden="true">
+            <rect x="6" y="58" width="88" height="6" rx="1" fill="#c6d1d9" />
+            <rect x="14" y="22" width="44" height="30" rx="5" fill={NAVY} />
+            {[20, 27, 34, 41, 48].map((x) => <rect key={x} x={x} y="25" width="2.5" height="24" rx="1" fill={MID} />)}
+            <rect x="4" y="26" width="10" height="22" rx="2" fill="#c3ced6" />
+            <rect x="58" y="30" width="12" height="16" rx="2" fill={MID} />
+            <rect x="70" y="35" width="22" height="6" rx="2" fill={MID} />
+            <rect x="60" y="20" width="9" height="9" rx="1.5" fill={NARANJA} stroke="#fff" strokeWidth="1" />
+            <rect x="1" y="16" width="9" height="9" rx="1.5" fill="#dc2f27" stroke="#fff" strokeWidth="1" />
+            <rect x="14" y="52" width="44" height="6" rx="1" fill={MID} />
+          </svg>
+        </div>
+        <div className="space-y-2 lg:space-y-3">
+          <p className="flex items-start gap-2 text-[10px] leading-snug text-primary lg:text-sm"><Sello bien /> Sobre el alojamiento del rodamiento, en la zona de carga</p>
+          <p className="flex items-start gap-2 text-[10px] leading-snug text-primary lg:text-sm"><Sello bien={false} /> En la tapa del ventilador: mide lámina, no el rodamiento</p>
+        </div>
+      </div>
+    </Marco>
+  );
+}
+
+const fallaSen = (x: number) => (x < 62 ? 20 : 20 + (x - 62) * 1.6);
+const LINEA_SENSOR = Array.from({ length: 50 }, (_, i) => {
+  const x = 2 + i * 1.96;
+  return `${i ? "L" : "M"}${x.toFixed(1)} ${(100 - fallaSen(x) - (i % 3) * 2).toFixed(1)}`;
+}).join(" ");
+
+function SenContinuo() {
+  return (
+    <Marco titulo="La falla que nace entre dos rutas, el sensor la ve" pie="Esquema: el mismo rodamiento durante un mes">
+      <div className="grid h-full grid-rows-2 gap-2 lg:gap-3">
+        {[{ t: "Ruta mensual", sensor: false }, { t: "Sensor, cada 10 minutos", sensor: true }].map((f) => (
+          <Tarjeta key={f.t}>
+            <Rotulo color={f.sensor ? "text-secondary" : "text-tertiary"}>{f.t}</Rotulo>
+            <div className="relative mt-1 min-h-0 flex-1">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full" aria-hidden="true">
+                {f.sensor
+                  ? <path d={LINEA_SENSOR} fill="none" stroke={NARANJA} strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
+                  : [4, 96].map((x) => <circle key={x} cx={x} cy={x === 4 ? 80 : 100 - fallaSen(x)} r="4" fill={MID} />)}
+              </svg>
+            </div>
+            <Texto fuerte={f.sensor}>{f.sensor ? "Se ve el día en que empieza a subir" : "Dos lecturas: se entera cuando ya subió"}</Texto>
+          </Tarjeta>
+        ))}
+      </div>
+    </Marco>
+  );
+}
+
+function SenEstandar() {
+  const puntos = [
+    { n: "Punto 1", normal: 22, actual: 34, avisa: false },
+    { n: "Punto 2", normal: 62, actual: 66, avisa: true },
+  ];
+  return (
+    <Marco titulo="Cada punto tiene su propio normal" pie="Esquema: la misma alarma para todos se equivoca en los dos">
+      <div className="grid h-full grid-cols-2 gap-3 lg:gap-5">
+        {puntos.map((p) => (
+          <Tarjeta key={p.n}>
+            <Rotulo>{p.n}</Rotulo>
+            <div className="relative mt-5 min-h-0 flex-1">
+              <div className="absolute inset-x-0 rounded-sm bg-primary/10" style={{ bottom: `${p.normal - 10}%`, height: "20%" }} />
+              <div className="absolute inset-x-0 border-t-2 border-dashed border-red-400" style={{ bottom: "50%" }}>
+                <span className="absolute -top-4 right-0 text-[9px] font-bold text-red-600 lg:text-xs">Alarma genérica</span>
+              </div>
+              <span className="absolute left-1/2 h-3 w-3 -translate-x-1/2 translate-y-1/2 rounded-full ring-2 ring-white" style={{ bottom: `${p.actual}%`, background: p.avisa ? MID : NARANJA }} />
+            </div>
+            <Texto fuerte>{p.avisa ? "Está en su normal: la genérica da falsa alarma" : "Ya salió de su normal: la genérica no avisa"}</Texto>
+          </Tarjeta>
+        ))}
+      </div>
+    </Marco>
+  );
+}
+
+const ESPECTRO_SEN = [8, 10, 9, 12, 44, 11, 9, 30, 10, 8, 22, 9, 8, 7];
+
+function SenAlertas() {
+  return (
+    <Marco titulo="Antes de avisarte, el especialista lee el espectro" pie="Esquema: de un cambio de tendencia a un diagnóstico">
+      <div className="grid h-full grid-cols-[1fr_auto_1fr] items-stretch gap-2 lg:gap-4">
+        <Tarjeta>
+          <Rotulo color="text-tertiary">Espectro del punto</Rotulo>
+          <div className="mt-2 flex min-h-0 flex-1 items-end gap-[2px]">
+            {ESPECTRO_SEN.map((v, i) => {
+              const pico = i === 4 || i === 7 || i === 10;
+              return <span key={i} className="flex-1 rounded-t-[2px]" style={{ height: `${(v / 46) * 100}%`, background: pico ? NARANJA : MID, opacity: pico ? 1 : 0.5 }} />;
+            })}
+          </div>
+          <p className="mt-2 text-[10px] text-tertiary lg:text-xs">Picos en la frecuencia de la pista externa</p>
+        </Tarjeta>
+        <div className="flex items-center">
+          <svg viewBox="0 0 40 16" className="w-7 lg:w-10" aria-hidden="true"><path d="M2 8h32m-7-6 7 6-7 6" fill="none" stroke={NARANJA} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        </div>
+        <Tarjeta>
+          <Rotulo>Lo que te llega</Rotulo>
+          <Texto fuerte>Rodamiento lado acoplamiento</Texto>
+          <span className="mt-1.5 self-start rounded-full bg-amber-50 px-2 py-0.5 text-[9px] font-bold text-amber-800 ring-1 ring-amber-600/30 lg:text-xs">Precaución</span>
+          <p className="mt-1.5 text-[10px] leading-snug text-primary lg:text-sm">Daño inicial en la pista externa. Programar el cambio en la siguiente ventana.</p>
+        </Tarjeta>
+      </div>
+    </Marco>
+  );
+}
+
+const PUNTOS_PRUEBA = [[80, 52], [64, 40], [70, 46], [58, 72], [75, 44], [60, 38]];
+
+function SenPrueba() {
+  return (
+    <Marco titulo="Después de reparar, el sensor dice si sirvió" pie="Esquema: cada punto antes y después, con la máquina operando igual">
+      <div className="flex h-full flex-col gap-2 lg:gap-3">
+        <div className="flex min-h-0 flex-1 items-end gap-2 border-b border-primary/30 lg:gap-4">
+          {PUNTOS_PRUEBA.map(([a, d], i) => (
+            <div key={i} className="flex h-full flex-1 items-end gap-[2px]">
+              <span className="flex-1 rounded-t-[2px] bg-primary/40" style={{ height: `${a}%` }} />
+              <span className="flex-1 rounded-t-[2px]" style={{ height: `${d}%`, background: d > a ? "#dc2f27" : "#10b981" }} />
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-tertiary lg:text-xs">
+          <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm bg-primary/40" />Antes</span>
+          <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm bg-emerald-500" />Después, bajó</span>
+          <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm bg-red-600" />Después, subió</span>
+        </div>
+        <Texto fuerte>Cinco puntos mejoraron y uno empeoró: la siguiente acción ya sabe a dónde ir.</Texto>
+      </div>
+    </Marco>
+  );
+}
+
 const MAPA: Record<string, () => React.ReactElement> = {
+  "sen-especialistas": SenEspecialistas,
+  "sen-continuo": SenContinuo,
+  "sen-estandar": SenEstandar,
+  "sen-alertas": SenAlertas,
+  "sen-prueba": SenPrueba,
   "cam-termografos": CamTermografos,
   "cam-ia": CamIa,
   "cam-alcance": CamAlcance,

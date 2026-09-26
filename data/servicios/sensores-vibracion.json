@@ -225,10 +225,6 @@
       "alt": "Técnica de DIAPSA montando sensores en la línea de proceso."
     },
     {
-      "src": "/images/servicios/sensores-vibracion/sensor-rodamiento.webp",
-      "alt": "Sensor fijado sobre el alojamiento de un rodamiento."
-    },
-    {
       "src": "/images/servicios/sensores-vibracion/sensor-montado.webp",
       "alt": "Sensor inalámbrico montado sobre una estructura."
     },
@@ -427,46 +423,31 @@
         "id": "especialistas",
         "title": "Especialistas Categoría III en campo",
         "content": "Quien elige el punto y monta cada sensor es un especialista en vibraciones Categoría III, no un instalador ni un analista de datos. El punto decide qué tan bien se ve la falla.",
-        "foto": {
-          "src": "/images/servicios/sensores-vibracion/instalacion-sensor.webp",
-          "alt": "Especialista de DIAPSA instalando un sensor de vibración"
-        }
+        "grafico": "sen-especialistas"
       },
       {
         "id": "continuo",
         "title": "Datos cada 10 minutos desde el primer día",
         "content": "Sensores inalámbricos KCF con estación base, instalados con el equipo operando y sin cablear la planta. La tendencia empieza a correr el mismo día.",
-        "foto": {
-          "src": "/images/servicios/sensores-vibracion/estacion-base.webp",
-          "alt": "Especialista de DIAPSA con la estación base inalámbrica"
-        }
+        "grafico": "sen-continuo"
       },
       {
         "id": "estandar",
         "title": "Un estándar para cada punto",
         "content": "Con semanas de lecturas se fija cómo vibra cada punto cuando está sano, en cada régimen de operación. Las alarmas salen de ahí, no de un valor genérico.",
-        "foto": {
-          "src": "/images/servicios/sensores-vibracion/sensor-rodamiento.webp",
-          "alt": "Sensor fijado sobre el alojamiento de un rodamiento"
-        }
+        "grafico": "sen-estandar"
       },
       {
         "id": "alertas",
         "title": "Cada alerta, revisada contra el espectro",
         "content": "Antes de llegarte, un especialista confirma qué es: rodamiento, desbalance, resonancia o una lectura sin importancia. Recibes el diagnóstico y la acción.",
-        "foto": {
-          "src": "/images/servicios/sensores-vibracion/sensor-motor.webp",
-          "alt": "Sensor montado en un motor en operación"
-        }
+        "grafico": "sen-alertas"
       },
       {
         "id": "prueba",
         "title": "La prueba de cada reparación",
         "content": "Después de intervenir, el sensor dice si sirvió: con la máquina operando igual, se compara cada punto antes y después.",
-        "foto": {
-          "src": "/images/servicios/sensores-vibracion/instalacion-tuberia.webp",
-          "alt": "Sensores instalados en la línea de proceso"
-        }
+        "grafico": "sen-prueba"
       }
     ]
   },
