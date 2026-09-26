@@ -4,6 +4,7 @@ import Antetitulo from "../atoms/Antetitulo";
 import type { Course } from "@/types/course";
 import { TECNICAS, diaMes, extraDe, fechaGrupo, imagenDe, muestraFotos, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
 import EscenaCursos from "./EscenaCursos";
+import GaleriaCampo from "./GaleriaCampo";
 import dip from "@/data/diplomado.json";
 import menuCursos from "@/data/menu-cursos.json";
 
@@ -202,6 +203,14 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
           </div>
         </div>
       </section>
+
+      {/* Fotos reales de los cursos, de todas las técnicas */}
+      <GaleriaCampo
+        fotos={muestraFotos(24)}
+        titulo="Así son nuestros cursos"
+        texto="Fotos reales de grupos de DIAPSA, en aula y en planta."
+        intervalo={3000}
+      />
 
       {sinClasificar.length > 0 && (
         <section className="w-full bg-white py-12 lg:py-16">
