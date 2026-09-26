@@ -305,11 +305,11 @@
   "hojaIntegral": {
     "etiqueta": "Lo que detectamos",
     "titulo": "Así se lee una máquina en el informe integral",
-    "texto": "Cuatro pasos, siempre en el mismo orden: cómo está la máquina, qué vio cada técnica, qué se encontró y qué hacer. Esta es la ficha real de un motor de ventilador: las vibraciones y el ultrasonido ya ven el rodamiento, la termografía todavía no, y eso dice en qué etapa va la falla.",
+    "texto": "La ficha real de un motor de ventilador: qué vio cada técnica, qué se concluye al cruzarlas y qué hacer.",
     "equipo": {
       "nombre": "Ventilador de torre de enfriamiento · Motor",
       "foto": "/images/servicios/diagnostico-integral/ventilador-motor.webp",
-      "alt": "Motor de ventilador de torre de enfriamiento sobre su base, con el punto de medición marcado",
+      "alt": "Motor de ventilador de torre de enfriamiento sobre su base",
       "datos": [
         {
           "k": "Ubicación",
@@ -391,7 +391,8 @@
     "recomendaciones": [
       "Programar el cambio de rodamientos en la siguiente ventana, verificando las tolerancias de los alojamientos."
     ],
-    "nota": "Hoja real de una ruta de agosto de 2026, generada en IDAP, con la planta y la clave del equipo omitidas. El informe completo trae además las lecturas de cada técnica."
+    "nota": "Ficha real de una ruta de agosto de 2026, generada en IDAP, con la planta y la clave del equipo omitidas.",
+    "diagnostico": "Daño en rodamientos en etapa temprana: las vibraciones y el ultrasonido ya lo ven y la termografía todavía no. Hay tiempo para programar el cambio."
   },
   "cobertura": {
     "etiqueta": "Dónde aplica",

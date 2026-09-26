@@ -450,6 +450,8 @@ export interface ServiceHojaIntegral {
   disciplinas: { nombre: string; estado: string; clave: string; nota?: string }[];
   hallazgos: { texto: string; estado: string; clave: string; evolucion: string; nota?: string }[];
   riesgoGlobal?: { texto: string; clave: string };
+  /** Lo que sale de cruzar las técnicas, en una o dos líneas. */
+  diagnostico?: string;
   recomendaciones: string[];
   /** Una banda por disciplina: imágenes, tabla de lecturas, rangos de severidad. Opcional: la versión corta no las lleva. */
   bloques?: {
