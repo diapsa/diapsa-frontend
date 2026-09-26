@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/organisms/PageHeader";
-import { CoursesNCerts } from "@/components/organisms/CoursesNCerts";
-import CourseTypeSection from "@/components/organisms/CourseTypeSection";
+import CatalogoCursos from "@/components/organisms/CatalogoCursos";
+import ContactForm from "@/components/organisms/ContactForm";
 import { getCourses } from "@/lib/api/courses";
-import { groupCoursesByType } from "@/lib/utils/groupCourses";
 
 export const metadata: Metadata = {
   title: "Cursos y Capacitación",
-  description: "Certifícate en termografía, análisis de vibraciones y ultrasonido (niveles I, II y III) con instructores que diagnostican maquinaria real todos los días.",
+  description: "Cursos de vibraciones, termografía, ultrasonido y confiabilidad: formación técnica, talleres prácticos y certificación bajo ISO 18436, con instructores que diagnostican maquinaria real todos los días.",
   alternates: {
     canonical: "/cursos",
   },
@@ -22,56 +21,31 @@ export const metadata: Metadata = {
 export default async function CursosPage() {
   // Si el CMS no responde, la página carga con el encabezado y sin listado,
   // en vez de devolver un error 500.
-  const coursesResponse = await getCourses().catch((error) => {
+  const coursesResponse = await getCourses({ per_page: 50 }).catch((error) => {
     console.error("[cursos] No se pudo cargar el catálogo:", error);
     return null;
   });
   const courses = coursesResponse?.data ?? [];
-  const coursesByType = groupCoursesByType(courses);
 
   return (
     <main className="bg-gray-50 min-h-screen">
       <PageHeader
         title="Cursos"
-        subtitle="Capacitación profesional certificada en mantenimiento predictivo"
+        subtitle="Vibraciones, termografía, ultrasonido y confiabilidad, con casos reales de planta"
       />
 
-      <section className="w-full bg-white p-5">
-        <CoursesNCerts />
+      <CatalogoCursos cursos={courses} />
+
+      {/* ¿Capacitar a tu equipo? El formulario ya llega con el asunto de cursos */}
+      <section id="contacto" className="w-full bg-white">
+        <div className="mx-auto max-w-4xl px-6 pt-12 text-center lg:pt-16">
+          <h2 className="text-3xl font-extrabold leading-tight text-primary lg:text-4xl">¿Quieres capacitar a tu equipo?</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-justify text-lg leading-relaxed text-tertiary">
+            Dinos qué cursos te interesan y cuántas personas son, y te respondemos con fechas y la propuesta.
+          </p>
+        </div>
+        <ContactForm curso="" />
       </section>
-
-      {coursesByType.certificates.length > 0 && (
-        <section className="bg-white p-5">
-          <CourseTypeSection
-            title="Certificados"
-            variant="certificado"
-            courses={coursesByType.certificates}
-            loading={false}
-          />
-        </section>
-      )}
-
-      {coursesByType.workshops.length > 0 && (
-        <section className="bg-white p-5">
-          <CourseTypeSection
-            title="Talleres prácticos"
-            variant="taller"
-            courses={coursesByType.workshops}
-            loading={false}
-          />
-        </section>
-      )}
-
-      {coursesByType.strategics.length > 0 && (
-        <section className="bg-white p-5">
-          <CourseTypeSection
-            title="Cursos estratégicos"
-            variant="estrategico"
-            courses={coursesByType.strategics}
-            loading={false}
-          />
-        </section>
-      )}
     </main>
   );
 }

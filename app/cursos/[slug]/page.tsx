@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/organisms/PageHeader";
-import CourseDetails from "@/components/organisms/CourseDetails";
+import CursoDetalle from "@/components/organisms/CursoDetalle";
 import ContactForm from "@/components/organisms/ContactForm";
 import type { Metadata } from "next";
 import CourseJsonLd from "@/components/molecules/CourseJsonLd";
-import { getCourseBySlug } from "@/lib/api/courses";
+import { getCourseBySlug, getCourses } from "@/lib/api/courses";
+import { extraDe } from "@/lib/cursos";
 import { SITE_CONFIG } from "@/lib/constants";
 
 
@@ -67,6 +68,13 @@ export default async function CoursePage({
         notFound();
     }
 
+    // Otros cursos de la misma técnica, para seguir la ruta
+    const tecnica = extraDe(course.slug)?.tecnica;
+    const lista = tecnica
+        ? await getCourses({ per_page: 50 }).then((r) => r.data).catch(() => [])
+        : [];
+    const relacionados = lista.filter((c) => c.slug !== course.slug && extraDe(c.slug)?.tecnica === tecnica);
+
     const breadcrumbItems = [
         { name: "Inicio", url: "/" },
         { name: "Cursos", url: "/cursos" },
@@ -91,23 +99,20 @@ export default async function CoursePage({
                 }))}
             />
 
-            <CourseDetails course={course} />
+            <CursoDetalle curso={course} relacionados={relacionados} />
 
-            {/* Formulario de contacto */}
-            <section id="contacto" className="w-full bg-gray-50 ">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                            Solicita Información
-                        </h2>
-                        <p className="text-gray-600 text-lg">
-                            ¿Interesado en este curso? Déjanos tus datos y nos pondremos en
-                            contacto contigo.
-                        </p>
-                    </div>
+            {/* Inscripción: el formulario ya llega con este curso marcado */}
+            <section id="contacto" className="w-full bg-white">
+                <div className="mx-auto max-w-4xl px-6 pt-12 text-center lg:pt-16">
+                    <h2 className="text-3xl font-extrabold leading-tight text-primary lg:text-4xl">
+                        Inscríbete o pide información
+                    </h2>
+                    <p className="mx-auto mt-3 max-w-2xl text-justify text-lg leading-relaxed text-tertiary">
+                        Déjanos tus datos y te respondemos con la próxima fecha, el costo y la forma de inscripción de {course.name}.
+                    </p>
                 </div>
+                <ContactForm curso={course.name} />
             </section>
-            <ContactForm />
         </main>
     );
 }
