@@ -1,0 +1,263 @@
+{
+  "hero": {
+    "antetitulo": "Servicio especializado · Emisiones de metano",
+    "titulo": "Detección y reparación de fugas de gas",
+    "texto": "Un programa aparte de cualquier ruta de mantenimiento: localizamos cada fuga con cámara OGI, la confirmamos con láser, damos seguimiento hasta que queda cerrada y te entregamos la evidencia que pide la ASEA.",
+    "sellos": [
+      "PPCIEM · ASEA",
+      "Cámara OGI",
+      "Láser TDLAS",
+      "LDAR trimestral"
+    ]
+  },
+  "aparte": {
+    "etiqueta": "Un servicio aparte",
+    "titulo": "No es una ruta de mantenimiento. Es un programa de emisiones.",
+    "texto": "Detectar fugas de metano pide otra tecnología, otra forma de trabajar y otro entregable. Por eso lo tratamos como un servicio independiente, con sus propios instrumentos, su propio método y su propio expediente.",
+    "puntos": [
+      {
+        "titulo": "Instrumentos solo para gas",
+        "texto": "Cámara de imagen óptica de gas y láser de metano. No son los instrumentos de una ruta predictiva."
+      },
+      {
+        "titulo": "Método LDAR",
+        "texto": "Se inventarían los componentes, se inspeccionan, se confirman las fugas, se reparan y se vuelven a revisar. Cada trimestre."
+      },
+      {
+        "titulo": "Hecho para la auditoría",
+        "texto": "Cada fuga con su número, su evidencia y su cierre, listo para el PPCIEM y el reporte anual."
+      }
+    ],
+    "contraste": {
+      "columnas": [
+        "Ruta de mantenimiento",
+        "Detección de gas"
+      ],
+      "filas": [
+        {
+          "k": "Qué busca",
+          "a": "Que una máquina no falle",
+          "b": "Que el metano no se escape"
+        },
+        {
+          "k": "Instrumentos",
+          "a": "Vibraciones, termografía, aceite",
+          "b": "Cámara OGI y láser de metano"
+        },
+        {
+          "k": "Cada cuándo",
+          "a": "Según el equipo",
+          "b": "Cada trimestre, por norma"
+        },
+        {
+          "k": "Qué entrega",
+          "a": "Un diagnóstico",
+          "b": "Un expediente para la ASEA"
+        }
+      ]
+    }
+  },
+  "tecnologia": {
+    "etiqueta": "Tecnología",
+    "titulo": "Dos instrumentos, dos trabajos distintos",
+    "items": [
+      {
+        "verbo": "Ver",
+        "nombre": "Cámara OGI",
+        "grafico": "gas-ogi",
+        "texto": "La cámara de imagen óptica de gas hace visible la nube que sale del componente.",
+        "puntos": [
+          "Recorre la instalación completa en poco tiempo",
+          "Muestra de dónde sale cada fuga",
+          "Cada hallazgo queda grabado en video"
+        ]
+      },
+      {
+        "verbo": "Confirmar y medir",
+        "nombre": "Láser TDLAS",
+        "grafico": "gas-tdlas",
+        "texto": "El láser mide el metano a distancia, sin tocar la línea y sin confundirlo con otros gases.",
+        "puntos": [
+          "Confirma que es metano",
+          "Mide la concentración de cada fuga",
+          "Sin subir ni tocar el equipo"
+        ]
+      }
+    ]
+  },
+  "ciclo": {
+    "etiqueta": "El método",
+    "titulo": "El ciclo LDAR, cada trimestre",
+    "texto": "Una fuga no se da por atendida cuando se encuentra, sino cuando se comprueba que quedó cerrada y queda registrada.",
+    "pasos": [
+      {
+        "titulo": "Inventario",
+        "texto": "Válvulas, bridas, sellos, conexiones y venteos que pueden fugar, con su ubicación."
+      },
+      {
+        "titulo": "Detección",
+        "texto": "Recorrido con cámara OGI por cada componente."
+      },
+      {
+        "titulo": "Confirmación",
+        "texto": "Láser TDLAS: es metano, y cuánto hay. Prioridad por tamaño y riesgo."
+      },
+      {
+        "titulo": "Reparación",
+        "texto": "Plan por prioridad para tu equipo de mantenimiento."
+      },
+      {
+        "titulo": "Reinspección",
+        "texto": "Se vuelve a revisar cada fuga reparada antes de cerrarla."
+      }
+    ]
+  },
+  "anio": {
+    "etiqueta": "Obligatorio por norma",
+    "titulo": "El PPCIEM, trimestre por trimestre",
+    "texto": "Las instalaciones del sector hidrocarburos deben tener un Programa para la Prevención y el Control Integral de las Emisiones de Metano. Nosotros lo convertimos en un calendario que se cumple.",
+    "trimestres": [
+      "Trimestre 1",
+      "Trimestre 2",
+      "Trimestre 3",
+      "Trimestre 4"
+    ],
+    "actividades": [
+      "Inspección OGI",
+      "Confirmación láser",
+      "Reparación",
+      "Reinspección"
+    ],
+    "cierre": {
+      "titulo": "Reporte anual",
+      "texto": "La información del año, lista para presentarla ante la ASEA."
+    },
+    "obligaciones": [
+      "Programa de detección y reparación de fugas",
+      "Inspecciones periódicas de los componentes",
+      "Registro de cada fuga, su reparación y su reinspección",
+      "Reporte anual de cumplimiento ante la ASEA"
+    ]
+  },
+  "expediente": {
+    "etiqueta": "Qué recibes",
+    "titulo": "Un expediente, no un reporte de hallazgos",
+    "texto": "Cada fuga tiene su registro, desde que se detecta hasta que se cierra. Así se ve uno, con datos simulados.",
+    "registro": {
+      "numero": "Fuga 014",
+      "estado": "Cerrada",
+      "datos": [
+        {
+          "k": "Componente",
+          "v": "Brida de succión del compresor"
+        },
+        {
+          "k": "Lectura láser",
+          "v": "1,250 ppm·m de metano"
+        },
+        {
+          "k": "Prioridad",
+          "v": "Alta"
+        },
+        {
+          "k": "Reparación",
+          "v": "Cambio de junta"
+        }
+      ],
+      "evidencia": [
+        "Video OGI",
+        "Lectura láser",
+        "Foto de la reparación"
+      ],
+      "ubicacion": "Patín de compresión · lado de succión",
+      "linea": [
+        {
+          "t": "Detectada",
+          "d": "Trimestre 1"
+        },
+        {
+          "t": "Reparada",
+          "d": "12 días después"
+        },
+        {
+          "t": "Reinspección",
+          "d": "Sin fuga"
+        },
+        {
+          "t": "Cerrada",
+          "d": "Con evidencia"
+        }
+      ]
+    },
+    "incluye": [
+      "Inventario de componentes de la instalación",
+      "Registro por fuga con su evidencia",
+      "Lista de reparación por prioridad",
+      "Resumen de cada trimestre",
+      "Información para el reporte anual ante la ASEA"
+    ]
+  },
+  "paraQuien": {
+    "etiqueta": "Para quién",
+    "titulo": "Obligatorio para unos, rentable para todos",
+    "grupos": [
+      {
+        "titulo": "Sector hidrocarburos",
+        "sello": "Obligatorio",
+        "texto": "Para cumplir el PPCIEM y demostrarlo ante la ASEA.",
+        "items": [
+          "Estaciones de compresión",
+          "Ductos, trampas y estaciones de regulación",
+          "Plantas de proceso",
+          "Terminales y tanques de almacenamiento"
+        ]
+      },
+      {
+        "titulo": "Industria",
+        "sello": "Seguridad y ahorro",
+        "texto": "Para dejar de pagar gas que se escapa y quitar un riesgo junto a equipo caliente.",
+        "items": [
+          "Líneas de gas natural",
+          "Estaciones de regulación y medición",
+          "Calderas y hornos",
+          "Quemadores y equipos de combustión"
+        ]
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "¿Qué es un programa LDAR?",
+      "answer": "Es un programa de detección y reparación de fugas: se inspeccionan los componentes que pueden fugar, se reparan las fugas encontradas, se vuelve a inspeccionar para comprobar la reparación y se registra todo. Se repite de forma periódica."
+    },
+    {
+      "question": "¿Qué es el PPCIEM y quién debe tenerlo?",
+      "answer": "Es el Programa para la Prevención y el Control Integral de las Emisiones de Metano que la ASEA pide a las instalaciones del sector hidrocarburos. Incluye la detección y reparación de fugas, sus registros y un reporte anual de cumplimiento."
+    },
+    {
+      "question": "¿Qué es una cámara OGI?",
+      "answer": "Es una cámara de imagen óptica de gas: hace visible la nube de gas que sale de un componente, que a simple vista no se ve. Permite recorrer una instalación completa y grabar cada fuga en video."
+    },
+    {
+      "question": "¿Para qué sirve el láser si ya se ve la fuga?",
+      "answer": "Para confirmar que es metano y medir cuánto hay. El láser mide la concentración a distancia, sin tocar la línea, y solo reacciona al metano. Con eso cada fuga se clasifica por tamaño y riesgo."
+    },
+    {
+      "question": "¿Hay que parar la instalación?",
+      "answer": "No. La inspección se hace con todo operando, porque una fuga solo se ve cuando el componente está presurizado."
+    },
+    {
+      "question": "¿Sirve para plantas que no son del sector hidrocarburos?",
+      "answer": "Sí. En plantas con líneas de gas natural, estaciones de regulación, calderas y hornos, la misma inspección encuentra fugas que se pagan en el recibo de gas y que representan un riesgo junto a equipo caliente."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "El tipo de instalación, cuántos componentes o equipos tiene aproximadamente y si ya cuentas con un PPCIEM y registros anteriores. Con eso se arma el programa y la propuesta."
+    }
+  ],
+  "cta": {
+    "titulo": "¿Tu instalación tiene su programa de fugas al día?",
+    "texto": "Cuéntanos qué instalación es y si ya tienes un PPCIEM. Te proponemos el programa LDAR trimestral o una inspección inicial.",
+    "whatsapp": "Hola, quiero información sobre la detección de fugas de gas para mi instalación."
+  }
+}
