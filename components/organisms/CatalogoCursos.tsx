@@ -99,9 +99,9 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
           </div>
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
             {[
+              { v: "+3,000", t: "especialistas capacitados en más de 15 años, entre 200 y 300 cada año" },
               { v: String(cursos.length || 15), t: "cursos en vibraciones, termografía, ultrasonido y confiabilidad" },
               { v: "ISO 18436", t: "cursos de certificación bajo lineamientos ISO 18436 en vibraciones y termografía" },
-              { v: "Casos reales", t: "de equipos que nuestros analistas inspeccionan en planta" },
             ].map((x) => (
               <li key={x.t} className="flex flex-col gap-1 rounded-sm bg-gray-50 px-5 py-4 ring-1 ring-black/5 lg:flex-row lg:items-baseline lg:gap-4">
                 <span className="shrink-0 text-2xl font-extrabold text-primary">{x.v}</span>

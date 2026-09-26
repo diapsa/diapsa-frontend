@@ -6,7 +6,7 @@ import { getCourses } from "@/lib/api/courses";
 
 export const metadata: Metadata = {
   title: "Cursos y Capacitación",
-  description: "Cursos de vibraciones, termografía, ultrasonido y confiabilidad: formación técnica, talleres prácticos y certificación bajo ISO 18436, con instructores que diagnostican maquinaria real todos los días.",
+  description: "Más de 3,000 especialistas capacitados en 15 años. Cursos de vibraciones, termografía, ultrasonido y confiabilidad: formación técnica, talleres prácticos y certificación bajo ISO 18436.",
   alternates: {
     canonical: "/cursos",
   },
