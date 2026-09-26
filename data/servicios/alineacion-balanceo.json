@@ -38,7 +38,8 @@
         "foto": {
           "src": "/images/disciplinas/alineacion-balaceo.jpg",
           "alt": "Analista de DIAPSA midiendo sobre un motor acoplado antes de corregir la alineación"
-        }
+        },
+        "escena": "alineacion"
       },
       {
         "id": "beneficios",
