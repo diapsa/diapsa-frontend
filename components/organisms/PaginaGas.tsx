@@ -4,6 +4,7 @@ import GraficoPunto from "@/components/atoms/GraficoPunto";
 import { DibujoInstrumentos, DibujoMetodo, DibujoAuditoria, EvidenciaAcustica, EvidenciaLaser, EvidenciaReparacion, PlanoUbicacion } from "@/components/atoms/IlustracionesGas";
 import ContactForm from "@/components/organisms/ContactForm";
 import EscenaGas from "@/components/organisms/EscenaGas";
+import EscenaLdar from "@/components/organisms/EscenaLdar";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
 import JsonLd, { createServiceSchema, createBreadcrumbSchema, createFaqSchema } from "@/components/atoms/JsonLd";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -17,7 +18,7 @@ import { SITE_CONFIG } from "@/lib/constants";
  * tecnología y otro entregable, y la página tiene que transmitirlo desde el
  * primer vistazo. Por eso tiene su propia forma: apertura oscura con el
  * visor de la cámara acústica, los dos métodos de detección lado a lado, el ciclo LDAR
- * como un circuito que se repite, el año regulatorio trimestre por
+ * en su escena de plano técnico, el año regulatorio trimestre por
  * trimestre y el expediente de una fuga como entregable.
  *
  * El contenido vive en data/deteccion-gas.json. Componente de servidor; la
@@ -96,32 +97,6 @@ function VisorAcustico() {
         </div>
       </div>
       <p className="mt-3 text-center font-mono text-[10px] text-white/45 sm:text-xs">Esquema de la vista de una cámara acústica con láser TDLAS, datos simulados</p>
-    </div>
-  );
-}
-
-/* El ciclo LDAR como circuito: cinco estaciones alrededor de un anillo */
-function Circuito() {
-  const n = datos.ciclo.pasos.length;
-  return (
-    <div className="relative mx-auto aspect-square w-full max-w-md">
-      <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full" aria-hidden="true">
-        <circle cx="100" cy="100" r="74" fill="none" stroke="#d9e2e8" strokeWidth="10" />
-        <circle cx="100" cy="100" r="74" fill="none" stroke="#fc9f01" strokeWidth="3" strokeDasharray="6 8" className="gas-giro" />
-      </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-        <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-tertiary">Se repite</p>
-        <p className="text-2xl font-extrabold text-primary lg:text-3xl">cada trimestre</p>
-      </div>
-      {datos.ciclo.pasos.map((p, i) => {
-        const a = (-90 + (360 / n) * i) * (Math.PI / 180);
-        return (
-          <div key={p.titulo} className="absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center" style={{ left: `${50 + 37 * Math.cos(a)}%`, top: `${50 + 37 * Math.sin(a)}%` }}>
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary font-mono text-sm font-extrabold text-secondary ring-4 ring-white lg:h-12 lg:w-12">{i + 1}</span>
-            <span className="mt-1 whitespace-nowrap rounded-sm bg-white px-1.5 text-[11px] font-bold text-primary lg:text-sm">{p.titulo}</span>
-          </div>
-        );
-      })}
     </div>
   );
 }
@@ -263,26 +238,26 @@ export default function PaginaGas() {
         </div>
       </section>
 
-      {/* El ciclo LDAR */}
+      {/* El ciclo LDAR: el programa completo en la escena, y los pasos debajo */}
       <section className="w-full bg-white py-14 lg:py-24">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
-          <div>
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-3xl">
             <Etiqueta>{ciclo.etiqueta}</Etiqueta>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">{ciclo.titulo}</h2>
             <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">{ciclo.texto}</p>
-            <ol className="mt-8 space-y-4">
-              {ciclo.pasos.map((p, i) => (
-                <li key={p.titulo} className="grid grid-cols-[2.5rem_1fr] gap-3 border-t border-gray-200 pt-4">
-                  <span className="font-mono text-sm font-bold text-secondary">{String(i + 1).padStart(2, "0")}</span>
-                  <div>
-                    <p className="font-extrabold text-primary">{p.titulo}</p>
-                    <p className="mt-0.5 text-justify text-sm leading-relaxed text-tertiary">{p.texto}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
           </div>
-          <Circuito />
+          <div className="mx-auto mt-10 w-full max-w-5xl">
+            <EscenaLdar foto={{ src: "/images/deteccion-gas/campo/inspeccion-planta.webp", alt: "Analista de DIAPSA inspeccionando líneas de gas en una planta" }} />
+          </div>
+          <ol className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {ciclo.pasos.map((p, i) => (
+              <li key={p.titulo} className="border-t-2 border-secondary pt-4">
+                <span className="font-mono text-sm font-bold text-secondary">{String(i + 1).padStart(2, "0")}</span>
+                <p className="mt-1 font-extrabold text-primary">{p.titulo}</p>
+                <p className="mt-1 text-justify text-sm leading-relaxed text-tertiary">{p.texto}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
