@@ -73,51 +73,28 @@
   "seoDescription": "Análisis de calidad de la energía en planta y cumplimiento del Código de Red: armónicos, factor de potencia, desbalance, caídas y picos de tensión, registrados una semana con todo operando.",
   "porQue": {
     "foto": {
-      "src": "/images/servicios/estudios-electricos/campo-armonicos-pantalla.webp",
-      "alt": "Lectura de armónicos por fase en el analizador de calidad de energía"
+      "src": "/images/servicios/estudios-electricos/campo-tablero-transductores.webp",
+      "alt": "Transductores de corriente flexibles en las tres fases de un interruptor principal"
     },
     "preguntas": [
       {
-        "pregunta": "¿La energía que llega es la que tus equipos necesitan?",
-        "texto": "Los variadores, las fuentes electrónicas y los hornos meten armónicos a la red; las cargas mal repartidas desbalancean las fases. El analizador registra una semana de tensión, corriente y armónicos, y los compara contra IEEE 519.",
-        "siSaleMal": "Se identifica qué carga lo provoca y se corrige con filtros o redistribuyendo cargas, antes de que queme un motor o dispare una protección."
+        "pregunta": "Sin paro",
+        "texto": "El analizador se conecta con toda la planta operando."
       },
       {
-        "pregunta": "¿Estás pagando de más en el recibo?",
-        "texto": "Un factor de potencia por debajo de 0.90 se cobra como cargo en el recibo de luz, mes con mes. El registro dice cuánto baja, a qué horas y qué cargas lo provocan.",
-        "siSaleMal": "Se dimensiona el banco de capacitores adecuado, desintonizado si hay armónicos, para que el cargo se vuelva bonificación."
+        "pregunta": "Una semana de registro",
+        "texto": "Turnos, arranques y fines de semana, contra IEEE 519 y el Código de Red."
       },
       {
-        "pregunta": "¿Por qué se disparan las protecciones sin causa?",
-        "texto": "Una caída de tensión de medio segundo basta para reiniciar variadores y controles y parar una línea. El analizador captura cada evento con su hora, su duración y su profundidad.",
-        "siSaleMal": "Se cruza cada evento con lo que pasaba en la planta, como el arranque de un compresor, y se corrige el origen."
+        "pregunta": "La causa, no solo el valor",
+        "texto": "Qué carga provoca cada problema y cómo se corrige."
       }
     ],
-    "comoSeHace": {
-      "titulo": "Así se mide",
-      "pasos": [
-        {
-          "foto": {
-            "src": "/images/servicios/estudios-electricos/campo-tablero-transductores.webp",
-            "alt": "Transductores de corriente flexibles en las tres fases de un interruptor"
-          },
-          "texto": "Con la planta operando y el equipo de protección puesto, se colocan los transductores de corriente en cada fase y las puntas de tensión en el tablero."
-        },
-        {
-          "foto": {
-            "src": "/images/servicios/estudios-electricos/campo-forma-de-onda.webp",
-            "alt": "Forma de onda de corriente en el analizador"
-          },
-          "texto": "El analizador registra tensión, corriente, armónicos y eventos, normalmente una semana, para cubrir un ciclo completo de producción."
-        },
-        {
-          "foto": {
-            "src": "/images/servicios/estudios-electricos/campo-medicion-alimentador.webp",
-            "alt": "Medición de corriente en un alimentador con pinza"
-          },
-          "texto": "Si algo sale fuera, se mide alimentador por alimentador hasta dar con la carga que lo provoca."
-        }
-      ]
+    "escena": "calidad",
+    "destacado": {
+      "titulo": "Lo que no se ve en el tablero, pero sí en el recibo y en los motores",
+      "texto": "Armónicos, bajo factor de potencia y caídas de tensión calientan motores, disparan protecciones y se cobran mes con mes. El estudio los mide, encuentra la carga que los provoca y deja la planta dentro del Código de Red.",
+      "insignia": "RED"
     }
   },
   "tecnicas": {
