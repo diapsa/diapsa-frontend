@@ -21,7 +21,20 @@ export type Grupo = {
   precio?: string;
 };
 
-type Extra = { tecnica: string; formato: FormatoCurso; nivel?: string; duracion?: string; modalidad?: string; galeria?: string };
+type Extra = {
+  tecnica: string;
+  formato: FormatoCurso;
+  nivel?: string;
+  duracion?: string;
+  modalidad?: string;
+  galeria?: string;
+  /** Qué se aprende y qué se podrá hacer; y un temario que corrige al del CMS. */
+  aprenderas?: string[];
+  podras?: string[];
+  temario?: string[];
+  /** La imagen del CMS no carga (403): se usa una foto de la galería. */
+  ocultarImagenCms?: boolean;
+};
 export type FotoCurso = { src: string; alt: string };
 
 const DATOS = extra as unknown as {
@@ -54,6 +67,12 @@ export function muestraFotos(max = 14): FotoCurso[] {
     for (const l of listas) if (i < l.length && salida.length < max) salida.push(l[i]);
   }
   return salida;
+}
+
+/** La imagen del curso: la del CMS, o una foto real de su técnica si no hay o no carga. */
+export function imagenDe(slug: string, urlCms?: string | null, alt?: string): FotoCurso | null {
+  if (urlCms && !extraDe(slug)?.ocultarImagenCms) return { src: urlCms, alt: alt || "" };
+  return galeriaDe(slug)[0] ?? null;
 }
 
 function hoy() {

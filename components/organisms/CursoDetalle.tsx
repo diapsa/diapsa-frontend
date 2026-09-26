@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Antetitulo from "../atoms/Antetitulo";
 import type { Course, CourseDetail } from "@/types/course";
-import { FORMATOS, TECNICAS, extraDe, fechaGrupo, galeriaDe, proximosGrupos } from "@/lib/cursos";
+import { FORMATOS, TECNICAS, extraDe, fechaGrupo, galeriaDe, imagenDe, proximosGrupos } from "@/lib/cursos";
 import GaleriaCampo from "./GaleriaCampo";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -29,10 +29,11 @@ function lista(v: unknown): string[] {
 
 function Bloque({ etiqueta, titulo, children }: { etiqueta: string; titulo: string; children: React.ReactNode }) {
   return (
-    <section className="border-t border-gray-200 pt-8 first:border-0 first:pt-0">
+    <section className="rounded-sm border-l-4 border-secondary bg-white p-6 shadow-sm ring-1 ring-black/5 lg:p-8">
       <Antetitulo>{etiqueta}</Antetitulo>
-      <h2 className="mt-2 text-2xl font-extrabold leading-snug text-primary lg:text-3xl">{titulo}</h2>
-      <div className="mt-4">{children}</div>
+      {/* Palabras largas del CMS, como "desbalanceo/desalineación", se parten en teléfono */}
+      <h2 className="mt-2 text-2xl font-extrabold leading-snug text-primary [overflow-wrap:anywhere] lg:text-3xl">{titulo}</h2>
+      <div className="mt-4 [overflow-wrap:anywhere]">{children}</div>
     </section>
   );
 }
@@ -63,8 +64,11 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
     { k: "Imparte", v: curso.provider },
   ].filter((d) => d.v);
 
-  const objetivos = lista(curso.specific_objectives);
-  const temario = lista(curso.syllabus);
+  // Lo que se aprende y lo que se podrá hacer: del complemento; si no, los objetivos del CMS
+  const aprenderas = x?.aprenderas?.length ? x.aprenderas : lista(curso.specific_objectives);
+  const podras = x?.podras ?? [];
+  const temario = x?.temario?.length ? x.temario : lista(curso.syllabus);
+  const imagen = imagenDe(curso.slug, curso.url_img, curso.alt_img);
   const requisitos = lista(curso.requirements);
   const whatsapp = `https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent(`Hola, quiero información del curso ${curso.name}.`)}`;
 
@@ -92,33 +96,50 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
         />
       )}
 
-      <section className="w-full bg-white py-12 lg:py-16">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14">
+      <section className="w-full bg-gray-100 py-12 lg:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10">
           {/* Contenido */}
-          <div className="space-y-8">
+          <div className="min-w-0 space-y-6">
             <Bloque etiqueta="De qué se trata" titulo={curso.objective || "Objetivo del curso"}>
               <p className="text-justify text-lg leading-relaxed text-tertiary">{curso.description}</p>
               {formato && <p className="mt-3 text-justify text-base leading-relaxed text-primary"><span className="font-bold">{formato.nombre}:</span> {formato.texto}</p>}
             </Bloque>
 
-            {(objetivos.length > 0 || curso.graduate_profile) && (
-              <Bloque etiqueta="Qué vas a lograr" titulo="Al terminar el curso">
-                {objetivos.length > 0 && (
-                  <ul className="space-y-3">
-                    {objetivos.map((o) => <li key={o} className="flex gap-3 text-base leading-relaxed text-primary"><Palomita />{o}</li>)}
+            {aprenderas.length > 0 && (
+              <Bloque etiqueta="Qué vas a aprender" titulo="En el curso">
+                <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {aprenderas.map((o) => (
+                    <li key={o} className="flex gap-3 rounded-sm bg-gray-50 p-3 text-base leading-snug text-primary ring-1 ring-black/5"><Palomita />{o}</li>
+                  ))}
+                </ul>
+              </Bloque>
+            )}
+
+            {(podras.length > 0 || curso.graduate_profile) && (
+              <section className="rounded-sm bg-primary p-6 text-white shadow-lg lg:p-8">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">Qué podrás hacer después</p>
+                <h2 className="mt-2 text-2xl font-extrabold leading-snug lg:text-3xl">Al terminar el curso</h2>
+                {podras.length > 0 && (
+                  <ul className="mt-5 space-y-3">
+                    {podras.map((o) => (
+                      <li key={o} className="flex gap-3 text-base leading-relaxed text-white/90 lg:text-lg">
+                        <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-secondary text-xs font-extrabold text-primary" aria-hidden="true">✓</span>
+                        {o}
+                      </li>
+                    ))}
                   </ul>
                 )}
                 {curso.graduate_profile && (
-                  <p className="mt-5 rounded-sm border-l-4 border-secondary bg-gray-50 px-4 py-3 text-justify text-base leading-relaxed text-primary">
-                    <span className="font-bold">Perfil de egreso:</span> {curso.graduate_profile}
+                  <p className="mt-6 border-t border-white/15 pt-4 text-justify text-sm leading-relaxed text-white/75 lg:text-base">
+                    <span className="font-bold text-white">Perfil de egreso:</span> {curso.graduate_profile}
                   </p>
                 )}
-              </Bloque>
+              </section>
             )}
 
             {temario.length > 0 && (
               <Bloque etiqueta="Temario" titulo="Lo que se ve en el curso">
-                <ol className="divide-y divide-gray-100 rounded-sm ring-1 ring-black/5">
+                <ol className="divide-y divide-gray-100 overflow-hidden rounded-sm bg-gray-50 ring-1 ring-black/5">
                   {temario.map((tm, i) => (
                     <li key={tm} className="flex gap-4 px-4 py-3">
                       <span className="w-6 shrink-0 font-mono text-sm font-bold text-secondary">{String(i + 1).padStart(2, "0")}</span>
@@ -150,9 +171,9 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
           {/* Inscripción, siempre a la vista */}
           <aside id="grupos" className="order-first lg:order-none lg:sticky lg:top-28 lg:self-start">
             <div className="overflow-hidden rounded-sm bg-white shadow-xl ring-1 ring-black/10">
-              {curso.url_img && (
+              {imagen && (
                 <div className="relative hidden aspect-[16/10] lg:block">
-                  <Image src={curso.url_img} alt={curso.alt_img || curso.name} fill sizes="22rem" className="object-cover" />
+                  <Image src={imagen.src} alt={imagen.alt || curso.name} fill sizes="22rem" className="object-cover" />
                 </div>
               )}
               <div className="p-5">

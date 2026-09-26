@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Antetitulo from "../atoms/Antetitulo";
 import type { Course } from "@/types/course";
-import { FORMATOS, TECNICAS, diaMes, extraDe, fechaGrupo, galeriaDe, muestraFotos, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
+import { FORMATOS, TECNICAS, diaMes, extraDe, fechaGrupo, imagenDe, muestraFotos, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
 import CarruselFotos from "../molecules/CarruselFotos";
 import menuCursos from "@/data/menu-cursos.json";
 
@@ -26,7 +26,7 @@ function Tarjeta({ curso }: { curso: Course }) {
   const formato = x ? FORMATOS[x.formato] : null;
   const grupo = proximosGrupos(curso.slug)[0];
   // Sin imagen en el CMS: una foto real de un curso de la misma técnica
-  const foto = curso.url_img ? { src: curso.url_img, alt: curso.alt_img || curso.name } : galeriaDe(curso.slug)[0];
+  const foto = imagenDe(curso.slug, curso.url_img, curso.alt_img || curso.name);
   return (
     <Link href={`/cursos/${curso.slug}`} className="group flex flex-col overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-xl">
       <div className="relative aspect-[16/10] bg-primary">
