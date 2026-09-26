@@ -404,6 +404,10 @@ export interface ServiceArco {
   umbrales: { valor: number; texto: string }[];
   leyenda: { nivel: string; texto: string }[];
   nota: string;
+  /** Versión corta: solo las barras de más energía y un renglón con el resto. */
+  maxBarras?: number;
+  /** Solo la etiqueta del tablero de más riesgo. */
+  unaEtiqueta?: boolean;
 }
 
 export interface ServiceTecnicas {

@@ -112,10 +112,10 @@
   },
   "arco": {
     "etiqueta": "Lo que produce el estudio",
-    "titulo": "Una etiqueta por tablero, y toda la planta ordenada por riesgo",
-    "texto": "Un estudio real de 18 barras. A la izquierda, cada tablero con su energía incidente, de mayor a menor: dos salen en categoría 2 y los otros dieciséis en categoría 1. A la derecha, la etiqueta que se pega en el tablero de más riesgo y la de uno típico, con los mismos renglones que la real.",
+    "titulo": "Cada tablero, con su riesgo y su etiqueta",
+    "texto": "Un estudio real de 18 tableros: solo dos piden categoría 2. Y así se ve la etiqueta del de más riesgo.",
     "barrasTitulo": "Energía incidente por tablero",
-    "barrasTexto": "El peor caso de cada barra, en calorías por centímetro cuadrado a la distancia de trabajo.",
+    "barrasTexto": "El peor caso de cada tablero, en cal/cm².",
     "barras": [
       {
         "nombre": "Interruptor principal",
@@ -251,8 +251,8 @@
         "texto": "Categoría 2: ropa ignífuga de 8 cal/cm²"
       }
     ],
-    "etiquetasTitulo": "La etiqueta que se pega en cada tablero",
-    "etiquetasTexto": "Reconstruidas con los valores reales de dos tableros del mismo estudio.",
+    "etiquetasTitulo": "La etiqueta que se pega en el tablero",
+    "etiquetasTexto": "La del interruptor principal, con los mismos renglones que la real.",
     "etiquetas": [
       {
         "equipo": "Interruptor principal",
@@ -279,7 +279,9 @@
         "fronteraRestringida": "30"
       }
     ],
-    "nota": "Estudio real de 2024 en una planta de proceso, con la planta y los nombres de los tableros omitidos; cada barra se nombra por su función. Corriente de cortocircuito trifásica de 18 kA. Cálculo conforme a IEEE 1584 y categorías de EPP conforme a NFPA 70E."
+    "nota": "Estudio real de 2024 en una planta de proceso, con la planta y los nombres de los tableros omitidos; cada barra se nombra por su función. Corriente de cortocircuito trifásica de 18 kA. Cálculo conforme a IEEE 1584 y categorías de EPP conforme a NFPA 70E.",
+    "maxBarras": 4,
+    "unaEtiqueta": true
   },
   "certificacion": "IEEE 1584 · NFPA 70E · NOM-029-STPS-2011",
   "diagramas": [
@@ -309,82 +311,31 @@
   ],
   "entregable": {
     "etiqueta": "Qué recibes",
-    "titulo": "Esto es lo que recibes",
-    "descripcion": "El informe del estudio con su resumen de una página y, detrás, la tabla completa de barras y las etiquetas. Esta es la de un estudio real tal como llega: cuántas barras se analizaron, la categoría máxima encontrada, las recomendaciones y qué EPP corresponde a cada grupo.",
-    "contenido": [
-      "Energía incidente, corriente de cortocircuito y tiempo de disparo por barra",
-      "Categoría de EPP y las tres fronteras de protección por tablero",
-      "Una etiqueta de advertencia por tablero, lista para imprimir y pegar",
-      "Recomendaciones para bajar el riesgo donde salga alto",
-      "Referencia normativa: IEEE 1584, NFPA 70E y NOM-029-STPS-2011"
-    ],
-    "hoja": {
-      "etiqueta": "Informe del estudio",
-      "titulo": "Estudio de arco eléctrico",
-      "subtitulo": "IEEE 1584 · NFPA 70E · septiembre de 2024",
-      "datos": [
-        {
-          "etiqueta": "Barras analizadas",
-          "valor": "18"
-        },
-        {
-          "etiqueta": "Cortocircuito trifásico",
-          "valor": "18 kA"
-        },
-        {
-          "etiqueta": "Categoría máxima",
-          "valor": "2"
-        }
-      ],
-      "condicion": {
-        "clave": "precaucion",
-        "etiqueta": "Categoría 2 en dos barras"
+    "titulo": "Recibes seguridad y cumplimiento",
+    "descripcion": "Saber con qué se puede abrir cada tablero, y un estudio que cumple con lo que pide la STPS.",
+    "contenido": [],
+    "pilares": [
+      {
+        "titulo": "Seguridad",
+        "icono": "escudo",
+        "items": [
+          "La energía y la categoría de protección de cada tablero",
+          "Hasta dónde se puede acercar cada persona",
+          "Una etiqueta de advertencia en cada tablero",
+          "Cómo bajar el riesgo donde sale alto"
+        ]
       },
-      "etiquetas": {
-        "condicion": "Resultado",
-        "diagnostico": "Comentario del estudio",
-        "recomendaciones": "Recomendaciones generales",
-        "prioridades": "EPP por grupo de tableros"
-      },
-      "diagnostico": "En el peor caso de cada escenario, la mayor categoría de riesgo de la planta es la 2, con energía incidente de hasta 5.88 cal/cm² en el interruptor principal y en el secundario del transformador principal. Las otras dieciséis barras quedan en categoría 1.",
-      "recomendaciones": [
-        "Todo el personal que trabaje con equipo eléctrico usa de forma habitual camisa y pantalón ignífugos de 8 cal/cm², casco tipo G y lentes de seguridad.",
-        "Respetar las distancias de las etiquetas; si no se puede, no se trabaja con el tablero energizado.",
-        "Los equipos por arriba de 1,000 V se desenergizan antes de cualquier intervención.",
-        "Actualizar el estudio cuando cambien las protecciones, los equipos o la configuración."
-      ],
-      "prioridades": [
-        {
-          "nivel": "Categoría 2",
-          "clave": "precaucion",
-          "puntos": "2 barras",
-          "accion": "Interruptor principal y secundario del transformador principal: ropa de 8 cal/cm², frontera de arco a 124 cm."
-        },
-        {
-          "nivel": "Categoría 1",
-          "clave": "bueno",
-          "puntos": "16 barras",
-          "accion": "Ropa ignífuga de 4 cal/cm², frontera de arco entre 5 y 33 cm según el tablero."
-        },
-        {
-          "nivel": "Media tensión",
-          "clave": "alarma",
-          "puntos": "13.2 kV",
-          "accion": "Primario del transformador principal: desenergizar antes de intervenir, guantes clase 2, frontera limitada a 150 cm."
-        }
-      ],
-      "evidencia": [
-        {
-          "src": "/images/servicios/subestacion-inspeccion.webp",
-          "alt": "Subestación eléctrica durante el levantamiento"
-        },
-        {
-          "src": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
-          "alt": "Intervención en gabinete energizado con traje contra arco eléctrico"
-        }
-      ],
-      "nota": "Informe real de septiembre de 2024, con la planta y los nombres de los tableros omitidos."
-    }
+      {
+        "titulo": "Cumplimiento",
+        "icono": "documento",
+        "items": [
+          "El análisis de riesgo que pide la NOM-029-STPS",
+          "Cálculo conforme a IEEE 1584 y NFPA 70E",
+          "Informe listo para la STPS, auditorías y aseguradora",
+          "Etiquetas listas para imprimir y pegar"
+        ]
+      }
+    ]
   },
   "mostrarClientes": true,
   "faq": [
