@@ -70,7 +70,7 @@
       }
     ]
   },
-  "seoDescription": "Análisis de calidad de la energía en planta: armónicos, factor de potencia, desbalance, caídas y picos de tensión, registrados una semana con todo operando. Qué carga provoca cada problema y cómo se corrige.",
+  "seoDescription": "Análisis de calidad de la energía en planta y cumplimiento del Código de Red: armónicos, factor de potencia, desbalance, caídas y picos de tensión, registrados una semana con todo operando.",
   "porQue": {
     "foto": {
       "src": "/images/servicios/estudios-electricos/campo-armonicos-pantalla.webp",
@@ -206,7 +206,7 @@
     "nota": "Los hallazgos de las tarjetas son ejemplos simulados para mostrar la forma del reporte, no casos de un cliente. Las pruebas y sus criterios siguen IEEE 43, IEEE 62, IEEE C57 y las tablas de aceptación de NETA.",
     "segundoGrupo": "Lo que se busca en el registro"
   },
-  "certificacion": "Calidad de la energía con referencia a IEEE 519 · Instrumentos calibrados ante laboratorio acreditado por la EMA",
+  "certificacion": "Código de Red · IEEE 519 · Instrumentos calibrados ante laboratorio acreditado por la EMA",
   "diagramas": [
     "flujo-servicio"
   ],
@@ -368,8 +368,12 @@
       "answer": "Porque si hay armónicos, un banco de capacitores común puede entrar en resonancia con la red: se calienta, se daña o amplifica la distorsión. Por eso primero se mide, y si hay armónicos se usa un banco desintonizado o un filtro."
     },
     {
+      "question": "¿El Código de Red aplica a mi planta?",
+      "answer": "Si tu planta está conectada a la red en media o alta tensión, sí: es un centro de carga y debe cumplir los requisitos de calidad de la energía del Código de Red, entre ellos un factor de potencia de al menos 0.95. El estudio mide cada requisito y te dice qué corregir."
+    },
+    {
       "question": "¿Qué normas aplican?",
-      "answer": "IEEE 519 como referencia de armónicos, e IEEE 1159 para clasificar los eventos de tensión. El factor de potencia se compara contra lo que pide tu tarifa."
+      "answer": "El Código de Red de la CRE, que fija los requisitos de calidad de la energía para los centros de carga en media y alta tensión. Como referencia técnica, IEEE 519 para armónicos e IEEE 1159 para clasificar los eventos de tensión. El factor de potencia se compara además contra lo que pide tu tarifa."
     },
     {
       "question": "¿Qué necesito para cotizar?",
@@ -405,7 +409,7 @@
     "datos": [
       "Registro REPSE vigente",
       "Instrumentos calibrados ante laboratorio acreditado por la EMA",
-      "Referencia IEEE 519"
+      "Código de Red e IEEE 519"
     ]
   },
   "relatedProducts": {
@@ -416,6 +420,18 @@
   "cobertura": {
     "etiqueta": "Dónde aplica",
     "titulo": "¿Dónde aplica y qué detecta?",
+    "norma": {
+      "etiqueta": "Obligatorio por norma",
+      "titulo": "El Código de Red lo exige a las plantas conectadas en media y alta tensión",
+      "texto": "El Código de Red de la Comisión Reguladora de Energía obliga a los centros de carga conectados en media y alta tensión a mantener la calidad de la energía dentro de límites. La CRE puede verificarlo y sancionar su incumplimiento, y el estudio es la forma de demostrar que tu planta cumple.",
+      "obligaciones": [
+        "Factor de potencia de al menos 0.95",
+        "Armónicos dentro de los límites permitidos",
+        "Desbalance de tensión y corriente controlado",
+        "Fluctuaciones y variaciones de tensión dentro de rango"
+      ],
+      "nota": "El estudio mide cada requisito en el punto de conexión y en tus tableros, y dice qué corregir para cumplir."
+    },
     "equiposTitulo": "Equipos",
     "equipos": [
       "Tableros generales",
