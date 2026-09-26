@@ -82,6 +82,15 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
         </dl>
       </section>
 
+      {/* Al inicio: fotos reales de cursos de la misma técnica */}
+      {galeriaDe(curso.slug).length > 0 && (
+        <GaleriaCampo
+          fotos={galeriaDe(curso.slug)}
+          titulo="Así son nuestros cursos"
+          texto="Fotos reales de grupos de DIAPSA, en aula y en planta."
+        />
+      )}
+
       <section className="w-full bg-white py-12 lg:py-16">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14">
           {/* Contenido */}
@@ -173,15 +182,6 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
           </aside>
         </div>
       </section>
-
-      {/* Fotos reales de cursos de la misma técnica */}
-      {galeriaDe(curso.slug).length > 0 && (
-        <GaleriaCampo
-          fotos={galeriaDe(curso.slug)}
-          titulo="Así son nuestros cursos"
-          texto="Fotos reales de grupos de DIAPSA, en aula y en planta."
-        />
-      )}
 
       {/* La misma técnica, en sus otros formatos */}
       {relacionados.length > 0 && (
