@@ -1,4 +1,5 @@
 import Antetitulo from "../atoms/Antetitulo";
+import MiniCalidad from "../atoms/MiniCalidad";
 import type { ServiceTecnicas } from "@/types/servicio";
 
 /**
@@ -16,6 +17,10 @@ import type { ServiceTecnicas } from "@/types/servicio";
  *
  * Las técnicas con `enOperacion` van arriba, a lo ancho y sobre fondo azul
  * marino; el resto va en una fila de tarjetas.
+ *
+ * En calidad de energía cada tarjeta es un problema, no una prueba: lleva
+ * su esquema, qué provoca en la planta y cómo se corrige, en lugar de
+ * repetir la lista de lo que se mide que ya está en la tarjeta grande.
  */
 
 type Props = {
@@ -79,11 +84,29 @@ export default function TecnicasElectricas({ tecnicas, paso }: Props) {
             <ol className={`grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6 ${enParo.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
               {enParo.map((t) => (
                 <li key={t.nombre} className="flex flex-col rounded-sm bg-white p-5 ring-1 ring-black/5 lg:p-6">
-                  <h3 className="text-lg font-extrabold leading-snug text-primary">{t.nombre}</h3>
+                  {t.grafico && <MiniCalidad clave={t.grafico} />}
+                  <h3 className={`${t.grafico ? "mt-4 " : ""}text-lg font-extrabold leading-snug text-primary`}>{t.nombre}</h3>
                   <p className="mt-2 text-justify text-sm leading-relaxed text-tertiary">{t.resumen ?? t.texto}</p>
-                  <div className="mt-4">
-                    <Chips items={t.mide.slice(0, 4)} />
-                  </div>
+                  {t.efecto || t.correccion ? (
+                    <dl className="mt-4 space-y-3 border-t border-black/5 pt-4">
+                      {t.efecto && (
+                        <div>
+                          <dt className="text-[11px] font-bold uppercase tracking-widest text-red-700">Qué provoca</dt>
+                          <dd className="mt-1 text-justify text-sm leading-snug text-primary">{t.efecto}</dd>
+                        </div>
+                      )}
+                      {t.correccion && (
+                        <div>
+                          <dt className="text-[11px] font-bold uppercase tracking-widest text-emerald-700">Cómo se corrige</dt>
+                          <dd className="mt-1 text-justify text-sm leading-snug text-primary">{t.correccion}</dd>
+                        </div>
+                      )}
+                    </dl>
+                  ) : (
+                    <div className="mt-4">
+                      <Chips items={t.mide.slice(0, 4)} />
+                    </div>
+                  )}
                   {t.enlace && (
                     <a href={t.enlace.href} className="mt-auto inline-flex items-center gap-1.5 pt-4 text-xs font-bold text-secondary hover:underline">
                       {t.enlace.texto}
