@@ -5,6 +5,7 @@ import Image from "next/image";
 import IconoTarjeta from "../atoms/IconoTarjeta";
 import GraficoPunto from "../atoms/GraficoPunto";
 import EscenaVibracion from "./EscenaVibracion";
+import EscenaTermografia from "./EscenaTermografia";
 import type { ContentItem, FotoPunto } from "@/types/servicio";
 
 /**
@@ -87,7 +88,11 @@ export default function ServicePuntos({ puntos, foto }: Props) {
           key={`escena-${escena}`}
           className="relative aspect-[4/3] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5 motion-safe:animate-[fadeIn_.4s_ease-out]"
         >
-          <EscenaVibracion variante={escena === "vibracion-semaforo" ? "semaforo" : "espectro"} />
+          {escena === "termografia" && fotoActiva ? (
+            <EscenaTermografia foto={fotoActiva} />
+          ) : (
+            <EscenaVibracion variante={escena === "vibracion-semaforo" ? "semaforo" : "espectro"} />
+          )}
         </div>
       )}
 
