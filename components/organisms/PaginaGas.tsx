@@ -1,6 +1,7 @@
 import Link from "next/link";
 import datos from "@/data/deteccion-gas.json";
 import GraficoPunto from "@/components/atoms/GraficoPunto";
+import { DibujoInstrumentos, DibujoMetodo, DibujoAuditoria, EvidenciaOgi, EvidenciaLaser, EvidenciaReparacion, PlanoUbicacion } from "@/components/atoms/IlustracionesGas";
 import ContactForm from "@/components/organisms/ContactForm";
 import JsonLd, { createServiceSchema, createBreadcrumbSchema, createFaqSchema } from "@/components/atoms/JsonLd";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -160,14 +161,34 @@ export default function PaginaGas() {
       {/* Un servicio aparte */}
       <section className="w-full bg-white py-14 lg:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="max-w-3xl">
-            <Etiqueta>{aparte.etiqueta}</Etiqueta>
-            <h2 className="mt-3 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">{aparte.titulo}</h2>
-            <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">{aparte.texto}</p>
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-14">
+            <div>
+              <Etiqueta>{aparte.etiqueta}</Etiqueta>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">{aparte.titulo}</h2>
+              <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">{aparte.texto}</p>
+            </div>
+            {/* La diferencia, renglón por renglón */}
+            <div className="overflow-hidden rounded-sm ring-1 ring-black/10">
+              <div className="grid grid-cols-[6.5rem_1fr_1fr] text-[11px] font-bold uppercase tracking-wider sm:grid-cols-[8rem_1fr_1fr] sm:text-xs">
+                <span className="bg-gray-50 px-3 py-3" />
+                <span className="bg-gray-100 px-3 py-3 text-tertiary">{aparte.contraste.columnas[0]}</span>
+                <span className="bg-primary px-3 py-3 text-secondary">{aparte.contraste.columnas[1]}</span>
+              </div>
+              {aparte.contraste.filas.map((f) => (
+                <div key={f.k} className="grid grid-cols-[6.5rem_1fr_1fr] border-t border-gray-100 text-sm sm:grid-cols-[8rem_1fr_1fr]">
+                  <span className="bg-gray-50 px-3 py-3 font-mono text-[10px] font-bold uppercase tracking-wider text-tertiary sm:text-[11px]">{f.k}</span>
+                  <span className="px-3 py-3 text-tertiary">{f.a}</span>
+                  <span className="bg-primary/[0.04] px-3 py-3 font-bold text-primary">{f.b}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <ol className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-sm bg-primary/10 md:grid-cols-3">
+          <ol className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-sm bg-primary/10 md:grid-cols-3">
             {aparte.puntos.map((p, i) => (
               <li key={p.titulo} className="bg-white p-6 lg:p-8">
+                <div className="mb-5 h-32 rounded-sm bg-gray-50 p-2 lg:h-36">
+                  {i === 0 ? <DibujoInstrumentos /> : i === 1 ? <DibujoMetodo /> : <DibujoAuditoria />}
+                </div>
                 <span className="font-mono text-sm font-bold text-secondary">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="mt-3 text-xl font-extrabold text-primary">{p.titulo}</h3>
                 <p className="mt-2 text-justify text-base leading-relaxed text-tertiary">{p.texto}</p>
@@ -299,6 +320,27 @@ export default function PaginaGas() {
               </div>
               <span className="rounded-full bg-emerald-500 px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-white">✓ {expediente.registro.estado}</span>
             </div>
+            {/* De la detección al cierre */}
+            <ol className="grid grid-cols-4 border-b border-gray-100 px-3 py-4 lg:px-5">
+              {expediente.registro.linea.map((l, i, todos) => (
+                <li key={l.t} className="relative flex flex-col items-center text-center">
+                  {i < todos.length - 1 && <span className="absolute left-1/2 top-3.5 h-0.5 w-full bg-emerald-500" aria-hidden="true" />}
+                  <span className={`relative flex h-7 w-7 items-center justify-center rounded-full text-xs font-extrabold ${i === todos.length - 1 ? "bg-emerald-500 text-white" : "bg-white text-emerald-700 ring-2 ring-emerald-500"}`}>
+                    {i === todos.length - 1 ? "✓" : i + 1}
+                  </span>
+                  <span className="mt-1.5 text-[11px] font-bold leading-tight text-primary sm:text-xs">{l.t}</span>
+                  <span className="text-[10px] leading-tight text-tertiary sm:text-[11px]">{l.d}</span>
+                </li>
+              ))}
+            </ol>
+            {/* Dónde está */}
+            <div className="grid grid-cols-1 gap-3 border-b border-gray-100 px-5 py-4 sm:grid-cols-[8.5rem_1fr] lg:px-6">
+              <div>
+                <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-tertiary">Ubicación</p>
+                <p className="mt-1 text-sm font-semibold text-primary">{expediente.registro.ubicacion}</p>
+              </div>
+              <div className="h-24"><PlanoUbicacion /></div>
+            </div>
             <dl className="divide-y divide-gray-100">
               {expediente.registro.datos.map((d) => (
                 <div key={d.k} className="grid grid-cols-[8.5rem_1fr] gap-3 px-5 py-3 lg:px-6">
@@ -310,10 +352,13 @@ export default function PaginaGas() {
             <div className="border-t border-gray-100 bg-gray-50 px-5 py-4 lg:px-6">
               <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-tertiary">Evidencia</p>
               <div className="mt-2 grid grid-cols-3 gap-2">
-                {expediente.registro.evidencia.map((e) => (
-                  <div key={e} className="flex aspect-[4/3] items-end rounded-sm bg-[#3b464c] p-2">
-                    <span className="text-[10px] font-bold leading-tight text-white lg:text-xs">{e}</span>
-                  </div>
+                {expediente.registro.evidencia.map((e, i) => (
+                  <figure key={e}>
+                    <div className="aspect-[4/3] overflow-hidden rounded-sm ring-1 ring-black/10">
+                      {i === 0 ? <EvidenciaOgi /> : i === 1 ? <EvidenciaLaser /> : <EvidenciaReparacion />}
+                    </div>
+                    <figcaption className="mt-1.5 text-[10px] font-bold leading-tight text-primary lg:text-xs">{e}</figcaption>
+                  </figure>
                 ))}
               </div>
             </div>
