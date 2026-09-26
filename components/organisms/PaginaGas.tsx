@@ -1,7 +1,7 @@
 import Link from "next/link";
 import datos from "@/data/deteccion-gas.json";
 import GraficoPunto from "@/components/atoms/GraficoPunto";
-import { DibujoInstrumentos, DibujoMetodo, DibujoAuditoria, EvidenciaOgi, EvidenciaLaser, EvidenciaReparacion, PlanoUbicacion } from "@/components/atoms/IlustracionesGas";
+import { DibujoInstrumentos, DibujoMetodo, DibujoAuditoria, EvidenciaAcustica, EvidenciaLaser, EvidenciaReparacion, PlanoUbicacion } from "@/components/atoms/IlustracionesGas";
 import ContactForm from "@/components/organisms/ContactForm";
 import EscenaGas from "@/components/organisms/EscenaGas";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
@@ -16,7 +16,7 @@ import { SITE_CONFIG } from "@/lib/constants";
  * con otro cliente (el sector hidrocarburos y su regulación), otra
  * tecnología y otro entregable, y la página tiene que transmitirlo desde el
  * primer vistazo. Por eso tiene su propia forma: apertura oscura con el
- * visor de la cámara OGI, los dos instrumentos lado a lado, el ciclo LDAR
+ * visor de la cámara acústica, sus dos tecnologías lado a lado, el ciclo LDAR
  * como un circuito que se repite, el año regulatorio trimestre por
  * trimestre y el expediente de una fuga como entregable.
  *
@@ -43,8 +43,8 @@ function Etiqueta({ children, clara }: { children: React.ReactNode; clara?: bool
   );
 }
 
-/* El visor de la cámara OGI: la misma válvula en gris con la nube saliendo */
-function VisorOgi() {
+/* El visor de la cámara acústica: la válvula con el mapa de sonido de la fuga */
+function VisorAcustico() {
   return (
     <div className="relative mx-auto w-full max-w-xl">
       <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-[#2a3338] ring-1 ring-white/10">
@@ -54,7 +54,17 @@ function VisorOgi() {
               <stop offset="60%" stopColor="#000" stopOpacity="0" />
               <stop offset="100%" stopColor="#000" stopOpacity=".55" />
             </radialGradient>
-            <filter id="gas-difuso"><feGaussianBlur stdDeviation="6" /></filter>
+            <linearGradient id="gas-escala" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#ffe14d" />
+              <stop offset="50%" stopColor="#ff8a1f" />
+              <stop offset="100%" stopColor="#1f3b8a" />
+            </linearGradient>
+            <radialGradient id="gas-mapa">
+              <stop offset="0%" stopColor="#ffe14d" />
+              <stop offset="30%" stopColor="#ff8a1f" stopOpacity=".95" />
+              <stop offset="65%" stopColor="#e5261f" stopOpacity=".5" />
+              <stop offset="100%" stopColor="#e5261f" stopOpacity="0" />
+            </radialGradient>
           </defs>
           <rect width="400" height="300" fill="#3b464c" />
           <rect x="0" y="176" width="400" height="34" fill="#6d7a82" />
@@ -65,11 +75,10 @@ function VisorOgi() {
           <rect x="194" y="96" width="12" height="74" fill="#56636a" />
           <rect x="156" y="84" width="88" height="16" rx="8" fill="#56636a" />
           <rect x="0" y="228" width="400" height="72" fill="#323c41" />
-          <g filter="url(#gas-difuso)">
-            {[0, 1, 2, 3, 4].map((i) => (
-              <ellipse key={i} className="gas-pluma" cx="236" cy="166" rx="30" ry="22" fill="#05090b" style={{ animationDelay: `${i * 0.7}s` }} />
-            ))}
-          </g>
+          {/* Mapa de sonido de la fuga, latiendo */}
+          <circle className="gas-latido" cx="236" cy="170" r="48" fill="url(#gas-mapa)" />
+          {/* Escala de nivel sonoro */}
+          <rect x="372" y="60" width="8" height="150" rx="2" fill="url(#gas-escala)" />
           <rect width="400" height="300" fill="url(#gas-vineta)" />
         </svg>
         {/* Marcas del visor */}
@@ -77,16 +86,16 @@ function VisorOgi() {
           <span key={c} className={`absolute h-6 w-6 border-white/70 ${c}`} aria-hidden="true" />
         ))}
         <p className="absolute left-5 top-4 flex items-center gap-2 font-mono text-[10px] font-bold text-white/85 sm:text-xs">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" /> REC · OGI
+          <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" /> REC · Acústica
         </p>
-        <p className="absolute right-5 top-4 font-mono text-[10px] text-white/60 sm:text-xs">Modo alta sensibilidad</p>
+        <p className="absolute right-5 top-4 font-mono text-[10px] text-white/60 sm:text-xs">30–48 kHz · SPL 46 dB</p>
         <span className="absolute left-[58%] top-[55%] h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-sm border-2 border-secondary" aria-hidden="true" />
         <div className="absolute bottom-4 left-5 right-5 flex flex-wrap items-end justify-between gap-2 font-mono">
-          <p className="rounded-sm bg-black/55 px-2 py-1 text-[10px] text-white sm:text-xs">Brida de succión · fuga visible</p>
+          <p className="rounded-sm bg-black/55 px-2 py-1 text-[10px] text-white sm:text-xs">Brida de succión · 0.72 l/min</p>
           <p className="rounded-sm bg-secondary px-2 py-1 text-[10px] font-bold text-primary sm:text-xs">CH₄ 1,250 ppm·m</p>
         </div>
       </div>
-      <p className="mt-3 text-center font-mono text-[10px] text-white/45 sm:text-xs">Esquema de la vista de una cámara OGI, datos simulados</p>
+      <p className="mt-3 text-center font-mono text-[10px] text-white/45 sm:text-xs">Esquema de la vista de una cámara acústica con láser TDLAS, datos simulados</p>
     </div>
   );
 }
@@ -156,7 +165,7 @@ export default function PaginaGas() {
               </a>
             </div>
           </div>
-          <VisorOgi />
+          <VisorAcustico />
         </div>
       </section>
 
@@ -206,7 +215,7 @@ export default function PaginaGas() {
           <div className="max-w-3xl">
             <Etiqueta>Una inspección</Etiqueta>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">De la fuga que no se ve al registro para la ASEA</h2>
-            <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">La cámara OGI encuentra la fuga, el láser TDLAS confirma que es metano, se repara, se vuelve a revisar y queda registrada.</p>
+            <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">La cámara acústica encuentra la fuga, su láser TDLAS confirma que es metano, se repara, se vuelve a revisar y queda registrada.</p>
           </div>
           <div className="mx-auto mt-10 w-full max-w-5xl">
             <EscenaGas foto={{ src: "/images/deteccion-gas/gas-valvules.jpg", alt: "Válvulas y bridas de una línea de gas" }} />
@@ -375,7 +384,7 @@ export default function PaginaGas() {
                 {expediente.registro.evidencia.map((e, i) => (
                   <figure key={e}>
                     <div className="aspect-[4/3] overflow-hidden rounded-sm ring-1 ring-black/10">
-                      {i === 0 ? <EvidenciaOgi /> : i === 1 ? <EvidenciaLaser /> : <EvidenciaReparacion />}
+                      {i === 0 ? <EvidenciaAcustica /> : i === 1 ? <EvidenciaLaser /> : <EvidenciaReparacion />}
                     </div>
                     <figcaption className="mt-1.5 text-[10px] font-bold leading-tight text-primary lg:text-xs">{e}</figcaption>
                   </figure>

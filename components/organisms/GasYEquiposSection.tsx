@@ -15,8 +15,8 @@ const BLOQUES = [
     titulo: "Detección de Gas y LDAR",
     gancho: "Ve la fuga antes que la multa",
     texto:
-      "Cámaras acústicas y ópticas que revelan fugas de gas, arcos eléctricos y anomalías invisibles al ojo. Inspección OGI y programas LDAR para cumplimiento normativo.",
-    puntos: ["Cámaras acústicas y OGI", "Programas LDAR", "Evidencia para la autoridad"],
+      "Cámaras acústicas con láser de metano que revelan fugas de gas invisibles al ojo. Programas LDAR para el cumplimiento del PPCIEM ante la ASEA.",
+    puntos: ["Cámara acústica y láser TDLAS", "Programas LDAR", "Evidencia para la autoridad"],
     href: "/servicios/deteccion-gas",
     cta: "Ver detección de gas",
     imagen: "/images/deteccion-gas/camaras-acusticas-deteccion-gas.png",

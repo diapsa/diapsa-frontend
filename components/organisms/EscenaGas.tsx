@@ -5,7 +5,7 @@ import Image from "next/image";
 
 /**
  * EscenaGas
- * "Detección de fugas de gas": de la fuga invisible a la cámara OGI, el
+ * "Detección de fugas de gas": de la fuga invisible a la cámara acústica, el
  * láser TDLAS, la reparación y el registro. Va a lo ancho en su propia
  * sección de la página de gas.
  *
@@ -93,7 +93,7 @@ export default function EscenaGas({ foto, pie }: Props) {
           className="escgas overflow-hidden rounded-md shadow-xl ring-1 ring-black/10"
           style={{ width: "100%", aspectRatio: montada ? undefined : "4 / 3", background: "linear-gradient(180deg, #fbfcfd 0%, #eef1f4 100%)" }}
           role="img"
-          aria-label="Una fuga de gas invisible en una brida: la cámara OGI la hace visible, el láser TDLAS confirma que es metano, se repara, se vuelve a revisar y queda registrada para la ASEA."
+          aria-label="Una fuga de gas invisible en una brida: la cámara acústica la ubica por su sonido, el láser TDLAS confirma que es metano, se repara, se vuelve a revisar y queda registrada para la ASEA."
         />
       </div>
       {pie && <figcaption className="mt-3 text-justify text-xs leading-relaxed text-tertiary/80">{pie}</figcaption>}
