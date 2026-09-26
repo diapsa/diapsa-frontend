@@ -6,6 +6,7 @@ import EscenaHuella from "./EscenaHuella";
 import EscenaDga from "./EscenaDga";
 import EscenaArco from "./EscenaArco";
 import EscenaCalidad from "./EscenaCalidad";
+import EscenaDiagnostico from "./EscenaDiagnostico";
 import type { ServicePorQue } from "@/types/servicio";
 
 /**
@@ -39,7 +40,7 @@ export default function PorQueMuestrear({ porQue }: Props) {
   // Sensores: la escena manda. Va a lo ancho de la página, con el sello de
   // quién instala y tres ideas de una línea debajo, sin párrafos. La escena
   // ya explica el servicio; el texto solo tiene que confirmar lo que se ve.
-  if (porQue.escena === "sensores" || porQue.escena === "termicas" || porQue.escena === "huella" || porQue.escena === "dga" || porQue.escena === "arco" || porQue.escena === "calidad") {
+  if (porQue.escena === "sensores" || porQue.escena === "termicas" || porQue.escena === "huella" || porQue.escena === "dga" || porQue.escena === "arco" || porQue.escena === "calidad" || porQue.escena === "integral") {
     return (
       <div>
         <div className="mx-auto w-full max-w-5xl">
@@ -53,6 +54,8 @@ export default function PorQueMuestrear({ porQue }: Props) {
             <EscenaArco foto={porQue.foto} />
           ) : porQue.escena === "calidad" ? (
             <EscenaCalidad foto={porQue.foto} />
+          ) : porQue.escena === "integral" ? (
+            <EscenaDiagnostico foto={porQue.foto} />
           ) : (
             <EscenaSensores foto={porQue.foto} />
           )}

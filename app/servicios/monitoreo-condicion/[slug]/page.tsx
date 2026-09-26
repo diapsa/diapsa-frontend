@@ -277,6 +277,23 @@ export default async function ServicePage({
                 genera IDAP, con las disciplinas como renglones de una ficha. */}
             {service.hojaIntegral && <HojaIntegral hoja={service.hojaIntegral} paso={paso()} />}
 
+            {/* Diagnóstico integral: el motor en corte con las cuatro técnicas en
+                órbita. Era la apertura; al llegar la escena 3D pasó aquí. */}
+            {service.motor360 && (
+                <section className="w-full bg-white py-12 lg:py-20">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <div className="mb-10 max-w-3xl">
+                            <Antetitulo paso={paso()}>{service.motor360.etiqueta}</Antetitulo>
+                            <h2 className="mt-2 text-3xl lg:text-[2.75rem] font-extrabold text-primary leading-tight">
+                                {service.motor360.titulo}
+                            </h2>
+                            <p className="mt-3 text-tertiary text-lg leading-relaxed text-justify">{service.motor360.texto}</p>
+                        </div>
+                        <PorQueMuestrear porQue={service.motor360.porQue} />
+                    </div>
+                </section>
+            )}
+
             <ServiceProof certificacion={service.certificacion} />
 
             {/* Lo que nos hace diferentes: pestañas con imagen, igual que en
