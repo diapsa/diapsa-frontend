@@ -500,5 +500,45 @@
       ],
       "nota": "El estudio entrega el análisis, la categoría de protección y la etiqueta de cada tablero conforme a IEEE 1584 y NFPA 70E. Los procedimientos de trabajo y la capacitación los completa el centro de trabajo."
     }
+  },
+  "diferencias": {
+    "etiqueta": "Por qué DIAPSA",
+    "titulo": "¿Qué nos hace diferentes?",
+    "items": [
+      {
+        "id": "unifilar",
+        "grafico": "arc-unifilar",
+        "title": "Se modela la planta completa",
+        "content": "Desde la acometida hasta el último tablero, con los datos de placa y los ajustes reales de cada protección. Si el diagrama unifilar no existe o está desactualizado, se reconstruye en campo."
+      },
+      {
+        "id": "calculo",
+        "grafico": "arc-calculo",
+        "title": "Calculado conforme a IEEE 1584",
+        "content": "La energía de cada barra sale de la corriente de falla, el tiempo que tarda la protección en abrir y la distancia de trabajo, simulando todos los escenarios de operación."
+      },
+      {
+        "id": "epp",
+        "grafico": "arc-epp",
+        "title": "La protección que pide cada tablero",
+        "content": "Cada valor se traduce en la categoría de equipo de protección de NFPA 70E. Tu gente sabe con qué ropa puede abrir cada tablero, sin adivinar."
+      },
+      {
+        "id": "fronteras",
+        "grafico": "arc-fronteras",
+        "title": "Hasta dónde se puede acercar cada persona",
+        "content": "Las fronteras de arco, de aproximación limitada y restringida, calculadas para cada tablero y escritas en su etiqueta."
+      },
+      {
+        "id": "reducir",
+        "grafico": "arc-reducir",
+        "title": "No solo se etiqueta: se baja el riesgo",
+        "content": "Donde la energía sale alta, el informe dice cómo bajarla: ajustar la protección para que dispare más rápido, usar modo de mantenimiento o no intervenir ese tablero energizado."
+      }
+    ]
+  },
+  "flujoEncabezado": {
+    "titulo": "Del diagrama unifilar a la etiqueta, en cinco pasos",
+    "texto": "No vendemos un cálculo: vendemos que cada persona sepa con qué puede abrir cada tablero, y poder demostrarlo. Así se hace el estudio."
   }
 }
