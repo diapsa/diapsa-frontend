@@ -25,7 +25,7 @@ export function WhoIsDiapsaSection() {
                                 Ultrasonido Pasivo</li>
                             <li className="flex items-center gap-2">
                                 <CheckCircleIcon className="w-6 h-6 text-secondary" />
-                                Tierras Físicas y Estudios Eléctricos</li>
+                                Tierras Físicas y Calidad de Energía</li>
                             <li className="flex items-center gap-2">
                                 <CheckCircleIcon className="w-6 h-6 text-secondary" />
                                 Alineación de ejes</li>

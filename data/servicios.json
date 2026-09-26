@@ -22,9 +22,9 @@
         "icono": "termografia"
       },
       {
-        "label": "Estudios Eléctricos Especializados",
-        "href": "/servicios/monitoreo-condicion/estudios-electricos",
-        "descripcion": "Calidad de energía y condición de motores",
+        "label": "Análisis de Calidad de Energía",
+        "href": "/servicios/monitoreo-condicion/calidad-de-energia",
+        "descripcion": "Armónicos, factor de potencia y eventos de tensión",
         "icono": "electricos"
       },
       {

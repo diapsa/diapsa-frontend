@@ -1,0 +1,461 @@
+{
+  "id": "calidad-de-energia",
+  "slug": "calidad-de-energia",
+  "type": "tecnologia",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo de Condición",
+      "link": "/servicios/monitoreo-condicion"
+    },
+    {
+      "label": "Análisis de Calidad de Energía",
+      "link": "/servicios/monitoreo-condicion/calidad-de-energia"
+    }
+  ],
+  "header": {
+    "title": "Análisis de Calidad de Energía",
+    "subtitle": "Armónicos, factor de potencia, desbalance y eventos de tensión, medidos con tu planta operando",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "content": {
+    "title": "Qué tan sana es la energía que alimenta tu planta",
+    "subtitle": "Armónicos, bajo factor de potencia y caídas de tensión calientan motores, disparan protecciones y dañan capacitores sin dejar rastro a simple vista. Un analizador conectado en tu tablero lo registra una semana seguida, con todo operando, y señala qué carga lo provoca.",
+    "image": "/images/servicios/estudios-electricos/campo-analista-tablero.webp",
+    "items": [
+      {
+        "id": "aplicaciones",
+        "title": "Dónde se aplica",
+        "content": "En tableros generales, subestaciones, centros de control de motores y circuitos con variadores, UPS o bancos de capacitores. Antes de ampliar la planta o conectar cargas nuevas, y cuando hay disparos, calentamientos o penalizaciones sin explicación.",
+        "foto": {
+          "src": "/images/servicios/estudios-electricos/campo-analista-tablero.webp",
+          "alt": "Analista de DIAPSA conectando el analizador de calidad de energía en un tablero energizado"
+        }
+      },
+      {
+        "id": "beneficios",
+        "title": "Qué ganas",
+        "content": "Saber por qué se calientan los motores o se disparan las protecciones, y dejar de pagar la penalización por bajo factor de potencia. El estudio señala la carga que mete armónicos o baja el factor de potencia, y cómo corregirla.",
+        "foto": {
+          "src": "/images/servicios/estudios-electricos/campo-medicion-alimentador.webp",
+          "alt": "Medición de corriente en un alimentador, dentro del tablero"
+        }
+      },
+      {
+        "id": "como",
+        "title": "Cómo lo hacemos",
+        "content": "Con la planta operando y el equipo de protección puesto. El analizador registra tensión, corriente, armónicos y eventos durante una semana, para cubrir un ciclo completo de producción, con instrumentos calibrados ante laboratorio acreditado por la EMA. Cada valor se compara contra IEEE 519 y contra lo que pide tu tarifa.",
+        "foto": {
+          "src": "/images/servicios/estudios-electricos/campo-tablero-transductores.webp",
+          "alt": "Transductores de corriente flexibles en las tres fases de un interruptor principal"
+        }
+      },
+      {
+        "id": "plataforma-idap",
+        "title": "Tus datos viven en IDAP",
+        "content": "Cada tablero guarda su registro, estudio tras estudio. Se ve si la distorsión bajó después del filtro o si el factor de potencia volvió a caer al crecer la planta.",
+        "foto": {
+          "src": "/images/idap/mockup.png",
+          "alt": "Pantallas de IDAP con el historial de un tablero",
+          "ajuste": "contener",
+          "fondo": "oscuro"
+        }
+      }
+    ]
+  },
+  "seoDescription": "Análisis de calidad de la energía en planta: armónicos, factor de potencia, desbalance, caídas y picos de tensión, registrados una semana con todo operando. Qué carga provoca cada problema y cómo se corrige.",
+  "porQue": {
+    "foto": {
+      "src": "/images/servicios/estudios-electricos/campo-armonicos-pantalla.webp",
+      "alt": "Lectura de armónicos por fase en el analizador de calidad de energía"
+    },
+    "preguntas": [
+      {
+        "pregunta": "¿La energía que llega es la que tus equipos necesitan?",
+        "texto": "Los variadores, las fuentes electrónicas y los hornos meten armónicos a la red; las cargas mal repartidas desbalancean las fases. El analizador registra una semana de tensión, corriente y armónicos, y los compara contra IEEE 519.",
+        "siSaleMal": "Se identifica qué carga lo provoca y se corrige con filtros o redistribuyendo cargas, antes de que queme un motor o dispare una protección."
+      },
+      {
+        "pregunta": "¿Estás pagando de más en el recibo?",
+        "texto": "Un factor de potencia por debajo de 0.90 se cobra como cargo en el recibo de luz, mes con mes. El registro dice cuánto baja, a qué horas y qué cargas lo provocan.",
+        "siSaleMal": "Se dimensiona el banco de capacitores adecuado, desintonizado si hay armónicos, para que el cargo se vuelva bonificación."
+      },
+      {
+        "pregunta": "¿Por qué se disparan las protecciones sin causa?",
+        "texto": "Una caída de tensión de medio segundo basta para reiniciar variadores y controles y parar una línea. El analizador captura cada evento con su hora, su duración y su profundidad.",
+        "siSaleMal": "Se cruza cada evento con lo que pasaba en la planta, como el arranque de un compresor, y se corrige el origen."
+      }
+    ],
+    "comoSeHace": {
+      "titulo": "Así se mide",
+      "pasos": [
+        {
+          "foto": {
+            "src": "/images/servicios/estudios-electricos/campo-tablero-transductores.webp",
+            "alt": "Transductores de corriente flexibles en las tres fases de un interruptor"
+          },
+          "texto": "Con la planta operando y el equipo de protección puesto, se colocan los transductores de corriente en cada fase y las puntas de tensión en el tablero."
+        },
+        {
+          "foto": {
+            "src": "/images/servicios/estudios-electricos/campo-forma-de-onda.webp",
+            "alt": "Forma de onda de corriente en el analizador"
+          },
+          "texto": "El analizador registra tensión, corriente, armónicos y eventos, normalmente una semana, para cubrir un ciclo completo de producción."
+        },
+        {
+          "foto": {
+            "src": "/images/servicios/estudios-electricos/campo-medicion-alimentador.webp",
+            "alt": "Medición de corriente en un alimentador con pinza"
+          },
+          "texto": "Si algo sale fuera, se mide alimentador por alimentador hasta dar con la carga que lo provoca."
+        }
+      ]
+    }
+  },
+  "tecnicas": {
+    "etiqueta": "Qué medimos",
+    "titulo": "Una semana de registro, con todo operando",
+    "texto": "Sin paro y sin desconectar nada. Esto es lo que se busca en el registro.",
+    "items": [
+      {
+        "nombre": "Calidad de la energía",
+        "texto": "El analizador queda conectado en tu tablero una semana, para cubrir turnos, arranques y fines de semana.",
+        "mide": [
+          "Armónicos de tensión y corriente",
+          "Factor de potencia",
+          "Desbalance de tensión y corriente",
+          "Caídas y picos de tensión",
+          "Corriente en el neutro",
+          "Demanda y consumo"
+        ],
+        "ejemplo": {
+          "etiqueta": "Ejemplo de hallazgo",
+          "equipo": "Tablero general 480 V · 7 días",
+          "estado": "Precaución",
+          "clave": "precaucion",
+          "lineas": [
+            {
+              "k": "Distorsión de corriente",
+              "v": "18.4 % (ref. 8 %)"
+            },
+            {
+              "k": "Factor de potencia",
+              "v": "0.86 (mín. 0.90)"
+            },
+            {
+              "k": "Distorsión de tensión",
+              "v": "3.4 % (ref. 5 %)"
+            },
+            {
+              "k": "Desbalance de tensión",
+              "v": "1.2 %"
+            }
+          ],
+          "accion": "Armónicos por variadores sin filtro y factor de potencia penalizable. Filtro en los variadores y banco de capacitores desintonizado."
+        },
+        "enOperacion": true
+      },
+      {
+        "nombre": "Armónicos",
+        "texto": "La distorsión que meten variadores, UPS y hornos, y que calienta motores y transformadores.",
+        "resumen": "La distorsión que meten variadores, UPS y hornos, y que calienta motores y transformadores.",
+        "mide": [
+          "Distorsión de corriente",
+          "Distorsión de tensión",
+          "Corriente en el neutro"
+        ]
+      },
+      {
+        "nombre": "Factor de potencia",
+        "texto": "Lo que se cobra en el recibo cuando baja de 0.90, y a qué horas cae.",
+        "resumen": "Lo que se cobra en el recibo cuando baja de 0.90, y a qué horas cae.",
+        "mide": [
+          "Factor de potencia",
+          "Potencia reactiva",
+          "Demanda"
+        ]
+      },
+      {
+        "nombre": "Desbalance",
+        "texto": "Fases con cargas mal repartidas, que calientan motores aunque la corriente parezca normal.",
+        "resumen": "Fases con cargas mal repartidas, que calientan motores aunque la corriente parezca normal.",
+        "mide": [
+          "Desbalance de tensión",
+          "Desbalance de corriente"
+        ]
+      },
+      {
+        "nombre": "Caídas y picos",
+        "texto": "Los eventos de tensión que reinician variadores y paran líneas sin causa aparente.",
+        "resumen": "Los eventos de tensión que reinician variadores y paran líneas sin causa aparente.",
+        "mide": [
+          "Caídas de tensión",
+          "Picos de tensión",
+          "Interrupciones"
+        ]
+      }
+    ],
+    "nota": "Los hallazgos de las tarjetas son ejemplos simulados para mostrar la forma del reporte, no casos de un cliente. Las pruebas y sus criterios siguen IEEE 43, IEEE 62, IEEE C57 y las tablas de aceptación de NETA.",
+    "segundoGrupo": "Lo que se busca en el registro"
+  },
+  "certificacion": "Calidad de la energía con referencia a IEEE 519 · Instrumentos calibrados ante laboratorio acreditado por la EMA",
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujo": [
+    {
+      "titulo": "Alcance",
+      "texto": "Qué tableros se registran, según las cargas que alimentan y los síntomas: disparos, calentamientos o penalizaciones."
+    },
+    {
+      "titulo": "Conexión segura",
+      "texto": "Con equipo de protección y la planta operando: transductores en cada fase y puntas de tensión en el tablero."
+    },
+    {
+      "titulo": "Registro",
+      "texto": "Una semana de tensión, corriente, armónicos, factor de potencia y eventos, para cubrir un ciclo completo de producción."
+    },
+    {
+      "titulo": "Análisis",
+      "texto": "Cada parámetro contra IEEE 519 y contra tu tarifa, y cada evento cruzado con lo que pasaba en la planta."
+    },
+    {
+      "titulo": "Reporte y corrección",
+      "texto": "Qué está fuera, qué carga lo provoca y cómo se corrige, en orden de prioridad."
+    }
+  ],
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "Un informe por tablero, con cada parámetro contra su referencia, qué carga lo provoca y cómo se corrige. Esta es la forma que tiene, con datos simulados.",
+    "contenido": [
+      "Calidad de la energía por tablero: armónicos, factor de potencia, desbalance y eventos contra su referencia",
+      "Qué carga provoca cada problema",
+      "Cómo se corrige: filtros, banco de capacitores o redistribución de cargas",
+      "Certificados de calibración de los instrumentos usados"
+    ],
+    "hoja": {
+      "etiqueta": "Estudio de calidad de la energía",
+      "titulo": "Tablero general · 480 V · 7 días de registro",
+      "subtitulo": "Planta de manufactura · ejemplo",
+      "datos": [
+        {
+          "etiqueta": "Registro",
+          "valor": "7 días"
+        },
+        {
+          "etiqueta": "Muestras",
+          "valor": "cada 10 min"
+        },
+        {
+          "etiqueta": "Eventos de tensión",
+          "valor": "4"
+        }
+      ],
+      "condicion": {
+        "clave": "precaucion",
+        "etiqueta": "Con hallazgos"
+      },
+      "etiquetas": {
+        "condicion": "Condición del tablero",
+        "diagnostico": "Lo que encontró el analista",
+        "recomendaciones": "Qué hacer",
+        "historial": "Valores por fase contra su referencia"
+      },
+      "diagnostico": "La distorsión de corriente llega a 18.4 %, más del doble de la referencia, y la provocan los variadores de las bombas de proceso, que no tienen filtro. El factor de potencia promedio de 0.86 queda debajo del 0.90 que exige la tarifa. La tensión está dentro de rango y se registraron cuatro caídas breves, coincidentes con el arranque del compresor.",
+      "recomendaciones": [
+        "Instalar reactores o filtros de armónicos en los variadores de las bombas.",
+        "Instalar un banco de capacitores desintonizado para llevar el factor de potencia arriba de 0.95.",
+        "Revisar el arranque del compresor para eliminar las caídas de tensión."
+      ],
+      "fechas": [
+        "Fase A",
+        "Fase B",
+        "Fase C"
+      ],
+      "resultados": [
+        {
+          "analisis": "Tensión",
+          "unidad": "V",
+          "limite": "480 ± 10 %",
+          "valores": [
+            "478",
+            "482",
+            "474"
+          ]
+        },
+        {
+          "analisis": "Distorsión de tensión",
+          "unidad": "%",
+          "limite": "≤ 5",
+          "valores": [
+            "3.1",
+            "3.4",
+            "3.0"
+          ]
+        },
+        {
+          "analisis": "Distorsión de corriente",
+          "unidad": "%",
+          "limite": "≤ 8",
+          "valores": [
+            "17.2",
+            "18.4",
+            "16.9"
+          ],
+          "resaltar": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "analisis": "Factor de potencia",
+          "limite": "≥ 0.90",
+          "valores": [
+            "0.87",
+            "0.86",
+            "0.85"
+          ],
+          "resaltar": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "evidencia": [
+        {
+          "src": "/images/servicios/estudios-electricos/campo-armonicos-pantalla.webp",
+          "alt": "Lectura de armónicos por fase en el analizador"
+        },
+        {
+          "src": "/images/servicios/estudios-electricos/campo-forma-de-onda.webp",
+          "alt": "Forma de onda de corriente distorsionada"
+        }
+      ],
+      "nota": "Ejemplo simulado con la estructura del informe. Los valores no corresponden a ningún cliente; las fotos de evidencia son de mediciones reales de DIAPSA."
+    }
+  },
+  "mostrarClientes": true,
+  "faq": [
+    {
+      "question": "¿Hay que parar la planta?",
+      "answer": "No. El analizador se conecta con todo operando, porque lo que interesa es cómo se comporta la red mientras produces."
+    },
+    {
+      "question": "¿Qué problemas causa una mala calidad de la energía?",
+      "answer": "Los armónicos calientan motores y transformadores, sobrecargan el neutro y dañan bancos de capacitores; el bajo factor de potencia se paga en el recibo; las caídas de tensión reinician variadores y controles y paran líneas sin que nadie sepa por qué. Muchos disparos y calentamientos sin causa aparente se explican aquí."
+    },
+    {
+      "question": "¿Cuánto tiempo se registra?",
+      "answer": "Normalmente una semana, para cubrir un ciclo completo de producción con sus turnos, arranques y fines de semana. Si el problema es un evento que se repite, como un disparo, el registro se extiende hasta capturarlo."
+    },
+    {
+      "question": "¿Por qué me cobran por factor de potencia?",
+      "answer": "Porque la tarifa exige un factor de potencia de al menos 0.90. Por debajo se aplica un cargo en el recibo, y por arriba una bonificación. El estudio dice cuánto baja, a qué horas y qué banco de capacitores lo corrige."
+    },
+    {
+      "question": "¿Por qué no basta con poner capacitores?",
+      "answer": "Porque si hay armónicos, un banco de capacitores común puede entrar en resonancia con la red: se calienta, se daña o amplifica la distorsión. Por eso primero se mide, y si hay armónicos se usa un banco desintonizado o un filtro."
+    },
+    {
+      "question": "¿Qué normas aplican?",
+      "answer": "IEEE 519 como referencia de armónicos, e IEEE 1159 para clasificar los eventos de tensión. El factor de potencia se compara contra lo que pide tu tarifa."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "Qué tableros alimentan las cargas críticas, un diagrama unifilar si lo hay, y los síntomas: disparos, calentamientos o recibos con cargo. Con eso se define cuántos puntos se registran y la propuesta."
+    }
+  ],
+  "galeria": [
+    {
+      "src": "/images/servicios/estudios-electricos/campo-analista-tablero.webp",
+      "alt": "Analista de DIAPSA conectando el analizador en un tablero de distribución energizado."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/campo-forma-de-onda.webp",
+      "alt": "Forma de onda de corriente en el analizador, medida directamente en el interruptor."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/campo-armonicos-pantalla.webp",
+      "alt": "Lectura de armónicos por fase: el dato que explica calentamientos y disparos sin causa aparente."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/campo-tablero-transductores.webp",
+      "alt": "Transductores de corriente flexibles instalados en las tres fases de un interruptor principal."
+    },
+    {
+      "src": "/images/servicios/estudios-electricos/campo-medicion-alimentador.webp",
+      "alt": "Medición de corriente en un alimentador con pinza, dentro del tablero."
+    }
+  ],
+  "cta": {
+    "title": "¿Tienes disparos, calentamientos o penalizaciones sin explicación?",
+    "text": "Cuéntanos qué pasa en tu planta y qué tableros alimentan las cargas críticas. Te proponemos el registro de calidad de la energía.",
+    "whatsappMessage": "Hola, quiero información sobre un estudio de calidad de la energía para mi planta.",
+    "datos": [
+      "Registro REPSE vigente",
+      "Instrumentos calibrados ante laboratorio acreditado por la EMA",
+      "Referencia IEEE 519"
+    ]
+  },
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": []
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué detecta?",
+    "equiposTitulo": "Equipos",
+    "equipos": [
+      "Tableros generales",
+      "Subestaciones",
+      "Centros de control de motores",
+      "Variadores de velocidad",
+      "Bancos de capacitores",
+      "UPS y centros de datos",
+      "Transformadores de distribución"
+    ],
+    "fallasTitulo": "Fallas que detecta",
+    "fallas": [
+      "Armónicos fuera de referencia",
+      "Bajo factor de potencia",
+      "Desbalance de fases",
+      "Caídas y picos de tensión",
+      "Sobrecarga en el neutro",
+      "Resonancia en bancos de capacitores"
+    ],
+    "fotos": [
+      {
+        "nombre": "Tableros generales",
+        "ilustracion": "tablero-bt"
+      },
+      {
+        "nombre": "Subestaciones",
+        "ilustracion": "subestacion"
+      },
+      {
+        "nombre": "Centros de control de motores",
+        "ilustracion": "ccm"
+      },
+      {
+        "nombre": "Transformadores de distribución",
+        "ilustracion": "transformador-dist"
+      },
+      {
+        "nombre": "UPS y centros de datos",
+        "ilustracion": "centro-datos"
+      }
+    ]
+  }
+}
