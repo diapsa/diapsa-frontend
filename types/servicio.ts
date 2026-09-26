@@ -497,6 +497,16 @@ export interface ServiceTendenciaIntervencion {
 }
 
 
+export interface ServiceTraduccion {
+  etiqueta: string;
+  titulo: string;
+  texto: string;
+  /** La visual propia del servicio. */
+  tipo: "margen" | "reloj" | "escalera" | "calendario" | "tambores";
+  cierre?: string;
+  nota?: string;
+}
+
 export interface ServiceValor {
   etiqueta: string;
   titulo: string;
@@ -625,4 +635,6 @@ export interface Servicio {
   valor?: ServiceValor;
   /** Sin el esquema genérico de ahorro bajo los cinco pasos. */
   ocultarAhorro?: boolean;
+  /** En qué se traduce, con una visual propia del servicio. */
+  traduccion?: ServiceTraduccion;
 }

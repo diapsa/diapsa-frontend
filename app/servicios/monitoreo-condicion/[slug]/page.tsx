@@ -27,6 +27,7 @@ import GraficaTendencia from "@/components/organisms/GraficaTendencia";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import Cobertura from "@/components/organisms/Cobertura";
 import ValorParo from "@/components/organisms/ValorParo";
+import EnQueSeTraduce from "@/components/organisms/EnQueSeTraduce";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
 import { getArticuloPorServicio } from "@/lib/recursos";
@@ -300,12 +301,13 @@ export default async function ServicePage({
                     paso={paso()}
                     flujo={service.flujo}
                     encabezado={service.flujoEncabezado}
-                    sinAhorro={!!service.valor || !!service.ocultarAhorro}
+                    sinAhorro
                 />
             )}
 
             {/* En qué se traduce: la misma falla con y sin el servicio. */}
             {service.valor && <ValorParo valor={service.valor} paso={paso()} />}
+            {service.traduccion && <EnQueSeTraduce traduccion={service.traduccion} paso={paso()} />}
 
             {/* Qué recibes. Va después del flujo porque es su desenlace: el
                 último paso del proceso es el informe, y aquí se enseña. */}
