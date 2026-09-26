@@ -3,6 +3,7 @@ import datos from "@/data/deteccion-gas.json";
 import GraficoPunto from "@/components/atoms/GraficoPunto";
 import { DibujoInstrumentos, DibujoMetodo, DibujoAuditoria, EvidenciaOgi, EvidenciaLaser, EvidenciaReparacion, PlanoUbicacion } from "@/components/atoms/IlustracionesGas";
 import ContactForm from "@/components/organisms/ContactForm";
+import EscenaGas from "@/components/organisms/EscenaGas";
 import JsonLd, { createServiceSchema, createBreadcrumbSchema, createFaqSchema } from "@/components/atoms/JsonLd";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -195,6 +196,20 @@ export default function PaginaGas() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* Una inspección de principio a fin, en la escena 3D */}
+      <section className="w-full bg-gray-50 py-14 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-3xl">
+            <Etiqueta>Una inspección</Etiqueta>
+            <h2 className="mt-3 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">De la fuga que no se ve al registro para la ASEA</h2>
+            <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">La cámara OGI encuentra la fuga, el láser TDLAS confirma que es metano, se repara, se vuelve a revisar y queda registrada.</p>
+          </div>
+          <div className="mx-auto mt-10 w-full max-w-5xl">
+            <EscenaGas foto={{ src: "/images/deteccion-gas/gas-valvules.jpg", alt: "Válvulas y bridas de una línea de gas" }} />
+          </div>
         </div>
       </section>
 
