@@ -89,33 +89,27 @@
     "fotos": [
       {
         "nombre": "Tableros y subestaciones",
-        "src": "/images/equipos/subestacion.webp",
-        "alt": "Subestación eléctrica de alta tensión"
+        "ilustracion": "subestacion"
       },
       {
         "nombre": "Centros de datos",
-        "src": "/images/equipos/centro-datos.webp",
-        "alt": "Pasillo de racks en un centro de datos"
+        "ilustracion": "centro-datos"
       },
       {
         "nombre": "Transformadores",
-        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
-        "alt": "Transformador de potencia"
+        "ilustracion": "transformador"
       },
       {
         "nombre": "Hornos y secadores",
-        "src": "/images/equipos/horno.webp",
-        "alt": "Interior de un horno industrial en operación"
+        "ilustracion": "horno"
       },
       {
         "nombre": "Bandas transportadoras",
-        "src": "/images/equipos/banda.webp",
-        "alt": "Banda transportadora"
+        "ilustracion": "banda"
       },
       {
         "nombre": "Almacenes de material combustible",
-        "src": "/images/equipos/almacen.webp",
-        "alt": "Almacén con material en racks"
+        "ilustracion": "almacen"
       }
     ]
   },

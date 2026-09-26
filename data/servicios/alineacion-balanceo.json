@@ -237,28 +237,23 @@
     "fotos": [
       {
         "nombre": "Motor con bomba",
-        "src": "/images/equipos/bomba.webp",
-        "alt": "Bombas centrífugas en línea con sus motores"
+        "ilustracion": "bomba"
       },
       {
         "nombre": "Motor con ventilador",
-        "src": "/images/equipos/ventilador.webp",
-        "alt": "Ventilador industrial con su motor"
+        "ilustracion": "ventilador"
       },
       {
         "nombre": "Motor con compresor",
-        "src": "/images/equipos/compresor.webp",
-        "alt": "Compresor industrial"
+        "ilustracion": "compresor"
       },
       {
         "nombre": "Ventiladores e impulsores",
-        "src": "/images/equipos/impulsor.webp",
-        "alt": "Impulsores de bombas y ventiladores"
+        "ilustracion": "impulsor"
       },
       {
         "nombre": "Rotores de motor",
-        "src": "/images/equipos/motor.webp",
-        "alt": "Motor eléctrico trifásico"
+        "ilustracion": "motor"
       }
     ]
   }

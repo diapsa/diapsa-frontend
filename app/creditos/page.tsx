@@ -2,7 +2,21 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/organisms/PageHeader";
-import creditos from "@/data/creditos-imagenes.json";
+import creditosData from "@/data/creditos-imagenes.json";
+
+type Credito = {
+  src: string;
+  descripcion: string;
+  original: string;
+  autor: string;
+  licencia: string;
+  licenciaUrl: string;
+  fuente: string;
+  cambios: string;
+};
+type GrupoCreditos = { pagina: string; href: string; imagenes: Credito[] };
+
+const creditos = creditosData as GrupoCreditos[];
 
 /**
  * Créditos de imágenes
@@ -36,6 +50,12 @@ export default function CreditosPage() {
             Las fotografías de trabajo en campo son de Grupo DIAPSA. Las imágenes de esta lista son de sus autores y se usan
             bajo la licencia indicada en cada una. Todas se recortaron y redimensionaron para el sitio.
           </p>
+
+          {creditos.length === 0 && (
+            <p className="mt-8 text-justify text-base leading-relaxed text-primary">
+              Por ahora todas las imágenes del sitio son fotografías o ilustraciones de Grupo DIAPSA.
+            </p>
+          )}
 
           {creditos.map((grupo) => (
             <div key={grupo.pagina} className="mt-10">

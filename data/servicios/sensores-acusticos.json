@@ -87,28 +87,23 @@
     "fotos": [
       {
         "nombre": "Transformadores de potencia",
-        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
-        "alt": "Transformador de potencia"
+        "ilustracion": "transformador"
       },
       {
         "nombre": "Transformadores de distribución",
-        "src": "/images/servicios/dga-en-linea/transformador-distribucion.webp",
-        "alt": "Transformador de distribución"
+        "ilustracion": "transformador-dist"
       },
       {
         "nombre": "Subestaciones encapsuladas (GIS)",
-        "src": "/images/equipos/gis.webp",
-        "alt": "Subestación encapsulada en gas"
+        "ilustracion": "gis"
       },
       {
         "nombre": "Reactores",
-        "src": "/images/servicios/dga-en-linea/reactor.webp",
-        "alt": "Reactor en aceite"
+        "ilustracion": "reactor"
       },
       {
         "nombre": "Celdas de media tensión",
-        "src": "/images/equipos/tablero-mt.webp",
-        "alt": "Tableros de media tensión"
+        "ilustracion": "tablero-mt"
       }
     ]
   },

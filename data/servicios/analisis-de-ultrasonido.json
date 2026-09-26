@@ -2551,28 +2551,23 @@
     "fotos": [
       {
         "nombre": "Rodamientos",
-        "src": "/images/equipos/rodamiento.webp",
-        "alt": "Rodamiento de bolas con sus partes"
+        "ilustracion": "rodamiento"
       },
       {
         "nombre": "Válvulas",
-        "src": "/images/equipos/valvula.webp",
-        "alt": "Válvulas en un cabezal de tuberías"
+        "ilustracion": "valvula"
       },
       {
         "nombre": "Redes de aire comprimido",
-        "src": "/images/equipos/aire-comprimido.webp",
-        "alt": "Estación de aire comprimido"
+        "ilustracion": "aire-comprimido"
       },
       {
         "nombre": "Bombas",
-        "src": "/images/equipos/bomba.webp",
-        "alt": "Bombas centrífugas en línea con sus motores"
+        "ilustracion": "bomba"
       },
       {
         "nombre": "Tableros y subestaciones",
-        "src": "/images/equipos/subestacion.webp",
-        "alt": "Subestación eléctrica de alta tensión"
+        "ilustracion": "subestacion"
       }
     ]
   }

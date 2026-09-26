@@ -600,28 +600,23 @@
     "fotos": [
       {
         "nombre": "Tableros generales",
-        "src": "/images/equipos/tablero-bt.webp",
-        "alt": "Tablero de distribución con sus interruptores"
+        "ilustracion": "tablero-bt"
       },
       {
         "nombre": "Centros de control de motores",
-        "src": "/images/equipos/ccm.webp",
-        "alt": "Sala de centros de control de motores"
+        "ilustracion": "ccm"
       },
       {
         "nombre": "Transformadores",
-        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
-        "alt": "Transformador de potencia"
+        "ilustracion": "transformador"
       },
       {
         "nombre": "Interruptores de baja y media tensión",
-        "src": "/images/equipos/interruptor.webp",
-        "alt": "Interruptor de potencia en una subestación"
+        "ilustracion": "interruptor"
       },
       {
         "nombre": "Cables de media tensión",
-        "src": "/images/equipos/cable-mt.webp",
-        "alt": "Terminales de cables de media tensión"
+        "ilustracion": "cable-mt"
       }
     ]
   }

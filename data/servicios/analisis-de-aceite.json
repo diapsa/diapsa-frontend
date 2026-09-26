@@ -451,28 +451,23 @@
     "fotos": [
       {
         "nombre": "Compresores",
-        "src": "/images/equipos/compresor.webp",
-        "alt": "Compresor industrial"
+        "ilustracion": "compresor"
       },
       {
         "nombre": "Sistemas hidráulicos",
-        "src": "/images/equipos/hidraulico.webp",
-        "alt": "Cilindros hidráulicos"
+        "ilustracion": "hidraulico"
       },
       {
         "nombre": "Turbinas",
-        "src": "/images/equipos/turbina.webp",
-        "alt": "Rotor de una turbina de vapor en mantenimiento"
+        "ilustracion": "turbina"
       },
       {
         "nombre": "Transformadores",
-        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
-        "alt": "Transformador de potencia"
+        "ilustracion": "transformador"
       },
       {
         "nombre": "Bombas",
-        "src": "/images/equipos/bomba.webp",
-        "alt": "Bombas centrífugas en línea con sus motores"
+        "ilustracion": "bomba"
       }
     ]
   },
