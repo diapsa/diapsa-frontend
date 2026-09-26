@@ -447,6 +447,33 @@
       "Dilución por combustible",
       "Fallas eléctricas internas en transformadores",
       "Humedad en el aislamiento"
+    ],
+    "fotos": [
+      {
+        "nombre": "Compresores",
+        "src": "/images/equipos/compresor.webp",
+        "alt": "Compresor industrial"
+      },
+      {
+        "nombre": "Sistemas hidráulicos",
+        "src": "/images/equipos/hidraulico.webp",
+        "alt": "Cilindros hidráulicos"
+      },
+      {
+        "nombre": "Turbinas",
+        "src": "/images/equipos/turbina.webp",
+        "alt": "Rotor de una turbina de vapor en mantenimiento"
+      },
+      {
+        "nombre": "Transformadores",
+        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
+        "alt": "Transformador de potencia"
+      },
+      {
+        "nombre": "Bombas",
+        "src": "/images/equipos/bomba.webp",
+        "alt": "Bombas centrífugas en línea con sus motores"
+      }
     ]
   },
   "diferencias": {

@@ -156,12 +156,9 @@ export default function GaleriaCampo({ fotos, titulo, texto }: Props) {
             </div>
           </div>
 
-          {/* Pie y cuenta */}
+          {/* Pie de la foto, sin contador */}
           <div className="flex flex-col lg:col-span-2 lg:justify-center">
-            <p className="text-sm font-bold uppercase tracking-widest text-secondary" aria-live="polite">
-              {activa + 1} de {total}
-            </p>
-            <p className="mt-3 text-justify text-lg leading-relaxed text-primary">{foto.alt}</p>
+            <p className="text-justify text-lg leading-relaxed text-primary" aria-live="polite">{foto.alt}</p>
 
           </div>
         </div>

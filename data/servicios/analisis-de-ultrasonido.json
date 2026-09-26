@@ -2547,6 +2547,33 @@
       "Efecto corona",
       "Arco superficial (tracking)",
       "Cavitación"
+    ],
+    "fotos": [
+      {
+        "nombre": "Rodamientos",
+        "src": "/images/equipos/rodamiento.webp",
+        "alt": "Rodamiento de bolas con sus partes"
+      },
+      {
+        "nombre": "Válvulas",
+        "src": "/images/equipos/valvula.webp",
+        "alt": "Válvulas en un cabezal de tuberías"
+      },
+      {
+        "nombre": "Redes de aire comprimido",
+        "src": "/images/equipos/aire-comprimido.webp",
+        "alt": "Estación de aire comprimido"
+      },
+      {
+        "nombre": "Bombas",
+        "src": "/images/equipos/bomba.webp",
+        "alt": "Bombas centrífugas en línea con sus motores"
+      },
+      {
+        "nombre": "Tableros y subestaciones",
+        "src": "/images/equipos/subestacion.webp",
+        "alt": "Subestación eléctrica de alta tensión"
+      }
     ]
   }
 }

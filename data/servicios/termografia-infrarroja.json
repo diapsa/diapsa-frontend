@@ -435,6 +435,33 @@
       "Daño en refractario",
       "Aislamiento térmico dañado",
       "Trampas de vapor fugando"
+    ],
+    "fotos": [
+      {
+        "nombre": "Tableros y centros de carga",
+        "src": "/images/equipos/tablero-bt.webp",
+        "alt": "Tablero de distribución con sus interruptores"
+      },
+      {
+        "nombre": "Subestaciones",
+        "src": "/images/equipos/subestacion.webp",
+        "alt": "Subestación eléctrica de alta tensión"
+      },
+      {
+        "nombre": "Transformadores",
+        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
+        "alt": "Transformador de potencia"
+      },
+      {
+        "nombre": "Motores",
+        "src": "/images/equipos/motor.webp",
+        "alt": "Motor eléctrico trifásico"
+      },
+      {
+        "nombre": "Hornos y refractarios",
+        "src": "/images/equipos/horno.webp",
+        "alt": "Interior de un horno industrial en operación"
+      }
     ]
   }
 }
