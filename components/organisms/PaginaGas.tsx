@@ -4,6 +4,7 @@ import GraficoPunto from "@/components/atoms/GraficoPunto";
 import { DibujoInstrumentos, DibujoMetodo, DibujoAuditoria, EvidenciaOgi, EvidenciaLaser, EvidenciaReparacion, PlanoUbicacion } from "@/components/atoms/IlustracionesGas";
 import ContactForm from "@/components/organisms/ContactForm";
 import EscenaGas from "@/components/organisms/EscenaGas";
+import GaleriaCampo from "@/components/organisms/GaleriaCampo";
 import JsonLd, { createServiceSchema, createBreadcrumbSchema, createFaqSchema } from "@/components/atoms/JsonLd";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -409,6 +410,9 @@ export default function PaginaGas() {
           </div>
         </div>
       </section>
+
+      {/* Fotos reales de inspecciones de fugas */}
+      {datos.galeria && datos.galeria.length > 0 && <GaleriaCampo fotos={datos.galeria} />}
 
       {/* Preguntas frecuentes */}
       <section className="w-full bg-gray-50 py-14 lg:py-20">

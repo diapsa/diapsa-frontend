@@ -259,5 +259,35 @@
     "titulo": "¿Tu instalación tiene su programa de fugas al día?",
     "texto": "Cuéntanos qué instalación es y si ya tienes un PPCIEM. Te proponemos el programa LDAR trimestral o una inspección inicial.",
     "whatsapp": "Hola, quiero información sobre la detección de fugas de gas para mi instalación."
-  }
+  },
+  "galeria": [
+    {
+      "src": "/images/deteccion-gas/campo/inspeccion-planta.webp",
+      "alt": "Analista de DIAPSA inspeccionando líneas de gas en una planta de proceso."
+    },
+    {
+      "src": "/images/deteccion-gas/campo/pantalla-gas-natural.webp",
+      "alt": "Fuga localizada en una línea de gas natural, con su tasa estimada en pantalla."
+    },
+    {
+      "src": "/images/deteccion-gas/campo/pantalla-metano.webp",
+      "alt": "Lectura de metano en ppm·m sobre el punto de la fuga."
+    },
+    {
+      "src": "/images/deteccion-gas/campo/pantalla-codo.webp",
+      "alt": "Fuga marcada en el codo de una línea de gas, vista en el equipo de detección."
+    },
+    {
+      "src": "/images/deteccion-gas/campo/inspeccion-exterior.webp",
+      "alt": "Inspección de fugas en el exterior de una instalación industrial."
+    },
+    {
+      "src": "/images/deteccion-gas/campo/valvula-espacio-reducido.webp",
+      "alt": "Analista de DIAPSA revisando una válvula en un espacio reducido."
+    },
+    {
+      "src": "/images/deteccion-gas/campo/estacion-compresion.webp",
+      "alt": "Equipo de DIAPSA en una estación de compresión."
+    }
+  ]
 }
