@@ -426,87 +426,31 @@
   ],
   "entregable": {
     "etiqueta": "Qué recibes",
-    "titulo": "Esto es lo que recibes",
-    "descripcion": "Un reporte ejecutivo que se lee en una página, y esta es la de una ruta real tal como llega: cuántos puntos se midieron y cuántos cumplen, el resultado general, las prioridades de acción con qué hacer en cada punto y el plan de cierre. Detrás va la tabla completa, punto por punto, con valor, continuidad, resultado y fotos.",
-    "contenido": [
-      "Resumen ejecutivo: puntos evaluados, conformes y porcentaje de cumplimiento",
-      "Tabla completa punto por punto: valor en ohms, continuidad, resultado y observaciones",
-      "Prioridades de acción con la corrección concreta de cada punto",
-      "Fotos de cada registro y de cada lectura como evidencia",
-      "Referencia normativa y método, listos para presentarse ante la STPS"
-    ],
-    "hoja": {
-      "etiqueta": "Reporte ejecutivo",
-      "titulo": "Evaluación de la red de puesta a tierra",
-      "subtitulo": "NOM-022-STPS-2015 · septiembre de 2026",
-      "datos": [
-        {
-          "etiqueta": "Puntos evaluados",
-          "valor": "25"
-        },
-        {
-          "etiqueta": "Conformes",
-          "valor": "24"
-        },
-        {
-          "etiqueta": "Cumplimiento",
-          "valor": "96 %"
-        }
-      ],
-      "condicion": {
-        "clave": "bueno",
-        "etiqueta": "Favorable"
+    "titulo": "Recibes cumplimiento y seguridad",
+    "descripcion": "Un reporte que cumple con la STPS y una red de tierras que protege a tu gente y tus equipos.",
+    "contenido": [],
+    "pilares": [
+      {
+        "titulo": "Cumplimiento",
+        "icono": "documento",
+        "items": [
+          "Reporte validado por Unidad Verificadora",
+          "Expediente listo para la inspección de la STPS",
+          "Registro vigente de cada medición",
+          "Evidencia para auditorías y aseguradora"
+        ]
       },
-      "etiquetas": {
-        "condicion": "Condición general",
-        "diagnostico": "Resultado general",
-        "recomendaciones": "Plan de cierre",
-        "prioridades": "Prioridades de acción"
-      },
-      "diagnostico": "Los 24 puntos con medición presentan continuidad y valores entre 0.18 y 5.91 ohms. El punto 25, un pararrayos, se identifica como no conforme por el estado físico del electrodo y requiere atención correctiva prioritaria.",
-      "recomendaciones": [
-        "Atender primero el punto 25 y volver a medir después de la corrección.",
-        "Cerrar las observaciones físicas de los demás registros y conservar la evidencia.",
-        "Integrar la medición a un calendario preventivo para mantener la trazabilidad."
-      ],
-      "prioridades": [
-        {
-          "nivel": "Alta",
-          "clave": "alarma",
-          "puntos": "Punto 25",
-          "accion": "Sustituir el electrodo, rehabilitar el registro y repetir la medición."
-        },
-        {
-          "nivel": "Media",
-          "clave": "precaucion",
-          "puntos": "Punto 23",
-          "accion": "Vaciar y limpiar el registro, revisar corrosión y asegurar la tapa."
-        },
-        {
-          "nivel": "Baja",
-          "clave": "observacion",
-          "puntos": "1, 5 y 11",
-          "accion": "Rehabilitar tapas, retirar obstrucciones e inspeccionar conexiones."
-        },
-        {
-          "nivel": "Preventiva",
-          "clave": "bueno",
-          "puntos": "6, 18, 20, 21 y 24",
-          "accion": "Limpiar, retirar humedad y residuos, revisar cable y conexiones."
-        }
-      ],
-      "evidencia": [
-        {
-          "src": "/images/servicios/tierras-fisicas/medicion-registro.webp",
-          "alt": "Medición de resistencia en un registro de tierra"
-        },
-        {
-          "src": "/images/servicios/tierras-fisicas/lectura-ohm.webp",
-          "alt": "Lectura del telurómetro: 0.58 ohms"
-        }
-      ],
-      "nota": "Reporte real de septiembre de 2026, con la planta y las áreas omitidas."
-    }
+      {
+        "titulo": "Seguridad",
+        "icono": "escudo",
+        "items": [
+          "Cada punto medido contra su límite",
+          "Los puntos fuera de norma, con su corrección",
+          "Cada equipo conectado a la red",
+          "La corriente de una falla con camino a tierra"
+        ]
+      }
+    ]
   },
   "mostrarClientes": true,
   "faq": [
@@ -562,19 +506,8 @@
     }
   ],
   "cobertura": {
-    "etiqueta": "Dónde aplica",
-    "titulo": "¿Dónde aplica y qué encuentra?",
-    "equiposTitulo": "Dónde se mide",
-    "equipos": [
-      "Subestaciones",
-      "Tableros y centros de carga",
-      "Transformadores",
-      "Estructuras metálicas",
-      "Pararrayos",
-      "Tanques y equipos con electricidad estática",
-      "Cuartos de equipo electrónico",
-      "Motores y maquinaria"
-    ],
+    "etiqueta": "Por qué aplica",
+    "titulo": "¿Por qué aplica y qué encuentra?",
     "fallasTitulo": "Lo que encuentra",
     "fallas": [
       "Resistencia fuera de límite",
@@ -586,27 +519,60 @@
       "Riesgo de descarga al personal",
       "Incumplimiento de NOM-022-STPS"
     ],
-    "fotos": [
+    "norma": {
+      "etiqueta": "Obligatorio por norma",
+      "titulo": "La NOM-022-STPS-2015 la exige en tu centro de trabajo",
+      "texto": "No es una recomendación de mantenimiento: la norma obliga a tener una red de puesta a tierra que funcione, a medirla y a conservar la evidencia. Es lo primero que revisa un inspector de la STPS y lo que piden las auditorías de seguridad, de clientes y de aseguradoras.",
+      "obligaciones": [
+        "Medir la resistencia de la red de puesta a tierra",
+        "Verificar la continuidad hasta cada equipo",
+        "Revisar el sistema de pararrayos y sus bajantes",
+        "Conservar el registro de las mediciones",
+        "Repetir la medición al menos cada 12 meses",
+        "Corregir los puntos fuera de límite"
+      ],
+      "nota": "Resumen de las obligaciones de la NOM-022-STPS-2015 que cubre el servicio. El reporte de DIAPSA responde a cada una y lo valida una Unidad Verificadora."
+    }
+  },
+  "diferencias": {
+    "etiqueta": "Por qué DIAPSA",
+    "titulo": "¿Qué nos hace diferentes?",
+    "items": [
       {
-        "nombre": "Subestaciones",
-        "ilustracion": "subestacion"
+        "id": "metodo",
+        "grafico": "tie-metodo",
+        "title": "Medido por caída de potencial",
+        "content": "Con telurómetro calibrado y electrodos auxiliares, midiendo en varias distancias hasta que el valor se estabiliza. Una sola lectura rápida puede dar un número que no es el del electrodo."
       },
       {
-        "nombre": "Tableros y centros de carga",
-        "ilustracion": "tablero-bt"
+        "id": "continuidad",
+        "grafico": "tie-continuidad",
+        "title": "Continuidad hasta cada equipo",
+        "content": "No basta con que el electrodo esté bien: cada tablero, motor, estructura y tanque tiene que llegar a la red. Se verifica uno por uno, porque el que no llega queda energizado en una falla."
       },
       {
-        "nombre": "Transformadores",
-        "ilustracion": "transformador"
+        "id": "limite",
+        "grafico": "tie-limite",
+        "title": "Cada punto contra su límite",
+        "content": "La red general se compara contra 25 ohms y las bajantes de pararrayos contra 10 ohms. Cada punto se evalúa contra el límite que le corresponde, no contra uno solo para todo."
       },
       {
-        "nombre": "Tanques y equipos con electricidad estática",
-        "ilustracion": "tanque"
+        "id": "causa",
+        "grafico": "tie-causa",
+        "title": "Te decimos por qué está alto",
+        "content": "Un valor alto puede ser el terreno, un electrodo corroído o una conexión floja, y cada uno se corrige distinto. El reporte dice cuál es el caso y qué hacer en ese punto."
       },
       {
-        "nombre": "Motores y maquinaria",
-        "ilustracion": "motor"
+        "id": "stps",
+        "grafico": "tie-stps",
+        "title": "Listo para la STPS",
+        "content": "El reporte responde punto por punto a lo que pide la NOM-022-STPS-2015 y lo valida una Unidad Verificadora, para presentarlo tal cual en una inspección."
       }
     ]
-  }
+  },
+  "flujoEncabezado": {
+    "titulo": "Del registro al expediente, en cinco pasos",
+    "texto": "No vendemos una medición: vendemos saber que la corriente de una falla tiene por dónde irse, y poder demostrarlo. Así se trabaja."
+  },
+  "ocultarAhorro": true
 }
