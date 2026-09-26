@@ -4,7 +4,8 @@ import { GRIS, MID, Marco, NARANJA, NAVY, Trafo } from "./IlustracionDga";
  * IlustracionesServicio
  * Ilustraciones de las pestañas "¿Qué nos hace diferentes?" de cámaras
  * térmicas (cam-), sensores de huella acústica (hue-), análisis de aceite
- * (ace-) y sensores de vibración (sen-), en lugar de fotos.
+ * (ace-), sensores de vibración (sen-) y tierras físicas (tie-), en lugar de
+ * fotos.
  *
  * Por qué existen: esas pestañas repetían fotos de la galería de la misma
  * página (aceite y acústicos) o fotos de termografía con cámara de mano que
@@ -591,7 +592,164 @@ function SenPrueba() {
   );
 }
 
+/* ============================== TIERRAS FÍSICAS ============================== */
+
+const CURVA_CAIDA = "M4 90 C 18 50, 30 42, 44 40 S 70 38, 78 37 C 86 34, 92 20, 97 6";
+
+function TieMetodo() {
+  return (
+    <Marco titulo="Medido por caída de potencial, no a ojo" pie="Esquema: electrodo bajo prueba, electrodos auxiliares y la lectura estable">
+      <div className="grid h-full grid-rows-[1fr_1.1fr] gap-2 lg:gap-3">
+        <div className="relative">
+          <svg viewBox="0 0 200 60" className="absolute inset-0 h-full w-full" aria-hidden="true">
+            <rect x="0" y="30" width="200" height="30" fill="#e7ddcb" />
+            <line x1="0" y1="30" x2="200" y2="30" stroke="#b9a883" strokeWidth="1" />
+            <rect x="14" y="16" width="5" height="40" rx="1" fill={NAVY} />
+            <rect x="110" y="20" width="4" height="22" rx="1" fill={MID} />
+            <rect x="184" y="20" width="4" height="22" rx="1" fill={MID} />
+            <path d="M16.5 16 Q100 -6 186 20 M16.5 16 Q64 4 112 20" stroke={NARANJA} strokeWidth="1.4" fill="none" strokeDasharray="3 2" />
+            <rect x="52" y="4" width="26" height="12" rx="2" fill={NAVY} /><rect x="56" y="7" width="12" height="5" rx="1" fill={NARANJA} />
+          </svg>
+          <span className="absolute bottom-0 left-[4%] text-[9px] font-bold text-primary lg:text-xs">Electrodo</span>
+          <span className="absolute bottom-0 left-[50%] text-[9px] font-bold text-tertiary lg:text-xs">Potencial</span>
+          <span className="absolute bottom-0 right-0 text-[9px] font-bold text-tertiary lg:text-xs">Corriente</span>
+        </div>
+        <Tarjeta>
+          <div className="relative min-h-0 flex-1">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full" aria-hidden="true">
+              <rect x="40" y="0" width="40" height="100" fill={NARANJA} opacity=".12" />
+              <path d={CURVA_CAIDA} fill="none" stroke={NAVY} strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
+            </svg>
+            <span className="absolute left-[42%] top-0 text-[9px] font-bold text-amber-800 lg:text-xs">Valor estable</span>
+          </div>
+          <Texto>Se mide en varias distancias hasta que la lectura se estabiliza: ese es el valor real del electrodo.</Texto>
+        </Tarjeta>
+      </div>
+    </Marco>
+  );
+}
+
+function TieContinuidad() {
+  const equipos = [
+    { x: 30, n: "Tablero", ok: true },
+    { x: 80, n: "Motor", ok: true },
+    { x: 130, n: "Estructura", ok: false },
+    { x: 180, n: "Tanque", ok: true },
+  ];
+  return (
+    <Marco titulo="Continuidad hasta cada equipo" pie="Esquema: cada equipo debe llegar a la red de tierras">
+      <div className="flex h-full flex-col gap-2 lg:gap-3">
+        <div className="relative min-h-0 flex-1">
+          <svg viewBox="0 0 210 90" className="absolute inset-0 h-full w-full" aria-hidden="true">
+            <rect x="10" y="74" width="190" height="6" rx="2" fill="#b8683a" />
+            {equipos.map((e) => (
+              <g key={e.n}>
+                <rect x={e.x - 14} y="8" width="28" height="30" rx="2" fill={NAVY} />
+                {e.ok
+                  ? <line x1={e.x} y1="38" x2={e.x} y2="74" stroke="#10b981" strokeWidth="3" />
+                  : (<><line x1={e.x} y1="38" x2={e.x} y2="52" stroke="#dc2f27" strokeWidth="3" /><line x1={e.x} y1="62" x2={e.x} y2="74" stroke="#dc2f27" strokeWidth="3" /><path d={`M${e.x - 6} 51 l12 12 M${e.x + 6} 51 l-12 12`} stroke="#dc2f27" strokeWidth="2.5" /></>)}
+              </g>
+            ))}
+          </svg>
+        </div>
+        <div className="grid grid-cols-4 gap-1 text-center text-[9px] font-bold text-primary lg:text-xs">
+          {equipos.map((e) => <span key={e.n} className={e.ok ? "" : "text-red-600"}>{e.n}</span>)}
+        </div>
+        <Texto fuerte>Sin continuidad, esa estructura queda energizada en una falla, y no hay por dónde irse la corriente.</Texto>
+      </div>
+    </Marco>
+  );
+}
+
+const PUNTOS_TIERRA = [
+  { n: "R1", v: 8, lim: 25 },
+  { n: "R2", v: 18, lim: 25 },
+  { n: "R3", v: 31, lim: 25 },
+  { n: "P1", v: 6, lim: 10 },
+  { n: "P2", v: 14, lim: 10 },
+  { n: "R4", v: 12, lim: 25 },
+];
+
+function TieLimite() {
+  const tope = 36;
+  return (
+    <Marco titulo="Cada punto contra el límite que le toca" pie="Esquema: red general a 25 Ω y pararrayos a 10 Ω">
+      <div className="flex h-full flex-col gap-2 lg:gap-3">
+        <div className="flex min-h-0 flex-1 items-end gap-2 border-b border-primary/30 lg:gap-3">
+          {PUNTOS_TIERRA.map((p) => {
+            const mal = p.v > p.lim;
+            return (
+              <div key={p.n} className="relative flex h-full flex-1 flex-col justify-end">
+                <div className="absolute inset-x-0 border-t-2 border-dashed border-red-400" style={{ bottom: `${(p.lim / tope) * 100}%` }} />
+                <span className="rounded-t-[2px]" style={{ height: `${(p.v / tope) * 100}%`, background: mal ? "#dc2f27" : "#10b981" }} />
+              </div>
+            );
+          })}
+        </div>
+        <div className="flex gap-2 text-center text-[9px] font-bold text-primary lg:gap-3 lg:text-xs">
+          {PUNTOS_TIERRA.map((p) => <span key={p.n} className="flex-1">{p.n}</span>)}
+        </div>
+        <Texto>R: registros de la red general. P: bajantes de pararrayos, con límite más estricto.</Texto>
+      </div>
+    </Marco>
+  );
+}
+
+function TieCausa() {
+  const causas = [
+    { t: "Terreno seco", d: "Se mejora el suelo alrededor del electrodo", es: false },
+    { t: "Electrodo corroído", d: "Se cambia o se agrega un electrodo", es: true },
+    { t: "Conexión floja", d: "Se limpia y se reaprieta", es: false },
+  ];
+  return (
+    <Marco titulo="Un valor alto no siempre es un electrodo malo" pie="Esquema: el reporte dice cuál de las causas es">
+      <div className="flex h-full flex-col gap-2 lg:gap-3">
+        <div className="flex items-center gap-2">
+          <span className="rounded-full bg-red-50 px-2 py-0.5 text-[10px] font-bold text-red-700 ring-1 ring-red-600/30 lg:text-sm">Registro R3 · 31 Ω</span>
+          <span className="text-[10px] text-tertiary lg:text-sm">¿por qué?</span>
+        </div>
+        <div className="grid min-h-0 flex-1 grid-cols-3 gap-2 lg:gap-3">
+          {causas.map((c) => (
+            <Tarjeta key={c.t} className={c.es ? "ring-2 ring-secondary" : ""}>
+              <div className="flex items-center gap-1.5">{c.es && <Sello bien />}<Texto fuerte>{c.t}</Texto></div>
+              <p className="mt-1 text-[10px] leading-snug text-tertiary lg:text-xs">{c.d}</p>
+            </Tarjeta>
+          ))}
+        </div>
+        <Texto fuerte>La acción correcta depende de la causa, no del número.</Texto>
+      </div>
+    </Marco>
+  );
+}
+
+function TieStps() {
+  const puntos = ["Resistencia de cada punto", "Continuidad de los equipos", "Registro de las mediciones", "Bajantes de pararrayos señalizadas"];
+  return (
+    <Marco titulo="Listo para la inspección de la STPS" pie="Esquema: lo que pide la NOM-022-STPS-2015, punto por punto">
+      <div className="grid h-full grid-cols-[1.3fr_1fr] items-center gap-3 lg:gap-6">
+        <Tarjeta>
+          <Rotulo>Reporte de tierras físicas</Rotulo>
+          <ul className="mt-2 space-y-1.5 lg:space-y-2">
+            {puntos.map((p) => <li key={p} className="flex items-start gap-2 text-[10px] leading-snug text-primary lg:text-sm"><Sello bien />{p}</li>)}
+          </ul>
+        </Tarjeta>
+        <div className="flex flex-col items-center gap-2 text-center">
+          <span className="flex h-16 w-16 items-center justify-center rounded-full border-4 text-[10px] font-extrabold leading-tight text-primary lg:h-24 lg:w-24 lg:text-sm" style={{ borderColor: NARANJA }}>
+            Unidad<br />Verificadora
+          </span>
+          <Texto fuerte>Reporte validado</Texto>
+        </div>
+      </div>
+    </Marco>
+  );
+}
+
 const MAPA: Record<string, () => React.ReactElement> = {
+  "tie-metodo": TieMetodo,
+  "tie-continuidad": TieContinuidad,
+  "tie-limite": TieLimite,
+  "tie-causa": TieCausa,
+  "tie-stps": TieStps,
   "sen-especialistas": SenEspecialistas,
   "sen-continuo": SenContinuo,
   "sen-estandar": SenEstandar,

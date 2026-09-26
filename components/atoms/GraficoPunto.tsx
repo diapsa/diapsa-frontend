@@ -164,7 +164,7 @@ function Alineacion() {
 export default function GraficoPunto({ clave, className = "" }: Props) {
   // Las ilustraciones de DGA, cámaras, huella acústica y aceite traen su propio marco.
   if (clave.startsWith("dga-")) return <IlustracionDga clave={clave} />;
-  if (/^(cam|hue|ace|sen)-/.test(clave)) return <IlustracionesServicio clave={clave} />;
+  if (/^(cam|hue|ace|sen|tie)-/.test(clave)) return <IlustracionesServicio clave={clave} />;
   const esquema = clave === "paros" ? <Paros /> : clave === "alineacion" ? <Alineacion /> : null;
   if (!esquema) return null;
   return <div className={`h-full w-full bg-white p-4 lg:p-6 ${className}`}>{esquema}</div>;

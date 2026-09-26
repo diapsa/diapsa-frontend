@@ -608,5 +608,82 @@
         "ilustracion": "motor"
       }
     ]
+  },
+  "diferencias": {
+    "etiqueta": "Por qué DIAPSA",
+    "titulo": "¿Qué nos hace diferentes?",
+    "items": [
+      {
+        "id": "metodo",
+        "grafico": "tie-metodo",
+        "title": "Medido por caída de potencial",
+        "content": "Con telurómetro calibrado y electrodos auxiliares, midiendo en varias distancias hasta que el valor se estabiliza. Una sola lectura rápida puede dar un número que no es el del electrodo."
+      },
+      {
+        "id": "continuidad",
+        "grafico": "tie-continuidad",
+        "title": "Continuidad hasta cada equipo",
+        "content": "No basta con que el electrodo esté bien: cada tablero, motor, estructura y tanque tiene que llegar a la red. Se verifica uno por uno, porque el que no llega queda energizado en una falla."
+      },
+      {
+        "id": "limite",
+        "grafico": "tie-limite",
+        "title": "Cada punto contra su límite",
+        "content": "La red general se compara contra 25 ohms y las bajantes de pararrayos contra 10 ohms. Cada punto se evalúa contra el límite que le corresponde, no contra uno solo para todo."
+      },
+      {
+        "id": "causa",
+        "grafico": "tie-causa",
+        "title": "Te decimos por qué está alto",
+        "content": "Un valor alto puede ser el terreno, un electrodo corroído o una conexión floja, y cada uno se corrige distinto. El reporte dice cuál es el caso y qué hacer en ese punto."
+      },
+      {
+        "id": "stps",
+        "grafico": "tie-stps",
+        "title": "Listo para la STPS",
+        "content": "El reporte responde punto por punto a lo que pide la NOM-022-STPS-2015 y lo valida una Unidad Verificadora, para presentarlo tal cual en una inspección."
+      }
+    ]
+  },
+  "flujoEncabezado": {
+    "titulo": "Del registro al expediente, en cinco pasos",
+    "texto": "No vendemos una medición: vendemos saber que la corriente de una falla tiene por dónde irse, y poder demostrarlo. Así se trabaja."
+  },
+  "valor": {
+    "etiqueta": "En qué se traduce",
+    "titulo": "La misma falla, dos finales muy distintos",
+    "texto": "Una falla a tierra o un rayo van a pasar. Lo que cambia es si la corriente encuentra su camino o lo busca a través de tu gente y tus equipos.",
+    "sinEtiqueta": "Sin medición vigente",
+    "conEtiqueta": "Con el reporte de DIAPSA",
+    "sin": "Te enteras con un accidente",
+    "con": "Te enteras antes",
+    "filas": [
+      {
+        "concepto": "Personal",
+        "sin": "Un gabinete energizado descarga a quien lo toca",
+        "con": "La corriente de falla se va a tierra"
+      },
+      {
+        "concepto": "Protecciones",
+        "sin": "La falla no se despeja y el daño crece",
+        "con": "Las protecciones disparan a tiempo"
+      },
+      {
+        "concepto": "Equipos",
+        "sin": "Sobretensiones que dañan variadores y controladores",
+        "con": "Equipos electrónicos protegidos"
+      },
+      {
+        "concepto": "Rayos",
+        "sin": "La descarga busca camino por la estructura",
+        "con": "El pararrayos la lleva al suelo"
+      },
+      {
+        "concepto": "Inspección",
+        "sin": "Multa por no tener el registro vigente",
+        "con": "Expediente vigente, punto por punto"
+      }
+    ],
+    "cierre": "Lo que separa las dos columnas es saber que la red funciona. Eso es lo que te da la medición."
   }
 }
