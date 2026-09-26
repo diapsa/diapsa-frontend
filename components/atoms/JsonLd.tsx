@@ -62,7 +62,7 @@ export const organizationSchema = {
     "Termografía Infrarroja",
     "Análisis de Vibraciones",
     "Ultrasonido Industrial",
-    "Estudios Eléctricos",
+    "Calidad de Energía",
     "Diagnóstico de Maquinaria",
   ],
 };
