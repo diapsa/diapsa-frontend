@@ -256,43 +256,6 @@
       "texto": "La alerta llega con el patrón detectado, su grabación y qué hacer: revisada por un especialista de DIAPSA o directo a tu sistema."
     }
   ],
-  "valor": {
-    "etiqueta": "En qué se traduce",
-    "titulo": "El mismo sonido, dos finales muy distintos",
-    "texto": "La descarga o el núcleo flojo ya están sonando dentro del transformador. Lo que cambia es si alguien los escucha a tiempo.",
-    "sinEtiqueta": "Solo con pruebas periódicas",
-    "conEtiqueta": "Con huella acústica",
-    "sin": "Te enteras tarde",
-    "con": "Te enteras a tiempo",
-    "filas": [
-      {
-        "concepto": "Descargas",
-        "sin": "El aislamiento falla y se dispara la subestación",
-        "con": "Se programa la revisión del componente a tiempo"
-      },
-      {
-        "concepto": "Núcleo y devanados",
-        "sin": "El aflojamiento avanza hasta la falla interna",
-        "con": "Se detecta el cambio de sonido y se investiga"
-      },
-      {
-        "concepto": "Enfriamiento",
-        "sin": "El transformador se calienta por un ventilador detenido",
-        "con": "Se repara el ventilador o la bomba antes del calor"
-      },
-      {
-        "concepto": "Riesgo",
-        "sin": "Personal cerca de equipo energizado para revisarlo",
-        "con": "Se escucha todo el día, sin exponer a nadie"
-      },
-      {
-        "concepto": "Producción",
-        "sin": "Paro de todo lo que alimenta ese transformador",
-        "con": "Intervención en una ventana programada"
-      }
-    ],
-    "cierre": "Lo que separa las dos columnas es escuchar a tiempo. Eso es lo que te da la huella acústica."
-  },
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "La alerta llega así: qué es y qué hacer",
@@ -409,5 +372,12 @@
       "answer": "La lista de transformadores y subestaciones que te preocupan con sus datos de placa, fotos de cómo están instalados y si tienes un sistema al que deban llegar las alertas."
     }
   ],
-  "mostrarClientes": true
+  "mostrarClientes": true,
+  "traduccion": {
+    "etiqueta": "En qué se traduce",
+    "tipo": "escalera",
+    "titulo": "La falla de un transformador sube por escalones",
+    "texto": "Empieza con descargas parciales que nadie oye y termina con el transformador fuera de servicio. Cada escalón es más caro que el anterior.",
+    "cierre": "La huella acústica la detiene en el primer escalón, cuando todavía se corrige en una ventana programada."
+  }
 }

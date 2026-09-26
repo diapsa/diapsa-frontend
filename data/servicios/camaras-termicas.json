@@ -205,43 +205,6 @@
       "texto": "La alerta llega con el termograma, el patrón detectado y qué hacer: revisada por un termógrafo de DIAPSA o directo a tu sistema."
     }
   ],
-  "valor": {
-    "etiqueta": "En qué se traduce",
-    "titulo": "El mismo punto caliente, dos finales muy distintos",
-    "texto": "Una conexión floja se va a calentar igual. Lo que cambia es si te enteras en la siguiente ruta o en el momento en que empieza.",
-    "sinEtiqueta": "Solo con ruta",
-    "conEtiqueta": "Con la cámara",
-    "sin": "Te enteras tarde",
-    "con": "Te enteras a tiempo",
-    "filas": [
-      {
-        "concepto": "Cuándo te enteras",
-        "sin": "En la siguiente ruta, o cuando ya hay olor a quemado",
-        "con": "Cuando empieza a subir, con la imagen del punto"
-      },
-      {
-        "concepto": "Qué se daña",
-        "sin": "La conexión se funde y arrastra el interruptor o el tablero",
-        "con": "Se reaprieta o se cambia una pieza"
-      },
-      {
-        "concepto": "Riesgo",
-        "sin": "Arco eléctrico o incendio con gente cerca",
-        "con": "Se baja la carga y se atiende sin riesgo"
-      },
-      {
-        "concepto": "Producción",
-        "sin": "Paro de todo lo que alimenta ese tablero",
-        "con": "Intervención en una ventana programada"
-      },
-      {
-        "concepto": "Aseguradora",
-        "sin": "Un siniestro que explicar",
-        "con": "Un historial de temperatura que demuestra el cuidado"
-      }
-    ],
-    "cierre": "Lo que separa las dos columnas es el aviso. Eso es lo que te da la cámara."
-  },
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "La alerta llega así: qué es y qué hacer",
@@ -350,5 +313,12 @@
       "answer": "La lista de equipos o áreas que te preocupan, fotos de cómo están y si tienes un sistema al que deban llegar las alertas. Con eso proponemos cuántas cámaras, dónde y cómo se monitorean."
     }
   ],
-  "mostrarClientes": true
+  "mostrarClientes": true,
+  "traduccion": {
+    "etiqueta": "En qué se traduce",
+    "tipo": "reloj",
+    "titulo": "Una conexión floja se calienta en horas, no en meses",
+    "texto": "Entre que una conexión empieza a calentarse y se vuelve peligrosa pueden pasar unas horas. La cámara lo ve en minutos; la ruta con cámara de mano llega semanas después.",
+    "cierre": "Se baja la carga y se corrige antes de que haya arco, incendio o un paro de todo lo que alimenta ese tablero."
+  }
 }

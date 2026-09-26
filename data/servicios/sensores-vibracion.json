@@ -513,39 +513,11 @@
     "titulo": "Del sensor a la decisión, en cinco pasos",
     "texto": "No vendemos sensores: vendemos saber a tiempo qué le pasa a tu equipo y qué hacer. Así se llega de la lectura al aviso."
   },
-  "valor": {
+  "traduccion": {
     "etiqueta": "En qué se traduce",
-    "titulo": "La misma falla, dos cuentas muy distintas",
-    "texto": "Un rodamiento se va a dañar igual. Lo que cambia es si te enteras cuando ya paró la línea o semanas antes.",
-    "sin": "La falla te encuentra",
-    "con": "La ves venir",
-    "filas": [
-      {
-        "concepto": "Cuándo paras",
-        "sin": "Cuando la máquina decide, a mitad del turno",
-        "con": "En la ventana que tú eliges"
-      },
-      {
-        "concepto": "Refacción",
-        "sin": "Urgente, con flete exprés",
-        "con": "Pedida con tiempo, a precio normal"
-      },
-      {
-        "concepto": "Daño",
-        "sin": "El rodamiento se lleva el eje, el sello o el motor",
-        "con": "Solo cambias la pieza que falló"
-      },
-      {
-        "concepto": "Tu gente",
-        "sin": "Horas extra y todos apagando el fuego",
-        "con": "Trabajo planeado, en su horario"
-      },
-      {
-        "concepto": "Producción",
-        "sin": "Horas de línea parada y pedidos atrasados",
-        "con": "La producción sigue según el plan"
-      }
-    ],
-    "cierre": "Lo que separa las dos columnas es el aviso. Eso es lo que te da el sensor."
+    "tipo": "margen",
+    "titulo": "Semanas para decidir, en lugar de horas para reaccionar",
+    "texto": "Un rodamiento avisa semanas antes de fallar. El sensor ve ese primer cambio; la ruta mensual suele llegar cuando ya es tarde.",
+    "cierre": "Con semanas de margen, la refacción llega a tiempo y la reparación cabe en una ventana programada."
   }
 }

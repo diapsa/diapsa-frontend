@@ -511,41 +511,11 @@
     "titulo": "De la muestra a la decisión, en cinco pasos",
     "texto": "No vendemos resultados de laboratorio: vendemos saber qué pasa dentro de tu equipo y qué hacer. Así se llega de la muestra a la acción."
   },
-  "valor": {
+  "traduccion": {
     "etiqueta": "En qué se traduce",
-    "titulo": "El mismo aceite, dos cuentas muy distintas",
-    "texto": "Lo que pasa dentro del equipo queda escrito en su aceite. Lo que cambia es si alguien lo lee a tiempo.",
-    "sinEtiqueta": "Sin análisis",
-    "conEtiqueta": "Con análisis de aceite",
-    "sin": "Te enteras al abrir",
-    "con": "Te enteras antes",
-    "filas": [
-      {
-        "concepto": "Cambio de aceite",
-        "sin": "Por calendario: tiras aceite bueno o sigues con uno agotado",
-        "con": "Cuando el aceite lo pide, ni antes ni después"
-      },
-      {
-        "concepto": "Desgaste",
-        "sin": "Lo descubres al abrir el reductor, con el daño hecho",
-        "con": "Las partículas avisan meses antes"
-      },
-      {
-        "concepto": "Contaminación",
-        "sin": "El agua y el polvo desgastan sin que nadie lo vea",
-        "con": "Se encuentra y se cierra la entrada"
-      },
-      {
-        "concepto": "Transformadores",
-        "sin": "Una falla interna llega sin aviso",
-        "con": "Los gases disueltos avisan antes de la falla"
-      },
-      {
-        "concepto": "Producción",
-        "sin": "Paro inesperado y refacción urgente",
-        "con": "Intervención en una ventana programada"
-      }
-    ],
-    "cierre": "Lo que separa las dos columnas es leer el aceite a tiempo. Eso es lo que te da el análisis."
+    "tipo": "tambores",
+    "titulo": "Cambiar el aceite cuando lo pide, no cuando toca",
+    "texto": "Por calendario se tira aceite que todavía servía y se sigue usando el que ya no. Por condición, cada cambio se hace cuando la muestra lo justifica.",
+    "cierre": "Menos aceite comprado y desechado, y el desgaste a la vista antes de volverse falla."
   }
 }
