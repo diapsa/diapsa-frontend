@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Antetitulo from "../atoms/Antetitulo";
 import type { Course } from "@/types/course";
-import { FORMATOS, TECNICAS, diaMes, extraDe, fechaGrupo, imagenDe, muestraFotos, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
-import CarruselFotos from "../molecules/CarruselFotos";
+import { TECNICAS, diaMes, extraDe, fechaGrupo, imagenDe, muestraFotos, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
+import EscenaCursos from "./EscenaCursos";
 import dip from "@/data/diplomado.json";
 import menuCursos from "@/data/menu-cursos.json";
 
@@ -22,48 +22,32 @@ import menuCursos from "@/data/menu-cursos.json";
 
 const ORDEN: FormatoCurso[] = ["formacion", "practica", "certificacion", "especialidad", "gestion"];
 
+/* Tarjeta compacta: foto chica, formato, nombre y enlace. Con 15 cursos en
+   tarjetas grandes había que bajar cuatro pantallas; así cabe una técnica
+   por renglón. */
+/* Nombre corto y una línea, los mismos del menú: dentro del renglón de la
+   técnica, "Formación técnica" dice más que "Curso Técnico Especializado:
+   Vibraciones Mecánicas" cortado a la mitad. */
+const CORTOS = new Map(
+  (menuCursos as { items: { label: string; href: string; descripcion: string }[] }[])
+    .flatMap((c) => c.items)
+    .map((i) => [i.href.replace("/cursos/", ""), i] as const)
+);
+
 function Tarjeta({ curso }: { curso: Course }) {
-  const x = extraDe(curso.slug);
-  const formato = x ? FORMATOS[x.formato] : null;
+  const corto = CORTOS.get(curso.slug);
   const grupo = proximosGrupos(curso.slug)[0];
-  // Sin imagen en el CMS: una foto real de un curso de la misma técnica
   const foto = imagenDe(curso.slug, curso.url_img, curso.alt_img || curso.name);
   return (
-    <Link href={`/cursos/${curso.slug}`} className="group flex flex-col overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-xl">
-      <div className="relative aspect-[16/10] bg-primary">
-        {foto ? (
-          <Image src={foto.src} alt={foto.alt} fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
-        ) : (
-          /* Sin imagen en el CMS: la técnica sobre la retícula de la marca, sin repetir el título */
-          <div
-            className="absolute inset-0 flex items-end bg-[linear-gradient(135deg,#002e46,#2b5671)] p-4"
-            style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(135deg,#002e46,#2b5671)", backgroundSize: "28px 28px, 28px 28px, auto" }}
-          >
-            <span className="text-sm font-bold uppercase tracking-widest text-secondary">{TECNICAS.find((t) => t.clave === x?.tecnica)?.nombre ?? "Curso"}</span>
-          </div>
-        )}
-        {formato && (
-          <span className="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-primary shadow-sm">
-            {formato.nombre}
-          </span>
-        )}
+    <Link href={`/cursos/${curso.slug}`} className="group flex h-full overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5 transition-all hover:-translate-y-0.5 hover:shadow-lg">
+      <div className="relative w-24 shrink-0 bg-primary">
+        {foto && <Image src={foto.src} alt={foto.alt} fill sizes="96px" className="object-cover" />}
       </div>
-      <div className="flex flex-1 flex-col p-5">
-        {(curso.reference_norm || x?.nivel) && (
-          <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">
-            {[curso.reference_norm ? `ISO ${curso.reference_norm.replace(/^ISO\s*/i, "")}` : "", x?.nivel ?? ""].filter(Boolean).join(" · ")}
-          </p>
-        )}
-        <h3 className="mt-1 text-lg font-extrabold leading-snug text-primary">{curso.name}</h3>
-        <p className="mt-2 line-clamp-3 text-justify text-sm leading-relaxed text-tertiary">{curso.description}</p>
-        <div className="mt-auto flex items-center justify-between gap-3 pt-4">
-          {grupo ? (
-            <span className="rounded-sm bg-emerald-50 px-2 py-1 text-xs font-bold text-emerald-800 ring-1 ring-emerald-600/20">Próximo grupo: {fechaGrupo(grupo)}</span>
-          ) : (
-            <span />
-          )}
-          <span className="shrink-0 text-sm font-bold text-secondary group-hover:underline">Ver curso →</span>
-        </div>
+      <div className="flex min-w-0 flex-1 flex-col p-4">
+        <h3 className="text-base font-extrabold leading-snug text-primary">{corto?.label ?? curso.name}</h3>
+        <p className="mt-1 line-clamp-2 text-sm leading-snug text-tertiary">{corto?.descripcion ?? curso.description}</p>
+        {grupo && <p className="mt-1 text-xs font-bold text-emerald-700">Próximo grupo: {fechaGrupo(grupo)}</p>}
+        <span className="mt-auto pt-2 text-sm font-bold text-secondary group-hover:underline">Ver curso →</span>
       </div>
     </Link>
   );
@@ -91,7 +75,7 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
   return (
     <>
       {/* Presentación: texto y acciones a la izquierda, la escena a la derecha */}
-      <section className="w-full bg-white py-12 lg:py-20">
+      <section className="w-full bg-white py-10 lg:py-14">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
           <div>
             <Antetitulo>Capacitación</Antetitulo>
@@ -109,8 +93,8 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
               </a>
             </div>
           </div>
-          {/* Fotos reales de cursos, alternando técnicas, sin texto encima */}
-          <CarruselFotos fotos={muestraFotos(14)} intervalo={3000} prioridad />
+          {/* La escena: del aula a la planta y a la certificación */}
+          <EscenaCursos foto={muestraFotos(1)[0]} />
         </div>
       </section>
 
@@ -131,12 +115,12 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
       </section>
 
       {/* El programa insignia, antes que todo el catálogo */}
-      <section className="w-full bg-white py-12 lg:py-16">
+      <section className="w-full bg-white py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 items-center gap-8 overflow-hidden rounded-sm bg-[#00202f] p-6 text-white shadow-2xl lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:p-10">
             <div>
               <p className="inline-flex rounded-full bg-secondary px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-primary">Programa insignia</p>
-              <p className="mt-4 text-4xl font-extrabold uppercase leading-none lg:text-6xl">Diplomado</p>
+              <p className="mt-4 text-4xl font-extrabold uppercase leading-none lg:text-5xl">Diplomado</p>
               <h2 className="mt-2 text-2xl font-extrabold leading-tight text-secondary lg:text-3xl">{dip.corto}</h2>
               <p className="mt-4 text-justify text-base leading-relaxed text-white/75 lg:text-lg">{dip.resumen}</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -186,27 +170,38 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
         </section>
       )}
 
-      {/* Por técnica */}
-      {TECNICAS.map((t, i) => {
-        const lista = cursos.filter((c) => extraDe(c.slug)?.tecnica === t.clave).sort(ordenar);
-        if (!lista.length) return null;
-        return (
-          <section key={t.clave} id={t.clave} className={`w-full scroll-mt-28 py-12 lg:py-16 ${i % 2 ? "bg-white" : "bg-gray-50"}`}>
-            <div className="mx-auto max-w-7xl px-6">
-              <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-                <div className="max-w-3xl">
-                  <Antetitulo>{t.clave === "confiabilidad" ? "Para quien decide" : "Técnica"}</Antetitulo>
-                  <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">{t.nombre}</h2>
+      {/* Cursos por técnica: un renglón por técnica */}
+      <section className="w-full bg-gray-100 py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <Antetitulo>El catálogo</Antetitulo>
+          <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">Cursos por técnica</h2>
+          <div className="mt-8 space-y-4">
+            {TECNICAS.map((t) => {
+              const lista = cursos.filter((c) => extraDe(c.slug)?.tecnica === t.clave).sort(ordenar);
+              if (!lista.length) return null;
+              return (
+                <div key={t.clave} id={t.clave} className="grid scroll-mt-28 grid-cols-1 gap-4 rounded-sm bg-white p-4 shadow-sm ring-1 ring-black/5 lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-6 lg:p-5">
+                  <div className="flex flex-row items-center justify-between gap-3 border-b border-gray-100 pb-3 lg:flex-col lg:items-start lg:justify-start lg:border-b-0 lg:border-r lg:pb-0 lg:pr-5">
+                    <div>
+                      <h3 className="text-xl font-extrabold leading-tight text-primary">{t.nombre}</h3>
+                      <p className="mt-1 text-sm text-tertiary">{lista.length} cursos</p>
+                    </div>
+                    {t.norma && <span className="shrink-0 rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">{t.norma}</span>}
+                  </div>
+                  {/* En teléfono, los cursos de la técnica se deslizan de lado */}
+                  <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 xl:grid-cols-3">
+                    {lista.map((c) => (
+                      <div key={c.slug} className="w-[85%] shrink-0 snap-start sm:w-auto">
+                        <Tarjeta curso={c} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                {t.norma && <span className="rounded-full bg-primary px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white">Certificación {t.norma}</span>}
-              </div>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                {lista.map((c) => <Tarjeta key={c.slug} curso={c} />)}
-              </div>
-            </div>
-          </section>
-        );
-      })}
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       {sinClasificar.length > 0 && (
         <section className="w-full bg-white py-12 lg:py-16">
