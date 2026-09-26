@@ -183,43 +183,6 @@
       "texto": "La alerta llega con el gas que cambió, qué tan rápido y qué tipo de falla indica: revisada por un especialista de DIAPSA o directo a tu sistema."
     }
   ],
-  "valor": {
-    "etiqueta": "En qué se traduce",
-    "titulo": "Los mismos gases, dos finales muy distintos",
-    "texto": "La falla interna ya está dejando gases en el aceite. Lo que cambia es si te enteras en la siguiente muestra o el mismo día.",
-    "sinEtiqueta": "Solo con muestras",
-    "conEtiqueta": "Con DGA en línea",
-    "sin": "Te enteras meses después",
-    "con": "Te enteras el mismo día",
-    "filas": [
-      {
-        "concepto": "Cuándo te enteras",
-        "sin": "En la siguiente muestra, seis o doce meses después",
-        "con": "En cuanto los gases empiezan a subir"
-      },
-      {
-        "concepto": "Falla rápida",
-        "sin": "Un arco interno puede pasar entre dos análisis",
-        "con": "Se ve en horas, con su velocidad de generación"
-      },
-      {
-        "concepto": "Diagnóstico",
-        "sin": "Un valor suelto, sin saber si sube o baja",
-        "con": "La tendencia de cada gas y el tipo de falla"
-      },
-      {
-        "concepto": "Riesgo",
-        "sin": "Falla del transformador con incendio o explosión",
-        "con": "Se baja la carga o se saca de servicio a tiempo"
-      },
-      {
-        "concepto": "Producción",
-        "sin": "Paro de todo lo que alimenta, por semanas",
-        "con": "Intervención programada, con el transformador de respaldo listo"
-      }
-    ],
-    "cierre": "Lo que separa las dos columnas es enterarte a tiempo. Eso es lo que te da el DGA en línea."
-  },
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "La alerta llega así: qué es y qué hacer",
@@ -389,5 +352,12 @@
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
+  },
+  "traduccion": {
+    "etiqueta": "En qué se traduce",
+    "tipo": "calendario",
+    "titulo": "Meses sin transformador, o días de intervención",
+    "texto": "Un transformador de potencia no se consigue de un día para otro. Si falla, la planta queda meses con respaldo o parada; si los gases avisan a tiempo, se interviene en sitio.",
+    "cierre": "El monitor en línea convierte una falla de meses en una intervención de días."
   }
 }

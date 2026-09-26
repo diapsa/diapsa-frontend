@@ -487,6 +487,18 @@
         "nombre": "Interruptores",
         "ilustracion": "interruptor"
       }
-    ]
+    ],
+    "norma": {
+      "etiqueta": "Obligatorio por norma",
+      "titulo": "La NOM-029-STPS-2011 lo exige para trabajar con equipo energizado",
+      "texto": "Antes de abrir un tablero energizado hay que saber cuánta energía liberaría un arco y con qué protección se puede trabajar. Es lo que revisa un inspector de la STPS y lo que piden las aseguradoras y los auditores corporativos.",
+      "obligaciones": [
+        "Análisis de riesgo antes de trabajar con equipo energizado",
+        "Equipo de protección personal según la energía incidente",
+        "Señalización de cada tablero con su riesgo",
+        "Distancias de trabajo seguras alrededor del equipo"
+      ],
+      "nota": "El estudio entrega el análisis, la categoría de protección y la etiqueta de cada tablero conforme a IEEE 1584 y NFPA 70E. Los procedimientos de trabajo y la capacitación los completa el centro de trabajo."
+    }
   }
 }

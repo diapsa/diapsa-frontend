@@ -19,6 +19,7 @@ import PorQueMuestrear from "@/components/organisms/PorQueMuestrear";
 import TendenciaIntervencion from "@/components/organisms/TendenciaIntervencion";
 import Cobertura from "@/components/organisms/Cobertura";
 import ValorParo from "@/components/organisms/ValorParo";
+import EnQueSeTraduce from "@/components/organisms/EnQueSeTraduce";
 import TecnicasElectricas from "@/components/organisms/TecnicasElectricas";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
@@ -275,7 +276,7 @@ export default async function ServicePage({
                     paso={paso()}
                     flujo={service.flujo}
                     encabezado={service.flujoEncabezado}
-                    sinAhorro={!!service.valor || !!service.ocultarAhorro}
+                    sinAhorro
                 />
             )}
 
@@ -283,6 +284,7 @@ export default async function ServicePage({
                 después del cómo y antes de la prueba: primero el valor, luego
                 el caso real que lo respalda. */}
             {service.valor && <ValorParo valor={service.valor} paso={paso()} />}
+            {service.traduccion && <EnQueSeTraduce traduccion={service.traduccion} paso={paso()} />}
 
             {/* Diferenciador de sensores: un punto real día por día, la
                 intervención y su efecto en toda la línea. */}
