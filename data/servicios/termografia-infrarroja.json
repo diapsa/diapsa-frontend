@@ -38,7 +38,8 @@
         "foto": {
           "src": "/images/servicios/termografia-infrarroja/termograma-subestacion.jpg",
           "alt": "Termograma de una subestación eléctrica con los aisladores y conexiones en color según su temperatura"
-        }
+        },
+        "escena": "termografia"
       },
       {
         "id": "beneficios",

@@ -198,46 +198,31 @@
         "id": "especialistas",
         "title": "Lo diseñan especialistas en equipo eléctrico",
         "content": "Qué equipo escuchar y en qué punto del tanque va el sensor lo decide quien lleva años inspeccionando subestaciones con ultrasonido, termografía y análisis de aceite.",
-        "foto": {
-          "src": "/images/servicios/sensores-acusticos/campo-00.webp",
-          "alt": "Especialista de DIAPSA inspeccionando una subestación de alta tensión"
-        }
+        "grafico": "hue-especialistas"
       },
       {
         "id": "ia",
         "title": "Huella acústica con algoritmos e IA",
         "content": "Cada transformador tiene su sonido. Los algoritmos aprenden la huella del equipo sano y reconocen el patrón de una falla, como una descarga parcial o un núcleo que se afloja, aunque haya ruido alrededor.",
-        "foto": {
-          "src": "/images/servicios/sensores-acusticos/campo-44.webp",
-          "alt": "Pantalla de un instrumento acústico con la fuente del sonido ubicada"
-        }
+        "grafico": "hue-ia"
       },
       {
         "id": "sinabrir",
         "title": "Sin abrir el equipo",
         "content": "El sensor se fija por fuera, en el tanque o la envolvente, con montaje magnético, adhesivo o con tornillo. Escucha lo que pasa adentro sin intervenir el equipo.",
-        "foto": {
-          "src": "/images/servicios/sensores-acusticos/campo-12.webp",
-          "alt": "Especialista de DIAPSA frente a los interruptores de una subestación"
-        }
+        "grafico": "hue-sinabrir"
       },
       {
         "id": "criticos",
         "title": "Solo en los equipos que lo justifican",
         "content": "Se instala en los transformadores y subestaciones de los que depende la planta. El resto sigue con sus pruebas y sus rutas de inspección.",
-        "foto": {
-          "src": "/images/servicios/sensores-acusticos/campo-19.webp",
-          "alt": "Ruta de inspección en el patio de una subestación"
-        }
+        "grafico": "hue-criticos"
       },
       {
         "id": "monitoreo",
         "title": "Monitoreo DIAPSA o directo a ti",
         "content": "Un especialista de DIAPSA revisa cada alerta y te avisa con el diagnóstico y la acción, o las alertas llegan directo a tu sistema de control. Puedes tener las dos.",
-        "foto": {
-          "src": "/images/servicios/sensores-acusticos/campo-21.webp",
-          "alt": "Especialista de DIAPSA bajo los marcos de una subestación"
-        }
+        "grafico": "hue-monitoreo"
       }
     ]
   },
