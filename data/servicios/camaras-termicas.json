@@ -22,7 +22,7 @@
   ],
   "header": {
     "title": "Proyectos de Cámaras Térmicas",
-    "subtitle": "Vigilancia térmica continua para los equipos críticos que no pueden esperar a la siguiente ruta",
+    "subtitle": "Vigilancia térmica continua para los equipos críticos y centros de datos que no pueden esperar a la siguiente ruta",
     "backgroundImage": "/images/fondo-hero.webp"
   },
   "seoDescription": "Cámaras térmicas fijas para equipos críticos: tableros, subestaciones, centros de datos, hornos, bandas y almacenes vigilados las 24 horas, con parámetros de algoritmos e IA que reconocen el patrón de una falla y alerta con el termograma.",
@@ -320,6 +320,10 @@
     {
       "question": "¿Para qué equipos conviene una cámara fija?",
       "answer": "Para los críticos: los que paran la línea si fallan, los que no tienen respaldo, los que se calientan rápido y los que tienen riesgo de incendio, como tableros principales, subestaciones, centros de datos (racks, PDU, UPS y aire acondicionado de precisión), hornos, bandas y almacenes de material combustible. Donde basta revisar una vez al mes, la ruta con cámara de mano es más económica."
+    },
+    {
+      "question": "¿Sirve para centros de datos?",
+      "answer": "Sí. En un centro de datos un punto caliente puede tirar un rack o una sala completa. Las cámaras vigilan las 24 horas los tableros, las PDU, los UPS y sus bancos de baterías, y la temperatura de los pasillos; los algoritmos distinguen la carga normal de una conexión que se calienta, y la alerta llega antes de que el equipo se apague o se dañe."
     },
     {
       "question": "¿Sustituye a la ruta de termografía?",
