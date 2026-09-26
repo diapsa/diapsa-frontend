@@ -197,72 +197,31 @@
   ],
   "entregable": {
     "etiqueta": "Qué recibes",
-    "titulo": "Esto es lo que recibes",
-    "descripcion": "Una ficha por máquina como la de arriba y, al frente, la portada de la ruta: cuántos equipos se midieron, cómo quedaron repartidos por estado y qué se atiende primero. Esta es la portada real de esa misma ruta.",
-    "contenido": [
-      "Una ficha por máquina con las cuatro técnicas y un solo diagnóstico",
-      "Portada de la ruta: todos los equipos por estado, de un vistazo",
-      "Lista única de prioridades con acción y ventana",
-      "Espectros, termogramas, audios y laboratorio como respaldo",
-      "Tendencia de cada máquina, ruta tras ruta, en IDAP"
-    ],
-    "resumenRuta": {
-      "etiqueta": "Informe integral · portada",
-      "titulo": "Resumen de la ruta",
-      "subtitulo": "Sistema de enfriamiento · agosto de 2026",
-      "cifras": [
-        {
-          "etiqueta": "Equipos",
-          "valor": "17"
-        },
-        {
-          "etiqueta": "Componentes",
-          "valor": "22"
-        },
-        {
-          "etiqueta": "Piden acción",
-          "valor": "8"
-        }
-      ],
-      "estados": [
-        {
-          "nombre": "Alarma",
-          "clave": "alarma",
-          "total": 2,
-          "texto": "Rodamientos con daño avanzado en motores de ventilador."
-        },
-        {
-          "nombre": "Precaución",
-          "clave": "precaucion",
-          "total": 6,
-          "texto": "Rodamientos, holgura o estructura por programar."
-        },
-        {
-          "nombre": "Observación",
-          "clave": "observacion",
-          "total": 3,
-          "texto": "Primeras detecciones a vigilar en la siguiente ruta."
-        },
-        {
-          "nombre": "Bueno",
-          "clave": "bueno",
-          "total": 8,
-          "texto": "Continuar con el programa."
-        },
-        {
-          "nombre": "Sin medir",
-          "clave": "otro",
-          "total": 3,
-          "texto": "Dos fuera de operación y uno sin acceso; quedan para la siguiente ruta."
-        }
-      ],
-      "prioridades": [
-        "Los dos componentes en alarma: cambio de rodamientos en la siguiente ventana.",
-        "Los seis en precaución: programar rodamientos y revisiones estructurales.",
-        "Los demás siguen en el programa; los tres sin medir se cubren en la siguiente ruta."
-      ],
-      "nota": "Portada real del informe integral de esa ruta, con la planta y las claves de equipo omitidas."
-    }
+    "titulo": "Recibes certeza y ahorro",
+    "descripcion": "Un diagnóstico por máquina en lugar de cuatro reportes, y una sola lista para decidir qué se atiende primero.",
+    "contenido": [],
+    "pilares": [
+      {
+        "titulo": "Certeza",
+        "icono": "documento",
+        "items": [
+          "La causa de cada hallazgo, confirmada por más de una técnica",
+          "La etapa de la falla y cuánto margen queda",
+          "Una sola lista de máquinas por prioridad",
+          "El historial de cada máquina en IDAP"
+        ]
+      },
+      {
+        "titulo": "Ahorro",
+        "icono": "ahorro",
+        "items": [
+          "Las cuatro técnicas en una sola visita",
+          "La pieza correcta a la primera",
+          "Paros programados con la refacción en mano",
+          "El presupuesto en la máquina que sí va a parar"
+        ]
+      }
+    ]
   },
   "mostrarClientes": true,
   "faq": [
@@ -470,5 +429,48 @@
         "ilustracion": "turbina"
       }
     ]
+  },
+  "diferencias": {
+    "etiqueta": "Por qué DIAPSA",
+    "titulo": "¿Qué nos hace diferentes?",
+    "items": [
+      {
+        "id": "visita",
+        "grafico": "int-visita",
+        "title": "Las cuatro, en la misma visita",
+        "content": "Vibraciones, termografía, ultrasonido y aceite sobre la misma máquina, en los mismos puntos y el mismo día. Las lecturas se pueden comparar entre sí y con la ruta anterior, y el costo por equipo es menor que contratarlas por separado."
+      },
+      {
+        "id": "cruce",
+        "grafico": "int-cruce",
+        "title": "Un solo analista cruza las cuatro",
+        "content": "No son cuatro reportes de cuatro proveedores que se contradicen. Un analista pone las cuatro lecturas lado a lado y escribe un diagnóstico por máquina: la causa, la pieza y la etapa de la falla."
+      },
+      {
+        "id": "pieza",
+        "grafico": "int-pieza",
+        "title": "La pieza correcta a la primera",
+        "content": "Una vibración alta puede ser desbalance, desalineación o un rodamiento. Cuando el ultrasonido y el aceite dicen lo mismo, la causa queda confirmada y no se cambia lo que no estaba mal."
+      },
+      {
+        "id": "lista",
+        "grafico": "int-lista",
+        "title": "Una sola lista por prioridad",
+        "content": "Todas las máquinas de la ruta ordenadas por severidad y por lo que cuesta que falle cada una, con la acción y la ventana. El presupuesto se va a la máquina que sí va a parar la línea."
+      },
+      {
+        "id": "historial",
+        "grafico": "int-historial",
+        "title": "Cada ruta suma al historial",
+        "content": "Cada máquina guarda en IDAP sus cuatro técnicas, ruta tras ruta. Cuando una sube, se ve junto a las otras tres, y la tendencia combinada dice cuánto margen queda."
+      }
+    ]
+  },
+  "traduccion": {
+    "etiqueta": "En qué se traduce",
+    "tipo": "etapas",
+    "titulo": "Saber en qué etapa va la falla, y cuánto margen queda",
+    "texto": "Cada técnica ve la falla en un momento distinto. Ver en cuáles ya aparece dice qué tan avanzada está, y cuánto tiempo hay para conseguir la refacción y agendar el paro.",
+    "cierre": "La intervención se programa en ventana, con la refacción en mano, en lugar de hacerse de emergencia con la línea parada."
   }
 }

@@ -180,12 +180,46 @@ function Tambores() {
   );
 }
 
+/* Diagnóstico integral: cada técnica ve la falla en un momento distinto. */
+function Etapas() {
+  const marcas = [
+    { t: "Aceite", d: "Meses antes", x: 12, y: 16 },
+    { t: "Ultrasonido", d: "Semanas antes", x: 40, y: 24 },
+    { t: "Vibraciones", d: "Semanas o días", x: 62, y: 42 },
+    { t: "Termografía", d: "Días antes", x: 82, y: 66 },
+  ];
+  return (
+    <div className="space-y-5">
+      <div className="relative h-44 rounded-sm bg-gradient-to-r from-emerald-50 via-amber-50 to-red-100 lg:h-52">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full" aria-hidden="true">
+          <path d="M0 12 C 30 14, 55 28, 72 50 S 92 84, 100 94" fill="none" stroke={NAVY} strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
+        </svg>
+        {marcas.map((m) => (
+          <div key={m.t} className="absolute" style={{ left: `${m.x}%`, top: `${m.y}%` }}>
+            <span className="absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full ring-2 ring-white" style={{ background: NARANJA }} />
+            <span className={`absolute top-2 whitespace-nowrap rounded bg-white px-1.5 ${m.x > 55 ? "right-2" : "left-2"} py-0.5 text-[10px] font-bold leading-tight text-primary shadow-sm lg:text-xs`}>
+              {m.t}
+              <span className="block font-semibold text-tertiary">{m.d}</span>
+            </span>
+          </div>
+        ))}
+        <span className="absolute bottom-2 right-2 text-[10px] font-bold text-red-700 lg:text-xs">La falla</span>
+      </div>
+      <div className="space-y-2">
+        <p className="rounded-sm bg-red-50 px-3 py-2 text-[11px] font-bold text-red-800 ring-1 ring-red-600/20 lg:text-sm">Con una técnica: ves un punto de la curva, sin saber en qué etapa va.</p>
+        <p className="rounded-sm bg-emerald-50 px-3 py-2 text-[11px] font-bold text-emerald-800 ring-1 ring-emerald-600/20 lg:text-sm">Con las cuatro: la etapa de la falla y el margen para planear el paro.</p>
+      </div>
+    </div>
+  );
+}
+
 const VISUAL: Record<ServiceTraduccion["tipo"], () => React.ReactElement> = {
   margen: Margen,
   reloj: Reloj,
   escalera: Escalera,
   calendario: Calendario,
   tambores: Tambores,
+  etapas: Etapas,
 };
 
 export default function EnQueSeTraduce({ traduccion: t, paso }: Props) {

@@ -511,7 +511,7 @@ export interface ServiceTraduccion {
   titulo: string;
   texto: string;
   /** La visual propia del servicio. */
-  tipo: "margen" | "reloj" | "escalera" | "calendario" | "tambores";
+  tipo: "margen" | "reloj" | "escalera" | "calendario" | "tambores" | "etapas";
   cierre?: string;
   nota?: string;
 }
