@@ -46,6 +46,16 @@ export function galeriaDe(slug: string): FotoCurso[] {
   return DATOS.galerias?.[x.galeria ?? x.tecnica] ?? [];
 }
 
+/** Una muestra de todas las galerías, alternando técnicas, para la apertura. */
+export function muestraFotos(max = 14): FotoCurso[] {
+  const listas = Object.values(DATOS.galerias ?? {});
+  const salida: FotoCurso[] = [];
+  for (let i = 0; salida.length < max && listas.some((l) => i < l.length); i++) {
+    for (const l of listas) if (i < l.length && salida.length < max) salida.push(l[i]);
+  }
+  return salida;
+}
+
 function hoy() {
   const d = new Date();
   return new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();

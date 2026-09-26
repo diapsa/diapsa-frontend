@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Antetitulo from "../atoms/Antetitulo";
 import type { Course } from "@/types/course";
-import { FORMATOS, TECNICAS, diaMes, extraDe, fechaGrupo, galeriaDe, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
+import { FORMATOS, TECNICAS, diaMes, extraDe, fechaGrupo, galeriaDe, muestraFotos, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
+import CarruselFotos from "../molecules/CarruselFotos";
 import menuCursos from "@/data/menu-cursos.json";
 
 /**
@@ -107,10 +108,8 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
               </a>
             </div>
           </div>
-          {/* Lugar de la escena 3D; mientras llega, una sesión real de DIAPSA */}
-          <figure className="relative aspect-[4/3] overflow-hidden rounded-md shadow-xl ring-1 ring-black/10">
-            <Image src="/images/gallery/capacitacion-img-2.jpg" alt="Instructor de DIAPSA con participantes practicando alineación en un curso" fill sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" priority />
-          </figure>
+          {/* Fotos reales de cursos, alternando técnicas, sin texto encima */}
+          <CarruselFotos fotos={muestraFotos(14)} intervalo={3000} prioridad />
         </div>
       </section>
 
