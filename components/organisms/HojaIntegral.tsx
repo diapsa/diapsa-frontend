@@ -5,9 +5,9 @@ import type { ServiceHojaIntegral } from "@/types/servicio";
 
 /**
  * HojaIntegral
- * La ficha de una máquina en el informe integral, contada en cuatro pasos
- * que se leen de arriba abajo: cómo está, qué vio cada técnica, qué se
- * encontró y qué hacer.
+ * La ficha de una máquina en el informe integral, en una sola tarjeta: la
+ * máquina con su estado, qué vio cada técnica, el diagnóstico que sale de
+ * cruzarlas y qué hacer.
  *
  * Por qué así. La primera versión reproducía la hoja del PDF de IDAP con
  * sus tablas de lecturas; era fiel y era demasiado. La segunda la recortó
@@ -18,6 +18,10 @@ import type { ServiceHojaIntegral } from "@/types/servicio";
  * encima, tres cifras de condición, las cuatro técnicas como tarjetas con
  * su ícono y una línea de lo que vio cada una, los hallazgos como tarjetas
  * y la acción como cierre destacado.
+ *
+ * La tercera versión quita los pasos numerados, las tres cifras de
+ * condición y las tarjetas de hallazgos: repetían lo mismo con otras
+ * palabras. Queda un diagnóstico de dos líneas y la acción con su prioridad.
  *
  * Datos reales de una hoja de agosto de 2026, con la planta y la clave del
  * equipo omitidas. `bloques` (las lecturas por disciplina) queda en el
@@ -56,20 +60,10 @@ function Chip({ clave: k, texto, grande }: { clave: string; texto: string; grand
   );
 }
 
-function Paso({ n, children }: { n: number; children: React.ReactNode }) {
-  return (
-    <p className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-widest text-tertiary">
-      <span className="flex h-6 w-6 items-center justify-center rounded-sm bg-primary text-[11px] text-secondary" aria-hidden="true">
-        {n}
-      </span>
-      {children}
-    </p>
-  );
-}
-
 export default function HojaIntegral({ hoja, paso }: Props) {
   const estadoActual = hoja.estado[0];
   const c = nivel(estadoActual?.clave ?? "bueno");
+  const prioridad = hoja.estado.find((e) => /prioridad/i.test(e.k));
 
   return (
     <section className="w-full bg-gray-50 py-12 lg:py-20">
@@ -81,107 +75,72 @@ export default function HojaIntegral({ hoja, paso }: Props) {
         </div>
 
         <article className="overflow-hidden rounded-sm bg-white shadow-2xl ring-1 ring-black/10">
-          {/* 1. Cómo está: la foto con el estado encima y tres cifras */}
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
-            <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[22rem]">
-              <Image src={hoja.equipo.foto} alt={hoja.equipo.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+            {/* La máquina: foto con su estado y su nombre */}
+            <div className="relative aspect-[16/10] sm:aspect-[4/3] lg:aspect-auto lg:min-h-[24rem]">
+              <Image src={hoja.equipo.foto} alt={hoja.equipo.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/90 to-primary/0 p-5 pt-16 lg:p-6">
-                <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">Informe integral · ficha de la máquina</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">Ficha de la máquina</p>
                 <p className="mt-1 text-xl font-extrabold leading-tight text-white lg:text-2xl">{hoja.equipo.nombre}</p>
                 <p className="mt-1 text-xs text-white/70">{hoja.equipo.datos.map((d) => d.v).join(" · ")}</p>
               </div>
               {estadoActual && (
-                <span
-                  className={`absolute left-4 top-4 rounded-full px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider shadow-lg ${c.chip}`}
-                >
+                <span className={`absolute left-4 top-4 rounded-full px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider shadow-lg ${c.chip}`}>
                   {estadoActual.v}
                 </span>
               )}
             </div>
 
-            <div className="flex flex-col justify-center p-5 lg:p-8">
-              <Paso n={1}>Cómo está</Paso>
-              <div className="mt-4 grid grid-cols-3 gap-3">
-                {hoja.estado.map((e) => {
-                  const n = nivel(e.clave);
+            {/* Qué vio cada técnica y el diagnóstico que sale de cruzarlas */}
+            <div className="flex flex-col gap-5 p-5 lg:p-8">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-tertiary">Qué vio cada técnica</p>
+              <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                {hoja.disciplinas.map((d) => {
+                  const n = nivel(d.clave);
+                  const trazo = ICONO[clave(d.nombre)];
                   return (
-                    <div key={e.k} className={`rounded-sm border-t-4 bg-gray-50 p-3 lg:p-4 ${n.lampara.fondo.replace("bg-", "border-")}`}>
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-tertiary">{e.k}</p>
-                      <p className={`mt-1.5 text-base font-extrabold leading-tight lg:text-lg ${n.lampara.texto}`}>{e.v}</p>
-                    </div>
-                  );
-                })}
-              </div>
-              {hoja.riesgoGlobal && (
-                <p className="mt-4 text-justify text-sm leading-relaxed text-tertiary">
-                  La máquina sigue operando, pero ya tiene una falla identificada y con fecha para atenderla. El riesgo global de sus fallas es{" "}
-                  <span className={`font-bold ${nivel(hoja.riesgoGlobal.clave).lampara.texto}`}>{hoja.riesgoGlobal.texto.toLowerCase()}</span>.
-                </p>
-              )}
-            </div>
-          </div>
-
-          {/* 2. Qué vio cada técnica */}
-          <div className="border-t border-gray-200 px-5 py-6 lg:px-8">
-            <Paso n={2}>Qué vio cada técnica</Paso>
-            <ul className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
-              {hoja.disciplinas.map((d) => {
-                const n = nivel(d.clave);
-                const trazo = ICONO[clave(d.nombre)];
-                return (
-                  <li key={d.nombre} className="rounded-sm border border-gray-200 p-4">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className={`flex h-9 w-9 items-center justify-center rounded-full ${n.chip}`} aria-hidden="true">
+                    <li key={d.nombre} className="flex gap-3 rounded-sm border border-gray-200 p-3">
+                      <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${n.chip}`} aria-hidden="true">
                         {trazo && (
                           <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round">
                             <path d={trazo} />
                           </svg>
                         )}
                       </span>
-                      <Chip clave={d.clave} texto={d.estado} />
-                    </div>
-                    <p className="mt-3 text-sm font-extrabold text-primary">{d.nombre}</p>
-                    {d.nota && <p className="mt-1 text-xs leading-relaxed text-tertiary">{d.nota}</p>}
-                  </li>
-                );
-              })}
-            </ul>
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                          <p className="text-sm font-extrabold text-primary">{d.nombre}</p>
+                          <Chip clave={d.clave} texto={d.estado} />
+                        </div>
+                        {d.nota && <p className="mt-1 text-xs leading-snug text-tertiary">{d.nota}</p>}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+
+              {hoja.diagnostico && (
+                <div className={`rounded-sm border-l-4 bg-gray-50 p-4 ${c.lampara.fondo.replace("bg-", "border-")}`}>
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-tertiary">Diagnóstico</p>
+                  <p className="mt-1.5 text-justify text-base font-bold leading-snug text-primary lg:text-lg">{hoja.diagnostico}</p>
+                </div>
+              )}
+            </div>
           </div>
 
-          {/* 3. Qué se encontró */}
-          <div className="border-t border-gray-200 px-5 py-6 lg:px-8">
-            <Paso n={3}>Qué se encontró</Paso>
-            <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {hoja.hallazgos.map((h) => (
-                <li key={h.texto} className={`rounded-sm border-l-4 bg-gray-50 p-4 ${nivel(h.clave).lampara.fondo.replace("bg-", "border-")}`}>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <Chip clave={h.clave} texto={h.estado} />
-                    <span className="rounded-full bg-white px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-tertiary ring-1 ring-black/10">
-                      {h.evolucion}
-                    </span>
-                  </div>
-                  <p className="mt-2.5 text-base font-extrabold leading-snug text-primary">{h.texto}</p>
-                  {h.nota && <p className="mt-1 text-justify text-xs leading-relaxed text-tertiary">{h.nota}</p>}
-                </li>
+          {/* Qué hacer, como cierre */}
+          <div className="flex flex-col gap-3 bg-primary px-5 py-5 sm:flex-row sm:items-center sm:justify-between lg:px-8 lg:py-6">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">Qué hacer</p>
+              {hoja.recomendaciones.map((r) => (
+                <p key={r} className="mt-1 text-justify text-base font-semibold leading-relaxed text-white lg:text-lg">{r}</p>
               ))}
-            </ul>
-          </div>
-
-          {/* 4. Qué hacer */}
-          <div className="border-t border-gray-200 bg-primary px-5 py-6 lg:px-8">
-            <Paso n={4}>
-              <span className="text-white/70">Qué hacer</span>
-            </Paso>
-            <ol className="mt-3 space-y-2">
-              {hoja.recomendaciones.map((r, i) => (
-                <li key={r} className="flex gap-3 text-base leading-relaxed text-white lg:text-lg">
-                  <span className="mt-0.5 w-5 shrink-0 font-extrabold text-secondary" aria-hidden="true">
-                    {i + 1}.
-                  </span>
-                  <span className="text-justify font-semibold">{r}</span>
-                </li>
-              ))}
-            </ol>
+            </div>
+            {prioridad && (
+              <span className="shrink-0 self-start rounded-full bg-secondary px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-primary sm:self-center">
+                {prioridad.k.replace(/ de reparación/i, "")}: {prioridad.v}
+              </span>
+            )}
           </div>
 
           <p className="border-t border-gray-200 bg-gray-50 px-5 py-3 text-justify text-xs leading-relaxed text-tertiary lg:px-8">{hoja.nota}</p>

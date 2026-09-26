@@ -201,7 +201,7 @@ export interface ServicePorQue {
   escena360?: ServiceEscena360;
   /** Si es "sensores", en lugar de la foto va la escena "del sensor a tu
       teléfono"; la foto queda como imagen de espera. */
-  escena?: "sensores" | "termicas" | "huella" | "dga" | "arco" | "calidad";
+  escena?: "sensores" | "termicas" | "huella" | "dga" | "arco" | "calidad" | "integral";
   pie?: string;
   /** Las tres preguntas que contesta una muestra, sin valores de
       laboratorio, y qué se hace si cada una sale mal. */
@@ -450,6 +450,8 @@ export interface ServiceHojaIntegral {
   disciplinas: { nombre: string; estado: string; clave: string; nota?: string }[];
   hallazgos: { texto: string; estado: string; clave: string; evolucion: string; nota?: string }[];
   riesgoGlobal?: { texto: string; clave: string };
+  /** Lo que sale de cruzar las técnicas, en una o dos líneas. */
+  diagnostico?: string;
   recomendaciones: string[];
   /** Una banda por disciplina: imágenes, tabla de lecturas, rangos de severidad. Opcional: la versión corta no las lleva. */
   bloques?: {
@@ -511,7 +513,7 @@ export interface ServiceTraduccion {
   titulo: string;
   texto: string;
   /** La visual propia del servicio. */
-  tipo: "margen" | "reloj" | "escalera" | "calendario" | "tambores";
+  tipo: "margen" | "reloj" | "escalera" | "calendario" | "tambores" | "etapas";
   cierre?: string;
   nota?: string;
 }
@@ -615,6 +617,9 @@ export interface Servicio {
   flujo?: FlujoPaso[];
   /** Foto que acompaña a los puntos clave del servicio. */
   fotoPuntos?: GaleriaFoto;
+  /** Una sección propia con la escena 360 del motor y sus preguntas
+      (diagnóstico integral, cuando la apertura es la escena 3D). */
+  motor360?: { etiqueta: string; titulo: string; texto: string; porQue: ServicePorQue };
   /** Si es verdadero, cierra con la pared de logotipos de clientes. */
   mostrarClientes?: boolean;
   /** Par visual y térmico de la misma escena (termografía). */
