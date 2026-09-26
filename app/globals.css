@@ -206,3 +206,17 @@ body {
 .escsen #aviso .t2{font-size: 9px; color: #d3dfe7; line-height: 1.25; margin: 2px 0 5px;}
 .escsen #aviso .t3{font-size: 9px; line-height: 1.3; margin-top: 5px; text-wrap: pretty;}
 .escsen .fundido{position: absolute; inset: 0; background: linear-gradient(160deg, #fbfcfd 0%, #eef1f4 100%); opacity: 0; pointer-events: none;}
+
+/* Detección de gas: la nube del visor OGI y el anillo del ciclo LDAR */
+@keyframes gas-pluma {
+  0% { transform: translate(0, 0) scale(.5); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(70px, -120px) scale(2.4); opacity: 0; }
+}
+.gas-pluma { transform-box: fill-box; transform-origin: center; animation: gas-pluma 3.5s ease-out infinite; opacity: 0; }
+@keyframes gas-giro { to { stroke-dashoffset: -140; } }
+.gas-giro { animation: gas-giro 6s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .gas-pluma { animation: none; opacity: .6; }
+  .gas-giro { animation: none; }
+}

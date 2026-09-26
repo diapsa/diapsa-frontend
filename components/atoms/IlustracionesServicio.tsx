@@ -5,7 +5,8 @@ import { GRIS, MID, Marco, NARANJA, NAVY, Trafo } from "./IlustracionDga";
  * Ilustraciones de las pestañas "¿Qué nos hace diferentes?" de cámaras
  * térmicas (cam-), sensores de huella acústica (hue-), análisis de aceite
  * (ace-), sensores de vibración (sen-), tierras físicas (tie-), arco eléctrico
- * (arc-) y diagnóstico integral (int-), en lugar de fotos.
+ * (arc-), diagnóstico integral (int-) y detección de gas (gas-), en lugar de
+ * fotos.
  *
  * Por qué existen: esas pestañas repetían fotos de la galería de la misma
  * página (aceite y acústicos) o fotos de termografía con cámara de mano que
@@ -1042,7 +1043,170 @@ function IntHistorial() {
   );
 }
 
+/* ============================== DETECCIÓN DE GAS ============================== */
+
+/* Una válvula con brida, vista de frente; con `nube` sale la pluma de gas. */
+function ValvulaGas({ nube, gris }: { nube: boolean; gris: boolean }) {
+  const c = gris ? "#5b6770" : NAVY, d = gris ? "#8b979f" : MID;
+  return (
+    <svg viewBox="0 0 100 70" className="absolute inset-0 h-full w-full" aria-hidden="true">
+      <rect x="0" y="44" width="100" height="10" fill={d} />
+      <rect x="40" y="38" width="6" height="22" rx="1" fill={c} />
+      <rect x="54" y="38" width="6" height="22" rx="1" fill={c} />
+      <rect x="46" y="40" width="8" height="18" fill={d} />
+      <rect x="48" y="22" width="4" height="18" fill={c} />
+      <rect x="38" y="18" width="24" height="5" rx="2.5" fill={c} />
+      {nube && (
+        <g opacity=".85">
+          <ellipse cx="60" cy="34" rx="7" ry="5" fill="#1f2a30" />
+          <ellipse cx="68" cy="26" rx="10" ry="7" fill="#1f2a30" opacity=".75" />
+          <ellipse cx="78" cy="16" rx="13" ry="9" fill="#1f2a30" opacity=".5" />
+          <ellipse cx="88" cy="7" rx="14" ry="8" fill="#1f2a30" opacity=".3" />
+        </g>
+      )}
+    </svg>
+  );
+}
+
+function GasOgi() {
+  return (
+    <Marco titulo="La cámara OGI ve la nube de gas" pie="Esquema: la misma válvula a simple vista y con cámara de imagen óptica de gas">
+      <div className="grid h-full grid-cols-2 gap-3 lg:gap-5">
+        <Tarjeta>
+          <Rotulo color="text-tertiary">A simple vista</Rotulo>
+          <div className="relative mt-2 min-h-0 flex-1"><ValvulaGas nube={false} gris={false} /></div>
+          <Texto fuerte>Nada que ver ni oler</Texto>
+        </Tarjeta>
+        <Tarjeta className="bg-[#e9edf0]">
+          <Rotulo>Con cámara OGI</Rotulo>
+          <div className="relative mt-2 min-h-0 flex-1"><ValvulaGas nube gris /></div>
+          <Texto fuerte>La fuga, y de dónde sale</Texto>
+        </Tarjeta>
+      </div>
+    </Marco>
+  );
+}
+
+function GasTdlas() {
+  return (
+    <Marco titulo="El láser confirma que es metano, a distancia" pie="Esquema: lectura del láser TDLAS sobre la línea, sin tocarla">
+      <div className="grid h-full grid-cols-[1.4fr_1fr] items-center gap-3 lg:gap-5">
+        <div className="relative h-full min-h-0">
+          <svg viewBox="0 0 120 80" className="absolute inset-0 h-full w-full" aria-hidden="true">
+            <rect x="0" y="62" width="120" height="3" fill={GRIS} />
+            <circle cx="16" cy="30" r="5" fill={NAVY} />
+            <rect x="11" y="36" width="10" height="18" rx="3" fill={NAVY} />
+            <rect x="12" y="54" width="3.5" height="8" fill={NAVY} />
+            <rect x="16.5" y="54" width="3.5" height="8" fill={NAVY} />
+            <rect x="20" y="38" width="10" height="5" rx="1.5" fill={NARANJA} />
+            <line x1="30" y1="40.5" x2="96" y2="30" stroke="#dc2f27" strokeWidth="1.2" strokeDasharray="3 2" />
+            <rect x="92" y="20" width="26" height="8" rx="2" fill={MID} />
+            <rect x="100" y="28" width="6" height="34" fill={MID} />
+            <circle cx="96" cy="30" r="3" fill="#dc2f27" />
+          </svg>
+        </div>
+        <div className="space-y-2">
+          <Tarjeta>
+            <Rotulo>Metano</Rotulo>
+            <p className="text-lg font-extrabold leading-none text-primary tabular-nums lg:text-3xl">1,250</p>
+            <p className="text-[10px] text-tertiary lg:text-xs">ppm·m</p>
+          </Tarjeta>
+          <Texto>Solo reacciona al metano: no lo confunde con vapor ni con otros gases.</Texto>
+        </div>
+      </div>
+    </Marco>
+  );
+}
+
+function GasPrioridad() {
+  const fugas = [
+    { n: "Brida de succión del compresor", t: 88, p: "Alta", c: "bg-red-600" },
+    { n: "Sello de válvula de venteo", t: 52, p: "Media", c: "bg-amber-500" },
+    { n: "Conexión roscada de instrumento", t: 18, p: "Baja", c: "bg-emerald-600" },
+  ];
+  return (
+    <Marco titulo="Cada fuga, con su tamaño y su prioridad" pie="Esquema: fugas ordenadas por tamaño y riesgo, datos simulados">
+      <ol className="flex h-full flex-col justify-center gap-2 lg:gap-3">
+        {fugas.map((f) => (
+          <li key={f.n} className="rounded-sm bg-white px-2.5 py-2 shadow-sm ring-1 ring-black/5 lg:px-4 lg:py-3">
+            <div className="flex items-center justify-between gap-2">
+              <span className="min-w-0 text-[10px] font-bold leading-tight text-primary lg:text-sm">{f.n}</span>
+              <span className={`shrink-0 rounded-full px-2 py-0.5 text-[9px] font-bold text-white lg:text-xs ${f.c}`}>{f.p}</span>
+            </div>
+            <div className="mt-1.5 h-1.5 rounded-full bg-gray-100 lg:h-2">
+              <div className="h-full rounded-full" style={{ width: `${f.t}%`, background: NARANJA }} />
+            </div>
+          </li>
+        ))}
+      </ol>
+    </Marco>
+  );
+}
+
+function GasCiclo() {
+  const pasos = [
+    { t: "Detectada", d: "Inspección de marzo" },
+    { t: "Reparada", d: "Cambio de empaque" },
+    { t: "Reinspeccionada", d: "Sin fuga" },
+    { t: "Cerrada", d: "Con evidencia" },
+  ];
+  return (
+    <Marco titulo="Del hallazgo al cierre, sin perder el rastro" pie="Esquema: la historia de una fuga, de la detección al cierre documentado">
+      <div className="flex h-full flex-col justify-center gap-3 lg:gap-5">
+        <p className="self-start rounded-full bg-primary px-3 py-1 text-[10px] font-extrabold text-white lg:text-sm">Fuga 014 · brida de succión</p>
+        <ol className="grid grid-cols-4 gap-1.5 lg:gap-3">
+          {pasos.map((p, i) => (
+            <li key={p.t} className="relative flex flex-col items-center text-center">
+              <span className={`flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-extrabold lg:h-10 lg:w-10 lg:text-sm ${i === 3 ? "bg-emerald-600 text-white" : "bg-white text-primary ring-2 ring-primary"}`}>
+                {i === 3 ? "✓" : i + 1}
+              </span>
+              <span className="mt-1.5 text-[9px] font-bold leading-tight text-primary lg:text-sm">{p.t}</span>
+              <span className="text-[9px] leading-tight text-tertiary lg:text-xs">{p.d}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </Marco>
+  );
+}
+
+function GasReporte() {
+  return (
+    <Marco titulo="Evidencia lista para la ASEA" pie="Esquema: el registro de cada trimestre, con su evidencia">
+      <div className="grid h-full grid-cols-[1.2fr_1fr] gap-3 lg:gap-5">
+        <Tarjeta>
+          <Rotulo>Evidencia por fuga</Rotulo>
+          <div className="mt-2 grid min-h-0 flex-1 grid-cols-3 gap-1.5">
+            {["Video OGI", "Lectura láser", "Reparación"].map((e) => (
+              <div key={e} className="flex flex-col items-center justify-end rounded-sm bg-[#e9edf0] p-1 pb-1.5">
+                <span className="text-center text-[8px] font-bold leading-tight text-primary lg:text-xs">{e}</span>
+              </div>
+            ))}
+          </div>
+        </Tarjeta>
+        <Tarjeta>
+          <Rotulo>Programa del año</Rotulo>
+          <ul className="mt-2 space-y-1 lg:space-y-2">
+            {["Trimestre 1", "Trimestre 2", "Trimestre 3", "Trimestre 4"].map((t, i) => (
+              <li key={t} className="flex items-center gap-1.5 text-[10px] font-semibold text-primary lg:text-sm">
+                {i < 3 ? <Sello bien /> : <span className="h-4 w-4 shrink-0 rounded-full ring-2 ring-gray-300 lg:h-5 lg:w-5" aria-hidden="true" />}
+                {t}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-auto pt-1 text-[9px] leading-tight text-tertiary lg:text-xs">Al cierre, el reporte anual</p>
+        </Tarjeta>
+      </div>
+    </Marco>
+  );
+}
+
 const MAPA: Record<string, () => React.ReactElement> = {
+  "gas-ogi": GasOgi,
+  "gas-tdlas": GasTdlas,
+  "gas-prioridad": GasPrioridad,
+  "gas-ciclo": GasCiclo,
+  "gas-reporte": GasReporte,
   "int-visita": IntVisita,
   "int-cruce": IntCruce,
   "int-pieza": IntPieza,
