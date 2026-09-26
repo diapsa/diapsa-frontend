@@ -504,6 +504,33 @@
       "Desgaste de bandas",
       "Excentricidad",
       "Soltura de base"
+    ],
+    "fotos": [
+      {
+        "nombre": "Motores eléctricos",
+        "src": "/images/equipos/motor.webp",
+        "alt": "Motor eléctrico trifásico"
+      },
+      {
+        "nombre": "Bombas centrífugas",
+        "src": "/images/equipos/bomba.webp",
+        "alt": "Bombas centrífugas en línea con sus motores"
+      },
+      {
+        "nombre": "Compresores",
+        "src": "/images/equipos/compresor.webp",
+        "alt": "Compresor industrial"
+      },
+      {
+        "nombre": "Ventiladores",
+        "src": "/images/equipos/ventilador.webp",
+        "alt": "Ventilador industrial con su motor"
+      },
+      {
+        "nombre": "Torres de enfriamiento",
+        "src": "/images/equipos/torre-enfriamiento.webp",
+        "alt": "Torre de enfriamiento industrial"
+      }
     ]
   },
   "flujoEncabezado": {

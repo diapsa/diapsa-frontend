@@ -288,6 +288,33 @@
       "Cavitación",
       "Excentricidad",
       "Pata coja"
+    ],
+    "fotos": [
+      {
+        "nombre": "Motores eléctricos",
+        "src": "/images/equipos/motor.webp",
+        "alt": "Motor eléctrico trifásico"
+      },
+      {
+        "nombre": "Bombas",
+        "src": "/images/equipos/bomba.webp",
+        "alt": "Bombas centrífugas en línea con sus motores"
+      },
+      {
+        "nombre": "Ventiladores y extractores",
+        "src": "/images/equipos/ventilador.webp",
+        "alt": "Ventilador industrial con su motor"
+      },
+      {
+        "nombre": "Compresores",
+        "src": "/images/equipos/compresor.webp",
+        "alt": "Compresor industrial"
+      },
+      {
+        "nombre": "Turbinas",
+        "src": "/images/equipos/turbina.webp",
+        "alt": "Rotor de una turbina de vapor en mantenimiento"
+      }
     ]
   }
 }

@@ -232,6 +232,33 @@
       "Desbalance dinámico",
       "Vibración alta por desbalance o desalineación",
       "Desgaste prematuro de rodamientos y sellos"
+    ],
+    "fotos": [
+      {
+        "nombre": "Motor con bomba",
+        "src": "/images/equipos/bomba.webp",
+        "alt": "Bombas centrífugas en línea con sus motores"
+      },
+      {
+        "nombre": "Motor con ventilador",
+        "src": "/images/equipos/ventilador.webp",
+        "alt": "Ventilador industrial con su motor"
+      },
+      {
+        "nombre": "Motor con compresor",
+        "src": "/images/equipos/compresor.webp",
+        "alt": "Compresor industrial"
+      },
+      {
+        "nombre": "Ventiladores e impulsores",
+        "src": "/images/equipos/impulsor.webp",
+        "alt": "Impulsores de bombas y ventiladores"
+      },
+      {
+        "nombre": "Rotores de motor",
+        "src": "/images/equipos/motor.webp",
+        "alt": "Motor eléctrico trifásico"
+      }
     ]
   }
 }

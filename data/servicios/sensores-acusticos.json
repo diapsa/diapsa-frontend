@@ -83,6 +83,33 @@
       "Contactos flojos",
       "Fallas en ventiladores y bombas de enfriamiento",
       "Fallas del cambiador de derivaciones"
+    ],
+    "fotos": [
+      {
+        "nombre": "Transformadores de potencia",
+        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
+        "alt": "Transformador de potencia"
+      },
+      {
+        "nombre": "Transformadores de distribución",
+        "src": "/images/servicios/dga-en-linea/transformador-distribucion.webp",
+        "alt": "Transformador de distribución"
+      },
+      {
+        "nombre": "Subestaciones encapsuladas (GIS)",
+        "src": "/images/equipos/gis.webp",
+        "alt": "Subestación encapsulada en gas"
+      },
+      {
+        "nombre": "Reactores",
+        "src": "/images/servicios/dga-en-linea/reactor.webp",
+        "alt": "Reactor en aceite"
+      },
+      {
+        "nombre": "Celdas de media tensión",
+        "src": "/images/equipos/tablero-mt.webp",
+        "alt": "Tableros de media tensión"
+      }
     ]
   },
   "certificacion": "Para equipo eléctrico crítico · Huella acústica con algoritmos e IA · Revisión por especialistas de DIAPSA",
