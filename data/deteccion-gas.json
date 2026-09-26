@@ -279,10 +279,6 @@
       "alt": "Fuga localizada en una línea de gas natural, con su tasa estimada en pantalla."
     },
     {
-      "src": "/images/deteccion-gas/campo/pantalla-metano.webp",
-      "alt": "Lectura de metano en ppm·m sobre el punto de la fuga."
-    },
-    {
       "src": "/images/deteccion-gas/campo/pantalla-codo.webp",
       "alt": "Fuga marcada en el codo de una línea de gas, vista en el equipo de detección."
     },
