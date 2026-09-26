@@ -2,9 +2,10 @@
   "hero": {
     "antetitulo": "Servicio especializado · Emisiones de metano",
     "titulo": "Detección y reparación de fugas de gas",
-    "texto": "Un programa aparte de cualquier ruta de mantenimiento: localizamos cada fuga con cámara acústica, confirmamos con su láser TDLAS que es metano, damos seguimiento hasta que queda cerrada y te entregamos la evidencia que pide la ASEA.",
+    "texto": "Un programa aparte de cualquier ruta de mantenimiento: localizamos cada fuga con cámara OGI o cámara acústica, confirmamos con láser TDLAS que es metano, damos seguimiento hasta que queda cerrada y te entregamos la evidencia que pide la ASEA.",
     "sellos": [
       "PPCIEM · ASEA",
+      "Cámara OGI",
       "Cámara acústica",
       "Láser TDLAS",
       "LDAR trimestral"
@@ -17,7 +18,7 @@
     "puntos": [
       {
         "titulo": "Instrumentos solo para gas",
-        "texto": "Cámara acústica con láser TDLAS integrado. No es un instrumento de una ruta predictiva."
+        "texto": "Cámara OGI, cámara acústica y láser TDLAS de metano. No son los instrumentos de una ruta predictiva."
       },
       {
         "titulo": "Método LDAR",
@@ -42,7 +43,7 @@
         {
           "k": "Instrumentos",
           "a": "Vibraciones, termografía, aceite",
-          "b": "Cámara acústica con láser de metano"
+          "b": "Cámara OGI, cámara acústica y láser de metano"
         },
         {
           "k": "Cada cuándo",
@@ -59,10 +60,21 @@
   },
   "tecnologia": {
     "etiqueta": "Tecnología",
-    "titulo": "Un equipo, dos tecnologías",
+    "titulo": "Dos formas de encontrar la fuga, una de confirmarla",
     "items": [
       {
-        "verbo": "Ubicar",
+        "verbo": "Ver",
+        "nombre": "Cámara OGI",
+        "grafico": "gas-ogi",
+        "texto": "La cámara de imagen óptica de gas hace visible la nube que sale del componente.",
+        "puntos": [
+          "Muestra la nube de gas y hacia dónde se mueve",
+          "Recorre la instalación completa en poco tiempo",
+          "Cada hallazgo queda grabado en video"
+        ]
+      },
+      {
+        "verbo": "Escuchar y ubicar",
         "nombre": "Cámara acústica",
         "grafico": "gas-acustica",
         "texto": "El gas que escapa a presión produce ultrasonido. La cámara lo ubica con su arreglo de micrófonos y lo marca en color sobre la imagen.",
@@ -83,7 +95,8 @@
           "Sin subir ni tocar el equipo"
         ]
       }
-    ]
+    ],
+    "texto": "Usamos la cámara que mejor se adapta a cada instalación. Con cualquiera de las dos, el láser TDLAS confirma que es metano."
   },
   "ciclo": {
     "etiqueta": "El método",
@@ -96,7 +109,7 @@
       },
       {
         "titulo": "Detección",
-        "texto": "Recorrido con la cámara acústica por cada componente."
+        "texto": "Recorrido con cámara OGI o cámara acústica por cada componente."
       },
       {
         "titulo": "Confirmación",
@@ -123,7 +136,7 @@
       "Trimestre 4"
     ],
     "actividades": [
-      "Inspección acústica",
+      "Inspección OGI o acústica",
       "Confirmación láser",
       "Reparación",
       "Reinspección"
@@ -239,8 +252,16 @@
       "answer": "Es el Programa para la Prevención y el Control Integral de las Emisiones de Metano que la ASEA pide a las instalaciones del sector hidrocarburos. Incluye la detección y reparación de fugas, sus registros y un reporte anual de cumplimiento."
     },
     {
+      "question": "¿Qué es una cámara OGI?",
+      "answer": "Es una cámara de imagen óptica de gas: hace visible la nube de gas que sale de un componente, que a simple vista no se ve. Permite recorrer una instalación completa y grabar cada fuga en video."
+    },
+    {
       "question": "¿Cómo encuentra una fuga la cámara acústica?",
       "answer": "El gas que escapa por una fuga a presión produce ultrasonido, aunque no se oiga. La cámara tiene un arreglo de micrófonos que ubica ese sonido y lo marca en color sobre la imagen, así se ve el punto exacto de la fuga a distancia y se estima su tasa."
+    },
+    {
+      "question": "¿Cuándo se usa la cámara OGI y cuándo la acústica?",
+      "answer": "Depende de la instalación y de lo que se necesita documentar. La OGI muestra la nube de gas en video; la acústica ubica la fuga por su sonido y estima su tasa. En los dos casos el láser TDLAS confirma que es metano, y te recomendamos la combinación adecuada al armar el programa."
     },
     {
       "question": "¿Para qué sirve el láser si ya se ve la fuga?",

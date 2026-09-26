@@ -1087,6 +1087,25 @@ function GasAcustica() {
   );
 }
 
+function GasOgi() {
+  return (
+    <Marco titulo="La cámara OGI ve la nube de gas" pie="Esquema: la misma válvula a simple vista y con cámara de imagen óptica de gas">
+      <div className="grid h-full grid-cols-2 gap-3 lg:gap-5">
+        <Tarjeta>
+          <Rotulo color="text-tertiary">A simple vista</Rotulo>
+          <div className="relative mt-2 min-h-0 flex-1"><ValvulaGas nube={false} gris={false} /></div>
+          <Texto fuerte>Nada que ver ni oler</Texto>
+        </Tarjeta>
+        <Tarjeta className="bg-[#e9edf0]">
+          <Rotulo>Con cámara OGI</Rotulo>
+          <div className="relative mt-2 min-h-0 flex-1"><ValvulaGas nube gris /></div>
+          <Texto fuerte>La nube, y de dónde sale</Texto>
+        </Tarjeta>
+      </div>
+    </Marco>
+  );
+}
+
 /* El punto de la fuga como lo marca la cámara acústica: un mapa de color */
 function MapaSonido() {
   return (
@@ -1221,6 +1240,7 @@ function GasReporte() {
 }
 
 const MAPA: Record<string, () => React.ReactElement> = {
+  "gas-ogi": GasOgi,
   "gas-acustica": GasAcustica,
   "gas-tdlas": GasTdlas,
   "gas-prioridad": GasPrioridad,

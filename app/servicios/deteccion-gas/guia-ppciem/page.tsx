@@ -63,14 +63,14 @@ const SECCIONES = [
     titulo: "Cómo funciona un programa LDAR trimestral",
     parrafos: [
       "LDAR viene del inglés leak detection and repair: detección y reparación de fugas. Es el método con el que se cumple la parte operativa del PPCIEM, y se repite cada trimestre.",
-      "Primero se levanta el inventario de componentes con su ubicación. Después se recorre la instalación con una cámara acústica, que ubica cada fuga por el ultrasonido que produce el gas al escapar. Cada fuga se confirma y se mide con un láser de metano (TDLAS), se clasifica por tamaño y riesgo, y se entrega un plan de reparación por prioridad. Al final, cada fuga reparada se vuelve a revisar antes de cerrarla.",
+      "Primero se levanta el inventario de componentes con su ubicación. Después se recorre la instalación con una cámara de imagen óptica de gas (OGI), que hace visible la nube de metano, o con una cámara acústica, que ubica cada fuga por el ultrasonido que produce el gas al escapar. Cada fuga se confirma y se mide con un láser de metano (TDLAS), se clasifica por tamaño y riesgo, y se entrega un plan de reparación por prioridad. Al final, cada fuga reparada se vuelve a revisar antes de cerrarla.",
     ],
   },
   {
     titulo: "Qué evidencia hay que guardar",
     parrafos: [
       "Lo que se revisa en una auditoría es la trazabilidad: que cada fuga tenga un número, la fecha en que se detectó, el componente y su ubicación, la lectura con la que se confirmó, la reparación que se hizo y la reinspección que comprueba que quedó cerrada.",
-      "La mejor evidencia es la que se genera en campo en el momento: la imagen de la cámara acústica, la lectura del láser y la foto de la reparación. Un registro sin evidencia, o una fuga reparada sin reinspección, es difícil de defender.",
+      "La mejor evidencia es la que se genera en campo en el momento: el video o la imagen de la cámara, la lectura del láser y la foto de la reparación. Un registro sin evidencia, o una fuga reparada sin reinspección, es difícil de defender.",
     ],
   },
   {
@@ -84,7 +84,7 @@ const SECCIONES = [
 const FAQ = [
   { question: "¿Cada cuánto se inspecciona en un programa LDAR?", answer: "El esquema más común es trimestral: cuatro inspecciones al año, cada una con su reparación y su reinspección. La frecuencia exacta depende de lo que establezca tu PPCIEM y de las disposiciones vigentes." },
   { question: "¿Qué pasa si no tengo PPCIEM?", answer: "Si tu instalación es del sector hidrocarburos, la ASEA puede pedirlo en cualquier inspección o auditoría. Lo recomendable es armarlo cuanto antes y empezar el primer ciclo de detección y reparación de fugas." },
-  { question: "¿Puedo hacer el LDAR con personal propio?", answer: "Sí, si cuentas con el equipo (cámara acústica, láser de metano) y con un método que genere evidencia trazable. Muchas empresas lo contratan con un tercero para no comprar el equipo y para tener un registro independiente." },
+  { question: "¿Puedo hacer el LDAR con personal propio?", answer: "Sí, si cuentas con el equipo (cámara OGI o acústica, láser de metano) y con un método que genere evidencia trazable. Muchas empresas lo contratan con un tercero para no comprar el equipo y para tener un registro independiente." },
 ];
 
 export default function GuiaPpciem() {
@@ -139,7 +139,7 @@ export default function GuiaPpciem() {
 
           <aside className="mt-12 rounded-sm bg-primary p-6 text-white lg:p-8">
             <p className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-secondary">Lo resolvemos</p>
-            <p className="mt-2 text-2xl font-extrabold leading-snug">Programa LDAR trimestral con cámara acústica y láser TDLAS</p>
+            <p className="mt-2 text-2xl font-extrabold leading-snug">Programa LDAR trimestral con cámara OGI o acústica y láser TDLAS</p>
             <p className="mt-2 text-justify text-base leading-relaxed text-white/75">Inspección, confirmación, plan de reparación, reinspección y el expediente de cada fuga, listo para tu reporte anual ante la ASEA.</p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link href="/servicios/deteccion-gas" className="inline-flex items-center justify-center rounded-xs bg-secondary px-6 py-3 font-bold text-primary transition-colors hover:bg-white">

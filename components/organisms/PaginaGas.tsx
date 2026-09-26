@@ -16,7 +16,7 @@ import { SITE_CONFIG } from "@/lib/constants";
  * con otro cliente (el sector hidrocarburos y su regulación), otra
  * tecnología y otro entregable, y la página tiene que transmitirlo desde el
  * primer vistazo. Por eso tiene su propia forma: apertura oscura con el
- * visor de la cámara acústica, sus dos tecnologías lado a lado, el ciclo LDAR
+ * visor de la cámara acústica, las dos cámaras y el láser lado a lado, el ciclo LDAR
  * como un circuito que se repite, el año regulatorio trimestre por
  * trimestre y el expediente de una fuga como entregable.
  *
@@ -228,9 +228,17 @@ export default function PaginaGas() {
         <div className="mx-auto max-w-7xl px-6">
           <Etiqueta clara>{tecnologia.etiqueta}</Etiqueta>
           <h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-tight lg:text-5xl">{tecnologia.titulo}</h2>
+          {tecnologia.texto && <p className="mt-4 max-w-3xl text-justify text-lg leading-relaxed text-white/75">{tecnologia.texto}</p>}
+          {/* Las dos cámaras lado a lado; el láser, que confirma lo que
+              encuentra cualquiera de ellas, a lo ancho debajo */}
           <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
             {tecnologia.items.map((t, i) => (
-              <article key={t.nombre} className="overflow-hidden rounded-sm bg-white/[0.04] ring-1 ring-white/10">
+              <article
+                key={t.nombre}
+                className={`overflow-hidden rounded-sm bg-white/[0.04] ring-1 ring-white/10 ${
+                  i === 2 ? "lg:col-span-2 lg:grid lg:grid-cols-2 lg:items-center" : ""
+                }`}
+              >
                 <div className="aspect-[4/3] bg-white">
                   <GraficoPunto clave={t.grafico} />
                 </div>
