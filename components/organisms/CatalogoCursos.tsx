@@ -3,6 +3,7 @@ import Link from "next/link";
 import Antetitulo from "../atoms/Antetitulo";
 import type { Course } from "@/types/course";
 import { FORMATOS, TECNICAS, diaMes, extraDe, fechaGrupo, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
+import menuCursos from "@/data/menu-cursos.json";
 
 /**
  * CatalogoCursos
@@ -64,7 +65,20 @@ function Tarjeta({ curso }: { curso: Course }) {
   );
 }
 
-export default function CatalogoCursos({ cursos }: { cursos: Course[] }) {
+/* Si el CMS no responde, el catálogo se arma con los cursos del menú, que
+   viven en el sitio: nombre, una línea y su enlace. Así la página nunca
+   queda vacía. */
+function respaldo(): Course[] {
+  return (menuCursos as { items: { label: string; href: string; descripcion: string }[] }[]).flatMap((col) =>
+    col.items.map((i) => {
+      const slug = i.href.replace("/cursos/", "");
+      return { id: slug, slug, name: i.label, description: i.descripcion, url_img: "", alt_img: "", reference_norm: "" } as unknown as Course;
+    })
+  );
+}
+
+export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] }) {
+  const cursos = delCms.length ? delCms : respaldo();
   const porSlug = new Map(cursos.map((c) => [c.slug, c]));
   const grupos = proximosGrupos().filter((g) => porSlug.has(g.curso));
   const ordenar = (a: Course, b: Course) => ORDEN.indexOf(extraDe(a.slug)?.formato ?? "gestion") - ORDEN.indexOf(extraDe(b.slug)?.formato ?? "gestion");
