@@ -48,7 +48,7 @@ export default function Cobertura({ cobertura, paso }: Props) {
         {/* Si el servicio es obligatorio por norma, eso va primero: es la
             razón por la que aplica, antes que el tipo de equipo. */}
         {cobertura.norma && (
-          <div className="mx-auto mb-12 max-w-5xl rounded-sm border-l-4 border-secondary bg-white/[0.06] p-5 ring-1 ring-white/10 lg:p-8">
+          <div className={`mx-auto max-w-5xl rounded-sm border-l-4 border-secondary bg-white/[0.06] p-5 ring-1 ring-white/10 lg:p-8 ${cobertura.fotos?.length || cobertura.equipos?.length || cobertura.fallas?.length ? "mb-12" : ""}`}>
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-10">
               <div>
                 <span className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-primary">
@@ -106,13 +106,13 @@ export default function Cobertura({ cobertura, paso }: Props) {
         {cobertura.equipos && cobertura.equipos.length > 0 ? (
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
             <Lista titulo={cobertura.equiposTitulo ?? "Equipos"} items={cobertura.equipos} />
-            <Lista titulo={cobertura.fallasTitulo} items={cobertura.fallas} />
+            <Lista titulo={cobertura.fallasTitulo ?? ""} items={cobertura.fallas ?? []} />
           </div>
-        ) : (
+        ) : cobertura.fallas && cobertura.fallas.length > 0 ? (
           <div className="mx-auto max-w-4xl">
-            <Lista titulo={cobertura.fallasTitulo} items={cobertura.fallas} />
+            <Lista titulo={cobertura.fallasTitulo ?? ""} items={cobertura.fallas} />
           </div>
-        )}
+        ) : null}
       </div>
     </section>
   );

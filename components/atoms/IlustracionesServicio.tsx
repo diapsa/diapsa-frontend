@@ -4,8 +4,8 @@ import { GRIS, MID, Marco, NARANJA, NAVY, Trafo } from "./IlustracionDga";
  * IlustracionesServicio
  * Ilustraciones de las pestañas "¿Qué nos hace diferentes?" de cámaras
  * térmicas (cam-), sensores de huella acústica (hue-), análisis de aceite
- * (ace-), sensores de vibración (sen-) y tierras físicas (tie-), en lugar de
- * fotos.
+ * (ace-), sensores de vibración (sen-), tierras físicas (tie-) y arco eléctrico
+ * (arc-), en lugar de fotos.
  *
  * Por qué existen: esas pestañas repetían fotos de la galería de la misma
  * página (aceite y acústicos) o fotos de termografía con cámara de mano que
@@ -744,7 +744,159 @@ function TieStps() {
   );
 }
 
+/* ============================== ARCO ELÉCTRICO ============================== */
+
+const NODOS_UNIFILAR = [
+  { x: 50, y: 30, n: "Interruptor principal", e: "5.9", alto: true },
+  { x: 18, y: 72, n: "Tablero de proceso", e: "0.7", alto: false },
+  { x: 50, y: 72, n: "CCM", e: "0.9", alto: false },
+  { x: 82, y: 72, n: "Tablero de servicios", e: "0.5", alto: false },
+];
+
+function ArcUnifilar() {
+  return (
+    <Marco titulo="Se modela la planta completa" pie="Esquema: diagrama unifilar con la energía de cada barra, en cal/cm²">
+      <div className="relative h-full">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full" aria-hidden="true">
+          <line x1="50" y1="2" x2="50" y2="22" stroke={NAVY} strokeWidth="2" vectorEffect="non-scaling-stroke" />
+          <line x1="18" y1="50" x2="82" y2="50" stroke={NAVY} strokeWidth="2" vectorEffect="non-scaling-stroke" />
+          <line x1="50" y1="38" x2="50" y2="50" stroke={NAVY} strokeWidth="2" vectorEffect="non-scaling-stroke" />
+          {[18, 50, 82].map((x) => <line key={x} x1={x} y1="50" x2={x} y2="64" stroke={NAVY} strokeWidth="2" vectorEffect="non-scaling-stroke" />)}
+        </svg>
+        {NODOS_UNIFILAR.map((n) => (
+          <div key={n.n} className="absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1" style={{ left: `${n.x}%`, top: `${n.y}%` }}>
+            <span className={`rounded-sm px-2 py-1 text-[10px] font-extrabold text-white lg:text-sm ${n.alto ? "bg-red-600" : "bg-emerald-600"}`}>{n.e}</span>
+            <span className="max-w-[6rem] text-center text-[9px] font-bold leading-tight text-primary lg:max-w-[8rem] lg:text-xs">{n.n}</span>
+          </div>
+        ))}
+        <span className="absolute left-1/2 top-0 -translate-x-1/2 rounded-full bg-white px-2 py-0.5 text-[9px] font-bold text-tertiary ring-1 ring-black/10 lg:text-xs">Acometida y transformador</span>
+      </div>
+    </Marco>
+  );
+}
+
+function ArcCalculo() {
+  const entradas = [
+    { t: "Corriente de falla", d: "La que puede dar la red en esa barra" },
+    { t: "Tiempo de disparo", d: "Lo que tarda la protección en abrir" },
+    { t: "Distancia de trabajo", d: "Dónde queda la persona" },
+  ];
+  return (
+    <Marco titulo="Energía incidente conforme a IEEE 1584" pie="Esquema: los tres datos que deciden la energía de un arco">
+      <div className="grid h-full grid-cols-[1.3fr_auto_1fr] items-center gap-2 lg:gap-4">
+        <div className="space-y-1.5 sm:space-y-2">
+          {entradas.map((e) => (
+            <Tarjeta key={e.t} className="!p-2 sm:!p-2.5 lg:!p-4">
+              <Texto fuerte>{e.t}</Texto>
+              <p className="hidden text-[10px] leading-snug text-tertiary sm:block lg:text-xs">{e.d}</p>
+            </Tarjeta>
+          ))}
+        </div>
+        <svg viewBox="0 0 40 16" className="w-7 lg:w-10" aria-hidden="true"><path d="M2 8h32m-7-6 7 6-7 6" fill="none" stroke={NARANJA} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        <div className="rounded-sm bg-primary p-3 text-center text-white shadow-lg lg:p-5">
+          <p className="text-[9px] font-bold uppercase tracking-wider text-secondary lg:text-xs">Energía incidente</p>
+          <p className="mt-1 text-2xl font-extrabold tabular-nums lg:text-4xl">5.9</p>
+          <p className="text-[10px] text-white/70 lg:text-sm">cal/cm²</p>
+        </div>
+      </div>
+    </Marco>
+  );
+}
+
+const CATEGORIAS = [
+  { n: "Ropa normal", max: 1.2, c: "#d1d5db" },
+  { n: "Categoría 1", max: 4, c: "#6ee7b7" },
+  { n: "Categoría 2", max: 8, c: "#fcd34d" },
+  { n: "Categoría 3", max: 25, c: "#fb923c" },
+  { n: "Categoría 4", max: 40, c: "#ef4444" },
+];
+
+function ArcEpp() {
+  return (
+    <Marco titulo="La protección que pide cada tablero" pie="Esquema: categorías de NFPA 70E según la energía incidente, en cal/cm²">
+      <div className="flex h-full flex-col justify-center gap-3 lg:gap-4">
+        <div className="grid grid-cols-5 gap-1">
+          {CATEGORIAS.map((c, i) => (
+            <div key={c.n} className="flex flex-col items-center gap-1">
+              <div className={`flex h-12 w-full items-end justify-center rounded-sm pb-1 text-[9px] font-extrabold text-primary lg:h-16 lg:text-xs ${i === 2 ? "ring-4 ring-primary" : ""}`} style={{ background: c.c }}>
+                hasta {c.max}
+              </div>
+              <span className="text-center text-[9px] font-bold leading-tight text-primary lg:text-xs">{c.n}</span>
+            </div>
+          ))}
+        </div>
+        <Tarjeta>
+          <Texto fuerte>Interruptor principal: 5.9 cal/cm² → Categoría 2</Texto>
+          <p className="mt-1 text-[10px] leading-snug text-tertiary lg:text-xs">Por arriba de 1.2 cal/cm² la ropa normal se enciende: sin la categoría correcta, abrir ese tablero es una quemadura.</p>
+        </Tarjeta>
+      </div>
+    </Marco>
+  );
+}
+
+function ArcFronteras() {
+  const anillos = [
+    { r: 44, n: "Frontera de arco", c: "#fde7bd" },
+    { r: 31, n: "Aproximación limitada", c: "#fbcf7d" },
+    { r: 18, n: "Aproximación restringida", c: "#f6a24b" },
+  ];
+  return (
+    <Marco titulo="Hasta dónde se puede acercar cada persona" pie="Esquema: fronteras de NFPA 70E alrededor de un tablero, vista de planta">
+      <div className="grid h-full grid-cols-[1.1fr_1fr] items-center gap-3 lg:gap-6">
+        <div className="relative h-full">
+          <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full" aria-hidden="true">
+            {anillos.map((a) => <circle key={a.r} cx="50" cy="50" r={a.r} fill={a.c} stroke="#fff" strokeWidth="1" />)}
+            <rect x="42" y="44" width="16" height="12" rx="1.5" fill={NAVY} />
+          </svg>
+        </div>
+        <ul className="space-y-2 lg:space-y-3">
+          {anillos.map((a) => (
+            <li key={a.n} className="flex items-center gap-2 text-[10px] font-bold leading-tight text-primary lg:text-sm">
+              <span className="h-3 w-3 shrink-0 rounded-full" style={{ background: a.c }} />
+              {a.n}
+            </li>
+          ))}
+          <li className="pt-1 text-[10px] leading-snug text-tertiary lg:text-xs">Cada una con su distancia, calculada para ese tablero.</li>
+        </ul>
+      </div>
+    </Marco>
+  );
+}
+
+function ArcReducir() {
+  return (
+    <Marco titulo="No solo se etiqueta: se baja el riesgo" pie="Esquema: el mismo tablero antes y después de ajustar su protección">
+      <div className="grid h-full grid-cols-[1fr_1.2fr] items-stretch gap-3 lg:gap-6">
+        <div className="flex items-end gap-3 border-b border-primary/30 pt-4 lg:gap-5">
+          <div className="flex h-full flex-1 flex-col justify-end gap-1">
+            <span className="text-center text-[10px] font-bold text-red-700 lg:text-xs">Categoría 2</span>
+            <span className="rounded-t-sm bg-amber-400" style={{ height: "74%" }} />
+          </div>
+          <div className="flex h-full flex-1 flex-col justify-end gap-1">
+            <span className="text-center text-[10px] font-bold text-emerald-700 lg:text-xs">Categoría 1</span>
+            <span className="rounded-t-sm bg-emerald-400" style={{ height: "40%" }} />
+          </div>
+        </div>
+        <ul className="flex flex-col justify-center gap-2">
+          {[
+            ["Ajustar la protección", "para que dispare más rápido: menos tiempo de arco, menos energía"],
+            ["Modo de mantenimiento", "en interruptores que lo permiten"],
+            ["No intervenir energizado", "cuando la energía no se puede bajar"],
+          ].map(([t, d]) => (
+            <li key={t} className="text-[10px] leading-snug text-primary lg:text-sm"><span className="font-bold">{t}</span> {d}</li>
+          ))}
+        </ul>
+      </div>
+    </Marco>
+  );
+}
+
 const MAPA: Record<string, () => React.ReactElement> = {
+  "arc-unifilar": ArcUnifilar,
+  "arc-calculo": ArcCalculo,
+  "arc-epp": ArcEpp,
+  "arc-fronteras": ArcFronteras,
+  "arc-reducir": ArcReducir,
   "tie-metodo": TieMetodo,
   "tie-continuidad": TieContinuidad,
   "tie-limite": TieLimite,
