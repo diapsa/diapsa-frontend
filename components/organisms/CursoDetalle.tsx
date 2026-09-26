@@ -186,15 +186,15 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
 
       {/* La misma técnica, en sus otros formatos */}
       {relacionados.length > 0 && (
-        <section className="w-full bg-gray-50 py-12 lg:py-16">
+        <section className="w-full bg-primary py-12 text-white lg:py-16">
           <div className="mx-auto max-w-7xl px-6">
-            <Antetitulo>{tecnica ? tecnica.nombre : "Más cursos"}</Antetitulo>
-            <h2 className="mt-2 text-2xl font-extrabold leading-snug text-primary lg:text-3xl">Sigue con la misma técnica</h2>
+            <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">{tecnica ? tecnica.nombre : "Más cursos"}</p>
+            <h2 className="mt-2 text-2xl font-extrabold leading-snug lg:text-3xl">Sigue con la misma técnica</h2>
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {relacionados.map((r) => {
                 const rx = extraDe(r.slug);
                 return (
-                  <Link key={r.slug} href={`/cursos/${r.slug}`} className="group rounded-sm bg-white p-5 ring-1 ring-black/5 transition-shadow hover:shadow-lg">
+                  <Link key={r.slug} href={`/cursos/${r.slug}`} className="group rounded-sm border-t-4 border-secondary bg-white p-5 shadow-lg transition-transform hover:-translate-y-1">
                     {rx && <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">{FORMATOS[rx.formato].nombre}</p>}
                     <p className="mt-1 font-extrabold leading-snug text-primary">{r.name}</p>
                     <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-tertiary">{r.description}</p>

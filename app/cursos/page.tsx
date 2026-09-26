@@ -37,10 +37,10 @@ export default async function CursosPage() {
       <CatalogoCursos cursos={courses} />
 
       {/* ¿Capacitar a tu equipo? El formulario ya llega con el asunto de cursos */}
-      <section id="contacto" className="w-full bg-white">
-        <div className="mx-auto max-w-4xl px-6 pt-12 text-center lg:pt-16">
+      <section id="contacto" className="w-full">
+        <div className="w-full bg-secondary px-6 py-10 text-center lg:py-12">
           <h2 className="text-3xl font-extrabold leading-tight text-primary lg:text-4xl">¿Quieres capacitar a tu equipo?</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-justify text-lg leading-relaxed text-tertiary">
+          <p className="mx-auto mt-3 max-w-2xl text-justify text-lg leading-relaxed text-primary/80">
             Dinos qué cursos te interesan y cuántas personas son, y te respondemos con fechas y la propuesta.
           </p>
         </div>
