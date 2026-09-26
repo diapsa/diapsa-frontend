@@ -154,46 +154,31 @@
         "id": "termografos",
         "title": "Lo diseñan termógrafos, no instaladores",
         "content": "Qué punto vigilar, desde qué ángulo, con qué lente y qué emisividad: lo decide quien lleva años leyendo termogramas en planta. Una cámara mal apuntada mide lo que no importa.",
-        "foto": {
-          "src": "/images/servicios/termografia-infrarroja/campo-06.webp",
-          "alt": "Termógrafo de DIAPSA inspeccionando interruptores dentro de un tablero"
-        }
+        "grafico": "cam-termografos"
       },
       {
         "id": "ia",
         "title": "Parámetros con algoritmos e IA",
         "content": "Los algoritmos aprenden cómo se comporta cada punto según su carga, la hora y la temperatura ambiente. Así distinguen una tarde de calor de una conexión que se está aflojando, y avisan por el patrón, no solo por el número.",
-        "foto": {
-          "src": "/images/servicios/termografia-infrarroja/campo-31.webp",
-          "alt": "Termograma de una conexión con su temperatura máxima marcada"
-        }
+        "grafico": "cam-ia"
       },
       {
         "id": "alcance",
         "title": "Solo en los equipos que lo justifican",
         "content": "No se llena la planta de cámaras. Se vigilan los equipos críticos y los puntos donde es indispensable medir sin parar: tableros principales, subestaciones, centros de datos, hornos, bandas y almacenes con riesgo de incendio. El resto sigue en ruta.",
-        "foto": {
-          "src": "/images/servicios/termografia-infrarroja/campo-36.webp",
-          "alt": "Inspección termográfica en una nave de proceso"
-        }
+        "grafico": "cam-alcance"
       },
       {
         "id": "monitoreo",
         "title": "Monitoreo DIAPSA o directo a ti",
         "content": "Si lo quieres, un termógrafo de DIAPSA revisa cada alerta y te llega con el diagnóstico y la acción. Si tienes cuarto de control, las alertas van directo a tu sistema. Puedes tener las dos.",
-        "foto": {
-          "src": "/images/servicios/termografia-infrarroja/campo-68.webp",
-          "alt": "Termograma con el punto caliente marcado en la pantalla de la cámara"
-        }
+        "grafico": "cam-monitoreo"
       },
       {
         "id": "camara",
         "title": "La cámara que pide el proyecto",
         "content": "No vendemos una marca. Se elige la resolución, el lente y la protección que pide cada punto: un tablero interior no necesita lo mismo que un horno o un patio de materiales.",
-        "foto": {
-          "src": "/images/servicios/termografia-infrarroja/campo-21.webp",
-          "alt": "Cámara térmica apuntando a un equipo eléctrico tras la reja de protección"
-        }
+        "grafico": "cam-camara"
       }
     ]
   },

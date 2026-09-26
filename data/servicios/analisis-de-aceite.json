@@ -484,46 +484,31 @@
         "id": "analistas",
         "title": "Interpretado por analistas certificados",
         "content": "Un laboratorio entrega números; un analista certificado ICML MLA III dice qué significan para tu equipo, contra sus límites y contra la muestra anterior, y qué hacer.",
-        "foto": {
-          "src": "/images/servicios/analisis-de-aceite/toma-de-muestra.webp",
-          "alt": "Analista de DIAPSA tomando una muestra de aceite con el equipo en operación"
-        }
+        "grafico": "ace-analistas"
       },
       {
         "id": "muestra",
         "title": "Una muestra bien tomada",
         "content": "Del mismo punto, con el equipo operando y con el mismo procedimiento cada vez. Una muestra mal tomada da un resultado que no sirve, por bueno que sea el laboratorio.",
-        "foto": {
-          "src": "/images/servicios/analisis-de-aceite/muestreo-cabezal.webp",
-          "alt": "Toma de muestra en el cabezal de un equipo en operación"
-        }
+        "grafico": "ace-muestra"
       },
       {
         "id": "laboratorio",
         "title": "Laboratorio acreditado",
         "content": "Las pruebas se corren en laboratorio acreditado ISO/IEC 17025: espectrometría, viscosidad, agua, oxidación y conteo de partículas, con resultados comparables muestra tras muestra.",
-        "foto": {
-          "src": "/images/servicios/analisis-de-aceite/muestreo-motor-gas.webp",
-          "alt": "Muestreo de aceite en un motor de combustión"
-        }
+        "grafico": "ace-laboratorio"
       },
       {
         "id": "tendencia",
         "title": "La tendencia de cada equipo",
         "content": "Cada muestra queda en IDAP junto a las anteriores del mismo equipo. Lo que dice si algo empeora no es un valor suelto, es la serie.",
-        "foto": {
-          "src": "/images/servicios/analisis-de-aceite/muestreo-motor-vertical.webp",
-          "alt": "Muestreo de aceite en un motor vertical"
-        }
+        "grafico": "ace-tendencia"
       },
       {
         "id": "transformadores",
         "title": "También transformadores",
         "content": "En transformadores, la cromatografía de gases disueltos avisa de fallas eléctricas internas. La muestra se toma con jeringa, con el equipo a plena carga y con el equipo de protección que exige la tarea.",
-        "foto": {
-          "src": "/images/servicios/analisis-de-aceite/dga-jeringa.webp",
-          "alt": "Toma de muestra con jeringa en un transformador"
-        }
+        "grafico": "ace-transformadores"
       }
     ]
   },
