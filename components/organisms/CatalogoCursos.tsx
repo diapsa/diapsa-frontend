@@ -86,35 +86,51 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
 
   return (
     <>
-      {/* Presentación */}
+      {/* Presentación: texto y acciones a la izquierda, la escena a la derecha */}
       <section className="w-full bg-white py-12 lg:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
           <div>
             <Antetitulo>Capacitación</Antetitulo>
-            <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">Aprende la técnica con quien la aplica todos los días</h2>
+            <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">Aprende la técnica con quien la aplica todos los días</h2>
             <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">
               Nuestros instructores diagnostican maquinaria real en planta, y eso es lo que enseñan: casos de equipos inspeccionados, no ejemplos de libro.
               Cada técnica tiene tres formas de aprenderla, de la formación completa a la certificación por categoría.
             </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href="#vibraciones" className="inline-flex items-center justify-center rounded-xs bg-primary px-7 py-3.5 font-bold text-white transition-colors hover:bg-secondary hover:text-primary">
+                Ver los cursos
+              </a>
+              <a href="#contacto" className="inline-flex items-center justify-center rounded-xs border-2 border-primary px-7 py-3 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                Capacitar a mi equipo
+              </a>
+            </div>
           </div>
-          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
-            {[
-              { v: "+3,000", t: "especialistas capacitados en más de 15 años, entre 200 y 300 cada año" },
-              { v: String(cursos.length || 15), t: "cursos en vibraciones, termografía, ultrasonido y confiabilidad" },
-              { v: "ISO 18436", t: "cursos de certificación bajo lineamientos ISO 18436 en vibraciones y termografía" },
-            ].map((x) => (
-              <li key={x.t} className="flex flex-col gap-1 rounded-sm bg-gray-50 px-5 py-4 ring-1 ring-black/5 lg:flex-row lg:items-baseline lg:gap-4">
-                <span className="shrink-0 text-2xl font-extrabold text-primary">{x.v}</span>
-                <span className="text-sm leading-snug text-tertiary">{x.t}</span>
-              </li>
-            ))}
-          </ul>
+          {/* Lugar de la escena 3D; mientras llega, una sesión real de DIAPSA */}
+          <figure className="relative aspect-[4/3] overflow-hidden rounded-md shadow-xl ring-1 ring-black/10">
+            <Image src="/images/gallery/capacitacion-img-2.jpg" alt="Instructor de DIAPSA con participantes practicando alineación en un curso" fill sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" priority />
+          </figure>
         </div>
+      </section>
+
+      {/* Los datos, en una franja */}
+      <section className="w-full bg-primary text-white">
+        <ul className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-white/10 px-6 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          {[
+            { v: "+3,000", t: "especialistas capacitados en más de 15 años, entre 200 y 300 cada año" },
+            { v: String(cursos.length || 15), t: "cursos en vibraciones, termografía, ultrasonido y confiabilidad" },
+            { v: "ISO 18436", t: "cursos de certificación bajo sus lineamientos en vibraciones y termografía" },
+          ].map((x) => (
+            <li key={x.t} className="px-2 py-7 sm:px-8 sm:first:pl-0 lg:py-10">
+              <p className="text-4xl font-extrabold leading-none text-secondary lg:text-5xl">{x.v}</p>
+              <p className="mt-3 text-sm leading-snug text-white/75 lg:text-base">{x.t}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Grupos con fecha */}
       {grupos.length > 0 && (
-        <section className="w-full bg-primary py-12 text-white lg:py-16">
+        <section className="w-full bg-[#00202f] py-12 text-white lg:py-16">
           <div className="mx-auto max-w-7xl px-6">
             <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">Inscripciones abiertas</p>
             <h2 className="mt-2 text-3xl font-extrabold leading-tight lg:text-4xl">Próximos grupos</h2>
