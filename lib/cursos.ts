@@ -43,10 +43,14 @@ const DATOS = extra as unknown as {
   cursos: Record<string, Extra>;
   grupos: Grupo[];
   galerias: Record<string, FotoCurso[]>;
+  bloques: Bloque[];
 };
+
+export type Bloque = { id: string; formatos: FormatoCurso[]; etiqueta: string; titulo: string; texto: string; puntos: { k: string; v: string }[] };
 
 export const TECNICAS = DATOS.tecnicas;
 export const FORMATOS = DATOS.formatos;
+export const BLOQUES = DATOS.bloques ?? [];
 
 export function extraDe(slug: string): Extra | null {
   return DATOS.cursos[slug] ?? null;

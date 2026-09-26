@@ -476,5 +476,100 @@
         "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
       }
     ]
-  }
+  },
+  "bloques": [
+    {
+      "id": "certificaciones",
+      "formatos": [
+        "certificacion"
+      ],
+      "etiqueta": "Validación por categoría",
+      "titulo": "Certificaciones",
+      "texto": "Te preparas y te certificas por categoría, bajo los lineamientos de la ISO 18436, en la técnica que ya aplicas en tu planta.",
+      "puntos": [
+        {
+          "k": "Para quién",
+          "v": "Quien ya mide en campo y necesita validar su competencia."
+        },
+        {
+          "k": "Cómo",
+          "v": "Teórico y práctico, con equipos inspeccionados y casos de los participantes."
+        },
+        {
+          "k": "Qué obtienes",
+          "v": "Tu certificación como Categoría I o Categoría II."
+        }
+      ]
+    },
+    {
+      "id": "talleres",
+      "formatos": [
+        "practica"
+      ],
+      "etiqueta": "100% práctico",
+      "titulo": "Talleres prácticos",
+      "texto": "Sesiones intensivas sobre lo que ya sabes: casos reales y la metodología de instructores con más de 20 años en campo.",
+      "puntos": [
+        {
+          "k": "Para quién",
+          "v": "Quien ya tiene bases de la técnica y quiere dominarla."
+        },
+        {
+          "k": "Cómo",
+          "v": "Totalmente prácticos, con casos de tu propia planta."
+        },
+        {
+          "k": "Qué obtienes",
+          "v": "Un método ordenado para medir, analizar y reportar."
+        }
+      ]
+    },
+    {
+      "id": "formacion",
+      "formatos": [
+        "formacion"
+      ],
+      "etiqueta": "De cero a especialista",
+      "titulo": "Formación técnica",
+      "texto": "La formación integral del especialista: aprendes la técnica y el equipo, practicas en pantalla y después en sistemas instalados.",
+      "puntos": [
+        {
+          "k": "Para quién",
+          "v": "Quien empieza en la técnica o forma a su equipo desde la base."
+        },
+        {
+          "k": "Cómo",
+          "v": "Híbrido, con práctica en las instalaciones del cliente."
+        },
+        {
+          "k": "Qué obtienes",
+          "v": "Lo necesario para certificarte como Categoría I."
+        }
+      ]
+    },
+    {
+      "id": "especializados",
+      "formatos": [
+        "gestion",
+        "especialidad"
+      ],
+      "etiqueta": "Gestión y especialidades",
+      "titulo": "Cursos especializados y ejecutivos",
+      "texto": "Para quien dirige el mantenimiento y para aplicaciones concretas: programas de monitoreo, confiabilidad y plantas fotovoltaicas.",
+      "puntos": [
+        {
+          "k": "Para quién",
+          "v": "Jefes, gerentes y especialistas con un reto concreto."
+        },
+        {
+          "k": "Cómo",
+          "v": "Presencial, en línea o ejecutivo, según el curso."
+        },
+        {
+          "k": "Qué obtienes",
+          "v": "Herramientas para decidir y ordenar el programa."
+        }
+      ]
+    }
+  ]
 }

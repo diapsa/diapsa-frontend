@@ -1,7 +1,7 @@
 [
     {
         "titulo": "Vibraciones mecánicas",
-        "href": "/cursos#vibraciones",
+        "href": "/cursos#catalogo",
         "items": [
             {
                 "label": "Formación técnica",
@@ -25,7 +25,7 @@
     },
     {
         "titulo": "Termografía infrarroja",
-        "href": "/cursos#termografia",
+        "href": "/cursos#catalogo",
         "items": [
             {
                 "label": "Formación técnica",
@@ -55,7 +55,7 @@
     },
     {
         "titulo": "Ultrasonido pasivo",
-        "href": "/cursos#ultrasonido",
+        "href": "/cursos#catalogo",
         "items": [
             {
                 "label": "Formación técnica",
@@ -79,7 +79,7 @@
     },
     {
         "titulo": "Confiabilidad y gestión",
-        "href": "/cursos#confiabilidad",
+        "href": "/cursos#catalogo",
         "items": [
             {
                 "label": "Diplomado en Confiabilidad",
