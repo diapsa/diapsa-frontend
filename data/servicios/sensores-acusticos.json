@@ -22,13 +22,13 @@
   ],
   "header": {
     "title": "Sensores Acústicos",
-    "subtitle": "Huella acústica con IA para transformadores y subestaciones: escucha las 24 horas lo que anuncia una falla eléctrica",
+    "subtitle": "Huella acústica con IA para transformadores, subestaciones y centros de datos: escucha las 24 horas lo que anuncia una falla eléctrica",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Monitoreo continuo con sensores de huella acústica para transformadores, subestaciones encapsuladas y equipo de media y alta tensión. La IA aprende cómo suena cada equipo sano y detecta descargas parciales, aflojamiento de núcleo y devanados y fallas de enfriamiento.",
+  "seoDescription": "Monitoreo continuo con sensores de huella acústica para transformadores, subestaciones encapsuladas, centros de datos y equipo de media y alta tensión. La IA aprende cómo suena cada equipo sano y detecta descargas parciales, aflojamiento de núcleo y devanados y fallas de enfriamiento.",
   "content": {
     "title": "Un transformador cambia su sonido antes de fallar",
-    "subtitle": "Una descarga parcial, un núcleo que se afloja o un ventilador de enfriamiento que falla cambian el sonido del equipo mucho antes de dar otra señal. El sensor de huella acústica escucha tus transformadores y subestaciones todo el día, y los algoritmos e IA reconocen el sonido de la falla.",
+    "subtitle": "Una descarga parcial, un núcleo que se afloja o un ventilador de enfriamiento que falla cambian el sonido del equipo mucho antes de dar otra señal. El sensor de huella acústica escucha tus transformadores, subestaciones y la infraestructura eléctrica de tu centro de datos todo el día, y los algoritmos e IA reconocen el sonido de la falla.",
     "image": "/images/servicios/sensores-acusticos/campo-08.webp",
     "items": [
       {
@@ -72,7 +72,8 @@
       "Transformadores de distribución",
       "Subestaciones encapsuladas (GIS)",
       "Reactores",
-      "Celdas de media tensión"
+      "Celdas de media tensión",
+      "Centros de datos"
     ],
     "fallasTitulo": "Fallas que detecta",
     "fallas": [
@@ -82,33 +83,33 @@
       "Partículas libres en GIS",
       "Contactos flojos",
       "Fallas en ventiladores y bombas de enfriamiento",
-      "Fallas del cambiador de derivaciones"
+      "Fallas del cambiador de derivaciones",
+      "Descargas en la infraestructura eléctrica del centro de datos"
     ],
     "fotos": [
       {
         "nombre": "Transformadores de potencia",
-        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
-        "alt": "Transformador de potencia"
+        "ilustracion": "transformador"
       },
       {
         "nombre": "Transformadores de distribución",
-        "src": "/images/servicios/dga-en-linea/transformador-distribucion.webp",
-        "alt": "Transformador de distribución"
+        "ilustracion": "transformador-dist"
       },
       {
         "nombre": "Subestaciones encapsuladas (GIS)",
-        "src": "/images/equipos/gis.webp",
-        "alt": "Subestación encapsulada en gas"
+        "ilustracion": "gis"
       },
       {
         "nombre": "Reactores",
-        "src": "/images/servicios/dga-en-linea/reactor.webp",
-        "alt": "Reactor en aceite"
+        "ilustracion": "reactor"
       },
       {
         "nombre": "Celdas de media tensión",
-        "src": "/images/equipos/tablero-mt.webp",
-        "alt": "Tableros de media tensión"
+        "ilustracion": "tablero-mt"
+      },
+      {
+        "nombre": "Centros de datos",
+        "ilustracion": "centro-datos"
       }
     ]
   },
@@ -121,7 +122,7 @@
     "preguntas": [
       {
         "pregunta": "Para equipo eléctrico crítico",
-        "texto": "Transformadores y subestaciones de los que depende la planta."
+        "texto": "Transformadores y subestaciones de los que depende la planta o el centro de datos."
       },
       {
         "pregunta": "Escucha constante",
@@ -215,7 +216,7 @@
       {
         "id": "criticos",
         "title": "Solo en los equipos que lo justifican",
-        "content": "Se instala en los transformadores y subestaciones de los que depende la planta. El resto sigue con sus pruebas y sus rutas de inspección.",
+        "content": "Se instala en los transformadores y subestaciones de los que depende la planta, o en la infraestructura eléctrica de un centro de datos, donde un corte no se puede permitir. El resto sigue con sus pruebas y sus rutas de inspección.",
         "grafico": "hue-criticos"
       },
       {
@@ -381,7 +382,11 @@
     },
     {
       "question": "¿Para qué equipos conviene?",
-      "answer": "Para el equipo eléctrico crítico: transformadores de potencia y distribución, subestaciones encapsuladas en gas, reactores y celdas de media tensión de las que depende la planta. Son equipos donde una falla es cara y peligrosa, y donde revisar solo en el paro deja meses sin información."
+      "answer": "Para el equipo eléctrico crítico: transformadores de potencia y distribución, subestaciones encapsuladas en gas, reactores y celdas de media tensión de las que depende la planta o un centro de datos. Son equipos donde una falla es cara y peligrosa, y donde revisar solo en el paro deja meses sin información."
+    },
+    {
+      "question": "¿Sirve para centros de datos?",
+      "answer": "Sí. En un centro de datos un corte eléctrico no se puede permitir, y la infraestructura que lo alimenta, transformadores, celdas de media tensión y subestaciones, puede tener descargas parciales mucho antes de fallar. El sensor de huella acústica las escucha todo el día, sin abrir los equipos ni programar un paro, y la alerta llega con tiempo para intervenir en una ventana."
     },
     {
       "question": "¿Qué fallas eléctricas detecta?",

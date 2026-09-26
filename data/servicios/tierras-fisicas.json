@@ -589,28 +589,23 @@
     "fotos": [
       {
         "nombre": "Subestaciones",
-        "src": "/images/equipos/subestacion.webp",
-        "alt": "Subestación eléctrica de alta tensión"
+        "ilustracion": "subestacion"
       },
       {
         "nombre": "Tableros y centros de carga",
-        "src": "/images/equipos/tablero-bt.webp",
-        "alt": "Tablero de distribución con sus interruptores"
+        "ilustracion": "tablero-bt"
       },
       {
         "nombre": "Transformadores",
-        "src": "/images/servicios/dga-en-linea/transformador-potencia.webp",
-        "alt": "Transformador de potencia"
+        "ilustracion": "transformador"
       },
       {
         "nombre": "Tanques y equipos con electricidad estática",
-        "src": "/images/equipos/tanque.webp",
-        "alt": "Tanques industriales de almacenamiento"
+        "ilustracion": "tanque"
       },
       {
         "nombre": "Motores y maquinaria",
-        "src": "/images/equipos/motor.webp",
-        "alt": "Motor eléctrico trifásico"
+        "ilustracion": "motor"
       }
     ]
   }

@@ -469,28 +469,23 @@
     "fotos": [
       {
         "nombre": "Subestaciones",
-        "src": "/images/equipos/subestacion.webp",
-        "alt": "Subestación eléctrica de alta tensión"
+        "ilustracion": "subestacion"
       },
       {
         "nombre": "Tableros de media tensión",
-        "src": "/images/equipos/tablero-mt.webp",
-        "alt": "Tableros de media tensión"
+        "ilustracion": "tablero-mt"
       },
       {
         "nombre": "Tableros de baja tensión",
-        "src": "/images/equipos/tablero-bt.webp",
-        "alt": "Tablero de distribución con sus interruptores"
+        "ilustracion": "tablero-bt"
       },
       {
         "nombre": "Centros de control de motores",
-        "src": "/images/equipos/ccm.webp",
-        "alt": "Sala de centros de control de motores"
+        "ilustracion": "ccm"
       },
       {
         "nombre": "Interruptores",
-        "src": "/images/equipos/interruptor.webp",
-        "alt": "Interruptor de potencia en una subestación"
+        "ilustracion": "interruptor"
       }
     ]
   }

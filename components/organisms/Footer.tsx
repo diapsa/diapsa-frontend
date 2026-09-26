@@ -1,5 +1,6 @@
 import NavLink from "../atoms/NavLink";
 import services from '@/data/servicios.json'
+import creditos from '@/data/creditos-imagenes.json'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -255,11 +256,10 @@ export default function Footer() {
               >
                 Términos y Condiciones
               </NavLink>
-              <NavLink
-                href="/creditos"
-              >
-                Créditos de imágenes
-              </NavLink>
+              {/* Solo mientras el sitio use imágenes de terceros */}
+              {creditos.length > 0 && (
+                <NavLink href="/creditos">Créditos de imágenes</NavLink>
+              )}
             </div>
           </div>
         </div>
