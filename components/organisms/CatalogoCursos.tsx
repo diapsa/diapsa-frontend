@@ -133,7 +133,7 @@ export default function CatalogoCursos({ cursos }: { cursos: Course[] }) {
         const lista = cursos.filter((c) => extraDe(c.slug)?.tecnica === t.clave).sort(ordenar);
         if (!lista.length) return null;
         return (
-          <section key={t.clave} className={`w-full py-12 lg:py-16 ${i % 2 ? "bg-white" : "bg-gray-50"}`}>
+          <section key={t.clave} id={t.clave} className={`w-full scroll-mt-28 py-12 lg:py-16 ${i % 2 ? "bg-white" : "bg-gray-50"}`}>
             <div className="mx-auto max-w-7xl px-6">
               <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
                 <div className="max-w-3xl">
