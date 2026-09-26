@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Antetitulo from "../atoms/Antetitulo";
 import type { Course, CourseDetail } from "@/types/course";
-import { FORMATOS, TECNICAS, extraDe, fechaGrupo, proximosGrupos } from "@/lib/cursos";
+import { FORMATOS, TECNICAS, extraDe, fechaGrupo, galeriaDe, proximosGrupos } from "@/lib/cursos";
+import GaleriaCampo from "./GaleriaCampo";
 import { SITE_CONFIG } from "@/lib/constants";
 
 /**
@@ -172,6 +173,15 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
           </aside>
         </div>
       </section>
+
+      {/* Fotos reales de cursos de la misma técnica */}
+      {galeriaDe(curso.slug).length > 0 && (
+        <GaleriaCampo
+          fotos={galeriaDe(curso.slug)}
+          titulo="Así son nuestros cursos"
+          texto="Fotos reales de grupos de DIAPSA, en aula y en planta."
+        />
+      )}
 
       {/* La misma técnica, en sus otros formatos */}
       {relacionados.length > 0 && (

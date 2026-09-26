@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Antetitulo from "../atoms/Antetitulo";
 import type { Course } from "@/types/course";
-import { FORMATOS, TECNICAS, diaMes, extraDe, fechaGrupo, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
+import { FORMATOS, TECNICAS, diaMes, extraDe, fechaGrupo, galeriaDe, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
 import menuCursos from "@/data/menu-cursos.json";
 
 /**
@@ -24,11 +24,13 @@ function Tarjeta({ curso }: { curso: Course }) {
   const x = extraDe(curso.slug);
   const formato = x ? FORMATOS[x.formato] : null;
   const grupo = proximosGrupos(curso.slug)[0];
+  // Sin imagen en el CMS: una foto real de un curso de la misma técnica
+  const foto = curso.url_img ? { src: curso.url_img, alt: curso.alt_img || curso.name } : galeriaDe(curso.slug)[0];
   return (
     <Link href={`/cursos/${curso.slug}`} className="group flex flex-col overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-xl">
       <div className="relative aspect-[16/10] bg-primary">
-        {curso.url_img ? (
-          <Image src={curso.url_img} alt={curso.alt_img || curso.name} fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+        {foto ? (
+          <Image src={foto.src} alt={foto.alt} fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
         ) : (
           /* Sin imagen en el CMS: la técnica sobre la retícula de la marca, sin repetir el título */
           <div
@@ -116,13 +118,13 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
       <section className="w-full bg-primary text-white">
         <ul className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-white/10 px-6 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           {[
-            { v: "+3,000", t: "especialistas capacitados en más de 15 años, entre 200 y 300 cada año" },
-            { v: String(cursos.length || 15), t: "cursos en vibraciones, termografía, ultrasonido y confiabilidad" },
-            { v: "ISO 18436", t: "cursos de certificación bajo sus lineamientos en vibraciones y termografía" },
+            { v: "+3,000", t: "especialistas capacitados" },
+            { v: String(cursos.length || 15), t: "cursos" },
+            { v: "ISO 18436", t: "certificación" },
           ].map((x) => (
             <li key={x.t} className="px-2 py-7 sm:px-8 sm:first:pl-0 lg:py-10">
               <p className="text-4xl font-extrabold leading-none text-secondary lg:text-5xl">{x.v}</p>
-              <p className="mt-3 text-sm leading-snug text-white/75 lg:text-base">{x.t}</p>
+              <p className="mt-2 text-xs font-bold uppercase tracking-widest text-white/60">{x.t}</p>
             </li>
           ))}
         </ul>

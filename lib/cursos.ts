@@ -21,13 +21,15 @@ export type Grupo = {
   precio?: string;
 };
 
-type Extra = { tecnica: string; formato: FormatoCurso; nivel?: string; duracion?: string; modalidad?: string };
+type Extra = { tecnica: string; formato: FormatoCurso; nivel?: string; duracion?: string; modalidad?: string; galeria?: string };
+export type FotoCurso = { src: string; alt: string };
 
 const DATOS = extra as unknown as {
   tecnicas: { clave: string; nombre: string; norma: string }[];
   formatos: Record<FormatoCurso, { nombre: string; texto: string }>;
   cursos: Record<string, Extra>;
   grupos: Grupo[];
+  galerias: Record<string, FotoCurso[]>;
 };
 
 export const TECNICAS = DATOS.tecnicas;
@@ -35,6 +37,13 @@ export const FORMATOS = DATOS.formatos;
 
 export function extraDe(slug: string): Extra | null {
   return DATOS.cursos[slug] ?? null;
+}
+
+/** Fotos reales de cursos de la técnica (o de la galería propia del curso). */
+export function galeriaDe(slug: string): FotoCurso[] {
+  const x = extraDe(slug);
+  if (!x) return [];
+  return DATOS.galerias?.[x.galeria ?? x.tecnica] ?? [];
 }
 
 function hoy() {

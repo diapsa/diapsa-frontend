@@ -1,34 +1,309 @@
 {
   "_nota": "Complemento del CMS por slug: técnica, formato y grupos programados. El CMS no trae fechas ni duración; aquí se capturan hasta que el CMS los tenga. Un grupo sin fecha no se muestra.",
   "tecnicas": [
-    { "clave": "vibraciones", "nombre": "Vibraciones mecánicas", "norma": "ISO 18436-2" },
-    { "clave": "termografia", "nombre": "Termografía infrarroja", "norma": "ISO 18436-7" },
-    { "clave": "ultrasonido", "nombre": "Ultrasonido pasivo", "norma": "" },
-    { "clave": "confiabilidad", "nombre": "Confiabilidad y gestión", "norma": "" }
+    {
+      "clave": "vibraciones",
+      "nombre": "Vibraciones mecánicas",
+      "norma": "ISO 18436-2"
+    },
+    {
+      "clave": "termografia",
+      "nombre": "Termografía infrarroja",
+      "norma": "ISO 18436-7"
+    },
+    {
+      "clave": "ultrasonido",
+      "nombre": "Ultrasonido pasivo",
+      "norma": ""
+    },
+    {
+      "clave": "confiabilidad",
+      "nombre": "Confiabilidad y gestión",
+      "norma": ""
+    }
   ],
   "formatos": {
-    "formacion": { "nombre": "Formación técnica", "texto": "Aprendes la técnica completa: inspección, análisis y uso del equipo." },
-    "practica": { "nombre": "Taller práctico", "texto": "Trabajas con casos reales sobre lo que ya sabes." },
-    "certificacion": { "nombre": "Certificación", "texto": "Te preparas y certificas por categoría." },
-    "gestion": { "nombre": "Curso ejecutivo", "texto": "Para quien decide y administra el mantenimiento." },
-    "especialidad": { "nombre": "Especialidad", "texto": "Una aplicación concreta de la técnica." }
+    "formacion": {
+      "nombre": "Formación técnica",
+      "texto": "Aprendes la técnica completa: inspección, análisis y uso del equipo."
+    },
+    "practica": {
+      "nombre": "Taller práctico",
+      "texto": "Trabajas con casos reales sobre lo que ya sabes."
+    },
+    "certificacion": {
+      "nombre": "Certificación",
+      "texto": "Te preparas y certificas por categoría."
+    },
+    "gestion": {
+      "nombre": "Curso ejecutivo",
+      "texto": "Para quien decide y administra el mantenimiento."
+    },
+    "especialidad": {
+      "nombre": "Especialidad",
+      "texto": "Una aplicación concreta de la técnica."
+    }
   },
   "cursos": {
-    "curso-tecnico-especializado-vibraciones-mecanicas": { "tecnica": "vibraciones", "formato": "formacion" },
-    "taller-de-aprendizaje-practico-de-vibraciones": { "tecnica": "vibraciones", "formato": "practica" },
-    "vibraciones-mecanicas-curso-de-certificacion": { "tecnica": "vibraciones", "formato": "certificacion", "nivel": "Categorías I y II" },
-    "curso-tecnico-especializado-termografia": { "tecnica": "termografia", "formato": "formacion" },
-    "talleres-de-aprendizaje-practico-de-termografia": { "tecnica": "termografia", "formato": "practica" },
-    "termografia-infrarroja-curso-de-certificacion": { "tecnica": "termografia", "formato": "certificacion", "nivel": "Categorías I y II" },
-    "inspeccion-termografica-en-plantas-fotovoltaicas": { "tecnica": "termografia", "formato": "especialidad" },
-    "curso-tecnico-especializado-ultrasonido-pasivo": { "tecnica": "ultrasonido", "formato": "formacion" },
-    "talleres-de-aprendizaje-practico-de-ultrasonido": { "tecnica": "ultrasonido", "formato": "practica" },
-    "ultrasonido-pasivo-curso-de-certificacion": { "tecnica": "ultrasonido", "formato": "certificacion" },
-    "cursos-de-aprendizaje-practico-vibraciones-ultrasonido-termografia": { "tecnica": "confiabilidad", "formato": "practica" },
-    "incremento-de-la-confiabilidad-monitoreo-de-condicion": { "tecnica": "confiabilidad", "formato": "gestion" },
-    "curso-de-mantenimiento-para-no-mantenedores": { "tecnica": "confiabilidad", "formato": "gestion" },
-    "alineamiento-balanceo-proactivo": { "tecnica": "confiabilidad", "formato": "gestion" },
-    "redaccion-de-informes-tecnicos": { "tecnica": "confiabilidad", "formato": "practica" }
+    "curso-tecnico-especializado-vibraciones-mecanicas": {
+      "tecnica": "vibraciones",
+      "formato": "formacion"
+    },
+    "taller-de-aprendizaje-practico-de-vibraciones": {
+      "tecnica": "vibraciones",
+      "formato": "practica"
+    },
+    "vibraciones-mecanicas-curso-de-certificacion": {
+      "tecnica": "vibraciones",
+      "formato": "certificacion",
+      "nivel": "Categorías I y II"
+    },
+    "curso-tecnico-especializado-termografia": {
+      "tecnica": "termografia",
+      "formato": "formacion"
+    },
+    "talleres-de-aprendizaje-practico-de-termografia": {
+      "tecnica": "termografia",
+      "formato": "practica"
+    },
+    "termografia-infrarroja-curso-de-certificacion": {
+      "tecnica": "termografia",
+      "formato": "certificacion",
+      "nivel": "Categorías I y II"
+    },
+    "inspeccion-termografica-en-plantas-fotovoltaicas": {
+      "tecnica": "termografia",
+      "formato": "especialidad"
+    },
+    "curso-tecnico-especializado-ultrasonido-pasivo": {
+      "tecnica": "ultrasonido",
+      "formato": "formacion"
+    },
+    "talleres-de-aprendizaje-practico-de-ultrasonido": {
+      "tecnica": "ultrasonido",
+      "formato": "practica"
+    },
+    "ultrasonido-pasivo-curso-de-certificacion": {
+      "tecnica": "ultrasonido",
+      "formato": "certificacion"
+    },
+    "cursos-de-aprendizaje-practico-vibraciones-ultrasonido-termografia": {
+      "tecnica": "confiabilidad",
+      "formato": "practica"
+    },
+    "incremento-de-la-confiabilidad-monitoreo-de-condicion": {
+      "tecnica": "confiabilidad",
+      "formato": "gestion"
+    },
+    "curso-de-mantenimiento-para-no-mantenedores": {
+      "tecnica": "confiabilidad",
+      "formato": "gestion"
+    },
+    "alineamiento-balanceo-proactivo": {
+      "tecnica": "confiabilidad",
+      "formato": "gestion",
+      "galeria": "alineacion"
+    },
+    "redaccion-de-informes-tecnicos": {
+      "tecnica": "confiabilidad",
+      "formato": "practica"
+    }
   },
-  "grupos": []
+  "grupos": [],
+  "galerias": {
+    "vibraciones": [
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-01.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-02.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-04.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-05.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-06.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-07.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-08.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-09.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-10.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-11.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-12.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-13.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      }
+    ],
+    "termografia": [
+      {
+        "src": "/images/cursos/termografia/termografia-01.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-02.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-03.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-04.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-06.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-07.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-08.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-09.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      }
+    ],
+    "ultrasonido": [
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-01.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-02.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-03.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-04.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-06.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-08.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-09.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-10.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-13.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      }
+    ],
+    "alineacion": [
+      {
+        "src": "/images/cursos/alineacion/alineacion-01.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-02.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-03.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-04.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-06.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-08.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-10.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-12.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-13.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      }
+    ],
+    "confiabilidad": [
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-03.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-04.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-05.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-06.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-07.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-09.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-10.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-12.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      }
+    ]
+  }
 }
