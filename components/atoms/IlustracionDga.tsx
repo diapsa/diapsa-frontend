@@ -15,12 +15,12 @@
 
 type Props = { clave: string };
 
-const NAVY = "#002e46";
-const MID = "#2b5671";
-const GRIS = "#d9e2e8";
-const NARANJA = "#fc9f01";
+export const NAVY = "#002e46";
+export const MID = "#2b5671";
+export const GRIS = "#d9e2e8";
+export const NARANJA = "#fc9f01";
 
-function Marco({ titulo, pie, children }: { titulo: string; pie: string; children: React.ReactNode }) {
+export function Marco({ titulo, pie, children }: { titulo: string; pie: string; children: React.ReactNode }) {
   return (
     <div className="flex h-full w-full flex-col bg-gradient-to-b from-[#fbfcfd] to-[#eef1f4] p-4 sm:p-6 lg:p-8">
       <p className="text-sm font-extrabold leading-tight text-primary lg:text-xl">{titulo}</p>
@@ -146,7 +146,7 @@ function Velocidad() {
   );
 }
 
-function Trafo({ critico }: { critico: boolean }) {
+export function Trafo({ critico }: { critico: boolean }) {
   const c = critico ? NAVY : GRIS;
   return (
     <svg viewBox="0 0 40 44" className="w-full" aria-hidden="true">

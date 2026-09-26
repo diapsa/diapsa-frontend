@@ -22,6 +22,7 @@
  */
 
 import IlustracionDga from "./IlustracionDga";
+import IlustracionesServicio from "./IlustracionesServicio";
 
 type Props = {
   clave: string;
@@ -161,8 +162,9 @@ function Alineacion() {
 }
 
 export default function GraficoPunto({ clave, className = "" }: Props) {
-  // Las ilustraciones de DGA en línea traen su propio marco.
+  // Las ilustraciones de DGA, cámaras, huella acústica y aceite traen su propio marco.
   if (clave.startsWith("dga-")) return <IlustracionDga clave={clave} />;
+  if (/^(cam|hue|ace)-/.test(clave)) return <IlustracionesServicio clave={clave} />;
   const esquema = clave === "paros" ? <Paros /> : clave === "alineacion" ? <Alineacion /> : null;
   if (!esquema) return null;
   return <div className={`h-full w-full bg-white p-4 lg:p-6 ${className}`}>{esquema}</div>;
