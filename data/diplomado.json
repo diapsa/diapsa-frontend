@@ -1,0 +1,75 @@
+{
+  "slug": "diplomado-confiabilidad-operativa",
+  "nombre": "Diplomado en Confiabilidad Operativa y Monitoreo de Condición",
+  "corto": "Confiabilidad Operativa y Monitoreo de Condición",
+  "resumen": "Nuestro programa insignia: 60 horas en vivo con 11 especialistas para gestionar los activos durante todo su ciclo de vida, del diseño a su retiro.",
+  "brochure": "/files/diplomado-confiabilidad-operativa.pdf",
+  "datos": [
+    { "v": "60 h", "t": "en vivo" },
+    { "v": "5 fases", "t": "17 sesiones" },
+    { "v": "11", "t": "especialistas" },
+    { "v": "Virtual", "t": "desde 6 países" }
+  ],
+  "dirigido": "Especialistas en mantenimiento, planeadores, programadores, técnicos y tomadores de decisiones que busquen optimizar la operación y la confiabilidad de activos industriales.",
+  "objetivo": "Formar especialistas capaces de gestionar eficientemente los activos durante todo su ciclo de vida, aplicando metodologías de confiabilidad, mantenimiento y monitoreo de condición, para transformar paradigmas tradicionales, estandarizar procesos y fomentar una cultura técnica sólida y proactiva.",
+  "aprenderas": [
+    { "t": "Estandarización de procesos", "d": "Mejora continua eliminando prácticas obsoletas." },
+    { "t": "Monitoreo proactivo", "d": "Tecnologías para detectar fallas a tiempo y decidir." },
+    { "t": "Indicadores de mantenimiento", "d": "KPIs alineados con los objetivos de operación." },
+    { "t": "Confiabilidad humana", "d": "Habilidades técnicas y cultura organizacional." },
+    { "t": "Diseño con visión de mantenimiento", "d": "Planear desde la construcción hasta la operación del activo." }
+  ],
+  "beneficios": [
+    { "t": "Mejora la eficiencia operativa", "d": "Reduce tiempos muertos, fallas inesperadas y costos innecesarios con estrategias basadas en datos." },
+    { "t": "Decide con análisis técnico", "d": "Anticípate a los problemas con herramientas de monitoreo de condición." },
+    { "t": "Profesionaliza la gestión de activos", "d": "Metodologías de confiabilidad alineadas con estándares internacionales." },
+    { "t": "Impulsa tu desarrollo profesional", "d": "Un diplomado de alto valor curricular que posiciona tu perfil técnico." },
+    { "t": "Resultados en campo", "d": "Mejora la disponibilidad, la seguridad y la vida útil de los equipos." }
+  ],
+  "fases": [
+    {
+      "n": 1, "titulo": "Confiabilidad temprana en los activos", "horas": "18 h", "sesiones": "5 sesiones",
+      "objetivo": "Incorporar la confiabilidad desde el diseño y la construcción de los activos.",
+      "temas": ["Introducción al diplomado y diseño enfocado al mantenimiento", "Confiabilidad desde el diseño: RCM, FMEA y RAM", "Gestión de activos en el ciclo de vida, con caso de éxito", "Normativas y estandarización, con panel técnico", "Estrategia de mantenimiento proactivo, con casos prácticos"]
+    },
+    {
+      "n": 2, "titulo": "Vida útil del activo", "horas": "32 h", "sesiones": "9 sesiones",
+      "objetivo": "Extender la vida útil mediante diagnóstico técnico y análisis de datos.",
+      "temas": ["IBR y MCC, y análisis de riesgo en equipos", "Estadística aplicada y desempeño: MTBF, MTTR y OEE", "Monitoreo de condición y herramientas predictivas", "Análisis de vibraciones mecánicas, con casos reales", "Ultrasonido pasivo", "Análisis de aceite y cromatografía de gases", "Análisis eléctricos en sistemas y motores", "Termografía infrarroja: alcances y aplicaciones", "Aplicaciones en edificaciones y sistemas fotovoltaicos"]
+    },
+    {
+      "n": 3, "titulo": "Gestión de la información", "horas": "4 h", "sesiones": "1 sesión",
+      "objetivo": "Fortalecer la calidad de los datos técnicos y su análisis.",
+      "temas": ["Informes técnicos", "Confiabilidad del dato", "Herramientas estadísticas"]
+    },
+    {
+      "n": 4, "titulo": "Vida final del activo", "horas": "4 h", "sesiones": "1 sesión",
+      "objetivo": "Evaluar decisiones de desincorporación y la confiabilidad humana.",
+      "temas": ["Análisis de vida útil", "Impacto del factor humano en la operación"]
+    },
+    {
+      "n": 5, "titulo": "Cierre y evaluación", "horas": "2 h", "sesiones": "1 sesión",
+      "objetivo": "Integrar lo aprendido y cerrar el proceso formativo.",
+      "temas": ["Proyecto integrador", "Cierre"]
+    }
+  ],
+  "ponentes": [
+    { "nombre": "Jorge Mancha", "pais": "México", "tema": "Confiabilidad y monitoreo de condición" },
+    { "nombre": "Elimar Rojas", "pais": "Venezuela", "tema": "Confiabilidad, integridad y riesgo" },
+    { "nombre": "José Briseño", "pais": "Venezuela", "tema": "Confiabilidad de sistemas industriales" },
+    { "nombre": "Luis Felipe Sexto", "pais": "Italia / Cuba", "tema": "Confiabilidad de sistemas industriales" },
+    { "nombre": "Michelle Leccese", "pais": "Venezuela", "tema": "Protección de activos" },
+    { "nombre": "Carlos Maldonado", "pais": "México", "tema": "Vibraciones mecánicas" },
+    { "nombre": "Juan Marasco", "pais": "México", "tema": "Mantenimiento predictivo y tecnologías de monitoreo" },
+    { "nombre": "Carlos Picanyol", "pais": "España", "tema": "Lubricación y análisis de aceite" },
+    { "nombre": "Bari José Agüero", "pais": "", "tema": "Mantenimiento, confiabilidad y análisis de aceite" },
+    { "nombre": "Héctor Herrera", "pais": "República Dominicana", "tema": "Diagnóstico y mantenimiento eléctrico" },
+    { "nombre": "Gabriela Camacaro", "pais": "República Dominicana", "tema": "Confiabilidad operativa y mantenimiento eléctrico" },
+    { "nombre": "Ryanair Lantigua", "pais": "República Dominicana", "tema": "Monitoreo de condición en sistemas eléctricos" }
+  ],
+  "respaldo": ["PdMCubic", "ALPA-EC", "SIM Ingeniería", "INPROCA", "Bannister"],
+  "requisitos": ["85% mínimo de asistencia", "Las 5 constancias de fase", "Entrega del proyecto final"],
+  "incluye": ["Material del curso en PDF", "Recursos complementarios", "Constancia por cada fase", "Certificado con valor curricular"],
+  "paises": "México, República Dominicana, Ecuador, Argentina, España y Panamá",
+  "inscripcion": "Puedes tomar el diplomado completo o solo las fases que te interesan. Pregunta por la próxima generación."
+}

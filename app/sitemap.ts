@@ -87,6 +87,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: `${SITE_CONFIG.baseUrl}/cursos/diplomado-confiabilidad-operativa`,
+      lastModified: new Date("2026-09-26T00:00:00Z"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${SITE_CONFIG.baseUrl}/servicios/deteccion-gas/guia-ppciem`,
       lastModified: new Date("2026-09-26T00:00:00Z"),
       changeFrequency: "monthly",

@@ -4,6 +4,7 @@ import Antetitulo from "../atoms/Antetitulo";
 import type { Course } from "@/types/course";
 import { FORMATOS, TECNICAS, diaMes, extraDe, fechaGrupo, imagenDe, muestraFotos, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
 import CarruselFotos from "../molecules/CarruselFotos";
+import dip from "@/data/diplomado.json";
 import menuCursos from "@/data/menu-cursos.json";
 
 /**
@@ -73,7 +74,7 @@ function Tarjeta({ curso }: { curso: Course }) {
    queda vacía. */
 function respaldo(): Course[] {
   return (menuCursos as { items: { label: string; href: string; descripcion: string }[] }[]).flatMap((col) =>
-    col.items.map((i) => {
+    col.items.filter((i) => !i.href.includes(dip.slug)).map((i) => {
       const slug = i.href.replace("/cursos/", "");
       return { id: slug, slug, name: i.label, description: i.descripcion, url_img: "", alt_img: "", reference_norm: "" } as unknown as Course;
     })
@@ -127,6 +128,32 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* El programa insignia, antes que todo el catálogo */}
+      <section className="w-full bg-white py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid grid-cols-1 items-center gap-8 overflow-hidden rounded-sm bg-[#00202f] p-6 text-white shadow-2xl lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:p-10">
+            <div>
+              <p className="inline-flex rounded-full bg-secondary px-3 py-1 text-[11px] font-extrabold uppercase tracking-widest text-primary">Programa insignia</p>
+              <p className="mt-4 text-4xl font-extrabold uppercase leading-none lg:text-6xl">Diplomado</p>
+              <h2 className="mt-2 text-2xl font-extrabold leading-tight text-secondary lg:text-3xl">{dip.corto}</h2>
+              <p className="mt-4 text-justify text-base leading-relaxed text-white/75 lg:text-lg">{dip.resumen}</p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Link href={`/cursos/${dip.slug}`} className="inline-flex items-center justify-center rounded-xs bg-secondary px-7 py-3.5 font-bold text-primary transition-colors hover:bg-white">Ver el diplomado</Link>
+                <Link href={`/cursos/${dip.slug}#brochure`} className="inline-flex items-center justify-center rounded-xs border-2 border-white/60 px-7 py-3 font-bold text-white transition-colors hover:bg-white hover:text-primary">Descargar brochure</Link>
+              </div>
+            </div>
+            <ul className="grid grid-cols-2 gap-3">
+              {dip.datos.map((d) => (
+                <li key={d.v} className="rounded-sm bg-white/[0.06] px-4 py-4 ring-1 ring-white/10">
+                  <p className="text-3xl font-extrabold leading-none">{d.v}</p>
+                  <p className="mt-1 text-xs font-bold uppercase tracking-wider text-white/55">{d.t}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
 
       {/* Grupos con fecha */}

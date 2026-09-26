@@ -82,6 +82,12 @@
         "href": "/cursos#confiabilidad",
         "items": [
             {
+                "label": "Diplomado en Confiabilidad",
+                "href": "/cursos/diplomado-confiabilidad-operativa",
+                "descripcion": "Programa insignia: 60 h en vivo, 5 fases",
+                "icono": "certificado"
+            },
+            {
                 "label": "Monitoreo de condición",
                 "href": "/cursos/incremento-de-la-confiabilidad-monitoreo-de-condicion",
                 "descripcion": "Cómo dirigir un programa",
