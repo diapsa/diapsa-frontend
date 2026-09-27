@@ -41,3 +41,7 @@ La sección de pestañas, los anuncios y la galería suelta (se funde con las fo
 1. Hero: se reutiliza la escena de la planta de "¿Te suena familiar?" en su historia final, sin escena nueva.
 2. Afirmaciones que se quedan: Categoría 3 en cada disciplina e ITZAM como certificador. Sale la alianza con Hertzinno.
 3. El blog se queda al final, antes del contacto; los anuncios salen de la portada.
+
+## Ajuste (Emiliano, 2026-09-27, segunda ronda)
+
+Vuelve el hero en carrusel, que le gustaba en movimiento: cuatro diapositivas (monitoreo de condición con la escena 3D, monitoreo continuo, detección de gas y cursos), sin cifras ni alianzas que no se sostengan. Las secciones del problema y de las tres puertas no le convencieron: la portada debe decir qué hacemos y quiénes somos en corto, y dejar que el visitante llegue al servicio que le interesa. Se sustituyen por "Quiénes somos" (solo lo verificable, con foto real) y un navegador con todos los servicios a la vista en cinco grupos: maquinaria rotativa, sistemas eléctricos, sensores en línea, gas y más servicios, y cursos.

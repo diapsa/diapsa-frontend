@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/organisms/Hero";
-import InicioPuertas from "@/components/organisms/InicioPuertas";
+import QuienesSomos from "@/components/organisms/QuienesSomos";
+import NavegadorServicios from "@/components/organisms/NavegadorServicios";
 import GasYEquiposSection from "@/components/organisms/GasYEquiposSection";
 import Reveal from "@/components/atoms/Reveal";
 import { Clients } from "@/components/organisms/Clients";
@@ -65,12 +66,12 @@ export const metadata: Metadata = {
 };
 
 // Portada rehecha con el plan de septiembre (docs/designs/plan-home-2026-09.md):
-// una línea argumental en lugar de trece secciones sueltas. Hero fijo con la
-// escena de la planta, el problema y las tres puertas (medimos, vigilamos,
-// formamos), gas y equipos como segunda fila, la prueba (clientes, fotos de
-// campo, casos), lo que recibes, el diplomado, el blog y el contacto. Salen
-// las pestañas, los anuncios, la galería suelta, la historia con cifras que
-// no se podían sostener y la introducción de IDAP (la cuenta Lo que recibes).
+// una línea en lugar de trece secciones sueltas. Hero en carrusel (cuatro
+// puertas, la primera con la escena de la planta), quiénes somos en corto,
+// todos los servicios a la vista, gas y equipos, la prueba (clientes, fotos
+// de campo, casos), lo que recibes, el diplomado, el blog y el contacto.
+// Salen las pestañas, los anuncios, la galería suelta, la historia con
+// cifras que no se podían sostener y la introducción de IDAP.
 export default async function Home() {
   // El CMS no debe poder tumbar la home: si alguna llamada falla, la página
   // carga igual y solo se omite la sección que dependía de esos datos.
@@ -91,8 +92,9 @@ export default async function Home() {
           visible al cargar retrasa la primera impresión y penaliza el LCP. */}
       <Hero />
 
-      {/* El problema y las tres puertas */}
-      <Reveal><InicioPuertas /></Reveal>
+      {/* Quiénes somos y todos los servicios a la vista */}
+      <Reveal><QuienesSomos /></Reveal>
+      <Reveal><NavegadorServicios /></Reveal>
 
       {/* Segunda fila: detección de gas y equipos */}
       <Reveal><GasYEquiposSection /></Reveal>
