@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import IconoMenu from "@/components/atoms/IconoMenu";
+import IlustracionDolor from "@/components/atoms/IlustracionesDolor";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
 import menu from "@/data/servicios.json";
 import galeria from "@/data/monitoreo-condicion-galeria.json";
@@ -48,22 +49,22 @@ const FRENTES = [
 
 const DOLORES = [
   {
-    icono: "arco",
+    dibujo: "paro",
     titulo: "El paro llegó sin aviso",
     texto: "Una falla inesperada detiene la línea horas o días. El costo no es solo la reparación: es cada hora que la planta no produce.",
   },
   {
-    icono: "situacional",
+    dibujo: "calendario",
     titulo: "Mantenimiento por calendario",
     texto: "Se cambian piezas que todavía sirven y se engrasa lo que no lo necesita porque el manual lo dice. Hasta el exceso de grasa acaba con un rodamiento.",
   },
   {
-    icono: "empresa",
+    dibujo: "almacen",
     titulo: "Almacén lleno de refacciones",
     texto: "Para no quedarse parados, se compra de más por si acaso. Es dinero detenido en un anaquel.",
   },
   {
-    icono: "diagnostico",
+    dibujo: "datos",
     titulo: "Decisiones sin datos",
     texto: "Nadie sabe con certeza cómo están los equipos. Se decide por intuición, por historial o por urgencia.",
   },
@@ -141,14 +142,16 @@ export default function PaginaMonitoreo() {
               ¿TE SUENA <span className="text-secondary">FAMILIAR?</span>
             </h2>
           </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             {DOLORES.map((d) => (
-              <div key={d.titulo} className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-sm bg-secondary/10">
-                  <IconoMenu icono={d.icono} className="h-6 w-6 text-secondary" />
+              <div key={d.titulo} className="overflow-hidden rounded-sm border border-gray-100 bg-white shadow-sm">
+                <div className="h-36 border-b border-gray-100 bg-[#f3f6f8] px-4 py-3 sm:h-40">
+                  <IlustracionDolor clave={d.dibujo} />
                 </div>
-                <h3 className="mb-2 font-bold leading-snug text-primary">{d.titulo}</h3>
-                <p className="text-justify text-sm leading-relaxed text-tertiary">{d.texto}</p>
+                <div className="p-6">
+                  <h3 className="mb-2 font-bold leading-snug text-primary">{d.titulo}</h3>
+                  <p className="text-justify text-sm leading-relaxed text-tertiary">{d.texto}</p>
+                </div>
               </div>
             ))}
           </div>
