@@ -157,7 +157,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                     >
                       <IconoMenu icono={item.icono} />
                       <span className="min-w-0">
-                        <span className="flex min-h-[2.75rem] items-start gap-1.5 font-semibold leading-snug text-primary transition-colors duration-200 group-hover:text-secondary">
+                        <span className="flex items-start gap-1.5 font-semibold leading-snug text-primary transition-colors duration-200 group-hover:text-secondary">
                           {item.label}
                           <svg
                             className="mt-0.5 h-4 w-4 shrink-0 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
@@ -171,7 +171,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                           </svg>
                         </span>
                         {item.descripcion && (
-                          <span className="block hyphens-auto text-justify text-sm leading-snug text-tertiary">
+                          <span className="mt-1 block text-justify text-sm leading-snug text-tertiary">
                             {item.descripcion}
                           </span>
                         )}
