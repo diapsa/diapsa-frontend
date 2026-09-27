@@ -1,108 +1,121 @@
 [
     {
-        "titulo": "Certificados",
-        "href": "/cursos",
+        "titulo": "Vibraciones mecánicas",
+        "href": "/cursos#catalogo",
         "items": [
             {
-                "label": "Termografía Infrarroja",
-                "href": "/cursos/termografia-infrarroja-curso-de-certificacion",
-                "descripcion": "Certificación ISO 18436-7, categorías I y II",
-                "icono": "termografia"
-            },
-            {
-                "label": "Vibraciones Mecánicas",
-                "href": "/cursos/vibraciones-mecanicas-curso-de-certificacion",
-                "descripcion": "Certificación ISO 18436-2 para analistas",
-                "icono": "vibraciones"
-            },
-            {
-                "label": "Ultrasonido Pasivo",
-                "href": "/cursos/ultrasonido-pasivo-curso-de-certificacion",
-                "descripcion": "Certificación en detección por sonido y ultrasonido",
-                "icono": "ultrasonido"
-            },
-            {
-                "label": "Incremento de la Confiabilidad",
-                "href": "/cursos/incremento-de-la-confiabilidad-monitoreo-de-condicion",
-                "descripcion": "Herramientas para dirigir un programa de monitoreo",
-                "icono": "diagnostico"
-            }
-        ]
-    },
-    {
-        "titulo": "Talleres prácticos",
-        "items": [
-            {
-                "label": "Taller de Vibraciones",
-                "href": "/cursos/taller-de-aprendizaje-practico-de-vibraciones",
-                "descripcion": "Práctica intensiva con equipo real en planta",
-                "icono": "vibraciones"
-            },
-            {
-                "label": "Taller de Termografía",
-                "href": "/cursos/talleres-de-aprendizaje-practico-de-termografia",
-                "descripcion": "Práctica intensiva con cámara en planta",
-                "icono": "termografia"
-            },
-            {
-                "label": "Taller de Ultrasonido",
-                "href": "/cursos/talleres-de-aprendizaje-practico-de-ultrasonido",
-                "descripcion": "Práctica intensiva de detección en planta",
-                "icono": "ultrasonido"
-            },
-            {
-                "label": "Redacción de Informes Técnicos",
-                "href": "/cursos/redaccion-de-informes-tecnicos",
-                "descripcion": "Escribir informes que alguien pueda usar",
-                "icono": "folleto"
-            }
-        ]
-    },
-    {
-        "titulo": "Cursos estratégicos",
-        "ancho": 2,
-        "items": [
-            {
-                "label": "Técnico Especializado en Termografía",
-                "href": "/cursos/curso-tecnico-especializado-termografia",
-                "descripcion": "Formación integral del especialista",
-                "icono": "termografia"
-            },
-            {
-                "label": "Técnico Especializado en Vibraciones",
+                "label": "Formación técnica",
                 "href": "/cursos/curso-tecnico-especializado-vibraciones-mecanicas",
-                "descripcion": "Formación integral del especialista",
-                "icono": "vibraciones"
+                "descripcion": "Inspección, análisis y uso del equipo",
+                "icono": "formacion"
             },
             {
-                "label": "Técnico Especializado en Ultrasonido",
+                "label": "Taller práctico",
+                "href": "/cursos/taller-de-aprendizaje-practico-de-vibraciones",
+                "descripcion": "Casos reales sobre lo que ya sabes",
+                "icono": "taller"
+            },
+            {
+                "label": "Certificación ISO 18436-2",
+                "href": "/cursos/vibraciones-mecanicas-curso-de-certificacion",
+                "descripcion": "Categorías I y II",
+                "icono": "certificado"
+            }
+        ]
+    },
+    {
+        "titulo": "Termografía infrarroja",
+        "href": "/cursos#catalogo",
+        "items": [
+            {
+                "label": "Formación técnica",
+                "href": "/cursos/curso-tecnico-especializado-termografia",
+                "descripcion": "Inspección, análisis y uso de la cámara",
+                "icono": "formacion"
+            },
+            {
+                "label": "Taller práctico",
+                "href": "/cursos/talleres-de-aprendizaje-practico-de-termografia",
+                "descripcion": "Casos reales sobre lo que ya sabes",
+                "icono": "taller"
+            },
+            {
+                "label": "Certificación ISO 18436-7",
+                "href": "/cursos/termografia-infrarroja-curso-de-certificacion",
+                "descripcion": "Categorías I y II",
+                "icono": "certificado"
+            },
+            {
+                "label": "Plantas fotovoltaicas",
+                "href": "/cursos/inspeccion-termografica-en-plantas-fotovoltaicas",
+                "descripcion": "Inspección de paneles e inversores",
+                "icono": "electricos"
+            }
+        ]
+    },
+    {
+        "titulo": "Ultrasonido pasivo",
+        "href": "/cursos#catalogo",
+        "items": [
+            {
+                "label": "Formación técnica",
                 "href": "/cursos/curso-tecnico-especializado-ultrasonido-pasivo",
-                "descripcion": "Formación integral del especialista",
-                "icono": "ultrasonido"
+                "descripcion": "Monitoreo, análisis y uso del equipo",
+                "icono": "formacion"
             },
             {
-                "label": "Alineamiento y Balanceo",
-                "href": "/cursos/alineamiento-balanceo-proactivo",
-                "descripcion": "Programas proactivos para alargar la vida útil",
+                "label": "Taller práctico",
+                "href": "/cursos/talleres-de-aprendizaje-practico-de-ultrasonido",
+                "descripcion": "Casos reales sobre lo que ya sabes",
+                "icono": "taller"
+            },
+            {
+                "label": "Certificación",
+                "href": "/cursos/ultrasonido-pasivo-curso-de-certificacion",
+                "descripcion": "Detección por sonido y ultrasonido",
+                "icono": "certificado"
+            }
+        ]
+    },
+    {
+        "titulo": "Confiabilidad y gestión",
+        "href": "/cursos#catalogo",
+        "items": [
+            {
+                "label": "Diplomado en Confiabilidad",
+                "href": "/cursos/diplomado-confiabilidad-operativa",
+                "descripcion": "Programa insignia: 60 h en vivo, 5 fases",
+                "icono": "certificado"
+            },
+            {
+                "label": "Monitoreo de condición",
+                "href": "/cursos/incremento-de-la-confiabilidad-monitoreo-de-condicion",
+                "descripcion": "Cómo dirigir un programa",
                 "icono": "diagnostico"
             },
             {
-                "label": "Mantenimiento para no Mantenedores",
+                "label": "Mantenimiento para no mantenedores",
                 "href": "/cursos/curso-de-mantenimiento-para-no-mantenedores",
                 "descripcion": "Curso ejecutivo para producción y dirección",
                 "icono": "empresa"
             },
             {
-                "label": "Aprendizaje Práctico en tres disciplinas",
-                "href": "/cursos/cursos-de-aprendizaje-practico-vibraciones-ultrasonido-termografia",
-                "descripcion": "Vibraciones, ultrasonido y termografía en un curso",
-                "icono": "metodologia"
+                "label": "Alineamiento y balanceo",
+                "href": "/cursos/alineamiento-balanceo-proactivo",
+                "descripcion": "Mantenimiento proactivo",
+                "icono": "alineacion"
             },
             {
-                "label": "Termografía en Plantas Fotovoltaicas",
-                "href": "/cursos/inspeccion-termografica-en-plantas-fotovoltaicas",
-                "descripcion": "Inspección de paneles e inversores",
-                "icono": "electricos"
+                "label": "Redacción de informes técnicos",
+                "href": "/cursos/redaccion-de-informes-tecnicos",
+                "descripcion": "Informes que alguien pueda usar",
+                "icono": "folleto"
+            },
+            {
+                "label": "Las tres técnicas en un curso",
+                "href": "/cursos/cursos-de-aprendizaje-practico-vibraciones-ultrasonido-termografia",
+                "descripcion": "Vibraciones, ultrasonido y termografía",
+                "icono": "metodologia"
             }
         ]
     }

@@ -64,6 +64,8 @@ export interface CourseDetail {
     graduate_profile: string;
     technical_specification: string;
     provider: string;
+    url_img?: string | null;
+    alt_img?: string;
     // Campos SEO opcionales: el template los usa si el CMS los provee.
     meta_title?: string;
     meta_description?: string;

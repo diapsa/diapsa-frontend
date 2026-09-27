@@ -29,10 +29,12 @@ import type { GaleriaFoto } from "@/types/servicio";
 type Props = {
   fotos: GaleriaFoto[];
   titulo?: string;
+  /** Milisegundos entre foto y foto (5 s si no viene). */
+  intervalo?: number;
   texto?: string;
 };
 
-export default function GaleriaCampo({ fotos, titulo, texto }: Props) {
+export default function GaleriaCampo({ fotos, titulo, texto, intervalo = 5000 }: Props) {
   const [activa, setActiva] = useState(0);
   const total = fotos.length;
   const marco = useRef<HTMLDivElement>(null);
@@ -59,9 +61,9 @@ export default function GaleriaCampo({ fotos, titulo, texto }: Props) {
   useEffect(() => {
     if (pausa || total < 2) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const reloj = window.setTimeout(() => setActiva((a) => (a + 1) % total), 5000);
+    const reloj = window.setTimeout(() => setActiva((a) => (a + 1) % total), intervalo);
     return () => window.clearTimeout(reloj);
-  }, [activa, pausa, total]);
+  }, [activa, pausa, total, intervalo]);
 
   if (total === 0) return null;
 

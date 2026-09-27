@@ -34,9 +34,11 @@ const SERVICIO_GAS = "Detección de Gas";
 type Props = {
   /** Variante de la página de detección de gas. */
   gas?: boolean;
+  /** En la página de un curso: el asunto y el curso ya van marcados. */
+  curso?: string;
 };
 
-function estadoInicial(gas: boolean): ContactFormMain {
+function estadoInicial(gas: boolean, curso?: string): ContactFormMain {
   return {
     name: "",
     email: "",
@@ -45,8 +47,8 @@ function estadoInicial(gas: boolean): ContactFormMain {
     country: PAIS_POR_DEFECTO,
     form_type: "main",
     custom_fields: {
-      subject: gas ? "servicios" : "",
-      coursesOfInterest: [],
+      subject: gas ? "servicios" : curso !== undefined ? "cursos" : "",
+      coursesOfInterest: curso ? [curso] : [],
       servicesOfInterest: gas ? [SERVICIO_GAS] : [],
       message: "",
       isProvider: "false",
@@ -55,7 +57,7 @@ function estadoInicial(gas: boolean): ContactFormMain {
   };
 }
 
-export default function ContactForm({ gas = false }: Props) {
+export default function ContactForm({ gas = false, curso }: Props) {
   const {
     submitForm,
     loading,
@@ -70,7 +72,7 @@ export default function ContactForm({ gas = false }: Props) {
 
   const { courses, loading: loadingCourses } = useCourses();
 
-  const [formData, setFormData] = useState<ContactFormMain>(() => estadoInicial(gas));
+  const [formData, setFormData] = useState<ContactFormMain>(() => estadoInicial(gas, curso));
   const [perfil, setPerfil] = useState({ area: "", ppciem: "" });
 
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
@@ -205,7 +207,7 @@ export default function ContactForm({ gas = false }: Props) {
 
     if (result) {
       // Success - reset form
-      setFormData(estadoInicial(gas));
+      setFormData(estadoInicial(gas, curso));
       setPerfil({ area: "", ppciem: "" });
       setAceptaPrivacidad(false);
       setFieldErrors({});
