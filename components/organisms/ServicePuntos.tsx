@@ -7,6 +7,7 @@ import GraficoPunto from "../atoms/GraficoPunto";
 import EscenaVibracion from "./EscenaVibracion";
 import EscenaTermografia from "./EscenaTermografia";
 import EscenaAlineacion from "./EscenaAlineacion";
+import CarruselFotos from "../molecules/CarruselFotos";
 import type { ContentItem, FotoPunto } from "@/types/servicio";
 
 /**
@@ -39,6 +40,7 @@ export default function ServicePuntos({ puntos, foto }: Props) {
   const escena = puntos[activo]?.escena;
   const grafico = puntos[activo]?.grafico;
   const fotoActiva = puntos[activo]?.foto ?? foto;
+  const secuencia = puntos[activo]?.fotos?.length ? puntos[activo].fotos : undefined;
   const contener = fotoActiva?.ajuste === "contener";
   const fondo =
     fotoActiva?.fondo === "oscuro"
@@ -112,7 +114,14 @@ export default function ServicePuntos({ puntos, foto }: Props) {
 
       {/* Imagen del punto activo. La clave fuerza a React a montar un nodo
           nuevo al cambiar de punto, y con eso se dispara el fundido. */}
-      {!escena && !grafico && fotoActiva && (
+      {/* Secuencia de fotos del punto, en carrusel. */}
+      {!escena && !grafico && secuencia && (
+        <div key={`fotos-${activo}`} className="motion-safe:animate-[fadeIn_.4s_ease-out]">
+          <CarruselFotos fotos={secuencia} intervalo={3000} />
+        </div>
+      )}
+
+      {!escena && !grafico && !secuencia && fotoActiva && (
         <div
           key={fotoActiva.src}
           className={`relative aspect-[4/3] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5 motion-safe:animate-[fadeIn_.4s_ease-out] ${
