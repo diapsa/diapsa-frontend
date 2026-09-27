@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/organisms/Hero";
 import QuienesSomos from "@/components/organisms/QuienesSomos";
-import NavegadorServicios from "@/components/organisms/NavegadorServicios";
+import InicioBloques from "@/components/organisms/InicioBloques";
 import GasYEquiposSection from "@/components/organisms/GasYEquiposSection";
 import Reveal from "@/components/atoms/Reveal";
 import { Clients } from "@/components/organisms/Clients";
@@ -14,6 +14,7 @@ import BlogSection from "@/components/organisms/BlogSection";
 import ContactForm from "@/components/organisms/ContactForm";
 import galeriaMonitoreo from "@/data/monitoreo-condicion-galeria.json";
 import { getFeaturedBlogs, getFeaturedSuccessCases } from "@/lib/api/posts";
+import { getProducts } from "@/lib/api/products";
 
 const OG_IMAGE = "/images/og-images/og-image.jpg";
 
@@ -68,14 +69,14 @@ export const metadata: Metadata = {
 // Portada rehecha con el plan de septiembre (docs/designs/plan-home-2026-09.md):
 // una línea en lugar de trece secciones sueltas. Hero en carrusel (cuatro
 // puertas, la primera con la escena de la planta), quiénes somos en corto,
-// todos los servicios a la vista, gas y equipos, la prueba (clientes, fotos
+// servicios, cursos y productos en carruseles por bloque, gas y equipos, la prueba (clientes, fotos
 // de campo, casos), lo que recibes, el diplomado, el blog y el contacto.
 // Salen las pestañas, los anuncios, la galería suelta, la historia con
 // cifras que no se podían sostener y la introducción de IDAP.
 export default async function Home() {
   // El CMS no debe poder tumbar la home: si alguna llamada falla, la página
   // carga igual y solo se omite la sección que dependía de esos datos.
-  const [cases, blogs] = await Promise.all([
+  const [cases, blogs, productos] = await Promise.all([
     getFeaturedSuccessCases().catch((error) => {
       console.error("[home] No se pudieron cargar los casos de éxito:", error);
       return [];
@@ -84,6 +85,12 @@ export default async function Home() {
       console.error("[home] No se pudieron cargar las entradas de blog:", error);
       return [];
     }),
+    getProducts({ per_page: 50 })
+      .then((r) => r.data ?? [])
+      .catch((error) => {
+        console.error("[home] No se pudieron cargar los productos:", error);
+        return [];
+      }),
   ]);
 
   return (
@@ -94,7 +101,7 @@ export default async function Home() {
 
       {/* Quiénes somos y todos los servicios a la vista */}
       <Reveal><QuienesSomos /></Reveal>
-      <Reveal><NavegadorServicios /></Reveal>
+      <Reveal><InicioBloques productos={productos} /></Reveal>
 
       {/* Segunda fila: detección de gas y equipos */}
       <Reveal><GasYEquiposSection /></Reveal>
