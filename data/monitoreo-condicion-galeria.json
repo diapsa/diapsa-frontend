@@ -1,0 +1,50 @@
+[
+  {
+    "src": "/images/gallery/campo/vibracion-analista-motor.webp",
+    "alt": "Medición de vibración sobre un motor eléctrico en operación"
+  },
+  {
+    "src": "/images/servicios/diagnostico-integral/campo-termografia-ruta.webp",
+    "alt": "Termografía de un equipo de proceso, en la misma ruta que las vibraciones."
+  },
+  {
+    "src": "/images/servicios/analisis-de-ultrasonido/campo-camara-acustica-subestacion.webp",
+    "alt": "Cámara acústica en una subestación, buscando descargas parciales a distancia segura."
+  },
+  {
+    "src": "/images/servicios/analisis-de-aceite/toma-de-muestra.webp",
+    "alt": "Extracción del aceite con el equipo en operación"
+  },
+  {
+    "src": "/images/servicios/estudios-electricos/campo-analista-tablero.webp",
+    "alt": "Analista de DIAPSA conectando el analizador de calidad de energía en un tablero energizado"
+  },
+  {
+    "src": "/images/gallery/campo/vibracion-torre-enfriamiento.webp",
+    "alt": "Inspección dentro de una torre de enfriamiento, sobre el andador del ventilador."
+  },
+  {
+    "src": "/images/servicios/diagnostico-integral/campo-bombas-medicion.webp",
+    "alt": "Medición sobre los motores de un grupo de bombas."
+  },
+  {
+    "src": "/images/servicios/analisis-de-ultrasonido/campo-trampas-vapor.webp",
+    "alt": "Analista de DIAPSA escuchando con ultrasonido la línea de vapor, sobre la rejilla de la planta."
+  },
+  {
+    "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
+    "alt": "Analista de DIAPSA arrodillado ante las boquillas de un transformador tipo pedestal, tomando la muestra"
+  },
+  {
+    "src": "/images/gallery/campo/vibracion-transmision-bandas.webp",
+    "alt": "Medición en una transmisión por bandas de una máquina de proceso."
+  },
+  {
+    "src": "/images/servicios/estudios-electricos/campo-armonicos-pantalla.webp",
+    "alt": "Lectura de armónicos por fase: el dato que explica calentamientos y disparos sin causa aparente."
+  },
+  {
+    "src": "/images/gallery/campo/acustica-lineas-alta-tension.webp",
+    "alt": "Inspección de líneas y herrajes de alta tensión: la cámara ubica de dónde viene el ultrasonido sin necesidad de acercarse."
+  }
+]
