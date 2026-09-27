@@ -37,9 +37,11 @@ const columnasServicios: ColumnaMenu[] = [
 ];
 
 // Cursos se despliega igual que Servicios: los quince cursos del catálogo
-// en tres grupos, los mismos que usa la página /cursos (certificados,
-// talleres, estratégicos). Los slugs son los publicados en producción; el
-// catálogo vive en el CMS, pero el menú no puede esperar a una llamada.
+// por técnica, en el mismo orden que la página /cursos (vibraciones,
+// termografía, ultrasonido, confiabilidad y gestión); dentro de cada
+// técnica, sus formatos: formación, taller y certificación. Los slugs son
+// los publicados en producción; el catálogo vive en el CMS, pero el menú no
+// puede esperar a una llamada.
 const columnasCursos = menuCursos as ColumnaMenu[];
 
 // Todo lo institucional cuelga de "Empresa" en vez de ocupar la tira principal.

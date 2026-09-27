@@ -122,8 +122,9 @@ export default function MegaMenu({ trigger, columnas }: Props) {
               className={indice > 0 ? "border-l border-gray-200 pl-10" : ""}
               style={{ gridColumn: `span ${columna.ancho ?? 1}` }}
             >
-              <div className="mb-4 flex items-center justify-between gap-4">
-                <p className="text-sm font-semibold text-tertiary">{columna.titulo}</p>
+              {/* Con cuatro columnas el título no cabe junto a "Ver todo": va encima */}
+              <div className={`mb-4 flex gap-4 ${columnas.length >= 4 ? "flex-col items-start gap-2" : "items-center justify-between"}`}>
+                <p className={columnas.length >= 4 ? "text-base font-extrabold text-primary" : "text-sm font-semibold text-tertiary"}>{columna.titulo}</p>
                 {columna.href && (
                   <Link
                     href={columna.href}
@@ -157,7 +158,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                     >
                       <IconoMenu icono={item.icono} />
                       <span className="min-w-0">
-                        <span className="flex min-h-[2.75rem] items-start gap-1.5 font-semibold leading-snug text-primary transition-colors duration-200 group-hover:text-secondary">
+                        <span className="flex items-start gap-1.5 font-semibold leading-snug text-primary transition-colors duration-200 group-hover:text-secondary">
                           {item.label}
                           <svg
                             className="mt-0.5 h-4 w-4 shrink-0 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
@@ -171,7 +172,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                           </svg>
                         </span>
                         {item.descripcion && (
-                          <span className="block hyphens-auto text-justify text-sm leading-snug text-tertiary">
+                          <span className="mt-1 block text-justify text-sm leading-snug text-tertiary">
                             {item.descripcion}
                           </span>
                         )}

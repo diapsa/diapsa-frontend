@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const stats = [
     { value: "+20", label: "Años de experiencia" },
-    { value: "+500", label: "Plantas atendidas" },
-    { value: "5", label: "Disciplinas predictivas" },
+    { value: "9", label: "Servicios de monitoreo" },
+    { value: "0", label: "Paros para medir" },
 ];
 
 export default function MCCtaFinal() {
@@ -13,14 +13,14 @@ export default function MCCtaFinal() {
             <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
 
                 <span className="inline-block text-secondary text-xs font-semibold tracking-widest uppercase mb-6">
-                    Su siguiente paso
+                    Tu siguiente paso
                 </span>
                 <h2 className="text-3xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
-                    SU OPERACIÓN NO DEBERÍA{" "}
+                    TU OPERACIÓN NO DEBERÍA{" "}
                     <span className="text-secondary">DEPENDER DEL AZAR</span>
                 </h2>
                 <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10">
-                    Más de 20 años protegiendo activos industriales en México. El primer paso es una conversación sin costo ni compromiso.
+                    Más de 20 años midiendo equipos industriales en México. El primer paso es una conversación sin costo ni compromiso.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
