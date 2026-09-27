@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/organisms/Hero";
 import QuienesSomos from "@/components/organisms/QuienesSomos";
+import CifrasIdap from "@/components/organisms/CifrasIdap";
 import InicioBloques from "@/components/organisms/InicioBloques";
 import GasYEquiposSection from "@/components/organisms/GasYEquiposSection";
 import Reveal from "@/components/atoms/Reveal";
@@ -15,6 +16,9 @@ import ContactForm from "@/components/organisms/ContactForm";
 import galeriaMonitoreo from "@/data/monitoreo-condicion-galeria.json";
 import { getFeaturedBlogs, getFeaturedSuccessCases } from "@/lib/api/posts";
 import { getProducts } from "@/lib/api/products";
+
+// Se regenera a diario: las cifras de IDAP suben al cambiar el mes.
+export const revalidate = 86400;
 
 const OG_IMAGE = "/images/og-images/og-image.jpg";
 
@@ -101,6 +105,7 @@ export default async function Home() {
 
       {/* Quiénes somos y todos los servicios a la vista */}
       <Reveal><QuienesSomos /></Reveal>
+      <CifrasIdap />
       <Reveal><InicioBloques productos={productos} /></Reveal>
 
       {/* Segunda fila: detección de gas y equipos */}

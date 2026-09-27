@@ -1,0 +1,11 @@
+{
+  "_nota": "Cifras de la franja de resultados de la portada. 'base' es el total real en IDAP a la fecha 'corteBase'; 'porMes' es el promedio mensual con el que crece. La página suma porMes por cada mes transcurrido desde corteBase, así la cifra sube sola cada mes. Mientras base sea null, la franja no se publica; en local se ve con 'ejemplo' para revisar el diseño. Actualizar base y corteBase cuando haya un corte real de IDAP para que la proyección no se aleje del dato.",
+  "corteBase": "2026-09-01",
+  "cifras": [
+    { "clave": "hallazgos", "texto": "Hallazgos detectados", "base": null, "porMes": null, "ejemplo": 50000, "ejemploPorMes": 420 },
+    { "clave": "equipos", "texto": "Equipos monitoreados", "base": null, "porMes": null, "ejemplo": 12000, "ejemploPorMes": 150 },
+    { "clave": "mediciones", "texto": "Mediciones realizadas", "base": null, "porMes": null, "ejemplo": 180000, "ejemploPorMes": 2500 },
+    { "clave": "plantas", "texto": "Plantas atendidas", "base": null, "porMes": null, "ejemplo": 300, "ejemploPorMes": 2 },
+    { "clave": "paises", "texto": "Países con presencia", "base": null, "porMes": 0, "ejemplo": 6, "ejemploPorMes": 0 }
+  ]
+}
