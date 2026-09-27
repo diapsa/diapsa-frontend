@@ -56,9 +56,35 @@
         "title": "Cómo lo hacemos",
         "content": "Alineación con equipo láser, que mide el desfase real entre los ejes y dice cuánto calzar y cuánto mover en cada pata, con la máquina en su sitio y sin desmontar el acople. Balanceo dinámico en campo, en uno o dos planos, con el rotor montado en su propia chumacera.",
         "foto": {
-          "src": "/images/gallery/campo/vibracion-analizador-motor.webp",
-          "alt": "Analizador y sensor montados en el punto de medición de un motor"
-        }
+          "src": "/images/servicios/alineacion-balanceo/campo-sensores-acople.webp",
+          "alt": "Cabezales del láser montados a cada lado del acople, con el equipo en su base"
+        },
+        "fotos": [
+          {
+            "src": "/images/servicios/alineacion-balanceo/campo-sensores-acople.webp",
+            "alt": "Se montan los dos cabezales del láser, uno en cada eje, sin desmontar el acople"
+          },
+          {
+            "src": "/images/servicios/alineacion-balanceo/pantalla-distancias.webp",
+            "alt": "Se capturan las distancias reales entre el acople y las patas del motor"
+          },
+          {
+            "src": "/images/servicios/alineacion-balanceo/pantalla-tolerancias.webp",
+            "alt": "Se elige la tolerancia según la velocidad de giro del equipo"
+          },
+          {
+            "src": "/images/servicios/alineacion-balanceo/pantalla-lectura-inicial.webp",
+            "alt": "Lectura inicial: desfase fuera de tolerancia en vertical y horizontal"
+          },
+          {
+            "src": "/images/servicios/alineacion-balanceo/pantalla-correccion.webp",
+            "alt": "Corrección en vivo: el equipo indica cuánto mover cada pata mientras se ajusta"
+          },
+          {
+            "src": "/images/servicios/alineacion-balanceo/pantalla-en-tolerancia.webp",
+            "alt": "Resultado final: el acople queda dentro de tolerancia y se registra"
+          }
+        ]
       },
       {
         "id": "plataforma-idap",
@@ -183,6 +209,22 @@
   ],
   "certificacion": "Ejecutado por analistas de vibración certificados · ISO 18436-2",
   "galeria": [
+    {
+      "src": "/images/servicios/alineacion-balanceo/campo-analista-tablet.webp",
+      "alt": "Analista de DIAPSA siguiendo en el equipo láser la alineación de un motor de proceso."
+    },
+    {
+      "src": "/images/servicios/alineacion-balanceo/campo-sensores-acople.webp",
+      "alt": "Cabezales del láser montados en el acople, con la máquina en su base."
+    },
+    {
+      "src": "/images/servicios/alineacion-balanceo/campo-analista-equipo.webp",
+      "alt": "Ajuste de las patas del motor mientras el láser marca el desfase en vivo."
+    },
+    {
+      "src": "/images/servicios/alineacion-balanceo/pantalla-resultados.webp",
+      "alt": "Antes y después en la misma pantalla: el desfase baja hasta quedar en tolerancia."
+    },
     {
       "src": "/images/disciplinas/alineacion-balaceo.jpg",
       "alt": "Analista de DIAPSA midiendo sobre un motor acoplado antes de corregir la alineación."

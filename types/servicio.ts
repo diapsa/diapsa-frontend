@@ -24,6 +24,9 @@ export interface ContentItem {
   content: string;
   /** Imagen que se muestra cuando este punto está seleccionado. */
   foto?: FotoPunto;
+  /** Secuencia de fotos en carrusel en lugar de una sola foto (el paso a
+      paso de un trabajo, como la alineación). Si viene, va antes que foto. */
+  fotos?: FotoPunto[];
   /** Gráfico esquemático en lugar de foto, por clave: "paros". Tiene prioridad sobre foto. */
   grafico?: string;
   /** Escena 3D animada en lugar de foto: "vibracion-espectro" | "vibracion-semaforo".
