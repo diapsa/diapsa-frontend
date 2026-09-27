@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import IlustracionDolor from "@/components/atoms/IlustracionesDolor";
+import EscenaDolor from "@/components/organisms/EscenaDolor";
 
 /**
  * DoloresMonitoreo
@@ -18,7 +19,7 @@ import IlustracionDolor from "@/components/atoms/IlustracionesDolor";
 
 const CASOS = [
   {
-    clave: "sin",
+    clave: "sin" as const,
     pestana: "Todavía no tengo predictivo",
     dolores: [
       {
@@ -50,7 +51,7 @@ const CASOS = [
     },
   },
   {
-    clave: "con",
+    clave: "con" as const,
     pestana: "Ya tengo, pero no me da el tiempo",
     dolores: [
       {
@@ -84,7 +85,7 @@ const CASOS = [
 ];
 
 export default function DoloresMonitoreo() {
-  const [activo, setActivo] = useState(CASOS[0].clave);
+  const [activo, setActivo] = useState<"sin" | "con">("sin");
 
   return (
     <div>
@@ -107,6 +108,10 @@ export default function DoloresMonitoreo() {
             </button>
           );
         })}
+      </div>
+
+      <div className="mb-8">
+        <EscenaDolor modo={activo} />
       </div>
 
       {CASOS.map((c) => (
