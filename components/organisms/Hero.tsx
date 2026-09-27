@@ -1,289 +1,69 @@
-"use client";
-
-import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import Button from "../atoms/Button";
+import EscenaDolor from "@/components/organisms/EscenaDolor";
 
-type Stat = { value: string; label: string };
+/**
+ * Hero
+ * La primera pantalla de la portada: una promesa, una frase de apoyo, dos
+ * botones y la escena 3D de la planta.
+ *
+ * Por qué dejó de ser carrusel (plan-home-2026-09.md): las cuatro
+ * diapositivas rotaban solas, el visitante casi nunca veía más de la
+ * primera y las otras tres cargaban afirmaciones que no se sostenían. Una
+ * sola pantalla fija dice a qué se dedica DIAPSA y qué hacer a continuación.
+ *
+ * La escena es la misma de "¿Te suena familiar?" en monitoreo de condición,
+ * en su historia de capacidad y arrancando en el cierre: el analista de
+ * DIAPSA recorre la planta, cada equipo toma su semáforo y los hallazgos
+ * quedan en IDAP. Es exactamente lo que vendemos, sin escena nueva. Sin
+ * imagen de fondo: menos peso en la primera pintura.
+ */
 
-type Slide = {
-  id: number;
-  badge: string;
-  title: string;
-  titleHighlight: string;
-  description: string;
-  cta: { label: string; href: string };
-  ctaSecondary: { label: string; href: string };
-  image?: string;
-  imageAlt?: string;
-  imageContain: boolean;
-  bg: string;
-  stats?: Stat[];
-};
-
-const slides: Slide[] = [
-  {
-    id: 0,
-    badge: "22 años en la industria",
-    title: "MONITOREO PREDICTIVO",
-    titleHighlight: "INTEGRAL PARA LA INDUSTRIA",
-    description:
-      "Cada paro no planeado cuesta tiempo y dinero. Con sensores, tecnología avanzada y 22 años de experiencia, anticipamos fallas antes de que ocurran.",
-    cta: { label: "Nuestros servicios", href: "/servicios" },
-    ctaSecondary: { label: "Contáctanos", href: "/contacto" },
-    imageContain: true,
-    bg: "/images/screen.png",
-  },
-  // Carrusel de 4 mensajes. Se restauró el 2026-08-26 a petición de
-  // Emiliano: el movimiento es parte de la identidad del sitio.
-  {
-    id: 1,
-    badge: "Monitoreo Continuo · IoT Industrial",
-    title: "SENSORES INTELIGENTES",
-    titleHighlight: "24/7 EN TU MAQUINARIA",
-    description:
-      "Detecta vibración, temperatura y corriente en tiempo real. Anticipa paros no planeados con análisis basado en inteligencia artificial.",
-    cta: { label: "Ver monitoreo continuo", href: "/servicios/monitoreo-continuo" },
-    ctaSecondary: { label: "Solicitar demo", href: "/#contacto" },
-    image: "/images/header-sensores.png",
-    imageAlt: "Sensor IoT de vibración instalado en maquinaria industrial",
-    imageContain: false,
-    bg: "/images/fondo-mantenimiento.webp",
-    stats: [
-      { value: "24/7", label: "Monitoreo" },
-      { value: "IoT", label: "Conectado" },
-      { value: "IA", label: "Analítica" },
-    ],
-  },
-  {
-    id: 2,
-    badge: "Detección de Fugas · Termografía Industrial · Alianza con Hertzinno",
-    title: "CÁMARAS ACÚSTICAS",
-    titleHighlight: "Y TÉRMICAS INDUSTRIALES",
-    description:
-      "Visualiza fugas de gas, arcos eléctricos y anomalías térmicas invisibles al ojo humano. Tecnología de vanguardia para la seguridad de tus plantas.",
-    cta: { label: "Explorar productos", href: "/productos" },
-    ctaSecondary: { label: "Cotizar", href: "/#contacto" },
-    image: "/images/header-camaras.png",
-    imageAlt: "Cámara acústica para detección de fugas de gas industrial",
-    imageContain: true,
-    bg: "/images/fondo-mantenimiento.webp",
-    stats: [
-      { value: "Gas", label: "Fugas" },
-      { value: "IR", label: "Térmico" },
-      { value: "UV", label: "Eléctrico" },
-    ],
-  },
-  {
-    id: 3,
-    badge: "Certificaciones ISO y SAE · Cursos · Asesorías · Webinar · Talleres",
-    title: "CERTIFICACIONES EN MANTENIMIENTO",
-    titleHighlight: "PREDICTIVO Y CONFIABILIDAD",
-    description:
-      "Forma a tu equipo con expertos en herramientas predictivas bajo normativas internacionales (ISO y SAE). Diseñamos cursos personalizados según tu necesidad, con metodologías creadas por especialistas para incrementar la confiabilidad de tus operaciones.",
-    cta: { label: "Ver todos los cursos", href: "/cursos" },
-    ctaSecondary: { label: "Solicitar Información", href: "#contacto" },
-    image: "/images/itzam-gold-coin.png",
-    imageAlt: "Moneda dorada de instituto ITZAM",
-    imageContain: true,
-    bg: "/images/fondo-mantenimiento.webp",
-    stats: [
-      { value: "+50", label: "Cursos" },
-      { value: "ISO", label: "Certificados" },
-      { value: "Online", label: "Webinars" },
-      { value: "ITZAM", label: "Partner" },
-    ],
-  },
-];
-
-const AUTOPLAY_MS = 5000;
+// Segundo de la historia "con" en que entra el analista.
+const INICIO_CIERRE = 12.5;
 
 export default function Hero() {
-  const [current, setCurrent] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const goTo = (index: number) => {
-    setCurrent(index);
-    resetTimer();
-  };
-
-  const resetTimer = () => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, AUTOPLAY_MS);
-  };
-
-  useEffect(() => {
-    timerRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, AUTOPLAY_MS);
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, []);
-
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-      {/* Slides — todos en DOM, crossfade por opacidad */}
-      {slides.map((slide, i) => (
-        <div
-          key={slide.id}
-          aria-hidden={i !== current}
-          className="absolute inset-0 transition-opacity duration-700 ease-in-out"
-          style={{
-            opacity: i === current ? 1 : 0,
-            pointerEvents: i === current ? "auto" : "none",
-          }}
-        >
-          {/* Background */}
-          <Image
-            src={slide.bg}
-            alt=""
-            fill
-            className="object-cover"
-            priority={i === 0}
-          />
-          <div className="absolute inset-0 bg-primary/65" />
-
-          {/* Línea secondary al centro */}
-          {/* <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-secondary z-10" /> */}
-
-          {/* Contenido — grid 2 columnas */}
-          <div className={`relative z-20 h-full max-w-7xl mx-auto grid grid-cols-1 ${slide.id === 0 ? 'lg:grid-cols-[3fr_2fr]' : 'lg:grid-cols-2'}`}>
-            {/* Columna izquierda — texto */}
-            <div className={`flex flex-col justify-center px-6 py-12 pt-28 order-1 ${slide.id === 0 ? 'lg:z-10 lg:-mr-20' : ''}`}>
-              {/* Badge */}
-              <span className={`self-start text-secondary text-xs ${slide.id === 0 ? 'lg:text-base' : ''} font-semibold tracking-widest uppercase mb-5`}>
-                {slide.badge}
-              </span>
-
-              {/* Título */}
-              {slide.id === 0 ? (
-                <h1 className="text-2xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-                  {slide.title}
-                  <br />
-                  <span className="text-secondary">{slide.titleHighlight}</span>
-                </h1>
-              ) : (
-                <p
-                  role="heading"
-                  aria-level={2}
-                  className="text-2xl lg:text-5xl font-bold text-white mb-4 leading-tight"
-                >
-                  {slide.title}
-                  <br />
-                  <span className="text-secondary">{slide.titleHighlight}</span>
-                </p>
-              )}
-
-              {/* Descripción */}
-              <p className={`text-base ${slide.id === 0 ? 'lg:text-xl' : 'lg:text-lg'} text-white/85 mb-6 max-w-xl leading-relaxed`}>
-                {slide.description}
-              </p>
-
-              {/* Stats */}
-              {slide.stats && (
-                <div className="flex gap-8 mb-8">
-                  {slide.stats.map((stat) => (
-                    <div key={stat.label}>
-                      <div className="text-secondary font-bold text-xl lg:text-2xl">
-                        {stat.value}
-                      </div>
-                      <div className="text-white/60 text-xs uppercase tracking-wider mt-0.5">
-                        {stat.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-3">
-                <Link href={slide.cta.href}>
-                  <Button variant="secondary" className="text-sm lg:text-base px-6 py-2.5">
-                    {slide.cta.label}
-                  </Button>
-                </Link>
-                <Link href={slide.ctaSecondary.href}>
-                  <Button variant="primary" ghost className="text-sm lg:text-base px-6 py-2.5">
-                    {slide.ctaSecondary.label}
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Columna derecha — imagen (solo desktop) */}
-            <div className="relative hidden lg:flex items-end justify-center order-2">
-              {slide.id !== 0 && slide.image && slide.imageAlt && (
-                <div className="relative w-full h-[60vh] lg:h-[82vh]">
-                  <Image
-                    src={slide.image}
-                    alt={slide.imageAlt}
-                    fill
-                    className={
-                      slide.imageContain
-                        ? "object-contain object-bottom"
-                        : "object-cover object-center"
-                    }
-                    priority={i === 0}
-                  />
-                </div>
-              )}
-            </div>
+    <section className="relative w-full overflow-hidden bg-primary">
+      <div className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-secondary/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-14 pt-28 lg:min-h-[calc(100vh-5rem)] lg:grid-cols-[5fr_6fr] lg:gap-12 lg:py-24">
+        <div className="flex flex-col">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-secondary lg:text-sm">
+            Más de 20 años · Especialistas Categoría 3
+          </p>
+          <h1 className="mb-5 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl xl:text-6xl">
+            SABEMOS CÓMO ESTÁ CADA EQUIPO DE TU PLANTA{" "}
+            <span className="text-secondary">ANTES DE QUE FALLE</span>
+          </h1>
+          <p className="mb-8 max-w-xl text-justify text-base leading-relaxed text-white/80 lg:text-lg">
+            Medimos vibraciones, temperatura, ultrasonido, aceite y energía con tus equipos en operación, y te decimos qué intervenir, cuándo y por qué. Tú decides con datos; nosotros ponemos la gente, los equipos y la plataforma.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/contacto"
+              className="inline-flex items-center gap-2 rounded-xs bg-secondary px-7 py-3 font-bold text-primary shadow-md transition-colors hover:bg-white"
+            >
+              Hablar con un especialista
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+            <Link
+              href="/servicios"
+              className="inline-flex items-center gap-2 rounded-xs border border-white/40 px-7 py-3 font-bold text-white transition-colors hover:border-secondary hover:text-secondary"
+            >
+              Ver servicios
+            </Link>
           </div>
+          <p className="mt-8 text-sm text-white/55">
+            Sin detener la producción para medir. Hallazgos e historial en IDAP, nuestra plataforma.
+          </p>
         </div>
-      ))
-      }
 
-      {/* Controles de navegación — solo tienen sentido con más de un slide */}
-      {slides.length > 1 && (
-      <div className="absolute bottom-8 left-0 right-0 z-30 flex items-center justify-center gap-3">
-        {/* Anterior */}
-        <button
-          onClick={() => goTo((current - 1 + slides.length) % slides.length)}
-          className="p-2 text-white/50 hover:text-secondary transition-colors"
-          aria-label="Slide anterior"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-
-        {/* Dots */}
-        {slides.map((slide, i) => (
-          <button
-            key={slide.id}
-            onClick={() => goTo(i)}
-            aria-label={`Slide ${i + 1}`}
-            className={`rounded-full transition-all duration-300 ${i === current
-              ? "w-7 h-2 bg-secondary"
-              : "w-2 h-2 bg-white/35 hover:bg-white/60"
-              }`}
-          />
-        ))}
-
-        {/* Siguiente */}
-        <button
-          onClick={() => goTo((current + 1) % slides.length)}
-          className="p-2 text-white/50 hover:text-secondary transition-colors"
-          aria-label="Siguiente slide"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+        <div className="w-full">
+          <EscenaDolor modo="con" inicio={INICIO_CIERRE} />
+        </div>
       </div>
-      )}
-
-      {/* Contador */}
-      {slides.length > 1 && (
-      <div className="absolute bottom-8 right-6 z-30 text-white/40 text-xs font-mono tabular-nums">
-        {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
-      </div>
-      )}
-    </section >
+    </section>
   );
 }
-

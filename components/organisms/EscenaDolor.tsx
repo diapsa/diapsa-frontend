@@ -22,10 +22,17 @@ const ETIQUETAS: Record<Modo, string> = {
   con: "Planta con cientos de activos: dos técnicos no terminan la ruta, SAP, SCADA, el CMMS y Excel acumulan datos sin decisión y un equipo se pone en rojo sin que nadie lo note. El analista de DIAPSA recorre toda la ruta y deja tres hallazgos priorizados en IDAP.",
 };
 
-export default function EscenaDolor({ modo }: { modo: Modo }) {
+type Props = {
+  modo: Modo;
+  /** Segundo de la historia en que arranca (la portada empieza en el cierre). */
+  inicio?: number;
+};
+
+export default function EscenaDolor({ modo, inicio = 0 }: Props) {
   const cuadro = useRef<HTMLDivElement>(null);
   const escena = useRef<Limpieza | null>(null);
   const modoInicial = useRef(modo);
+  const inicioRef = useRef(inicio);
   const [montada, setMontada] = useState(false);
 
   useEffect(() => {
@@ -45,7 +52,7 @@ export default function EscenaDolor({ modo }: { modo: Modo }) {
         .then(([THREE, { montarEscenaDolor }]) => {
           if (cancelado) return;
           try {
-            escena.current = montarEscenaDolor(THREE, root, { modo: modoInicial.current });
+            escena.current = montarEscenaDolor(THREE, root, { modo: modoInicial.current, inicio: inicioRef.current });
             root.dataset.escena = "montada";
             setMontada(true);
           } catch (e) {
