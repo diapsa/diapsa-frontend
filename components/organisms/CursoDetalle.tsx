@@ -141,7 +141,7 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
               <Bloque etiqueta="Temario" titulo="Lo que se ve en el curso">
                 <ol className="divide-y divide-gray-100 overflow-hidden rounded-sm bg-gray-50 ring-1 ring-black/5">
                   {temario.map((tm, i) => (
-                    <li key={tm} className="flex gap-4 px-4 py-3">
+                    <li key={`${i}-${tm}`} className="flex gap-4 px-4 py-3">
                       <span className="w-6 shrink-0 font-mono text-sm font-bold text-secondary">{String(i + 1).padStart(2, "0")}</span>
                       <span className="text-base leading-relaxed text-primary">{tm}</span>
                     </li>
