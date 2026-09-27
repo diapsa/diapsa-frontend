@@ -55,6 +55,44 @@ const columnasServicios: ColumnaMenu[] = [
 // puede esperar a una llamada.
 const columnasCursos = menuCursos as ColumnaMenu[];
 
+// En escritorio, Cursos se reparte como Servicios: mosaico con los nueve
+// cursos de las tres técnicas (una fila por técnica: formación, taller y
+// certificación), lista con confiabilidad y gestión, y tarjetas con el
+// diplomado y el catálogo. El menú móvil sigue usando columnasCursos.
+const [cursosVib, cursosTermo, cursosUltra, cursosConf] = columnasCursos;
+const tecnicaCorta = (titulo: string) => titulo.split(" ")[0];
+const formatoCorto = (label: string) =>
+    label.startsWith("Formación") ? "Formación" : label.startsWith("Taller") ? "Taller" : label;
+const fichasTecnicas = [cursosVib, cursosTermo, cursosUltra].flatMap((tecnica) =>
+    tecnica.items
+        .filter((i) => ["formacion", "taller", "certificado"].includes(i.icono ?? ""))
+        .map((i) => ({ ...i, label: `${tecnicaCorta(tecnica.titulo)} · ${formatoCorto(i.label)}` })),
+);
+const fotovoltaicas = cursosTermo.items.find((i) => i.icono === "electricos");
+const diplomado = cursosConf.items.find((i) => i.href.includes("diplomado"));
+const columnasCursosPanel: ColumnaMenu[] = [
+    {
+        titulo: "Vibraciones, termografía y ultrasonido",
+        href: "/cursos#catalogo",
+        items: fichasTecnicas,
+        ancho: 2,
+        formato: "mosaico",
+    },
+    {
+        titulo: cursosConf.titulo,
+        items: [...cursosConf.items.filter((i) => i !== diplomado), ...(fotovoltaicas ? [fotovoltaicas] : [])],
+        formato: "lista",
+    },
+    {
+        titulo: "Programas",
+        items: [
+            ...(diplomado ? [{ ...diplomado, imagen: "/images/cursos/confiabilidad/confiabilidad-03.webp" }] : []),
+            { label: "Catálogo completo", href: "/cursos#catalogo", descripcion: "Los quince cursos por bloque", imagen: "/images/cursos/vibraciones/vibraciones-01.webp" },
+        ],
+        formato: "tarjetas",
+    },
+];
+
 // Todo lo institucional cuelga de "Empresa" en vez de ocupar la tira principal.
 const columnasEmpresa: ColumnaMenu[] = [
     {
@@ -106,7 +144,7 @@ export default function NavBar() {
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex items-center gap-5 xl:gap-7 text-white whitespace-nowrap">
                             <MegaMenu trigger="Servicios" columnas={columnasServicios} />
-                            <MegaMenu trigger="Cursos" columnas={columnasCursos} />
+                            <MegaMenu trigger="Cursos" columnas={columnasCursosPanel} />
                             <NavLink href="/productos">
                                 Equipos
                             </NavLink>
