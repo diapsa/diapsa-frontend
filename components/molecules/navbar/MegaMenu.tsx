@@ -153,7 +153,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
             {columnas.map((columna) => {
               const formato = columna.formato ?? "detalle";
               return (
-                <div key={columna.titulo} style={{ gridColumn: `span ${columna.ancho ?? 1}` }}>
+                <div key={columna.titulo} className="flex flex-col" style={{ gridColumn: `span ${columna.ancho ?? 1}` }}>
                   <div className="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2">
                     <p className="text-sm font-semibold uppercase tracking-widest text-white/50">{columna.titulo}</p>
                     {columna.href && (
@@ -207,14 +207,14 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                   )}
 
                   {formato === "tarjetas" && (
-                    <ul className="flex flex-col gap-3">
+                    <ul className="flex flex-1 flex-col gap-3">
                       {columna.items.map((item) => (
-                        <li key={item.href}>
+                        <li key={item.href} className="flex-1">
                           <Link
                             href={item.href}
                             onClick={cerrarYa}
                             title={item.descripcion}
-                            className="group relative block aspect-[3/1] overflow-hidden rounded-lg bg-[#1a1a1a]"
+                            className="group relative block h-full min-h-[6.5rem] overflow-hidden rounded-lg bg-[#1a1a1a]"
                           >
                             {item.imagen && (
                               <Image
