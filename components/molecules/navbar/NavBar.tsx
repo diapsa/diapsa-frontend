@@ -18,21 +18,32 @@ import menuCursos from '@/data/menu-cursos.json'
 // uno con ícono y una línea que dice qué es. Antes era una lista angosta con
 // un subpanel lateral que escondía las disciplinas detrás de dos niveles.
 const [monitoreoCondicion, monitoreoContinuo, ...sueltos] = services;
+// Foto de cada servicio suelto para las tarjetas del menú. Son fotos que ya
+// están publicadas en sus páginas, sin datos de cliente.
+const fotosSueltos: Record<string, string> = {
+    "/servicios/diapsa-start": "/images/diapsa-start/mediciones-diapsa-start.jpg",
+    "/servicios/idap": "/images/idap/capturas/inspeccion-vibraciones.jpg",
+    "/servicios/deteccion-gas": "/images/deteccion-gas/campo/inspeccion-planta.webp",
+    "/servicios/diagnostico-situacional": "/images/diagnostico-situacional/engineer-checking-machinery.webp",
+};
 const columnasServicios: ColumnaMenu[] = [
     {
         titulo: monitoreoCondicion.label,
         href: monitoreoCondicion.href,
         items: monitoreoCondicion.children ?? [],
         ancho: 2,
+        formato: "mosaico",
     },
     {
         titulo: monitoreoContinuo.label,
         href: monitoreoContinuo.href,
         items: monitoreoContinuo.children ?? [],
+        formato: "lista",
     },
     {
         titulo: "Más servicios",
-        items: sueltos,
+        items: sueltos.map((s) => ({ ...s, imagen: fotosSueltos[s.href] })),
+        formato: "tarjetas",
     },
 ];
 
@@ -43,6 +54,44 @@ const columnasServicios: ColumnaMenu[] = [
 // los publicados en producción; el catálogo vive en el CMS, pero el menú no
 // puede esperar a una llamada.
 const columnasCursos = menuCursos as ColumnaMenu[];
+
+// En escritorio, Cursos se reparte como Servicios: mosaico con los nueve
+// cursos de las tres técnicas (una fila por técnica: formación, taller y
+// certificación), lista con confiabilidad y gestión, y tarjetas con el
+// diplomado y el catálogo. El menú móvil sigue usando columnasCursos.
+const [cursosVib, cursosTermo, cursosUltra, cursosConf] = columnasCursos;
+const tecnicaCorta = (titulo: string) => titulo.split(" ")[0];
+const formatoCorto = (label: string) =>
+    label.startsWith("Formación") ? "Formación" : label.startsWith("Taller") ? "Taller" : label;
+const fichasTecnicas = [cursosVib, cursosTermo, cursosUltra].flatMap((tecnica) =>
+    tecnica.items
+        .filter((i) => ["formacion", "taller", "certificado"].includes(i.icono ?? ""))
+        .map((i) => ({ ...i, label: `${tecnicaCorta(tecnica.titulo)} · ${formatoCorto(i.label)}` })),
+);
+const fotovoltaicas = cursosTermo.items.find((i) => i.icono === "electricos");
+const diplomado = cursosConf.items.find((i) => i.href.includes("diplomado"));
+const columnasCursosPanel: ColumnaMenu[] = [
+    {
+        titulo: "Vibraciones, termografía y ultrasonido",
+        href: "/cursos#catalogo",
+        items: fichasTecnicas,
+        ancho: 2,
+        formato: "mosaico",
+    },
+    {
+        titulo: cursosConf.titulo,
+        items: [...cursosConf.items.filter((i) => i !== diplomado), ...(fotovoltaicas ? [fotovoltaicas] : [])],
+        formato: "lista",
+    },
+    {
+        titulo: "Programas",
+        items: [
+            ...(diplomado ? [{ ...diplomado, imagen: "/images/cursos/confiabilidad/confiabilidad-03.webp" }] : []),
+            { label: "Catálogo completo", href: "/cursos#catalogo", descripcion: "Los quince cursos por bloque", imagen: "/images/cursos/vibraciones/vibraciones-01.webp" },
+        ],
+        formato: "tarjetas",
+    },
+];
 
 // Todo lo institucional cuelga de "Empresa" en vez de ocupar la tira principal.
 const columnasEmpresa: ColumnaMenu[] = [
@@ -95,7 +144,7 @@ export default function NavBar() {
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex items-center gap-5 xl:gap-7 text-white whitespace-nowrap">
                             <MegaMenu trigger="Servicios" columnas={columnasServicios} />
-                            <MegaMenu trigger="Cursos" columnas={columnasCursos} />
+                            <MegaMenu trigger="Cursos" columnas={columnasCursosPanel} />
                             <NavLink href="/productos">
                                 Equipos
                             </NavLink>
