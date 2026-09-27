@@ -86,17 +86,24 @@ const TRAZOS: Record<string, string> = {
 type Props = {
   icono?: string;
   className?: string;
+  /** Sobre fondo oscuro (el menú desplegable): sin caja gris, trazo blanco
+      que se pinta de naranja al pasar el ratón, y el ícono llena la caja. */
+  oscuro?: boolean;
 };
 
-export default function IconoMenu({ icono, className = "" }: Props) {
+export default function IconoMenu({ icono, className = "", oscuro = false }: Props) {
   const trazo = icono ? TRAZOS[icono] : undefined;
   return (
     <span
-      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-sm bg-gray-100 text-primary transition-colors duration-200 group-hover:bg-secondary group-hover:text-primary ${className}`}
+      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-sm transition-colors duration-200 ${
+        oscuro
+          ? "text-white"
+          : "bg-gray-100 text-primary group-hover:bg-secondary group-hover:text-primary"
+      } ${className}`}
       aria-hidden="true"
     >
       {trazo ? (
-        <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.6} viewBox="0 0 24 24">
+        <svg className={oscuro ? "h-[70%] w-[70%]" : "h-5 w-5"} fill="none" stroke="currentColor" strokeWidth={oscuro ? 1.2 : 1.6} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d={trazo} />
         </svg>
       ) : (
