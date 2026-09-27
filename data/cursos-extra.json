@@ -1,0 +1,575 @@
+{
+  "_nota": "Complemento del CMS por slug: técnica, formato y grupos programados. El CMS no trae fechas ni duración; aquí se capturan hasta que el CMS los tenga. Un grupo sin fecha no se muestra.",
+  "tecnicas": [
+    {
+      "clave": "vibraciones",
+      "nombre": "Vibraciones mecánicas",
+      "norma": "ISO 18436-2"
+    },
+    {
+      "clave": "termografia",
+      "nombre": "Termografía infrarroja",
+      "norma": "ISO 18436-7"
+    },
+    {
+      "clave": "ultrasonido",
+      "nombre": "Ultrasonido pasivo",
+      "norma": ""
+    },
+    {
+      "clave": "confiabilidad",
+      "nombre": "Confiabilidad y gestión",
+      "norma": ""
+    }
+  ],
+  "formatos": {
+    "formacion": {
+      "nombre": "Formación técnica",
+      "texto": "Aprendes la técnica completa: inspección, análisis y uso del equipo."
+    },
+    "practica": {
+      "nombre": "Taller práctico",
+      "texto": "Trabajas con casos reales sobre lo que ya sabes."
+    },
+    "certificacion": {
+      "nombre": "Certificación",
+      "texto": "Te preparas y certificas por categoría."
+    },
+    "gestion": {
+      "nombre": "Curso ejecutivo",
+      "texto": "Para quien decide y administra el mantenimiento."
+    },
+    "especialidad": {
+      "nombre": "Especialidad",
+      "texto": "Una aplicación concreta de la técnica."
+    }
+  },
+  "cursos": {
+    "curso-tecnico-especializado-vibraciones-mecanicas": {
+      "tecnica": "vibraciones",
+      "formato": "formacion",
+      "aprenderas": [
+        "Cómo se monitorean y se analizan las vibraciones de una máquina",
+        "A usar el analizador y a administrar los espectros",
+        "A leer espectros en pantalla antes de ir a campo",
+        "A medir en equipos instalados, con el instructor al lado"
+      ],
+      "podras": [
+        "Hacer rutas de medición de vibraciones en tu planta",
+        "Reconocer en el espectro cuándo una máquina se sale de lo normal",
+        "Llegar preparado a la certificación Categoría I"
+      ],
+      "temario": [
+        "Monitoreo y análisis de vibraciones.",
+        "Uso del equipo y administración de espectros.",
+        "Práctica con equipos y espectros en pantalla.",
+        "Práctica en sistemas instalados (campo)."
+      ]
+    },
+    "taller-de-aprendizaje-practico-de-vibraciones": {
+      "tecnica": "vibraciones",
+      "formato": "practica",
+      "aprenderas": [
+        "Una metodología para medir y analizar vibraciones paso a paso",
+        "Qué puntos revisar primero en equipos mecánicos y eléctricos",
+        "Casos reales resueltos por instructores con más de 20 años de experiencia"
+      ],
+      "podras": [
+        "Aplicar lo que ya sabías con un método ordenado",
+        "Presentar tus hallazgos de vibraciones con más claridad",
+        "Resolver casos de tu propia planta con más seguridad"
+      ]
+    },
+    "vibraciones-mecanicas-curso-de-certificacion": {
+      "tecnica": "vibraciones",
+      "formato": "certificacion",
+      "nivel": "Categorías I y II",
+      "aprenderas": [
+        "A distinguir las fuerzas vibratorias propias de las anómalas",
+        "Dónde y cómo medir en motores, bombas, turbinas, ventiladores, compresores y transmisiones",
+        "Cuándo usar sensores mono y triaxiales",
+        "Casos de equipos inspeccionados y casos de los propios participantes"
+      ],
+      "podras": [
+        "Trabajar como especialista en monitoreo (Categoría I) o analista (Categoría II)",
+        "Definir los puntos de medición correctos de cada equipo",
+        "Asesorar en la elección del equipo de vibraciones según las necesidades de tu planta"
+      ]
+    },
+    "curso-tecnico-especializado-termografia": {
+      "tecnica": "termografia",
+      "formato": "formacion",
+      "aprenderas": [
+        "Cómo se inspecciona y se analiza con termografía",
+        "A usar la cámara y a administrar las imágenes",
+        "A leer termogramas en pantalla antes de ir a campo",
+        "A inspeccionar sistemas instalados, con el instructor al lado"
+      ],
+      "podras": [
+        "Hacer rutas de termografía en tu planta",
+        "Distinguir un punto caliente real de un reflejo o una carga normal",
+        "Llegar preparado a la certificación Categoría I"
+      ],
+      "temario": [
+        "Inspección y análisis termográfico.",
+        "Uso del equipo y administración de imágenes.",
+        "Práctica con imágenes en pantalla.",
+        "Práctica en sistemas instalados (campo)."
+      ],
+      "ocultarImagenCms": true
+    },
+    "talleres-de-aprendizaje-practico-de-termografia": {
+      "tecnica": "termografia",
+      "formato": "practica",
+      "aprenderas": [
+        "Una metodología para inspeccionar con cámara infrarroja paso a paso",
+        "Qué revisar primero en sistemas eléctricos y mecánicos",
+        "Casos reales resueltos por instructores con más de 20 años de experiencia"
+      ],
+      "podras": [
+        "Aplicar lo que ya sabías con un método ordenado",
+        "Presentar tus hallazgos térmicos con más claridad",
+        "Resolver casos de tu propia planta con más seguridad"
+      ]
+    },
+    "termografia-infrarroja-curso-de-certificacion": {
+      "tecnica": "termografia",
+      "formato": "certificacion",
+      "nivel": "Categorías I y II",
+      "aprenderas": [
+        "Los principios de la termografía infrarroja y sus alcances",
+        "A adquirir datos con la cámara y a procesar las imágenes",
+        "Aplicaciones y diagnósticos en equipos industriales",
+        "A documentar los hallazgos, con más de 100 ejercicios con imágenes reales"
+      ],
+      "podras": [
+        "Trabajar como inspector (Categoría I) o analista (Categoría II)",
+        "Diagnosticar equipos industriales con termografía",
+        "Asesorar en la elección de la cámara adecuada para tu planta"
+      ]
+    },
+    "inspeccion-termografica-en-plantas-fotovoltaicas": {
+      "tecnica": "termografia",
+      "formato": "especialidad",
+      "aprenderas": [
+        "El proceso de inspección de una planta fotovoltaica, con dron o manual",
+        "Qué equipo se necesita y cómo se calibra",
+        "A reconocer defectos por su patrón térmico y a extrapolar temperaturas",
+        "Qué debe llevar el informe según IEC TS 62446-3"
+      ],
+      "podras": [
+        "Planear y hacer inspecciones termográficas en plantas fotovoltaicas",
+        "Calcular FOV, MFOV y radiación con el software del curso",
+        "Entregar informes conforme a IEC TS 62446-3"
+      ]
+    },
+    "curso-tecnico-especializado-ultrasonido-pasivo": {
+      "tecnica": "ultrasonido",
+      "formato": "formacion",
+      "aprenderas": [
+        "Cómo se monitorea y se analiza con ultrasonido",
+        "A usar el equipo y a administrar los espectros",
+        "A reconocer sonidos en pantalla antes de ir a campo",
+        "A medir en sistemas instalados, con el instructor al lado"
+      ],
+      "podras": [
+        "Hacer rutas de ultrasonido en tu planta",
+        "Distinguir el sonido normal de un equipo del de una anomalía",
+        "Llegar preparado a la certificación Categoría I"
+      ]
+    },
+    "talleres-de-aprendizaje-practico-de-ultrasonido": {
+      "tecnica": "ultrasonido",
+      "formato": "practica",
+      "aprenderas": [
+        "Una metodología para inspeccionar con ultrasonido paso a paso",
+        "Qué escuchar primero en sistemas eléctricos y mecánicos",
+        "Casos reales resueltos por instructores con más de 20 años de experiencia"
+      ],
+      "podras": [
+        "Aplicar lo que ya sabías con un método ordenado",
+        "Presentar tus hallazgos de ultrasonido con más claridad",
+        "Resolver casos de tu propia planta con más seguridad"
+      ]
+    },
+    "ultrasonido-pasivo-curso-de-certificacion": {
+      "tecnica": "ultrasonido",
+      "formato": "certificacion",
+      "aprenderas": [
+        "Los principios del sonido y del ultrasonido",
+        "Cómo suenan arcos, efecto corona y arborescencias en equipo eléctrico",
+        "Cómo suenan rodamientos de motores, bombas y transmisiones",
+        "A detectar fugas de aire, gas y vapor"
+      ],
+      "podras": [
+        "Trabajar como especialista en monitoreo o analista de ultrasonido",
+        "Inspeccionar subestaciones, tableros y transformadores",
+        "Encontrar fugas y fallas de rodamientos antes de que paren un equipo"
+      ]
+    },
+    "cursos-de-aprendizaje-practico-vibraciones-ultrasonido-termografia": {
+      "tecnica": "confiabilidad",
+      "formato": "practica",
+      "aprenderas": [
+        "A dominar la inspección (curso 1) o el análisis (curso 2) de cada técnica",
+        "A interpretar resultados de vibraciones, ultrasonido y termografía",
+        "Casos reales de tu propia planta"
+      ],
+      "podras": [
+        "Determinar si una condición es normal o anómala",
+        "Proponer soluciones a las anomalías que encuentres",
+        "Pasar de medir a diagnosticar"
+      ]
+    },
+    "incremento-de-la-confiabilidad-monitoreo-de-condicion": {
+      "tecnica": "confiabilidad",
+      "formato": "gestion",
+      "aprenderas": [
+        "Las herramientas administrativas y técnicas de un programa de monitoreo",
+        "A definir la criticidad de los equipos",
+        "A determinar la frecuencia de inspección de cada uno",
+        "A usar software para organizar el programa"
+      ],
+      "podras": [
+        "Armar o mejorar el programa de monitoreo de condición de tu planta",
+        "Decidir qué equipos medir primero y cada cuánto",
+        "Justificar el programa con sus beneficios y alcances"
+      ]
+    },
+    "curso-de-mantenimiento-para-no-mantenedores": {
+      "tecnica": "confiabilidad",
+      "formato": "gestion",
+      "aprenderas": [
+        "Qué es el monitoreo de condición y qué beneficios técnicos y financieros da",
+        "Por qué el apoyo de la dirección decide si un programa funciona",
+        "Cómo se justifican equipos, capacitación y paros programados"
+      ],
+      "podras": [
+        "Tomar decisiones de mantenimiento con criterio, sin ser especialista",
+        "Formar comités que impulsen el monitoreo de condición",
+        "Apoyar la compra de equipos y los paros programados con argumentos"
+      ]
+    },
+    "alineamiento-balanceo-proactivo": {
+      "tecnica": "confiabilidad",
+      "formato": "gestion",
+      "galeria": "alineacion",
+      "aprenderas": [
+        "A investigar si una falla viene de desbalanceo o desalineación",
+        "Qué es el mantenimiento proactivo y por qué da confiabilidad temprana",
+        "A encontrar la causa raíz de las fallas que se repiten"
+      ],
+      "podras": [
+        "Resolver problemas de alineación y balanceo de manera práctica",
+        "Cortar las fallas repetitivas desde su causa",
+        "Proponer un programa de mantenimiento proactivo"
+      ]
+    },
+    "redaccion-de-informes-tecnicos": {
+      "tecnica": "confiabilidad",
+      "formato": "practica",
+      "aprenderas": [
+        "Los tipos de informe técnico y cuándo usar cada uno",
+        "La estructura de un informe que sí se lee",
+        "A explicar tecnicismos para quien toma decisiones"
+      ],
+      "podras": [
+        "Redactar informes claros que lleven a una decisión",
+        "Adaptar el mismo hallazgo a técnicos y a directivos",
+        "Lograr que tus recomendaciones se aprueben y se ejecuten"
+      ]
+    }
+  },
+  "grupos": [],
+  "galerias": {
+    "vibraciones": [
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-01.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-02.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-04.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-05.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-06.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-07.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-08.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-09.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-10.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-11.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-12.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/vibraciones/vibraciones-13.webp",
+        "alt": "Participantes de un curso de vibraciones mecánicas de DIAPSA"
+      }
+    ],
+    "termografia": [
+      {
+        "src": "/images/cursos/termografia/termografia-01.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-02.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-03.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-04.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-06.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-07.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-08.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/termografia/termografia-09.webp",
+        "alt": "Participantes de un curso de termografía infrarroja de DIAPSA"
+      }
+    ],
+    "ultrasonido": [
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-01.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-02.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-03.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-04.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-06.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-08.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-09.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-10.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/ultrasonido/ultrasonido-13.webp",
+        "alt": "Participantes de un curso de ultrasonido pasivo de DIAPSA"
+      }
+    ],
+    "alineacion": [
+      {
+        "src": "/images/cursos/alineacion/alineacion-01.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-02.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-03.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-04.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-06.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-08.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-10.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-12.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      },
+      {
+        "src": "/images/cursos/alineacion/alineacion-13.webp",
+        "alt": "Participantes de un curso de alineación y balanceo de DIAPSA"
+      }
+    ],
+    "confiabilidad": [
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-03.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-04.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-05.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-06.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-07.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-09.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-10.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      },
+      {
+        "src": "/images/cursos/confiabilidad/confiabilidad-12.webp",
+        "alt": "Acompañamiento en planta de DIAPSA a un equipo de mantenimiento"
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "id": "certificaciones",
+      "formatos": [
+        "certificacion"
+      ],
+      "etiqueta": "Validación por categoría",
+      "titulo": "Certificaciones",
+      "texto": "Te preparas y te certificas por categoría, bajo los lineamientos de la ISO 18436, en la técnica que ya aplicas en tu planta.",
+      "puntos": [
+        {
+          "k": "Para quién",
+          "v": "Quien ya mide en campo y necesita validar su competencia."
+        },
+        {
+          "k": "Cómo",
+          "v": "Teórico y práctico, con equipos inspeccionados y casos de los participantes."
+        },
+        {
+          "k": "Qué obtienes",
+          "v": "Tu certificación como Categoría I o Categoría II."
+        }
+      ]
+    },
+    {
+      "id": "talleres",
+      "formatos": [
+        "practica"
+      ],
+      "etiqueta": "100% práctico",
+      "titulo": "Talleres prácticos",
+      "texto": "Sesiones intensivas sobre lo que ya sabes: casos reales y la metodología de instructores con más de 20 años en campo.",
+      "puntos": [
+        {
+          "k": "Para quién",
+          "v": "Quien ya tiene bases de la técnica y quiere dominarla."
+        },
+        {
+          "k": "Cómo",
+          "v": "Totalmente prácticos, con casos de tu propia planta."
+        },
+        {
+          "k": "Qué obtienes",
+          "v": "Un método ordenado para medir, analizar y reportar."
+        }
+      ]
+    },
+    {
+      "id": "formacion",
+      "formatos": [
+        "formacion"
+      ],
+      "etiqueta": "De cero a especialista",
+      "titulo": "Formación técnica",
+      "texto": "La formación integral del especialista: aprendes la técnica y el equipo, practicas en pantalla y después en sistemas instalados.",
+      "puntos": [
+        {
+          "k": "Para quién",
+          "v": "Quien empieza en la técnica o forma a su equipo desde la base."
+        },
+        {
+          "k": "Cómo",
+          "v": "Híbrido, con práctica en las instalaciones del cliente."
+        },
+        {
+          "k": "Qué obtienes",
+          "v": "Lo necesario para certificarte como Categoría I."
+        }
+      ]
+    },
+    {
+      "id": "especializados",
+      "formatos": [
+        "gestion",
+        "especialidad"
+      ],
+      "etiqueta": "Gestión y especialidades",
+      "titulo": "Cursos especializados y ejecutivos",
+      "texto": "Para quien dirige el mantenimiento y para aplicaciones concretas: programas de monitoreo, confiabilidad y plantas fotovoltaicas.",
+      "puntos": [
+        {
+          "k": "Para quién",
+          "v": "Jefes, gerentes y especialistas con un reto concreto."
+        },
+        {
+          "k": "Cómo",
+          "v": "Presencial, en línea o ejecutivo, según el curso."
+        },
+        {
+          "k": "Qué obtienes",
+          "v": "Herramientas para decidir y ordenar el programa."
+        }
+      ]
+    }
+  ]
+}

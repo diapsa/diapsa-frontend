@@ -122,8 +122,9 @@ export default function MegaMenu({ trigger, columnas }: Props) {
               className={indice > 0 ? "border-l border-gray-200 pl-10" : ""}
               style={{ gridColumn: `span ${columna.ancho ?? 1}` }}
             >
-              <div className="mb-4 flex items-center justify-between gap-4">
-                <p className="text-sm font-semibold text-tertiary">{columna.titulo}</p>
+              {/* Con cuatro columnas el título no cabe junto a "Ver todo": va encima */}
+              <div className={`mb-4 flex gap-4 ${columnas.length >= 4 ? "flex-col items-start gap-2" : "items-center justify-between"}`}>
+                <p className={columnas.length >= 4 ? "text-base font-extrabold text-primary" : "text-sm font-semibold text-tertiary"}>{columna.titulo}</p>
                 {columna.href && (
                   <Link
                     href={columna.href}
