@@ -18,12 +18,12 @@ import dataVM from "@/data/servicios/vibraciones-mecanicas.json";
  * PaginaMonitoreo
  * El cuerpo de /servicios/monitoreo-condicion.
  *
- * Por qué este orden: quien llega a esta página casi siempre ya sabe que
- * quiere monitoreo y busca cuál servicio. Antes tenía que bajar tres
- * secciones (el problema, la filosofía, la analogía médica) para encontrar
- * los nueve servicios. Ahora van primero, separados en los dos frentes que
- * un jefe de mantenimiento reconoce: lo mecánico y lo eléctrico. Después
- * vienen las fotos de campo, el problema, el método y lo que se gana.
+ * Por qué este orden: primero el problema en cuatro tarjetas cortas, para
+ * que el visitante se reconozca, e inmediatamente los nueve servicios que lo
+ * resuelven, separados en los dos frentes que un jefe de mantenimiento
+ * reconoce: lo mecánico y lo eléctrico. Antes había que bajar tres secciones
+ * (la filosofía, la analogía médica) para encontrarlos. Después vienen las
+ * fotos de campo, el método y lo que se gana.
  *
  * Sin porcentajes ni cifras de plantas: no había cómo sostenerlos.
  * Nombre y descripción corta salen del menú, para que la página y el
@@ -130,7 +130,32 @@ function Flecha() {
 export default function PaginaMonitoreo() {
   return (
     <>
-      {/* 1. Servicios: lo que viene a buscar */}
+      {/* 1. El problema, en corto: que se reconozca antes de elegir */}
+      <section className="w-full bg-gray-50 py-14 lg:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">
+              Lo que duele
+            </span>
+            <h2 className="text-3xl font-extrabold text-primary lg:text-4xl">
+              ¿TE SUENA <span className="text-secondary">FAMILIAR?</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {DOLORES.map((d) => (
+              <div key={d.titulo} className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-sm bg-secondary/10">
+                  <IconoMenu icono={d.icono} className="h-6 w-6 text-secondary" />
+                </div>
+                <h3 className="mb-2 font-bold leading-snug text-primary">{d.titulo}</h3>
+                <p className="text-justify text-sm leading-relaxed text-tertiary">{d.texto}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Servicios: lo que viene a buscar */}
       <section className="w-full bg-white py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto mb-10 max-w-3xl text-center">
@@ -207,36 +232,11 @@ export default function PaginaMonitoreo() {
         </div>
       </section>
 
-      {/* 2. Fotos de campo: la prueba de que medimos nosotros */}
+      {/* 3. Fotos de campo: la prueba de que medimos nosotros */}
       <GaleriaCampo
         fotos={galeria}
         texto="Nuestros analistas en planta con vibraciones, termografía, ultrasonido, aceite y calidad de energía. Mediciones reales, sin fotos de banco de imágenes."
       />
-
-      {/* 3. El problema, en corto */}
-      <section className="w-full bg-gray-50 py-14 lg:py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto mb-10 max-w-3xl text-center">
-            <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">
-              Lo que duele
-            </span>
-            <h2 className="text-3xl font-extrabold text-primary lg:text-4xl">
-              ¿TE SUENA <span className="text-secondary">FAMILIAR?</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {DOLORES.map((d) => (
-              <div key={d.titulo} className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-sm bg-secondary/10">
-                  <IconoMenu icono={d.icono} className="h-6 w-6 text-secondary" />
-                </div>
-                <h3 className="mb-2 font-bold leading-snug text-primary">{d.titulo}</h3>
-                <p className="text-justify text-sm leading-relaxed text-tertiary">{d.texto}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 4. Cómo trabajamos: las cinco D */}
       <section className="relative w-full overflow-hidden bg-primary py-14 lg:py-20">
