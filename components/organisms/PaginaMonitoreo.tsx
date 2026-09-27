@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import IconoMenu from "@/components/atoms/IconoMenu";
-import IlustracionDolor from "@/components/atoms/IlustracionesDolor";
+import DoloresMonitoreo from "@/components/organisms/DoloresMonitoreo";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
 import menu from "@/data/servicios.json";
 import galeria from "@/data/monitoreo-condicion-galeria.json";
@@ -47,28 +47,6 @@ const FRENTES = [
   },
 ];
 
-const DOLORES = [
-  {
-    dibujo: "tiempo",
-    titulo: "No hay tiempo para medir y analizar",
-    texto: "Recorrer la ruta, tomar la lectura, bajar los datos y analizar cada espectro o cada termograma consume horas que el turno no tiene. Se mide poco y se analiza menos.",
-  },
-  {
-    dibujo: "personal",
-    titulo: "Demasiados equipos para tan poca gente",
-    texto: "Cientos de motores, bombas, tableros y transformadores para un equipo de mantenimiento que además atiende las urgencias del día. No da para todo.",
-  },
-  {
-    dibujo: "gestion",
-    titulo: "Gestionar tantos activos rebasa al equipo",
-    texto: "Órdenes de trabajo, rutas, historiales, prioridades e informes se acumulan más rápido de lo que se atienden. El predictivo es lo primero que se queda para después.",
-  },
-  {
-    dibujo: "sistemas",
-    titulo: "Sistemas que nadie aprovecha",
-    texto: "SAP, SCADA, el CMMS y las hojas de cálculo juntan datos todos los días, pero nadie tiene tiempo de convertirlos en una decisión sobre qué equipo intervenir.",
-  },
-];
 
 const PASOS = [
   {
@@ -142,38 +120,10 @@ export default function PaginaMonitoreo() {
               ¿TE SUENA <span className="text-secondary">FAMILIAR?</span>
             </h2>
             <p className="mt-4 text-justify text-lg text-tertiary sm:text-center">
-              A casi ninguna planta le falta convencerse del predictivo. Le falta capacidad para hacerlo.
+              Depende de dónde estás. Elige lo que se parece más a tu planta.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {DOLORES.map((d) => (
-              <div key={d.titulo} className="overflow-hidden rounded-sm border border-gray-100 bg-white shadow-sm">
-                <div className="h-36 border-b border-gray-100 bg-[#f3f6f8] px-4 py-3 sm:h-40">
-                  <IlustracionDolor clave={d.dibujo} />
-                </div>
-                <div className="p-6">
-                  <h3 className="mb-2 font-bold leading-snug text-primary">{d.titulo}</h3>
-                  <p className="text-justify text-sm leading-relaxed text-tertiary">{d.texto}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 flex flex-col items-start gap-5 rounded-sm bg-primary p-6 sm:p-8 md:flex-row md:items-center">
-            <div className="flex-1">
-              <p className="text-xl font-extrabold text-white">
-                Nosotros ponemos la <span className="text-secondary">capacidad</span>
-              </p>
-              <p className="mt-2 text-justify text-sm leading-relaxed text-white/75">
-                Nuestros analistas recorren la ruta, miden, analizan y cargan todo en IDAP. Tu equipo recibe solo lo que tiene que decidir: qué equipo, qué falla, qué tan grave y qué hacer. Sin contratar más gente ni aprender otro sistema.
-              </p>
-            </div>
-            <Link
-              href="/contacto"
-              className="inline-flex shrink-0 items-center gap-2 rounded-xs bg-secondary px-6 py-3 font-bold text-primary transition-colors hover:bg-white"
-            >
-              Hablar con un especialista <Flecha />
-            </Link>
-          </div>
+          <DoloresMonitoreo />
         </div>
       </section>
 
