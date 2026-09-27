@@ -2,36 +2,36 @@ import Link from "next/link";
 
 const faqs = [
     {
-        q: "¿Necesito detener la producción para las mediciones?",
-        a: "No. La mayoría de las tecnologías de monitoreo de condición (termografía, vibraciones, ultrasonido) se realizan con los equipos en operación normal. Esto es precisamente una de sus grandes ventajas: no requiere paros programados para obtener datos reales.",
+        q: "¿Hay que detener la producción para medir?",
+        a: "No. Vibraciones, termografía, ultrasonido, calidad de energía y la toma de muestras de aceite se hacen con los equipos en operación normal. Esa es justamente la ventaja: datos reales sin paros programados.",
     },
     {
-        q: "¿Cada cuánto tiempo debo hacer el monitoreo?",
-        a: "Depende de la criticidad de sus activos y el sector. Para equipos críticos en manufactura continua, recomendamos mediciones mensuales o trimestrales. En industrias con equipos menos críticos, mediciones semestrales pueden ser suficientes. Definimos la frecuencia óptima en la estrategia inicial.",
+        q: "¿Cada cuánto hay que medir?",
+        a: "Depende de qué tan críticos son tus equipos. Para los críticos de proceso continuo solemos recomendar rutas mensuales o trimestrales; para el resto, semestrales pueden bastar. La frecuencia de cada equipo se define en el plan inicial.",
     },
     {
-        q: "¿Qué tan rápido veremos resultados?",
-        a: "Las detecciones de anomalías comienzan desde la primera ronda de mediciones. Los beneficios económicos más tangibles (reducción de paros y refacciones) se observan típicamente entre 3 y 6 meses de monitoreo continuo.",
+        q: "¿Cuándo se ven resultados?",
+        a: "Los primeros hallazgos salen desde la primera ruta. El ahorro en paros y refacciones se nota conforme el programa acumula historial y las intervenciones se planean con datos.",
     },
     {
-        q: "¿Es caro comparado con el mantenimiento correctivo?",
-        a: "Un paro no programado en una línea de producción promedio cuesta entre 5 y 15 veces más que un ciclo completo de monitoreo predictivo. El ROI del monitoreo de condición en industria es consistentemente positivo en el primer año de implementación.",
+        q: "¿Sale caro comparado con el correctivo?",
+        a: "Compáralo con lo que te cuesta una hora de línea parada, más la reparación de emergencia y la refacción comprada con urgencia. Un solo paro evitado en un equipo crítico suele cubrir con creces el programa.",
     },
     {
-        q: "¿Trabajan con maquinaria antigua o solo equipos nuevos?",
-        a: "Trabajamos con cualquier maquinaria en operación, independientemente de su antigüedad. De hecho, los equipos más antiguos suelen ser los que más se benefician del monitoreo, ya que suelen estar fuera de garantía y tienen mayor riesgo de falla.",
+        q: "¿Trabajan con maquinaria antigua?",
+        a: "Sí, con cualquier equipo en operación sin importar su antigüedad. Los más antiguos suelen ser los que más ganan con el monitoreo: ya no tienen garantía y su riesgo de falla es mayor.",
     },
     {
-        q: "¿Necesitamos personal técnico especializado para interpretar los reportes?",
-        a: "No. Nuestros informes están diseñados para ser comprensibles tanto por el personal técnico de mantenimiento como por gerencia. Incluimos un resumen ejecutivo, hallazgos priorizados por severidad y recomendaciones en lenguaje claro y efectivo.",
+        q: "¿Necesito un especialista para entender los informes?",
+        a: "No. Los informes están hechos para que los entiendan mantenimiento y gerencia: resumen ejecutivo, hallazgos ordenados por severidad y recomendaciones en lenguaje claro.",
     },
     {
-        q: "¿Tienen experiencia en nuestra industria?",
-        a: "Con más de 20 años de trayectoria, hemos atendido plantas en manufactura automotriz, generación de energía, petroquímica, tratamiento de agua, industria alimenticia, farmacéutica y más. Conocemos los equipos típicos y los modos de falla más comunes en cada sector.",
+        q: "¿Tienen experiencia en mi industria?",
+        a: "En más de 20 años hemos trabajado en manufactura, generación de energía, petroquímica, tratamiento de agua, alimentos y otras industrias. Conocemos los equipos típicos de cada sector y cómo suelen fallar.",
     },
     {
-        q: "¿Qué pasa si detectan una falla? ¿Ustedes la reparan?",
-        a: "Nuestro servicio es de diagnóstico y monitoreo. Al detectar una anomalía, le entregamos el hallazgo con su contexto técnico, severidad y recomendación de intervención. Su equipo de mantenimiento o un taller especializado ejecuta la reparación con información precisa, evitando sobre-intervenciones.",
+        q: "Si encuentran una falla, ¿ustedes la reparan?",
+        a: "Nuestro trabajo es diagnosticar. Te entregamos el hallazgo con su severidad y la recomendación de qué hacer, y tu equipo o tu taller repara sabiendo exactamente qué. La excepción es la alineación y el balanceo: esos los corregimos en campo.",
     },
 ];
 
@@ -47,7 +47,7 @@ export default function MCFaq() {
                         PREGUNTAS <span className="text-secondary">FRECUENTES</span>
                     </h2>
                     <p className="text-tertiary text-lg max-w-2xl mx-auto">
-                        Respondemos con transparencia las dudas más comunes antes de iniciar.
+                        Las dudas más comunes antes de empezar.
                     </p>
                 </div>
 
@@ -68,7 +68,7 @@ export default function MCFaq() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </summary>
-                            <div className="px-6 pb-5 text-sm text-tertiary leading-relaxed border-t border-gray-100 pt-4">
+                            <div className="px-6 pb-5 text-justify text-sm text-tertiary leading-relaxed border-t border-gray-100 pt-4">
                                 {faq.a}
                             </div>
                         </details>
@@ -77,7 +77,7 @@ export default function MCFaq() {
 
                 <div className="mt-10 text-center">
                     <p className="mb-5 text-sm text-tertiary">
-                        ¿Su equipo o condición operativa requiere una respuesta más específica?
+                        ¿Tu caso necesita una respuesta más específica?
                     </p>
                     <Link
                         href="/contacto"
