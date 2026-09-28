@@ -49,6 +49,45 @@ const nextConfig: NextConfig = {
    */
   async redirects() {
     return [
+      // --- Página vieja de cámaras (borrada 2026-09-28) ---
+      // Las cámaras HIKMICRO viven ahora en la tienda de /productos. Los
+      // modelos que siguen a la venta van a su ficha; los demás, al catálogo.
+      {
+        source: '/camaras/hikmikro-m11',
+        destination: '/productos/camaras-termograficas/hikmicro-m11',
+        statusCode: 301,
+      },
+      {
+        source: '/camaras/hikmikro-m11w',
+        destination: '/productos/camaras-termograficas/hikmicro-m11w',
+        statusCode: 301,
+      },
+      {
+        source: '/camaras/hikmikro-m20',
+        destination: '/productos/camaras-termograficas/hikmicro-m20',
+        statusCode: 301,
+      },
+      {
+        source: '/camaras/hikmikro-m20w',
+        destination: '/productos/camaras-termograficas/hikmicro-m20w',
+        statusCode: 301,
+      },
+      {
+        source: '/camaras/hikmikro-m31',
+        destination: '/productos/camaras-termograficas/hikmicro-m31',
+        statusCode: 301,
+      },
+      {
+        source: '/camaras/hikmikro-sp60',
+        destination: '/productos/camaras-termograficas/hikmicro-sp60',
+        statusCode: 301,
+      },
+      {
+        source: '/camaras/:slug*',
+        destination: '/productos?categoria=camaras-termograficas',
+        statusCode: 301,
+      },
+
       // --- Cursos y certificaciones ---
       {
         source: '/cursos-y-certificaciones/curso-vibraciones-mecanicas',

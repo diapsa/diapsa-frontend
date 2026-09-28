@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CarruselBloque from "@/components/organisms/CarruselBloque";
 import DoloresMonitoreo from "@/components/organisms/DoloresMonitoreo";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
@@ -26,22 +27,32 @@ import { APARTADOS_CONDICION } from "@/lib/bloques-inicio";
 const PASOS = [
   {
     nombre: "Diagnóstico",
+    foto: "/images/servicios/diagnostico-integral/campo-equipo-ruta.webp",
+    alt: "Analistas de DIAPSA recorriendo los equipos de la planta",
     texto: "Levantamos el inventario de equipos críticos, su historial de fallas y su condición actual. Así sabemos por dónde empezar.",
   },
   {
     nombre: "Diseño",
+    foto: "/images/servicios/sensores-vibracion/sensor-motor.webp",
+    alt: "Punto de medición definido sobre la carcasa de un motor",
     texto: "Armamos el plan: qué técnica en cada equipo, en qué puntos y cada cuánto se mide, según qué tan crítico es.",
   },
   {
     nombre: "Detección",
+    foto: "/images/servicios/diagnostico-integral/campo-bombas-medicion.webp",
+    alt: "Analistas midiendo bombas en operación",
     texto: "Nuestros analistas miden en tu planta con los equipos en operación. No hace falta parar la producción.",
   },
   {
     nombre: "Decisión",
+    foto: "/images/servicios/diagnostico-integral/termograma-motor.webp",
+    alt: "Termograma de un motor con el punto caliente marcado",
     texto: "Cada hallazgo llega con su severidad y su recomendación. Lo crítico se avisa en el mismo recorrido, sin esperar el informe.",
   },
   {
     nombre: "Datos",
+    foto: "/images/idap/chart.png",
+    alt: "Histórico de inspecciones en IDAP, con los equipos por estado",
     texto: "Las mediciones quedan en IDAP, nuestra plataforma. Cada ruta se compara con la anterior y se ve hacia dónde va cada equipo.",
   },
 ];
@@ -54,6 +65,40 @@ const GANANCIAS = [
   { titulo: "Contención", texto: "Si en el recorrido encontramos algo que pone en riesgo la operación, te avisamos ahí mismo." },
   { titulo: "Respaldo", texto: "Informes con evidencia y tendencias para justificar ante gerencia cada inversión en mantenimiento." },
 ];
+
+// Un ícono de línea por ganancia, en el mismo trazo que el resto del sitio
+const ICONOS_GANANCIA: Record<string, React.ReactNode> = {
+  "Confiabilidad": (
+    <>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z" /><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+    </>
+  ),
+  "Ahorro": (
+    <>
+      <circle cx="12" cy="12" r="8.5" /><path strokeLinecap="round" strokeLinejoin="round" d="M14.8 9.2c-.5-.8-1.5-1.3-2.8-1.3-1.7 0-2.8.9-2.8 2.1 0 2.9 5.8 1.5 5.8 4.2 0 1.2-1.2 2.1-3 2.1-1.4 0-2.5-.6-3-1.5M12 6.5v1.4M12 16.1v1.4" />
+    </>
+  ),
+  "Planeación": (
+    <>
+      <rect x="3.5" y="5" width="17" height="15" rx="2" /><path strokeLinecap="round" strokeLinejoin="round" d="M3.5 10h17M8 3v4M16 3v4M8 14h3M8 17h6" />
+    </>
+  ),
+  "Línea base": (
+    <>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v16h16" /><path strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2 2.5" d="M7 13h13" /><path strokeLinecap="round" strokeLinejoin="round" d="M7 16l3-5 3 3 3-6 3 2" />
+    </>
+  ),
+  "Contención": (
+    <>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3.5L2.8 19.5h18.4L12 3.5z" /><path strokeLinecap="round" d="M12 10v4.5M12 17.2v.3" />
+    </>
+  ),
+  "Respaldo": (
+    <>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 3h7l5 5v13H7z" /><path strokeLinecap="round" strokeLinejoin="round" d="M14 3v5h5M10 17v-3M13 17v-5M16 17v-2" />
+    </>
+  ),
+};
 
 const SI = [
   "Tienes equipos críticos cuya falla detiene la producción.",
@@ -124,12 +169,28 @@ export default function PaginaMonitoreo() {
               El mismo método para cualquier técnica y cualquier planta, en cinco pasos.
             </p>
           </div>
-          <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="relative grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {/* La línea que une los cinco pasos */}
+            <span className="pointer-events-none absolute left-[10%] right-[10%] top-5 hidden h-0.5 bg-gradient-to-r from-secondary/20 via-secondary to-secondary/20 lg:block" aria-hidden="true" />
             {PASOS.map((p, i) => (
-              <li key={p.nombre} className="flex flex-col rounded-sm border border-white/10 bg-white/5 p-5">
-                <span className="text-3xl font-extrabold text-secondary">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mb-2 mt-2 text-lg font-bold text-white">{p.nombre}</h3>
-                <p className="text-justify text-sm leading-relaxed text-white/70">{p.texto}</p>
+              <li key={p.nombre} className="group relative flex flex-col">
+                <span className="relative z-10 mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-sm font-black text-primary shadow-lg ring-4 ring-primary">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="flex flex-1 flex-col overflow-hidden rounded-sm border border-white/10 bg-white/5 transition-colors group-hover:border-secondary/60">
+                  <div className="relative h-36 overflow-hidden">
+                    <Image
+                      src={p.foto}
+                      alt={p.alt}
+                      fill
+                      sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent" />
+                    <h3 className="absolute bottom-3 left-4 text-lg font-bold text-white">{p.nombre}</h3>
+                  </div>
+                  <p className="flex-1 p-5 text-justify text-sm leading-relaxed text-white/75">{p.texto}</p>
+                </div>
               </li>
             ))}
           </ol>
@@ -147,11 +208,21 @@ export default function PaginaMonitoreo() {
               LO QUE GANA <span className="text-secondary">TU OPERACIÓN</span>
             </h2>
           </div>
-          <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {GANANCIAS.map((g) => (
-              <div key={g.titulo} className="border-l-2 border-secondary pl-4">
-                <h3 className="mb-1 text-sm font-bold uppercase tracking-wider text-primary">{g.titulo}</h3>
-                <p className="text-justify text-sm leading-relaxed text-tertiary">{g.texto}</p>
+              <div
+                key={g.titulo}
+                className="group flex gap-4 rounded-sm bg-gray-50 p-6 ring-1 ring-black/5 transition-all hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+              >
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-secondary/15 text-secondary transition-colors group-hover:bg-secondary group-hover:text-primary">
+                  <svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={1.7} viewBox="0 0 24 24" aria-hidden="true">
+                    {ICONOS_GANANCIA[g.titulo]}
+                  </svg>
+                </span>
+                <div>
+                  <h3 className="mb-1 text-base font-extrabold uppercase tracking-wider text-primary">{g.titulo}</h3>
+                  <p className="text-justify text-sm leading-relaxed text-tertiary">{g.texto}</p>
+                </div>
               </div>
             ))}
           </div>
