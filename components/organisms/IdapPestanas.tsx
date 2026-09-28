@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent, type ReactNode } from "react";
 import Image from "next/image";
 import { ORO_IDAP } from "@/lib/idap-estilo";
 
@@ -22,8 +22,10 @@ export type PestanaIdap = {
   titulo: string;
   texto: string;
   puntos?: string[];
-  imagen: string;
-  alt: string;
+  /** Captura de IDAP, o en su lugar una ilustración animada (visual). */
+  imagen?: string;
+  alt?: string;
+  visual?: ReactNode;
   /** "contain" para gráficos con fondo propio; "cover" para capturas. */
   ajuste?: "contain" | "cover";
 };
@@ -144,13 +146,19 @@ export default function IdapPestanas({ pestanas, vertical = false }: { pestanas:
               <span className="ml-3 flex-1 truncate rounded bg-white/5 px-3 py-0.5 text-[11px] text-white/45">idap · {p.nombre.toLowerCase()}</span>
             </div>
             <div className="relative aspect-[16/10]">
-              <Image
-                src={p.imagen}
-                alt={p.alt}
-                fill
-                sizes="(min-width: 1024px) 55vw, 100vw"
-                className={p.ajuste === "contain" ? "object-contain p-3" : "object-cover object-top"}
-              />
+              {p.visual ? (
+                <div className="absolute inset-0">{p.visual}</div>
+              ) : (
+                p.imagen && (
+                  <Image
+                    src={p.imagen}
+                    alt={p.alt ?? ""}
+                    fill
+                    sizes="(min-width: 1024px) 55vw, 100vw"
+                    className={p.ajuste === "contain" ? "object-contain p-3" : "object-cover object-top"}
+                  />
+                )
+              )}
               {/* Brillo que cruza la pantalla al entrar */}
               <span className="idap-brillo pointer-events-none absolute inset-0" aria-hidden="true" />
             </div>

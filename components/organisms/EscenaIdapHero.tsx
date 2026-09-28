@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * EscenaIdapHero
- * La escena 3D del inicio de /servicios/idap (lib/escena-idap-hero.js):
- * el motor con sensores manda datos al núcleo de IDAP y de ahí al panel
- * con el semáforo.
+ * La escena 3D del inicio de /servicios/idap (lib/escena-idap-hero.js),
+ * hecha por Emiliano en Claude Diseño: las mediciones vuelan al monitor
+ * de IDAP y actualizan el tablero hasta la recomendación.
  *
  * Mismo montaje que las demás escenas: Three.js por import dinámico,
  * respaldo por scroll si el IntersectionObserver no avisa, limpieza al
@@ -34,7 +34,8 @@ export default function EscenaIdapHero() {
         .then(([THREE, { montarEscenaIdapHero }]) => {
           if (cancelado) return;
           try {
-            limpiar = montarEscenaIdapHero(THREE, root, {});
+            // el texto del monitor con la tipografía del sitio
+            limpiar = montarEscenaIdapHero(THREE, root, { fuente: getComputedStyle(document.body).fontFamily });
             setMontada(true);
           } catch (e) {
             console.warn("[escena idap] no pudo montarse:", e);

@@ -4,6 +4,7 @@ import Contador from "@/components/atoms/Contador";
 import EscenaIdap from "@/components/organisms/EscenaIdap";
 import EscenaIdapHero from "@/components/organisms/EscenaIdapHero";
 import IdapFormulario from "@/components/organisms/IdapFormulario";
+import { IlustracionAnticipa, IlustracionPrioriza, IlustracionRespalda, IlustracionTecnicas } from "@/components/organisms/IdapIlustraciones";
 import IdapPestanas, { type PestanaIdap } from "@/components/organisms/IdapPestanas";
 import { FONDO_IDAP, ORO_IDAP, PIE_IDAP } from "@/lib/idap-estilo";
 
@@ -26,6 +27,10 @@ import { FONDO_IDAP, ORO_IDAP, PIE_IDAP } from "@/lib/idap-estilo";
  * textos más cortos, animaciones al entrar en pantalla, cifras que cuentan,
  * capturas en marco de navegador con inclinación 3D y pestañas que avanzan
  * solas.
+ *
+ * Tercera vuelta: la escena 3D del inicio es la que hizo Emiliano en Claude
+ * Diseño, y los beneficios usan ilustraciones animadas (IdapIlustraciones)
+ * en lugar de las infografías.
  */
 
 const DISCIPLINAS = ["Termografía", "Vibraciones", "Ultrasonido", "Aceite", "Análisis eléctrico", "Integrales"];
@@ -42,9 +47,7 @@ const BENEFICIOS: PestanaIdap[] = [
       "Alertas automáticas desde los sensores.",
       "Lo crítico se avisa en el momento.",
     ],
-    imagen: "/images/idap/status-v2.png",
-    alt: "Los cinco estados de IDAP con su recomendación: Bueno, Observación, Precaución, Alarma y Seguimiento",
-    ajuste: "contain",
+    visual: <IlustracionAnticipa />,
   },
   {
     id: "prioriza",
@@ -57,9 +60,7 @@ const BENEFICIOS: PestanaIdap[] = [
       "La IA sugiere el orden de atención.",
       "Un especialista valida cada decisión.",
     ],
-    imagen: "/images/idap/estatus-criticidad.png",
-    alt: "Criticidad de equipos en IDAP: baja, media y alta",
-    ajuste: "contain",
+    visual: <IlustracionPrioriza />,
   },
   {
     id: "integra",
@@ -72,9 +73,7 @@ const BENEFICIOS: PestanaIdap[] = [
       "Valores, imágenes y espectros por técnica.",
       "Un diagnóstico que las combina.",
     ],
-    imagen: "/images/idap/diciplines-idap.png",
-    alt: "Las seis disciplinas que integra IDAP alrededor de su logotipo",
-    ajuste: "contain",
+    visual: <IlustracionTecnicas />,
   },
   {
     id: "respalda",
@@ -87,9 +86,7 @@ const BENEFICIOS: PestanaIdap[] = [
       "Informes en PDF y datos en Excel.",
       "Conexión con tu ERP o CMMS.",
     ],
-    imagen: "/images/idap/chart.png",
-    alt: "Histórico de inspecciones en IDAP con los equipos por estado mes a mes",
-    ajuste: "contain",
+    visual: <IlustracionRespalda />,
   },
 ];
 
