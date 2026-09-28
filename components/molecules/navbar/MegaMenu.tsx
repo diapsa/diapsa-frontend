@@ -156,8 +156,11 @@ export default function MegaMenu({ trigger, columnas }: Props) {
               const formato = columna.formato ?? "detalle";
               return (
                 <div key={columna.titulo} className="flex flex-col" style={{ gridColumn: `span ${columna.ancho ?? 1}` }}>
-                  <div className="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2">
-                    <p className="text-sm font-semibold uppercase tracking-widest text-white/50">{columna.titulo}</p>
+                  {/* Encabezado de altura fija: "Ver todo" siempre a un lado del título
+                      (si no cabe, el título se parte en dos renglones) y el contenido
+                      de todas las columnas arranca a la misma altura */}
+                  <div className="mb-5 flex min-h-[3.25rem] items-center gap-4">
+                    <p className="min-w-0 text-sm font-semibold uppercase leading-snug tracking-widest text-white/50">{columna.titulo}</p>
                     {columna.href && (
                       <Link
                         href={columna.href}
