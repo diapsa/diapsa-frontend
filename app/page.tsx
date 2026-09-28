@@ -10,10 +10,10 @@ import GaleriaCampo from "@/components/organisms/GaleriaCampo";
 import CasosDestacados from "@/components/organisms/CasosDestacados";
 import LoQueRecibes from "@/components/organisms/LoQueRecibes";
 import InicioDiplomado from "@/components/organisms/InicioDiplomado";
-import BlogSection from "@/components/organisms/BlogSection";
+import InicioBlog from "@/components/organisms/InicioBlog";
 import ContactForm from "@/components/organisms/ContactForm";
 import galeriaMonitoreo from "@/data/monitoreo-condicion-galeria.json";
-import { getFeaturedBlogs, getFeaturedSuccessCases } from "@/lib/api/posts";
+import { getBlogs, getFeaturedSuccessCases } from "@/lib/api/posts";
 import { getProducts } from "@/lib/api/products";
 
 // Se regenera cada hora: productos, casos y blog vienen del CMS.
@@ -84,7 +84,7 @@ export default async function Home() {
       console.error("[home] No se pudieron cargar los casos de éxito:", error);
       return [];
     }),
-    getFeaturedBlogs().catch((error) => {
+    getBlogs({ limit: 6 }).catch((error) => {
       console.error("[home] No se pudieron cargar las entradas de blog:", error);
       return [];
     }),
@@ -123,7 +123,7 @@ export default async function Home() {
 
       {/* Cierre */}
       <Reveal><InicioDiplomado /></Reveal>
-      {blogs.length > 0 && <Reveal><BlogSection blogs={blogs} /></Reveal>}
+      {blogs.length > 0 && <Reveal><InicioBlog entradas={blogs} /></Reveal>}
 
       <section id="contacto">
         <ContactForm />
