@@ -53,6 +53,45 @@ const [condicion, continuo, ...sueltos] = servicios as (EntradaMenu & { children
 const hijosCondicion = condicion.children ?? [];
 const porSlug = (slug: string) => hijosCondicion.find((s) => slugDe(s.href) === slug) as EntradaMenu;
 
+// Resumen general y tres ideas clave de cada apartado (texto de la portada).
+const INFO: Record<string, { descripcion: string; puntos: string[] }> = {
+  condicion: {
+    descripcion:
+      "Rutas periódicas en las que nuestros analistas miden tus equipos con ellos en operación. Nueve técnicas para maquinaria rotativa y sistemas eléctricos, y cada hallazgo llega con su severidad y la recomendación de qué hacer.",
+    puntos: ["Sin detener la producción", "Informe por ruta e historial en IDAP", "Analistas certificados Categoría 3"],
+  },
+  continuo: {
+    descripcion:
+      "Sensores y cámaras fijas que vigilan tus equipos críticos las 24 horas y avisan en cuanto la condición cambia. Para los activos que no pueden esperar a la siguiente ruta.",
+    puntos: ["Aviso en cuanto algo cambia", "Los datos llegan a IDAP", "Instalación y puesta en marcha incluidas"],
+  },
+  mas: {
+    descripcion:
+      "Lo que completa el programa: arrancar el monitoreo desde cero con DIAPSA START, la plataforma IDAP, la detección de fugas de gas para la ASEA y el diagnóstico situacional de toda la planta.",
+    puntos: ["Arranque paso a paso", "Cumplimiento del PPCIEM", "Una referencia del estado de tus activos"],
+  },
+  "Vibraciones mecánicas": {
+    descripcion:
+      "De la primera ruta a la certificación: formación técnica para aprender a medir y administrar espectros, taller para resolver casos reales y certificación ISO 18436-2 en Categorías I y II.",
+    puntos: ["Práctica con equipos instalados", "Instructores que trabajan en campo", "Certificación ISO 18436-2"],
+  },
+  "Termografía infrarroja": {
+    descripcion:
+      "Inspección con cámara infrarroja en sistemas eléctricos y mecánicos, de la formación a la certificación ISO 18436-7, y un curso especial para inspeccionar plantas fotovoltaicas.",
+    puntos: ["Práctica con imágenes reales", "Certificación ISO 18436-7", "Fotovoltaica conforme a IEC TS 62446-3"],
+  },
+  "Ultrasonido pasivo": {
+    descripcion:
+      "Detectar por sonido fugas de aire, gas y vapor, rodamientos dañados y descargas eléctricas: formación, taller y certificación para especialistas y analistas.",
+    puntos: ["Fugas de aire, gas y vapor", "Subestaciones, tableros y transformadores", "Rodamientos antes de que fallen"],
+  },
+  "Confiabilidad y gestión": {
+    descripcion:
+      "Para quien dirige el programa: el diplomado en confiabilidad operativa, criticidad y frecuencia de inspección, mantenimiento proactivo, informes técnicos y mantenimiento explicado para directivos.",
+    puntos: ["Diplomado de 60 horas en vivo", "Criticidad y frecuencia de inspección", "Informes que llevan a una decisión"],
+  },
+};
+
 /** Los dos frentes de monitoreo de condición, para su propia página. */
 export const APARTADOS_CONDICION: ApartadoBloque[] = [
   {
@@ -71,9 +110,9 @@ export const APARTADOS_CONDICION: ApartadoBloque[] = [
 
 /** El bloque de servicios de la portada. */
 export const APARTADOS_SERVICIOS: ApartadoBloque[] = [
-  { id: "condicion", nombre: condicion.label, href: condicion.href, tarjetas: hijosCondicion.map(tarjeta) },
-  { id: "continuo", nombre: continuo.label, href: continuo.href, tarjetas: (continuo.children ?? []).map(tarjeta) },
-  { id: "mas", nombre: "Más servicios", href: "/servicios", tarjetas: sueltos.map(tarjeta) },
+  { id: "condicion", nombre: condicion.label, href: condicion.href, ...INFO.condicion, tarjetas: hijosCondicion.map(tarjeta) },
+  { id: "continuo", nombre: continuo.label, href: continuo.href, ...INFO.continuo, tarjetas: (continuo.children ?? []).map(tarjeta) },
+  { id: "mas", nombre: "Más servicios", href: "/servicios", ...INFO.mas, tarjetas: sueltos.map(tarjeta) },
 ];
 
 /** El bloque de cursos de la portada, un apartado por técnica. */
@@ -82,8 +121,12 @@ export const APARTADOS_CURSOS: ApartadoBloque[] = (menuCursos as { titulo: strin
     id: slugDe(col.titulo.toLowerCase().replace(/\s+/g, "-")),
     nombre: col.titulo,
     href: "/cursos#catalogo",
+    ...INFO[col.titulo],
     tarjetas: col.items.map((c, i) => {
-      const fotos = galeriaDe(slugDe(c.href));
+      // Si el curso no tiene galería propia (el diplomado), usa las fotos
+      // de los demás cursos de su columna.
+      const propias = galeriaDe(slugDe(c.href));
+      const fotos = propias.length ? propias : col.items.flatMap((o) => galeriaDe(slugDe(o.href)));
       const foto = fotos.length ? fotos[i % fotos.length] : undefined;
       return {
         titulo: c.label === "Formación técnica" || c.label === "Taller práctico" || c.label.startsWith("Certificación")

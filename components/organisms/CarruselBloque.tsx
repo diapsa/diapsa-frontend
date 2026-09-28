@@ -34,6 +34,10 @@ export type ApartadoBloque = {
   nombre: string;
   /** Página del apartado, para el enlace "Ver todo". */
   href?: string;
+  /** Resumen general del apartado, antes del carrusel. */
+  descripcion?: string;
+  /** Tres ideas clave del apartado, a un lado del resumen. */
+  puntos?: string[];
   tarjetas: TarjetaBloque[];
 };
 
@@ -140,6 +144,27 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
               </button>
             );
           })}
+        </div>
+      )}
+
+      {(apartado?.descripcion || apartado?.puntos?.length) && (
+        <div
+          key={`info-${apartado.id}`}
+          className="mb-6 grid grid-cols-1 gap-5 rounded-sm border-l-4 border-secondary bg-white p-5 shadow-sm motion-safe:animate-[fadeIn_.3s_ease-out] sm:p-6 lg:grid-cols-[3fr_2fr] lg:gap-8"
+        >
+          {apartado.descripcion && <p className="text-justify leading-relaxed text-tertiary">{apartado.descripcion}</p>}
+          {apartado.puntos && apartado.puntos.length > 0 && (
+            <ul className="flex flex-col gap-2">
+              {apartado.puntos.map((pt) => (
+                <li key={pt} className="flex items-start gap-2.5 text-sm font-semibold leading-snug text-primary">
+                  <svg className="mt-0.5 h-4 w-4 shrink-0 text-secondary" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.172l7.879-7.879a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {pt}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       )}
 

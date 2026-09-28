@@ -17,7 +17,8 @@ import EscenaDolor from "@/components/organisms/EscenaDolor";
  * y la moneda de ITZAM. La primera diapositiva lleva la escena 3D de la
  * planta arrancando en su cierre (el analista recorre la planta y los
  * hallazgos quedan en IDAP); las otras tres, fotos reales. Todas viven en el
- * DOM y se funden por opacidad, así la escena se monta una sola vez.
+ * DOM y se funden por opacidad, así la escena se monta una sola vez. De
+ * fondo, la foto del engranaje del hero original, velada en azul marino.
  */
 
 type Slide = {
@@ -111,6 +112,10 @@ export default function Hero() {
       onMouseEnter={() => setPausa(true)}
       onMouseLeave={() => setPausa(false)}
     >
+      {/* La foto del engranaje de fondo, como en el hero original, velada con
+          el azul de la marca para que el texto se lea. */}
+      <Image src="/images/screen.png" alt="" fill priority sizes="100vw" className="object-cover" />
+      <div className="absolute inset-0 bg-primary/65" />
       <div className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-secondary/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
 
