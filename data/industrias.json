@@ -1,86 +1,13 @@
 {
-  "_nota": "Industrias de la portada. 'clientes' son nombres tal como están en data/clients.json (de ahí sale el logo). 'caso' es el slug de un caso de éxito del CMS, si lo hay. Confirmar con Emiliano la industria de cada cliente.",
+  "_nota": "Industrias que atiende DIAPSA, en el orden en que se muestran en la portada.",
   "industrias": [
-    {
-      "clave": "energia",
-      "nombre": "Generación de energía",
-      "texto": "Centrales de ciclo combinado, parques y subestaciones donde un paro deja sin energía a la red o al cliente.",
-      "equipos": ["Turbinas y generadores", "Transformadores", "Subestaciones", "Torres de enfriamiento"],
-      "servicios": [
-        { "nombre": "Vibraciones", "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas" },
-        { "nombre": "Termografía", "href": "/servicios/monitoreo-condicion/termografia-infrarroja" },
-        { "nombre": "DGA en línea", "href": "/servicios/monitoreo-continuo/dga-en-linea" }
-      ],
-      "clientes": ["Invenergy", "ValiaEnergía", "Mitinfra"],
-      "foto": { "src": "/images/gallery/campo/acustica-lineas-alta-tension.webp", "alt": "Inspección de líneas de alta tensión en una subestación" },
-      "caso": "generadora-de-ciclo-combinado-y-el-impacto-del-monitoreo-predictivo-en-la-generacion-de-energia"
-    },
-    {
-      "clave": "hidrocarburos",
-      "nombre": "Petróleo, gas y petroquímica",
-      "texto": "Estaciones de compresión, terminales y ductos donde una fuga es un riesgo y una multa de la ASEA.",
-      "equipos": ["Compresores", "Bombas de proceso", "Válvulas y bridas", "Líneas de gas"],
-      "servicios": [
-        { "nombre": "Detección de gas", "href": "/servicios/deteccion-gas" },
-        { "nombre": "Vibraciones", "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas" },
-        { "nombre": "Ultrasonido", "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido" }
-      ],
-      "clientes": ["Pemex", "Esentia", "TLA", "Axfaltec"],
-      "foto": { "src": "/images/deteccion-gas/campo/estacion-compresion.webp", "alt": "Equipo de DIAPSA en una estación de compresión de gas" }
-    },
-    {
-      "clave": "alimentos",
-      "nombre": "Alimentos y bebidas",
-      "texto": "Líneas que no pueden parar sin perder producto: refrigeración, vapor y transporte.",
-      "equipos": ["Compresores de refrigeración", "Calderas y líneas de vapor", "Bombas", "Transportadores"],
-      "servicios": [
-        { "nombre": "Termografía", "href": "/servicios/monitoreo-condicion/termografia-infrarroja" },
-        { "nombre": "Ultrasonido", "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido" },
-        { "nombre": "Vibraciones", "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas" }
-      ],
-      "clientes": ["Arca Continental", "Sukarne", "Kekén"],
-      "foto": { "src": "/images/servicios/analisis-de-ultrasonido/campo-trampas-vapor.webp", "alt": "Analista de DIAPSA revisando líneas de vapor con ultrasonido" },
-      "caso": "vision-predictiva-y-ahorros-millonarios-en-industria-alimenticia"
-    },
-    {
-      "clave": "manufactura",
-      "nombre": "Automotriz y manufactura",
-      "texto": "Plantas con cientos de motores, reductores y tableros alimentando líneas que trabajan por turnos.",
-      "equipos": ["Motores y reductores", "Extrusoras y prensas", "Tableros eléctricos", "Compresores de aire"],
-      "servicios": [
-        { "nombre": "Vibraciones", "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas" },
-        { "nombre": "Alineación y balanceo", "href": "/servicios/monitoreo-condicion/alineacion-balanceo" },
-        { "nombre": "Calidad de energía", "href": "/servicios/monitoreo-condicion/calidad-de-energia" }
-      ],
-      "clientes": ["Kenworth", "Aptiv", "Whirlpool", "Windsor Machine", "Trinity", "ALD"],
-      "foto": { "src": "/images/servicios/alineacion-balanceo/campo-analista-equipo.webp", "alt": "Ajuste de un motor de proceso en una planta de manufactura" }
-    },
-    {
-      "clave": "materiales",
-      "nombre": "Cemento y materiales",
-      "texto": "Molinos, hornos y ventiladores grandes, en ambientes con polvo y calor que aceleran el desgaste.",
-      "equipos": ["Molinos", "Hornos", "Ventiladores de proceso", "Reductores"],
-      "servicios": [
-        { "nombre": "Vibraciones", "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas" },
-        { "nombre": "Termografía", "href": "/servicios/monitoreo-condicion/termografia-infrarroja" },
-        { "nombre": "Análisis de aceite", "href": "/servicios/monitoreo-condicion/analisis-de-aceite" }
-      ],
-      "clientes": ["Holcim", "Interceramic"],
-      "foto": { "src": "/images/gallery/campo/vibracion-ventilador-torre.webp", "alt": "Medición de vibraciones en el motor de un ventilador de proceso" }
-    },
-    {
-      "clave": "agua",
-      "nombre": "Tratamiento de agua",
-      "texto": "Plantas de tratamiento que operan todo el día con bombas y sopladores críticos para el proceso.",
-      "equipos": ["Bombas", "Sopladores", "Clarificadores", "Motores"],
-      "servicios": [
-        { "nombre": "DIAPSA START", "href": "/servicios/diapsa-start" },
-        { "nombre": "Vibraciones", "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas" },
-        { "nombre": "Alineación y balanceo", "href": "/servicios/monitoreo-condicion/alineacion-balanceo" }
-      ],
-      "clientes": [],
-      "foto": { "src": "/images/casos-exito/ptar-analista-clarificador.webp", "alt": "Analista de DIAPSA midiendo sobre el puente de un clarificador" },
-      "caso": "diapsa-start-en-planta-de-tratamiento-de-agua-residual"
-    }
+    "Generación de energía",
+    "Petróleo y gas",
+    "Petroquímica",
+    "Alimentos y bebidas",
+    "Automotriz",
+    "Manufactura",
+    "Cemento y materiales",
+    "Tratamiento de agua"
   ]
 }
