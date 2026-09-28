@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import IconoMenu from "@/components/atoms/IconoMenu";
+import { FONDO_IDAP, RUTA_IDAP } from "@/lib/idap-estilo";
 
 /**
  * MegaMenu
@@ -210,6 +211,25 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                     <ul className="flex flex-1 flex-col gap-3">
                       {columna.items.map((item) => (
                         <li key={item.href} className="flex-1">
+                          {item.href === RUTA_IDAP ? (
+                            // IDAP conserva su identidad: su logo sobre el azul de la plataforma.
+                            <Link
+                              href={item.href}
+                              onClick={cerrarYa}
+                              title={item.descripcion}
+                              aria-label={item.label}
+                              className="group relative flex h-full min-h-[6.5rem] items-center justify-center overflow-hidden rounded-lg ring-1 ring-white/10 transition-shadow hover:ring-secondary/60"
+                              style={{ background: FONDO_IDAP }}
+                            >
+                              <Image
+                                src="/images/idap/idap-bco.png"
+                                alt="IDAP"
+                                width={1632}
+                                height={486}
+                                className="h-9 w-auto transition-transform duration-500 group-hover:scale-105"
+                              />
+                            </Link>
+                          ) : (
                           <Link
                             href={item.href}
                             onClick={cerrarYa}
@@ -230,6 +250,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                               {item.label}
                             </span>
                           </Link>
+                          )}
                         </li>
                       ))}
                     </ul>

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import IconoMenu from "@/components/atoms/IconoMenu";
+import { FONDO_IDAP, RUTA_IDAP } from "@/lib/idap-estilo";
 
 /**
  * CarruselBloque
@@ -223,8 +224,20 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
                 href={t.href}
                 className="group relative flex h-full flex-col overflow-hidden rounded-sm bg-primary shadow-lg transition-shadow duration-300 hover:shadow-2xl"
               >
-                <div className={`relative min-h-60 w-full flex-1 overflow-hidden lg:min-h-72 ${t.contener ? "bg-white" : ""}`}>
-                  {t.imagen && (
+                <div
+                  className={`relative min-h-60 w-full flex-1 overflow-hidden lg:min-h-72 ${t.contener ? "bg-white" : ""}`}
+                  style={t.href === RUTA_IDAP ? { background: FONDO_IDAP } : undefined}
+                >
+                  {t.href === RUTA_IDAP ? (
+                    // IDAP conserva su identidad: su logo sobre el azul de la plataforma.
+                    <Image
+                      src="/images/idap/idap-bco.png"
+                      alt="IDAP"
+                      width={1632}
+                      height={486}
+                      className="absolute left-1/2 top-1/2 h-auto w-3/5 -translate-x-1/2 -translate-y-1/2 transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : t.imagen && (
                     <Image
                       src={t.imagen.src}
                       alt={t.imagen.alt}
@@ -233,7 +246,9 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
                       className={`transition-transform duration-500 group-hover:scale-105 ${t.contener ? "object-contain p-6" : "object-cover"}`}
                     />
                   )}
-                  {!t.contener && <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/10 to-transparent" />}
+                  {!t.contener && t.href !== RUTA_IDAP && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/10 to-transparent" />
+                  )}
                 </div>
                 <div className="flex flex-col p-5">
                   <p className="mb-1.5 font-bold text-white transition-colors group-hover:text-secondary">{t.titulo}</p>
