@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/organisms/Hero";
 import QuienesSomos from "@/components/organisms/QuienesSomos";
-import CifrasIdap from "@/components/organisms/CifrasIdap";
 import InicioBloques from "@/components/organisms/InicioBloques";
 import InicioGas from "@/components/organisms/InicioGas";
 import Reveal from "@/components/atoms/Reveal";
 import { Clients } from "@/components/organisms/Clients";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
-import CasosExitoTeaser from "@/components/organisms/CasosExitoTeaser";
+import CasosDestacados from "@/components/organisms/CasosDestacados";
 import LoQueRecibes from "@/components/organisms/LoQueRecibes";
 import InicioDiplomado from "@/components/organisms/InicioDiplomado";
 import BlogSection from "@/components/organisms/BlogSection";
@@ -17,8 +16,8 @@ import galeriaMonitoreo from "@/data/monitoreo-condicion-galeria.json";
 import { getFeaturedBlogs, getFeaturedSuccessCases } from "@/lib/api/posts";
 import { getProducts } from "@/lib/api/products";
 
-// Se regenera a diario: las cifras de IDAP suben al cambiar el mes.
-export const revalidate = 86400;
+// Se regenera cada hora: productos, casos y blog vienen del CMS.
+export const revalidate = 3600;
 
 const OG_IMAGE = "/images/og-images/og-image.jpg";
 
@@ -105,21 +104,20 @@ export default async function Home() {
 
       {/* Quiénes somos y todos los servicios a la vista */}
       <Reveal><QuienesSomos /></Reveal>
-      <CifrasIdap />
       <Reveal><InicioBloques productos={productos} /></Reveal>
 
       {/* Detección de gas, el servicio más especializado, con franja propia */}
       <Reveal><InicioGas /></Reveal>
 
-      {/* La prueba: clientes, fotos de campo y casos */}
+      {/* La prueba: clientes y fotos de campo */}
       <Reveal><Clients /></Reveal>
       <GaleriaCampo
         fotos={galeriaMonitoreo}
         texto="Nuestros analistas en planta con vibraciones, termografía, ultrasonido, aceite y calidad de energía. Mediciones reales, sin fotos de banco de imágenes."
       />
-      {cases.length > 0 && <Reveal><CasosExitoTeaser cases={cases} /></Reveal>}
 
-      {/* Lo que recibes: aviso, informe e historial en IDAP */}
+      {/* Resultados: los casos documentados y lo que recibes en cada servicio */}
+      {cases.length > 0 && <Reveal><CasosDestacados casos={cases} /></Reveal>}
       <Reveal><LoQueRecibes /></Reveal>
 
       {/* Cierre */}
