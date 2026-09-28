@@ -1,4 +1,5 @@
 import Antetitulo from "../atoms/Antetitulo";
+import Aparece from "../atoms/Aparece";
 import GraficoAhorro from "../atoms/GraficoAhorro";
 import type { FlujoPaso } from "@/types/servicio";
 
@@ -233,39 +234,41 @@ const PASOS = [
 
 function FlujoServicio({ textos }: { textos?: FlujoPaso[] }) {
   // Cada servicio puede redactar sus pasos; el ícono se conserva por posición.
+  // Línea de tiempo (2026-09-28): círculo con ícono y número unidos por una
+  // línea; horizontal en escritorio y vertical en teléfono.
   const pasos = PASOS.map((paso, i) => ({ ...paso, ...(textos?.[i] ?? {}) }));
   return (
-    <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:gap-3">
+    <ol className="relative grid grid-cols-1 gap-0 lg:grid-cols-5 lg:gap-4">
+      {/* La línea que une los pasos, en escritorio */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[10%] right-[10%] top-8 hidden h-0.5 bg-gradient-to-r from-secondary/20 via-secondary to-secondary/20 lg:block"
+      />
       {pasos.map((paso, indice) => (
-        <li key={paso.titulo} className="relative">
-          {/* Conector hacia el siguiente paso, sólo en escritorio */}
+        <li key={paso.titulo} className="group relative flex gap-5 pb-8 last:pb-0 lg:block lg:pb-0 lg:text-center">
+          {/* La línea vertical, en teléfono */}
           {indice < pasos.length - 1 && (
-            <span
-              aria-hidden="true"
-              className="absolute -right-2 top-9 hidden h-0.5 w-4 bg-secondary/50 lg:block"
-            />
+            <span aria-hidden="true" className="absolute bottom-0 left-8 top-16 w-0.5 bg-secondary/40 lg:hidden" />
           )}
-          <div className="h-full rounded-sm border border-gray-200 bg-white p-5 transition-transform duration-300 motion-safe:hover:-translate-y-1">
-            <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-sm bg-primary">
-                <svg className="h-5 w-5 text-secondary" fill="none" stroke="currentColor" strokeWidth={1.7} viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d={paso.trazo} />
-                </svg>
-              </span>
-              <span className="text-3xl font-extrabold leading-none text-gray-200">
+          <Aparece retraso={indice * 140} desde="zoom" className="shrink-0 lg:flex lg:justify-center">
+            <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary ring-8 ring-white transition-colors duration-300 group-hover:bg-secondary">
+              <svg className="h-7 w-7 text-secondary transition-colors duration-300 group-hover:text-primary" fill="none" stroke="currentColor" strokeWidth={1.7} viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d={paso.trazo} />
+              </svg>
+              <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-xs font-black text-primary ring-2 ring-white">
                 {indice + 1}
               </span>
-            </div>
-            <h3 className="mt-4 text-lg font-bold leading-snug text-primary">{paso.titulo}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-tertiary">{paso.texto}</p>
-          </div>
+            </span>
+          </Aparece>
+          <Aparece retraso={indice * 140 + 80} className="pt-2 lg:pt-5">
+            <h3 className="text-lg font-extrabold leading-snug text-primary">{paso.titulo}</h3>
+            <p className="mt-1.5 text-justify text-sm leading-relaxed text-tertiary lg:text-center">{paso.texto}</p>
+          </Aparece>
         </li>
       ))}
     </ol>
   );
 }
-
-/* ------------------------------------------------------------------ */
 
 export default function DiagramaServicio({ clave, paso, flujo, encabezado, sinAhorro }: Props) {
   if (clave === "curva-pf") {

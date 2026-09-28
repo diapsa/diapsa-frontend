@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import Antetitulo from "../atoms/Antetitulo";
-import GraficoDescargas from "../atoms/GraficoDescargas";
-import GraficoEstimado from "../atoms/GraficoEstimado";
-import GraficoFugas from "../atoms/GraficoFugas";
+import EscenaUltrasonido, { type ModoUltrasonido } from "./EscenaUltrasonido";
 import type { GrupoSonoro, ServiceComparadorSonoro } from "@/types/servicio";
 
 /**
@@ -34,12 +32,14 @@ import type { GrupoSonoro, ServiceComparadorSonoro } from "@/types/servicio";
  * barras crecen al aparecer y al cambiar de familia, bajo motion-safe.
  */
 
+// La pestaña de cada familia y el modo de la escena 3D que le corresponde
+const MODO_ESCENA: Record<string, ModoUltrasonido> = { rodamientos: "rodamiento", aire: "fuga", electrico: "descarga" };
+
 type Props = {
   comparador: ServiceComparadorSonoro;
   paso?: string;
 };
 
-const MARCAS = [0, 10, 20, 30, 40, 50, 60, 70];
 const COLOR_UMBRAL = [
   { punto: "bg-amber-300", letra: "text-amber-300" },
   { punto: "bg-orange-400", letra: "text-orange-400" },
@@ -51,138 +51,111 @@ function decibeles(nivel: string) {
   return Number.isFinite(n) ? n : 0;
 }
 
+function primeraFrase(texto: string) {
+  const i = texto.indexOf(". ");
+  return i > 0 ? texto.slice(0, i + 1) : texto;
+}
+
 function Panel({ grupo }: { grupo: GrupoSonoro }) {
   const maxDb = Math.max(...grupo.clips.map((c) => decibeles(c.nivel)), 1);
   const pct = (db: number) => (Math.min(Math.max(db, 0), grupo.escalaMax) / grupo.escalaMax) * 100;
 
   return (
     <>
-      {grupo.clips.map((clip, fila) => {
-        const alarma = clip.estado === "alarma";
-        const n = clip.envolvente.length;
-        // Amplitud en proporción al nivel medido, con un mínimo para que la señal sana se vea.
-        const amp = 50 * Math.max(0.22, decibeles(clip.nivel) / maxDb);
-        return (
-          <div key={clip.titulo} className="mb-8 last:mb-0">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-white/50">
-                {clip.etiqueta}
-              </span>
-              <span
-                className={`rounded-full px-2.5 py-0.5 text-xs font-bold ${
-                  alarma ? "bg-red-500/25 text-red-300" : "bg-emerald-500/25 text-emerald-300"
-                }`}
-              >
-                {clip.nivel}
-              </span>
-            </div>
-            <p className="mt-1 text-lg font-extrabold text-white lg:text-xl">{clip.titulo}</p>
-            <p className="mt-1 max-w-3xl text-justify text-sm leading-relaxed text-white/60">
-              {clip.descripcion}
-            </p>
-            <svg
-              viewBox={`0 0 ${n} 100`}
-              preserveAspectRatio="none"
-              className="mt-3 h-20 w-full lg:h-28"
-              role="img"
-              aria-label={`Señal de ultrasonido de ${clip.titulo}, ${clip.etiqueta.toLowerCase()}, nivel ${clip.nivel}`}
+      {/* Sano contra hallazgo, uno sobre otro junto a la escena */}
+      <div className="grid grid-cols-1 gap-4">
+        {grupo.clips.map((clip, fila) => {
+          const alarma = clip.estado === "alarma";
+          const n = clip.envolvente.length;
+          // Amplitud en proporción al nivel medido, con un mínimo para que la señal sana se vea.
+          const amp = 50 * Math.max(0.22, decibeles(clip.nivel) / maxDb);
+          return (
+            <div
+              key={clip.titulo}
+              className={`rounded-sm p-5 ring-1 ${alarma ? "bg-red-500/[0.07] ring-red-400/30" : "bg-emerald-500/[0.06] ring-emerald-400/25"}`}
             >
-              <line x1={0} y1={50} x2={n} y2={50} className="stroke-white/15" strokeWidth={0.4} />
-              {clip.envolvente.map((v, k) => {
-                const h = Math.max(1.5, v * amp * 2);
-                return (
-                  <rect
-                    key={k}
-                    x={k + 0.15}
-                    y={50 - h / 2}
-                    width={0.7}
-                    height={h}
-                    className={`${alarma ? "fill-red-400" : "fill-emerald-400"} motion-safe:animate-[crecer_.5s_ease-out_both]`}
-                    style={{ transformOrigin: `${k + 0.5}px 50px`, animationDelay: `${fila * 400 + k * 8}ms` }}
-                  />
-                );
-              })}
-            </svg>
-          </div>
-        );
-      })}
-
-      <div className="mt-8 border-t border-white/10 pt-6">
-        <p className="text-[11px] font-bold uppercase tracking-widest text-white/50">Escala de referencia</p>
-        <p className="mt-1 text-base font-semibold text-white">{grupo.escalaTexto}</p>
-
-        {/* Eje con los umbrales marcados y los dos niveles de esta familia. */}
-        <div className="relative mt-14 h-px w-full bg-white/30">
-          {grupo.umbrales.map((u) => (
-            <span
-              key={u.texto}
-              className="absolute bottom-0 h-7 border-l border-dashed border-white/40"
-              style={{ left: `${pct(u.db)}%` }}
-              aria-hidden="true"
-            />
-          ))}
-          {MARCAS.filter((d) => d <= grupo.escalaMax).map((d) => (
-            <span key={d} className="absolute top-0 -translate-x-1/2" style={{ left: `${pct(d)}%` }}>
-              <span className="block h-2 w-px bg-white/30" />
-              <span className="mt-1 block -translate-x-1/2 text-[11px] text-white/40">{d}</span>
-            </span>
-          ))}
-          {grupo.clips.map((clip) => {
-            const alarma = clip.estado === "alarma";
-            const izq = `${pct(decibeles(clip.nivel))}%`;
-            return (
-              <span
-                key={clip.nivel}
-                className="motion-safe:animate-[fadeIn_.5s_ease-out_both]"
-                style={{ animationDelay: "1.2s" }}
-              >
-                {/* El nivel va arriba, para no encimarse con los números del eje. */}
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-[11px] font-bold uppercase tracking-widest text-white/55">{clip.etiqueta}</span>
                 <span
-                  className={`absolute -top-7 -translate-x-1/2 whitespace-nowrap text-xs font-bold ${
-                    alarma ? "text-red-300" : "text-emerald-300"
+                  className={`rounded-full px-3 py-0.5 text-sm font-extrabold ${
+                    alarma ? "bg-red-500/25 text-red-300" : "bg-emerald-500/25 text-emerald-300"
                   }`}
-                  style={{ left: izq }}
                 >
                   {clip.nivel}
                 </span>
-                <span
-                  className={`absolute top-0 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full ring-4 ring-primary ${
-                    alarma ? "bg-red-400" : "bg-emerald-400"
-                  }`}
-                  style={{ left: izq }}
-                />
-              </span>
+              </div>
+              <p className="mt-1 text-lg font-extrabold text-white">{clip.titulo}</p>
+              <svg
+                viewBox={`0 0 ${n} 100`}
+                preserveAspectRatio="none"
+                className="mt-3 h-14 w-full"
+                role="img"
+                aria-label={`Señal de ultrasonido de ${clip.titulo}, ${clip.etiqueta.toLowerCase()}, nivel ${clip.nivel}`}
+              >
+                <line x1={0} y1={50} x2={n} y2={50} className="stroke-white/15" strokeWidth={0.4} />
+                {clip.envolvente.map((v, k) => {
+                  const h = Math.max(1.5, v * amp * 2);
+                  return (
+                    <rect
+                      key={k}
+                      x={k + 0.15}
+                      y={50 - h / 2}
+                      width={0.7}
+                      height={h}
+                      className={`${alarma ? "fill-red-400" : "fill-emerald-400"} motion-safe:animate-[crecer_.5s_ease-out_both]`}
+                      style={{ transformOrigin: `${k + 0.5}px 50px`, animationDelay: `${fila * 300 + k * 6}ms` }}
+                    />
+                  );
+                })}
+              </svg>
+              <p className="mt-3 text-justify text-sm leading-relaxed text-white/65">{primeraFrase(clip.descripcion)}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Una sola barra con los umbrales y dónde cayó cada lectura */}
+      <div className="mt-8">
+        <div className="relative h-3 w-full overflow-visible rounded-full bg-white/10">
+          <div
+            className="absolute inset-y-0 left-0 rounded-full"
+            style={{
+              width: "100%",
+              background: `linear-gradient(90deg, #34d399 0%, #34d399 ${pct(grupo.umbrales[0]?.db ?? 0)}%, #fcd34d ${pct(grupo.umbrales[0]?.db ?? 0)}%, #fb923c ${pct(grupo.umbrales[1]?.db ?? 0)}%, #f87171 ${pct(grupo.umbrales[2]?.db ?? grupo.escalaMax)}%)`,
+              opacity: 0.35,
+            }}
+          />
+          {grupo.clips.map((clip) => {
+            const alarma = clip.estado === "alarma";
+            return (
+              <span
+                key={clip.nivel}
+                className={`absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full ring-4 ring-[#06141f] motion-safe:animate-[fadeIn_.5s_ease-out_both] ${
+                  alarma ? "bg-red-400" : "bg-emerald-400"
+                }`}
+                style={{ left: `${pct(decibeles(clip.nivel))}%`, animationDelay: "0.8s" }}
+                title={`${clip.titulo}: ${clip.nivel}`}
+              />
             );
           })}
         </div>
-
-        {/* Los umbrales como leyenda, para que se lean igual en un teléfono. */}
-        <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-2">
+        <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          <li className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
+            <span className="text-xs font-semibold text-emerald-300">Normal</span>
+          </li>
           {grupo.umbrales.map((u, i) => {
             const color = COLOR_UMBRAL[i] ?? COLOR_UMBRAL[COLOR_UMBRAL.length - 1];
             return (
               <li key={u.texto} className="flex items-center gap-2">
                 <span className={`h-2 w-2 rounded-full ${color.punto}`} aria-hidden="true" />
                 <span className={`text-xs font-semibold ${color.letra}`}>{u.texto}</span>
-                <span className="text-xs text-white/40">{u.db} dB</span>
+                <span className="text-xs text-white/40">desde {u.db} dB</span>
               </li>
             );
           })}
         </ul>
-
-        {grupo.nota && (
-          <p className="mt-6 max-w-3xl text-justify text-sm leading-relaxed text-white/50">{grupo.nota}</p>
-        )}
       </div>
-
-      {/* En aire comprimido el argumento es de dinero, no de decibeles. */}
-      {grupo.costos && <GraficoFugas costos={grupo.costos} />}
-
-      {/* En tableros, el patrón dice qué tipo de descarga es. */}
-      {grupo.descargas && <GraficoDescargas descargas={grupo.descargas} />}
-
-      {/* Y en las tres familias, en cuánto se traduce el hallazgo. */}
-      {grupo.estimado && <GraficoEstimado estimado={grupo.estimado} />}
     </>
   );
 }
@@ -192,7 +165,12 @@ export default function GraficaSonora({ comparador, paso }: Props) {
   const [activo, setActivo] = useState(grupos[0]?.id);
 
   return (
-    <section className="w-full bg-primary py-12 lg:py-20">
+    <section
+      className="w-full py-12 lg:py-20"
+      style={{ background: "radial-gradient(ellipse at 30% 40%, #0b2436 0%, #06141f 60%, #040d15 100%)" }}
+    >
+      {/* Fondo más oscuro que el azul de DIAPSA para que no se funda con la
+          franja de cifras que va justo abajo (Emiliano, 2026-09-28) */}
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-8 max-w-3xl">
           <Antetitulo paso={paso}>Lo que oye el analista</Antetitulo>
@@ -229,6 +207,12 @@ export default function GraficaSonora({ comparador, paso }: Props) {
           })}
         </div>
 
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+          {/* La escena 3D: una sola para las tres familias; cambia de modo
+              con la pestaña sin volver a montarse */}
+          <div className="relative min-h-[320px] overflow-hidden rounded-sm bg-[#0a2233] ring-1 ring-white/10 sm:min-h-[420px]">
+            <EscenaUltrasonido modo={MODO_ESCENA[activo ?? ""] ?? "rodamiento"} />
+          </div>
         {/* Se remonta al cambiar de familia para que las ondas vuelvan a crecer. */}
         <div key={activo}>
           {grupos.map((g) => {
@@ -242,10 +226,10 @@ export default function GraficaSonora({ comparador, paso }: Props) {
                 hidden={!abierto}
                 className="rounded-sm border border-white/10 bg-white/5 p-5 lg:p-8"
               >
-                <div className="mb-6 flex flex-col gap-3 border-b border-white/10 pb-5 lg:flex-row lg:items-start lg:justify-between lg:gap-8">
-                  <p className="max-w-3xl text-justify text-base leading-relaxed text-white/70">{g.resumen}</p>
+                <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-sm font-semibold text-white/75">{primeraFrase(g.resumen)}</p>
                   <span
-                    className={`shrink-0 self-start rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider ${
+                    className={`shrink-0 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider ${
                       g.origen === "real" ? "bg-emerald-500/20 text-emerald-300" : "bg-white/10 text-white/60"
                     }`}
                   >
@@ -257,10 +241,7 @@ export default function GraficaSonora({ comparador, paso }: Props) {
             );
           })}
         </div>
-
-        {comparador.pie && (
-          <p className="mt-6 max-w-4xl text-justify text-sm leading-relaxed text-white/50">{comparador.pie}</p>
-        )}
+        </div>
       </div>
     </section>
   );
