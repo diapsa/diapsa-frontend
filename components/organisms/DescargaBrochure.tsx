@@ -15,11 +15,14 @@ import type { ContactFormData } from "@/types/contact";
  * botón aparece directo.
  */
 
-type Props = { curso: string; archivo: string; oscuro?: boolean };
+type Props = { curso: string; archivo: string; oscuro?: boolean; /** Botones en blanco y azul del diplomado en lugar del naranja. */ diplomado?: boolean };
 
 const CLAVE = "diapsa-brochure-diplomado";
 
-export default function DescargaBrochure({ curso, archivo, oscuro = false }: Props) {
+export default function DescargaBrochure({ curso, archivo, oscuro = false, diplomado = false }: Props) {
+  const boton = diplomado
+    ? "bg-white text-[#001f5f] hover:bg-[#5b8cff] hover:text-white"
+    : "bg-secondary text-primary hover:bg-white";
   const { submitForm, loading, errors, validateField } = useContactForm();
   const [datos, setDatos] = useState({ name: "", email: "", company: "", phone: "", website: "" });
   const [acepta, setAcepta] = useState(false);
@@ -85,7 +88,7 @@ export default function DescargaBrochure({ curso, archivo, oscuro = false }: Pro
           download
           target="_blank"
           rel="noopener"
-          className="mt-5 inline-flex items-center gap-2 rounded-xs bg-secondary px-7 py-3.5 font-bold text-primary transition-colors hover:bg-white"
+          className={`mt-5 inline-flex items-center gap-2 rounded-xs px-7 py-3.5 font-bold transition-colors ${boton}`}
         >
           <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -107,14 +110,14 @@ export default function DescargaBrochure({ curso, archivo, oscuro = false }: Pro
       {/* Trampa para robots: invisible para las personas */}
       <input type="text" name="website" value={datos.website} onChange={(e) => setDatos({ ...datos, website: e.target.value })} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: "none" }} />
       <label className={`flex items-start gap-2 text-xs leading-snug ${oscuro ? "text-white/75" : "text-tertiary"}`}>
-        <input type="checkbox" className="mt-0.5 h-4 w-4 accent-secondary" checked={acepta} onChange={(e) => setAcepta(e.target.checked)} disabled={loading} />
+        <input type="checkbox" className={`mt-0.5 h-4 w-4 ${diplomado ? "accent-[#5b8cff]" : "accent-secondary"}`} checked={acepta} onChange={(e) => setAcepta(e.target.checked)} disabled={loading} />
         <span>
           He leído y acepto el{" "}
           <Link href="/aviso-privacidad" className="underline">aviso de privacidad</Link> de Grupo DIAPSA.
         </span>
       </label>
       {general && <p className="text-sm font-semibold text-red-500" role="alert">{general}</p>}
-      <button type="submit" disabled={loading} className="inline-flex w-full items-center justify-center gap-2 rounded-xs bg-secondary px-7 py-3.5 font-bold text-primary transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto">
+      <button type="submit" disabled={loading} className={`inline-flex w-full items-center justify-center gap-2 rounded-xs px-7 py-3.5 font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto ${boton}`}>
         {loading ? "Enviando…" : "Quiero el brochure"}
       </button>
     </form>
