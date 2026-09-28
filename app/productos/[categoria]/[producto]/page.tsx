@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getProductBySlug } from '@/lib/api/products';
-import { productoLocal } from '@/lib/productos-locales';
+import { productoLocal, versionesLocales } from '@/lib/productos-locales';
 import { getStorageUrl } from '@/lib/api/config';
 import ProductDetails from '@/components/organisms/ProductDetails';
 import PageHeader from '@/components/organisms/PageHeader';
@@ -80,6 +80,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
   if (product.category.slug !== categoria) {
     notFound();
   }
+  const versiones = versionesLocales(product.slug);
+
   // Breadcrumb items
   const breadcrumbItems = [
     { label: 'Inicio', href: '/' },
@@ -121,6 +123,35 @@ export default async function ProductPage({ params }: ProductPageProps) {
         {/* Product Details */}
         <section className="py-8 lg:py-12">
           <div className="container mx-auto px-4">
+            {/* Versiones de la misma cámara (HIKMICRO): mismo cuerpo, cambian resolución, enfoque o temperatura */}
+            {versiones.length > 1 && (
+              <nav aria-label="Versiones de esta cámara" className="mb-8 rounded-sm bg-gray-50 p-5 ring-1 ring-black/5">
+                <p className="text-sm font-extrabold text-primary">Esta cámara viene en {versiones.length} versiones</p>
+                <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-5">
+                  {versiones.map((v) => {
+                    const actual = v.slug === product.slug;
+                    return (
+                      <li key={v.slug}>
+                        <Link
+                          href={`/productos/${product.category.slug}/${v.slug}`}
+                          aria-current={actual ? 'page' : undefined}
+                          className={`block h-full rounded-sm px-4 py-3 text-xs ring-1 transition-colors ${
+                            actual ? 'bg-primary text-white ring-primary' : 'bg-white text-tertiary ring-gray-200 hover:ring-secondary'
+                          }`}
+                        >
+                          <span className={`block text-base font-extrabold ${actual ? 'text-secondary' : 'text-primary'}`}>{v.model}</span>
+                          {v.datos.map((d) => (
+                            <span key={d} className="block">
+                              {d}
+                            </span>
+                          ))}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+            )}
             <ProductDetails product={product} />
           </div>
         </section>

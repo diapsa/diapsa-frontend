@@ -57,6 +57,11 @@ const suscribir = (cb: () => void) => {
 const leerUrl = () => window.location.search;
 const leerUrlServidor = () => "";
 
+// Las versiones de una misma cámara (mismo cuerpo, misma foto) van en una
+// sola tarjeta; los productos del CMS son cada uno su propia tarjeta.
+const clave = (p: ProductoCatalogo) => (p.familia ? `familia-${p.familia}` : `producto-${p.slug}`);
+const cuenta = (lista: ProductoCatalogo[]) => new Set(lista.map(clave)).size;
+
 function alternar(lista: string[], id: string) {
   return lista.includes(id) ? lista.filter((x) => x !== id) : [...lista, id];
 }
@@ -117,51 +122,60 @@ export default function TiendaProductos({ productos, marcas }: Props) {
 
   // Marcas y categorías que existen en el catálogo, con su conteo
   const listaMarcas = useMemo(() => {
-    const m = new Map<string, { slug: string; name: string; n: number; logo: string | null }>();
+    const m = new Map<string, { slug: string; name: string; logo: string | null; lista: ProductoCatalogo[] }>();
     for (const p of productos) {
       const b = p.brand;
       if (!b) continue;
-      const e = m.get(b.slug) ?? { slug: b.slug, name: b.name, n: 0, logo: getStorageUrl(marcas.find((x) => x.slug === b.slug)?.logo) };
-      e.n++;
+      const e = m.get(b.slug) ?? { slug: b.slug, name: b.name, logo: getStorageUrl(marcas.find((x) => x.slug === b.slug)?.logo), lista: [] };
+      e.lista.push(p);
       m.set(b.slug, e);
     }
-    return [...m.values()].sort((a, b) => b.n - a.n);
+    return [...m.values()].map((e) => ({ slug: e.slug, name: e.name, logo: e.logo, n: cuenta(e.lista) })).sort((a, b) => b.n - a.n);
   }, [productos, marcas]);
 
   const listaCategorias = useMemo(() => {
-    const m = new Map<string, { slug: string; name: string; n: number; foto: string | null }>();
+    const m = new Map<string, { slug: string; name: string; foto: string | null; lista: ProductoCatalogo[] }>();
     for (const p of productos) {
       const c = p.category;
       if (!c) continue;
-      const e = m.get(c.slug) ?? { slug: c.slug, name: c.name, n: 0, foto: getStorageUrl(p.main_image) };
-      e.n++;
+      const e = m.get(c.slug) ?? { slug: c.slug, name: c.name, foto: getStorageUrl(p.main_image), lista: [] };
+      e.lista.push(p);
       m.set(c.slug, e);
     }
-    return [...m.values()];
+    return [...m.values()].map((e) => ({ slug: e.slug, name: e.name, foto: e.foto, n: cuenta(e.lista) }));
   }, [productos]);
 
   const series = useMemo(() => {
-    const m = new Map<string, number>();
-    for (const p of productos) if (p.serie) m.set(p.serie, (m.get(p.serie) ?? 0) + 1);
-    return [...m.entries()];
+    const nombres = [...new Set(productos.map((p) => p.serie).filter((s): s is string => !!s))];
+    return nombres.map((s) => [s, cuenta(productos.filter((p) => p.serie === s))] as const);
   }, [productos]);
 
   const q = busqueda.trim().toLowerCase();
-  const filtrados = productos.filter((p) => {
+  const pasa = (p: ProductoCatalogo) => {
     if (fMarcas.length && !fMarcas.includes(p.brand?.slug)) return false;
     if (fCategorias.length && !fCategorias.includes(p.category?.slug)) return false;
     if (selSeries.length && !(p.serie && selSeries.includes(p.serie))) return false;
     if (selResol.length && !(p.pixeles && RESOLUCIONES.some((r) => selResol.includes(r.id) && r.prueba(p.pixeles!)))) return false;
     if (selTemp.length && !(p.temp_max && TEMPERATURAS.some((t) => selTemp.includes(t.id) && t.prueba(p.temp_max!)))) return false;
-    if (q && !`${p.model} ${p.name} ${p.brand?.name} ${p.category?.name} ${p.serie ?? ""}`.toLowerCase().includes(q)) return false;
+    if (q && !`${p.model} ${p.name} ${p.brand?.name} ${p.category?.name} ${p.serie ?? ""} ${p.familia_nombre ?? ""}`.toLowerCase().includes(q)) return false;
     return true;
-  });
+  };
+
+  // Agrupa lo que pasa los filtros: cada tarjeta muestra solo sus versiones que pasan
+  const grupos = new Map<string, ProductoCatalogo[]>();
+  for (const p of productos) {
+    if (!pasa(p)) continue;
+    const k = clave(p);
+    grupos.set(k, [...(grupos.get(k) ?? []), p]);
+  }
+  const filtrados = [...grupos.values()];
+  const maxPx = (g: ProductoCatalogo[]) => Math.max(...g.map((p) => p.pixeles ?? -1));
 
   const ordenados =
     orden === "modelo"
-      ? [...filtrados].sort((a, b) => a.model.localeCompare(b.model, "es", { numeric: true }))
+      ? [...filtrados].sort((a, b) => a[0].model.localeCompare(b[0].model, "es", { numeric: true }))
       : orden === "resolucion"
-        ? [...filtrados].sort((a, b) => (b.pixeles ?? -1) - (a.pixeles ?? -1))
+        ? [...filtrados].sort((a, b) => maxPx(b) - maxPx(a))
         : filtrados;
 
   const total = ordenados.length;
@@ -239,7 +253,7 @@ export default function TiendaProductos({ productos, marcas }: Props) {
           <Casilla
             key={r.id}
             nombre={r.nombre}
-            n={productos.filter((p) => p.pixeles && r.prueba(p.pixeles)).length}
+            n={cuenta(productos.filter((p) => p.pixeles && r.prueba(p.pixeles)))}
             marcada={selResol.includes(r.id)}
             onClick={() => ponResol(alternar(selResol, r.id))}
           />
@@ -250,7 +264,7 @@ export default function TiendaProductos({ productos, marcas }: Props) {
           <Casilla
             key={t.id}
             nombre={t.nombre}
-            n={productos.filter((p) => p.temp_max && t.prueba(p.temp_max)).length}
+            n={cuenta(productos.filter((p) => p.temp_max && t.prueba(p.temp_max)))}
             marcada={selTemp.includes(t.id)}
             onClick={() => ponTemp(alternar(selTemp, t.id))}
           />
@@ -438,58 +452,76 @@ export default function TiendaProductos({ productos, marcas }: Props) {
           </div>
         ) : vista === "rejilla" ? (
           <ul className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
-            {visibles.map((p) => {
+            {visibles.map((g) => {
+              const p = g[0];
               const ruta = `/productos/${p.category?.slug}/${p.slug}`;
               const foto = getStorageUrl(p.main_image);
+              const spec = p.featured_specs?.[0];
+              const valores = spec ? [...new Set(g.map((v) => v.featured_specs?.[0]?.value).filter(Boolean))] : [];
               return (
-                <li key={p.slug}>
-                  <Link href={ruta} className="group flex h-full flex-col overflow-hidden rounded-sm bg-white ring-1 ring-black/5 transition-shadow hover:shadow-xl">
-                    <div className="relative h-44 bg-white sm:h-52">
-                      {foto && (
-                        <Image
-                          src={foto}
-                          alt={`${p.name} ${p.brand?.name} ${p.model}`}
-                          fill
-                          sizes="(min-width: 1280px) 22vw, (min-width: 768px) 30vw, 50vw"
-                          className="object-contain p-5 transition-transform duration-500 group-hover:scale-105"
-                        />
-                      )}
-                      <span
-                        className={`absolute right-2 top-2 rounded-xs px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-white ${
-                          p.brand?.slug === "hikmicro" ? "bg-[#c8102e]" : "bg-primary"
-                        }`}
-                      >
-                        {p.brand?.name}
-                      </span>
-                    </div>
-                    <div className="flex flex-1 flex-col border-t border-gray-100 p-4">
-                      <p className="text-sm leading-snug text-tertiary">
-                        {p.name}
-                        {p.serie ? `, ${p.serie}` : ""}
-                      </p>
-                      <p className="mt-1 font-extrabold leading-snug text-primary group-hover:text-secondary">{p.model}</p>
-                      {p.featured_specs?.[0] && (
-                        <p className="mt-auto pt-3 text-xs text-tertiary">
-                          {p.featured_specs[0].label}:{" "}
-                          <span className="font-semibold text-primary">
-                            {p.featured_specs[0].value}
-                            {p.featured_specs[0].unit ? ` ${p.featured_specs[0].unit}` : ""}
-                          </span>
-                        </p>
-                      )}
-                    </div>
+                <li key={clave(p)} className="group flex h-full flex-col overflow-hidden rounded-sm bg-white ring-1 ring-black/5 transition-shadow hover:shadow-xl">
+                  <Link href={ruta} className="relative block h-44 bg-white sm:h-52">
+                    {foto && (
+                      <Image
+                        src={foto}
+                        alt={`${p.name} ${p.brand?.name} ${p.familia_nombre ?? p.model}`}
+                        fill
+                        sizes="(min-width: 1280px) 22vw, (min-width: 768px) 30vw, 50vw"
+                        className="object-contain p-5 transition-transform duration-500 group-hover:scale-105"
+                      />
+                    )}
+                    <span
+                      className={`absolute right-2 top-2 rounded-xs px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-white ${
+                        p.brand?.slug === "hikmicro" ? "bg-[#c8102e]" : "bg-primary"
+                      }`}
+                    >
+                      {p.brand?.name}
+                    </span>
                   </Link>
+                  <div className="flex flex-1 flex-col border-t border-gray-100 p-4">
+                    <p className="text-sm leading-snug text-tertiary">
+                      {g.length > 1 ? "Cámara termográfica de mano" : p.name}
+                      {p.serie && p.familia_nombre !== p.serie ? `, ${p.serie}` : ""}
+                    </p>
+                    <Link href={ruta} className="mt-1 font-extrabold leading-snug text-primary hover:text-secondary">
+                      {g.length > 1 ? p.familia_nombre : p.model}
+                    </Link>
+                    {g.length > 1 && (
+                      <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="Versiones">
+                        {g.map((v) => (
+                          <li key={v.slug}>
+                            <Link
+                              href={`/productos/${v.category?.slug}/${v.slug}`}
+                              className="inline-block rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-bold text-primary transition-colors hover:bg-secondary"
+                            >
+                              {v.model}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {spec && (
+                      <p className="mt-auto pt-3 text-xs text-tertiary">
+                        {spec.label}:{" "}
+                        <span className="font-semibold text-primary">
+                          {valores.join(" o ")}
+                          {spec.unit ? ` ${spec.unit}` : ""}
+                        </span>
+                      </p>
+                    )}
+                  </div>
                 </li>
               );
             })}
           </ul>
         ) : (
           <ul className="mt-8 flex flex-col gap-4">
-            {visibles.map((p) => {
+            {visibles.map((g) => {
+              const p = g[0];
               const ruta = `/productos/${p.category?.slug}/${p.slug}`;
               const foto = getStorageUrl(p.main_image);
               return (
-                <li key={p.slug} className="grid grid-cols-[110px_minmax(0,1fr)] gap-4 overflow-hidden rounded-sm bg-white p-4 ring-1 ring-black/5 sm:grid-cols-[170px_minmax(0,1fr)_auto] sm:items-center">
+                <li key={clave(p)} className="grid grid-cols-[110px_minmax(0,1fr)] gap-4 overflow-hidden rounded-sm bg-white p-4 ring-1 ring-black/5 sm:grid-cols-[170px_minmax(0,1fr)_auto] sm:items-center">
                   <Link href={ruta} className="relative h-28 sm:h-36">
                     {foto && <Image src={foto} alt={`${p.name} ${p.brand?.name} ${p.model}`} fill sizes="170px" className="object-contain" />}
                   </Link>
@@ -499,9 +531,23 @@ export default function TiendaProductos({ productos, marcas }: Props) {
                       {p.serie ? ` · ${p.serie}` : ""}
                     </p>
                     <Link href={ruta} className="mt-0.5 block text-lg font-extrabold text-primary hover:text-secondary">
-                      {p.model}
+                      {g.length > 1 ? p.familia_nombre : p.model}
                     </Link>
-                    <p className="text-sm text-tertiary">{p.name}</p>
+                    <p className="text-sm text-tertiary">{g.length > 1 ? "Cámara termográfica de mano" : p.name}</p>
+                    {g.length > 1 && (
+                      <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="Versiones">
+                        {g.map((v) => (
+                          <li key={v.slug}>
+                            <Link
+                              href={`/productos/${v.category?.slug}/${v.slug}`}
+                              className="inline-block rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-bold text-primary transition-colors hover:bg-secondary"
+                            >
+                              {v.model}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                     {p.featured_specs?.length > 0 && (
                       <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-tertiary">
                         {p.featured_specs.slice(0, 3).map((s) => (
