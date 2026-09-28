@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { SuccessCase } from "@/types/post";
+import { PORTADAS_CASOS } from "@/lib/portadas-casos";
 
 /**
  * CasosDestacados
@@ -20,6 +21,7 @@ import type { SuccessCase } from "@/types/post";
  */
 
 const INTERVALO = 9000;
+
 
 function Flecha() {
   return (
@@ -106,8 +108,14 @@ export default function CasosDestacados({ casos }: { casos: SuccessCase[] }) {
           className="grid grid-cols-1 overflow-hidden rounded-sm bg-primary shadow-xl motion-safe:animate-[fadeIn_.4s_ease-out] lg:grid-cols-[5fr_7fr]"
         >
           <div className="relative min-h-[16rem] lg:min-h-full">
-            {c.cover_image && (
-              <Image src={c.cover_image} alt={c.title} fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover" />
+            {(PORTADAS_CASOS[c.slug]?.src || c.cover_image) && (
+              <Image
+                src={PORTADAS_CASOS[c.slug]?.src ?? c.cover_image}
+                alt={c.title}
+                fill
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                className={`object-cover ${PORTADAS_CASOS[c.slug]?.posicion ?? ""}`}
+              />
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/10 to-transparent" />
             <span className="absolute bottom-4 left-4 rounded-full bg-secondary px-3 py-1 text-xs font-bold text-primary">
