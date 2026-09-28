@@ -87,6 +87,21 @@ export function middleware(request: NextRequest) {
   }
 
   // -------------------------------------------------------------------------
+  // 1b. RUTAS CON MAYÚSCULAS QUE SE COMPARTEN A MANO
+  // -------------------------------------------------------------------------
+
+  /**
+   * /Webinar, /WEBINAR y parecidas llevan a /webinar. Va aquí y no en
+   * next.config.ts porque allá las rutas se comparan sin distinguir
+   * mayúsculas y la regla se aplicaba también a /webinar, en bucle.
+   */
+  const RUTAS_MINUSCULAS = ['/webinar', '/webinars'];
+  if (pathname !== pathname.toLowerCase() && RUTAS_MINUSCULAS.includes(pathname.toLowerCase())) {
+    url.pathname = '/webinar';
+    return NextResponse.redirect(url, { status: 301 });
+  }
+
+  // -------------------------------------------------------------------------
   // 2. LIMPIAR PARÁMETROS QUERY SPAM
   // -------------------------------------------------------------------------
 
