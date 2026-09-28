@@ -1,8 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import Antetitulo from "../atoms/Antetitulo";
 import type { Course } from "@/types/course";
-import { BLOQUES, TECNICAS, diaMes, extraDe, fechaGrupo, imagenDe, muestraFotos, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
+import { FORMATOS, TECNICAS, diaMes, extraDe, fechaGrupo, galeriaDe, imagenDe, muestraFotos, proximosGrupos, type FormatoCurso } from "@/lib/cursos";
+import CatalogoFiltros, { type TarjetaCurso } from "./CatalogoFiltros";
+import BienvenidaCursos, { type Anuncio } from "./BienvenidaCursos";
 import EscenaCursos from "./EscenaCursos";
 import GaleriaCampo from "./GaleriaCampo";
 import InicioDiplomado from "@/components/organisms/InicioDiplomado";
@@ -23,9 +24,6 @@ import menuCursos from "@/data/menu-cursos.json";
  */
 
 
-/* Tarjeta compacta: foto chica, formato, nombre y enlace. Con 15 cursos en
-   tarjetas grandes había que bajar cuatro pantallas; así cabe una técnica
-   por renglón. */
 /* Nombre corto y una línea, los mismos del menú: dentro del renglón de la
    técnica, "Formación técnica" dice más que "Curso Técnico Especializado:
    Vibraciones Mecánicas" cortado a la mitad. */
@@ -35,38 +33,17 @@ const CORTOS = new Map(
     .map((i) => [i.href.replace("/cursos/", ""), i] as const)
 );
 
-function Tarjeta({ curso }: { curso: Course }) {
-  const corto = CORTOS.get(curso.slug);
-  // Dentro de un bloque de formato, lo que distingue a cada tarjeta es la técnica
-  const x = extraDe(curso.slug);
-  const tecnica = x && x.tecnica !== "confiabilidad" && x.formato !== "especialidad" ? TECNICAS.find((t) => t.clave === x.tecnica) : null;
-  const titulo = tecnica ? tecnica.nombre : corto?.label ?? curso.name;
-  const linea = tecnica ? (x?.formato === "certificacion" && tecnica.norma ? `${tecnica.norma}${x?.nivel ? " · " + x.nivel : ""}` : corto?.descripcion) : corto?.descripcion ?? curso.description;
-  const grupo = proximosGrupos(curso.slug)[0];
-  const foto = imagenDe(curso.slug, curso.url_img, curso.alt_img || curso.name);
-  return (
-    <Link href={`/cursos/${curso.slug}`} className="group flex h-full overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5 transition-all hover:-translate-y-0.5 hover:shadow-lg">
-      <div className="relative w-24 shrink-0 bg-primary">
-        {foto && <Image src={foto.src} alt={foto.alt} fill sizes="96px" className="object-cover" />}
-      </div>
-      <div className="flex min-w-0 flex-1 flex-col p-4">
-        <h3 className="text-base font-extrabold leading-snug text-primary">{titulo}</h3>
-        <p className="mt-1 line-clamp-2 text-sm leading-snug text-tertiary">{linea}</p>
-        {grupo && <p className="mt-1 text-xs font-bold text-emerald-700">Próximo grupo: {fechaGrupo(grupo)}</p>}
-        <span className="mt-auto pt-2 text-sm font-bold text-secondary group-hover:underline">Ver curso →</span>
-      </div>
-    </Link>
-  );
-}
 
 /* Si el CMS no responde, el catálogo se arma con los cursos del menú, que
    viven en el sitio: nombre, una línea y su enlace. Así la página nunca
    queda vacía. */
 function respaldo(): Course[] {
-  return (menuCursos as { items: { label: string; href: string; descripcion: string }[] }[]).flatMap((col) =>
+  return (menuCursos as { titulo: string; items: { label: string; href: string; descripcion: string }[] }[]).flatMap((col) =>
     col.items.filter((i) => !i.href.includes(dip.slug)).map((i) => {
       const slug = i.href.replace("/cursos/", "");
-      return { id: slug, slug, name: i.label, description: i.descripcion, url_img: "", alt_img: "", reference_norm: "" } as unknown as Course;
+      const generico = /^(Formación técnica|Taller práctico|Certificación)/.test(i.label);
+      const name = generico ? `${i.label} en ${col.titulo.toLowerCase()}` : i.label;
+      return { id: slug, slug, name, description: i.descripcion, url_img: "", alt_img: "", reference_norm: "" } as unknown as Course;
     })
   );
 }
@@ -77,8 +54,95 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
   const grupos = proximosGrupos().filter((g) => porSlug.has(g.curso));
   // Dentro de cada bloque, en el orden de las técnicas
   const orden = TECNICAS.map((t) => t.clave);
-  const porTecnica = (a: Course, b: Course) => orden.indexOf(extraDe(a.slug)?.tecnica ?? "") - orden.indexOf(extraDe(b.slug)?.tecnica ?? "");
-  const sinClasificar = cursos.filter((c) => !extraDe(c.slug));
+
+  // Las tarjetas del catálogo: el diplomado primero y después cada curso,
+  // ordenados por técnica y por tipo.
+  const nombreTecnica = (clave?: string) => TECNICAS.find((t) => t.clave === clave)?.nombre ?? "Más cursos";
+  const ordenTipo: string[] = ["diplomado", "formacion", "practica", "certificacion", "especialidad", "gestion"];
+  const grupoDip = proximosGrupos(dip.slug)[0];
+  // Si el curso no trae foto propia del CMS, toma una distinta de la
+  // galería de su técnica para que las tarjetas de una técnica no se repitan.
+  const vistos = new Map<string, number>();
+  const fotoDe = (c: Course) => {
+    const x = extraDe(c.slug);
+    const delCms = imagenDe(c.slug, c.url_img, c.alt_img || c.name);
+    if (c.url_img && !x?.ocultarImagenCms) return delCms ?? undefined;
+    const lista = galeriaDe(c.slug);
+    const n = vistos.get(x?.tecnica ?? "") ?? 0;
+    vistos.set(x?.tecnica ?? "", n + 1);
+    return lista.length ? lista[(n * 3) % lista.length] : delCms ?? undefined;
+  };
+  const tarjetas: TarjetaCurso[] = [
+    {
+      slug: dip.slug,
+      href: `/cursos/${dip.slug}`,
+      titulo: dip.nombre,
+      descripcion: dip.resumen,
+      tipo: "Diplomado",
+      tipoClave: "diplomado",
+      tecnica: nombreTecnica("confiabilidad"),
+      tecnicaClave: "confiabilidad",
+      foto: { src: "/images/cursos/confiabilidad/confiabilidad-03.webp", alt: "Sesión del diplomado en confiabilidad operativa" },
+      fecha: grupoDip ? fechaGrupo(grupoDip) : null,
+      diplomado: true,
+    },
+    ...cursos
+      .filter((c) => c.slug !== dip.slug)
+      .map((c): TarjetaCurso => {
+        const x = extraDe(c.slug);
+        const g = proximosGrupos(c.slug)[0];
+        const tipoClave = x?.formato ?? "otros";
+        return {
+          slug: c.slug,
+          href: `/cursos/${c.slug}`,
+          titulo: c.name,
+          descripcion: c.description || CORTOS.get(c.slug)?.descripcion || "",
+          tipo: x ? FORMATOS[x.formato as FormatoCurso]?.nombre ?? "Curso" : "Curso",
+          tipoClave,
+          tecnica: nombreTecnica(x?.tecnica),
+          tecnicaClave: x?.tecnica ?? "otros",
+          foto: fotoDe(c),
+          fecha: g ? fechaGrupo(g) : null,
+        };
+      })
+      .sort((a, b) => orden.indexOf(a.tecnicaClave) - orden.indexOf(b.tecnicaClave) || ordenTipo.indexOf(a.tipoClave) - ordenTipo.indexOf(b.tipoClave)),
+  ];
+  const contar = (campo: "tecnicaClave" | "tipoClave", clave: string) => tarjetas.filter((x) => x[campo] === clave).length;
+  const filtrosTecnica = TECNICAS.map((x) => ({ clave: x.clave, nombre: x.nombre, n: contar("tecnicaClave", x.clave) })).filter((x) => x.n > 0);
+  const filtrosTipo = [
+    { clave: "diplomado", nombre: "Diplomado" },
+    ...(Object.entries(FORMATOS) as [string, { nombre: string }][]).map(([clave, f]) => ({ clave, nombre: f.nombre })),
+  ]
+    .map((x) => ({ ...x, n: contar("tipoClave", x.clave) }))
+    .filter((x) => x.n > 0)
+    .sort((a, b) => ordenTipo.indexOf(a.clave) - ordenTipo.indexOf(b.clave));
+  const textoTipo: Record<string, string> = {
+    diplomado: "El programa insignia: 60 horas en vivo con especialistas de varios países, en cinco fases.",
+    ...Object.fromEntries((Object.entries(FORMATOS) as [string, { texto: string }][]).map(([k, f]) => [k, f.texto])),
+  };
+
+  // El anuncio de la ventana de bienvenida: el grupo con fecha más próximo;
+  // si no hay ninguno, el diplomado.
+  const proximo = grupos[0];
+  const cursoProximo = proximo ? porSlug.get(proximo.curso) : undefined;
+  const anuncio: Anuncio = proximo && cursoProximo
+    ? {
+        etiqueta: "Próximo curso",
+        titulo: cursoProximo.name,
+        detalle: [fechaGrupo(proximo), proximo.modalidad, proximo.sede, proximo.duracion].filter(Boolean).join(". ") + ".",
+        fecha: diaMes(proximo),
+        href: `/cursos/${proximo.curso}`,
+        foto: imagenDe(proximo.curso, cursoProximo.url_img, cursoProximo.name) ?? undefined,
+      }
+    : {
+        etiqueta: "Programa insignia",
+        titulo: dip.corto,
+        detalle: dip.resumen,
+        fecha: grupoDip ? diaMes(grupoDip) : null,
+        href: `/cursos/${dip.slug}`,
+        foto: { src: "/images/cursos/confiabilidad/confiabilidad-03.webp", alt: "" },
+        diplomado: true,
+      };
 
   return (
     <>
@@ -164,63 +228,18 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
         </section>
       )}
 
-      {/* El catálogo por bloques de formato, cada uno explicado en corto */}
+      {/* El catálogo con filtros, al estilo NeoPetrol: técnica y tipo a la
+          izquierda, tarjetas a la derecha */}
       <section id="catalogo" className="w-full scroll-mt-28 bg-gray-100 py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-6">
           <Antetitulo>El catálogo</Antetitulo>
-          <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">Elige cómo quieres aprender</h2>
-          <nav aria-label="Bloques del catálogo" className="mt-5 flex flex-wrap gap-2">
-            {BLOQUES.map((b) => (
-              <a key={b.id} href={`#${b.id}`} className="rounded-full bg-white px-4 py-2 text-sm font-bold text-primary ring-1 ring-black/10 transition-colors hover:bg-primary hover:text-white">{b.titulo}</a>
-            ))}
-          </nav>
-          <div className="mt-8 space-y-6">
-            {BLOQUES.map((b) => {
-              const lista = cursos.filter((c) => b.formatos.includes(extraDe(c.slug)?.formato as FormatoCurso)).sort(porTecnica);
-              if (!lista.length) return null;
-              return (
-                <article key={b.id} id={b.id} className="scroll-mt-28 overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5">
-                  <div className="grid grid-cols-1 gap-4 border-b border-gray-100 p-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:gap-10 lg:p-7">
-                    <div>
-                      <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">{b.etiqueta}</p>
-                      <h3 className="mt-1 text-2xl font-extrabold leading-tight text-primary lg:text-3xl">{b.titulo}</h3>
-                      <p className="mt-2 text-justify text-base leading-relaxed text-tertiary">{b.texto}</p>
-                    </div>
-                    {/* En teléfono, un renglón por punto; desde tableta, tres recuadros */}
-                    <dl className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3">
-                      {b.puntos.map((p) => (
-                        <div key={p.k} className="border-l-4 border-secondary bg-gray-50 px-3 py-2 sm:rounded-sm sm:border-l-0 sm:border-t-4 sm:p-4">
-                          <dt className="text-[11px] font-bold uppercase tracking-widest text-primary">{p.k}</dt>
-                          <dd className="mt-0.5 text-sm leading-snug text-tertiary sm:mt-1">{p.v}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </div>
-                  {/* En teléfono, los cursos del bloque se deslizan de lado */}
-                  <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto bg-gray-50/60 p-4 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-3 lg:p-5">
-                    {lista.map((c) => (
-                      <div key={c.slug} className="w-[85%] shrink-0 snap-start sm:w-auto">
-                        <Tarjeta curso={c} />
-                      </div>
-                    ))}
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+          <h2 className="mb-8 mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">Encuentra el curso indicado para tu equipo</h2>
+          <CatalogoFiltros tarjetas={tarjetas} tecnicas={filtrosTecnica} tipos={filtrosTipo} textoTipo={textoTipo} />
         </div>
       </section>
 
-      {sinClasificar.length > 0 && (
-        <section className="w-full bg-white py-12 lg:py-16">
-          <div className="mx-auto max-w-7xl px-6">
-            <h2 className="mb-8 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">Más cursos</h2>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {sinClasificar.map((c) => <Tarjeta key={c.slug} curso={c} />)}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Al entrar: el anuncio del curso más próximo y el formulario corto */}
+      <BienvenidaCursos anuncio={anuncio} cursos={tarjetas.map((c) => c.titulo)} />
     </>
   );
 }
