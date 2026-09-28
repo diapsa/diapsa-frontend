@@ -26,6 +26,14 @@ const fotosSueltos: Record<string, string> = {
     "/servicios/deteccion-gas": "/images/deteccion-gas/campo/inspeccion-planta.webp",
     "/servicios/diagnostico-situacional": "/images/diagnostico-situacional/engineer-checking-machinery.webp",
 };
+// Monitoreo continuo también en tarjetas con foto (2026-09-28, Emiliano: "que
+// se vean igual que Más servicios").
+const fotosContinuo: Record<string, string> = {
+    "/servicios/monitoreo-continuo/camaras-termicas": "/images/servicios/termografia-infrarroja/campo-02.webp",
+    "/servicios/monitoreo-continuo/sensores-vibracion": "/images/servicios/sensores-vibracion/sensor-motor.webp",
+    "/servicios/monitoreo-continuo/sensores-acusticos": "/images/servicios/sensores-acusticos/campo-00.webp",
+    "/servicios/monitoreo-continuo/dga-en-linea": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
+};
 const columnasServicios: ColumnaMenu[] = [
     {
         titulo: monitoreoCondicion.label,
@@ -37,8 +45,8 @@ const columnasServicios: ColumnaMenu[] = [
     {
         titulo: monitoreoContinuo.label,
         href: monitoreoContinuo.href,
-        items: monitoreoContinuo.children ?? [],
-        formato: "lista",
+        items: (monitoreoContinuo.children ?? []).map((s) => ({ ...s, imagen: fotosContinuo[s.href] })),
+        formato: "tarjetas",
     },
     {
         titulo: "Más servicios",
@@ -68,8 +76,15 @@ const fichasTecnicas = [cursosVib, cursosTermo, cursosUltra].flatMap((tecnica) =
         .filter((i) => ["formacion", "taller", "certificado"].includes(i.icono ?? ""))
         .map((i) => ({ ...i, label: `${tecnicaCorta(tecnica.titulo)} · ${formatoCorto(i.label)}` })),
 );
-const fotovoltaicas = cursosTermo.items.find((i) => i.icono === "electricos");
 const diplomado = cursosConf.items.find((i) => i.href.includes("diplomado"));
+// Confiabilidad y gestión en cuatro tarjetas con foto, como Programas. Los
+// demás cursos (informes técnicos, fotovoltaicas) siguen en el catálogo.
+const fotosConfiabilidad: Record<string, string> = {
+    "/cursos/incremento-de-la-confiabilidad-monitoreo-de-condicion": "/images/cursos/confiabilidad/confiabilidad-05.webp",
+    "/cursos/curso-de-mantenimiento-para-no-mantenedores": "/images/cursos/confiabilidad/confiabilidad-06.webp",
+    "/cursos/alineamiento-balanceo-proactivo": "/images/servicios/alineacion-balanceo/campo-sensores-acople.webp",
+    "/cursos/cursos-de-aprendizaje-practico-vibraciones-ultrasonido-termografia": "/images/cursos/confiabilidad/confiabilidad-10.webp",
+};
 const columnasCursosPanel: ColumnaMenu[] = [
     {
         titulo: "Vibraciones, termografía y ultrasonido",
@@ -80,8 +95,10 @@ const columnasCursosPanel: ColumnaMenu[] = [
     },
     {
         titulo: cursosConf.titulo,
-        items: [...cursosConf.items.filter((i) => i !== diplomado), ...(fotovoltaicas ? [fotovoltaicas] : [])],
-        formato: "lista",
+        items: cursosConf.items
+            .filter((i) => fotosConfiabilidad[i.href])
+            .map((i) => ({ ...i, imagen: fotosConfiabilidad[i.href] })),
+        formato: "tarjetas",
     },
     {
         titulo: "Programas",
