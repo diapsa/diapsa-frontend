@@ -29,15 +29,15 @@
   "content": {
     "title": "Oímos la falla antes de que se sienta",
     "subtitle": "Un rodamiento que empieza a fallar, una fuga de aire o una descarga en un tablero suenan mucho antes de verse o de calentar. Con el detector de ultrasonido los oímos, los medimos en decibeles y te decimos qué atender y con qué urgencia.",
-    "image": "/images/servicios/analisis-de-ultrasonido/acustica-en-planta.webp",
+    "image": "/images/servicios/analisis-de-ultrasonido/campo-trampas-vapor.webp",
     "items": [
       {
         "id": "aplicaciones",
         "title": "Dónde se aplica",
         "content": "Rodamientos de motores y bombas, fugas de aire comprimido, vapor y gases, descargas parciales y efecto corona en tableros y subestaciones, trampas de vapor y válvulas que no cierran.",
         "foto": {
-          "src": "/images/servicios/analisis-de-ultrasonido/acustica-en-planta.webp",
-          "alt": "Analista de DIAPSA recorriendo la planta con cámara acústica entre tuberías, estructura y equipo rotativo"
+          "src": "/images/servicios/analisis-de-ultrasonido/campo-trampas-vapor.webp",
+          "alt": "Analista de DIAPSA con audífonos y detector de ultrasonido revisando una línea de trampas de vapor"
         }
       },
       {
@@ -55,8 +55,8 @@
         "title": "Puntual o continuo",
         "content": "Rutas periódicas con detector y audífonos por un analista certificado, o sensores acústicos en línea donde una fuga o un rodamiento no pueden esperar a la siguiente visita.",
         "foto": {
-          "src": "/images/servicios/analisis-de-ultrasonido/analista-con-audifonos.jpg",
-          "alt": "Analista de DIAPSA con audífonos y detector de ultrasonido frente a una bomba"
+          "src": "/images/servicios/analisis-de-ultrasonido/campo-bomba-alimentacion.webp",
+          "alt": "Analista de DIAPSA con audífonos midiendo con ultrasonido los rodamientos de una bomba de agua de alimentación"
         }
       },
       {
