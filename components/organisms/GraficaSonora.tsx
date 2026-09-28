@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Antetitulo from "../atoms/Antetitulo";
+import EscenaUltrasonido, { type ModoUltrasonido } from "./EscenaUltrasonido";
 import type { GrupoSonoro, ServiceComparadorSonoro } from "@/types/servicio";
 
 /**
@@ -31,6 +32,9 @@ import type { GrupoSonoro, ServiceComparadorSonoro } from "@/types/servicio";
  * barras crecen al aparecer y al cambiar de familia, bajo motion-safe.
  */
 
+// La pestaña de cada familia y el modo de la escena 3D que le corresponde
+const MODO_ESCENA: Record<string, ModoUltrasonido> = { rodamientos: "rodamiento", aire: "fuga", electrico: "descarga" };
+
 type Props = {
   comparador: ServiceComparadorSonoro;
   paso?: string;
@@ -58,8 +62,8 @@ function Panel({ grupo }: { grupo: GrupoSonoro }) {
 
   return (
     <>
-      {/* Sano contra hallazgo, lado a lado */}
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      {/* Sano contra hallazgo, uno sobre otro junto a la escena */}
+      <div className="grid grid-cols-1 gap-4">
         {grupo.clips.map((clip, fila) => {
           const alarma = clip.estado === "alarma";
           const n = clip.envolvente.length;
@@ -84,7 +88,7 @@ function Panel({ grupo }: { grupo: GrupoSonoro }) {
               <svg
                 viewBox={`0 0 ${n} 100`}
                 preserveAspectRatio="none"
-                className="mt-3 h-16 w-full lg:h-20"
+                className="mt-3 h-14 w-full"
                 role="img"
                 aria-label={`Señal de ultrasonido de ${clip.titulo}, ${clip.etiqueta.toLowerCase()}, nivel ${clip.nivel}`}
               >
@@ -198,6 +202,12 @@ export default function GraficaSonora({ comparador, paso }: Props) {
           })}
         </div>
 
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+          {/* La escena 3D: una sola para las tres familias; cambia de modo
+              con la pestaña sin volver a montarse */}
+          <div className="relative min-h-[320px] overflow-hidden rounded-sm bg-[#002e46] ring-1 ring-white/10 sm:min-h-[420px]">
+            <EscenaUltrasonido modo={MODO_ESCENA[activo ?? ""] ?? "rodamiento"} />
+          </div>
         {/* Se remonta al cambiar de familia para que las ondas vuelvan a crecer. */}
         <div key={activo}>
           {grupos.map((g) => {
@@ -226,7 +236,7 @@ export default function GraficaSonora({ comparador, paso }: Props) {
             );
           })}
         </div>
-
+        </div>
       </div>
     </section>
   );
