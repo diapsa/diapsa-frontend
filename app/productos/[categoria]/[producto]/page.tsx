@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getProductBySlug } from '@/lib/api/products';
-import { productoLocal, versionesLocales } from '@/lib/productos-locales';
+import { incluyeCurso, productoLocal, versionesLocales } from '@/lib/productos-locales';
 import { getStorageUrl } from '@/lib/api/config';
 import ProductDetails from '@/components/organisms/ProductDetails';
 import PageHeader from '@/components/organisms/PageHeader';
@@ -123,6 +123,22 @@ export default async function ProductPage({ params }: ProductPageProps) {
         {/* Product Details */}
         <section className="py-8 lg:py-12">
           <div className="container mx-auto px-4">
+            {/* Promoción: curso de termografía gratis con cámaras M30 o superior */}
+            {product.brand.slug === 'hikmicro' && incluyeCurso(product.model) && (
+              <div className="mb-6 flex flex-col gap-3 rounded-sm bg-secondary px-5 py-4 text-primary sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-justify text-sm font-semibold leading-snug sm:text-base">
+                  <span className="font-black">Incluye curso de termografía gratis.</span> Al comprar la {product.model} te capacitamos para que la uses bien desde el primer día.
+                </p>
+                <div className="flex shrink-0 gap-2">
+                  <Link href="#contacto" className="rounded-full bg-primary px-5 py-2 text-sm font-bold text-white transition-colors hover:bg-white hover:text-primary">
+                    Cotizar
+                  </Link>
+                  <Link href="/cursos" className="rounded-full border border-primary/30 px-5 py-2 text-sm font-bold text-primary transition-colors hover:bg-white">
+                    Ver cursos
+                  </Link>
+                </div>
+              </div>
+            )}
             {/* Versiones de la misma cámara (HIKMICRO): mismo cuerpo, cambian resolución, enfoque o temperatura */}
             {versiones.length > 1 && (
               <nav aria-label="Versiones de esta cámara" className="mb-8 rounded-sm bg-gray-50 p-5 ring-1 ring-black/5">
