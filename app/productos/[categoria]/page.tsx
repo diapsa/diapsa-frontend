@@ -4,7 +4,8 @@
  */
 
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
+import { CATEGORIA_TERMOGRAFIA } from '@/lib/productos-locales';
 import { getBrands, getCategoryBySlug, getSeries } from '@/lib/api/categories';
 import { getStorageUrl } from '@/lib/api/config';
 import { getProducts } from '@/lib/api/products';
@@ -82,6 +83,11 @@ async function getCategoryPageData(categoria: string) {
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
     const { categoria } = await params;
+
+    // Las cámaras termográficas no están en el CMS: se ven en el catálogo general, filtradas
+    if (categoria === CATEGORIA_TERMOGRAFIA.slug) {
+        redirect(`/productos?categoria=${categoria}`);
+    }
 
     let pageData: Awaited<ReturnType<typeof getCategoryPageData>>;
 
