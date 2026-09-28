@@ -1,289 +1,260 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../atoms/Button";
+import EscenaDolor from "@/components/organisms/EscenaDolor";
 
-type Stat = { value: string; label: string };
+/**
+ * Hero
+ * La primera pantalla de la portada: un carrusel de cuatro diapositivas,
+ * una por puerta de entrada (monitoreo de condición, monitoreo continuo,
+ * detección de gas y cursos), que rota solo y se puede mover a mano.
+ *
+ * Por qué carrusel: Emiliano lo prefiere en movimiento (2026-09-27). Lo que
+ * sí cambió respecto al original es el contenido: se fueron las cifras que
+ * no se sostenían ("+50 cursos", "IA analítica"), la alianza con Hertzinno
+ * y la moneda de ITZAM. La primera diapositiva lleva la escena 3D de la
+ * planta arrancando en su cierre (el analista recorre la planta y los
+ * hallazgos quedan en IDAP); las otras tres, fotos reales. Todas viven en el
+ * DOM y se funden por opacidad, así la escena se monta una sola vez. De
+ * fondo, la foto del engranaje del hero original, velada en azul marino.
+ */
 
 type Slide = {
-  id: number;
+  id: string;
   badge: string;
   title: string;
   titleHighlight: string;
   description: string;
   cta: { label: string; href: string };
   ctaSecondary: { label: string; href: string };
-  image?: string;
-  imageAlt?: string;
-  imageContain: boolean;
-  bg: string;
-  stats?: Stat[];
+  /** Foto de la columna derecha; si falta, va la escena 3D. */
+  image?: { src: string; alt: string };
+  /** Render de producto con fondo transparente: se muestra completo, sin recortar. */
+  contener?: boolean;
+  /** Muestra lo que certificamos: el sello de ITZAM sobre la foto y las
+      normas bajo el texto (diapositiva de cursos). */
+  certifica?: boolean;
 };
 
-const slides: Slide[] = [
+// Lo que certifica DIAPSA, para la diapositiva de cursos.
+const CERTIFICACIONES = [
+  { norma: "ISO 18436-2", tecnica: "Vibraciones, Categorías I y II" },
+  { norma: "ISO 18436-7", tecnica: "Termografía, Categorías I y II" },
+  { norma: "Ultrasonido", tecnica: "Especialista y analista" },
+];
+
+const SLIDES: Slide[] = [
   {
-    id: 0,
-    badge: "22 años en la industria",
-    title: "MONITOREO PREDICTIVO",
-    titleHighlight: "INTEGRAL PARA LA INDUSTRIA",
+    id: "monitoreo",
+    badge: "Más de 20 años · Especialistas Categoría 3",
+    title: "SABEMOS CÓMO ESTÁ CADA EQUIPO DE TU PLANTA",
+    titleHighlight: "ANTES DE QUE FALLE",
     description:
-      "Cada paro no planeado cuesta tiempo y dinero. Con sensores, tecnología avanzada y 22 años de experiencia, anticipamos fallas antes de que ocurran.",
-    cta: { label: "Nuestros servicios", href: "/servicios" },
-    ctaSecondary: { label: "Contáctanos", href: "/contacto" },
-    imageContain: true,
-    bg: "/images/screen.png",
+      "Medimos vibraciones, temperatura, ultrasonido, aceite y energía con tus equipos en operación, y te decimos qué intervenir, cuándo y por qué.",
+    cta: { label: "Hablar con un especialista", href: "/contacto" },
+    ctaSecondary: { label: "Ver monitoreo de condición", href: "/servicios/monitoreo-condicion" },
   },
-  // Carrusel de 4 mensajes. Se restauró el 2026-08-26 a petición de
-  // Emiliano: el movimiento es parte de la identidad del sitio.
   {
-    id: 1,
-    badge: "Monitoreo Continuo · IoT Industrial",
-    title: "SENSORES INTELIGENTES",
-    titleHighlight: "24/7 EN TU MAQUINARIA",
+    id: "continuo",
+    badge: "Monitoreo continuo",
+    title: "SENSORES EN TUS EQUIPOS CRÍTICOS",
+    titleHighlight: "LAS 24 HORAS",
     description:
-      "Detecta vibración, temperatura y corriente en tiempo real. Anticipa paros no planeados con análisis basado en inteligencia artificial.",
+      "Sensores de vibración, cámaras térmicas fijas, sensores acústicos y DGA en línea para cuando la falla no da tiempo de esperar la siguiente ruta.",
     cta: { label: "Ver monitoreo continuo", href: "/servicios/monitoreo-continuo" },
-    ctaSecondary: { label: "Solicitar demo", href: "/#contacto" },
-    image: "/images/header-sensores.png",
-    imageAlt: "Sensor IoT de vibración instalado en maquinaria industrial",
-    imageContain: false,
-    bg: "/images/fondo-mantenimiento.webp",
-    stats: [
-      { value: "24/7", label: "Monitoreo" },
-      { value: "IoT", label: "Conectado" },
-      { value: "IA", label: "Analítica" },
-    ],
+    ctaSecondary: { label: "Solicitar demo", href: "/contacto" },
+    image: { src: "/images/header-sensores.png", alt: "Sensor de vibración instalado en maquinaria industrial" },
+    contener: true,
   },
   {
-    id: 2,
-    badge: "Detección de Fugas · Termografía Industrial · Alianza con Hertzinno",
-    title: "CÁMARAS ACÚSTICAS",
-    titleHighlight: "Y TÉRMICAS INDUSTRIALES",
+    id: "gas",
+    badge: "Detección de fugas de gas",
+    title: "VE LA FUGA",
+    titleHighlight: "ANTES QUE LA MULTA",
     description:
-      "Visualiza fugas de gas, arcos eléctricos y anomalías térmicas invisibles al ojo humano. Tecnología de vanguardia para la seguridad de tus plantas.",
-    cta: { label: "Explorar productos", href: "/productos" },
-    ctaSecondary: { label: "Cotizar", href: "/#contacto" },
-    image: "/images/header-camaras.png",
-    imageAlt: "Cámara acústica para detección de fugas de gas industrial",
-    imageContain: true,
-    bg: "/images/fondo-mantenimiento.webp",
-    stats: [
-      { value: "Gas", label: "Fugas" },
-      { value: "IR", label: "Térmico" },
-      { value: "UV", label: "Eléctrico" },
-    ],
+      "Cámara OGI o cámara acústica con láser TDLAS para encontrar fugas invisibles, y programas LDAR para el cumplimiento del PPCIEM ante la ASEA.",
+    cta: { label: "Ver detección de gas", href: "/servicios/deteccion-gas" },
+    ctaSecondary: { label: "Cotizar inspección", href: "/contacto" },
+    image: { src: "/images/deteccion-gas/campo/inspeccion-planta.webp", alt: "Analista de DIAPSA inspeccionando fugas de gas en una planta" },
   },
   {
-    id: 3,
-    badge: "Certificaciones ISO y SAE · Cursos · Asesorías · Webinar · Talleres",
-    title: "CERTIFICACIONES EN MANTENIMIENTO",
-    titleHighlight: "PREDICTIVO Y CONFIABILIDAD",
+    id: "cursos",
+    badge: "Cursos y certificaciones",
+    title: "FORMA A TU GENTE",
+    titleHighlight: "CON QUIEN TRABAJA EN CAMPO",
     description:
-      "Forma a tu equipo con expertos en herramientas predictivas bajo normativas internacionales (ISO y SAE). Diseñamos cursos personalizados según tu necesidad, con metodologías creadas por especialistas para incrementar la confiabilidad de tus operaciones.",
-    cta: { label: "Ver todos los cursos", href: "/cursos" },
-    ctaSecondary: { label: "Solicitar Información", href: "#contacto" },
-    image: "/images/itzam-gold-coin.png",
-    imageAlt: "Moneda dorada de instituto ITZAM",
-    imageContain: true,
-    bg: "/images/fondo-mantenimiento.webp",
-    stats: [
-      { value: "+50", label: "Cursos" },
-      { value: "ISO", label: "Certificados" },
-      { value: "Online", label: "Webinars" },
-      { value: "ITZAM", label: "Partner" },
-    ],
+      "Formación técnica, talleres y certificaciones en vibraciones, termografía y ultrasonido, con respaldo de ITZAM, y el diplomado en confiabilidad operativa.",
+    cta: { label: "Ver los cursos", href: "/cursos" },
+    ctaSecondary: { label: "Conocer el diplomado", href: "/cursos/diplomado-confiabilidad-operativa" },
+    image: { src: "/images/cursos/vibraciones/vibraciones-01.webp", alt: "Grupo en un curso de vibraciones de DIAPSA" },
+    certifica: true,
   },
 ];
 
-const AUTOPLAY_MS = 5000;
+const AUTOPLAY_MS = 7000;
+// Segundo de la historia "con" en que entra el analista.
+const INICIO_CIERRE = 12.5;
 
-export default function Hero() {
-  const [current, setCurrent] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const goTo = (index: number) => {
-    setCurrent(index);
-    resetTimer();
-  };
-
-  const resetTimer = () => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, AUTOPLAY_MS);
-  };
-
-  useEffect(() => {
-    timerRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, AUTOPLAY_MS);
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, []);
-
+function Flecha() {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-      {/* Slides — todos en DOM, crossfade por opacidad */}
-      {slides.map((slide, i) => (
-        <div
-          key={slide.id}
-          aria-hidden={i !== current}
-          className="absolute inset-0 transition-opacity duration-700 ease-in-out"
-          style={{
-            opacity: i === current ? 1 : 0,
-            pointerEvents: i === current ? "auto" : "none",
-          }}
-        >
-          {/* Background */}
-          <Image
-            src={slide.bg}
-            alt=""
-            fill
-            className="object-cover"
-            priority={i === 0}
-          />
-          <div className="absolute inset-0 bg-primary/65" />
-
-          {/* Línea secondary al centro */}
-          {/* <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-secondary z-10" /> */}
-
-          {/* Contenido — grid 2 columnas */}
-          <div className={`relative z-20 h-full max-w-7xl mx-auto grid grid-cols-1 ${slide.id === 0 ? 'lg:grid-cols-[3fr_2fr]' : 'lg:grid-cols-2'}`}>
-            {/* Columna izquierda — texto */}
-            <div className={`flex flex-col justify-center px-6 py-12 pt-28 order-1 ${slide.id === 0 ? 'lg:z-10 lg:-mr-20' : ''}`}>
-              {/* Badge */}
-              <span className={`self-start text-secondary text-xs ${slide.id === 0 ? 'lg:text-base' : ''} font-semibold tracking-widest uppercase mb-5`}>
-                {slide.badge}
-              </span>
-
-              {/* Título */}
-              {slide.id === 0 ? (
-                <h1 className="text-2xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-                  {slide.title}
-                  <br />
-                  <span className="text-secondary">{slide.titleHighlight}</span>
-                </h1>
-              ) : (
-                <p
-                  role="heading"
-                  aria-level={2}
-                  className="text-2xl lg:text-5xl font-bold text-white mb-4 leading-tight"
-                >
-                  {slide.title}
-                  <br />
-                  <span className="text-secondary">{slide.titleHighlight}</span>
-                </p>
-              )}
-
-              {/* Descripción */}
-              <p className={`text-base ${slide.id === 0 ? 'lg:text-xl' : 'lg:text-lg'} text-white/85 mb-6 max-w-xl leading-relaxed`}>
-                {slide.description}
-              </p>
-
-              {/* Stats */}
-              {slide.stats && (
-                <div className="flex gap-8 mb-8">
-                  {slide.stats.map((stat) => (
-                    <div key={stat.label}>
-                      <div className="text-secondary font-bold text-xl lg:text-2xl">
-                        {stat.value}
-                      </div>
-                      <div className="text-white/60 text-xs uppercase tracking-wider mt-0.5">
-                        {stat.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-3">
-                <Link href={slide.cta.href}>
-                  <Button variant="secondary" className="text-sm lg:text-base px-6 py-2.5">
-                    {slide.cta.label}
-                  </Button>
-                </Link>
-                <Link href={slide.ctaSecondary.href}>
-                  <Button variant="primary" ghost className="text-sm lg:text-base px-6 py-2.5">
-                    {slide.ctaSecondary.label}
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Columna derecha — imagen (solo desktop) */}
-            <div className="relative hidden lg:flex items-end justify-center order-2">
-              {slide.id !== 0 && slide.image && slide.imageAlt && (
-                <div className="relative w-full h-[60vh] lg:h-[82vh]">
-                  <Image
-                    src={slide.image}
-                    alt={slide.imageAlt}
-                    fill
-                    className={
-                      slide.imageContain
-                        ? "object-contain object-bottom"
-                        : "object-cover object-center"
-                    }
-                    priority={i === 0}
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      ))
-      }
-
-      {/* Controles de navegación — solo tienen sentido con más de un slide */}
-      {slides.length > 1 && (
-      <div className="absolute bottom-8 left-0 right-0 z-30 flex items-center justify-center gap-3">
-        {/* Anterior */}
-        <button
-          onClick={() => goTo((current - 1 + slides.length) % slides.length)}
-          className="p-2 text-white/50 hover:text-secondary transition-colors"
-          aria-label="Slide anterior"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-
-        {/* Dots */}
-        {slides.map((slide, i) => (
-          <button
-            key={slide.id}
-            onClick={() => goTo(i)}
-            aria-label={`Slide ${i + 1}`}
-            className={`rounded-full transition-all duration-300 ${i === current
-              ? "w-7 h-2 bg-secondary"
-              : "w-2 h-2 bg-white/35 hover:bg-white/60"
-              }`}
-          />
-        ))}
-
-        {/* Siguiente */}
-        <button
-          onClick={() => goTo((current + 1) % slides.length)}
-          className="p-2 text-white/50 hover:text-secondary transition-colors"
-          aria-label="Siguiente slide"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
-      )}
-
-      {/* Contador */}
-      {slides.length > 1 && (
-      <div className="absolute bottom-8 right-6 z-30 text-white/40 text-xs font-mono tabular-nums">
-        {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
-      </div>
-      )}
-    </section >
+    <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
   );
 }
 
+export default function Hero() {
+  const [actual, setActual] = useState(0);
+  const [pausa, setPausa] = useState(false);
+  const reloj = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (pausa) return;
+    reloj.current = window.setTimeout(() => setActual((a) => (a + 1) % SLIDES.length), AUTOPLAY_MS);
+    return () => {
+      if (reloj.current) window.clearTimeout(reloj.current);
+    };
+  }, [actual, pausa]);
+
+  const irA = (i: number) => setActual((i + SLIDES.length) % SLIDES.length);
+
+  return (
+    <section
+      className="relative w-full overflow-hidden bg-primary"
+      onMouseEnter={() => setPausa(true)}
+      onMouseLeave={() => setPausa(false)}
+    >
+      {/* La foto del engranaje de fondo, como en el hero original, velada con
+          el azul de la marca para que el texto se lea. */}
+      <Image src="/images/screen.png" alt="" fill priority sizes="100vw" className="object-cover" />
+      <div className="absolute inset-0 bg-primary/65" />
+      <div className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-secondary/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-28 lg:min-h-[calc(100vh-5rem)] lg:py-24">
+        <div className="relative grid min-h-[36rem] grid-cols-1 items-center gap-10 lg:min-h-[32rem] lg:grid-cols-[5fr_6fr] lg:gap-12">
+          {SLIDES.map((s, i) => {
+            const activa = i === actual;
+            return (
+              <div
+                key={s.id}
+                aria-hidden={!activa}
+                className={`col-start-1 row-start-1 grid grid-cols-1 items-center gap-10 transition-opacity duration-700 ease-in-out lg:grid-cols-[5fr_6fr] lg:gap-12 ${
+                  activa ? "opacity-100" : "pointer-events-none opacity-0"
+                }`}
+                style={{ gridColumn: "1 / -1" }}
+              >
+                <div className="flex flex-col">
+                  <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-secondary lg:text-sm">{s.badge}</p>
+                  {i === 0 ? (
+                    <h1 className="mb-5 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+                      {s.title} <span className="text-secondary">{s.titleHighlight}</span>
+                    </h1>
+                  ) : (
+                    <p role="heading" aria-level={2} className="mb-5 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+                      {s.title} <span className="text-secondary">{s.titleHighlight}</span>
+                    </p>
+                  )}
+                  <p className="mb-8 max-w-xl text-justify text-base leading-relaxed text-white/80 lg:text-lg">{s.description}</p>
+                  {s.certifica && (
+                    <ul className="-mt-2 mb-8 grid max-w-xl grid-cols-1 gap-2 sm:grid-cols-3">
+                      {CERTIFICACIONES.map((c) => (
+                        <li key={c.norma} className="rounded-sm border border-secondary/40 bg-primary/60 px-3 py-2 backdrop-blur-sm">
+                          <p className="text-sm font-extrabold text-secondary">{c.norma}</p>
+                          <p className="text-xs leading-snug text-white/80">{c.tecnica}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <div className="flex flex-wrap gap-3">
+                    <Link
+                      href={s.cta.href}
+                      tabIndex={activa ? 0 : -1}
+                      className="inline-flex items-center gap-2 rounded-xs bg-secondary px-7 py-3 font-bold text-primary shadow-md transition-colors hover:bg-white"
+                    >
+                      {s.cta.label} <Flecha />
+                    </Link>
+                    <Link
+                      href={s.ctaSecondary.href}
+                      tabIndex={activa ? 0 : -1}
+                      className="inline-flex items-center gap-2 rounded-xs border border-white/40 px-7 py-3 font-bold text-white transition-colors hover:border-secondary hover:text-secondary"
+                    >
+                      {s.ctaSecondary.label}
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="w-full">
+                  {s.image ? (
+                    <div
+                      className={`relative aspect-[16/10] w-full overflow-hidden rounded-[14px] ${
+                        s.contener ? "" : "shadow-2xl ring-1 ring-white/10"
+                      }`}
+                    >
+                      <Image
+                        src={s.image.src}
+                        alt={s.image.alt}
+                        fill
+                        sizes="(min-width: 1024px) 55vw, 100vw"
+                        className={s.contener ? "object-contain drop-shadow-2xl" : "object-cover"}
+                        priority={i === 1}
+                      />
+                      {s.certifica && (
+                        <div className="absolute bottom-3 right-3 flex items-center gap-3 rounded-full bg-primary/85 py-1.5 pl-1.5 pr-4 shadow-xl ring-1 ring-secondary/40 backdrop-blur-sm sm:bottom-4 sm:right-4">
+                          <Image src="/images/itzam-gold-coin.png" alt="Sello de certificación ITZAM" width={200} height={200} className="h-14 w-14 sm:h-16 sm:w-16" />
+                          <span className="text-left">
+                            <span className="block text-xs font-semibold uppercase tracking-widest text-secondary">Certificamos</span>
+                            <span className="block text-sm font-extrabold leading-tight text-white">Con respaldo de ITZAM</span>
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <EscenaDolor modo="con" inicio={INICIO_CIERRE} />
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Controles */}
+        <div className="absolute bottom-6 left-0 right-0 flex items-center justify-center gap-3">
+          <button
+            type="button"
+            onClick={() => irA(actual - 1)}
+            aria-label="Diapositiva anterior"
+            className="p-2 text-white/50 transition-colors hover:text-secondary"
+          >
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          {SLIDES.map((s, i) => (
+            <button
+              key={s.id}
+              type="button"
+              onClick={() => irA(i)}
+              aria-label={`Ir a ${s.badge}`}
+              aria-current={i === actual}
+              className={`h-2 rounded-full transition-all duration-300 ${i === actual ? "w-7 bg-secondary" : "w-2 bg-white/35 hover:bg-white/60"}`}
+            />
+          ))}
+          <button
+            type="button"
+            onClick={() => irA(actual + 1)}
+            aria-label="Siguiente diapositiva"
+            className="p-2 text-white/50 transition-colors hover:text-secondary"
+          >
+            <Flecha />
+          </button>
+        </div>
+        <div className="absolute bottom-7 right-6 font-mono text-xs tabular-nums text-white/40">
+          {String(actual + 1).padStart(2, "0")} / {String(SLIDES.length).padStart(2, "0")}
+        </div>
+      </div>
+    </section>
+  );
+}

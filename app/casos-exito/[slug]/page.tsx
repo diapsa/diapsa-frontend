@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { PORTADAS_CASOS } from "@/lib/portadas-casos";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
@@ -145,7 +146,7 @@ export default async function CasoExitoDetailPage({
         notFound();
     }
 
-    const coverImage = getStorageUrl(caso.cover_image) || "/images/fondo-mantenimiento.webp";
+    const coverImage = (PORTADAS_CASOS[caso.slug]?.src ?? getStorageUrl(caso.cover_image)) || "/images/fondo-mantenimiento.webp";
     const publishedAt = formatDate(caso.published_at);
     const heroSubtitle = [
         caso.success_case.industry,

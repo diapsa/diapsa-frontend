@@ -4,6 +4,8 @@ import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import IconoMenu from "@/components/atoms/IconoMenu";
+import { FONDO_IDAP, RUTA_IDAP } from "@/lib/idap-estilo";
+import { AZUL_CLARO_DIPLOMADO, FONDO_DIPLOMADO, RUTA_DIPLOMADO } from "@/lib/diplomado-estilo";
 
 /**
  * MegaMenu
@@ -210,6 +212,44 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                     <ul className="flex flex-1 flex-col gap-3">
                       {columna.items.map((item) => (
                         <li key={item.href} className="flex-1">
+                          {item.href === RUTA_IDAP ? (
+                            // IDAP conserva su identidad: su logo sobre el azul de la plataforma.
+                            <Link
+                              href={item.href}
+                              onClick={cerrarYa}
+                              title={item.descripcion}
+                              aria-label={item.label}
+                              className="group relative flex h-full min-h-[6.5rem] items-center justify-center overflow-hidden rounded-lg ring-1 ring-white/10 transition-shadow hover:ring-secondary/60"
+                              style={{ background: FONDO_IDAP }}
+                            >
+                              <Image
+                                src="/images/idap/idap-bco.png"
+                                alt="IDAP"
+                                width={1632}
+                                height={486}
+                                className="h-9 w-auto transition-transform duration-500 group-hover:scale-105"
+                              />
+                            </Link>
+                          ) : item.href === RUTA_DIPLOMADO ? (
+                            // El diplomado con la identidad de su brochure.
+                            <Link
+                              href={item.href}
+                              onClick={cerrarYa}
+                              title={item.descripcion}
+                              className="group relative flex h-full min-h-[6.5rem] flex-col items-center justify-center overflow-hidden rounded-lg px-4 text-center ring-1 ring-white/10 transition-shadow hover:ring-[#5b8cff]"
+                              style={{ background: FONDO_DIPLOMADO }}
+                            >
+                              {item.imagen && (
+                                <Image src={item.imagen} alt="" fill sizes="320px" className="object-cover opacity-20 mix-blend-luminosity" />
+                              )}
+                              <span className="relative text-3xl font-black leading-none tracking-tight text-white transition-transform duration-500 group-hover:scale-105">
+                                DIPLOMADO
+                              </span>
+                              <span className="relative mt-2 text-xs font-bold uppercase tracking-widest" style={{ color: AZUL_CLARO_DIPLOMADO }}>
+                                Confiabilidad operativa
+                              </span>
+                            </Link>
+                          ) : (
                           <Link
                             href={item.href}
                             onClick={cerrarYa}
@@ -230,6 +270,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                               {item.label}
                             </span>
                           </Link>
+                          )}
                         </li>
                       ))}
                     </ul>

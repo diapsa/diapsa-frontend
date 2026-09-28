@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PORTADAS_CASOS } from "@/lib/portadas-casos";
 import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/organisms/PageHeader";
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
 
 function SuccessCaseCard({ successCase }: { successCase: SuccessCase }) {
     const detail = successCase.success_case;
-    const coverImage = getStorageUrl(successCase.cover_image) || "/images/fondo-mantenimiento.webp";
+    const coverImage = (PORTADAS_CASOS[successCase.slug]?.src ?? getStorageUrl(successCase.cover_image)) || "/images/fondo-mantenimiento.webp";
     const publishedAt = formatDate(successCase.published_at);
 
     return (
