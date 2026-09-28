@@ -4,7 +4,7 @@ import Hero from "@/components/organisms/Hero";
 import QuienesSomos from "@/components/organisms/QuienesSomos";
 import CifrasIdap from "@/components/organisms/CifrasIdap";
 import InicioBloques from "@/components/organisms/InicioBloques";
-import GasYEquiposSection from "@/components/organisms/GasYEquiposSection";
+import InicioGas from "@/components/organisms/InicioGas";
 import Reveal from "@/components/atoms/Reveal";
 import { Clients } from "@/components/organisms/Clients";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
@@ -108,8 +108,8 @@ export default async function Home() {
       <CifrasIdap />
       <Reveal><InicioBloques productos={productos} /></Reveal>
 
-      {/* Segunda fila: detección de gas y equipos */}
-      <Reveal><GasYEquiposSection /></Reveal>
+      {/* Detección de gas, el servicio más especializado, con franja propia */}
+      <Reveal><InicioGas /></Reveal>
 
       {/* La prueba: clientes, fotos de campo y casos */}
       <Reveal><Clients /></Reveal>
