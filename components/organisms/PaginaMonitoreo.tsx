@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import CarruselBloque from "@/components/organisms/CarruselBloque";
 import DoloresMonitoreo from "@/components/organisms/DoloresMonitoreo";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
@@ -101,15 +102,33 @@ const ICONOS_GANANCIA: Record<string, React.ReactNode> = {
 };
 
 const SI = [
-  "Tienes equipos críticos cuya falla detiene la producción.",
-  "Has tenido paros no programados en el último año.",
-  "Quieres gastar menos en refacciones y correctivos.",
-  "Necesitas datos para justificar inversiones en tus equipos.",
+  {
+    texto: "Tienes equipos críticos cuya falla detiene la producción.",
+    icono: <><circle cx="12" cy="12" r="3" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" /></>,
+  },
+  {
+    texto: "Has tenido paros no programados en el último año.",
+    icono: <><circle cx="12" cy="12" r="8.5" /><path strokeLinecap="round" strokeLinejoin="round" d="M9.5 9v6M14.5 9v6" /></>,
+  },
+  {
+    texto: "Quieres gastar menos en refacciones y correctivos.",
+    icono: <><path strokeLinecap="round" strokeLinejoin="round" d="M3 7l6 6 4-4 8 8" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 17h6v-6" /></>,
+  },
+  {
+    texto: "Necesitas datos para justificar inversiones en tus equipos.",
+    icono: <><path strokeLinecap="round" strokeLinejoin="round" d="M4 20V4M4 20h16" /><path strokeLinecap="round" strokeLinejoin="round" d="M8 16v-4M12 16V8M16 16v-6" /></>,
+  },
 ];
 
 const NO = [
-  "Tienes una falla activa hoy: eso es un correctivo, aunque te podemos ayudar a encontrar la causa.",
-  "Tu operación no depende de maquinaria ni de sistemas eléctricos críticos.",
+  {
+    texto: "Tienes una falla activa hoy: eso es un correctivo, aunque te podemos ayudar a encontrar la causa.",
+    icono: <path strokeLinecap="round" strokeLinejoin="round" d="M14.7 6.3a4 4 0 00-5.4 5.2L3.5 17.3a1.8 1.8 0 002.5 2.5l5.8-5.8a4 4 0 005.2-5.4l-2.6 2.6-2.3-.5-.5-2.3 2.6-2.6z" />,
+  },
+  {
+    texto: "Tu operación no depende de maquinaria ni de sistemas eléctricos críticos.",
+    icono: <><path strokeLinecap="round" strokeLinejoin="round" d="M3 21V10l5 3V10l5 3V6l8 4v11H3z" /><path strokeLinecap="round" d="M3 3l18 18" /></>,
+  },
 ];
 
 export default function PaginaMonitoreo() {
@@ -235,39 +254,93 @@ export default function PaginaMonitoreo() {
 
       {/* 7. Para quién es */}
       <section className="w-full bg-gray-50 py-14 lg:py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <h2 className="mb-10 text-center text-3xl font-extrabold text-primary lg:text-4xl">
-            ¿ES PARA <span className="text-secondary">TU PLANTA?</span>
-          </h2>
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">Para quién es</span>
+            <h2 className="text-3xl font-extrabold text-primary lg:text-4xl">
+              ¿ES PARA <span className="text-secondary">TU PLANTA?</span>
+            </h2>
+          </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-              <h3 className="mb-4 font-bold text-primary">Es para ti si…</h3>
-              <ul className="space-y-3">
-                {SI.map((t) => (
-                  <li key={t} className="flex items-start gap-3 text-sm leading-relaxed text-tertiary">
-                    <svg className="mt-0.5 h-4 w-4 shrink-0 text-secondary" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.172l7.879-7.879a1 1 0 011.414 0z" clipRule="evenodd" />
+            {/* Sí */}
+            <div className="flex flex-col overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5">
+              <div className="relative h-44">
+                <Image
+                  src="/images/servicios/diagnostico-integral/campo-ventilador-motor.webp"
+                  alt="Motor y ventilador de proceso en operación, medidos por DIAPSA"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
+                <div className="absolute bottom-4 left-5 flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg">
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 12.5l4.5 4.5L19 7.5" />
                     </svg>
-                    <span className="text-justify">{t}</span>
+                  </span>
+                  <h3 className="text-xl font-extrabold text-white">Es para ti si…</h3>
+                </div>
+              </div>
+              <ul className="flex flex-1 flex-col gap-4 p-6">
+                {SI.map((s) => (
+                  <li key={s.texto} className="flex items-center gap-4 text-sm leading-relaxed text-tertiary">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                      <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                        {s.icono}
+                      </svg>
+                    </span>
+                    <span className="text-justify">{s.texto}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-sm border border-gray-100 bg-white p-6 shadow-sm">
-              <h3 className="mb-4 font-bold text-primary">No es para ti si…</h3>
-              <ul className="space-y-3">
-                {NO.map((t) => (
-                  <li key={t} className="flex items-start gap-3 text-sm leading-relaxed text-tertiary">
-                    <svg className="mt-0.5 h-4 w-4 shrink-0 text-primary/50" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+
+            {/* No */}
+            <div className="flex flex-col overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5">
+              <div className="relative h-44">
+                <Image
+                  src="/images/servicios/diagnostico-integral/termograma-acoplamiento.webp"
+                  alt="Termograma de un acoplamiento con una falla ya activa"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
+                <div className="absolute bottom-4 left-5 flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-primary shadow-lg">
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    <span className="text-justify">{t}</span>
+                  </span>
+                  <h3 className="text-xl font-extrabold text-white">No es para ti si…</h3>
+                </div>
+              </div>
+              <ul className="flex flex-col gap-4 p-6">
+                {NO.map((s) => (
+                  <li key={s.texto} className="flex items-center gap-4 text-sm leading-relaxed text-tertiary">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gray-100 text-primary/60">
+                      <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                        {s.icono}
+                      </svg>
+                    </span>
+                    <span className="text-justify">{s.texto}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-5 rounded-sm border-l-2 border-secondary bg-secondary/10 p-4 text-justify text-sm text-primary">
-                <strong>¿No estás seguro?</strong> Con una llamada corta sobre tu operación te decimos si el monitoreo es la herramienta correcta.
-              </p>
+              <div className="mx-6 mb-6 mt-auto flex flex-col gap-4 rounded-sm bg-primary p-5 text-white sm:flex-row sm:items-center">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary text-primary">
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" />
+                  </svg>
+                </span>
+                <p className="flex-1 text-justify text-sm leading-relaxed text-white/85">
+                  <strong className="text-white">¿No estás seguro?</strong> Con una llamada corta sobre tu operación te decimos si el monitoreo es la herramienta correcta.
+                </p>
+                <Link href="/contacto" className="shrink-0 rounded-full bg-secondary px-5 py-2 text-center text-sm font-bold text-primary transition-colors hover:bg-white">
+                  Platiquemos
+                </Link>
+              </div>
             </div>
           </div>
         </div>
