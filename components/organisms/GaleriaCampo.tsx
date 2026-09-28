@@ -32,9 +32,11 @@ type Props = {
   /** Milisegundos entre foto y foto (5 s si no viene). */
   intervalo?: number;
   texto?: string;
+  /** Sin el pie de cada foto: solo las fotos, más grandes y centradas. */
+  sinPie?: boolean;
 };
 
-export default function GaleriaCampo({ fotos, titulo, texto, intervalo = 5000 }: Props) {
+export default function GaleriaCampo({ fotos, titulo, texto, intervalo = 5000, sinPie = false }: Props) {
   const [activa, setActiva] = useState(0);
   const total = fotos.length;
   const marco = useRef<HTMLDivElement>(null);
@@ -91,14 +93,14 @@ export default function GaleriaCampo({ fotos, titulo, texto, intervalo = 5000 }:
           role="group"
           aria-roledescription="carrusel"
           aria-label="Fotografías de DIAPSA en campo"
-          className="grid grid-cols-1 gap-6 lg:grid-cols-5 lg:gap-10"
+          className={sinPie ? "mx-auto max-w-4xl" : "grid grid-cols-1 gap-6 lg:grid-cols-5 lg:gap-10"}
           onMouseEnter={() => setPausa(true)}
           onMouseLeave={() => setPausa(false)}
           onFocus={() => setPausa(true)}
           onBlur={() => setPausa(false)}
         >
           {/* La foto */}
-          <div className="lg:col-span-3">
+          <div className={sinPie ? "" : "lg:col-span-3"}>
             <div
               className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-primary shadow-md"
               onTouchStart={(e) => {
@@ -159,10 +161,11 @@ export default function GaleriaCampo({ fotos, titulo, texto, intervalo = 5000 }:
           </div>
 
           {/* Pie de la foto, sin contador */}
-          <div className="flex flex-col lg:col-span-2 lg:justify-center">
-            <p className="text-justify text-lg leading-relaxed text-primary" aria-live="polite">{foto.alt}</p>
-
-          </div>
+          {!sinPie && (
+            <div className="flex flex-col lg:col-span-2 lg:justify-center">
+              <p className="text-justify text-lg leading-relaxed text-primary" aria-live="polite">{foto.alt}</p>
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -112,6 +112,7 @@ export default async function Home() {
       {/* La prueba: clientes y fotos de campo */}
       <Reveal><Clients /></Reveal>
       <GaleriaCampo
+        sinPie
         fotos={galeriaMonitoreo}
         texto="Nuestros analistas en planta con vibraciones, termografía, ultrasonido, aceite y calidad de energía. Mediciones reales, sin fotos de banco de imágenes."
       />

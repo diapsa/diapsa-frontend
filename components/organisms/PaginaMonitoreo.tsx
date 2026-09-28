@@ -104,6 +104,7 @@ export default function PaginaMonitoreo() {
 
       {/* 3. Fotos de campo: la prueba de que medimos nosotros */}
       <GaleriaCampo
+        sinPie
         fotos={galeria}
         texto="Nuestros analistas en planta con vibraciones, termografía, ultrasonido, aceite y calidad de energía. Mediciones reales, sin fotos de banco de imágenes."
       />

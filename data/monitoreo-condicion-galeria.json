@@ -1,23 +1,35 @@
 [
   {
-    "src": "/images/gallery/campo/vibracion-analista-motor.webp",
-    "alt": "Medición de vibración sobre un motor eléctrico en operación"
+    "src": "/images/gallery/campo/acustica-casco-diapsa.webp",
+    "alt": "Medición de descargas parciales en los patios de una subestación, a distancia segura."
+  },
+  {
+    "src": "/images/servicios/diagnostico-integral/campo-ruta-bombas.webp",
+    "alt": "Ruta integral en un cuarto de bombas."
+  },
+  {
+    "src": "/images/servicios/analisis-de-ultrasonido/campo-torre-enfriamiento.webp",
+    "alt": "Ruta de ultrasonido en una torre de enfriamiento."
+  },
+  {
+    "src": "/images/gallery/campo/vibracion-maquina-proceso.webp",
+    "alt": "Analista de DIAPSA revisando la lectura en una línea de producción."
   },
   {
     "src": "/images/servicios/diagnostico-integral/campo-termografia-ruta.webp",
     "alt": "Termografía de un equipo de proceso, en la misma ruta que las vibraciones."
   },
   {
-    "src": "/images/servicios/analisis-de-ultrasonido/campo-camara-acustica-subestacion.webp",
-    "alt": "Cámara acústica en una subestación, buscando descargas parciales a distancia segura."
+    "src": "/images/gallery/campo/acustica-planta-equipos.webp",
+    "alt": "Recorrido por las líneas de aire y los equipos de una planta, buscando fugas con el proceso funcionando."
   },
   {
-    "src": "/images/gallery/campo/vibracion-torre-enfriamiento.webp",
-    "alt": "Inspección dentro de una torre de enfriamiento, sobre el andador del ventilador."
+    "src": "/images/servicios/analisis-de-ultrasonido/campo-bomba-alimentacion.webp",
+    "alt": "Ultrasonido en los rodamientos de una bomba de agua de alimentación."
   },
   {
-    "src": "/images/servicios/diagnostico-integral/campo-bombas-medicion.webp",
-    "alt": "Medición sobre los motores de un grupo de bombas."
+    "src": "/images/gallery/campo/vibracion-ventilador-torre.webp",
+    "alt": "Medición del motor del ventilador en la cubierta de una torre de enfriamiento."
   },
   {
     "src": "/images/servicios/analisis-de-ultrasonido/campo-trampas-vapor.webp",
