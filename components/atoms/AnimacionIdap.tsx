@@ -78,9 +78,9 @@ export default function AnimacionIdap() {
 
         {/* IDAP al centro */}
         <circle cx="500" cy="110" r="46" fill="none" stroke={NARANJA} strokeWidth="2" className="idap-anillo" />
-        <circle cx="500" cy="110" r="46" fill="#0b3a55" stroke={NARANJA} strokeWidth="2.5" />
-        <text x="500" y="106" textAnchor="middle" fontSize="20" fontWeight="800" fill="#ffffff" style={{ fontFamily: "inherit" }}>IDAP</text>
-        <text x="500" y="124" textAnchor="middle" fontSize="9" fontWeight="700" fill={NARANJA} style={{ fontFamily: "inherit", letterSpacing: "0.12em" }}>HISTORIAL</text>
+        <circle cx="500" cy="110" r="46" fill="#0f1f40" stroke={NARANJA} strokeWidth="2.5" />
+        <image href="/images/idap/idap-bco.png" x="466" y="95" width="68" height="20" preserveAspectRatio="xMidYMid meet" />
+        <text x="500" y="130" textAnchor="middle" fontSize="8" fontWeight="700" fill={NARANJA} style={{ fontFamily: "inherit", letterSpacing: "0.12em" }}>HISTORIAL</text>
 
         {/* Tipo de hallazgo que acaba de llegar */}
         {TIPOS.map((t, i) => (

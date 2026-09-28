@@ -113,6 +113,9 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
     >
       {/* Panel: el bloque, sus apartados y el resumen del elegido */}
       <div className="relative flex flex-col overflow-hidden rounded-sm bg-primary p-6 text-white shadow-xl sm:p-7">
+        {/* De fondo el engranaje del hero, velado en azul marino */}
+        <Image src="/images/screen.png" alt="" fill sizes="(min-width: 1024px) 22rem, 100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-primary/70" />
         <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-secondary/15 blur-3xl" />
         <div className="relative">
           {etiqueta && <span className="mb-2 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">{etiqueta}</span>}

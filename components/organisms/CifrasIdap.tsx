@@ -1,4 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
 import AnimacionIdap from "@/components/atoms/AnimacionIdap";
+import { FONDO_IDAP, RUTA_IDAP } from "@/lib/idap-estilo";
 import CountUp from "@/components/atoms/CountUp";
 import datos from "@/data/cifras-idap.json";
 
@@ -16,7 +19,8 @@ import datos from "@/data/cifras-idap.json";
  * en producción serían números inventados presentados como datos de IDAP.
  * En local se muestra con los valores de ejemplo, marcados como tales, para
  * revisar el diseño. Arriba de las cifras va AnimacionIdap: hallazgos que
- * viajan de las plantas a IDAP.
+ * viajan de las plantas a IDAP. Fondo y logo son los de la plataforma y
+ * todo lo que dice IDAP lleva a su página.
  */
 
 const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
@@ -41,14 +45,19 @@ export default function CifrasIdap() {
   const corte = `1 de ${MESES[hoy.getMonth()]} de ${hoy.getFullYear()}`;
 
   return (
-    <section className="relative w-full overflow-hidden bg-primary py-14 lg:py-16">
-      <div className="pointer-events-none absolute -left-24 top-0 h-80 w-80 rounded-full bg-secondary/10 blur-3xl" />
+    <section className="relative w-full overflow-hidden py-14 lg:py-16" style={{ background: FONDO_IDAP }}>
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="mb-10 flex flex-col items-center gap-3 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/80">
+          <Link href={RUTA_IDAP} aria-label="Conocer IDAP" className="mb-1 transition-opacity hover:opacity-80">
+            <Image src="/images/idap/idap-bco.png" alt="IDAP" width={1632} height={486} className="h-10 w-auto lg:h-12" />
+          </Link>
+          <Link
+            href={RUTA_IDAP}
+            className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/80 transition-colors hover:bg-white/20"
+          >
             <span className="h-2 w-2 rounded-full bg-emerald-400 motion-safe:animate-pulse" aria-hidden="true" />
             Conectado con IDAP
-          </span>
+          </Link>
           <h2 className="text-3xl font-extrabold text-white lg:text-4xl">
             RESULTADOS QUE <span className="text-secondary">CRECEN CADA MES</span>
           </h2>
@@ -76,6 +85,17 @@ export default function CifrasIdap() {
           ))}
         </dl>
         <p className="mt-6 text-center text-xs text-white/50">Cifras con base en el historial de IDAP, actualizadas al {corte}.</p>
+        <div className="mt-8 text-center">
+          <Link
+            href={RUTA_IDAP}
+            className="inline-flex items-center gap-2 rounded-xs bg-secondary px-7 py-3 font-bold text-primary shadow-md transition-colors hover:bg-white"
+          >
+            Conocer IDAP
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
       </div>
     </section>
   );

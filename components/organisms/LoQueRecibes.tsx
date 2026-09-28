@@ -105,6 +105,11 @@ export default function LoQueRecibes() {
                   <div>
                     <h3 className="text-lg font-bold text-primary">{r.titulo}</h3>
                     <p className="mt-1 text-justify text-sm leading-relaxed text-tertiary">{r.texto}</p>
+                    {r.titulo === "Historial en línea" && (
+                      <Link href="/servicios/idap" className="mt-2 inline-flex items-center gap-1 text-sm font-bold text-secondary hover:text-primary">
+                        Conocer IDAP <Flecha />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </li>
