@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useContactForm } from "@/lib/hooks/useContactForm";
 import { sanitizeContactFormData } from "@/lib/utils/sanitizeFormData";
-import presencia from "@/data/presencia.json";
+import presencia from "@/data/presencia-mexico.json";
 import type { ContactFormData } from "@/types/contact";
 
 /**
@@ -15,10 +15,22 @@ import type { ContactFormData } from "@/types/contact";
  * operamos a la derecha, y abajo tres tarjetas con lo que obtiene el
  * cliente.
  *
+ * 2026-09-28: el foco pasa a México (decisión de Emiliano). El mapa es de
+ * los estados donde trabajamos (data/presencia-mexico.json, mapa de puntos
+ * ilustrativo), con la base en Saltillo; lo internacional queda en una
+ * línea. El formulario pide el estado en lugar del país.
+ *
  * Las cifras las definió Emiliano (2026-09-28) y van solas: el porcentaje y
- * el texto, los dos en grande, sin fuente ni enlace. Los países y el mapa
- * están en data/presencia.json y public/images/mapa-puntos.svg.
+ * el texto, los dos en grande, sin fuente ni enlace.
  */
+
+const ESTADOS_MX = [
+  "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Ciudad de México",
+  "Coahuila", "Colima", "Durango", "Estado de México", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán",
+  "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", "Sinaloa",
+  "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas",
+];
+const FUERA = "Fuera de México";
 
 const KPIS = [
   { valor: "300%", texto: "de retorno de inversión en el primer año" },
@@ -36,30 +48,32 @@ function Flecha() {
 
 export default function InicioPresencia() {
   const { submitForm, loading, errors, validateField } = useContactForm();
-  const [datos, setDatos] = useState({ name: "", email: "", country: "", website: "" });
+  const [datos, setDatos] = useState({ name: "", email: "", estado: "", website: "" });
+  const [encima, setEncima] = useState<string | null>(null);
   const [acepta, setAcepta] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [listo, setListo] = useState(false);
-  const paises = presencia.paises.map((p) => p.pais);
+  const trabajamos = presencia.estados.filter((e) => e.trabajamos);
+  const estadoEncima = presencia.estados.find((e) => e.nombre === encima);
 
   const enviar = async (e: FormEvent) => {
     e.preventDefault();
     const fallo = validateField("name", datos.name) || validateField("email", datos.email);
     if (fallo) return setError(fallo);
-    if (!datos.country) return setError("Selecciona tu país");
+    if (!datos.estado) return setError("Selecciona tu estado");
     if (!acepta) return setError("Acepta el aviso de privacidad para continuar");
     setError(null);
     const envio: ContactFormData = {
       name: datos.name,
       email: datos.email,
-      country: datos.country,
+      country: datos.estado === FUERA ? "Otro país" : "México",
       form_type: "main",
       website: datos.website,
       custom_fields: {
         subject: "servicios",
         coursesOfInterest: "",
         servicesOfInterest: "",
-        message: "[Portada, resultados] Quiere saber más sobre el monitoreo de condición",
+        message: `[Portada, resultados] Quiere saber más sobre el monitoreo de condición. Estado: ${datos.estado}`,
         isProvider: "false",
         prefered_contact: "email",
       },
@@ -82,18 +96,11 @@ export default function InicioPresencia() {
           <div>
             <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">Presencia</span>
             <h2 className="text-3xl font-extrabold leading-tight lg:text-4xl">
-              Más de 20 años midiendo equipos en <span className="text-secondary">{presencia.paises.length} países</span>
+              Más de 20 años midiendo equipos en <span className="text-secondary">{trabajamos.length} estados de México</span>
             </h2>
             <p className="mt-4 text-justify text-lg leading-relaxed text-white/80">
-              Plantas de energía, alimentos, manufactura, hidrocarburos y tratamiento de agua confían en DIAPSA para saber cómo están sus equipos antes de que fallen.
+              Plantas de energía, alimentos, manufactura, hidrocarburos y tratamiento de agua confían en DIAPSA para saber cómo están sus equipos antes de que fallen. Llegamos a tu planta desde nuestra base en Saltillo.
             </p>
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {paises.map((p) => (
-                <li key={p} className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold ring-1 ring-white/20">
-                  {p}
-                </li>
-              ))}
-            </ul>
 
             {listo ? (
               <p className="mt-7 rounded-sm bg-emerald-500/15 p-4 text-sm font-semibold text-emerald-200 ring-1 ring-emerald-400/30">
@@ -103,13 +110,13 @@ export default function InicioPresencia() {
               <form onSubmit={enviar} noValidate className="mt-7">
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                   <input className={campo} placeholder="Nombre*" value={datos.name} onChange={(e) => setDatos({ ...datos, name: e.target.value })} autoComplete="name" />
-                  <input className={campo} type="email" placeholder="Correo de trabajo*" value={datos.email} onChange={(e) => setDatos({ ...datos, email: e.target.value })} autoComplete="email" />
-                  <select className={campo} value={datos.country} onChange={(e) => setDatos({ ...datos, country: e.target.value })} aria-label="País">
-                    <option value="">Tu país*</option>
-                    {paises.map((p) => (
-                      <option key={p}>{p}</option>
+                  <input className={campo} type="email" placeholder="Correo*" value={datos.email} onChange={(e) => setDatos({ ...datos, email: e.target.value })} autoComplete="email" />
+                  <select className={campo} value={datos.estado} onChange={(e) => setDatos({ ...datos, estado: e.target.value })} aria-label="Estado">
+                    <option value="">Tu estado*</option>
+                    {ESTADOS_MX.map((e) => (
+                      <option key={e}>{e}</option>
                     ))}
-                    <option>Otro</option>
+                    <option>{FUERA}</option>
                   </select>
                   <input type="text" name="website" value={datos.website} onChange={(e) => setDatos({ ...datos, website: e.target.value })} className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
                 </div>
@@ -135,27 +142,60 @@ export default function InicioPresencia() {
             )}
           </div>
 
-          {/* El mapa de puntos con los países */}
-          <div className="relative w-full" aria-label={`Países donde opera DIAPSA: ${paises.join(", ")}`} role="img">
-            <div className="relative w-full" style={{ aspectRatio: `${presencia.ancho} / ${presencia.alto}` }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/mapa-puntos.svg" alt="" className="absolute inset-0 h-full w-full opacity-50" />
-              <svg viewBox={`0 0 ${presencia.ancho} ${presencia.alto}`} className="absolute inset-0 h-full w-full overflow-visible">
+          {/* El mapa de México con los estados donde trabajamos */}
+          <div className="relative w-full">
+            <div
+              className="relative w-full"
+              style={{ aspectRatio: `${presencia.ancho} / ${presencia.alto}` }}
+              role="img"
+              aria-label={`Estados de México donde trabaja DIAPSA: ${trabajamos.map((e) => e.nombre).join(", ")}`}
+            >
+              <svg viewBox={`0 0 ${presencia.ancho} ${presencia.alto}`} className="absolute inset-0 h-full w-full overflow-visible" onMouseLeave={() => setEncima(null)}>
                 <style>{`
-                  @keyframes pulso-pais { 0% { r: 8; opacity: .7 } 100% { r: 30; opacity: 0 } }
-                  .pulso-pais { animation: pulso-pais 2.4s ease-out infinite; }
-                  @media (prefers-reduced-motion: reduce) { .pulso-pais { animation: none; opacity: 0; } }
+                  @keyframes pulso-base { 0% { r: 9; opacity: .8 } 100% { r: 34; opacity: 0 } }
+                  .pulso-base { animation: pulso-base 2.2s ease-out infinite; }
+                  @media (prefers-reduced-motion: reduce) { .pulso-base { animation: none; opacity: 0; } }
                 `}</style>
-                {presencia.paises.map((p, i) => (
-                  <g key={p.pais}>
-                    <circle cx={p.x} cy={p.y} r="8" fill="#00e5ff" className="pulso-pais" style={{ animationDelay: `${i * 0.35}s` }} />
-                    <line x1={p.x} y1={p.y} x2={p.x} y2={p.y - 34} stroke="#00e5ff" strokeWidth="2.5" />
-                    <circle cx={p.x} cy={p.y - 38} r="7" fill="#00e5ff" />
-                    <circle cx={p.x} cy={p.y} r="5" fill="#fc9f01" />
-                  </g>
-                ))}
+                {presencia.estados.map((e) => {
+                  const activo = encima === e.nombre;
+                  const color = e.trabajamos ? (activo ? "#ffffff" : "#fc9f01") : activo ? "#6f8fc4" : "#2d4a73";
+                  return (
+                    <g key={e.nombre} fill={color} onMouseEnter={() => setEncima(e.nombre)} style={{ cursor: "default", transition: "fill .2s" }}>
+                      <title>{e.trabajamos ? `${e.nombre}: trabajamos aquí` : e.nombre}</title>
+                      {e.puntos.map(([x, y], i) => (
+                        <circle key={i} cx={x} cy={y} r={presencia.radio} />
+                      ))}
+                    </g>
+                  );
+                })}
+                {/* La base */}
+                <circle cx={presencia.base.x} cy={presencia.base.y} r="9" fill="#00e5ff" className="pulso-base" />
+                <circle cx={presencia.base.x} cy={presencia.base.y} r="9" fill="#001526" stroke="#00e5ff" strokeWidth="3" />
+                <circle cx={presencia.base.x} cy={presencia.base.y} r="3.5" fill="#00e5ff" />
               </svg>
+              {/* El estado bajo el cursor */}
+              <div className="pointer-events-none absolute right-0 top-0 min-h-[2.5rem] text-right">
+                {estadoEncima && (
+                  <p className="rounded-sm bg-[#001526]/85 px-3 py-2 text-sm font-bold ring-1 ring-white/15">
+                    {estadoEncima.nombre}
+                    <span className={`ml-2 text-xs ${estadoEncima.trabajamos ? "text-secondary" : "text-white/50"}`}>
+                      {estadoEncima.trabajamos ? "Trabajamos aquí" : "Pregúntanos"}
+                    </span>
+                  </p>
+                )}
+              </div>
             </div>
+            <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/70">
+              <span className="inline-flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-secondary" /> Estados donde trabajamos
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full ring-2 ring-[#00e5ff]" /> Base en Saltillo, Coahuila
+              </span>
+            </div>
+            <p className="mt-3 text-justify text-xs leading-relaxed text-white/55">
+              También atendemos proyectos en {presencia.internacional.slice(0, -1).join(", ")} y {presencia.internacional.at(-1)}.
+            </p>
           </div>
         </div>
 
