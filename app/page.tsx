@@ -3,6 +3,7 @@ import Link from "next/link";
 import Hero from "@/components/organisms/Hero";
 import QuienesSomos from "@/components/organisms/QuienesSomos";
 import InicioPresencia from "@/components/organisms/InicioPresencia";
+import InicioIndustrias from "@/components/organisms/InicioIndustrias";
 import { kpisDeCasos } from "@/lib/kpis-casos";
 import InicioBloques from "@/components/organisms/InicioBloques";
 import InicioGas from "@/components/organisms/InicioGas";
@@ -110,6 +111,9 @@ export default async function Home() {
       {/* Presencia en siete países y cifras de casos documentados */}
       <Reveal><InicioPresencia kpis={kpisDeCasos(cases)} /></Reveal>
       <Reveal><InicioBloques productos={productos} /></Reveal>
+
+      {/* Las industrias que atendemos, con sus equipos, servicios y clientes */}
+      <Reveal><InicioIndustrias /></Reveal>
 
       {/* Detección de gas, el servicio más especializado, con franja propia */}
       <Reveal><InicioGas /></Reveal>
