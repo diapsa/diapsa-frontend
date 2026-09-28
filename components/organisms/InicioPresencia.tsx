@@ -12,15 +12,19 @@ import type { ContactFormData } from "@/types/contact";
  * Los resultados y la presencia de DIAPSA en la portada, con la estructura
  * que Emiliano tomó de Fracttal (2026-09-27): titular, texto y un
  * formulario corto a la izquierda, un mapa de puntos con los países donde
- * operamos a la derecha, y abajo cuatro tarjetas con cifras.
+ * operamos a la derecha, y abajo tres tarjetas con lo que obtiene el
+ * cliente.
  *
- * Las cifras salen de los casos de éxito publicados en el CMS (se leen del
- * caso, no se escriben aquí) y cada tarjeta dice de qué industria sale y
- * lleva al caso; si el CMS no responde, las tarjetas no aparecen. Los
- * países y el mapa están en data/presencia.json y public/images/mapa-puntos.svg.
+ * Las cifras las definió Emiliano (2026-09-28) y van solas: el porcentaje y
+ * el texto, los dos en grande, sin fuente ni enlace. Los países y el mapa
+ * están en data/presencia.json y public/images/mapa-puntos.svg.
  */
 
-export type Kpi = { valor: string; etiqueta: string; industria: string; href: string };
+const KPIS = [
+  { valor: "300%", texto: "de retorno de inversión en el primer año" },
+  { valor: "95%", texto: "de confiabilidad operativa" },
+  { valor: "30%", texto: "de ahorro en la planificación de refacciones" },
+];
 
 function Flecha() {
   return (
@@ -30,7 +34,7 @@ function Flecha() {
   );
 }
 
-export default function InicioPresencia({ kpis }: { kpis: Kpi[] }) {
+export default function InicioPresencia() {
   const { submitForm, loading, errors, validateField } = useContactForm();
   const [datos, setDatos] = useState({ name: "", email: "", country: "", website: "" });
   const [acepta, setAcepta] = useState(false);
@@ -155,26 +159,15 @@ export default function InicioPresencia({ kpis }: { kpis: Kpi[] }) {
           </div>
         </div>
 
-        {/* Cifras de casos documentados */}
-        {kpis.length > 0 && (
-          <div className="mt-12">
-            <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {kpis.map((k) => (
-                <li key={k.valor + k.etiqueta}>
-                  <Link
-                    href={k.href}
-                    className="group flex h-full flex-col items-center justify-center rounded-2xl bg-white px-5 py-8 text-center shadow-xl transition-transform hover:-translate-y-1"
-                  >
-                    <span className={`whitespace-nowrap font-black leading-none text-[#1a6fb0] ${k.valor.length > 6 ? "text-3xl lg:text-4xl" : "text-4xl lg:text-5xl"}`}>{k.valor}</span>
-                    <span className="mt-3 font-semibold leading-snug text-primary">{k.etiqueta}</span>
-                    <span className="mt-2 text-xs uppercase tracking-wider text-tertiary group-hover:text-secondary">{k.industria}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-center text-xs text-white/60">Resultados medidos en casos documentados con nuestros clientes. Toca una cifra para ver el caso.</p>
-          </div>
-        )}
+        {/* Lo que obtiene el cliente */}
+        <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
+          {KPIS.map((k) => (
+            <li key={k.valor} className="flex flex-col items-center justify-center rounded-2xl bg-white px-6 py-10 text-center shadow-xl">
+              <span className="text-6xl font-black leading-none text-[#1a6fb0] lg:text-7xl">{k.valor}</span>
+              <span className="mt-4 text-xl font-bold leading-snug text-primary lg:text-2xl">{k.texto}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
