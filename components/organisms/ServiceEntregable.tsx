@@ -79,21 +79,19 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
             {entregable.descripcion}
           </p>
 
+          {/* Lo que trae el informe, en tarjetas numeradas (2026-09-28): se
+              recorre de un vistazo en lugar de leer una lista */}
           {entregable.contenido.length > 0 && (
-          <ul className="mt-7 space-y-3">
-            {entregable.contenido.map((punto) => (
-              <li key={punto} className="flex items-start gap-3 text-base leading-relaxed text-primary">
-                <svg
-                  className="mt-1.5 h-4 w-4 shrink-0 text-secondary"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                </svg>
-                <span>{punto}</span>
+          <ul className={`mt-7 grid grid-cols-1 gap-3 ${conVitrina ? "sm:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
+            {entregable.contenido.map((punto, i) => (
+              <li
+                key={punto}
+                className="flex items-start gap-3 rounded-sm bg-gray-50 p-4 text-sm font-semibold leading-snug text-primary ring-1 ring-black/5 transition-colors hover:bg-white hover:shadow-md"
+              >
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-black text-secondary">
+                  {i + 1}
+                </span>
+                <span className="pt-1">{punto}</span>
               </li>
             ))}
           </ul>
