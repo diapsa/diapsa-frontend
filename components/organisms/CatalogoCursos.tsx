@@ -170,14 +170,6 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
         </div>
       </section>
 
-      {/* Fotos reales de los cursos, de todas las técnicas */}
-      <GaleriaCampo
-        fotos={muestraFotos(24)}
-        titulo="Así son nuestros cursos"
-        texto="Fotos reales de grupos de DIAPSA, en aula y en planta."
-        intervalo={3000}
-        sinPie
-      />
 
       {/* Los datos, en una franja */}
       <section className="w-full bg-primary text-white">
@@ -237,6 +229,15 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
           <CatalogoFiltros tarjetas={tarjetas} tecnicas={filtrosTecnica} tipos={filtrosTipo} textoTipo={textoTipo} />
         </div>
       </section>
+
+      {/* Fotos reales de los cursos, de todas las técnicas, al final del catálogo */}
+      <GaleriaCampo
+        fotos={muestraFotos(24)}
+        titulo="Así son nuestros cursos"
+        texto="Fotos reales de grupos de DIAPSA, en aula y en planta."
+        intervalo={3000}
+        sinPie
+      />
 
       {/* Al entrar: el anuncio del curso más próximo y el formulario corto */}
       <BienvenidaCursos anuncio={anuncio} cursos={tarjetas.map((c) => c.titulo)} />
