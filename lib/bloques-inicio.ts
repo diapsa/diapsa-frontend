@@ -92,11 +92,19 @@ const INFO: Record<string, { descripcion: string; puntos: string[] }> = {
   },
 };
 
+const ICONOS_CURSOS: Record<string, string> = {
+  "Vibraciones mecánicas": "vibraciones",
+  "Termografía infrarroja": "termografia",
+  "Ultrasonido pasivo": "ultrasonido",
+  "Confiabilidad y gestión": "certificado",
+};
+
 /** Los dos frentes de monitoreo de condición, para su propia página. */
 export const APARTADOS_CONDICION: ApartadoBloque[] = [
   {
     id: "rotativa",
     nombre: "Maquinaria rotativa",
+    icono: "vibraciones",
     tarjetas: ["vibraciones-mecanicas", "alineacion-balanceo", "analisis-de-ultrasonido", "analisis-de-aceite", "diagnostico-de-maquinaria"].map(
       (s) => tarjeta(porSlug(s)),
     ),
@@ -104,15 +112,16 @@ export const APARTADOS_CONDICION: ApartadoBloque[] = [
   {
     id: "electricos",
     nombre: "Sistemas eléctricos",
+    icono: "electricos",
     tarjetas: ["termografia-infrarroja", "calidad-de-energia", "tierras-fisicas", "arco-electrico"].map((s) => tarjeta(porSlug(s))),
   },
 ];
 
 /** El bloque de servicios de la portada. */
 export const APARTADOS_SERVICIOS: ApartadoBloque[] = [
-  { id: "condicion", nombre: condicion.label, href: condicion.href, ...INFO.condicion, tarjetas: hijosCondicion.map(tarjeta) },
-  { id: "continuo", nombre: continuo.label, href: continuo.href, ...INFO.continuo, tarjetas: (continuo.children ?? []).map(tarjeta) },
-  { id: "mas", nombre: "Más servicios", href: "/servicios", ...INFO.mas, tarjetas: sueltos.map(tarjeta) },
+  { id: "condicion", nombre: condicion.label, href: condicion.href, icono: "diagnostico", ...INFO.condicion, tarjetas: hijosCondicion.map(tarjeta) },
+  { id: "continuo", nombre: continuo.label, href: continuo.href, icono: "camaras", ...INFO.continuo, tarjetas: (continuo.children ?? []).map(tarjeta) },
+  { id: "mas", nombre: "Más servicios", href: "/servicios", icono: "start", ...INFO.mas, tarjetas: sueltos.map(tarjeta) },
 ];
 
 /** El bloque de cursos de la portada, un apartado por técnica. */
@@ -121,6 +130,7 @@ export const APARTADOS_CURSOS: ApartadoBloque[] = (menuCursos as { titulo: strin
     id: slugDe(col.titulo.toLowerCase().replace(/\s+/g, "-")),
     nombre: col.titulo,
     href: "/cursos#catalogo",
+    icono: ICONOS_CURSOS[col.titulo],
     ...INFO[col.titulo],
     tarjetas: col.items.map((c, i) => {
       // Si el curso no tiene galería propia (el diplomado), usa las fotos
@@ -146,7 +156,8 @@ export function apartadosProductos(productos: Product[], urlImagen: (ruta: strin
   for (const p of productos) {
     const cat = p.category;
     const id = cat?.slug ?? "otros";
-    if (!grupos.has(id)) grupos.set(id, { id, nombre: cat?.name ?? "Otros", href: `/productos/${id}`, tarjetas: [] });
+    if (!grupos.has(id))
+      grupos.set(id, { id, nombre: cat?.name ?? "Otros", href: `/productos/${id}`, icono: id.includes("acust") ? "acusticos" : "sensores-vibracion", tarjetas: [] });
     grupos.get(id)!.tarjetas.push({
       titulo: [p.model, p.name].filter(Boolean).join(" · "),
       texto: p.brand?.name,
