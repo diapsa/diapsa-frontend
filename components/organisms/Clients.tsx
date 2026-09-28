@@ -63,11 +63,23 @@ export function Clients() {
           .clientes-avance, .clientes-reversa { animation: none; }
         }
       `}</style>
-      <div className="mb-8 flex w-full flex-col items-center gap-4">
-        <span className="inline-block text-xs font-semibold uppercase tracking-widest text-secondary">Clientes Satisfechos</span>
-        <h2 className="text-center text-3xl font-extrabold leading-tight text-primary lg:text-4xl">PASIÓN POR APORTAR VALOR</h2>
+      <div className="mx-auto mb-10 flex w-full max-w-4xl flex-col items-center gap-4 px-6 text-center">
+        <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-secondary">
+          <span className="h-px w-8 bg-secondary" aria-hidden="true" />
+          Clientes satisfechos
+          <span className="h-px w-8 bg-secondary" aria-hidden="true" />
+        </span>
+        <h2 className="text-3xl font-extrabold leading-tight text-primary lg:text-5xl">
+          PASIÓN POR EL MONITOREO DE CONDICIÓN <span className="text-secondary">Y LA CONFIABILIDAD</span>
+        </h2>
+        <p className="max-w-2xl text-justify text-lg leading-relaxed text-tertiary sm:text-center">
+          Plantas de energía, hidrocarburos, alimentos y manufactura que ya miden sus equipos con nosotros.
+        </p>
       </div>
       <div className="relative w-full space-y-4 bg-[repeating-linear-gradient(45deg,#003853_0px,#003853_10px,transparent_10px,transparent_15px),linear-gradient(135deg,#003853,#002e46)] py-8 bg-blend-multiply md:space-y-6 md:py-10">
+        {/* Desvanecido en las orillas para que los logos entren y salgan suaves */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#002e46] to-transparent md:w-32" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#002e46] to-transparent md:w-32" aria-hidden="true" />
         <Tira clientes={CLIENTES} />
         <Tira clientes={invertidos} reversa />
       </div>
