@@ -1,39 +1,20 @@
-import Image from "next/image";
 import Link from "next/link";
-import CarruselFotos from "@/components/molecules/CarruselFotos";
-import CatalogoProductos from "@/components/organisms/CatalogoProductos";
-import { getStorageUrl } from "@/lib/api/config";
+import TiendaProductos from "@/components/organisms/TiendaProductos";
+import type { ProductoCatalogo } from "@/lib/productos-locales";
 import type { Brand } from "@/types/category";
-import type { Product } from "@/types/product";
 
 /**
  * PaginaProductos
- * El cuerpo de /productos, rehecho (2026-09-27).
+ * El cuerpo de /productos.
  *
- * Antes: un encabezado genérico, tres promesas sin respaldo ("equipos
- * certificados", "entrega nacional") y dos tarjetas de categoría gigantes
- * que escondían los productos. Ahora: los equipos en uso en campo, las
- * marcas que manejamos, todo el catálogo a la vista con filtro, por qué
- * comprarlo con DIAPSA y contacto.
- *
- * HIKMICRO se vende pero todavía no está en el CMS: aparece entre las
- * marcas con enlace a cotizar, y cuando se den de alta sus productos
- * entrarán solos al catálogo.
+ * 2026-09-28: el catálogo pasa a estructura de tienda (TiendaProductos),
+ * como la referencia que pasó Emiliano: filtros, banner por marca,
+ * categorías destacadas y rejilla o lista. Entran las 23 cámaras
+ * termográficas HIKMICRO, que viven en el sitio y no en el CMS. La
+ * cabecera se hace delgada para que los productos se vean desde el
+ * principio; el carrusel de fotos en campo y las tarjetas de marca se
+ * quitaron porque el banner de la tienda ya presenta cada marca.
  */
-
-const FOTOS_CAMPO = [
-  { src: "/images/servicios/sensores-acusticos/campo-00.webp", alt: "Especialista de DIAPSA con cámara acústica frente a una subestación" },
-  { src: "/images/servicios/sensores-vibracion/instalacion-sensor.webp", alt: "Instalación de un sensor de vibración inalámbrico en un equipo de proceso" },
-  { src: "/images/deteccion-gas/campo/pantalla-gas-natural.webp", alt: "Fuga de gas localizada en pantalla con la cámara de detección" },
-  { src: "/images/servicios/sensores-vibracion/estacion-base.webp", alt: "Técnico de DIAPSA con la estación base inalámbrica en planta" },
-  { src: "/images/servicios/sensores-acusticos/campo-12.webp", alt: "Inspección acústica de las líneas de una subestación" },
-];
-
-// Qué hace cada marca, en una línea. Las que no están aquí toman su nombre.
-const LINEA_MARCA: Record<string, string> = {
-  hertzinno: "Cámaras acústicas de mano y fijas para fugas de gas y aire y descargas eléctricas.",
-  "kcf-technologies": "Sensores de vibración inalámbricos y estaciones base para monitoreo en línea.",
-};
 
 const RAZONES = [
   {
@@ -70,97 +51,33 @@ function Flecha() {
   );
 }
 
-export default function PaginaProductos({ productos, marcas }: { productos: Product[]; marcas: Brand[] }) {
+export default function PaginaProductos({ productos, marcas }: { productos: ProductoCatalogo[]; marcas: Brand[] }) {
   return (
     <main>
-      {/* 1. Los equipos, en campo */}
-      <section className="relative w-full overflow-hidden bg-primary">
-        <Image src="/images/screen.png" alt="" fill priority sizes="100vw" className="object-cover" />
-        <div className="absolute inset-0 bg-primary/80" />
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-16 pt-32 lg:grid-cols-2 lg:gap-14 lg:pb-20 lg:pt-40">
-          <div className="text-white">
-            <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">Productos</span>
-            <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
-              LOS EQUIPOS QUE <span className="text-secondary">USAMOS EN CAMPO</span>
-            </h1>
-            <p className="mt-5 max-w-xl text-justify leading-relaxed text-white/80 lg:text-lg">
-              Cámaras acústicas, sensores de vibración inalámbricos y cámaras termográficas. Los mismos que usan nuestros analistas todos los días, con la asesoría de quien los conoce en planta.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#catalogo"
-                className="inline-flex items-center gap-2 rounded-xs bg-secondary px-7 py-3 font-bold text-primary transition-colors hover:bg-white"
-              >
-                Ver catálogo <Flecha />
-              </a>
-              <Link
-                href="/contacto"
-                className="inline-flex items-center gap-2 rounded-xs border border-white/40 px-7 py-3 font-bold text-white transition-colors hover:border-secondary hover:text-secondary"
-              >
-                Pedir asesoría
-              </Link>
-            </div>
-          </div>
-          <CarruselFotos fotos={FOTOS_CAMPO} intervalo={3500} prioridad />
+      {/* 1. Cabecera delgada */}
+      <section className="w-full bg-primary pb-10 pt-28 text-white lg:pb-12 lg:pt-36">
+        <div className="mx-auto max-w-7xl px-6">
+          <nav className="text-xs text-white/60" aria-label="Ruta">
+            <Link href="/" className="hover:text-secondary">
+              Inicio
+            </Link>
+            <span className="mx-2">/</span>
+            <span className="text-white">Productos</span>
+          </nav>
+          <h1 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
+            EQUIPOS PARA <span className="text-secondary">MONITOREO DE CONDICIÓN</span>
+          </h1>
+          <p className="mt-3 max-w-3xl text-justify leading-relaxed text-white/80">
+            Cámaras termográficas, cámaras acústicas y sensores de vibración inalámbricos. Los mismos que usan nuestros analistas en campo, con la asesoría de quien los conoce en planta.
+          </p>
         </div>
       </section>
 
-      {/* 2. Marcas */}
-      <section className="w-full bg-white py-14 lg:py-16">
+      {/* 2. Tienda */}
+      <section id="catalogo" className="w-full scroll-mt-24 bg-gray-50 py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto mb-10 max-w-3xl text-center">
-            <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">Marcas</span>
-            <h2 className="text-3xl font-extrabold text-primary lg:text-4xl">
-              LAS MARCAS QUE <span className="text-secondary">MANEJAMOS</span>
-            </h2>
-          </div>
-          <ul className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {marcas.map((m) => {
-              const logo = getStorageUrl(m.logo);
-              return (
-                <li key={m.slug} className="flex flex-col rounded-sm border border-gray-100 bg-gray-50 p-6">
-                  <div className="relative mb-5 flex h-16 items-center">
-                    {logo ? (
-                      <Image src={logo} alt={m.name} fill sizes="240px" className="object-contain object-left" />
-                    ) : (
-                      <span className="text-2xl font-extrabold text-primary">{m.name}</span>
-                    )}
-                  </div>
-                  <p className="font-bold text-primary">{m.name}</p>
-                  <p className="mt-1 flex-1 text-justify text-sm leading-relaxed text-tertiary">{LINEA_MARCA[m.slug] ?? ""}</p>
-                  <a href="#catalogo" className="mt-4 text-sm font-bold text-secondary hover:text-primary">
-                    {m.products_count} {m.products_count === 1 ? "equipo" : "equipos"} en el catálogo
-                  </a>
-                </li>
-              );
-            })}
-            <li className="flex flex-col rounded-sm border border-gray-100 bg-gray-50 p-6">
-              <div className="mb-5 flex h-16 items-center">
-                <span className="text-2xl font-extrabold tracking-wide text-primary">HIKMICRO</span>
-              </div>
-              <p className="font-bold text-primary">HIKMICRO</p>
-              <p className="mt-1 flex-1 text-justify text-sm leading-relaxed text-tertiary">
-                Cámaras termográficas para inspección eléctrica, mecánica y de proceso.
-              </p>
-              <Link href="/contacto" className="mt-4 text-sm font-bold text-secondary hover:text-primary">
-                Cotizar cámaras termográficas
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      {/* 3. Catálogo */}
-      <section id="catalogo" className="w-full scroll-mt-24 bg-gray-50 py-14 lg:py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto mb-8 max-w-3xl text-center">
-            <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">Catálogo</span>
-            <h2 className="text-3xl font-extrabold text-primary lg:text-4xl">
-              TODOS LOS <span className="text-secondary">EQUIPOS</span>
-            </h2>
-          </div>
           {productos.length > 0 ? (
-            <CatalogoProductos productos={productos} />
+            <TiendaProductos productos={productos} marcas={marcas} />
           ) : (
             <p className="text-center text-tertiary">
               El catálogo no está disponible en este momento. Escríbenos y te enviamos las opciones y precios.
@@ -169,7 +86,7 @@ export default function PaginaProductos({ productos, marcas }: { productos: Prod
         </div>
       </section>
 
-      {/* 4. Por qué con DIAPSA */}
+      {/* 3. Por qué con DIAPSA */}
       <section className="w-full bg-white py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto mb-10 max-w-3xl text-center">
@@ -193,7 +110,7 @@ export default function PaginaProductos({ productos, marcas }: { productos: Prod
         </div>
       </section>
 
-      {/* 5. Contacto */}
+      {/* 4. Contacto */}
       <section className="w-full bg-primary py-14 text-white lg:py-16">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-5 px-6 text-center">
           <h2 className="text-3xl font-extrabold lg:text-4xl">

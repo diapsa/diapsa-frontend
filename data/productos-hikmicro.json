@@ -1,0 +1,2627 @@
+{
+  "_nota": "Cámaras termográficas HIKMICRO que vende DIAPSA (series B, M, G y SP). No están en el CMS: se mezclan con los productos del CMS en /productos. Datos tomados de las fichas oficiales en inglés del Box de HIKMICRO (2026-09-28); las fichas están en public/fichas/hikmicro/.",
+  "productos": [
+    {
+      "id": "hikmicro-1",
+      "slug": "hikmicro-b01s",
+      "model": "B01S",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie B",
+      "pixeles": 49152,
+      "netd": 40,
+      "temp_max": 550,
+      "short_description": "Termografía de entrada, sin enfocar: apuntas y mides. Para rutas de mantenimiento básicas, tableros y motores.",
+      "description": "Termografía de entrada, sin enfocar: apuntas y mides. Para rutas de mantenimiento básicas, tableros y motores.",
+      "image": "/images/productos/hikmicro/b01s.webp",
+      "datasheet": "/fichas/hikmicro/b01s-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "256 × 192",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 40 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "37.2° × 50.0°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Libre de enfoque",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 550 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.2\" LCD",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "6 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "380 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-2",
+      "slug": "hikmicro-b10s",
+      "model": "B10S",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie B",
+      "pixeles": 49152,
+      "netd": 40,
+      "temp_max": 550,
+      "short_description": "Termografía de entrada, sin enfocar: apuntas y mides. Para rutas de mantenimiento básicas, tableros y motores.",
+      "description": "Termografía de entrada, sin enfocar: apuntas y mides. Para rutas de mantenimiento básicas, tableros y motores.",
+      "image": "/images/productos/hikmicro/b10s.webp",
+      "datasheet": "/fichas/hikmicro/b10s-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "256 × 192",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 40 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "37.2° × 50.0°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Libre de enfoque",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 550 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.2\" LCD",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "2 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "6 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "380 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-3",
+      "slug": "hikmicro-b11s",
+      "model": "B11S",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie B",
+      "pixeles": 27648,
+      "netd": 40,
+      "temp_max": 550,
+      "short_description": "Termografía de entrada, sin enfocar: apuntas y mides. Para rutas de mantenimiento básicas, tableros y motores.",
+      "description": "Termografía de entrada, sin enfocar: apuntas y mides. Para rutas de mantenimiento básicas, tableros y motores.",
+      "image": "/images/productos/hikmicro/b11s.webp",
+      "datasheet": "/fichas/hikmicro/b11s-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "192 × 144",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 40 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "27.8° × 37.2°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Libre de enfoque",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 550 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.2\" LCD",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "2 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "6 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "380 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-4",
+      "slug": "hikmicro-b20s",
+      "model": "B20S",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie B",
+      "pixeles": 49152,
+      "netd": 40,
+      "temp_max": 550,
+      "short_description": "Termografía de entrada, sin enfocar: apuntas y mides. Para rutas de mantenimiento básicas, tableros y motores.",
+      "description": "Termografía de entrada, sin enfocar: apuntas y mides. Para rutas de mantenimiento básicas, tableros y motores.",
+      "image": "/images/productos/hikmicro/b20s.webp",
+      "datasheet": "/fichas/hikmicro/b20s-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "256 × 192",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 40 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "37.2° × 50.0°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Libre de enfoque",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 550 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.2\" LCD",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "2 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "6 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "380 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-5",
+      "slug": "hikmicro-b21ls",
+      "model": "B21LS",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie B",
+      "pixeles": 49152,
+      "netd": 40,
+      "temp_max": 550,
+      "short_description": "Termografía de entrada, sin enfocar: apuntas y mides. Para rutas de mantenimiento básicas, tableros y motores.",
+      "description": "Termografía de entrada, sin enfocar: apuntas y mides. Para rutas de mantenimiento básicas, tableros y motores.",
+      "image": "/images/productos/hikmicro/b21ls.webp",
+      "datasheet": "/fichas/hikmicro/b21ls-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "256 × 192",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 40 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "37.2° × 50.0°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Libre de enfoque",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 550 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.2\" LCD",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "6 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "380 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-6",
+      "slug": "hikmicro-m10",
+      "model": "M10",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie M",
+      "pixeles": 19200,
+      "netd": 40,
+      "temp_max": 550,
+      "short_description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "image": "/images/productos/hikmicro/m10.webp",
+      "datasheet": "/fichas/hikmicro/m10-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "160 × 120",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 40 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "25° × 18.7°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 550 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.5\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "5 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "653 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-7",
+      "slug": "hikmicro-m11",
+      "model": "M11",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie M",
+      "pixeles": 27648,
+      "netd": 40,
+      "temp_max": 550,
+      "short_description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "image": "/images/productos/hikmicro/m11.webp",
+      "datasheet": "/fichas/hikmicro/m11-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "192 × 144",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 40 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "18.8° × 14.1°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 550 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.5\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "6 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "660 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-8",
+      "slug": "hikmicro-m11w",
+      "model": "M11W",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie M",
+      "pixeles": 27648,
+      "netd": 40,
+      "temp_max": 550,
+      "short_description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "image": "/images/productos/hikmicro/m11w.webp",
+      "datasheet": "/fichas/hikmicro/m11w-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "192 × 144",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 40 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "37.2° × 27.8°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Libre de enfoque",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 550 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.5\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "6 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "660 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-9",
+      "slug": "hikmicro-m20",
+      "model": "M20",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie M",
+      "pixeles": 49152,
+      "netd": 40,
+      "temp_max": 550,
+      "short_description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "image": "/images/productos/hikmicro/m20.webp",
+      "datasheet": "/fichas/hikmicro/m20-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "256 × 192",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 40 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "25° × 18.8°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 550 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.5\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "6 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "660 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-10",
+      "slug": "hikmicro-m20w",
+      "model": "M20W",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie M",
+      "pixeles": 49152,
+      "netd": 40,
+      "temp_max": 550,
+      "short_description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "image": "/images/productos/hikmicro/m20w.webp",
+      "datasheet": "/fichas/hikmicro/m20w-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "256 × 192",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 40 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "50° × 37.2°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Libre de enfoque",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 550 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.5\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "6 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "660 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-11",
+      "slug": "hikmicro-m30",
+      "model": "M30",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie M",
+      "pixeles": 110592,
+      "netd": 35,
+      "temp_max": 550,
+      "short_description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "image": "/images/productos/hikmicro/m30.webp",
+      "datasheet": "/fichas/hikmicro/m30-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "384 × 288",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 35 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "37.5° × 28.5°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 550 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.5\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "660 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-12",
+      "slug": "hikmicro-m31",
+      "model": "M31",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie M",
+      "pixeles": 110592,
+      "netd": 30,
+      "temp_max": 650,
+      "short_description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "image": "/images/productos/hikmicro/m31.webp",
+      "datasheet": "/fichas/hikmicro/m31-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "384 × 288",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 30 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "41.1°×30.5°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 650 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.5\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "720 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-13",
+      "slug": "hikmicro-m60",
+      "model": "M60",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie M",
+      "pixeles": 307200,
+      "netd": 35,
+      "temp_max": 650,
+      "short_description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "description": "Compacta, con pantalla táctil, cámara visual de 8 MP y Wi-Fi. Para el mantenimiento eléctrico y mecánico de todos los días.",
+      "image": "/images/productos/hikmicro/m60.webp",
+      "datasheet": "/fichas/hikmicro/m60-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "640 × 480",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 35 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "41.9° × 33.3°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 650 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "No",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "3.5\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "686 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-14",
+      "slug": "hikmicro-g31",
+      "model": "G31",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie G",
+      "pixeles": 110592,
+      "netd": 35,
+      "temp_max": 650,
+      "short_description": "Profesional, con enfoque automático asistido por láser, medidor de distancia, GPS y lentes intercambiables. Para programas de predictivo.",
+      "description": "Profesional, con enfoque automático asistido por láser, medidor de distancia, GPS y lentes intercambiables. Para programas de predictivo.",
+      "image": "/images/productos/hikmicro/g31.webp",
+      "datasheet": "/fichas/hikmicro/g31-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "384 × 288",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 35 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "25° × 19°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Automático asistido por láser y manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 650 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "4.3\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "1058 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-15",
+      "slug": "hikmicro-g41",
+      "model": "G41",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie G",
+      "pixeles": 172800,
+      "netd": 35,
+      "temp_max": 650,
+      "short_description": "Profesional, con enfoque automático asistido por láser, medidor de distancia, GPS y lentes intercambiables. Para programas de predictivo.",
+      "description": "Profesional, con enfoque automático asistido por láser, medidor de distancia, GPS y lentes intercambiables. Para programas de predictivo.",
+      "image": "/images/productos/hikmicro/g41.webp",
+      "datasheet": "/fichas/hikmicro/g41-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "480 × 360",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 35 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "18.7° × 14°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Automático asistido por láser y manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 650 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "4.3\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "1058 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-16",
+      "slug": "hikmicro-g41h",
+      "model": "G41H",
+      "name": "Cámara termográfica de alta temperatura",
+      "serie": "Serie G",
+      "pixeles": 172800,
+      "netd": 35,
+      "temp_max": 2000,
+      "short_description": "Profesional, con enfoque automático asistido por láser, medidor de distancia, GPS y lentes intercambiables. Para programas de predictivo. Mide hasta 2000 °C, para hornos, calderas, refractarios y metal fundido.",
+      "description": "Profesional, con enfoque automático asistido por láser, medidor de distancia, GPS y lentes intercambiables. Para programas de predictivo. Mide hasta 2000 °C, para hornos, calderas, refractarios y metal fundido.",
+      "image": "/images/productos/hikmicro/g41h.webp",
+      "datasheet": "/fichas/hikmicro/g41h-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "480 × 360",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 35 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "18.7° × 14°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Automático asistido por láser y manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 2000 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "4.3\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "1058 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-17",
+      "slug": "hikmicro-g61",
+      "model": "G61",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie G",
+      "pixeles": 307200,
+      "netd": 35,
+      "temp_max": 650,
+      "short_description": "Profesional, con enfoque automático asistido por láser, medidor de distancia, GPS y lentes intercambiables. Para programas de predictivo.",
+      "description": "Profesional, con enfoque automático asistido por láser, medidor de distancia, GPS y lentes intercambiables. Para programas de predictivo.",
+      "image": "/images/productos/hikmicro/g61.webp",
+      "datasheet": "/fichas/hikmicro/g61-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "640 × 480",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 35 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "25° × 19°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Automático asistido por láser y manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 650 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "4.3\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "1058 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-18",
+      "slug": "hikmicro-g61h",
+      "model": "G61H",
+      "name": "Cámara termográfica de alta temperatura",
+      "serie": "Serie G",
+      "pixeles": 307200,
+      "netd": 35,
+      "temp_max": 2000,
+      "short_description": "Profesional, con enfoque automático asistido por láser, medidor de distancia, GPS y lentes intercambiables. Para programas de predictivo. Mide hasta 2000 °C, para hornos, calderas, refractarios y metal fundido.",
+      "description": "Profesional, con enfoque automático asistido por láser, medidor de distancia, GPS y lentes intercambiables. Para programas de predictivo. Mide hasta 2000 °C, para hornos, calderas, refractarios y metal fundido.",
+      "image": "/images/productos/hikmicro/g61h.webp",
+      "datasheet": "/fichas/hikmicro/g61h-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "640 × 480",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 35 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "25° × 19°",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Automático asistido por láser y manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 2000 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "4.3\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "1058 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-19",
+      "slug": "hikmicro-sp40",
+      "model": "SP40",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie SP",
+      "pixeles": 172800,
+      "netd": 30,
+      "temp_max": 650,
+      "short_description": "La gama más alta: visor, lente que gira, pantalla de 5 pulgadas y lentes intercambiables. Para subestaciones, líneas y procesos exigentes.",
+      "description": "La gama más alta: visor, lente que gira, pantalla de 5 pulgadas y lentes intercambiables. Para subestaciones, líneas y procesos exigentes.",
+      "image": "/images/productos/hikmicro/sp40.webp",
+      "datasheet": "/fichas/hikmicro/sp40-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "480 × 360",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 30 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "Según la lente",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Automático asistido por láser y manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 650 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "5\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "1451 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-20",
+      "slug": "hikmicro-sp40h",
+      "model": "SP40H",
+      "name": "Cámara termográfica de alta temperatura",
+      "serie": "Serie SP",
+      "pixeles": 172800,
+      "netd": 30,
+      "temp_max": 2200,
+      "short_description": "La gama más alta: visor, lente que gira, pantalla de 5 pulgadas y lentes intercambiables. Para subestaciones, líneas y procesos exigentes. Mide hasta 2200 °C, para hornos, calderas, refractarios y metal fundido.",
+      "description": "La gama más alta: visor, lente que gira, pantalla de 5 pulgadas y lentes intercambiables. Para subestaciones, líneas y procesos exigentes. Mide hasta 2200 °C, para hornos, calderas, refractarios y metal fundido.",
+      "image": "/images/productos/hikmicro/sp40h.webp",
+      "datasheet": "/fichas/hikmicro/sp40h-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "480 × 360",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 30 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "Según la lente",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Automático asistido por láser y manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-40 a 2200 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "5\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "1451 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-21",
+      "slug": "hikmicro-sp60",
+      "model": "SP60",
+      "name": "Cámara termográfica de mano",
+      "serie": "Serie SP",
+      "pixeles": 307200,
+      "netd": 30,
+      "temp_max": 650,
+      "short_description": "La gama más alta: visor, lente que gira, pantalla de 5 pulgadas y lentes intercambiables. Para subestaciones, líneas y procesos exigentes.",
+      "description": "La gama más alta: visor, lente que gira, pantalla de 5 pulgadas y lentes intercambiables. Para subestaciones, líneas y procesos exigentes.",
+      "image": "/images/productos/hikmicro/sp60.webp",
+      "datasheet": "/fichas/hikmicro/sp60-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "640 × 480",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 30 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "Según la lente",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Automático asistido por láser y manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-20 a 650 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "5\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "1481 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-22",
+      "slug": "hikmicro-sp60h",
+      "model": "SP60H",
+      "name": "Cámara termográfica de alta temperatura",
+      "serie": "Serie SP",
+      "pixeles": 307200,
+      "netd": 30,
+      "temp_max": 2200,
+      "short_description": "La gama más alta: visor, lente que gira, pantalla de 5 pulgadas y lentes intercambiables. Para subestaciones, líneas y procesos exigentes. Mide hasta 2200 °C, para hornos, calderas, refractarios y metal fundido.",
+      "description": "La gama más alta: visor, lente que gira, pantalla de 5 pulgadas y lentes intercambiables. Para subestaciones, líneas y procesos exigentes. Mide hasta 2200 °C, para hornos, calderas, refractarios y metal fundido.",
+      "image": "/images/productos/hikmicro/sp60h.webp",
+      "datasheet": "/fichas/hikmicro/sp60h-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "640 × 480",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 30 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "Según la lente",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Automático asistido por láser y manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-40 a 2200 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "5\" LCD táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "8 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "1481 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hikmicro-23",
+      "slug": "hikmicro-sp120h",
+      "model": "SP120H",
+      "name": "Cámara termográfica de alta temperatura",
+      "serie": "Serie SP",
+      "pixeles": 1310720,
+      "netd": 20,
+      "temp_max": 2200,
+      "short_description": "La gama más alta: visor, lente que gira, pantalla de 5 pulgadas y lentes intercambiables. Para subestaciones, líneas y procesos exigentes. Mide hasta 2200 °C, para hornos, calderas, refractarios y metal fundido.",
+      "description": "La gama más alta: visor, lente que gira, pantalla de 5 pulgadas y lentes intercambiables. Para subestaciones, líneas y procesos exigentes. Mide hasta 2200 °C, para hornos, calderas, refractarios y metal fundido.",
+      "image": "/images/productos/hikmicro/sp120h.webp",
+      "datasheet": "/fichas/hikmicro/sp120h-ficha-tecnica.pdf",
+      "specifications": [
+        {
+          "group": "Imagen térmica",
+          "items": [
+            {
+              "label": "Resolución infrarroja",
+              "value": "1280 × 1024",
+              "unit": "px",
+              "featured": true
+            },
+            {
+              "label": "Sensibilidad térmica (NETD)",
+              "value": "< 20 mK",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Campo de visión",
+              "value": "Según la lente",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Enfoque",
+              "value": "Automático asistido por láser y manual",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Medición",
+          "items": [
+            {
+              "label": "Rango de temperatura",
+              "value": "-40 a 2200 °C",
+              "unit": "",
+              "featured": true
+            },
+            {
+              "label": "Precisión",
+              "value": "±2 °C o ±2 %",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Medidor de distancia láser",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "Pantalla y cámara",
+          "items": [
+            {
+              "label": "Pantalla",
+              "value": "5.1\" OLED táctil",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Cámara visual",
+              "value": "13 MP",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        },
+        {
+          "group": "General",
+          "items": [
+            {
+              "label": "Wi-Fi",
+              "value": "Sí",
+              "unit": "",
+              "featured": false
+            },
+            {
+              "label": "Batería",
+              "value": "4 h",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Peso",
+              "value": "1550 g",
+              "unit": "aprox.",
+              "featured": false
+            },
+            {
+              "label": "Protección",
+              "value": "IP54",
+              "unit": "",
+              "featured": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
