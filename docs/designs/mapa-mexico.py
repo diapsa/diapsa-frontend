@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Mapa de puntos de México por estado para la sección de presencia.
+"""Se corre desde la raíz del repositorio.
+Mapa de puntos de México por estado para la sección de presencia.
 Contorno del país aproximado a mano y cada punto asignado al estado de la
 semilla más cercana (Voronoi). Es un dibujo ilustrativo, no un mapa de
 límites exactos. Genera data/presencia-mexico.json."""
@@ -96,7 +97,7 @@ salida = {
     "internacional": ["Panamá", "República Dominicana", "Ecuador", "Uruguay", "Argentina", "España"],
     "estados": [{"nombre": e, "trabajamos": e in TRABAJAMOS, "puntos": estados[e]} for e in SEMILLAS],
 }
-json.dump(salida, open(r"C:\laragon\www\diapsa-frontend\data\presencia-mexico.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+json.dump(salida, open("data/presencia-mexico.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
 print(W, H, sum(len(v) for v in estados.values()), {e: len(v) for e, v in estados.items() if len(v) < 4})
 
 # vista previa en PNG
@@ -107,4 +108,4 @@ for e, pts in estados.items():
     for x, y in pts:
         d.ellipse([x - 3.4, y - 3.4, x + 3.4, y + 3.4], fill=c)
 d.ellipse([base["x"] - 8, base["y"] - 8, base["x"] + 8, base["y"] + 8], outline=(255, 255, 255), width=3)
-im.save(r"C:\Users\emili\AppData\Local\Temp\claude\C--Users-emili-OneDrive-Desktop-Juridico-proyecto-cumplimiento-04-desarrollo\1581a0b7-ea58-4f97-9db3-79939369854d\scratchpad\mapa-mexico.png")
+im.save("mapa-mexico-vista.png")
