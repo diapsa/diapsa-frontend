@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import diplomado from "@/data/diplomado.json";
+import { AZUL_CLARO_DIPLOMADO, FONDO_DIPLOMADO } from "@/lib/diplomado-estilo";
 
 /**
  * InicioDiplomado
@@ -15,8 +16,8 @@ import diplomado from "@/data/diplomado.json";
  */
 
 // Azules del brochure: del marino profundo al azul rey eléctrico.
-const FONDO = "linear-gradient(120deg, #001f5f 0%, #032a6d 38%, #04358f 70%, #1a4fd8 100%)";
-const AZUL_CLARO = "#5b8cff";
+const FONDO = FONDO_DIPLOMADO;
+const AZUL_CLARO = AZUL_CLARO_DIPLOMADO;
 
 type Ponente = { nombre: string; pais?: string };
 
@@ -110,10 +111,6 @@ export default function InicioDiplomado() {
                   </div>
                 ))}
               </dl>
-              <div className="rounded-sm bg-[#001f5f]/70 p-4 ring-1 ring-white/10">
-                <p className="text-xs uppercase tracking-wider text-white/70">Acredita DIAPSA, con el respaldo de</p>
-                <p className="mt-1 text-justify text-sm font-bold leading-snug">{(diplomado.respaldo as string[]).join(", ")}</p>
-              </div>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import IconoMenu from "@/components/atoms/IconoMenu";
 import { FONDO_IDAP, ORO_IDAP, PIE_IDAP, RUTA_IDAP } from "@/lib/idap-estilo";
+import { AZUL_CLARO_DIPLOMADO, FONDO_DIPLOMADO, PIE_DIPLOMADO, RUTA_DIPLOMADO } from "@/lib/diplomado-estilo";
 
 /**
  * CarruselBloque
@@ -222,18 +223,34 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
         >
           {apartado?.tarjetas.map((t) => {
             const idap = t.href === RUTA_IDAP;
+            const dipl = t.href === RUTA_DIPLOMADO;
             return (
             <li key={t.href + t.titulo} className="w-[85%] shrink-0 snap-start sm:w-[calc((100%-1.5rem)/2)]">
               <Link
                 href={t.href}
                 className="group relative flex h-full flex-col overflow-hidden rounded-sm bg-primary shadow-lg transition-shadow duration-300 hover:shadow-2xl"
-                style={idap ? { background: PIE_IDAP } : undefined}
+                style={idap ? { background: PIE_IDAP } : dipl ? { background: PIE_DIPLOMADO } : undefined}
               >
                 <div
                   className={`relative min-h-60 w-full flex-1 overflow-hidden lg:min-h-72 ${t.contener ? "bg-white" : ""}`}
-                  style={t.href === RUTA_IDAP ? { background: FONDO_IDAP } : undefined}
+                  style={t.href === RUTA_IDAP ? { background: FONDO_IDAP } : dipl ? { background: FONDO_DIPLOMADO } : undefined}
                 >
-                  {t.href === RUTA_IDAP ? (
+                  {dipl ? (
+                    // El diplomado con la identidad de su brochure.
+                    <>
+                      {t.imagen && (
+                        <Image src={t.imagen.src} alt={t.imagen.alt} fill sizes="(min-width: 1024px) 33vw, 85vw" className="object-cover opacity-25 mix-blend-luminosity" />
+                      )}
+                      <span className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+                        <span className="text-4xl font-black leading-none tracking-tight text-white transition-transform duration-500 group-hover:scale-105 lg:text-5xl">
+                          DIPLOMADO
+                        </span>
+                        <span className="mt-3 text-xs font-bold uppercase tracking-widest" style={{ color: AZUL_CLARO_DIPLOMADO }}>
+                          Confiabilidad operativa
+                        </span>
+                      </span>
+                    </>
+                  ) : t.href === RUTA_IDAP ? (
                     // IDAP conserva su identidad: su logo sobre el azul de la plataforma.
                     <Image
                       src="/images/idap/idap-bco.png"
@@ -251,27 +268,29 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
                       className={`transition-transform duration-500 group-hover:scale-105 ${t.contener ? "object-contain p-6" : "object-cover"}`}
                     />
                   )}
-                  {!t.contener && t.href !== RUTA_IDAP && (
+                  {!t.contener && t.href !== RUTA_IDAP && !dipl && (
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/10 to-transparent" />
                   )}
                 </div>
                 <div className="flex flex-col p-5">
                   <p
-                    className={`mb-1.5 font-bold text-white transition-colors ${idap ? "group-hover:text-[#ffc34d]" : "group-hover:text-secondary"}`}
+                    className={`mb-1.5 font-bold text-white transition-colors ${
+                      idap ? "group-hover:text-[#ffc34d]" : dipl ? "group-hover:text-[#5b8cff]" : "group-hover:text-secondary"
+                    }`}
                   >
                     {t.titulo}
                   </p>
                   {t.texto && <p className="text-justify text-sm leading-relaxed text-gray-200">{t.texto}</p>}
                   <span
-                    className={`inline-flex items-center gap-1.5 pt-4 text-xs font-bold uppercase tracking-wider ${idap ? "" : "text-secondary"}`}
-                    style={idap ? { color: ORO_IDAP } : undefined}
+                    className={`inline-flex items-center gap-1.5 pt-4 text-xs font-bold uppercase tracking-wider ${idap || dipl ? "" : "text-secondary"}`}
+                    style={idap ? { color: ORO_IDAP } : dipl ? { color: AZUL_CLARO_DIPLOMADO } : undefined}
                   >
                     {idap ? "Entrar a IDAP" : "Ver más"} <Flecha />
                   </span>
                 </div>
                 <div
-                  className={`absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${idap ? "" : "bg-secondary"}`}
-                  style={idap ? { background: ORO_IDAP } : undefined}
+                  className={`absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${idap || dipl ? "" : "bg-secondary"}`}
+                  style={idap ? { background: ORO_IDAP } : dipl ? { background: AZUL_CLARO_DIPLOMADO } : undefined}
                 />
               </Link>
             </li>
