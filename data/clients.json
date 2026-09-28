@@ -54,6 +54,41 @@
             "name": "Interceramic",
             "logo": "/images/clientes/INTERCERAMIC.svg",
             "caseStudy": true
+        },
+        {
+            "name": "TLA",
+            "logo": "/images/clientes/TLA.png",
+            "caseStudy": false
+        },
+        {
+            "name": "Esentia",
+            "logo": "/images/clientes/ESENTIA.svg",
+            "caseStudy": false
+        },
+        {
+            "name": "Kekén",
+            "logo": "/images/clientes/KEKEN.png",
+            "caseStudy": false
+        },
+        {
+            "name": "ALD",
+            "logo": "/images/clientes/ALD.png",
+            "caseStudy": false
+        },
+        {
+            "name": "Axfaltec",
+            "logo": "/images/clientes/AXFALTEC.png",
+            "caseStudy": false
+        },
+        {
+            "name": "Trinity",
+            "logo": "/images/clientes/TRINITY.png",
+            "caseStudy": false
+        },
+        {
+            "name": "Windsor Machine",
+            "logo": "/images/clientes/WINDSOR.png",
+            "caseStudy": false
         }
     ]
 }

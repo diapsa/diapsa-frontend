@@ -167,9 +167,6 @@ export default function DiplomadoPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-8 text-sm text-tertiary">
-            Con el respaldo de <span className="font-bold text-primary">{dip.respaldo.join(", ")}</span>.
-          </p>
         </div>
       </section>
 

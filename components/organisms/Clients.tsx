@@ -1,130 +1,76 @@
-'use client';
+import Image from "next/image";
+import clientsData from "@/data/clients.json";
 
-import Image from 'next/image';
-import clientsData from '@/data/clients.json';
+/**
+ * Clients
+ * La barra de clientes de la portada: dos tiras de logotipos que corren en
+ * sentidos opuestos sin fin.
+ *
+ * El error que tenía (2026-09-27): la tira medía lo mismo que la pantalla
+ * (flex sin ancho propio) y la animación la movía la mitad de ESE ancho, no
+ * la mitad de los logotipos; además el espacio entre logos era "gap", que
+ * no se repite después del último. Al llegar al final saltaba hacia atrás.
+ * Ahora la tira mide lo que miden sus logotipos (w-max), cada logo lleva su
+ * propio margen a la derecha y la lista va dos veces, así desplazar -50%
+ * cae exactamente donde empieza la copia y el giro no se nota.
+ *
+ * Los clientes sin archivo de logotipo todavía (logo en null) se muestran
+ * con su nombre en letra blanca, en el mismo tamaño, hasta tener el logo.
+ */
+
+type Cliente = { name: string; logo: string | null };
+
+const CLIENTES = clientsData.clients as Cliente[];
+
+function Tira({ clientes, reversa = false }: { clientes: Cliente[]; reversa?: boolean }) {
+  const doble = [...clientes, ...clientes];
+  return (
+    <div className="relative overflow-hidden">
+      <div className={`flex w-max ${reversa ? "clientes-reversa" : "clientes-avance"}`}>
+        {doble.map((c, i) => (
+          <div
+            key={`${c.name}-${i}`}
+            aria-hidden={i >= clientes.length}
+            className="relative mr-8 flex h-16 w-32 shrink-0 items-center justify-center sm:mr-12 sm:h-20 sm:w-40 md:mr-16 md:h-24 md:w-52 lg:mr-20 lg:h-28 lg:w-60"
+          >
+            {c.logo ? (
+              <Image src={c.logo} alt={`Logo de ${c.name}`} fill sizes="240px" className="object-contain px-2 brightness-0 invert sm:px-3 md:px-4" />
+            ) : (
+              <span className="text-center text-lg font-extrabold uppercase leading-tight tracking-wide text-white sm:text-xl md:text-2xl lg:text-3xl">
+                {c.name}
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function Clients() {
-    // Duplicar los clientes para crear el efecto de loop infinito
-    // NO usar Math.random() aquí porque causa hydration mismatch entre servidor y cliente
-    const duplicatedClients = [...clientsData.clients, ...clientsData.clients];
-    const reversedClients = [...clientsData.clients].reverse();
-    const randomClients = [...reversedClients, ...reversedClients];
-
-    return (
-        <section className="w-full flex flex-col pt-16 lg:pt-24 bg-white">
-            {/* Header Section */}
-            <div className="w-full flex flex-col items-center gap-4 mb-8">
-                <span className="inline-block text-secondary text-xs font-semibold tracking-widest uppercase">
-                    Clientes Satisfechos
-                </span>
-                <h2 className="text-3xl lg:text-4xl font-extrabold text-primary text-center leading-tight">
-                    PASIÓN POR APORTAR VALOR
-                </h2>
-            </div>
-
-            {/* Carousel Section */}
-            <div className="w-full relative space-y-4 md:space-y-6 py-8 md:py-10 bg-[repeating-linear-gradient(45deg,#003853_0px,#003853_10px,transparent_10px,transparent_15px),linear-gradient(135deg,#003853,#002e46)] bg-blend-multiply overflow-hidden">
-                {/* Infinite carousel wrapper */}
-                <div className="relative z-0">
-                    <style jsx>{`
-                        @keyframes scroll {
-                            0% {
-                                transform: translateX(0);
-                            }
-                            100% {
-                                transform: translateX(-50%);
-                            }
-                        }
-                        .animate-scroll {
-                            animation: scroll 10s linear infinite;
-                        }
-                        @media (min-width: 768px) {
-                            .animate-scroll {
-                                animation: scroll 40s linear infinite;
-                            }
-                        }
-                
-                    `}</style>
-
-                    <div className="flex gap-6 sm:gap-10 md:gap-16 lg:gap-20 animate-scroll">
-                        {duplicatedClients.map((client, index) => (
-                            <div
-                                key={index}
-                                className={`relative flex items-center justify-center min-w-30 sm:min-w-40 md:min-w-55 lg:min-w-62.5 h-16 sm:h-20 md:h-24 lg:h-28 group`}
-                            >
-                                {/* Case Study Hover Overlay */}
-                                {/* {client.caseStudy && (
-                                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10 rounded-lg">
-                                        <span className="text-secondary text-xs md:text-sm text-center px-4">
-                                            VER CASO DE ÉXITO
-                                        </span>
-                                    </div>
-                                )} */}
-
-                                {/* Client Logo */}
-                                <div className="relative w-full h-full px-2 sm:px-3 md:px-4">
-                                    <Image
-                                        src={client.logo}
-                                        alt={`Logo de ${client.name}`}
-                                        fill
-                                        className="object-contain filter brightness-0 invert"
-                                    />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <div className="relative z-0">
-                    <style jsx>{`
-                        @keyframes scroll-2 {
-                            0% {
-                                transform: translateX(-50%);
-                            }
-                            100% {
-                                transform: translateX(0);
-                            }
-                        }
-                        .animate-scroll-2 {
-                            animation: scroll-2 10s linear infinite;
-                        }
-                        @media (min-width: 768px) {
-                            .animate-scroll-2 {
-                                animation: scroll-2 40s linear infinite;
-                            }
-                        }
-                     
-                        
-                    `}</style>
-
-                    <div className="flex gap-6 sm:gap-10 md:gap-16 lg:gap-20 animate-scroll-2">
-                        {randomClients.map((client, index) => (
-                            <div
-                                key={index}
-                                className={`relative flex items-center justify-center min-w-30 sm:min-w-40 md:min-w-55 lg:min-w-62.5 h-16 sm:h-20 md:h-24 lg:h-28 group`}
-                            >
-                                {/* Case Study Hover Overlay */}
-                                {/* {client.caseStudy && (
-                                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10 rounded-lg">
-                                        <span className="text-secondary text-xs md:text-sm text-center px-4">
-                                            VER CASO DE ÉXITO
-                                        </span>
-                                    </div>
-                                )} */}
-
-                                {/* Client Logo */}
-                                <div className="relative w-full h-full px-2 sm:px-3 md:px-4">
-                                    <Image
-                                        src={client.logo}
-                                        alt={`Logo de ${client.name}`}
-                                        fill
-                                        className="object-contain filter brightness-0 invert"
-                                    />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+  const invertidos = [...CLIENTES].reverse();
+  return (
+    <section className="flex w-full flex-col bg-white pt-16 lg:pt-24">
+      <style>{`
+        @keyframes clientes-avance { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+        @keyframes clientes-reversa { from { transform: translateX(-50%) } to { transform: translateX(0) } }
+        .clientes-avance { animation: clientes-avance 45s linear infinite; }
+        .clientes-reversa { animation: clientes-reversa 45s linear infinite; }
+        @media (min-width: 768px) {
+          .clientes-avance, .clientes-reversa { animation-duration: 70s; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .clientes-avance, .clientes-reversa { animation: none; }
+        }
+      `}</style>
+      <div className="mb-8 flex w-full flex-col items-center gap-4">
+        <span className="inline-block text-xs font-semibold uppercase tracking-widest text-secondary">Clientes Satisfechos</span>
+        <h2 className="text-center text-3xl font-extrabold leading-tight text-primary lg:text-4xl">PASIÓN POR APORTAR VALOR</h2>
+      </div>
+      <div className="relative w-full space-y-4 bg-[repeating-linear-gradient(45deg,#003853_0px,#003853_10px,transparent_10px,transparent_15px),linear-gradient(135deg,#003853,#002e46)] py-8 bg-blend-multiply md:space-y-6 md:py-10">
+        <Tira clientes={CLIENTES} />
+        <Tira clientes={invertidos} reversa />
+      </div>
+    </section>
+  );
 }
