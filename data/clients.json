@@ -57,37 +57,37 @@
         },
         {
             "name": "TLA",
-            "logo": null,
+            "logo": "/images/clientes/TLA.png",
             "caseStudy": false
         },
         {
             "name": "Esentia",
-            "logo": null,
+            "logo": "/images/clientes/ESENTIA.svg",
             "caseStudy": false
         },
         {
-            "name": "KEKEN",
-            "logo": null,
+            "name": "Kekén",
+            "logo": "/images/clientes/KEKEN.png",
             "caseStudy": false
         },
         {
             "name": "ALD",
-            "logo": null,
+            "logo": "/images/clientes/ALD.png",
             "caseStudy": false
         },
         {
             "name": "Axfaltec",
-            "logo": null,
+            "logo": "/images/clientes/AXFALTEC.png",
             "caseStudy": false
         },
         {
             "name": "Trinity",
-            "logo": null,
+            "logo": "/images/clientes/TRINITY.png",
             "caseStudy": false
         },
         {
             "name": "Windsor Machine",
-            "logo": null,
+            "logo": "/images/clientes/WINDSOR.png",
             "caseStudy": false
         }
     ]
