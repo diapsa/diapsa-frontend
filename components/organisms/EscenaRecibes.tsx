@@ -35,6 +35,8 @@ export default function EscenaRecibes({ modo, onMontada }: { modo: ModoRecibes; 
       if (iniciada || cancelado) return;
       iniciada = true;
       observador.disconnect();
+      window.removeEventListener("scroll", comprobar);
+      window.removeEventListener("resize", comprobar);
       root.dataset.escena = "cargando";
       Promise.all([import("three"), import("@/lib/escena-recibes")])
         .then(([THREE, { montarEscenaRecibes }]) => {
@@ -54,16 +56,27 @@ export default function EscenaRecibes({ modo, onMontada }: { modo: ModoRecibes; 
           console.warn("[escrecibes] no se pudo cargar la escena:", e);
         });
     };
+    // Respaldo por desplazamiento: en algunos navegadores de teléfono el
+    // IntersectionObserver no avisa y la escena se quedaba esperando.
+    const comprobar = () => {
+      const r = root.getBoundingClientRect();
+      if (r.bottom > -400 && r.top < window.innerHeight + 400) iniciar();
+    };
     const observador = new IntersectionObserver((e) => {
       if (e.some((x) => x.isIntersecting)) iniciar();
     }, { rootMargin: "400px" });
 
     root.dataset.escena = "esperando";
     observador.observe(root);
+    window.addEventListener("scroll", comprobar, { passive: true });
+    window.addEventListener("resize", comprobar);
+    comprobar();
 
     return () => {
       cancelado = true;
       observador.disconnect();
+      window.removeEventListener("scroll", comprobar);
+      window.removeEventListener("resize", comprobar);
       escena.current?.();
       escena.current = null;
     };
