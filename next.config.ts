@@ -116,24 +116,13 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
 
-      // --- Webinar: variantes con mayúsculas o en plural que se comparten a mano ---
-      {
-        source: '/Webinar',
-        destination: '/webinar',
-        statusCode: 301,
-      },
-      {
-        source: '/WEBINAR',
-        destination: '/webinar',
-        statusCode: 301,
-      },
+      // --- Webinar en plural, que se comparte a mano ---
+      // OJO: Next compara estas rutas SIN distinguir mayúsculas. Una regla
+      // '/Webinar' -> '/webinar' también atrapa '/webinar' y hace un bucle
+      // infinito (la página se cayó así el 2026-09-28). Las variantes con
+      // mayúsculas las resuelve middleware.ts, que sí las distingue.
       {
         source: '/webinars',
-        destination: '/webinar',
-        statusCode: 301,
-      },
-      {
-        source: '/Webinars',
         destination: '/webinar',
         statusCode: 301,
       },
