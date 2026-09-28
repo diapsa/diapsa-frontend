@@ -130,7 +130,7 @@ function Panel({ grupo }: { grupo: GrupoSonoro }) {
             return (
               <span
                 key={clip.nivel}
-                className={`absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full ring-4 ring-primary motion-safe:animate-[fadeIn_.5s_ease-out_both] ${
+                className={`absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full ring-4 ring-[#06141f] motion-safe:animate-[fadeIn_.5s_ease-out_both] ${
                   alarma ? "bg-red-400" : "bg-emerald-400"
                 }`}
                 style={{ left: `${pct(decibeles(clip.nivel))}%`, animationDelay: "0.8s" }}
@@ -165,7 +165,12 @@ export default function GraficaSonora({ comparador, paso }: Props) {
   const [activo, setActivo] = useState(grupos[0]?.id);
 
   return (
-    <section className="w-full bg-primary py-12 lg:py-20">
+    <section
+      className="w-full py-12 lg:py-20"
+      style={{ background: "radial-gradient(ellipse at 30% 40%, #0b2436 0%, #06141f 60%, #040d15 100%)" }}
+    >
+      {/* Fondo más oscuro que el azul de DIAPSA para que no se funda con la
+          franja de cifras que va justo abajo (Emiliano, 2026-09-28) */}
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-8 max-w-3xl">
           <Antetitulo paso={paso}>Lo que oye el analista</Antetitulo>
@@ -205,7 +210,7 @@ export default function GraficaSonora({ comparador, paso }: Props) {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
           {/* La escena 3D: una sola para las tres familias; cambia de modo
               con la pestaña sin volver a montarse */}
-          <div className="relative min-h-[320px] overflow-hidden rounded-sm bg-[#002e46] ring-1 ring-white/10 sm:min-h-[420px]">
+          <div className="relative min-h-[320px] overflow-hidden rounded-sm bg-[#0a2233] ring-1 ring-white/10 sm:min-h-[420px]">
             <EscenaUltrasonido modo={MODO_ESCENA[activo ?? ""] ?? "rodamiento"} />
           </div>
         {/* Se remonta al cambiar de familia para que las ondas vuelvan a crecer. */}
