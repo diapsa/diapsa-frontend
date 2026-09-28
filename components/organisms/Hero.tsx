@@ -31,6 +31,8 @@ type Slide = {
   ctaSecondary: { label: string; href: string };
   /** Foto de la columna derecha; si falta, va la escena 3D. */
   image?: { src: string; alt: string };
+  /** Render de producto con fondo transparente: se muestra completo, sin recortar. */
+  contener?: boolean;
 };
 
 const SLIDES: Slide[] = [
@@ -54,6 +56,7 @@ const SLIDES: Slide[] = [
     cta: { label: "Ver monitoreo continuo", href: "/servicios/monitoreo-continuo" },
     ctaSecondary: { label: "Solicitar demo", href: "/contacto" },
     image: { src: "/images/header-sensores.png", alt: "Sensor de vibración instalado en maquinaria industrial" },
+    contener: true,
   },
   {
     id: "gas",
@@ -164,8 +167,19 @@ export default function Hero() {
 
                 <div className="w-full">
                   {s.image ? (
-                    <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[14px] shadow-2xl ring-1 ring-white/10">
-                      <Image src={s.image.src} alt={s.image.alt} fill sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" priority={i === 1} />
+                    <div
+                      className={`relative aspect-[16/10] w-full overflow-hidden rounded-[14px] ${
+                        s.contener ? "" : "shadow-2xl ring-1 ring-white/10"
+                      }`}
+                    >
+                      <Image
+                        src={s.image.src}
+                        alt={s.image.alt}
+                        fill
+                        sizes="(min-width: 1024px) 55vw, 100vw"
+                        className={s.contener ? "object-contain drop-shadow-2xl" : "object-cover"}
+                        priority={i === 1}
+                      />
                     </div>
                   ) : (
                     <EscenaDolor modo="con" inicio={INICIO_CIERRE} />

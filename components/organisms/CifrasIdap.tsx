@@ -1,3 +1,4 @@
+import AnimacionIdap from "@/components/atoms/AnimacionIdap";
 import CountUp from "@/components/atoms/CountUp";
 import datos from "@/data/cifras-idap.json";
 
@@ -14,7 +15,8 @@ import datos from "@/data/cifras-idap.json";
  * Mientras no haya cifras reales (base en null) la franja no se publica:
  * en producción serían números inventados presentados como datos de IDAP.
  * En local se muestra con los valores de ejemplo, marcados como tales, para
- * revisar el diseño.
+ * revisar el diseño. Arriba de las cifras va AnimacionIdap: hallazgos que
+ * viajan de las plantas a IDAP.
  */
 
 const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
@@ -58,6 +60,9 @@ export default function CifrasIdap() {
               Valores de ejemplo, solo en local. No se publican hasta cargar las cifras reales en data/cifras-idap.json.
             </p>
           )}
+        </div>
+        <div className="mx-auto mb-10 max-w-5xl">
+          <AnimacionIdap />
         </div>
         <dl className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
           {cifras.map((c) => (

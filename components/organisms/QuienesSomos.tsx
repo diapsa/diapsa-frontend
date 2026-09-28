@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import CarruselFotos from "@/components/molecules/CarruselFotos";
 
 /**
  * QuienesSomos
@@ -8,8 +8,16 @@ import Link from "next/link";
  *
  * Solo lo que se sostiene (decisión de Emiliano, 2026-09-27): más de veinte
  * años, especialistas Categoría 3, base en Saltillo y trabajo en México y
- * Sudamérica. Sin misión ni cifras de fallas.
+ * Sudamérica. Sin misión ni cifras de fallas. La foto es un carrusel de
+ * analistas reales en planta, sin textos, que cambia solo.
  */
+
+const FOTOS = [
+  { src: "/images/quienes-somos/analista-termografia.webp", alt: "Analista de DIAPSA inspeccionando un ventilador con cámara termográfica" },
+  { src: "/images/quienes-somos/analista-motor-vertical.webp", alt: "Analista de DIAPSA midiendo vibraciones en un motor vertical" },
+  { src: "/images/quienes-somos/muestreo-transformador.webp", alt: "Toma de muestra de aceite en un transformador" },
+  { src: "/images/gallery/campo/acustica-casco-diapsa.webp", alt: "Analista de DIAPSA con cámara acústica en una subestación" },
+];
 
 const DATOS = [
   { valor: "+20", texto: "años midiendo equipos industriales" },
@@ -21,15 +29,7 @@ export default function QuienesSomos() {
   return (
     <section className="w-full bg-white py-14 lg:py-20">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5">
-          <Image
-            src="/images/gallery/campo/acustica-casco-diapsa.webp"
-            alt="Analista de DIAPSA con casco en planta durante una inspección"
-            fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover"
-          />
-        </div>
+        <CarruselFotos fotos={FOTOS} intervalo={3500} />
         <div>
           <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">Quiénes somos</span>
           <h2 className="mb-5 text-3xl font-extrabold text-primary lg:text-4xl">
