@@ -97,8 +97,11 @@ export function middleware(request: NextRequest) {
    */
   const RUTAS_MINUSCULAS = ['/webinar', '/webinars'];
   if (pathname !== pathname.toLowerCase() && RUTAS_MINUSCULAS.includes(pathname.toLowerCase())) {
-    url.pathname = '/webinar';
-    return NextResponse.redirect(url, { status: 301 });
+    // Detrás del proxy, request.nextUrl trae el host interno (localhost:3050);
+    // en producción se arma con el dominio canónico
+    const local = hostname.includes('localhost') || hostname.includes('127.0.0.1');
+    const origen = local ? request.nextUrl.origin : `https://${CANONICAL_DOMAIN}`;
+    return NextResponse.redirect(`${origen}/webinar${search}`, { status: 301 });
   }
 
   // -------------------------------------------------------------------------
