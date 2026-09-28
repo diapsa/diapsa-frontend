@@ -96,6 +96,7 @@ export default function PaginaMonitoreo() {
             titulo={<>NUEVE SERVICIOS, <span className="text-secondary">DOS FRENTES</span></>}
             texto="Medimos la condición de tus equipos con ellos en operación y te decimos qué intervenir, cuándo y por qué. Elige por el tipo de equipo que te preocupa."
             apartados={APARTADOS_CONDICION}
+            fondo="/images/servicios/diagnostico-integral/campo-bombas-vista-superior.webp"
             href="/contacto"
           />
         </div>

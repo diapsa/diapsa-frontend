@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import IconoMenu from "@/components/atoms/IconoMenu";
-import { FONDO_IDAP, RUTA_IDAP } from "@/lib/idap-estilo";
+import { FONDO_IDAP, ORO_IDAP, PIE_IDAP, RUTA_IDAP } from "@/lib/idap-estilo";
 
 /**
  * CarruselBloque
@@ -52,6 +52,8 @@ type Props = {
   apartados: ApartadoBloque[];
   /** Enlace general del bloque, cuando el apartado no trae el suyo. */
   href?: string;
+  /** Foto de fondo del panel azul; cada bloque lleva la suya. */
+  fondo?: string;
   intervalo?: number;
 };
 
@@ -63,7 +65,7 @@ function Flecha({ izquierda = false }: { izquierda?: boolean }) {
   );
 }
 
-export default function CarruselBloque({ etiqueta, titulo, texto, apartados, href, intervalo = 5000 }: Props) {
+export default function CarruselBloque({ etiqueta, titulo, texto, apartados, href, fondo = "/images/screen.png", intervalo = 5000 }: Props) {
   const [activo, setActivo] = useState(apartados[0]?.id);
   const [pausa, setPausa] = useState(false);
   const pista = useRef<HTMLUListElement>(null);
@@ -114,9 +116,9 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
     >
       {/* Panel: el bloque, sus apartados y el resumen del elegido */}
       <div className="relative flex flex-col overflow-hidden rounded-sm bg-primary p-6 text-white shadow-xl sm:p-7">
-        {/* De fondo el engranaje del hero, velado en azul marino */}
-        <Image src="/images/screen.png" alt="" fill sizes="(min-width: 1024px) 22rem, 100vw" className="object-cover" />
-        <div className="absolute inset-0 bg-primary/70" />
+        {/* De fondo una foto de campo propia del bloque, velada en azul marino */}
+        <Image src={fondo} alt="" fill sizes="(min-width: 1024px) 22rem, 100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-primary/75" />
         <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-secondary/15 blur-3xl" />
         <div className="relative">
           {etiqueta && <span className="mb-2 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">{etiqueta}</span>}
@@ -218,11 +220,14 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
           onScroll={alDesplazar}
           className="flex flex-1 snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          {apartado?.tarjetas.map((t) => (
+          {apartado?.tarjetas.map((t) => {
+            const idap = t.href === RUTA_IDAP;
+            return (
             <li key={t.href + t.titulo} className="w-[85%] shrink-0 snap-start sm:w-[calc((100%-1.5rem)/2)]">
               <Link
                 href={t.href}
                 className="group relative flex h-full flex-col overflow-hidden rounded-sm bg-primary shadow-lg transition-shadow duration-300 hover:shadow-2xl"
+                style={idap ? { background: PIE_IDAP } : undefined}
               >
                 <div
                   className={`relative min-h-60 w-full flex-1 overflow-hidden lg:min-h-72 ${t.contener ? "bg-white" : ""}`}
@@ -251,16 +256,27 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
                   )}
                 </div>
                 <div className="flex flex-col p-5">
-                  <p className="mb-1.5 font-bold text-white transition-colors group-hover:text-secondary">{t.titulo}</p>
+                  <p
+                    className={`mb-1.5 font-bold text-white transition-colors ${idap ? "group-hover:text-[#ffc34d]" : "group-hover:text-secondary"}`}
+                  >
+                    {t.titulo}
+                  </p>
                   {t.texto && <p className="text-justify text-sm leading-relaxed text-gray-200">{t.texto}</p>}
-                  <span className="inline-flex items-center gap-1.5 pt-4 text-xs font-bold uppercase tracking-wider text-secondary">
-                    Ver más <Flecha />
+                  <span
+                    className={`inline-flex items-center gap-1.5 pt-4 text-xs font-bold uppercase tracking-wider ${idap ? "" : "text-secondary"}`}
+                    style={idap ? { color: ORO_IDAP } : undefined}
+                  >
+                    {idap ? "Entrar a IDAP" : "Ver más"} <Flecha />
                   </span>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 bg-secondary transition-transform duration-300 group-hover:scale-x-100" />
+                <div
+                  className={`absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${idap ? "" : "bg-secondary"}`}
+                  style={idap ? { background: ORO_IDAP } : undefined}
+                />
               </Link>
             </li>
-          ))}
+            );
+          })}
         </ul>
       </div>
     </div>

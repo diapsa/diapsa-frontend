@@ -43,6 +43,7 @@ export default function InicioBloques({ productos }: { productos: Product[] }) {
             texto="Rutas con nuestros analistas, sensores en línea y servicios especializados, con tus equipos en operación."
             apartados={APARTADOS_SERVICIOS}
             href="/servicios"
+            fondo="/images/gallery/campo/vibracion-motor-grande.webp"
           />
           <CarruselBloque
             etiqueta="Cursos"
@@ -50,6 +51,7 @@ export default function InicioBloques({ productos }: { productos: Product[] }) {
             texto="Formación técnica, talleres y certificaciones por técnica, y el diplomado en confiabilidad operativa."
             apartados={APARTADOS_CURSOS}
             href="/cursos"
+            fondo="/images/cursos/confiabilidad/confiabilidad-09.webp"
           />
           {bloqueProductos.length > 0 && (
             <CarruselBloque
@@ -58,6 +60,7 @@ export default function InicioBloques({ productos }: { productos: Product[] }) {
               texto="Te asesoramos en la selección para que compres el equipo que tu planta realmente necesita."
               apartados={bloqueProductos}
               href="/productos"
+              fondo="/images/servicios/sensores-acusticos/campo-00.webp"
             />
           )}
         </div>
