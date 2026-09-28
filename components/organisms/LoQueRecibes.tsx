@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import EscenaRecibes, { type ModoRecibes } from "@/components/organisms/EscenaRecibes";
 import { FONDO_IDAP, ORO_IDAP, RUTA_IDAP } from "@/lib/idap-estilo";
 
 /**
@@ -129,6 +130,7 @@ function VistaIdap() {
 export default function LoQueRecibes() {
   const [activo, setActivo] = useState(0);
   const [pausa, setPausa] = useState(false);
+  const [escenaLista, setEscenaLista] = useState(false);
 
   useEffect(() => {
     if (pausa) return;
@@ -233,16 +235,19 @@ export default function LoQueRecibes() {
             </li>
           </ol>
 
-          {/* La vista del entregable elegido */}
-          <div
-            key={paso.id}
-            className="relative aspect-[4/3] min-h-[22rem] w-full overflow-hidden rounded-sm shadow-2xl ring-1 ring-white/10 motion-safe:animate-[fadeIn_.4s_ease-out] lg:aspect-auto lg:min-h-[28rem]"
-          >
-            {paso.id === "aviso" && <VistaAviso />}
-            {paso.id === "informe" && <VistaInforme />}
-            {paso.id === "idap" && <VistaIdap />}
+          {/* La vista del entregable elegido: la escena 3D, y debajo las
+              vistas planas mientras carga o si no hay WebGL */}
+          <div className="relative aspect-[4/3] min-h-[22rem] w-full overflow-hidden rounded-sm shadow-2xl ring-1 ring-white/10 lg:aspect-auto lg:min-h-[32rem]">
+            {!escenaLista && (
+              <div key={paso.id} className="absolute inset-0 motion-safe:animate-[fadeIn_.4s_ease-out]">
+                {paso.id === "aviso" && <VistaAviso />}
+                {paso.id === "informe" && <VistaInforme />}
+                {paso.id === "idap" && <VistaIdap />}
+              </div>
+            )}
+            <EscenaRecibes modo={paso.id as ModoRecibes} onMontada={() => setEscenaLista(true)} />
             <span
-              className="absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-bold text-primary shadow"
+              className="absolute left-4 top-4 z-10 rounded-full px-3 py-1 text-xs font-bold text-primary shadow"
               style={{ background: paso.id === "idap" ? ORO_IDAP : "#fc9f01" }}
             >
               {paso.cuando}
