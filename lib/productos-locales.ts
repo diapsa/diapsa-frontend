@@ -42,8 +42,24 @@ function familiaDe(modelo: string) {
   return f ? { id: f.id, nombre: f.nombre } : { id: modelo.toLowerCase(), nombre: modelo };
 }
 
+/**
+ * Promoción (Emiliano, 2026-09-28): en la compra de una cámara HIKMICRO
+ * M30 o superior se incluye un curso de termografía gratis. Entran M30,
+ * M31, M60 y todas las series G y SP; no entran la Serie B, M10, M11 ni M20.
+ * Para terminar la promoción, vaciar esta lista.
+ */
+const CON_CURSO = ["M30", "M31", "M60", "G31", "G41", "G41H", "G61", "G61H", "SP40", "SP40H", "SP60", "SP60H", "SP120H"];
+export const incluyeCurso = (modelo: string) => CON_CURSO.includes(modelo);
+
 /** Datos extra que usa el catálogo para filtrar, ordenar y agrupar. */
-export type Extra = { serie?: string; pixeles?: number; temp_max?: number; familia?: string; familia_nombre?: string };
+export type Extra = {
+  serie?: string;
+  pixeles?: number;
+  temp_max?: number;
+  familia?: string;
+  familia_nombre?: string;
+  curso_gratis?: boolean;
+};
 export type ProductoCatalogo = Product & Extra;
 
 /** Las versiones de la familia de un modelo, en orden (para la ficha). */
@@ -92,6 +108,7 @@ function aResumen(p: Local): ProductoCatalogo {
     temp_max: p.temp_max,
     familia: familiaDe(p.model).id,
     familia_nombre: familiaDe(p.model).nombre,
+    curso_gratis: incluyeCurso(p.model),
   };
 }
 
