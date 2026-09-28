@@ -110,6 +110,7 @@ export default function TiendaProductos({ productos, marcas }: Props) {
   const [selSeries, setSelSeries] = useState<string[]>([]);
   const [selResol, setSelResol] = useState<string[]>([]);
   const [selTemp, setSelTemp] = useState<string[]>([]);
+  const [soloCurso, setSoloCurso] = useState(false);
   const [busqueda, setBusqueda] = useState("");
   const [orden, setOrden] = useState<Orden>("relevancia");
   const [vista, setVista] = useState<"rejilla" | "lista">("rejilla");
@@ -157,6 +158,7 @@ export default function TiendaProductos({ productos, marcas }: Props) {
     if (selSeries.length && !(p.serie && selSeries.includes(p.serie))) return false;
     if (selResol.length && !(p.pixeles && RESOLUCIONES.some((r) => selResol.includes(r.id) && r.prueba(p.pixeles!)))) return false;
     if (selTemp.length && !(p.temp_max && TEMPERATURAS.some((t) => selTemp.includes(t.id) && t.prueba(p.temp_max!)))) return false;
+    if (soloCurso && !p.curso_gratis) return false;
     if (q && !`${p.model} ${p.name} ${p.brand?.name} ${p.category?.name} ${p.serie ?? ""} ${p.familia_nombre ?? ""}`.toLowerCase().includes(q)) return false;
     return true;
   };
@@ -182,7 +184,7 @@ export default function TiendaProductos({ productos, marcas }: Props) {
   const paginas = Math.max(1, Math.ceil(total / POR_PAGINA));
   const pag = Math.min(pagina, paginas);
   const visibles = ordenados.slice((pag - 1) * POR_PAGINA, pag * POR_PAGINA);
-  const hayFiltros = fMarcas.length + fCategorias.length + selSeries.length + selResol.length + selTemp.length > 0 || q !== "";
+  const hayFiltros = fMarcas.length + fCategorias.length + selSeries.length + selResol.length + selTemp.length > 0 || soloCurso || q !== "";
 
   // Cualquier cambio de filtro regresa a la primera página
   const conPagina1 =
@@ -203,6 +205,7 @@ export default function TiendaProductos({ productos, marcas }: Props) {
     setSelSeries([]);
     setSelResol([]);
     setSelTemp([]);
+    setSoloCurso(false);
     setBusqueda("");
     setPagina(1);
   };
@@ -219,6 +222,8 @@ export default function TiendaProductos({ productos, marcas }: Props) {
   const fotosBanner = banner ? productos.filter((p) => p.brand?.slug === banner.slug && p.main_image).slice(0, 4) : [];
   const fotosHik = banner?.slug === "hikmicro" ? ["sp60", "g61", "m30", "b20s"].map((m) => `/images/productos/hikmicro/${m}.webp`) : null;
 
+  const promo = cuenta(productos.filter((p) => p.curso_gratis));
+
   const titulo = marcaUnica?.name ?? (fCategorias.length === 1 ? listaCategorias.find((c) => c.slug === fCategorias[0])?.name : undefined) ?? "Todos los equipos";
 
   const filtros = (
@@ -231,6 +236,19 @@ export default function TiendaProductos({ productos, marcas }: Props) {
           </button>
         )}
       </div>
+      {promo > 0 && (
+        <Grupo titulo="Promociones">
+          <Casilla
+            nombre="Incluye curso de termografía gratis"
+            n={promo}
+            marcada={soloCurso}
+            onClick={() => {
+              setSoloCurso((v) => !v);
+              setPagina(1);
+            }}
+          />
+        </Grupo>
+      )}
       <Grupo titulo="Marca">
         {listaMarcas.map((m) => (
           <Casilla key={m.slug} nombre={m.name} n={m.n} marcada={fMarcas.includes(m.slug)} onClick={() => ponMarcas(alternar(fMarcas, m.slug))} />
@@ -288,6 +306,31 @@ export default function TiendaProductos({ productos, marcas }: Props) {
       <aside className="hidden self-start lg:sticky lg:top-24 lg:block">{filtros}</aside>
 
       <div className="min-w-0">
+        {/* Anuncio de la promoción del curso */}
+        {promo > 0 && (
+          <div className="mb-5 flex flex-col gap-3 rounded-sm bg-secondary px-5 py-4 text-primary sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-3">
+              <svg className="h-9 w-9 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4L2 9l10 5 10-5-10-5z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5M22 9v6" />
+              </svg>
+              <p className="text-justify text-sm font-semibold leading-snug sm:text-base">
+                <span className="font-black">Curso de termografía gratis</span> en la compra de una cámara HIKMICRO M30 o superior.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setSoloCurso(true);
+                setPagina(1);
+              }}
+              className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full bg-primary px-5 py-2 text-sm font-bold text-white transition-colors hover:bg-white hover:text-primary"
+            >
+              Ver cámaras con curso <Flecha />
+            </button>
+          </div>
+        )}
+
         {/* Banner de la marca */}
         {banner && (
           <div className="relative overflow-hidden rounded-sm text-white" style={{ background: FONDO_MARCA[banner.slug] ?? FONDO_DIAPSA }}>
@@ -477,6 +520,11 @@ export default function TiendaProductos({ productos, marcas }: Props) {
                     >
                       {p.brand?.name}
                     </span>
+                    {g.some((v) => v.curso_gratis) && (
+                      <span className="absolute left-2 top-2 rounded-xs bg-secondary px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-primary">
+                        Curso gratis
+                      </span>
+                    )}
                   </Link>
                   <div className="flex flex-1 flex-col border-t border-gray-100 p-4">
                     <p className="text-sm leading-snug text-tertiary">
