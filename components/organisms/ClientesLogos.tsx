@@ -24,6 +24,12 @@ type Props = {
   paso?: string;
 };
 
+// Aquí solo van los clientes con archivo de logotipo; los que aún no lo
+// tienen (logo en null) se muestran por nombre en la barra de la portada.
+const CON_LOGO = (clientes.clients as { name: string; logo: string | null }[]).filter(
+  (c): c is { name: string; logo: string } => Boolean(c.logo),
+);
+
 export default function ClientesLogos({ paso }: Props) {
   return (
     <section className="w-full bg-white py-12 lg:py-20">
@@ -47,7 +53,7 @@ export default function ClientesLogos({ paso }: Props) {
         </div>
 
         <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-gray-200 bg-gray-200 sm:grid-cols-3 lg:grid-cols-6">
-          {clientes.clients.map((cliente) => (
+          {CON_LOGO.map((cliente) => (
             <li
               key={cliente.name}
               className="flex h-28 items-center justify-center bg-white px-6 transition-colors duration-300 hover:bg-gray-50"
@@ -61,11 +67,11 @@ export default function ClientesLogos({ paso }: Props) {
               />
             </li>
           ))}
-          {/* Con once logotipos en seis columnas queda una celda vacía; se
-              rellena en blanco para que no se vea un hueco gris. */}
-          {clientes.clients.length % 6 !== 0 && (
-            <li className="hidden bg-white lg:block" aria-hidden="true" />
-          )}
+          {/* Si la última fila de seis queda incompleta, se rellena en blanco
+              para que no se vea un hueco gris. */}
+          {Array.from({ length: (6 - (CON_LOGO.length % 6)) % 6 }, (_, i) => (
+            <li key={`vacio-${i}`} className="hidden bg-white lg:block" aria-hidden="true" />
+          ))}
         </ul>
       </div>
     </section>

@@ -54,6 +54,41 @@
             "name": "Interceramic",
             "logo": "/images/clientes/INTERCERAMIC.svg",
             "caseStudy": true
+        },
+        {
+            "name": "TLA",
+            "logo": null,
+            "caseStudy": false
+        },
+        {
+            "name": "Esentia",
+            "logo": null,
+            "caseStudy": false
+        },
+        {
+            "name": "KEKEN",
+            "logo": null,
+            "caseStudy": false
+        },
+        {
+            "name": "ALD",
+            "logo": null,
+            "caseStudy": false
+        },
+        {
+            "name": "Axfaltec",
+            "logo": null,
+            "caseStudy": false
+        },
+        {
+            "name": "Trinity",
+            "logo": null,
+            "caseStudy": false
+        },
+        {
+            "name": "Windsor Machine",
+            "logo": null,
+            "caseStudy": false
         }
     ]
 }

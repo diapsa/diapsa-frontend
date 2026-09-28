@@ -33,7 +33,17 @@ type Slide = {
   image?: { src: string; alt: string };
   /** Render de producto con fondo transparente: se muestra completo, sin recortar. */
   contener?: boolean;
+  /** Muestra lo que certificamos: el sello de ITZAM sobre la foto y las
+      normas bajo el texto (diapositiva de cursos). */
+  certifica?: boolean;
 };
+
+// Lo que certifica DIAPSA, para la diapositiva de cursos.
+const CERTIFICACIONES = [
+  { norma: "ISO 18436-2", tecnica: "Vibraciones, Categorías I y II" },
+  { norma: "ISO 18436-7", tecnica: "Termografía, Categorías I y II" },
+  { norma: "Ultrasonido", tecnica: "Especialista y analista" },
+];
 
 const SLIDES: Slide[] = [
   {
@@ -79,6 +89,7 @@ const SLIDES: Slide[] = [
     cta: { label: "Ver los cursos", href: "/cursos" },
     ctaSecondary: { label: "Conocer el diplomado", href: "/cursos/diplomado-confiabilidad-operativa" },
     image: { src: "/images/cursos/vibraciones/vibraciones-01.webp", alt: "Grupo en un curso de vibraciones de DIAPSA" },
+    certifica: true,
   },
 ];
 
@@ -147,6 +158,16 @@ export default function Hero() {
                     </p>
                   )}
                   <p className="mb-8 max-w-xl text-justify text-base leading-relaxed text-white/80 lg:text-lg">{s.description}</p>
+                  {s.certifica && (
+                    <ul className="-mt-2 mb-8 grid max-w-xl grid-cols-1 gap-2 sm:grid-cols-3">
+                      {CERTIFICACIONES.map((c) => (
+                        <li key={c.norma} className="rounded-sm border border-secondary/40 bg-primary/60 px-3 py-2 backdrop-blur-sm">
+                          <p className="text-sm font-extrabold text-secondary">{c.norma}</p>
+                          <p className="text-xs leading-snug text-white/80">{c.tecnica}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   <div className="flex flex-wrap gap-3">
                     <Link
                       href={s.cta.href}
@@ -180,6 +201,15 @@ export default function Hero() {
                         className={s.contener ? "object-contain drop-shadow-2xl" : "object-cover"}
                         priority={i === 1}
                       />
+                      {s.certifica && (
+                        <div className="absolute bottom-3 right-3 flex items-center gap-3 rounded-full bg-primary/85 py-1.5 pl-1.5 pr-4 shadow-xl ring-1 ring-secondary/40 backdrop-blur-sm sm:bottom-4 sm:right-4">
+                          <Image src="/images/itzam-gold-coin.png" alt="Sello de certificación ITZAM" width={200} height={200} className="h-14 w-14 sm:h-16 sm:w-16" />
+                          <span className="text-left">
+                            <span className="block text-xs font-semibold uppercase tracking-widest text-secondary">Certificamos</span>
+                            <span className="block text-sm font-extrabold leading-tight text-white">Con respaldo de ITZAM</span>
+                          </span>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <EscenaDolor modo="con" inicio={INICIO_CIERRE} />
