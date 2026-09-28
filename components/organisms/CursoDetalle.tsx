@@ -93,6 +93,7 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
           titulo="Así son nuestros cursos"
           texto="Fotos reales de grupos de DIAPSA, en aula y en planta."
           intervalo={3500}
+          sinPie
         />
       )}
 
