@@ -109,7 +109,7 @@ export default function IdapFormulario() {
 
       <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
         <input className={campo} placeholder="Nombre*" value={datos.name} onChange={(e) => setDatos({ ...datos, name: e.target.value })} autoComplete="name" />
-        <input className={campo} type="email" placeholder="Correo de trabajo*" value={datos.email} onChange={(e) => setDatos({ ...datos, email: e.target.value })} autoComplete="email" />
+        <input className={campo} type="email" placeholder="Correo*" value={datos.email} onChange={(e) => setDatos({ ...datos, email: e.target.value })} autoComplete="email" />
         <input className={campo} placeholder="Empresa*" value={datos.company} onChange={(e) => setDatos({ ...datos, company: e.target.value })} autoComplete="organization" />
         <input className={campo} type="tel" placeholder="Teléfono" value={datos.phone} onChange={(e) => setDatos({ ...datos, phone: e.target.value })} autoComplete="tel" />
         <input type="text" name="website" value={datos.website} onChange={(e) => setDatos({ ...datos, website: e.target.value })} className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />

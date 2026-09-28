@@ -103,7 +103,7 @@ export default function InicioPresencia() {
               <form onSubmit={enviar} noValidate className="mt-7">
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                   <input className={campo} placeholder="Nombre*" value={datos.name} onChange={(e) => setDatos({ ...datos, name: e.target.value })} autoComplete="name" />
-                  <input className={campo} type="email" placeholder="Correo de trabajo*" value={datos.email} onChange={(e) => setDatos({ ...datos, email: e.target.value })} autoComplete="email" />
+                  <input className={campo} type="email" placeholder="Correo*" value={datos.email} onChange={(e) => setDatos({ ...datos, email: e.target.value })} autoComplete="email" />
                   <select className={campo} value={datos.country} onChange={(e) => setDatos({ ...datos, country: e.target.value })} aria-label="País">
                     <option value="">Tu país*</option>
                     {paises.map((p) => (
