@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getProductBySlug } from '@/lib/api/products';
+import { productoLocal } from '@/lib/productos-locales';
 import { getStorageUrl } from '@/lib/api/config';
 import ProductDetails from '@/components/organisms/ProductDetails';
 import PageHeader from '@/components/organisms/PageHeader';
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const { producto } = await params;
 
   try {
-    const product = await getProductBySlug(producto);
+    const product = productoLocal(producto) ?? (await getProductBySlug(producto));
     const productPath = `/productos/${product.category.slug}/${product.slug}`;
     const mainImages = product.images
       .filter((img) => img.type === 'main')
@@ -66,9 +67,10 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 export default async function ProductPage({ params }: ProductPageProps) {
   const { categoria, producto } = await params;
 
-  let product;
+  // Las cámaras HIKMICRO viven en el sitio (lib/productos-locales.ts), no en el CMS
+  let product = productoLocal(producto);
   try {
-    product = await getProductBySlug(producto);
+    product ??= await getProductBySlug(producto);
   } catch {
     console.log('Producto no encontrado:', producto)
 
@@ -82,7 +84,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const breadcrumbItems = [
     { label: 'Inicio', href: '/' },
     { label: 'Productos', href: '/productos' },
-    { label: product.category.name, href: `/productos/${product.category.slug}` },
+    { label: product.category.name, href: `/productos?categoria=${product.category.slug}` },
     { label: product.name, href: `/productos/${product.category.slug}/${product.slug}` },
   ];
 
@@ -135,7 +137,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="container mx-auto px-4">
             <div className="grid gap-6 lg:grid-cols-3">
               <Link
-                href={`/productos/${product.category.slug}`}
+                href={`/productos?categoria=${product.category.slug}`}
                 className="rounded-lg border border-gray-200 bg-gray-50 p-6 transition-colors hover:border-secondary"
               >
                 <p className="text-sm font-semibold uppercase tracking-wide text-secondary">Categoria</p>

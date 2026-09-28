@@ -26,6 +26,12 @@ export function getStorageUrl(relativePath: string | null | undefined): string |
     return relativePath;
   }
 
+  // Archivos del propio sitio (public/), como las fotos y fichas de los
+  // productos que no están en el CMS (lib/productos-locales.ts)
+  if (relativePath.startsWith('/images/') || relativePath.startsWith('/fichas/')) {
+    return relativePath;
+  }
+
   // Construir URL del storage a partir de la API base URL
   // Ejemplo: http://diapsa-cms.test/api/v1 -> http://diapsa-cms.test/storage/
   const baseUrl = API_BASE_URL.replace('/api/v1', '');

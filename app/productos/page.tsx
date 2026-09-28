@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import PaginaProductos from '@/components/organisms/PaginaProductos';
 import { getProducts } from '@/lib/api/products';
 import { getBrands } from '@/lib/api/categories';
+import { productosLocales } from '@/lib/productos-locales';
 
 export const metadata: Metadata = {
   title: 'Productos para Mantenimiento Predictivo Industrial',
@@ -46,5 +47,6 @@ export default async function ProductsPage() {
       return [];
     }),
   ]);
-  return <PaginaProductos productos={productos} marcas={marcas} />;
+  // Las cámaras HIKMICRO no están en el CMS: se suman desde el sitio
+  return <PaginaProductos productos={[...productos, ...productosLocales()]} marcas={marcas} />;
 }

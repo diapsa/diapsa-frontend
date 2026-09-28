@@ -4,6 +4,7 @@ import { getBlogs } from "@/lib/api/posts";
 import { getCourses } from "@/lib/api/courses";
 import { getCategories } from "@/lib/api/categories";
 import { getProducts } from "@/lib/api/products";
+import { productosLocales } from "@/lib/productos-locales";
 import { SITE_CONFIG } from "@/lib/constants";
 import type { Category } from "@/types/category";
 import type { Product } from "@/types/product";
@@ -122,7 +123,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  const productPages: MetadataRoute.Sitemap = products.map((product) => ({
+  const productPages: MetadataRoute.Sitemap = [...products, ...productosLocales()].map((product) => ({
     url: `${SITE_CONFIG.baseUrl}/productos/${product.category.slug}/${product.slug}`,
     lastModified: ULTIMA_REVISION,
     changeFrequency: "monthly" as const,
