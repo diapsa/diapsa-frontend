@@ -318,17 +318,17 @@ export default function PaginaIdap() {
           >
             <div className="relative aspect-[16/10]">
               <Image
-                src="/images/servicios/termografia-infrarroja/campo-10.webp"
-                alt="Analista de DIAPSA revisando con cámara termográfica un tablero eléctrico"
+                src="https://diapsa-storage.sfo3.cdn.digitaloceanspaces.com/grupo-diapsa/production/image/posts/generadora-de-ciclo-combinado-y-el-impacto-del-monitoreo-predictivo-en-la-generacion-de-energia.jpeg"
+                alt="Analista de DIAPSA en ruta de inspección en una planta de generación de ciclo combinado"
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a142e]/70 via-transparent to-transparent" />
             {[
-              // En las esquinas, sin tapar el tablero de la foto
-              { eq: "Tablero principal", estado: "Bueno", color: "#22c55e", pos: "right-3 top-3" },
-              { eq: "Interruptor de fuerza", estado: "Precaución", color: "#fc9f01", pos: "bottom-3 right-3" },
+              // Equipos que se ven en la foto (las bombas azules), en el cielo y el piso
+              { eq: "Bombas de alimentación", estado: "Bueno", color: "#22c55e", pos: "right-3 top-3" },
+              { eq: "Motor de bomba 2", estado: "Precaución", color: "#fc9f01", pos: "bottom-3 right-3" },
             ].map((c, i) => (
               <div
                 key={c.eq}
