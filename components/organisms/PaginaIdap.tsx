@@ -147,7 +147,7 @@ function Fila({
   const recurso = (
     <Aparece desde={invertir ? "derecha" : "izquierda"} className="relative">
       <span
-        className="absolute -left-3 -top-5 z-10 flex h-16 w-16 items-center justify-center rounded-full text-[#0a142e] shadow-xl sm:-left-5 sm:h-20 sm:w-20"
+        className={`absolute -top-5 z-10 flex h-16 w-16 ${ancho ? "-right-3 sm:-right-5" : "-left-3 sm:-left-5"} items-center justify-center rounded-full text-[#0a142e] shadow-xl sm:h-20 sm:w-20`}
         style={{ background: `radial-gradient(circle at 30% 30%, #ffe19a, ${ORO_IDAP})` }}
         aria-hidden="true"
       >
