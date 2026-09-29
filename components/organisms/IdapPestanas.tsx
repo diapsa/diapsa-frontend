@@ -32,7 +32,16 @@ export type PestanaIdap = {
 
 const CICLO = 7000;
 
-export default function IdapPestanas({ pestanas, vertical = false }: { pestanas: PestanaIdap[]; vertical?: boolean }) {
+export default function IdapPestanas({
+  pestanas,
+  vertical = false,
+  claro = false,
+}: {
+  pestanas: PestanaIdap[];
+  vertical?: boolean;
+  /** Sobre fondo blanco: textos en azul marino y pestañas grises. */
+  claro?: boolean;
+}) {
   const [activa, setActiva] = useState(0);
   const [auto, setAuto] = useState(true);
   const [pausa, setPausa] = useState(false);
@@ -93,7 +102,11 @@ export default function IdapPestanas({ pestanas, vertical = false }: { pestanas:
                 setAuto(false);
               }}
               className={`relative shrink-0 overflow-hidden rounded-full px-5 py-2.5 text-left text-sm font-bold transition-colors ${
-                sel ? "text-[#0a142e]" : "bg-white/5 text-white/75 ring-1 ring-white/15 hover:text-white hover:ring-white/40"
+                sel
+                  ? "text-[#0a142e]"
+                  : claro
+                    ? "bg-slate-100 text-slate-600 ring-1 ring-slate-200 hover:text-[#0d1a38] hover:ring-slate-400"
+                    : "bg-white/5 text-white/75 ring-1 ring-white/15 hover:text-white hover:ring-white/40"
               } ${vertical ? "lg:rounded-sm lg:px-5 lg:py-4 lg:text-base" : ""}`}
               style={sel ? { background: ORO_IDAP } : undefined}
             >
@@ -113,12 +126,12 @@ export default function IdapPestanas({ pestanas, vertical = false }: { pestanas:
 
       <div key={p.id} role="tabpanel" className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
         <div className="idap-entra">
-          <h3 className="text-2xl font-extrabold leading-snug text-white lg:text-3xl">{p.titulo}</h3>
-          <p className="mt-3 text-justify leading-relaxed text-white/70">{p.texto}</p>
+          <h3 className={`text-2xl font-extrabold leading-snug lg:text-3xl ${claro ? "text-[#0d1a38]" : "text-white"}`}>{p.titulo}</h3>
+          <p className={`mt-3 text-justify leading-relaxed ${claro ? "text-slate-600" : "text-white/70"}`}>{p.texto}</p>
           {p.puntos && (
             <ul className="mt-5 space-y-3">
               {p.puntos.map((t, i) => (
-                <li key={t} className="idap-entra flex items-start gap-3 text-sm leading-relaxed text-white/85" style={{ animationDelay: `${150 + i * 120}ms` }}>
+                <li key={t} className={`idap-entra flex items-start gap-3 text-sm leading-relaxed ${claro ? "text-slate-700" : "text-white/85"}`} style={{ animationDelay: `${150 + i * 120}ms` }}>
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full" style={{ background: ORO_IDAP }}>
                     <svg className="h-3 w-3 text-[#0a142e]" fill="none" stroke="currentColor" strokeWidth={3.5} viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 12.5l4.5 4.5L19 7.5" />

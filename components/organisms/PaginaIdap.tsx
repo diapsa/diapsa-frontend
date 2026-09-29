@@ -204,16 +204,34 @@ function Flecha() {
   );
 }
 
-function Encabezado({ etiqueta, titulo, resalta, texto }: { etiqueta: string; titulo: string; resalta: string; texto?: string }) {
+/* Dorado más oscuro para que se lea sobre blanco; el claro es el del logo */
+const ORO_OSCURO = "#b07d0a";
+
+function Encabezado({
+  etiqueta,
+  titulo,
+  resalta,
+  texto,
+  claro = false,
+}: {
+  etiqueta: string;
+  titulo: string;
+  resalta: string;
+  texto?: string;
+  claro?: boolean;
+}) {
+  const acento = claro ? ORO_OSCURO : ORO_IDAP;
   return (
     <Aparece className="mx-auto mb-10 max-w-3xl text-center">
-      <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest" style={{ color: ORO_IDAP }}>
+      <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest" style={{ color: acento }}>
         {etiqueta}
       </span>
-      <h2 className="text-3xl font-extrabold leading-tight text-white lg:text-4xl">
-        {titulo} <span style={{ color: ORO_IDAP }}>{resalta}</span>
+      <h2 className={`text-3xl font-extrabold leading-tight lg:text-4xl ${claro ? "text-[#0d1a38]" : "text-white"}`}>
+        {titulo} <span style={{ color: acento }}>{resalta}</span>
       </h2>
-      {texto && <p className="mt-4 text-justify text-lg leading-relaxed text-white/70 sm:text-center">{texto}</p>}
+      {texto && (
+        <p className={`mt-4 text-justify text-lg leading-relaxed sm:text-center ${claro ? "text-slate-600" : "text-white/70"}`}>{texto}</p>
+      )}
     </Aparece>
   );
 }
@@ -276,14 +294,15 @@ export default function PaginaIdap() {
       </section>
 
       {/* 2. Beneficios */}
-      <section className="w-full py-16 lg:py-24" style={{ background: PIE_IDAP }}>
+      <section className="w-full bg-white py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6">
           <Encabezado
+            claro
             etiqueta="Toma el control"
             titulo="MENOS PAROS,"
             resalta="MEJORES DECISIONES"
           />
-          <IdapPestanas pestanas={BENEFICIOS} />
+          <IdapPestanas pestanas={BENEFICIOS} claro />
         </div>
       </section>
 
@@ -309,7 +328,7 @@ export default function PaginaIdap() {
       </section>
 
       {/* 4. Quién está detrás: foto de campo con estados flotando */}
-      <section className="w-full overflow-hidden py-16 lg:py-24" style={{ background: PIE_IDAP }}>
+      <section className="w-full overflow-hidden bg-white py-16 lg:py-24">
         <style>{`
           @keyframes idap-flota { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
           .idap-flota { animation: idap-flota 4s ease-in-out infinite }
@@ -350,13 +369,13 @@ export default function PaginaIdap() {
           </Aparece>
           <div>
             <Aparece>
-              <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest" style={{ color: ORO_IDAP }}>
+              <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest" style={{ color: ORO_OSCURO }}>
                 Más que un software
               </span>
-              <h2 className="text-3xl font-extrabold leading-tight lg:text-4xl">
-                No es software de terceros. <span style={{ color: ORO_IDAP }}>Es con lo que trabajamos.</span>
+              <h2 className="text-3xl font-extrabold leading-tight text-[#0d1a38] lg:text-4xl">
+                No es software de terceros. <span style={{ color: ORO_OSCURO }}>Es con lo que trabajamos.</span>
               </h2>
-              <p className="mt-4 text-justify leading-relaxed text-white/70">
+              <p className="mt-4 text-justify leading-relaxed text-slate-600">
                 IDAP nació en campo. Detrás de cada estado hay un especialista de DIAPSA y más de 20 años midiendo equipos.
               </p>
             </Aparece>
@@ -383,15 +402,15 @@ export default function PaginaIdap() {
                 icono: <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V5a1 1 0 011-1h14a1 1 0 011 1v3M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3M8 12h8M13 9l3 3-3 3" />,
               },
             ].map((c, i) => (
-              <Aparece key={c.titulo} retraso={i * 120} className="group rounded-sm bg-white/5 p-5 ring-1 ring-white/10 transition-colors hover:bg-white/10">
+              <Aparece key={c.titulo} retraso={i * 120} className="group rounded-sm bg-slate-50 p-5 ring-1 ring-slate-200 transition-shadow hover:shadow-lg">
                 <span className="relative flex h-12 w-12 items-center justify-center rounded-full text-[#0a142e]" style={oro}>
                   <span className="absolute inset-0 animate-ping rounded-full opacity-20 motion-reduce:animate-none" style={oro} aria-hidden="true" />
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
                     {c.icono}
                   </svg>
                 </span>
-                <h3 className="mt-4 font-extrabold">{c.titulo}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-white/65">{c.texto}</p>
+                <h3 className="mt-4 font-extrabold text-[#0d1a38]">{c.titulo}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-slate-600">{c.texto}</p>
               </Aparece>
             ))}
             </div>
@@ -428,14 +447,15 @@ export default function PaginaIdap() {
       </section>
 
       {/* 6. Centro de mando */}
-      <section id="plataforma" className="w-full scroll-mt-24 py-16 lg:py-24" style={{ background: PIE_IDAP }}>
+      <section id="plataforma" className="w-full scroll-mt-24 bg-white py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6">
           <Encabezado
+            claro
             etiqueta="La plataforma"
             titulo="TU CENTRO DE MANDO"
             resalta="DEL MANTENIMIENTO PREDICTIVO"
           />
-          <IdapPestanas pestanas={MODULOS} vertical />
+          <IdapPestanas pestanas={MODULOS} vertical claro />
         </div>
       </section>
 
@@ -466,21 +486,21 @@ export default function PaginaIdap() {
       </section>
 
       {/* 8. Preguntas */}
-      <section className="w-full py-16 lg:py-24" style={{ background: PIE_IDAP }}>
+      <section className="w-full bg-white py-16 lg:py-24">
         <div className="mx-auto max-w-4xl px-6">
-          <Encabezado etiqueta="Preguntas frecuentes" titulo="LO QUE NECESITAS SABER" resalta="SOBRE IDAP" />
+          <Encabezado claro etiqueta="Preguntas frecuentes" titulo="LO QUE NECESITAS SABER" resalta="SOBRE IDAP" />
           <div className="space-y-3">
             {PREGUNTAS.map((q, i) => (
-              <details key={q.p} open={i === 0} className="group rounded-sm bg-white/5 ring-1 ring-white/10 open:ring-[#ffc34d]/50">
+              <details key={q.p} open={i === 0} className="group rounded-sm bg-slate-50 text-[#0d1a38] ring-1 ring-slate-200 open:ring-[#b07d0a]/60">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-bold">
                   {q.p}
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full ring-1 ring-white/20 transition-transform group-open:rotate-45">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full ring-1 ring-slate-300 transition-transform group-open:rotate-45">
                     <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
                     </svg>
                   </span>
                 </summary>
-                <p className="px-5 pb-5 text-justify leading-relaxed text-white/75">{q.r}</p>
+                <p className="px-5 pb-5 text-justify leading-relaxed text-slate-600">{q.r}</p>
               </details>
             ))}
           </div>
