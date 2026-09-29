@@ -318,17 +318,17 @@ export default function PaginaIdap() {
           >
             <div className="relative aspect-[16/10]">
               <Image
-                src="/images/quienes-somos/analista-termografia.webp"
-                alt="Analista de DIAPSA haciendo termografía en planta"
+                src="/images/servicios/termografia-infrarroja/campo-10.webp"
+                alt="Analista de DIAPSA revisando con cámara termográfica un tablero eléctrico"
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover object-[50%_15%]"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a142e]/70 via-transparent to-transparent" />
             {[
-              { eq: "Rodamiento lado acople", estado: "Precaución", color: "#fc9f01", pos: "right-4 top-6" },
-              { eq: "Tablero principal", estado: "Bueno", color: "#22c55e", pos: "right-4 top-1/3" },
-              { eq: "Bomba de condensado", estado: "Observación", color: "#facc15", pos: "bottom-6 left-6" },
+              // En las esquinas, sin tapar el tablero de la foto
+              { eq: "Tablero principal", estado: "Bueno", color: "#22c55e", pos: "right-3 top-3" },
+              { eq: "Interruptor de fuerza", estado: "Precaución", color: "#fc9f01", pos: "bottom-3 right-3" },
             ].map((c, i) => (
               <div
                 key={c.eq}
