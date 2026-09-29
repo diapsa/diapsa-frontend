@@ -5,7 +5,6 @@ import EscenaIdap from "@/components/organisms/EscenaIdap";
 import EscenaIdapHero from "@/components/organisms/EscenaIdapHero";
 import IdapFormulario from "@/components/organisms/IdapFormulario";
 import { IlustracionAnticipa, IlustracionPrioriza, IlustracionRespalda, IlustracionTecnicas } from "@/components/organisms/IdapIlustraciones";
-import IdapPestanas, { type PestanaIdap } from "@/components/organisms/IdapPestanas";
 import { FONDO_IDAP, ORO_IDAP, PIE_IDAP } from "@/lib/idap-estilo";
 
 /**
@@ -31,142 +30,20 @@ import { FONDO_IDAP, ORO_IDAP, PIE_IDAP } from "@/lib/idap-estilo";
  * Tercera vuelta: la escena 3D del inicio es la que hizo Emiliano en Claude
  * Diseño, y los beneficios usan ilustraciones animadas (IdapIlustraciones)
  * en lugar de las infografías.
+ *
+ * Cuarta vuelta (2026-09-29, "muy saturado de información"): como Fracttal,
+ * cada función es un bloque con un solo recurso visual (ilustración
+ * animada, la inspección animada o una foto), un título, dos líneas y un
+ * botón, alternando izquierda y derecha sobre blanco. Se quitaron las
+ * pestañas, el centro de mando y "Así empiezas".
  */
 
 const DISCIPLINAS = ["Termografía", "Vibraciones", "Ultrasonido", "Aceite", "Análisis eléctrico", "Integrales"];
-
-const BENEFICIOS: PestanaIdap[] = [
-  {
-    id: "anticipa",
-    nombre: "Anticipa las fallas",
-    titulo: "Sabes qué equipo va a fallar antes de que pare la línea",
-    texto:
-      "Cinco estados, de Bueno a Alarma, con la recomendación del especialista.",
-    puntos: [
-      "Un estado claro por equipo.",
-      "Alertas automáticas desde los sensores.",
-      "Lo crítico se avisa en el momento.",
-    ],
-    visual: <IlustracionAnticipa />,
-  },
-  {
-    id: "prioriza",
-    nombre: "Prioriza lo importante",
-    titulo: "Atiendes primero lo que de verdad detiene tu operación",
-    texto:
-      "El estado de cada equipo, cruzado con lo que pesa en tu proceso.",
-    puntos: [
-      "Criticidad baja, media o alta.",
-      "La IA sugiere el orden de atención.",
-      "Un especialista valida cada decisión.",
-    ],
-    visual: <IlustracionPrioriza />,
-  },
-  {
-    id: "integra",
-    nombre: "Todas las técnicas juntas",
-    titulo: "Seis técnicas y los sensores en un mismo lugar",
-    texto:
-      "La condición completa de cada equipo, no un pedazo por reporte.",
-    puntos: [
-      "Rutas de campo y sensores en la misma ficha.",
-      "Valores, imágenes y espectros por técnica.",
-      "Un diagnóstico que las combina.",
-    ],
-    visual: <IlustracionTecnicas />,
-  },
-  {
-    id: "respalda",
-    nombre: "Respalda cada decisión",
-    titulo: "Evidencia para justificar cada inversión ante gerencia",
-    texto:
-      "Cada inspección queda con su diagnóstico, su tendencia y su recomendación.",
-    puntos: [
-      "Historial y tendencias por equipo.",
-      "Informes en PDF y datos en Excel.",
-      "Conexión con tu ERP o CMMS.",
-    ],
-    visual: <IlustracionRespalda />,
-  },
-];
-
-const MODULOS: PestanaIdap[] = [
-  {
-    id: "tablero",
-    nombre: "Tablero",
-    titulo: "Toda tu planta en una pantalla",
-    texto:
-      "Equipos por estado, qué cambió desde la última ruta y las mediciones recientes.",
-    imagen: "/images/idap/idap-dashboard.png",
-    alt: "Tablero de IDAP con los equipos por estado, las transiciones y las últimas mediciones",
-  },
-  {
-    id: "inspeccion",
-    nombre: "Inspecciones",
-    titulo: "Cada inspección, con su evidencia",
-    texto:
-      "Cada técnica calificada en semáforo, con la imagen térmica y el punto marcado.",
-    imagen: "/images/idap/capturas/inspeccion-termografia.jpg",
-    alt: "Inspección en IDAP: pestaña de termografía con la imagen térmica del motor y sus indicadores",
-  },
-  {
-    id: "vibraciones",
-    nombre: "Vibraciones",
-    titulo: "Los valores de cada punto, comparados contra su límite",
-    texto:
-      "Velocidad y aceleración por punto, con el color de su estado.",
-    imagen: "/images/idap/capturas/inspeccion-vibraciones.jpg",
-    alt: "Inspección en IDAP: pestaña de vibraciones con la amplitud global por punto",
-  },
-  {
-    id: "alertas",
-    nombre: "Alertas",
-    titulo: "Las últimas mediciones y sus alertas",
-    texto:
-      "Cada medición nueva con su estado y su diagnóstico, a un clic del detalle.",
-    imagen: "/images/idap/history.png",
-    alt: "Lista de últimas mediciones en IDAP con su estado y su diagnóstico",
-    ajuste: "contain",
-  },
-  {
-    id: "tendencias",
-    nombre: "Tendencias",
-    titulo: "Hacia dónde va cada equipo",
-    texto:
-      "Cuántos equipos cambian de estado mes con mes: así mides si el programa funciona.",
-    imagen: "/images/idap/chart.png",
-    alt: "Gráfica del histórico de inspecciones por estado en IDAP",
-    ajuste: "contain",
-  },
-];
 
 const KPIS = [
   { valor: "300%", texto: "de retorno de inversión en el primer año" },
   { valor: "95%", texto: "de confiabilidad operativa" },
   { valor: "30%", texto: "de ahorro en la planificación de refacciones" },
-];
-
-const PASOS = [
-  {
-    titulo: "Levantamiento",
-    texto: "Registramos tus equipos críticos.",
-    icono: <path strokeLinecap="round" strokeLinejoin="round" d="M9 5h6M9 3h6a1 1 0 011 1v1h2a1 1 0 011 1v14a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h2V4a1 1 0 011-1zM9 12l2 2 4-4" />,
-  },
-  {
-    titulo: "Puntos y rutas",
-    texto: "Qué técnica, en qué punto y cada cuándo.",
-    icono: <path strokeLinecap="round" strokeLinejoin="round" d="M12 21s-6-5.3-6-10a6 6 0 1112 0c0 4.7-6 10-6 10zM12 13a2 2 0 100-4 2 2 0 000 4z" />,
-  },
-  {
-    titulo: "Primera ruta",
-    texto: "Medimos o conectamos los sensores.",
-    icono: <path strokeLinecap="round" strokeLinejoin="round" d="M3 12h4l3-7 4 14 3-7h4" />,
-  },
-  {
-    titulo: "Acceso",
-    texto: "Tu equipo entra y decide.",
-    icono: <path strokeLinecap="round" strokeLinejoin="round" d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3" />,
-  },
 ];
 
 const PREGUNTAS = [
@@ -236,6 +113,82 @@ function Encabezado({
   );
 }
 
+/* Íconos de los bloques: el círculo dorado que va sobre la esquina del recurso */
+const ICONO = {
+  alerta: <path strokeLinecap="round" strokeLinejoin="round" d="M12 3.5L2.8 19.5h18.4L12 3.5zM12 10v4.5M12 17.2v.3" />,
+  ia: <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3zM18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z" />,
+  red: <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.5h.01M8.5 15a5 5 0 017 0M5.5 12a9 9 0 0113 0M2.5 9a13 13 0 0119 0" />,
+  inspeccion: <path strokeLinecap="round" strokeLinejoin="round" d="M9 5h6M9 3h6a1 1 0 011 1v1h2a1 1 0 011 1v14a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h2V4a1 1 0 011-1zM9 12l2 2 4-4" />,
+  documento: <path strokeLinecap="round" strokeLinejoin="round" d="M7 3h7l5 5v13H7zM14 3v5h5M10 17v-3M13 17v-5M16 17v-2" />,
+  persona: <path strokeLinecap="round" strokeLinejoin="round" d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0" />,
+};
+
+/**
+ * Un bloque al estilo Fracttal: el recurso visual en un panel azul de IDAP
+ * con el círculo dorado en la esquina, y al lado título, dos líneas y un
+ * botón. `invertir` pone el recurso a la derecha; `ancho` lo pone debajo
+ * del texto a todo lo ancho (para la inspección animada, que necesita ancho).
+ */
+function Fila({
+  titulo,
+  texto,
+  icono,
+  children,
+  invertir = false,
+  ancho = false,
+}: {
+  titulo: string;
+  texto: string;
+  icono: keyof typeof ICONO;
+  children: React.ReactNode;
+  invertir?: boolean;
+  ancho?: boolean;
+}) {
+  const recurso = (
+    <Aparece desde={invertir ? "derecha" : "izquierda"} className="relative">
+      <span
+        className="absolute -left-3 -top-5 z-10 flex h-16 w-16 items-center justify-center rounded-full text-[#0a142e] shadow-xl sm:-left-5 sm:h-20 sm:w-20"
+        style={{ background: `radial-gradient(circle at 30% 30%, #ffe19a, ${ORO_IDAP})` }}
+        aria-hidden="true"
+      >
+        <svg className="h-8 w-8 sm:h-9 sm:w-9" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+          {ICONO[icono]}
+        </svg>
+      </span>
+      <div className="overflow-hidden rounded-3xl p-3 shadow-[0_30px_70px_-30px_rgba(10,20,46,0.6)] sm:p-4" style={{ background: FONDO_IDAP }}>
+        <div className="relative overflow-hidden rounded-2xl">{children}</div>
+      </div>
+    </Aparece>
+  );
+  const textoBloque = (
+    <Aparece desde={invertir ? "izquierda" : "derecha"} className={ancho ? "mx-auto max-w-3xl text-center" : ""}>
+      <h2 className="text-3xl font-extrabold leading-tight text-[#0d1a38] lg:text-4xl">{titulo}</h2>
+      <p className={`mt-4 text-lg leading-relaxed text-slate-600 ${ancho ? "sm:text-center" : "text-justify"}`}>{texto}</p>
+      <a
+        href="#demo-idap"
+        className="mt-7 inline-flex items-center gap-2 rounded-full px-7 py-3 font-bold text-[#0a142e] transition-transform hover:scale-105"
+        style={{ background: ORO_IDAP }}
+      >
+        Agendar demo <Flecha />
+      </a>
+    </Aparece>
+  );
+  if (ancho) {
+    return (
+      <div className="space-y-12">
+        {textoBloque}
+        {recurso}
+      </div>
+    );
+  }
+  return (
+    <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      <div className={invertir ? "lg:order-2" : ""}>{recurso}</div>
+      <div className={invertir ? "lg:order-1" : ""}>{textoBloque}</div>
+    </div>
+  );
+}
+
 export default function PaginaIdap() {
   const oro = { background: ORO_IDAP };
   return (
@@ -293,29 +246,51 @@ export default function PaginaIdap() {
         </div>
       </section>
 
-      {/* 2. Beneficios */}
-      <section className="w-full bg-white py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <Encabezado
-            claro
-            etiqueta="Toma el control"
-            titulo="MENOS PAROS,"
-            resalta="MEJORES DECISIONES"
-          />
-          <IdapPestanas pestanas={BENEFICIOS} claro />
-        </div>
-      </section>
+      {/* 2. Las funciones, un bloque cada una, en zigzag */}
+      <section className="w-full overflow-hidden bg-white py-20 lg:py-28">
+        <style>{`
+          @keyframes idap-flota { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
+          .idap-flota { animation: idap-flota 4s ease-in-out infinite }
+          @media (prefers-reduced-motion: reduce) { .idap-flota { animation: none } }
+        `}</style>
+        <div className="mx-auto max-w-6xl space-y-28 px-6 lg:space-y-36">
+          <Fila
+            icono="alerta"
+            titulo="Sabes qué equipo va a fallar antes del paro"
+            texto="Cada medición se califica de Bueno a Alarma. Cuando un equipo empieza a empeorar, te avisamos antes de que detenga la línea."
+          >
+            <div className="aspect-[16/10]">
+              <IlustracionAnticipa />
+            </div>
+          </Fila>
 
-      {/* 3. Así se ve una inspección, animada */}
-      <section className="w-full py-16 lg:py-24" style={{ background: FONDO_IDAP }}>
-        <div className="mx-auto max-w-7xl px-6">
-          <Encabezado
-            etiqueta="En vivo"
-            titulo="ASÍ LLEGA UNA INSPECCIÓN"
-            resalta="A IDAP"
-            texto="Pasa el cursor por una técnica para abrirla."
-          />
-          <Aparece desde="zoom" className="overflow-hidden rounded-lg shadow-[0_40px_100px_-30px_rgba(0,0,0,0.9)] ring-1 ring-white/10">
+          <Fila
+            invertir
+            icono="ia"
+            titulo="IA que ordena tus prioridades"
+            texto="Cruza el estado de cada equipo con lo que pesa en tu proceso y te dice qué atender primero. Un especialista de DIAPSA valida cada decisión."
+          >
+            <div className="aspect-[16/10]">
+              <IlustracionPrioriza />
+            </div>
+          </Fila>
+
+          <Fila
+            icono="red"
+            titulo="Todas las técnicas y tus sensores, en un solo lugar"
+            texto="Termografía, vibraciones, ultrasonido, aceite, análisis eléctrico y sensores en línea, en la ficha de cada equipo y con un solo diagnóstico."
+          >
+            <div className="aspect-[16/10]">
+              <IlustracionTecnicas />
+            </div>
+          </Fila>
+
+          <Fila
+            ancho
+            icono="inspeccion"
+            titulo="Así llega una inspección a IDAP"
+            texto="La inspección llega de campo, cada técnica se califica en semáforo y termina en la recomendación. Pasa el cursor por una técnica para abrirla."
+          >
             <EscenaIdap
               disciplina="term"
               imagenes={{
@@ -323,33 +298,37 @@ export default function PaginaIdap() {
                 miniaturas: ["/images/idap/inspeccion/termica-1.jpg", "/images/idap/inspeccion/termica-2.jpg", "/images/idap/inspeccion/termica-3.jpg"],
               }}
             />
-          </Aparece>
-        </div>
-      </section>
+          </Fila>
 
-      {/* 4. Quién está detrás: foto de campo con estados flotando */}
-      <section className="w-full overflow-hidden bg-white py-16 lg:py-24">
-        <style>{`
-          @keyframes idap-flota { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
-          .idap-flota { animation: idap-flota 4s ease-in-out infinite }
-          @media (prefers-reduced-motion: reduce) { .idap-flota { animation: none } }
-        `}</style>
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
-          <Aparece desde="izquierda" className="relative">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-lg ring-1 ring-white/10 sm:aspect-[4/3] lg:aspect-[4/5]">
+          <Fila
+            invertir
+            icono="documento"
+            titulo="Evidencia para justificar cada inversión"
+            texto="Historial y tendencias de cada equipo, informes en PDF, datos en Excel y conexión con tu ERP o tu sistema de mantenimiento."
+          >
+            <div className="aspect-[16/10]">
+              <IlustracionRespalda />
+            </div>
+          </Fila>
+
+          <Fila
+            icono="persona"
+            titulo="No es software de terceros: es con lo que trabajamos"
+            texto="IDAP nació en campo. Detrás de cada estado hay un especialista de DIAPSA y más de 20 años midiendo equipos."
+          >
+            <div className="relative aspect-[16/10]">
               <Image
                 src="/images/quienes-somos/analista-termografia.webp"
                 alt="Analista de DIAPSA haciendo termografía en planta"
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover"
+                className="object-cover object-[50%_15%]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a142e] via-transparent to-transparent" />
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a142e]/70 via-transparent to-transparent" />
             {[
-              { eq: "Rodamiento lado acople", estado: "Precaución", color: "#fc9f01", pos: "left-4 top-8 sm:-left-6" },
-              { eq: "Tablero principal", estado: "Bueno", color: "#22c55e", pos: "right-4 top-1/3 sm:-right-6" },
-              { eq: "Bomba de condensado", estado: "Observación", color: "#facc15", pos: "bottom-10 left-6 sm:-left-4" },
+              { eq: "Rodamiento lado acople", estado: "Precaución", color: "#fc9f01", pos: "right-4 top-6" },
+              { eq: "Tablero principal", estado: "Bueno", color: "#22c55e", pos: "right-4 top-1/3" },
+              { eq: "Bomba de condensado", estado: "Observación", color: "#facc15", pos: "bottom-6 left-6" },
             ].map((c, i) => (
               <div
                 key={c.eq}
@@ -366,59 +345,12 @@ export default function PaginaIdap() {
                 </span>
               </div>
             ))}
-          </Aparece>
-          <div>
-            <Aparece>
-              <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest" style={{ color: ORO_OSCURO }}>
-                Más que un software
-              </span>
-              <h2 className="text-3xl font-extrabold leading-tight text-[#0d1a38] lg:text-4xl">
-                No es software de terceros. <span style={{ color: ORO_OSCURO }}>Es con lo que trabajamos.</span>
-              </h2>
-              <p className="mt-4 text-justify leading-relaxed text-slate-600">
-                IDAP nació en campo. Detrás de cada estado hay un especialista de DIAPSA y más de 20 años midiendo equipos.
-              </p>
-            </Aparece>
-            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {[
-              {
-                titulo: "IA que apoya al especialista",
-                texto: "Sugiere; el especialista decide.",
-                icono: <path strokeLinecap="round" strokeLinejoin="round" d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2M7 5h10a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2zM9.5 9.5h5v5h-5z" />,
-              },
-              {
-                titulo: "Conectada a tus sensores",
-                texto: "Una desviación dispara una alerta.",
-                icono: <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.5h.01M8.5 15a5 5 0 017 0M5.5 12a9 9 0 0113 0M2.5 9a13 13 0 0119 0" />,
-              },
-              {
-                titulo: "Tu acceso, tus datos",
-                texto: "Usuario propio para tu equipo.",
-                icono: <path strokeLinecap="round" strokeLinejoin="round" d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0" />,
-              },
-              {
-                titulo: "Exporta e integra",
-                texto: "PDF, Excel, ERP y CMMS.",
-                icono: <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V5a1 1 0 011-1h14a1 1 0 011 1v3M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3M8 12h8M13 9l3 3-3 3" />,
-              },
-            ].map((c, i) => (
-              <Aparece key={c.titulo} retraso={i * 120} className="group rounded-sm bg-slate-50 p-5 ring-1 ring-slate-200 transition-shadow hover:shadow-lg">
-                <span className="relative flex h-12 w-12 items-center justify-center rounded-full text-[#0a142e]" style={oro}>
-                  <span className="absolute inset-0 animate-ping rounded-full opacity-20 motion-reduce:animate-none" style={oro} aria-hidden="true" />
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
-                    {c.icono}
-                  </svg>
-                </span>
-                <h3 className="mt-4 font-extrabold text-[#0d1a38]">{c.titulo}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-slate-600">{c.texto}</p>
-              </Aparece>
-            ))}
             </div>
-          </div>
+          </Fila>
         </div>
       </section>
 
-      {/* 5. Cifras */}
+      {/* 3. Cifras */}
       <section className="w-full py-14 lg:py-20" style={{ background: FONDO_IDAP }}>
         <div className="mx-auto max-w-7xl px-6">
           <style>{`
@@ -446,46 +378,7 @@ export default function PaginaIdap() {
         </div>
       </section>
 
-      {/* 6. Centro de mando */}
-      <section id="plataforma" className="w-full scroll-mt-24 bg-white py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <Encabezado
-            claro
-            etiqueta="La plataforma"
-            titulo="TU CENTRO DE MANDO"
-            resalta="DEL MANTENIMIENTO PREDICTIVO"
-          />
-          <IdapPestanas pestanas={MODULOS} vertical claro />
-        </div>
-      </section>
-
-      {/* 7. Cómo empiezas */}
-      <section className="w-full py-16 lg:py-24" style={{ background: FONDO_IDAP }}>
-        <div className="mx-auto max-w-7xl px-6">
-          <Encabezado etiqueta="Implementación" titulo="ASÍ EMPIEZAS" resalta="CON IDAP" texto="Nosotros cargamos todo." />
-          <ol className="relative grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <span className="pointer-events-none absolute left-[12%] right-[12%] top-8 hidden h-0.5 lg:block" style={{ background: `linear-gradient(90deg, transparent, ${ORO_IDAP}, transparent)` }} aria-hidden="true" />
-            {PASOS.map((p, i) => (
-              <li key={p.titulo} className="relative text-center">
-                <Aparece retraso={i * 180} desde="zoom">
-                  <span className="relative z-10 mx-auto flex h-16 w-16 items-center justify-center rounded-2xl text-[#0a142e] shadow-lg ring-4 ring-[#0d1a38] transition-transform hover:-translate-y-1 hover:rotate-3" style={oro}>
-                    <svg className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
-                      {p.icono}
-                    </svg>
-                    <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-[#0a142e] text-xs font-black text-white ring-2 ring-[#ffc34d]">
-                      {i + 1}
-                    </span>
-                  </span>
-                  <h3 className="mt-4 text-lg font-extrabold">{p.titulo}</h3>
-                  <p className="mx-auto mt-1 max-w-xs text-sm leading-relaxed text-white/65">{p.texto}</p>
-                </Aparece>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* 8. Preguntas */}
+      {/* 4. Preguntas */}
       <section className="w-full bg-white py-16 lg:py-24">
         <div className="mx-auto max-w-4xl px-6">
           <Encabezado claro etiqueta="Preguntas frecuentes" titulo="LO QUE NECESITAS SABER" resalta="SOBRE IDAP" />
@@ -507,7 +400,7 @@ export default function PaginaIdap() {
         </div>
       </section>
 
-      {/* 9. Contacto */}
+      {/* 5. Contacto */}
       <section id="contacto-idap" className="relative w-full scroll-mt-24 py-16 lg:py-24" style={{ background: FONDO_IDAP }}>
         {/* Anclas de los botones del inicio: cada una deja elegida su opción en el formulario */}
         <span id="demo-idap" className="absolute top-0 scroll-mt-24" aria-hidden="true" />
