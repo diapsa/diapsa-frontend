@@ -1,4 +1,7 @@
 @import "tailwindcss";
+/* docs/ solo tiene diseños y scripts de referencia: Tailwind no debe leerlo
+   (una ruta de Windows en un script rompió el build, 2026-09-28) */
+@source not "../docs";
 
 :root {
   --background: #ffffff;

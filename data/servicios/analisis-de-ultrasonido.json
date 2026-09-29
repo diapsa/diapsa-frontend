@@ -29,15 +29,15 @@
   "content": {
     "title": "Oímos la falla antes de que se sienta",
     "subtitle": "Un rodamiento que empieza a fallar, una fuga de aire o una descarga en un tablero suenan mucho antes de verse o de calentar. Con el detector de ultrasonido los oímos, los medimos en decibeles y te decimos qué atender y con qué urgencia.",
-    "image": "/images/servicios/analisis-de-ultrasonido/acustica-en-planta.webp",
+    "image": "/images/servicios/analisis-de-ultrasonido/campo-trampas-vapor.webp",
     "items": [
       {
         "id": "aplicaciones",
         "title": "Dónde se aplica",
         "content": "Rodamientos de motores y bombas, fugas de aire comprimido, vapor y gases, descargas parciales y efecto corona en tableros y subestaciones, trampas de vapor y válvulas que no cierran.",
         "foto": {
-          "src": "/images/servicios/analisis-de-ultrasonido/acustica-en-planta.webp",
-          "alt": "Analista de DIAPSA recorriendo la planta con cámara acústica entre tuberías, estructura y equipo rotativo"
+          "src": "/images/servicios/analisis-de-ultrasonido/campo-trampas-vapor.webp",
+          "alt": "Analista de DIAPSA con audífonos y detector de ultrasonido revisando una línea de trampas de vapor"
         }
       },
       {
@@ -55,8 +55,8 @@
         "title": "Puntual o continuo",
         "content": "Rutas periódicas con detector y audífonos por un analista certificado, o sensores acústicos en línea donde una fuga o un rodamiento no pueden esperar a la siguiente visita.",
         "foto": {
-          "src": "/images/servicios/analisis-de-ultrasonido/analista-con-audifonos.jpg",
-          "alt": "Analista de DIAPSA con audífonos y detector de ultrasonido frente a una bomba"
+          "src": "/images/servicios/analisis-de-ultrasonido/campo-bomba-alimentacion.webp",
+          "alt": "Analista de DIAPSA con audífonos midiendo con ultrasonido los rodamientos de una bomba de agua de alimentación"
         }
       },
       {
@@ -78,7 +78,7 @@
   },
   "comparadorSonoro": {
     "titulo": "Cada falla tiene su propia firma sonora",
-    "texto": "El ultrasonido no sirve solo para rodamientos. Un chorro de aire que se fuga y una descarga en un tablero suenan distinto entre sí y distinto de un equipo sano, y esa diferencia es la que el analista reconoce en campo. Elige qué quieres oír.",
+    "texto": "Un rodamiento dañado, una fuga de aire y una descarga en un tablero suenan distinto entre sí y distinto de un equipo sano. Elige qué quieres ver.",
     "grupos": [
       {
         "id": "rodamientos",
@@ -2299,35 +2299,35 @@
   "flujo": [
     {
       "titulo": "Medición en campo",
-      "texto": "Ruta por rodamientos, tableros y líneas de aire con detector y audífonos, en operación normal."
+      "texto": "Rodamientos, tableros y líneas de aire con el equipo en operación."
     },
     {
       "titulo": "Escucha y nivel",
-      "texto": "El analista oye el sonido heterodinado y registra el nivel en decibeles contra la línea base de cada punto."
+      "texto": "El analista oye el sonido y mide los decibeles contra la línea base."
     },
     {
       "titulo": "Diagnóstico",
-      "texto": "Se nombra el componente y la causa: rodamiento, falta de lubricación, fuga o descarga, con su severidad."
+      "texto": "Componente, causa y severidad: rodamiento, lubricación, fuga o descarga."
     },
     {
       "titulo": "Recomendación",
-      "texto": "Qué lubricar, reparar o reemplazar, con qué urgencia y qué vigilar en la siguiente ruta."
+      "texto": "Qué lubricar, reparar o cambiar, y con qué urgencia."
     },
     {
       "titulo": "Seguimiento",
-      "texto": "El punto con hallazgo entra a reinspección hasta que el nivel vuelve a su línea base."
+      "texto": "El punto con hallazgo se vuelve a medir hasta regresar a su línea base."
     }
   ],
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "Esto es lo que recibes",
-    "descripcion": "No una lista de decibeles para que la interpretes tú. Un informe donde cada punto trae su nivel contra la línea base del componente, el diagnóstico del analista y qué hacer al respecto. Las páginas que ves son de un informe real, con los datos de la planta omitidos.",
+    "descripcion": "No una lista de decibeles para que la interpretes tú: cada punto con su nivel, el diagnóstico del analista y qué hacer. Las páginas son de un informe real, con los datos de la planta omitidos.",
     "contenido": [
-      "Nivel en decibeles de cada punto contra su línea base",
-      "Estado de cada equipo en semáforo, para leerlo de un vistazo",
-      "Nivel de cada hallazgo contra los umbrales de lubricación y daño",
-      "Componente afectado y causa probable: rodamiento, fuga o descarga",
-      "Acción recomendada y con qué urgencia"
+      "Nivel de cada punto contra su línea base",
+      "Estado de cada equipo en semáforo",
+      "Hallazgos contra los umbrales de lubricación y daño",
+      "Componente y causa: rodamiento, fuga o descarga",
+      "Acción recomendada y su urgencia"
     ],
     "paginas": [
       "/images/informe/pagina-1.png",
@@ -2339,7 +2339,7 @@
     "idap": {
       "src": "/images/idap/capturas/inspeccion-vibraciones.jpg",
       "alt": "Inspección integral en IDAP con la pestaña de ultrasonido",
-      "texto": "Así se ve la misma inspección dentro de IDAP: la inspección llega desde campo, cada disciplina se llena con sus valores y se califica en semáforo, y en la pestaña de ultrasonido quedan la forma de onda con los impactos del rodamiento, los niveles contra la línea base y los criterios de severidad. Pasa el cursor por una disciplina para abrirla.",
+      "texto": "La misma inspección dentro de IDAP: cada técnica calificada en semáforo y, en ultrasonido, la forma de onda, los niveles contra la línea base y los criterios de severidad. Pasa el cursor por una técnica para abrirla.",
       "escena": "us",
       "imagenes": {
         "principal": "/images/idap/inspeccion/termica-1.jpg",
