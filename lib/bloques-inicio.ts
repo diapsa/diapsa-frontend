@@ -31,10 +31,10 @@ const FOTOS: Record<string, string> = {
   "sensores-vibracion": "/images/servicios/sensores-vibracion/sensor-motor.webp",
   "sensores-acusticos": "/images/servicios/sensores-acusticos/campo-08.webp",
   "dga-en-linea": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
-  "diapsa-start": "/images/diapsa-start/mediciones-diapsa-start.jpg",
+  "diapsa-start": "/images/diapsa-start/medicion-tableros.webp",
   idap: "/images/idap/capturas/inspeccion-vibraciones.jpg",
   "deteccion-gas": "/images/deteccion-gas/campo/inspeccion-planta.webp",
-  "diagnostico-situacional": "/images/diagnostico-situacional/engineer-checking-machinery.webp",
+  "diagnostico-situacional": "/images/diagnostico-situacional/levantamiento-campo-tarjeta.webp",
 };
 
 const slugDe = (href: string) => href.split("/").filter(Boolean).pop() ?? href;
