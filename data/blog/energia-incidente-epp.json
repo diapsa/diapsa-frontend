@@ -1,0 +1,50 @@
+{
+  "slug": "energia-incidente-y-categorias-de-epp-arco-electrico",
+  "titulo": "Energía incidente y categorías de EPP para arco eléctrico: qué significan las cal/cm²",
+  "extracto": "Qué es la energía incidente, por qué se mide en calorías por centímetro cuadrado, las cuatro categorías de EPP de NFPA 70E, de qué depende que un tablero salga alto y cómo se baja.",
+  "portada": "/images/servicios/termografia-infrarroja/campo-63.webp",
+  "fecha": "2026-09-30T23:59:40.000000Z",
+  "seo": {
+    "titulo": "Energía incidente y categorías de EPP para arco eléctrico",
+    "descripcion": "Qué es la energía incidente de un arco eléctrico en cal/cm², las categorías de EPP de NFPA 70E (4, 8, 25 y 40 cal/cm²), de qué depende que un tablero salga alto y cómo se reduce."
+  },
+  "bloques": [
+    ["p", "Cuando un arco eléctrico ocurre en un tablero, libera en milisegundos una ráfaga de calor, luz y presión. La energía incidente es la forma de medir cuánto de ese calor le llega a una persona parada frente al tablero. Es el número más importante de un estudio de arco eléctrico, porque de él sale todo lo demás: qué ropa usar, a qué distancia y qué dice la etiqueta."],
+
+    ["h2", "Qué es y por qué se mide en cal/cm²"],
+    ["p", "Es la energía térmica que recibiría la piel o la ropa a la distancia de trabajo, que en tableros de baja tensión suele ser de unos 46 centímetros. Se expresa en calorías por centímetro cuadrado porque así se clasifica la ropa de protección: una prenda de 8 cal/cm² aguanta un arco de hasta 8 cal/cm² sin que la piel debajo sufra una quemadura de segundo grado."],
+    ["p", "Como referencia, a partir de 1.2 cal/cm² ya puede haber una quemadura de segundo grado en piel descubierta, y la ropa común puede encenderse."],
+
+    ["h2", "Las categorías de EPP"],
+    ["p", "NFPA 70E agrupa el equipo de protección en cuatro categorías según la capacidad mínima de la ropa:"],
+    ["lista", [
+      "Categoría 1: ropa resistente al arco de al menos 4 cal/cm².",
+      "Categoría 2: al menos 8 cal/cm².",
+      "Categoría 3: al menos 25 cal/cm².",
+      "Categoría 4: al menos 40 cal/cm²."
+    ]],
+    ["p", "Si un tablero da más de 40 cal/cm², no hay traje que proteja de forma razonable: no se trabaja energizado."],
+
+    ["h2", "De qué depende que un tablero salga alto"],
+    ["p", "Principalmente de dos cosas: cuánta corriente de falla puede llegar a ese punto y cuánto tarda la protección en abrir. Un tablero con mucha corriente de falla pero con una protección que dispara rápido puede salir bajo; uno con menos corriente pero con una protección lenta puede salir alto. Por eso el cálculo se hace tablero por tablero, con los ajustes reales de cada protección."],
+    ["p", "En un estudio real de 18 tableros que hicimos, 16 salieron en categoría 1 y solo dos, el interruptor principal y el secundario del transformador, en categoría 2, con cerca de 5.9 cal/cm²."],
+
+    ["h2", "Cómo se baja la energía"],
+    ["lista", [
+      "Ajustar la protección para que dispare más rápido, sin perder la coordinación.",
+      "Usar un modo de mantenimiento en el interruptor mientras se trabaja.",
+      "Operar a distancia o con equipo de maniobra remota.",
+      "Instalar relevadores de detección de arco en los tableros críticos."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Puedo usar siempre el traje de categoría 4 y olvidarme?"],
+    ["p", "No es buena idea. Es pesado, caluroso y limita la visión y el movimiento, lo que aumenta otros riesgos. La idea del estudio es usar la protección que cada tablero realmente pide."],
+    ["h3", "¿Qué norma se usa para el cálculo?"],
+    ["p", "IEEE 1584 para calcular la energía y NFPA 70E para traducirla en categorías y fronteras. En México se aplican para cumplir con la [NOM-029-STPS-2011](/blog/nom-029-stps-2011-que-pide-sobre-arco-electrico)."],
+    ["h3", "¿La energía cambia con el tiempo?"],
+    ["p", "Sí, si cambia la instalación o los ajustes de las protecciones. Por eso el estudio se actualiza cuando hay cambios."],
+
+    ["nota", "Calculamos la energía incidente de cada tablero de tu planta y te decimos cómo bajarla donde sale alta. Conoce el [estudio de arco eléctrico](/servicios/monitoreo-condicion/arco-electrico)."]
+  ]
+}
