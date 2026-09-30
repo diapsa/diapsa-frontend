@@ -5,7 +5,6 @@ import VideoBucle from "@/components/atoms/VideoBucle";
 import EscenaIdap from "@/components/organisms/EscenaIdap";
 import EscenaIdapHero from "@/components/organisms/EscenaIdapHero";
 import IdapFormulario from "@/components/organisms/IdapFormulario";
-import { IlustracionRespalda } from "@/components/organisms/IdapIlustraciones";
 import { FONDO_IDAP, ORO_IDAP, PIE_IDAP } from "@/lib/idap-estilo";
 
 /**
@@ -31,6 +30,10 @@ import { FONDO_IDAP, ORO_IDAP, PIE_IDAP } from "@/lib/idap-estilo";
  * Tercera vuelta: la escena 3D del inicio es la que hizo Emiliano en Claude
  * Diseño, y los beneficios usan ilustraciones animadas (IdapIlustraciones)
  * en lugar de las infografías.
+ *
+ * Quinta vuelta (2026-09-29): los bloques llevan videos en bucle hechos en
+ * Remotion (VideoIdap), dentro de la interfaz de IDAP y con el gemelo digital;
+ * las ilustraciones SVG de IdapIlustraciones se retiraron.
  *
  * Cuarta vuelta (2026-09-29, "muy saturado de información"): como Fracttal,
  * cada función es un bloque con un solo recurso visual (ilustración
@@ -335,9 +338,10 @@ export default function PaginaIdap() {
             titulo="Evidencia para justificar cada inversión"
             texto="Historial y tendencias de cada equipo, informes en PDF, datos en Excel y conexión con tu ERP o tu sistema de mantenimiento."
           >
-            <div className="aspect-[16/10]">
-              <IlustracionRespalda />
-            </div>
+            <VideoIdap
+              nombre="idap-informe"
+              descripcion="Reporte de condición en IDAP: equipos por estado en seis meses, informe PDF para gerencia, datos en Excel y sincronización con el ERP o CMMS"
+            />
           </Fila>
 
           <Fila
