@@ -2,60 +2,118 @@
   "slug": "futuro-del-ultrasonido-pasivo-en-la-industria",
   "titulo": "El futuro del ultrasonido pasivo en la industria: lo que dice la investigación",
   "extracto": "Sensores en línea, inteligencia artificial que clasifica la señal y arreglos de micrófonos que ubican la falla: hacia dónde va el ultrasonido en mantenimiento, según artículos académicos recientes.",
-  "portada": "/images/gallery/campo/acustica-pantalla-planta.webp",
+  "portada": "/images/servicios/analisis-de-ultrasonido/campo-pantalla-espectro.webp",
   "fecha": "2026-09-29T12:00:00.000000Z",
   "seo": {
     "titulo": "El futuro del ultrasonido pasivo en mantenimiento predictivo",
     "descripcion": "Monitoreo continuo, inteligencia artificial y arreglos de micrófonos: hacia dónde va el ultrasonido pasivo en la industria, con los artículos académicos que lo respaldan."
   },
   "bloques": [
-    ["p", "El ultrasonido pasivo, el que **escucha** lo que producen la fricción, las fugas y las descargas eléctricas, lleva décadas en la caja de herramientas del mantenimiento. Hasta ahora ha dependido de un analista que recorre la planta con un detector y audífonos. La investigación de los últimos años apunta a un cambio de fondo: sensores que escuchan todo el tiempo, algoritmos que reconocen el tipo de falla y arreglos de micrófonos que la ubican en la imagen."],
-    ["p", "En este artículo resumimos hacia dónde va, con los trabajos académicos que lo respaldan, y qué significa para una planta en México."],
-
-    ["h2", "Primero: ¿qué es el ultrasonido pasivo?"],
-    ["p", "Hay dos familias de ultrasonido industrial. El **activo** emite una onda y mide su eco; es el de ensayos no destructivos, para espesores y soldaduras. El **pasivo** no emite nada: escucha el ultrasonido que la propia máquina genera, normalmente entre 20 y 100 kHz. Es el que se usa en mantenimiento predictivo para [rodamientos y lubricación](/blog/lubricacion-por-ultrasonido-como-engrasar-rodamientos), [fugas de aire comprimido](/blog/fugas-de-aire-comprimido-cuanto-cuestan-y-como-detectarlas) y [efecto corona](/blog/efecto-corona-que-es-y-como-se-detecta)."],
-
-    ["h2", "Tendencia 1: de la ruta al monitoreo continuo"],
-    ["p", "La medición por rutas deja huecos entre visita y visita. La tendencia es instalar sensores que escuchen de forma permanente y manden la señal a una plataforma. Ayudan dos cosas: los micrófonos MEMS, pequeños y baratos, que ya alcanzan el rango ultrasónico, y las plataformas embebidas con conexión a la nube."],
-    ["p", "Un ejemplo es el trabajo de **Matheus y colaboradores (2024)**, que desarrollaron una plataforma IoT embebida para monitoreo de emisión acústica en la industria 4.0: configura los sensores a distancia, adquiere datos en tiempo real, extrae características y hace el diagnóstico de forma autónoma antes de subirlo a la nube."],
-
-    ["h2", "Tendencia 2: inteligencia artificial que clasifica la señal"],
-    ["p", "Hoy la interpretación depende del oído y la experiencia del analista. La investigación busca que un modelo haga la primera clasificación: si lo que se oye es una descarga, una fuga o ruido de la planta."],
-    ["lista", [
-      "**Descargas parciales en subestaciones.** Samaitis y colaboradores (2021) usaron tres sensores ultrasónicos en forma de L en conectores de líneas aéreas y combinaron procesamiento de señal con aprendizaje automático. Una máquina de vectores de soporte fue la que mejor separó las descargas del ruido del entorno, y el arreglo ubicó la fuente con un error de unos 10 cm.",
-      "**Transformadores de instrumento.** Maresch y colaboradores (2024) propusieron detectar descargas parciales en etapa temprana con ultrasonido y un modelo de bosque aleatorio (random forest).",
-      "**Fugas de aire comprimido.** Un trabajo de Fraunhofer presentado en INTER-NOISE 2020 entrenó una red neuronal con grabaciones de fugas a distintas presiones y distancias, y concluyó que la detección automática y sin contacto es viable y prometedora."
-    ]],
-
-    ["h2", "Tendencia 3: arreglos de micrófonos que ubican la falla"],
-    ["p", "Las cámaras acústicas ya son comunes en fugas y subestaciones: un arreglo de micrófonos calcula de dónde viene el sonido y lo dibuja sobre la imagen. La investigación lleva esa idea a los rodamientos."],
-    ["p", "**Verellen y colaboradores (2021)** grabaron defectos de rodamientos con un arreglo disperso de micrófonos y les sumaron ruido real grabado en una planta en operación. Compararon la clasificación con un solo micrófono contra la señal procesada con *beamforming* (enfocar el arreglo hacia un punto) para ver cuánto mejora en un ambiente industrial ruidoso. El punto de fondo: sensores **sin contacto**, que no hay que montar en cada máquina y que se dañan menos que un acelerómetro."],
-
-    ["h2", "Tendencia 4: el ultrasonido deja de ir solo"],
-    ["p", "El ultrasonido detecta temprano, pero no siempre dice qué tan grave es el daño. Por eso el camino es combinarlo con vibraciones, termografía y análisis de aceite en un solo diagnóstico por equipo, con su historial y su tendencia. Es lo que hace una plataforma como [IDAP](/servicios/idap): cada técnica calificada en semáforo y un diagnóstico integral validado por un especialista."],
-
-    ["h2", "Lo que no va a cambiar"],
-    ["lista", [
-      "**La línea base.** Sin una referencia de cada punto, ningún algoritmo sabe si 30 dB es mucho o poco.",
-      "**El ruido y la atenuación.** Siguen siendo el principal reto que reportan los estudios: separar la señal útil del ruido de la planta y de lo que absorbe la estructura.",
-      "**El criterio del especialista.** Los modelos se entrenan con casos etiquetados por analistas y sus resultados necesitan validación en campo antes de mandar a parar un equipo."
-    ]],
-
-    ["h2", "Qué significa para tu planta"],
-    ["numerada", [
-      "**Empieza por rutas con analista** para tener línea base y saber dónde están los puntos críticos.",
-      "**Pon sensores en línea donde no puedes esperar** a la siguiente visita: equipos críticos, fugas en gases caros, tableros de media tensión.",
-      "**Junta todo en una sola plataforma** para ver tendencias y combinar el ultrasonido con las demás técnicas."
-    ]],
-    ["p", "En DIAPSA hacemos las tres: [análisis de ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido) por rutas, [sensores acústicos](/servicios/monitoreo-continuo/sensores-acusticos) en línea e integración en IDAP."],
-
-    ["h2", "Fuentes"],
-    ["lista", [
-      "Verellen, T., Verbelen, F., Stockman, K. y Steckel, J. (2021). *Beamforming Applied to Ultrasound Analysis in Detection of Bearing Defects.* Sensors, 21(20), 6803. [doi.org/10.3390/s21206803](https://doi.org/10.3390/s21206803)",
-      "Samaitis, V., Mažeika, L., Jankauskas, A. y Rekuvienė, R. (2021). *Detection and Localization of Partial Discharge in Connectors of Air Power Lines by Means of Ultrasonic Measurements and Artificial Intelligence Models.* Sensors, 21(1), 20. [doi.org/10.3390/s21010020](https://doi.org/10.3390/s21010020)",
-      "Maresch, K. y colaboradores (2024). *Innovative Approach for Detecting Early-Stage Partial Discharges in Instrument Transformers via Ultrasound and Random Forest Analysis.* Measurement, 232, 114710. [doi.org/10.1016/j.measurement.2024.114710](https://doi.org/10.1016/j.measurement.2024.114710)",
-      "Matheus, L. Z. y colaboradores (2024). *Development of an Embedded IoT Platform for Acoustic Emission Monitoring in Industry 4.0.* ECSA-11. [doi.org/10.3390/ecsa-11-20484](https://doi.org/10.3390/ecsa-11-20484)",
-      "Fraunhofer (2020). *Compressed Air Leakage Detection Using Acoustic Emissions with Neural Networks.* INTER-NOISE 2020. [publica.fraunhofer.de](https://publica.fraunhofer.de/entities/publication/fc534b6c-58db-4bb0-9528-78ce65839b0e)"
-    ]]
+    [
+      "p",
+      "El ultrasonido pasivo, el que **escucha** lo que producen la fricción, las fugas y las descargas eléctricas, lleva décadas en la caja de herramientas del mantenimiento. Hasta ahora ha dependido de un analista que recorre la planta con un detector y audífonos. La investigación de los últimos años apunta a un cambio de fondo: sensores que escuchan todo el tiempo, algoritmos que reconocen el tipo de falla y arreglos de micrófonos que la ubican en la imagen."
+    ],
+    [
+      "p",
+      "En este artículo resumimos hacia dónde va, con los trabajos académicos que lo respaldan, y qué significa para una planta en México."
+    ],
+    [
+      "h2",
+      "Primero: ¿qué es el ultrasonido pasivo?"
+    ],
+    [
+      "p",
+      "Hay dos familias de ultrasonido industrial. El **activo** emite una onda y mide su eco; es el de ensayos no destructivos, para espesores y soldaduras. El **pasivo** no emite nada: escucha el ultrasonido que la propia máquina genera, normalmente entre 20 y 100 kHz. Es el que se usa en mantenimiento predictivo para [rodamientos y lubricación](/blog/lubricacion-por-ultrasonido-como-engrasar-rodamientos), [fugas de aire comprimido](/blog/fugas-de-aire-comprimido-cuanto-cuestan-y-como-detectarlas) y [efecto corona](/blog/efecto-corona-que-es-y-como-se-detecta)."
+    ],
+    [
+      "h2",
+      "Tendencia 1: de la ruta al monitoreo continuo"
+    ],
+    [
+      "p",
+      "La medición por rutas deja huecos entre visita y visita. La tendencia es instalar sensores que escuchen de forma permanente y manden la señal a una plataforma. Ayudan dos cosas: los micrófonos MEMS, pequeños y baratos, que ya alcanzan el rango ultrasónico, y las plataformas embebidas con conexión a la nube."
+    ],
+    [
+      "p",
+      "Un ejemplo es el trabajo de **Matheus y colaboradores (2024)**, que desarrollaron una plataforma IoT embebida para monitoreo de emisión acústica en la industria 4.0: configura los sensores a distancia, adquiere datos en tiempo real, extrae características y hace el diagnóstico de forma autónoma antes de subirlo a la nube."
+    ],
+    [
+      "h2",
+      "Tendencia 2: inteligencia artificial que clasifica la señal"
+    ],
+    [
+      "p",
+      "Hoy la interpretación depende del oído y la experiencia del analista. La investigación busca que un modelo haga la primera clasificación: si lo que se oye es una descarga, una fuga o ruido de la planta."
+    ],
+    [
+      "lista",
+      [
+        "**Descargas parciales en subestaciones.** Samaitis y colaboradores (2021) usaron tres sensores ultrasónicos en forma de L en conectores de líneas aéreas y combinaron procesamiento de señal con aprendizaje automático. Una máquina de vectores de soporte fue la que mejor separó las descargas del ruido del entorno, y el arreglo ubicó la fuente con un error de unos 10 cm.",
+        "**Transformadores de instrumento.** Maresch y colaboradores (2024) propusieron detectar descargas parciales en etapa temprana con ultrasonido y un modelo de bosque aleatorio (random forest).",
+        "**Fugas de aire comprimido.** Un trabajo de Fraunhofer presentado en INTER-NOISE 2020 entrenó una red neuronal con grabaciones de fugas a distintas presiones y distancias, y concluyó que la detección automática y sin contacto es viable y prometedora."
+      ]
+    ],
+    [
+      "h2",
+      "Tendencia 3: arreglos de micrófonos que ubican la falla"
+    ],
+    [
+      "p",
+      "Las cámaras acústicas ya son comunes en fugas y subestaciones: un arreglo de micrófonos calcula de dónde viene el sonido y lo dibuja sobre la imagen. La investigación lleva esa idea a los rodamientos."
+    ],
+    [
+      "p",
+      "**Verellen y colaboradores (2021)** grabaron defectos de rodamientos con un arreglo disperso de micrófonos y les sumaron ruido real grabado en una planta en operación. Compararon la clasificación con un solo micrófono contra la señal procesada con *beamforming* (enfocar el arreglo hacia un punto) para ver cuánto mejora en un ambiente industrial ruidoso. El punto de fondo: sensores **sin contacto**, que no hay que montar en cada máquina y que se dañan menos que un acelerómetro."
+    ],
+    [
+      "h2",
+      "Tendencia 4: el ultrasonido deja de ir solo"
+    ],
+    [
+      "p",
+      "El ultrasonido detecta temprano, pero no siempre dice qué tan grave es el daño. Por eso el camino es combinarlo con vibraciones, termografía y análisis de aceite en un solo diagnóstico por equipo, con su historial y su tendencia. Es lo que hace una plataforma como [IDAP](/servicios/idap): cada técnica calificada en semáforo y un diagnóstico integral validado por un especialista."
+    ],
+    [
+      "h2",
+      "Lo que no va a cambiar"
+    ],
+    [
+      "lista",
+      [
+        "**La línea base.** Sin una referencia de cada punto, ningún algoritmo sabe si 30 dB es mucho o poco.",
+        "**El ruido y la atenuación.** Siguen siendo el principal reto que reportan los estudios: separar la señal útil del ruido de la planta y de lo que absorbe la estructura.",
+        "**El criterio del especialista.** Los modelos se entrenan con casos etiquetados por analistas y sus resultados necesitan validación en campo antes de mandar a parar un equipo."
+      ]
+    ],
+    [
+      "h2",
+      "Qué significa para tu planta"
+    ],
+    [
+      "numerada",
+      [
+        "**Empieza por rutas con analista** para tener línea base y saber dónde están los puntos críticos.",
+        "**Pon sensores en línea donde no puedes esperar** a la siguiente visita: equipos críticos, fugas en gases caros, tableros de media tensión.",
+        "**Junta todo en una sola plataforma** para ver tendencias y combinar el ultrasonido con las demás técnicas."
+      ]
+    ],
+    [
+      "p",
+      "En DIAPSA hacemos las tres: [análisis de ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido) por rutas, [sensores acústicos](/servicios/monitoreo-continuo/sensores-acusticos) en línea e integración en IDAP."
+    ],
+    [
+      "h2",
+      "Fuentes"
+    ],
+    [
+      "lista",
+      [
+        "Verellen, T., Verbelen, F., Stockman, K. y Steckel, J. (2021). *Beamforming Applied to Ultrasound Analysis in Detection of Bearing Defects.* Sensors, 21(20), 6803. [doi.org/10.3390/s21206803](https://doi.org/10.3390/s21206803)",
+        "Samaitis, V., Mažeika, L., Jankauskas, A. y Rekuvienė, R. (2021). *Detection and Localization of Partial Discharge in Connectors of Air Power Lines by Means of Ultrasonic Measurements and Artificial Intelligence Models.* Sensors, 21(1), 20. [doi.org/10.3390/s21010020](https://doi.org/10.3390/s21010020)",
+        "Maresch, K. y colaboradores (2024). *Innovative Approach for Detecting Early-Stage Partial Discharges in Instrument Transformers via Ultrasound and Random Forest Analysis.* Measurement, 232, 114710. [doi.org/10.1016/j.measurement.2024.114710](https://doi.org/10.1016/j.measurement.2024.114710)",
+        "Matheus, L. Z. y colaboradores (2024). *Development of an Embedded IoT Platform for Acoustic Emission Monitoring in Industry 4.0.* ECSA-11. [doi.org/10.3390/ecsa-11-20484](https://doi.org/10.3390/ecsa-11-20484)",
+        "Fraunhofer (2020). *Compressed Air Leakage Detection Using Acoustic Emissions with Neural Networks.* INTER-NOISE 2020. [publica.fraunhofer.de](https://publica.fraunhofer.de/entities/publication/fc534b6c-58db-4bb0-9528-78ce65839b0e)"
+      ]
+    ]
   ]
 }

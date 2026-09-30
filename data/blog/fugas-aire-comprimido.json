@@ -2,78 +2,172 @@
   "slug": "fugas-de-aire-comprimido-cuanto-cuestan-y-como-detectarlas",
   "titulo": "Fugas de aire comprimido: cuánto cuestan y cómo detectarlas",
   "extracto": "Por qué las fugas de aire comprimido son de las pérdidas más caras de una planta, cómo calcular lo que cuesta cada una y cómo encontrarlas con ultrasonido aunque la producción esté en marcha.",
-  "portada": "/images/servicios/analisis-de-ultrasonido/campo-compresor.webp",
+  "portada": "/images/servicios/analisis-de-ultrasonido/campo-valvulas.webp",
   "fecha": "2026-09-29T00:00:00.000000Z",
   "seo": {
     "titulo": "Fugas de aire comprimido: cuánto cuestan y cómo detectarlas",
     "descripcion": "Cómo calcular el costo de una fuga de aire comprimido, dónde aparecen, cómo detectarlas con ultrasonido y cómo armar un programa de fugas en tu planta."
   },
   "bloques": [
-    ["p", "El aire comprimido es uno de los energéticos más caros de una planta: para producirlo, el compresor convierte electricidad en presión con una eficiencia baja. Y una parte de ese aire nunca llega a trabajar, porque se escapa por fugas que casi nadie ve ni oye."],
-    ["p", "El Departamento de Energía de Estados Unidos estima que una planta sin programa de fugas puede estar perdiendo **entre 20 y 30 % de lo que producen sus compresores**. En esta guía te explicamos cómo calcular lo que cuesta cada fuga, dónde buscarlas y cómo encontrarlas."],
-
-    ["h2", "Por qué las fugas cuestan tanto"],
-    ["lista", [
-      "**Energía desperdiciada.** El compresor trabaja para producir aire que se va a la atmósfera, las 24 horas si la planta opera en continuo.",
-      "**Caída de presión.** Con muchas fugas baja la presión en los puntos de uso y la reacción común es subir el ajuste del compresor. Como regla práctica, cada 2 psi de más cuestan alrededor de 1 % más de energía.",
-      "**Capacidad perdida.** Se compra o se mantiene encendido otro compresor para cubrir un consumo que en realidad son fugas.",
-      "**Problemas de operación.** Herramientas y cilindros trabajando con presión baja, ciclos más lentos y paros."
-    ]],
-
-    ["h2", "Cómo calcular el costo de una fuga"],
-    ["p", "La cuenta es sencilla:"],
-    ["nota", "**Costo al año = caudal de la fuga (cfm) × potencia por cfm (kW/cfm) × horas de operación × tarifa ($/kWh)**"],
-    ["p", "Un compresor de tornillo a unos 100 psi consume del orden de **0.18 a 0.22 kW por cada cfm** que produce. El caudal depende del tamaño del orificio. Como referencia, a 100 psig:"],
-    ["lista", [
-      "**Orificio de 1/16 in:** unos 6.5 cfm.",
-      "**Orificio de 1/8 in:** unos 26 cfm.",
-      "**Orificio de 1/4 in:** unos 104 cfm."
-    ]],
-    ["p", "**Ejemplo.** Una fuga de 1/8 in pierde unos 26 cfm. Con 0.2 kW por cfm son 5.2 kW. En una planta que opera 8,000 horas al año son 41,600 kWh. Con una tarifa de ejemplo de $2.50 por kWh, **esa sola fuga cuesta más de $100,000 pesos al año**. Usa la tarifa de tu recibo para tu propio cálculo."],
-
-    ["h2", "Dónde están las fugas"],
-    ["p", "La mayoría no está en la tubería principal sino en los puntos de uso:"],
-    ["lista", [
-      "Acoplamientos rápidos y conexiones.",
-      "Mangueras, abrazaderas y conexiones dañadas.",
-      "Unidades de mantenimiento: filtros, reguladores y lubricadores.",
-      "Trampas de condensado abiertas o atoradas.",
-      "Válvulas, electroválvulas y cilindros neumáticos.",
-      "Uniones roscadas y bridas de la red.",
-      "Herramientas y puntos de uso abandonados que siguen presurizados."
-    ]],
-
-    ["h2", "Cómo se detectan"],
-    ["h3", "Escuchar o usar agua jabonosa"],
-    ["p", "Solo encuentran las fugas grandes y en silencio. Con la planta en producción, la mayoría pasa desapercibida, y el agua jabonosa es lenta y no sirve en lugares de difícil acceso."],
-    ["h3", "Ultrasonido"],
-    ["p", "El aire que escapa por un orificio produce turbulencia con un componente ultrasónico fuerte, alrededor de los 40 kHz. El detector lo aísla del ruido de la planta, así que **las fugas se encuentran con la producción en marcha**, se ubican con precisión y se clasifican por nivel. Es el método que usamos en el [análisis de ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido)."],
-    ["h3", "Cámara acústica"],
-    ["p", "Muestra la fuga sobre la imagen del equipo y estima su caudal y su costo. Es muy rápida para recorrer redes grandes y dejar evidencia visual de cada fuga."],
-    ["h3", "Prueba de carga y descarga del compresor"],
-    ["p", "Con la planta sin consumo, se mide cuánto tiempo pasa el compresor cargado (T) y descargado (t). El porcentaje de fugas es aproximadamente **T × 100 / (T + t)**. No dice dónde están, pero da la línea base del total fugado."],
-
-    ["h2", "Cómo armar un programa de fugas"],
-    ["numerada", [
-      "**Mide la línea base:** cuánto aire se fuga en total, con la prueba de carga y descarga o con medidores de flujo.",
-      "**Recorre la red con ultrasonido** y etiqueta cada fuga con un número, su ubicación, su tamaño y su costo estimado.",
-      "**Prioriza** por costo y por facilidad de reparación.",
-      "**Repara.** Muchas fugas se corrigen con la planta en marcha: un acoplamiento, una abrazadera, una manguera.",
-      "**Verifica** con ultrasonido que la fuga quedó corregida.",
-      "**Repite cada 3 a 6 meses.** Las fugas vuelven a aparecer; un programa bien llevado busca mantenerlas por debajo de 10 % de la producción."
-    ]],
-
-    ["h2", "Más allá del aire: vapor, vacío y gases"],
-    ["p", "El mismo principio sirve para **trampas de vapor** que no cierran, **fugas de vacío** (el aire entra en lugar de salir) y **gases de proceso** como nitrógeno, CO₂ o argón, donde cada fuga es gas comprado que se pierde."],
-
-    ["h2", "Preguntas frecuentes"],
-    ["h3", "¿Hay que parar la planta para buscar fugas?"],
-    ["p", "No. Con ultrasonido se buscan con la producción en marcha; de hecho, es cuando la red está presurizada y las fugas suenan."],
-    ["h3", "¿Cuánto se puede ahorrar?"],
-    ["p", "Depende de cuánto se fuga hoy y de la tarifa. La forma honesta de saberlo es medir la línea base y sumar el costo estimado de cada fuga encontrada; con eso se ve el retorno antes de reparar."],
-    ["h3", "¿El ruido de la planta no tapa las fugas?"],
-    ["p", "El ruido de la planta está sobre todo en frecuencias audibles; el detector trabaja en ultrasonido y filtra ese ruido. Por eso encuentra fugas que a oído serían imposibles."],
-
-    ["nota", "¿Quieres saber cuánto aire se está escapando en tu planta? En DIAPSA recorremos tu red con ultrasonido y te entregamos cada fuga ubicada, con su nivel y su costo estimado para repararlas por prioridad. Conoce el [análisis de ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido)."]
+    [
+      "p",
+      "El aire comprimido es uno de los energéticos más caros de una planta: para producirlo, el compresor convierte electricidad en presión con una eficiencia baja. Y una parte de ese aire nunca llega a trabajar, porque se escapa por fugas que casi nadie ve ni oye."
+    ],
+    [
+      "p",
+      "El Departamento de Energía de Estados Unidos estima que una planta sin programa de fugas puede estar perdiendo **entre 20 y 30 % de lo que producen sus compresores**. En esta guía te explicamos cómo calcular lo que cuesta cada fuga, dónde buscarlas y cómo encontrarlas."
+    ],
+    [
+      "h2",
+      "Por qué las fugas cuestan tanto"
+    ],
+    [
+      "lista",
+      [
+        "**Energía desperdiciada.** El compresor trabaja para producir aire que se va a la atmósfera, las 24 horas si la planta opera en continuo.",
+        "**Caída de presión.** Con muchas fugas baja la presión en los puntos de uso y la reacción común es subir el ajuste del compresor. Como regla práctica, cada 2 psi de más cuestan alrededor de 1 % más de energía.",
+        "**Capacidad perdida.** Se compra o se mantiene encendido otro compresor para cubrir un consumo que en realidad son fugas.",
+        "**Problemas de operación.** Herramientas y cilindros trabajando con presión baja, ciclos más lentos y paros."
+      ]
+    ],
+    [
+      "h2",
+      "Cómo calcular el costo de una fuga"
+    ],
+    [
+      "p",
+      "La cuenta es sencilla:"
+    ],
+    [
+      "nota",
+      "**Costo al año = caudal de la fuga (cfm) × potencia por cfm (kW/cfm) × horas de operación × tarifa ($/kWh)**"
+    ],
+    [
+      "p",
+      "Un compresor de tornillo a unos 100 psi consume del orden de **0.18 a 0.22 kW por cada cfm** que produce. El caudal depende del tamaño del orificio. Como referencia, a 100 psig:"
+    ],
+    [
+      "lista",
+      [
+        "**Orificio de 1/16 in:** unos 6.5 cfm.",
+        "**Orificio de 1/8 in:** unos 26 cfm.",
+        "**Orificio de 1/4 in:** unos 104 cfm."
+      ]
+    ],
+    [
+      "p",
+      "**Ejemplo.** Una fuga de 1/8 in pierde unos 26 cfm. Con 0.2 kW por cfm son 5.2 kW. En una planta que opera 8,000 horas al año son 41,600 kWh. Con una tarifa de ejemplo de $2.50 por kWh, **esa sola fuga cuesta más de $100,000 pesos al año**. Usa la tarifa de tu recibo para tu propio cálculo."
+    ],
+    [
+      "h2",
+      "Dónde están las fugas"
+    ],
+    [
+      "p",
+      "La mayoría no está en la tubería principal sino en los puntos de uso:"
+    ],
+    [
+      "lista",
+      [
+        "Acoplamientos rápidos y conexiones.",
+        "Mangueras, abrazaderas y conexiones dañadas.",
+        "Unidades de mantenimiento: filtros, reguladores y lubricadores.",
+        "Trampas de condensado abiertas o atoradas.",
+        "Válvulas, electroválvulas y cilindros neumáticos.",
+        "Uniones roscadas y bridas de la red.",
+        "Herramientas y puntos de uso abandonados que siguen presurizados."
+      ]
+    ],
+    [
+      "h2",
+      "Cómo se detectan"
+    ],
+    [
+      "h3",
+      "Escuchar o usar agua jabonosa"
+    ],
+    [
+      "p",
+      "Solo encuentran las fugas grandes y en silencio. Con la planta en producción, la mayoría pasa desapercibida, y el agua jabonosa es lenta y no sirve en lugares de difícil acceso."
+    ],
+    [
+      "h3",
+      "Ultrasonido"
+    ],
+    [
+      "p",
+      "El aire que escapa por un orificio produce turbulencia con un componente ultrasónico fuerte, alrededor de los 40 kHz. El detector lo aísla del ruido de la planta, así que **las fugas se encuentran con la producción en marcha**, se ubican con precisión y se clasifican por nivel. Es el método que usamos en el [análisis de ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido)."
+    ],
+    [
+      "h3",
+      "Cámara acústica"
+    ],
+    [
+      "p",
+      "Muestra la fuga sobre la imagen del equipo y estima su caudal y su costo. Es muy rápida para recorrer redes grandes y dejar evidencia visual de cada fuga."
+    ],
+    [
+      "h3",
+      "Prueba de carga y descarga del compresor"
+    ],
+    [
+      "p",
+      "Con la planta sin consumo, se mide cuánto tiempo pasa el compresor cargado (T) y descargado (t). El porcentaje de fugas es aproximadamente **T × 100 / (T + t)**. No dice dónde están, pero da la línea base del total fugado."
+    ],
+    [
+      "h2",
+      "Cómo armar un programa de fugas"
+    ],
+    [
+      "numerada",
+      [
+        "**Mide la línea base:** cuánto aire se fuga en total, con la prueba de carga y descarga o con medidores de flujo.",
+        "**Recorre la red con ultrasonido** y etiqueta cada fuga con un número, su ubicación, su tamaño y su costo estimado.",
+        "**Prioriza** por costo y por facilidad de reparación.",
+        "**Repara.** Muchas fugas se corrigen con la planta en marcha: un acoplamiento, una abrazadera, una manguera.",
+        "**Verifica** con ultrasonido que la fuga quedó corregida.",
+        "**Repite cada 3 a 6 meses.** Las fugas vuelven a aparecer; un programa bien llevado busca mantenerlas por debajo de 10 % de la producción."
+      ]
+    ],
+    [
+      "h2",
+      "Más allá del aire: vapor, vacío y gases"
+    ],
+    [
+      "p",
+      "El mismo principio sirve para **trampas de vapor** que no cierran, **fugas de vacío** (el aire entra en lugar de salir) y **gases de proceso** como nitrógeno, CO₂ o argón, donde cada fuga es gas comprado que se pierde."
+    ],
+    [
+      "h2",
+      "Preguntas frecuentes"
+    ],
+    [
+      "h3",
+      "¿Hay que parar la planta para buscar fugas?"
+    ],
+    [
+      "p",
+      "No. Con ultrasonido se buscan con la producción en marcha; de hecho, es cuando la red está presurizada y las fugas suenan."
+    ],
+    [
+      "h3",
+      "¿Cuánto se puede ahorrar?"
+    ],
+    [
+      "p",
+      "Depende de cuánto se fuga hoy y de la tarifa. La forma honesta de saberlo es medir la línea base y sumar el costo estimado de cada fuga encontrada; con eso se ve el retorno antes de reparar."
+    ],
+    [
+      "h3",
+      "¿El ruido de la planta no tapa las fugas?"
+    ],
+    [
+      "p",
+      "El ruido de la planta está sobre todo en frecuencias audibles; el detector trabaja en ultrasonido y filtra ese ruido. Por eso encuentra fugas que a oído serían imposibles."
+    ],
+    [
+      "nota",
+      "¿Quieres saber cuánto aire se está escapando en tu planta? En DIAPSA recorremos tu red con ultrasonido y te entregamos cada fuga ubicada, con su nivel y su costo estimado para repararlas por prioridad. Conoce el [análisis de ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido)."
+    ]
   ]
 }
