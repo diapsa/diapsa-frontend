@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Aparece from "@/components/atoms/Aparece";
 import Contador from "@/components/atoms/Contador";
+import VideoBucle from "@/components/atoms/VideoBucle";
 import EscenaIdap from "@/components/organisms/EscenaIdap";
 import EscenaIdapHero from "@/components/organisms/EscenaIdapHero";
 import IdapFormulario from "@/components/organisms/IdapFormulario";
-import { IlustracionPrioriza, IlustracionRespalda, IlustracionTecnicas } from "@/components/organisms/IdapIlustraciones";
+import { IlustracionPrioriza, IlustracionRespalda } from "@/components/organisms/IdapIlustraciones";
 import { FONDO_IDAP, ORO_IDAP, PIE_IDAP } from "@/lib/idap-estilo";
 
 /**
@@ -190,23 +191,15 @@ function Fila({
   );
 }
 
-/**
- * Video en bucle al estilo Fracttal: sin sonido ni controles, con su
- * imagen fija mientras carga. Hechos en Remotion (proyecto diapsa-videos)
- * y exportados a 1280 x 800 en public/videos/idap/.
- */
+/* Los videos de los bloques, hechos en Remotion (proyecto diapsa-videos) y
+   exportados a 1280 x 800 en public/videos/idap/ */
 function VideoIdap({ nombre, descripcion }: { nombre: string; descripcion: string }) {
   return (
-    <video
+    <VideoBucle
       className="block aspect-[16/10] w-full object-cover"
       src={`/videos/idap/${nombre}.mp4`}
       poster={`/videos/idap/${nombre}.jpg`}
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      aria-label={descripcion}
+      descripcion={descripcion}
     />
   );
 }
@@ -315,9 +308,10 @@ export default function PaginaIdap() {
             titulo="Todas las técnicas y tus sensores, en un solo lugar"
             texto="Termografía, vibraciones, ultrasonido, aceite, análisis eléctrico y sensores en línea, en la ficha de cada equipo y con un solo diagnóstico."
           >
-            <div className="aspect-[16/10]">
-              <IlustracionTecnicas />
-            </div>
+            <VideoIdap
+              nombre="idap-equipo"
+              descripcion="Ficha de un equipo en IDAP como gemelo digital: estado por componente y diagnóstico integral a partir de cinco disciplinas"
+            />
           </Fila>
 
           <Fila

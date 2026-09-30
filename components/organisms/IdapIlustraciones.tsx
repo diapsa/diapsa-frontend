@@ -5,8 +5,8 @@
  * (2026-09-28). Cada una cuenta su beneficio en un bucle corto, en SVG
  * (escala a cualquier ancho) con la paleta de IDAP. Datos de ejemplo: sin
  * nombres de clientes ni de plantas. Con prefers-reduced-motion se ve el
- * estado final quieto. La de "Anticipa" se reemplazó por un video de
- * Remotion (public/videos/idap/idap-anticipa.mp4).
+ * estado final quieto. Las de "Anticipa" y "Técnicas" se reemplazaron por
+ * videos de Remotion (public/videos/idap/).
  */
 
 const ORO = "#ffc34d";
@@ -92,53 +92,6 @@ export function IlustracionPrioriza() {
           </g>
         );
       })}
-    </Marco>
-  );
-}
-
-/* 3. Todas las técnicas: seis nodos que se conectan al equipo y dan un diagnóstico */
-export function IlustracionTecnicas() {
-  const nodos = [
-    { t: "Termografía", v: "68 °C", c: ROJO, x: 110, y: 90 },
-    { t: "Vibraciones", v: "6.8 mm/s", c: "#a78bfa", x: 320, y: 60 },
-    { t: "Ultrasonido", v: "32 dBµV", c: "#38bdf8", x: 530, y: 90 },
-    { t: "Aceite", v: "Normal", c: AMARILLO, x: 110, y: 300 },
-    { t: "Eléctrico", v: "Balanceado", c: NARANJA, x: 320, y: 336 },
-    { t: "Sensor en línea", v: "En vivo", c: VERDE, x: 530, y: 300 },
-  ];
-  return (
-    <Marco titulo="Seis técnicas se conectan a un equipo y juntas dan un solo diagnóstico">
-      {nodos.map((n, i) => (
-        <line
-          key={`l${n.t}`}
-          x1={n.x}
-          y1={n.y}
-          x2="320"
-          y2="200"
-          stroke={n.c}
-          strokeWidth="2"
-          strokeDasharray="4 6"
-          className="ii-sec"
-          style={{ ["--a" as string]: `${(4 + i * 7) * 0.08}s` }}
-        />
-      ))}
-      {nodos.map((n, i) => (
-        <g key={n.t} className="ii-sec" style={{ ["--a" as string]: `${(4 + i * 7) * 0.08}s` }}>
-          <rect x={n.x - 72} y={n.y - 26} width="144" height="52" rx="12" fill={TARJETA} stroke={n.c} strokeWidth="1.5" />
-          <circle cx={n.x - 54} cy={n.y} r="6" fill={n.c} />
-          <text x={n.x - 40} y={n.y - 4} fill={TEXTO} fontSize="13" fontWeight="700">{n.t}</text>
-          <text x={n.x - 40} y={n.y + 14} fill={n.c} fontSize="12" fontWeight="700">{n.v}</text>
-        </g>
-      ))}
-      {/* El equipo al centro */}
-      <circle cx="320" cy="200" r="56" fill="#162a55" stroke={ORO} strokeWidth="2" className="ii-pulso" />
-      <text x="320" y="194" textAnchor="middle" fill={TEXTO} fontSize="15" fontWeight="800">Motor 4</text>
-      <text x="320" y="214" textAnchor="middle" fill={TENUE} fontSize="11">Ficha del equipo</text>
-      {/* Diagnóstico combinado */}
-      <g className="ii-sec" style={{ ["--a" as string]: "3.2s" }}>
-        <rect x="196" y="270" width="248" height="32" rx="16" fill={ORO} />
-        <text x="320" y="291" textAnchor="middle" fill="#0a142e" fontSize="13" fontWeight="800">Diagnóstico: desalineación</text>
-      </g>
     </Marco>
   );
 }
