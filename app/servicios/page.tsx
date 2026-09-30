@@ -137,7 +137,7 @@ const services = [
       "Mediciones certificadas",
       "Gestión de datos e historial",
     ],
-    image: "/images/servicios/placeholder.jpg",
+    image: "/images/diapsa-start/practica-termografia.webp",
     imageAlt: "Ingeniero de mantenimiento con programa DIAPSA START en planta",
     featured: false,
     icon: (
