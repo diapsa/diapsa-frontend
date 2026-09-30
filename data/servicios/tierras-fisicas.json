@@ -653,22 +653,22 @@
     },
     {
       "lugar": "cobertura",
-      "etiqueta": "Cómo medimos",
-      "titulo": "¿Qué se mide y qué encuentra?",
-      "texto": "La resistencia de cada electrodo y la continuidad de cada equipo. Las dos hacen falta.",
+      "etiqueta": "Por qué importa",
+      "titulo": "Evita multas y acredita auditorías",
+      "texto": "El estudio es la evidencia de que tu planta cumple con la NOM-022-STPS-2015, y es lo que te van a pedir.",
       "fondo": "gris",
       "bloques": [
         {
-          "titulo": "Resistencia por caída de potencial",
-          "texto": "Con telurómetro calibrado y estacas auxiliares, midiendo a varias distancias hasta que el valor se estabiliza. Una lectura rápida puede dar un número que no es el del electrodo.",
-          "video": "/videos/tierras-fisicas/tie-caida",
-          "descripcion": "Esquema del método de caída de potencial con el electrodo y las estacas P y C, y la curva que se estabiliza cerca del 62 %"
+          "titulo": "Inspección de la STPS",
+          "texto": "El inspector pide el registro de la última medición, vigente, con todos los puntos y los valores dentro de norma. Con el reporte al día, la revisión queda cubierta; sin él, hay riesgo de multa.",
+          "video": "/videos/tierras-fisicas/tie-inspeccion",
+          "descripcion": "Lo que pide un inspector de la STPS sobre tierras físicas, y la diferencia entre tener el reporte vigente y no tenerlo"
         },
         {
-          "titulo": "Continuidad hasta cada equipo",
-          "texto": "No basta con que el electrodo esté bien: cada tablero, motor, tanque y estructura tiene que llegar a la red. El que no llega queda energizado en una falla.",
-          "video": "/videos/tierras-fisicas/tie-continuidad",
-          "descripcion": "Prueba de continuidad de cinco equipos, con el tanque de diésel sin continuidad aunque su registro mida bien"
+          "titulo": "Auditorías de clientes, aseguradoras y certificaciones",
+          "texto": "Todos piden lo mismo: evidencia. El expediente reúne el reporte validado por Unidad Verificadora, cada punto con su valor y foto, las correcciones y el historial de cada año.",
+          "video": "/videos/tierras-fisicas/tie-auditoria",
+          "descripcion": "Cliente, aseguradora y certificación piden evidencia de las tierras físicas y el expediente la acredita"
         }
       ],
       "listas": [
