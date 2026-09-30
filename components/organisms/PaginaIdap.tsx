@@ -2,7 +2,7 @@ import Image from "next/image";
 import Aparece from "@/components/atoms/Aparece";
 import Contador from "@/components/atoms/Contador";
 import VideoBucle from "@/components/atoms/VideoBucle";
-import EscenaIdap from "@/components/organisms/EscenaIdap";
+import EscenaInspeccion from "@/components/organisms/EscenaInspeccion";
 import EscenaIdapHero from "@/components/organisms/EscenaIdapHero";
 import IdapFormulario from "@/components/organisms/IdapFormulario";
 import { FONDO_IDAP, ORO_IDAP, PIE_IDAP } from "@/lib/idap-estilo";
@@ -322,15 +322,10 @@ export default function PaginaIdap() {
             ancho
             icono="inspeccion"
             titulo="Así llega una inspección a IDAP"
-            texto="La inspección llega de campo, cada técnica se califica en semáforo y termina en la recomendación. Pasa el cursor por una técnica para abrirla."
+            texto="La inspección llega de campo, cada técnica se califica en semáforo y todo se resume en un diagnóstico, con lo que costaría la falla y la recomendación. Pasa el cursor por una técnica para abrirla."
           >
-            <EscenaIdap
-              disciplina="term"
-              imagenes={{
-                principal: "/images/idap/inspeccion/termica-1.jpg",
-                miniaturas: ["/images/idap/inspeccion/termica-1.jpg", "/images/idap/inspeccion/termica-2.jpg", "/images/idap/inspeccion/termica-3.jpg"],
-              }}
-            />
+            {/* Con los rellenos térmicos del diseño: la comparación anterior/actual y las lecturas del cursor van con ellos */}
+            <EscenaInspeccion />
           </Fila>
 
           <Fila
