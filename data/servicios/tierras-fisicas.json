@@ -22,13 +22,13 @@
   ],
   "header": {
     "title": "Tierras Físicas",
-    "subtitle": "Estudio de tierras físicas y pararrayos conforme a NOM-022-STPS-2015, con reporte listo para la STPS",
+    "subtitle": "Estudio de tierras físicas y pararrayos conforme a NOM-022-STPS-2015: cumple con la STPS, evita multas y acredita tus auditorías",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Estudio y medición de tierras físicas y pararrayos conforme a NOM-022-STPS-2015: resistencia por caída de potencial, continuidad hasta cada equipo y reporte validado por Unidad Verificadora, listo para la STPS.",
+  "seoDescription": "Estudio y medición de tierras físicas y pararrayos conforme a NOM-022-STPS-2015 para evitar multas de la STPS y acreditar auditorías: resistencia por caída de potencial, continuidad hasta cada equipo y reporte validado por Unidad Verificadora.",
   "content": {
-    "title": "La corriente de una falla necesita por dónde irse",
-    "subtitle": "Cuando un cable toca una carcasa o cae un rayo, la corriente busca el camino más fácil a tierra. Si la red está bien, ese camino es el electrodo; si no, puede ser una persona o un equipo. Medirla es la única forma de saberlo, y la STPS lo pide.",
+    "title": "Cumplir con la norma, y que la red de verdad proteja",
+    "subtitle": "La razón principal es el cumplimiento normativo: la NOM-022-STPS-2015 obliga a medir la red de tierras y los pararrayos al menos cada año. El reporte vigente es lo que evita multas en una inspección de la STPS y lo que te permite acreditar auditorías de clientes, aseguradoras y certificaciones. Y de paso confirma que, si algo falla, la corriente se va a tierra y no a una persona.",
     "image": "/images/servicios/tierras-fisicas/registro-abierto.webp",
     "items": [
       {
@@ -464,6 +464,10 @@
   "mostrarClientes": true,
   "faq": [
     {
+      "question": "¿Para qué sirve el estudio de tierras físicas?",
+      "answer": "Ante todo, para cumplir con la NOM-022-STPS-2015. Tener el reporte vigente evita multas en una inspección de la STPS y es la evidencia que piden las auditorías de clientes, aseguradoras y certificaciones. Además confirma que la red de tierras sigue protegiendo a las personas y a los equipos."
+    },
+    {
       "question": "¿Qué dice la NOM-022-STPS-2015 sobre tierras físicas?",
       "answer": "Que el centro de trabajo debe contar con una red de puesta a tierra, medir su resistencia y continuidad, conservar el registro de esas mediciones y señalizar las bajantes de pararrayos. Es lo que un inspector de la STPS pide ver. El reporte de DIAPSA está estructurado para responder punto por punto a esa revisión."
     },
@@ -560,19 +564,19 @@
   "introBeneficios": {
     "beneficios": [
       {
+        "icono": "paro",
+        "titulo": "Evita multas de la STPS",
+        "texto": "Reporte vigente y validado para la inspección."
+      },
+      {
         "icono": "documento",
-        "titulo": "Expediente listo para la STPS",
-        "texto": "Reporte validado por Unidad Verificadora."
+        "titulo": "Acredita tus auditorías",
+        "texto": "De clientes, aseguradoras y certificaciones."
       },
       {
         "icono": "rayo",
         "titulo": "La corriente tiene por dónde irse",
         "texto": "Cada punto medido contra su límite."
-      },
-      {
-        "icono": "engrane",
-        "titulo": "Cada equipo conectado",
-        "texto": "Continuidad hasta tableros, tanques y estructuras."
       },
       {
         "icono": "calendario",
