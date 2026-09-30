@@ -1,0 +1,53 @@
+{
+  "slug": "valor-de-resistencia-de-tierra-fisica-cuanto-debe-medir",
+  "titulo": "Valor de resistencia de tierra física: cuánto debe medir y qué hacer si sale alto",
+  "extracto": "Los valores de resistencia de tierra que aplican en México, por qué un valor bueno no basta sin continuidad, qué hace que una tierra mida alto y cómo se corrige.",
+  "portada": "/images/servicios/tierras-fisicas/lectura-ohm.webp",
+  "fecha": "2026-09-30T23:59:10.000000Z",
+  "seo": {
+    "titulo": "Valor de resistencia de tierra física: cuánto debe medir",
+    "descripcion": "Cuál es el valor máximo de resistencia de tierra física en México (25 ohms la red y 10 ohms los pararrayos según NOM-022-STPS-2015), por qué sale alto una tierra y cómo se corrige."
+  },
+  "bloques": [
+    ["p", "Es la pregunta que más nos hacen: ¿cuánto debe medir una tierra física? La respuesta corta es que depende de qué se está midiendo. Y la respuesta completa incluye algo que muchos reportes olvidan: un valor bueno no sirve de nada si el equipo no está conectado a ese electrodo."],
+
+    ["h2", "Los valores que aplican"],
+    ["lista", [
+      "Red de puesta a tierra general: de 0 a 25 ohms, según la NOM-022-STPS-2015.",
+      "Sistema de pararrayos: no mayor a 10 ohms, según la misma norma.",
+      "Un electrodo de varilla solo: si mide más de 25 ohms, la NOM-001-SEDE pide complementarlo con otro electrodo."
+    ]],
+    ["p", "Además, algunos equipos piden valores más bajos por diseño: subestaciones, equipo electrónico sensible o sistemas de comunicaciones. En esos casos manda la especificación del proyecto o del fabricante."],
+
+    ["h2", "Un valor bueno no basta"],
+    ["p", "La resistencia dice si el electrodo hace buen contacto con la tierra. Pero la corriente de una falla viaja desde el equipo hasta el electrodo por un conductor, y si ese conductor está roto, flojo o nunca se conectó, el equipo no tiene tierra aunque el electrodo mida perfecto. Por eso cada punto se mide dos veces: resistencia en el electrodo y continuidad hasta el equipo."],
+
+    ["h2", "Por qué sale alta una tierra"],
+    ["lista", [
+      "Terreno seco, rocoso o arenoso, que conduce mal la corriente.",
+      "Electrodo corroído o demasiado corto para el terreno.",
+      "Conexión floja u oxidada entre el conductor y el electrodo.",
+      "Temporada seca: la misma tierra puede medir distinto según la humedad.",
+      "Medición mal hecha, con las estacas auxiliares demasiado cerca."
+    ]],
+
+    ["h2", "Cómo se corrige"],
+    ["numerada", [
+      "Revisar y limpiar la conexión: es la corrección más barata y muchas veces la que resuelve.",
+      "Agregar electrodos en paralelo, separados entre sí, para bajar la resistencia total.",
+      "Usar electrodos más largos si el terreno húmedo está más abajo.",
+      "Tratar el terreno alrededor del electrodo con un mejorador de conductividad.",
+      "Volver a medir para confirmar."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Se puede medir una tierra con multímetro?"],
+    ["p", "No de forma confiable. El multímetro no inyecta la corriente ni separa la resistencia del electrodo de la del terreno. Para eso se usa un telurómetro con el método de caída de potencial, que explicamos en su [guía](/blog/metodo-de-caida-de-potencial-como-se-mide-una-tierra-fisica)."],
+    ["h3", "¿Cambia el valor con la temporada?"],
+    ["p", "Sí. En temporada de lluvias la tierra suele medir más bajo que en secas. Por eso conviene medir siempre en condiciones parecidas y anotar la fecha."],
+    ["h3", "¿Qué pasa si un pararrayos mide 15 ohms?"],
+    ["p", "Está fuera de norma aunque ese mismo valor sería aceptable en la red general. Hay que corregirlo y volver a medir. Lo que pide la norma lo resumimos en la guía de la [NOM-022-STPS-2015](/blog/nom-022-stps-2015-que-pide-sobre-tierras-fisicas-y-pararrayos)."],
+
+    ["nota", "Medimos cada punto de tu red, resistencia y continuidad, y te decimos exactamente qué corregir. Conoce el servicio de [tierras físicas](/servicios/monitoreo-condicion/tierras-fisicas)."]
+  ]
+}

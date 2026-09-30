@@ -1,0 +1,48 @@
+{
+  "slug": "metodo-de-caida-de-potencial-como-se-mide-una-tierra-fisica",
+  "titulo": "Método de caída de potencial: cómo se mide una tierra física y la regla del 62 %",
+  "extracto": "Cómo funciona el método de caída de potencial, dónde se colocan las estacas, por qué el valor correcto está cerca del 62 % de la distancia y los errores que hacen que la lectura no sirva.",
+  "portada": "/images/servicios/tierras-fisicas/electrodo-auxiliar.webp",
+  "fecha": "2026-09-30T23:59:20.000000Z",
+  "seo": {
+    "titulo": "Método de caída de potencial y regla del 62 % en tierras físicas",
+    "descripcion": "Cómo se mide la resistencia de una tierra física con el método de caída de potencial o de tres puntos: colocación de las estacas, la regla del 62 %, cómo validar la lectura y errores comunes."
+  },
+  "bloques": [
+    ["p", "Medir una tierra física parece sencillo: se conecta el telurómetro, se lee un número y listo. Pero ese número solo vale si la medición se hizo bien. El método estándar se llama caída de potencial, o de tres puntos, y entenderlo ayuda a saber si un reporte es confiable."],
+
+    ["h2", "Cómo funciona"],
+    ["p", "Se usan tres puntos en línea recta: el electrodo que se quiere medir, una estaca de corriente clavada lejos, y una estaca de potencial entre las dos. El telurómetro hace pasar una corriente conocida entre el electrodo y la estaca de corriente, y mide el voltaje entre el electrodo y la estaca de potencial. Con la ley de Ohm, voltaje entre corriente, obtiene la resistencia."],
+
+    ["h2", "Por qué importa la distancia"],
+    ["p", "Alrededor de cada electrodo hay una zona de tierra que influye en la lectura. Si la estaca de potencial queda dentro de la zona del electrodo o de la estaca de corriente, el valor sale falso. Lo correcto es que quede en medio, fuera de las dos zonas. En un terreno uniforme, ese punto está cerca del 62 % de la distancia entre el electrodo y la estaca de corriente. Por eso se le llama la regla del 62 %."],
+
+    ["h2", "Cómo se valida la lectura"],
+    ["p", "No basta con medir una vez en el 62 %. Se mide también un poco antes y un poco después, por ejemplo en el 52 % y en el 72 %. Si los tres valores son parecidos, se está en la meseta y la lectura es buena. Si cambian mucho, las zonas se están cruzando y hay que alejar la estaca de corriente."],
+    ["numerada", [
+      "Clavar la estaca de corriente lejos del electrodo, más lejos entre más grande sea la red.",
+      "Clavar la estaca de potencial en el 62 % de esa distancia y medir.",
+      "Mover la estaca de potencial hacia adelante y hacia atrás y volver a medir.",
+      "Si los valores coinciden, registrar el del 62 %. Si no, alejar la estaca de corriente y repetir."
+    ]],
+
+    ["h2", "Errores comunes"],
+    ["lista", [
+      "Clavar las estacas demasiado cerca, porque no hay espacio o por prisa.",
+      "Medir una sola vez sin comprobar la meseta.",
+      "No desconectar el electrodo cuando el método lo pide, y medir en paralelo con toda la red.",
+      "Estacas mal clavadas en terreno muy seco, que no hacen buen contacto.",
+      "Confundir la resistencia del electrodo con la continuidad del equipo, que es otra prueba."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Qué es el telurómetro de gancho?"],
+    ["p", "Es un equipo que mide sin estacas, abrazando el conductor. Es práctico en instalaciones con varios electrodos conectados entre sí, pero no sirve para un electrodo aislado ni sustituye al método de caída de potencial en todos los casos."],
+    ["h3", "¿Y el método de Wenner?"],
+    ["p", "El método de Wenner mide la resistividad del terreno, no la resistencia de un electrodo. Se usa para diseñar una red nueva, no para verificar una existente."],
+    ["h3", "¿Qué valor debe salir?"],
+    ["p", "Depende de qué se mide: 25 ohms como máximo en la red general y 10 en pararrayos, según la NOM-022-STPS-2015. Lo explicamos en la guía de [valores de resistencia de tierra](/blog/valor-de-resistencia-de-tierra-fisica-cuanto-debe-medir)."],
+
+    ["nota", "Medimos con telurómetro calibrado y comprobando la meseta en cada punto. Conoce el servicio de [tierras físicas](/servicios/monitoreo-condicion/tierras-fisicas)."]
+  ]
+}

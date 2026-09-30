@@ -1,0 +1,44 @@
+{
+  "slug": "nom-022-stps-2015-que-pide-sobre-tierras-fisicas-y-pararrayos",
+  "titulo": "NOM-022-STPS-2015: qué pide sobre tierras físicas y pararrayos",
+  "extracto": "A quién aplica la NOM-022-STPS-2015, qué pide medir en la red de puesta a tierra y en los pararrayos, qué valores aplica, cada cuánto hay que medir y qué revisa un inspector de la STPS.",
+  "portada": "/images/servicios/tierras-fisicas/medicion-registro.webp",
+  "fecha": "2026-09-30T23:59:00.000000Z",
+  "seo": {
+    "titulo": "NOM-022-STPS-2015: tierras físicas y pararrayos, qué pide",
+    "descripcion": "Resumen de lo que pide la NOM-022-STPS-2015 sobre tierras físicas y pararrayos: a quién aplica, valores de resistencia, continuidad, vigencia de la medición y qué revisa la STPS."
+  },
+  "bloques": [
+    ["p", "La NOM-022-STPS-2015 es la norma que más se cita cuando se habla de tierras físicas en una planta. Su nombre completo habla de electricidad estática, y por eso a veces se piensa que no aplica a todos. Aquí te contamos a quién aplica, qué pide medir y qué va a buscar un inspector, en palabras sencillas."],
+
+    ["h2", "A quién aplica"],
+    ["p", "A los centros de trabajo donde se almacenan, manejan o transportan sustancias inflamables o explosivas, a los que por sus procesos usan materiales o equipos que pueden generar o acumular electricidad estática, y a los que están en una zona donde pueden recibir descargas atmosféricas, es decir, rayos. En la práctica, eso incluye a la gran mayoría de las plantas industriales."],
+
+    ["h2", "Qué pide"],
+    ["lista", [
+      "Tener una red de puesta a tierra y, donde aplique, un sistema de pararrayos.",
+      "Medir la resistencia de la red de puesta a tierra y del sistema de pararrayos.",
+      "Verificar la continuidad de las conexiones, es decir, que los equipos de verdad lleguen a la red.",
+      "Hacer las mediciones al menos cada doce meses.",
+      "Conservar el registro de los resultados.",
+      "Corregir lo que salga fuera de los valores de la norma."
+    ]],
+
+    ["h2", "Qué valores aplica"],
+    ["p", "Para la red de puesta a tierra, la norma pide un valor de resistencia de entre 0 y 25 ohms. Para el sistema de pararrayos, no mayor a 10 ohms. Por eso, en un buen reporte cada punto se compara contra el límite que le corresponde: un registro general que mide 12 ohms cumple, pero un pararrayos con el mismo valor no."],
+
+    ["h2", "Qué revisa un inspector"],
+    ["p", "Lo primero que pide es el registro de la última medición y que esté vigente, es decir, que no tenga más de doce meses. Después revisa que estén todos los puntos, que los valores estén dentro de norma y, si no lo están, que haya evidencia de la corrección. También puede revisar que las bajantes de los pararrayos estén en buen estado."],
+    ["p", "Un error común es tener un reporte con solo los valores de resistencia, sin la continuidad. Un registro puede medir perfecto y el tanque que debería estar conectado a él no estarlo. Te lo explicamos en la guía de [valores de resistencia de tierra](/blog/valor-de-resistencia-de-tierra-fisica-cuanto-debe-medir)."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿El estudio lo tiene que hacer una unidad de verificación?"],
+    ["p", "La norma permite que el patrón compruebe el cumplimiento con una unidad de verificación acreditada. Tener el reporte validado por una da más respaldo ante la STPS, aseguradoras y auditorías de clientes."],
+    ["h3", "¿Qué pasa si no tengo el estudio?"],
+    ["p", "En una inspección de la STPS es una de las primeras cosas que se piden, y no tenerlo puede terminar en una sanción. Más importante: sin medir no hay forma de saber si la red sigue protegiendo."],
+    ["h3", "¿Esta norma sustituye a la NOM-001-SEDE?"],
+    ["p", "No. La NOM-001-SEDE regula cómo se diseñan y construyen las instalaciones eléctricas. La NOM-022-STPS se enfoca en la seguridad del personal en el centro de trabajo. Las dos hablan de puesta a tierra desde ángulos distintos."],
+
+    ["nota", "Hacemos el estudio de tierras físicas y pararrayos de tu planta con reporte conforme a la NOM-022-STPS-2015 y validado por Unidad Verificadora. Conoce el servicio de [tierras físicas](/servicios/monitoreo-condicion/tierras-fisicas). Este resumen es orientativo; para cualquier duda de cumplimiento, la referencia es el texto oficial de la norma."]
+  ]
+}
