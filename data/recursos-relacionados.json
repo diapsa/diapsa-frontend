@@ -606,5 +606,44 @@
       "titulo": "Sensores de Vibración",
       "resumen": "Una lectura cada 10 minutos, instalados por especialistas y con cada alerta revisada."
     }
+  },
+  {
+    "articulo": {
+      "slug": "camara-termica-fija-o-termografia-con-camara-de-mano",
+      "titulo": "Cámara fija o de mano",
+      "resumen": "Cuándo conviene vigilar sin parar y qué hace falta.",
+      "portada": "/images/servicios/termografia-infrarroja/campo-09.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/camaras-termicas",
+      "titulo": "Cámaras Térmicas Fijas",
+      "resumen": "Vigilancia térmica continua para equipos críticos, con alertas por patrón revisadas por termógrafos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "deteccion-temprana-de-incendios-con-camaras-termicas-en-plantas",
+      "titulo": "Detección temprana de incendios",
+      "resumen": "Cómo una cámara térmica ve antes que el humo.",
+      "portada": "/images/servicios/termografia-infrarroja/campo-57.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/camaras-termicas",
+      "titulo": "Cámaras Térmicas Fijas",
+      "resumen": "Vigilancia térmica continua para equipos críticos, con alertas por patrón revisadas por termógrafos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "monitoreo-termico-en-centros-de-datos-que-vigilar",
+      "titulo": "Monitoreo térmico en centros de datos",
+      "resumen": "Qué se calienta y qué revisar primero.",
+      "portada": "/images/servicios/termografia-infrarroja/campo-49.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/camaras-termicas",
+      "titulo": "Cámaras Térmicas Fijas",
+      "resumen": "Vigilancia térmica continua para equipos críticos, con alertas por patrón revisadas por termógrafos."
+    }
   }
 ]

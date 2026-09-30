@@ -1,0 +1,46 @@
+{
+  "slug": "monitoreo-termico-en-centros-de-datos-que-vigilar",
+  "titulo": "Monitoreo térmico en centros de datos: qué vigilar y por qué",
+  "extracto": "Qué puntos se calientan en un centro de datos, por qué los sensores de temperatura del cuarto no alcanzan, cómo ayudan la termografía y las cámaras fijas, y qué revisar primero.",
+  "portada": "/images/servicios/termografia-infrarroja/campo-49.webp",
+  "fecha": "2026-09-30T23:59:59.900000Z",
+  "seo": {
+    "titulo": "Monitoreo térmico en centros de datos: qué vigilar",
+    "descripcion": "Qué vigilar térmicamente en un centro de datos (tableros, PDU, UPS, bancos de baterías, racks y aire acondicionado de precisión), por qué no bastan los sensores del cuarto y cómo ayudan la termografía y las cámaras fijas."
+  },
+  "bloques": [
+    ["p", "En un centro de datos, una conexión caliente en un tablero o una batería que se degrada puede tirar un rack o una sala completa. Y lo más peligroso es que estas fallas casi nunca se ven en los sensores de temperatura del cuarto, que miden el aire, no el punto que se está calentando."],
+
+    ["h2", "Qué puntos se calientan"],
+    ["lista", [
+      "Tableros de distribución y sus conexiones.",
+      "Unidades de distribución de energía, o PDU, y sus contactos.",
+      "UPS y, sobre todo, sus bancos de baterías.",
+      "Transferencias automáticas.",
+      "Racks con zonas de aire caliente mal manejadas.",
+      "Equipos de aire acondicionado de precisión."
+    ]],
+
+    ["h2", "Por qué no bastan los sensores del cuarto"],
+    ["p", "Un sensor mide la temperatura del aire en un punto. Una conexión floja puede estar a 90 °C mientras el aire alrededor sigue en 24 °C. La termografía ve la superficie de cada componente, y por eso encuentra el problema donde el sensor no."],
+
+    ["h2", "Termografía en ruta o cámaras fijas"],
+    ["p", "Una ruta de termografía cada tres o seis meses revisa todo el sitio con detalle y encuentra la mayoría de los problemas. Para los puntos más críticos, como los tableros principales y los bancos de baterías, las cámaras fijas vigilan todo el día y avisan en minutos. Lo más común es combinar las dos."],
+
+    ["h2", "Qué revisar primero"],
+    ["numerada", [
+      "Los tableros y transferencias que alimentan todo el sitio.",
+      "Los bancos de baterías de los UPS, celda por celda.",
+      "Las PDU de los racks más cargados.",
+      "La distribución de aire en los pasillos fríos y calientes."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿La termografía se hace con todo encendido?"],
+    ["p", "Sí, y debe hacerse con carga, porque un punto con problema solo se calienta cuando pasa corriente."],
+    ["h3", "¿Qué tan caliente es demasiado?"],
+    ["p", "Depende del componente y de su diferencia contra componentes iguales en la misma condición. Lo explicamos en la guía de la [tabla NETA](/blog/tabla-neta-termografia-como-se-califica-un-punto-caliente)."],
+
+    ["nota", "Hacemos la [termografía en ruta](/servicios/monitoreo-condicion/termografia-infrarroja) de tu centro de datos y proyectos de [cámaras térmicas fijas](/servicios/monitoreo-continuo/camaras-termicas) para los puntos críticos."]
+  ]
+}
