@@ -1,0 +1,57 @@
+{
+  "slug": "sensores-inalambricos-de-vibracion-como-elegirlos-e-instalarlos",
+  "titulo": "Sensores inalámbricos de vibración: cómo elegirlos e instalarlos para que sirvan",
+  "extracto": "Qué mide un sensor inalámbrico de vibración, qué revisar al elegirlo, cómo y dónde se instala, y los errores de montaje que hacen que los datos no sirvan.",
+  "portada": "/images/servicios/sensores-vibracion/instalacion-sensor.webp",
+  "fecha": "2026-09-30T23:59:59.200000Z",
+  "seo": {
+    "titulo": "Sensores inalámbricos de vibración: cómo elegirlos e instalarlos",
+    "descripcion": "Guía de sensores inalámbricos de vibración industriales: qué miden, qué revisar al elegirlos, dónde y cómo instalarlos, la estación base y los errores de montaje más comunes."
+  },
+  "bloques": [
+    ["p", "Los sensores inalámbricos hicieron que el monitoreo en línea dejara de ser algo solo para las turbinas y los compresores más caros. Hoy se pueden poner en motores y bombas a un costo razonable. Pero un sensor mal elegido o mal instalado da datos que no sirven, y lleva a la conclusión equivocada de que la tecnología no funciona."],
+
+    ["h2", "Qué mide"],
+    ["p", "La mayoría mide vibración en tres ejes y temperatura de la superficie. Los más completos, además del valor global, guardan formas de onda y espectros que permiten diagnosticar, no solo avisar. Esa diferencia importa: un valor global dice que algo cambió; el espectro dice qué."],
+
+    ["h2", "Qué revisar al elegir"],
+    ["lista", [
+      "Si guarda espectros y formas de onda, o solo valores globales.",
+      "El rango de frecuencias, que tiene que cubrir las fallas de tu equipo.",
+      "Cada cuánto mide y cuánto dura la batería con esa frecuencia.",
+      "La clasificación para áreas peligrosas, si aplica.",
+      "Cómo se comunica: estación base, alcance y qué pasa si se pierde la señal.",
+      "A qué plataforma manda los datos y si se integra con la tuya."
+    ]],
+
+    ["h2", "Dónde se instala"],
+    ["p", "Lo más cerca posible del rodamiento, sobre la caja, en la zona de carga y en una superficie rígida. No sobre tapas delgadas, guardas ni aletas de enfriamiento, que vibran por su cuenta. En un motor-bomba típico, los puntos más importantes son el lado acople del motor y el lado acople de la bomba."],
+
+    ["h2", "Cómo se monta"],
+    ["numerada", [
+      "Limpiar y aplanar la superficie, quitando pintura si hace falta.",
+      "Fijar el sensor con perno roscado, con base pegada con epóxico o con un imán de buena calidad, según el caso.",
+      "Orientar los ejes del sensor de forma consistente en todos los equipos.",
+      "Comprobar la señal con la estación base antes de irse.",
+      "Tomar la primera medición como línea base y documentar el punto con foto."
+    ]],
+    ["p", "El perno o el epóxico dan la mejor transmisión de la vibración. El imán es práctico, pero si se asienta mal cambia la lectura, sobre todo en altas frecuencias."],
+
+    ["h2", "Errores que hacen que los datos no sirvan"],
+    ["lista", [
+      "Montar el sensor lejos del rodamiento o sobre una superficie que vibra por su cuenta.",
+      "Dejar las alarmas genéricas de fábrica sin ajustarlas al equipo.",
+      "No verificar la señal y perder datos durante semanas.",
+      "Instalar sensores en equipos que no lo justifican y dejar sin sensor los críticos."
+    ]],
+    ["p", "Las alarmas genéricas son el error más caro: generan cientos de avisos falsos hasta que nadie los atiende. Lo explicamos en la guía de [falsas alarmas en monitoreo continuo](/blog/falsas-alarmas-en-monitoreo-con-sensores-iot-como-evitarlas)."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Hay que parar el equipo para instalar?"],
+    ["p", "En la mayoría de los casos no, aunque para preparar la superficie o montar con perno a veces conviene aprovechar un paro."],
+    ["h3", "¿Cuántos sensores lleva un motor-bomba?"],
+    ["p", "Lo más común es uno o dos en el motor y uno o dos en la bomba, según su tamaño y criticidad."],
+
+    ["nota", "Instalamos los sensores con analistas de vibraciones, en el punto correcto y con la línea base desde el primer día. Conoce los [sensores de vibración](/servicios/monitoreo-continuo/sensores-vibracion) y el [monitoreo continuo](/servicios/monitoreo-continuo)."]
+  ]
+}

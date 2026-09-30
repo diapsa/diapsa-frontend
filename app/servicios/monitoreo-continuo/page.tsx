@@ -1,33 +1,42 @@
-import PageHeader from "@/components/organisms/PageHeader";
-// import ContactForm from "@/components/organisms/ContactForm";
-import ContinuosMonitoringValueProp from "@/components/organisms/ContinuosMonitoringValueProp";
-import ContinuosMonitoringStats from "@/components/organisms/ContinuosMonitoringStats";
-import ContinuosMonitoringChallenge from "@/components/organisms/ContinuosMonitoringChallenge";
-import ContinuosMonitoringSolutions from "@/components/organisms/ContinuosMonitoringSolutions";
-import ContinuosMonitoringCta from "@/components/organisms/ContinuosMonitoringCta";
-import ContinuosMonitoringTechnology from "@/components/organisms/ContinuosMonitoringTechnology";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import type { Servicio } from "@/types/servicio";
+import datos from "@/data/servicios/monitoreo-continuo.json";
+import PaginaServicio from "@/components/organisms/PaginaServicio";
 
+/**
+ * Monitoreo continuo, página general (rehecha el 2026-09-30).
+ * Antes eran seis secciones propias con tres imágenes hechas con IA y fichas
+ * de producto de KCF. Ahora se arma desde su JSON con las secciones de las
+ * páginas de servicio (PaginaServicio): beneficios con fotos reales, las
+ * cuatro páginas de sensores como modalidades, videos del proceso, de la
+ * falla entre rutas y del rescate de programas con falsas alarmas, el
+ * informe mensual de muestra y preguntas frecuentes. Conserva su ruta.
+ */
+
+const service = datos as unknown as Servicio;
 const OG_IMAGE = "/images/og-images/og-image-monitoreo-continuo.jpg";
+const RUTA = "/servicios/monitoreo-continuo";
+const titulo = service.seoTitle ?? service.header.title;
+const descripcion = service.seoDescription ?? service.header.subtitle;
 
 export const metadata: Metadata = {
-    title: "Monitoreo Continuo",
-    description: "Sensores que vigilan tus equipos las 24 horas y avisan antes de la falla. Monitoreo continuo con análisis remoto por especialistas de Grupo DIAPSA.",
+    title: titulo,
+    description: descripcion,
     keywords: [
         "monitoreo continuo",
-        "monitoreo 24/7",
-        "sensores online",
+        "monitoreo en línea",
+        "sensores inalámbricos de vibración",
+        "monitoreo de condición en línea",
         "análisis remoto",
         "mantenimiento predictivo",
-        "activos industriales",
     ],
     alternates: {
-        canonical: "/servicios/monitoreo-continuo",
+        canonical: RUTA,
     },
     openGraph: {
-        title: "Monitoreo Continuo | Grupo DIAPSA",
-        description: "Transformamos señales en decisiones, decisiones en resultados para proteger activos industriales.",
-        url: "/servicios/monitoreo-continuo",
+        title: `${titulo} | Grupo DIAPSA`,
+        description: descripcion,
+        url: RUTA,
         type: "website",
         locale: "es_MX",
         siteName: "Grupo DIAPSA",
@@ -44,33 +53,12 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         site: "@grupodiapsa",
-        title: "Monitoreo Continuo | Grupo DIAPSA",
-        description: "Monitoreo continuo para convertir datos de condición en acciones operativas.",
+        title: `${titulo} | Grupo DIAPSA`,
+        description: descripcion,
         images: [OG_IMAGE],
     },
 };
 
 export default function ContinuosMonitoringPage() {
-    return (
-        <main>
-            <PageHeader
-                title="Monitoreo Continuo"
-                subtitle="Transformamos señales en decisiones, decisiones en resultados"
-                breadcrumbs={[
-                    { label: "Inicio", link: "/" },
-                    { label: "Servicios", link: "/servicios" },
-                    { label: "Monitoreo Continuo", link: "/servicios/monitoreo-continuo" },
-                ]}
-            />
-            <ContinuosMonitoringValueProp />
-            <ContinuosMonitoringStats />
-            <ContinuosMonitoringChallenge />
-            <ContinuosMonitoringSolutions />
-            <ContinuosMonitoringTechnology />
-            <ContinuosMonitoringCta />
-            {/* <section id="contacto">
-                <ContactForm />
-            </section> */}
-        </main>
-    );
+    return <PaginaServicio service={service} href={RUTA} />;
 }
