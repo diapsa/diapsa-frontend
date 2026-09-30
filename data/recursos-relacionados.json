@@ -3,7 +3,8 @@
     "articulo": {
       "slug": "analisis-de-vibraciones-guia-completa-de-fallas-parametros-y-normas-iso",
       "titulo": "Análisis de vibraciones: guía completa de fallas, parámetros y normas ISO",
-      "resumen": "La curva P-F, los ocho modos de falla con su espectro, el criterio de severidad y las normas ISO, explicados a fondo y en gráficos."
+      "resumen": "La curva P-F, los ocho modos de falla con su espectro, el criterio de severidad y las normas ISO, explicados a fondo y en gráficos.",
+      "portada": "/images/gallery/campo/vibracion-punto-medicion.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas",
@@ -149,6 +150,45 @@
       "href": "/servicios/monitoreo-condicion/termografia-infrarroja",
       "titulo": "Termografía Infrarroja",
       "resumen": "Inspección termográfica de tableros, motores y procesos con reporte de hallazgos priorizado."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "tabla-iso-10816-3-y-20816-3-limites-de-vibracion",
+      "titulo": "Tabla ISO 10816-3 y 20816-3: cómo leer los límites de vibración",
+      "resumen": "Grupos de máquinas, base rígida o flexible, zonas A a D y qué cambió con la ISO 20816-3.",
+      "portada": "/images/gallery/campo/vibracion-analizador-mano.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas",
+      "titulo": "Análisis de Vibraciones Mecánicas",
+      "resumen": "Rutas de medición e interpretación espectral en tu planta, con analistas Categoría III ISO 18436-2."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "diferencia-entre-desbalance-y-desalineacion",
+      "titulo": "Desbalance y desalineación: en qué se diferencian",
+      "resumen": "Cómo se ven en el espectro, cómo confirmarlo con la fase y cómo se corrigen.",
+      "portada": "/images/gallery/campo/vibracion-bomba-roja.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas",
+      "titulo": "Análisis de Vibraciones Mecánicas",
+      "resumen": "Rutas de medición e interpretación espectral en tu planta, con analistas Categoría III ISO 18436-2."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "analisis-de-vibraciones-en-motores-y-bombas-centrifugas",
+      "titulo": "Vibraciones en motores y bombas centrífugas: dónde medir y qué buscar",
+      "resumen": "Los puntos de medición, las fallas típicas de cada uno y cómo medir para poder comparar.",
+      "portada": "/images/gallery/campo/vibracion-bomba-vertical.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas",
+      "titulo": "Análisis de Vibraciones Mecánicas",
+      "resumen": "Rutas de medición e interpretación espectral en tu planta, con analistas Categoría III ISO 18436-2."
     }
   }
 ]

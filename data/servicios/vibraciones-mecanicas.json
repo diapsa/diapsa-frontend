@@ -22,13 +22,13 @@
   ],
   "header": {
     "title": "Análisis de Vibraciones Mecánicas",
-    "subtitle": "Diagnóstico preciso del estado de maquinaria rotativa",
+    "subtitle": "Análisis de vibraciones en motores, bombas y equipo rotativo: desbalance, desalineación y rodamientos detectados antes del paro",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Detectamos desbalanceo, desalineación y fallas de rodamientos antes del paro. Analistas Categoría III ISO 18436-2 con más de 20 años en planta.",
+  "seoDescription": "Análisis de vibraciones para mantenimiento predictivo en México: desbalance, desalineación y rodamientos en motores, bombas y equipo rotativo, con analistas Categoría III e ISO 10816/20816.",
   "content": {
     "title": "Encontramos la falla antes de que pare tu línea",
-    "subtitle": "Medimos la vibración de tus equipos rotativos, un analista certificado interpreta el espectro y te decimos qué equipo atender, por qué y con qué urgencia.",
+    "subtitle": "Medimos la vibración de tus equipos, un analista certificado lee el espectro y te decimos qué atender, por qué y con qué urgencia.",
     "image": "/images/gallery/campo-img-4.jpg",
     "items": [
       {
@@ -83,13 +83,13 @@
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "Esto es lo que recibes",
-    "descripcion": "No un archivo de mediciones para que lo interpretes tú. Un informe donde cada equipo trae su estado, el nivel medido contra la norma, el diagnóstico del analista y qué hacer al respecto. Las páginas que ves son de un informe real, con los datos de la planta omitidos.",
+    "descripcion": "Cada equipo con su estado, el nivel contra la norma, el diagnóstico del analista y qué hacer. Pasa el cursor por la lista para ver dónde va cada cosa en el informe.",
     "contenido": [
-      "Estado de cada equipo en semáforo, para leerlo de un vistazo",
-      "Nivel medido contra el rango ISO que le corresponde",
+      "Estado de cada equipo en semáforo",
+      "Velocidad medida en cada punto",
+      "Nivel contra el rango ISO que le corresponde",
       "Diagnóstico del analista con la causa probable",
-      "Acción recomendada y con qué urgencia",
-      "Historial y tendencia consultables en IDAP"
+      "Acción recomendada y con qué urgencia"
     ],
     "paginas": [
       "/images/informe/pagina-1.png",
@@ -98,20 +98,84 @@
     "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA, con el estado por disciplina, los niveles de vibración medidos contra los rangos ISO y las imágenes termográficas",
     "dato": "3",
     "datoTexto": "disciplinas en un solo informe",
-    "idap": {
-      "src": "/images/idap/capturas/inspeccion-vibraciones.jpg",
-      "alt": "Inspección integral en IDAP: pestaña de vibraciones con la velocidad y la aceleración de cada punto en las tres direcciones, calificadas en semáforo",
-      "texto": "Así se ve la misma inspección dentro de IDAP: la inspección llega desde campo, cada disciplina se llena con sus valores y se califica en semáforo, y en la pestaña de vibraciones quedan los puntos en las tres direcciones, los espectros y la recomendación con su porqué. Pasa el cursor por una disciplina para abrirla.",
-      "ancho": 1945,
-      "alto": 1350,
-      "escena": "vib",
-      "imagenes": {
-        "principal": "/images/idap/inspeccion/termica-1.jpg",
-        "miniaturas": [
-          "/images/idap/inspeccion/termica-1.jpg",
-          "/images/idap/inspeccion/termica-2.jpg",
-          "/images/idap/inspeccion/termica-3.jpg"
+    "muestra": {
+      "titulo": "Informe de vibraciones",
+      "equipo": "Motor-bomba de agua de enfriamiento B",
+      "subtitulo": "Ruta mensual · 28/09/2026 · analista Categoría III",
+      "estado": {
+        "texto": "Precaución",
+        "color": "#ca8a04",
+        "punto": 0
+      },
+      "lecturas": {
+        "titulo": "Velocidad global por punto · mm/s RMS",
+        "unidad": "mm/s",
+        "max": 10,
+        "nota": "La marca es el límite entre las zonas B y C.",
+        "punto": 1,
+        "filas": [
+          {
+            "p": "Motor lado libre",
+            "valor": 5.6,
+            "ref": 4.5,
+            "color": "#ca8a04"
+          },
+          {
+            "p": "Motor lado acople",
+            "valor": 3.1,
+            "ref": 4.5,
+            "color": "#65a30d"
+          },
+          {
+            "p": "Bomba lado acople",
+            "valor": 2.0,
+            "ref": 4.5,
+            "color": "#16a34a"
+          },
+          {
+            "p": "Bomba lado libre",
+            "valor": 1.8,
+            "ref": 4.5,
+            "color": "#16a34a"
+          }
         ]
+      },
+      "escala": {
+        "titulo": "ISO 10816-3 · de 15 a 300 kW, base flexible · mm/s",
+        "punto": 2,
+        "niveles": [
+          {
+            "t": "A",
+            "r": "hasta 2.3",
+            "c": "#16a34a"
+          },
+          {
+            "t": "B",
+            "r": "2.3 a 4.5",
+            "c": "#65a30d"
+          },
+          {
+            "t": "C",
+            "r": "4.5 a 7.1",
+            "c": "#ca8a04"
+          },
+          {
+            "t": "D",
+            "r": "más de 7.1",
+            "c": "#dc2626"
+          }
+        ]
+      },
+      "hallazgo": {
+        "titulo": "Rodamiento del motor, lado libre",
+        "texto": "Picos a la frecuencia de falla de la pista externa y sus armónicos: defecto en la pista externa.",
+        "punto": 3
+      },
+      "recomendacion": {
+        "titulo": "Programar el cambio del rodamiento",
+        "urgencia": "próximas 4 semanas",
+        "texto": "Mientras tanto, medir cada semana y revisar la lubricación.",
+        "punto": 4
       }
     }
   },
@@ -119,27 +183,39 @@
   "faq": [
     {
       "question": "¿Qué es el análisis de vibraciones?",
-      "answer": "Es una técnica de mantenimiento predictivo que mide la vibración de la maquinaria rotativa para detectar fallas en desarrollo. Cada tipo de falla, como el desbalanceo, la desalineación o un rodamiento dañado, deja una firma distinta en el espectro de vibración, lo que permite identificarla y corregirla antes de que provoque un paro."
+      "answer": "Es medir la vibración de la maquinaria rotativa para encontrar fallas que apenas empiezan. Cada falla deja una firma distinta en el espectro, y eso permite saber qué es y corregirla antes de que pare el equipo."
     },
     {
       "question": "¿Qué fallas se pueden detectar con el análisis de vibraciones?",
-      "answer": "Desbalanceo, desalineación, holguras mecánicas, rodamientos dañados, problemas de engranes y bandas, resonancia, ejes doblados y algunas fallas eléctricas en motores. Es la técnica con mayor cobertura de modos de falla en equipo rotativo."
+      "answer": "Desbalance, desalineación, holguras, rodamientos dañados, engranes y bandas, resonancia, ejes doblados y algunas fallas eléctricas en motores. Es la técnica que más tipos de falla cubre en equipo rotativo."
     },
     {
       "question": "¿Cada cuánto se debe medir la vibración de un equipo?",
-      "answer": "Depende de su criticidad. Los equipos críticos suelen medirse cada mes y el resto de forma bimestral o trimestral. Los activos donde una falla evoluciona en horas se monitorean con sensores en línea las 24 horas."
+      "answer": "Depende de lo crítico que sea. Los críticos, cada mes; el resto, cada dos o tres meses. Donde una falla avanza en horas, con sensores en línea."
     },
     {
       "question": "¿Qué normas regulan el análisis de vibraciones?",
-      "answer": "Las más usadas son ISO 10816 e ISO 20816, que fijan los límites de severidad de vibración por tipo de máquina, e ISO 18436-2, que certifica la competencia de los analistas por categorías (I a IV)."
+      "answer": "Para la severidad, la ISO 10816 y la ISO 20816, que la está reemplazando. Para la certificación de analistas, la ISO 18436-2, con categorías de la I a la IV."
+    },
+    {
+      "question": "¿Qué dice la tabla de la ISO 10816-3?",
+      "answer": "Divide la vibración en cuatro zonas según el tamaño de la máquina y su base: A, máquina nueva; B, operación sin límite; C, operación limitada hasta corregir; y D, riesgo de daño. Para una máquina de 15 a 300 kW con base flexible, los límites son 2.3, 4.5 y 7.1 mm/s."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre desbalance y desalineación?",
+      "answer": "El desbalance es una masa mal repartida en el rotor y se ve como un pico a 1X en radial. La desalineación es que los ejes no están en línea y se ve con 1X y 2X altos, sobre todo en axial. Uno se corrige con balanceo y el otro con alineación."
+    },
+    {
+      "question": "¿Dónde se mide la vibración en un motor?",
+      "answer": "En cada rodamiento, en dirección horizontal, vertical y axial, lo más cerca posible del rodamiento y siempre en el mismo punto para poder comparar entre rutas."
     },
     {
       "question": "¿Qué necesito para pedir una cotización?",
-      "answer": "Solo el listado de tus equipos: nombre o TAG, tipo de máquina (bomba, motor, ventilador, reductor), potencia aproximada y la ubicación de la planta. Con eso preparamos la propuesta de ruta de medición. Si no tienes el listado a la mano, lo armamos contigo en una llamada."
+      "answer": "El listado de tus equipos: nombre o TAG, tipo de máquina, potencia aproximada y ubicación. Si no lo tienes, lo armamos contigo en una llamada."
     },
     {
       "question": "¿Cuánto cuesta un servicio de análisis de vibraciones?",
-      "answer": "Depende del número de equipos, su ubicación y si se combina con otras técnicas como termografía o ultrasonido. Compártenos el listado de tus equipos y te preparamos una propuesta a la medida, sin compromiso."
+      "answer": "Depende del número de equipos, su ubicación y si se combina con termografía o ultrasonido. Mándanos tu listado y te hacemos una propuesta sin compromiso."
     }
   ],
   "certificacion": "Analistas Categoría III · ISO 18436-2",
@@ -223,7 +299,7 @@
   ],
   "cta": {
     "title": "¿Cuántos equipos rotativos críticos tiene tu planta?",
-    "text": "Compártenos tu listado de equipos y te preparamos una ruta de medición con propuesta a la medida, sin compromiso.",
+    "text": "Mándanos tu listado de equipos y te armamos la ruta con propuesta, sin compromiso.",
     "whatsappMessage": "Hola, quiero cotizar análisis de vibraciones para mi planta.",
     "datos": [
       "Registro REPSE vigente",
@@ -311,5 +387,165 @@
         "ilustracion": "turbina"
       }
     ]
-  }
+  },
+  "seoTitle": "Análisis de vibraciones mecánicas en motores y bombas",
+  "introBeneficios": {
+    "beneficios": [
+      {
+        "icono": "paro",
+        "titulo": "Menos paros no programados",
+        "texto": "La falla se detecta semanas antes de que detenga la línea."
+      },
+      {
+        "icono": "engrane",
+        "titulo": "La causa, no solo el síntoma",
+        "texto": "Desbalance, desalineación, holgura o rodamiento: el espectro dice cuál."
+      },
+      {
+        "icono": "documento",
+        "titulo": "Refacciones con tiempo",
+        "texto": "Sabes qué pieza vas a necesitar y cuándo, sin compras de urgencia."
+      },
+      {
+        "icono": "calendario",
+        "titulo": "Paros en tu ventana",
+        "texto": "Intervienes cuando conviene a producción, no cuando el equipo falla."
+      }
+    ],
+    "modalidades": [
+      {
+        "titulo": "Rutas con analista",
+        "texto": "Colector portátil y analista certificado Categoría III."
+      },
+      {
+        "titulo": "Sensores en línea",
+        "texto": "Monitoreo las 24 horas donde la falla no da tiempo de reaccionar.",
+        "enlace": "/servicios/monitoreo-continuo/sensores-vibracion"
+      }
+    ],
+    "fotos": [
+      {
+        "src": "/images/gallery/campo/vibracion-analizador-mano.webp",
+        "alt": "Analista de DIAPSA con el colector de vibraciones en mano, leyendo el espectro en campo."
+      },
+      {
+        "src": "/images/gallery/campo/vibracion-motor-bomba-azul.webp",
+        "alt": "Medición en el motor de una bomba de proceso, con el equipo en operación."
+      },
+      {
+        "src": "/images/gallery/campo/vibracion-bomba-roja.webp",
+        "alt": "Ruta de vibraciones en el cuarto de bombas contra incendio."
+      },
+      {
+        "src": "/images/gallery/campo/vibracion-motor-vertical.webp",
+        "alt": "Medición sobre un motor vertical desde la rejilla de mantenimiento."
+      },
+      {
+        "src": "/images/gallery/campo/vibracion-motor-grande.webp",
+        "alt": "Lectura del espectro junto a un motor de gran potencia."
+      },
+      {
+        "src": "/images/gallery/campo/vibracion-ventilador-torre.webp",
+        "alt": "Medición del motor del ventilador en la cubierta de una torre de enfriamiento."
+      }
+    ],
+    "idap": {
+      "titulo": "Tus datos viven en IDAP",
+      "texto": "Cada medición entra a la ficha del equipo junto con las demás técnicas, y se consulta en línea cuando la necesites.",
+      "puntos": [
+        "Espectro y forma de onda de cada punto",
+        "Nivel contra el rango ISO que le corresponde",
+        "Historial y tendencias de cada equipo"
+      ],
+      "video": "/videos/idap/idap-equipo",
+      "descripcionVideo": "Ficha de un equipo en IDAP: gemelo digital, estado por componente y diagnóstico por disciplina",
+      "enlace": "/servicios/idap"
+    }
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Del dato a la decisión",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "De la medición a la recomendación",
+          "texto": "Medimos cada rodamiento con el equipo en operación, el analista lee el espectro y compara el nivel con la ISO. Luego volvemos a medir hasta que el equipo regresa a su zona sana.",
+          "video": "/videos/vibraciones/vib-proceso",
+          "descripcion": "Los cinco pasos del análisis de vibraciones: medición, espectro, diagnóstico con la ISO 10816-3, recomendación y seguimiento",
+          "pasos": [
+            "Medición en campo, punto por punto",
+            "Espectro y forma de onda",
+            "Diagnóstico con la causa y la zona ISO",
+            "Recomendación con su urgencia",
+            "Seguimiento hasta la zona sana"
+          ]
+        }
+      ]
+    },
+    {
+      "lugar": "cobertura",
+      "etiqueta": "Qué detecta",
+      "titulo": "¿Dónde aplica y qué detecta?",
+      "texto": "Cada falla deja su firma en el espectro. Estas son las tres que más paran equipos rotativos.",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "Desbalance: un pico a 1X",
+          "texto": "La vibración domina a la velocidad de giro y es mayor en radial. Se corrige con balanceo en sitio.",
+          "video": "/videos/vibraciones/vib-desbalance",
+          "descripcion": "Espectro con un pico dominante a 1X en un ventilador con desbalance"
+        },
+        {
+          "titulo": "Desalineación: 1X y 2X en axial",
+          "texto": "Picos a 1X y 2X con la vibración axial alta junto al acoplamiento. Se corrige con alineación láser.",
+          "video": "/videos/vibraciones/vib-desalineacion",
+          "descripcion": "Espectro con picos a 1X y 2X en un motor-bomba desalineado"
+        },
+        {
+          "titulo": "Rodamientos: picos que no siguen al giro",
+          "texto": "La frecuencia de falla del rodamiento y sus armónicos aparecen semanas antes de que se caliente o haga ruido.",
+          "video": "/videos/vibraciones/vib-rodamientos",
+          "descripcion": "Espectro con la frecuencia de falla de pista externa y sus armónicos en un motor"
+        }
+      ],
+      "listas": [
+        {
+          "titulo": "Equipos",
+          "items": [
+            "Motores eléctricos",
+            "Bombas",
+            "Ventiladores y extractores",
+            "Compresores",
+            "Reductores y cajas de engranes",
+            "Sopladores",
+            "Turbinas",
+            "Generadores",
+            "Molinos",
+            "Agitadores y mezcladoras",
+            "Torres de enfriamiento",
+            "Transportadores"
+          ]
+        },
+        {
+          "titulo": "Fallas que detecta",
+          "items": [
+            "Desbalance",
+            "Desalineación",
+            "Holgura mecánica",
+            "Desgaste de rodamientos",
+            "Falla de lubricación",
+            "Resonancia",
+            "Eje doblado",
+            "Desgaste de engranes",
+            "Problemas de bandas",
+            "Cavitación",
+            "Excentricidad",
+            "Pata coja"
+          ]
+        }
+      ]
+    }
+  ]
 }
