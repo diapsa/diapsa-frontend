@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import VideoBucle from "../atoms/VideoBucle";
+import CarruselFotos from "../molecules/CarruselFotos";
 import type { ServiceIntroBeneficios } from "@/types/servicio";
 
 /**
  * IntroBeneficios
  * La primera parte de una página de servicio, reestructurada (Emiliano,
  * 2026-09-29): en lugar del acordeón de cuatro puntos, lo que ganas en
- * cuatro tarjetas con ícono junto a una foto de campo, las dos formas de
+ * cuatro tarjetas con ícono junto a fotos de campo que se van cambiando, las dos formas de
  * contratarlo y una banda propia para IDAP con su video. "Dónde se aplica"
  * ya no va aquí porque tiene su sección con videos más abajo.
  *
@@ -75,9 +76,13 @@ export default function IntroBeneficios({ intro }: { intro: ServiceIntroBenefici
             </div>
           )}
         </div>
-        <div className="relative min-h-[280px] overflow-hidden rounded-2xl shadow-[0_30px_70px_-35px_rgba(13,26,56,0.45)]">
-          <Image src={intro.foto.src} alt={intro.foto.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
-        </div>
+        {/* Fotos de campo que se van cambiando solas */}
+        <CarruselFotos
+          fotos={intro.fotos}
+          intervalo={3500}
+          etiqueta="Fotografías de analistas de DIAPSA midiendo con ultrasonido en campo"
+          className="aspect-[4/3] rounded-2xl shadow-[0_30px_70px_-35px_rgba(13,26,56,0.45)] lg:aspect-auto"
+        />
       </div>
 
       {/* Tus datos viven en IDAP */}

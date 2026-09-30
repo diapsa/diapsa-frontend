@@ -2747,10 +2747,6 @@
         "enlace": "/servicios/monitoreo-continuo/sensores-acusticos"
       }
     ],
-    "foto": {
-      "src": "/images/servicios/analisis-de-ultrasonido/campo-bomba-alimentacion.webp",
-      "alt": "Analista de DIAPSA con audífonos midiendo con ultrasonido los rodamientos de una bomba de agua de alimentación"
-    },
     "idap": {
       "titulo": "Tus datos viven en IDAP",
       "texto": "Cada inspección de ultrasonido entra a la ficha del equipo, junto con las demás técnicas, y se consulta en línea cuando la necesites.",
@@ -2762,6 +2758,32 @@
       "video": "/videos/idap/idap-equipo",
       "descripcionVideo": "Ficha de un equipo en IDAP: gemelo digital, estado por componente y diagnóstico por disciplina",
       "enlace": "/servicios/idap"
-    }
+    },
+    "fotos": [
+      {
+        "src": "/images/servicios/analisis-de-ultrasonido/campo-bomba-alimentacion.webp",
+        "alt": "Analista de DIAPSA con audífonos midiendo con ultrasonido los rodamientos de una bomba de agua de alimentación"
+      },
+      {
+        "src": "/images/servicios/analisis-de-ultrasonido/campo-trampas-vapor.webp",
+        "alt": "Analista de DIAPSA con audífonos y detector de ultrasonido revisando una línea de trampas de vapor"
+      },
+      {
+        "src": "/images/servicios/analisis-de-ultrasonido/analista-con-audifonos.jpg",
+        "alt": "Analista de DIAPSA con audífonos midiendo ultrasonido"
+      },
+      {
+        "src": "/images/servicios/analisis-de-ultrasonido/campo-compresor.webp",
+        "alt": "Medición de ultrasonido sobre la carcasa de un compresor en operación."
+      },
+      {
+        "src": "/images/servicios/analisis-de-ultrasonido/campo-ruta-motores.webp",
+        "alt": "Ruta de ultrasonido en el cuarto de motores, equipo por equipo."
+      },
+      {
+        "src": "/images/servicios/analisis-de-ultrasonido/campo-valvulas.webp",
+        "alt": "Inspección por ultrasonido de válvulas en un cabezal de tuberías."
+      }
+    ]
   }
 }

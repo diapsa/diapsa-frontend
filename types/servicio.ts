@@ -699,6 +699,6 @@ export interface ServiceIntroBeneficios {
   beneficiosTitulo?: string;
   beneficios: { icono: "paro" | "gota" | "aire" | "rayo"; titulo: string; texto: string }[];
   modalidades?: { titulo: string; texto: string; enlace?: string }[];
-  foto: { src: string; alt: string };
+  fotos: { src: string; alt: string }[];
   idap: { titulo: string; texto: string; puntos: string[]; video: string; descripcionVideo: string; enlace: string };
 }
