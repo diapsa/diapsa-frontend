@@ -1,0 +1,185 @@
+{
+  "id": "monitoreo-continuo",
+  "slug": "monitoreo-continuo",
+  "type": "servicio",
+  "breadcrumbs": [
+    { "label": "Inicio", "link": "/" },
+    { "label": "Servicios", "link": "/servicios" },
+    { "label": "Monitoreo Continuo", "link": "/servicios/monitoreo-continuo" }
+  ],
+  "header": {
+    "title": "Monitoreo Continuo",
+    "subtitle": "Sensores en línea que vigilan tus equipos críticos las 24 horas, con analistas que te dicen qué hacer antes de la falla",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoTitle": "Monitoreo continuo en línea con sensores de vibración y análisis remoto",
+  "seoDescription": "Monitoreo continuo de condición en línea: sensores inalámbricos de vibración, cámaras térmicas, sensores acústicos y DGA en línea, instalados por analistas y revisados de forma remota. Implementación desde cero o rescate de programas con falsas alarmas.",
+  "content": {
+    "title": "No vendemos sensores: diseñamos programas que convierten datos en decisiones",
+    "subtitle": "Instalar sensores no es tener monitoreo continuo. Hace falta elegir qué equipos lo justifican, montarlos bien, ajustar las alarmas a cada máquina y que alguien analice lo que dicen. Nosotros hacemos las cuatro cosas, y te avisamos qué hacer antes de que el equipo falle.",
+    "image": "/images/servicios/sensores-vibracion/sensor-motor.webp",
+    "items": []
+  },
+  "relatedProducts": { "title": "", "subtitle": "", "items": [] },
+  "certificacion": "Socio tecnológico de KCF Technologies · Analistas certificados ISO 18436-2",
+  "introBeneficios": {
+    "beneficios": [
+      { "icono": "paro", "titulo": "La falla que nace entre rutas", "texto": "El sensor la ve en horas, no en un mes." },
+      { "icono": "engrane", "titulo": "Alarmas que sí se atienden", "texto": "Umbrales ajustados a cada equipo." },
+      { "icono": "documento", "titulo": "Un analista detrás", "texto": "Qué pasa y qué hacer, no solo una alerta." },
+      { "icono": "calendario", "titulo": "Las 24 horas", "texto": "Una lectura cada pocos minutos, todos los días." }
+    ],
+    "beneficiosTitulo": "Qué ganas",
+    "modalidades": [
+      { "titulo": "Sensores de vibración", "texto": "Motores, bombas, ventiladores y compresores.", "enlace": "/servicios/monitoreo-continuo/sensores-vibracion" },
+      { "titulo": "Cámaras térmicas", "texto": "Tableros, subestaciones y centros de datos.", "enlace": "/servicios/monitoreo-continuo/camaras-termicas" },
+      { "titulo": "Sensores acústicos", "texto": "Transformadores y subestaciones.", "enlace": "/servicios/monitoreo-continuo/sensores-acusticos" },
+      { "titulo": "DGA en línea", "texto": "Gases del aceite de transformadores críticos.", "enlace": "/servicios/monitoreo-continuo/dga-en-linea" }
+    ],
+    "fotos": [
+      { "src": "/images/servicios/sensores-vibracion/sensor-motor.webp", "alt": "Sensor de vibración inalámbrico montado en un motor" },
+      { "src": "/images/servicios/sensores-vibracion/instalacion-sensor.webp", "alt": "Analista de DIAPSA instalando un sensor de vibración" },
+      { "src": "/images/servicios/sensores-vibracion/sensor-rodamiento.webp", "alt": "Sensor montado sobre la caja de un rodamiento" },
+      { "src": "/images/servicios/sensores-vibracion/estacion-base.webp", "alt": "Estación base que recibe los datos de los sensores" },
+      { "src": "/images/servicios/sensores-acusticos/campo-08.webp", "alt": "Monitoreo en una subestación eléctrica" }
+    ],
+    "idap": {
+      "titulo": "Tus datos viven en IDAP",
+      "texto": "Cada sensor manda sus lecturas a IDAP, junto con las rutas y las demás técnicas. El aviso llega con qué es y qué hacer, y queda el seguimiento hasta cerrarlo.",
+      "puntos": ["Tendencia de cada sensor", "Avisos con diagnóstico y acción", "Seguimiento hasta el cierre"],
+      "video": "/videos/idap/idap-aviso",
+      "descripcionVideo": "Un aviso en IDAP: tendencia, diagnóstico y acción recomendada",
+      "enlace": "/servicios/idap"
+    }
+  },
+  "flujo": [
+    { "titulo": "Criticidad", "texto": "Qué equipos justifican un sensor." },
+    { "titulo": "Instalación", "texto": "Montado por analistas en el punto correcto." },
+    { "titulo": "Configuración", "texto": "Alarmas a la medida de cada equipo." },
+    { "titulo": "Análisis remoto", "texto": "Un analista revisa las tendencias." },
+    { "titulo": "Aviso y acción", "texto": "Qué es, qué tan grave y qué hacer." }
+  ],
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Del sensor a la decisión",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "Un programa, no solo hardware",
+          "texto": "Se eligen los equipos, se instalan bien, se ajustan las alarmas a cada máquina y un analista revisa las tendencias para avisarte con tiempo.",
+          "video": "/videos/monitoreo-continuo/mc-proceso",
+          "descripcion": "Los cinco pasos del monitoreo continuo: 24 equipos críticos, instalación por analistas, umbrales a la medida, tendencia revisada de forma remota y el aviso con la acción",
+          "pasos": ["Criticidad", "Instalación", "Configuración", "Análisis remoto", "Aviso y acción"]
+        }
+      ]
+    },
+    {
+      "lugar": "cobertura",
+      "etiqueta": "Por qué en línea",
+      "titulo": "Lo que una ruta no alcanza, y lo que un sensor mal configurado no dice",
+      "texto": "Dos razones para el monitoreo continuo, y la razón por la que muchos programas con sensores no funcionan.",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "La falla que nace entre dos rutas",
+          "texto": "Una ruta mensual ve el equipo doce veces al año. Si una falla nace y avanza entre dos rutas, la ruta no la ve. El sensor la ve el mismo día.",
+          "video": "/videos/monitoreo-continuo/mc-entre-rutas",
+          "descripcion": "Una falla que empieza el día 36 y termina el día 52: la ruta mensual del día 30 no la ve, el sensor avisa el día 38"
+        },
+        {
+          "titulo": "Si ya tienes sensores y no te sirven",
+          "texto": "Alarmas genéricas que nadie atiende, sensores mal montados y datos que nadie analiza. Aprovechamos tu historial, corregimos la instalación y ajustamos cada umbral.",
+          "video": "/videos/monitoreo-continuo/mc-rescate",
+          "descripcion": "Un programa con 320 alarmas al mes, la mayoría falsas, que pasa a 14 alarmas con acción después de reconfigurarlo"
+        }
+      ],
+      "listas": [
+        { "titulo": "Dónde conviene", "items": ["Equipos críticos sin respaldo", "Fallas que avanzan en días", "Equipos de difícil acceso", "Áreas peligrosas o restringidas", "Transformadores y subestaciones", "Centros de datos"] },
+        { "titulo": "Si ya tienes sensores", "items": ["Auditoría de la base instalada", "Corrección de sensores mal montados", "Umbrales calibrados con tu historial", "Análisis remoto por analistas certificados"] }
+      ]
+    }
+  ],
+  "entregable": {
+    "etiqueta": "El informe",
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "Además de cada aviso en el momento, un informe mensual con el estado de cada equipo y lo que se atendió. Pasa el cursor por la lista para ver dónde va cada cosa.",
+    "contenido": [
+      "El estado del mes",
+      "La vibración de cada equipo contra su alarma",
+      "Cómo se califica cada equipo",
+      "El aviso más importante",
+      "Qué se hizo y qué sigue"
+    ],
+    "muestra": {
+      "titulo": "Monitoreo continuo",
+      "equipo": "Informe mensual · 24 sensores",
+      "subtitulo": "Una lectura cada 10 minutos · septiembre de 2026",
+      "estado": { "texto": "1 en precaución", "color": "#ca8a04", "punto": 0 },
+      "lecturas": {
+        "titulo": "Vibración global al cierre del mes · mm/s",
+        "unidad": "mm/s",
+        "max": 10,
+        "nota": "La marca es la alarma ajustada a cada equipo.",
+        "punto": 1,
+        "filas": [
+          { "p": "Bomba 3", "valor": 5.6, "ref": 4.5, "color": "#ca8a04" },
+          { "p": "Ventilador 2", "valor": 3.4, "ref": 5.0, "color": "#16a34a" },
+          { "p": "Compresor 1", "valor": 2.1, "ref": 4.0, "color": "#16a34a" },
+          { "p": "Agitador 4", "valor": 1.8, "ref": 3.5, "color": "#16a34a" }
+        ]
+      },
+      "escala": {
+        "titulo": "Estado de cada equipo",
+        "punto": 2,
+        "niveles": [
+          { "t": "Normal", "r": "sin acción", "c": "#16a34a" },
+          { "t": "Precaución", "r": "programar", "c": "#ca8a04" },
+          { "t": "Alarma", "r": "actuar ya", "c": "#dc2626" }
+        ]
+      },
+      "hallazgo": {
+        "titulo": "Bomba 3: rodamiento del motor",
+        "texto": "La tendencia subió en diez días. El espectro muestra la frecuencia de la pista externa, en etapa temprana.",
+        "punto": 3
+      },
+      "recomendacion": {
+        "titulo": "Cambio en el paro del sábado",
+        "urgencia": "dos semanas",
+        "texto": "Se vigila la tendencia a diario hasta el cambio.",
+        "punto": 4
+      }
+    }
+  },
+  "mostrarClientes": true,
+  "servicioRelacionado": {
+    "href": "/servicios/monitoreo-condicion",
+    "etiqueta": "Se complementa con",
+    "titulo": "Monitoreo de Condición por rutas",
+    "texto": "No todos los equipos necesitan un sensor. Para la mayoría, una ruta periódica de vibraciones, termografía, ultrasonido o aceite es suficiente y cuesta menos. Lo ideal es combinar: sensores en los críticos y rutas en el resto.",
+    "enlace": "Ver monitoreo de condición"
+  },
+  "faq": [
+    { "question": "¿Qué es el monitoreo continuo?", "answer": "Es vigilar la condición de un equipo con sensores instalados de forma permanente, que mandan lecturas cada pocos minutos. Así se detectan las fallas que avanzan rápido y que una ruta periódica no alcanza a ver." },
+    { "question": "¿En qué se diferencia de las rutas?", "answer": "Una ruta mide cada mes o cada tres meses, con un analista en campo. El sensor mide todo el día. Las rutas sirven para la mayoría de los equipos; los sensores, para los críticos, los de difícil acceso y los que tienen fallas que avanzan en días." },
+    { "question": "¿Qué sensores usan?", "answer": "Sensores inalámbricos de vibración y temperatura de KCF Technologies, de quien somos socio tecnológico, además de cámaras térmicas, sensores acústicos y equipos de DGA en línea según la aplicación." },
+    { "question": "¿Quién revisa las alertas?", "answer": "Analistas certificados de DIAPSA. El aviso no llega como un número suelto: llega con qué es, qué tan grave y qué hacer." },
+    { "question": "Ya tengo sensores, pero no me sirven. ¿Qué hacen?", "answer": "Revisamos lo que hay instalado, corregimos los sensores mal montados, retiramos los que no se justifican, ajustamos los umbrales con tu historial y dejamos analistas revisando los datos." },
+    { "question": "¿Hay que parar el equipo para instalar?", "answer": "En la mayoría de los casos no. Los sensores inalámbricos se montan con el equipo en operación." },
+    { "question": "¿Cuánto cuesta?", "answer": "Depende del número de equipos, el tipo de sensor y si incluye análisis remoto. Cuéntanos qué equipos quieres vigilar y te hacemos una propuesta." }
+  ],
+  "galeria": [
+    { "src": "/images/servicios/sensores-vibracion/instalacion-sensor.webp", "alt": "Instalación de un sensor de vibración por un analista de DIAPSA." },
+    { "src": "/images/servicios/sensores-vibracion/sensor-montado.webp", "alt": "Sensor inalámbrico montado sobre la caja de un rodamiento." },
+    { "src": "/images/servicios/sensores-vibracion/instalacion-tuberia.webp", "alt": "Instalación de sensores en una planta de proceso." },
+    { "src": "/images/servicios/sensores-vibracion/sensor-en-mano.webp", "alt": "Sensor de vibración inalámbrico antes de montarlo." },
+    { "src": "/images/servicios/sensores-acusticos/campo-00.webp", "alt": "Monitoreo en una subestación eléctrica." }
+  ],
+  "cta": {
+    "title": "¿Qué equipos de tu planta no pueden esperar a la siguiente ruta?",
+    "text": "Cuéntanos cuáles son, o qué sensores ya tienes instalados, y te proponemos el programa.",
+    "whatsappMessage": "Hola, quiero información sobre monitoreo continuo para mi planta.",
+    "datos": ["Registro REPSE vigente", "Instalación por analistas", "Análisis remoto incluido"]
+  }
+}

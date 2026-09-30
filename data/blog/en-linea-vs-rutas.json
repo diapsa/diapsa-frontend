@@ -1,0 +1,52 @@
+{
+  "slug": "monitoreo-en-linea-o-rutas-cuando-conviene-cada-uno",
+  "titulo": "Monitoreo en línea o rutas periódicas: cuándo conviene cada uno",
+  "extracto": "Qué diferencia hay entre medir por rutas y tener sensores en línea, qué equipos justifican un sensor, cómo se combinan y los errores más comunes al decidir.",
+  "portada": "/images/servicios/sensores-vibracion/sensor-motor.webp",
+  "fecha": "2026-09-30T23:59:59.100000Z",
+  "seo": {
+    "titulo": "Monitoreo en línea o rutas: cuándo conviene cada uno",
+    "descripcion": "Diferencias entre el monitoreo de condición por rutas periódicas y el monitoreo en línea con sensores, qué equipos justifican un sensor y cómo combinarlos en un programa predictivo."
+  },
+  "bloques": [
+    ["p", "Cuando una planta empieza a pensar en sensores, casi siempre aparece la misma pregunta: ¿ya no hacen falta las rutas? La respuesta corta es que sí hacen falta. Rutas y sensores no compiten: cada uno sirve para un tipo de equipo, y un buen programa usa los dos."],
+
+    ["h2", "Qué hace cada uno"],
+    ["h3", "Rutas periódicas"],
+    ["p", "Un analista recorre la planta cada mes, cada dos o tres meses, y mide cada equipo con un colector portátil. Tiene la ventaja del ojo humano: ve, oye y toca, y puede medir con mucho detalle. Su límite es la frecuencia: entre una ruta y otra, el equipo nadie lo ve."],
+    ["h3", "Monitoreo en línea"],
+    ["p", "Un sensor instalado en el equipo manda una lectura cada pocos minutos, todo el día. Ve las fallas que avanzan rápido y las que aparecen justo después de una ruta. Su límite es el costo por punto y que, sin un analista detrás, genera datos que nadie usa."],
+
+    ["h2", "Qué equipos justifican un sensor"],
+    ["lista", [
+      "Equipos críticos sin respaldo, donde una falla detiene la producción.",
+      "Equipos cuya falla avanza en días, no en meses.",
+      "Equipos de difícil acceso o en áreas peligrosas, donde una ruta es costosa o arriesgada.",
+      "Equipos con historial de fallas que sorprenden entre rutas.",
+      "Transformadores y equipos eléctricos críticos, con sensores acústicos, térmicos o de gases."
+    ]],
+    ["p", "Para el resto, que casi siempre es la mayoría, una ruta periódica es suficiente y cuesta menos. La [matriz de criticidad](/blog/analisis-de-criticidad-de-equipos-como-hacer-una-matriz) es la herramienta para decidir."],
+
+    ["h2", "La falla que nace entre dos rutas"],
+    ["p", "Imagina una ruta mensual: se mide el día 0 y el día 30, y todo sale bien. El día 36 empieza a dañarse un rodamiento, y para el día 52 falla. La siguiente ruta tocaba el día 60. Con un sensor, el aviso llega el día 38, con dos semanas para cambiar el rodamiento en un paro programado. Esa es la razón de ser del monitoreo en línea."],
+
+    ["h2", "Cómo se combinan"],
+    ["numerada", [
+      "Clasificar los equipos por criticidad.",
+      "Poner sensores en los críticos que lo justifican.",
+      "Mantener rutas en el resto, con la frecuencia que pide su criticidad.",
+      "Juntar sensores y rutas en la misma plataforma, para ver cada equipo completo.",
+      "Revisar cada año si algún equipo debe cambiar de sensor a ruta o al revés."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Un sensor sustituye el análisis de un especialista?"],
+    ["p", "No. El sensor da la tendencia y avisa cuando algo cambia; el analista dice qué es y qué hacer. Sin analista, el sensor solo genera alarmas."],
+    ["h3", "¿Los sensores también miden temperatura?"],
+    ["p", "Muchos sensores inalámbricos de vibración también miden temperatura. Para equipo eléctrico existen cámaras térmicas, sensores acústicos y monitores de gases en línea."],
+    ["h3", "¿Cuánto dura la batería de un sensor inalámbrico?"],
+    ["p", "Depende del modelo y de cada cuánto mide. Lo explicamos en la guía de [sensores inalámbricos de vibración](/blog/sensores-inalambricos-de-vibracion-como-elegirlos-e-instalarlos)."],
+
+    ["nota", "Diseñamos tu programa con sensores en los equipos que lo justifican y rutas en el resto. Conoce el [monitoreo continuo](/servicios/monitoreo-continuo)."]
+  ]
+}

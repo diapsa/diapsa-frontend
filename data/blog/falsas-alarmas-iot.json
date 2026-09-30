@@ -1,0 +1,56 @@
+{
+  "slug": "falsas-alarmas-en-monitoreo-con-sensores-iot-como-evitarlas",
+  "titulo": "Mantenimiento predictivo con sensores IoT: por qué hay tantas falsas alarmas y cómo evitarlas",
+  "extracto": "Por qué muchos programas de sensores terminan ignorados, de dónde salen las falsas alarmas, cómo se ajustan los umbrales a cada equipo y cómo rescatar un programa que ya existe.",
+  "portada": "/images/servicios/sensores-vibracion/sensor-montado.webp",
+  "fecha": "2026-09-30T23:59:59.300000Z",
+  "seo": {
+    "titulo": "Sensores IoT en mantenimiento predictivo: cómo evitar falsas alarmas",
+    "descripcion": "Por qué los programas de mantenimiento predictivo con sensores IoT generan falsas alarmas, cómo ajustar los umbrales de vibración a cada equipo y cómo rescatar un programa de monitoreo que no está dando resultados."
+  },
+  "bloques": [
+    ["p", "Es una historia que se repite: una planta instala decenas de sensores, los primeros meses todos revisan las alertas, y al año nadie les hace caso porque la mayoría son falsas. El problema casi nunca es el sensor. Es cómo se diseñó el programa."],
+
+    ["h2", "De dónde salen las falsas alarmas"],
+    ["lista", [
+      "Umbrales genéricos: el mismo límite para una bomba pequeña que para un ventilador grande, sin considerar cómo opera cada uno.",
+      "Cambios de operación: un equipo que cambia de velocidad o de carga parece que empeoró, cuando solo cambió de régimen.",
+      "Sensores mal montados, que leen vibración que no es del rodamiento.",
+      "Arranques y paros que disparan alarmas momentáneas.",
+      "Ninguna persona encargada de revisar y cerrar cada aviso."
+    ]],
+
+    ["h2", "Cómo se ajustan los umbrales"],
+    ["p", "Las normas como la ISO 10816 y la 20816 dan una buena referencia general, pero el umbral útil es el de cada equipo. Se ajusta así:"],
+    ["numerada", [
+      "Tomar una línea base con el equipo en buen estado, en sus condiciones normales de operación.",
+      "Separar los regímenes de operación, si el equipo trabaja a distintas velocidades o cargas.",
+      "Fijar alarmas relativas a esa línea base, además del límite absoluto de la norma.",
+      "Revisar cada falsa alarma y ajustar, en lugar de subir el límite a ciegas.",
+      "Usar el historial: meses de datos dicen mucho mejor que cualquier tabla cómo se comporta cada máquina."
+    ]],
+
+    ["h2", "Un aviso útil dice qué hacer"],
+    ["p", "Una alarma que solo dice que un número pasó un límite obliga a alguien a investigar. Un aviso útil ya trae el diagnóstico: qué pieza, qué tan avanzado y qué hacer. Por eso un programa de sensores necesita un analista detrás, propio o contratado."],
+
+    ["h2", "Cómo rescatar un programa que ya existe"],
+    ["numerada", [
+      "Auditar la base instalada: qué sensores hay, dónde y en qué estado.",
+      "Revisar la criticidad: quitar sensores donde no se justifican y ponerlos donde faltan.",
+      "Corregir los montajes deficientes.",
+      "Reconfigurar los umbrales con el historial que ya existe.",
+      "Asignar quién analiza, quién decide y quién cierra cada aviso."
+    ]],
+    ["p", "Bien hecho, un programa que generaba cientos de avisos al mes puede quedar en unos cuantos, y cada uno con una acción detrás."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿La inteligencia artificial resuelve las falsas alarmas?"],
+    ["p", "Ayuda a detectar cambios y a ordenar los avisos, pero no sustituye una buena instalación ni el criterio de un analista. Con datos malos, cualquier algoritmo da resultados malos."],
+    ["h3", "¿Cuánto historial hace falta para ajustar un umbral?"],
+    ["p", "Unas semanas de operación normal dan una primera línea base; unos meses, una mucho mejor."],
+    ["h3", "¿Y si mis sensores son de otra marca?"],
+    ["p", "El rescate se puede hacer sobre la base instalada. Lo importante es el proceso, no la marca."],
+
+    ["nota", "Rescatamos programas de sensores que no están dando resultados, o los implementamos bien desde el inicio. Conoce el [monitoreo continuo](/servicios/monitoreo-continuo). Para entender cuándo conviene un sensor y cuándo una ruta, revisa la guía de [monitoreo en línea o rutas](/blog/monitoreo-en-linea-o-rutas-cuando-conviene-cada-uno)."]
+  ]
+}

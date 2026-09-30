@@ -33,6 +33,9 @@ import fallaRodamientos from "@/data/blog/falla-rodamientos.json";
 import codigoDeRed from "@/data/blog/codigo-de-red.json";
 import factorPotencia from "@/data/blog/factor-potencia-cfe.json";
 import armonicosThd from "@/data/blog/armonicos-thd.json";
+import enLineaRutas from "@/data/blog/en-linea-vs-rutas.json";
+import sensoresInalambricos from "@/data/blog/sensores-inalambricos.json";
+import falsasAlarmas from "@/data/blog/falsas-alarmas-iot.json";
 
 /**
  * Artículos del blog que viven en el sitio y no en el CMS (2026-09-29).
@@ -121,7 +124,7 @@ function aBlog(a: ArticuloLocal, i: number): Blog {
   };
 }
 
-export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba, matrizCriticidad, programaPredictivo, costoParo, mtbfMttr, kpiPredictivo, certificacionIso, codigoIso4406, dgaDuval, aceitePruebas, nom022Tierras, valorResistencia, caidaPotencial, nom029Arco, energiaIncidente, fronterasEtiqueta, curvaPF, tecnicasComplementan, fallaRodamientos, codigoDeRed, factorPotencia, armonicosThd] as ArticuloLocal[]).map(aBlog);
+export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba, matrizCriticidad, programaPredictivo, costoParo, mtbfMttr, kpiPredictivo, certificacionIso, codigoIso4406, dgaDuval, aceitePruebas, nom022Tierras, valorResistencia, caidaPotencial, nom029Arco, energiaIncidente, fronterasEtiqueta, curvaPF, tecnicasComplementan, fallaRodamientos, codigoDeRed, factorPotencia, armonicosThd, enLineaRutas, sensoresInalambricos, falsasAlarmas] as ArticuloLocal[]).map(aBlog);
 
 export function getBlogLocal(slug: string): Blog | null {
   return BLOGS_LOCALES.find((b) => b.slug === slug) ?? null;

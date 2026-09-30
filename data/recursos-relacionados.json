@@ -515,5 +515,44 @@
       "titulo": "Análisis de Calidad de Energía",
       "resumen": "Código de Red, factor de potencia y armónicos, registrados una semana con la planta operando."
     }
+  },
+  {
+    "articulo": {
+      "slug": "monitoreo-en-linea-o-rutas-cuando-conviene-cada-uno",
+      "titulo": "Monitoreo en línea o rutas",
+      "resumen": "Qué equipos justifican un sensor y cómo se combinan.",
+      "portada": "/images/servicios/sensores-vibracion/sensor-motor.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo",
+      "titulo": "Monitoreo Continuo",
+      "resumen": "Sensores en línea instalados por analistas, con alarmas a la medida y análisis remoto."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "sensores-inalambricos-de-vibracion-como-elegirlos-e-instalarlos",
+      "titulo": "Sensores inalámbricos de vibración",
+      "resumen": "Cómo elegirlos e instalarlos para que sirvan.",
+      "portada": "/images/servicios/sensores-vibracion/instalacion-sensor.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo",
+      "titulo": "Monitoreo Continuo",
+      "resumen": "Sensores en línea instalados por analistas, con alarmas a la medida y análisis remoto."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "falsas-alarmas-en-monitoreo-con-sensores-iot-como-evitarlas",
+      "titulo": "Falsas alarmas con sensores IoT",
+      "resumen": "Por qué pasan y cómo ajustar los umbrales.",
+      "portada": "/images/servicios/sensores-vibracion/sensor-montado.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo",
+      "titulo": "Monitoreo Continuo",
+      "resumen": "Sensores en línea instalados por analistas, con alarmas a la medida y análisis remoto."
+    }
   }
 ]
