@@ -63,7 +63,8 @@
     "articulo": {
       "slug": "fugas-de-aire-comprimido-cuanto-cuestan-y-como-detectarlas",
       "titulo": "Fugas de aire comprimido: cuánto cuestan y cómo detectarlas",
-      "resumen": "Cómo calcular lo que cuesta cada fuga, dónde buscarlas y cómo encontrarlas con ultrasonido con la planta en marcha."
+      "resumen": "Cómo calcular lo que cuesta cada fuga, dónde buscarlas y cómo encontrarlas con ultrasonido con la planta en marcha.",
+      "portada": "/images/servicios/analisis-de-ultrasonido/campo-compresor.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
@@ -75,7 +76,8 @@
     "articulo": {
       "slug": "efecto-corona-que-es-y-como-se-detecta",
       "titulo": "Efecto corona: qué es, dónde aparece y cómo se detecta",
-      "resumen": "Qué es, por qué daña aisladores y tableros, cómo se distingue del tracking y del arco, y cómo se detecta sin abrir el equipo."
+      "resumen": "Qué es, por qué daña aisladores y tableros, cómo se distingue del tracking y del arco, y cómo se detecta sin abrir el equipo.",
+      "portada": "/images/gallery/campo/acustica-subestacion-analista.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
@@ -87,7 +89,8 @@
     "articulo": {
       "slug": "lubricacion-por-ultrasonido-como-engrasar-rodamientos",
       "titulo": "Lubricación por ultrasonido: cómo engrasar rodamientos en su punto",
-      "resumen": "El procedimiento paso a paso, los criterios en decibeles y las señales de que el rodamiento ya está dañado."
+      "resumen": "El procedimiento paso a paso, los criterios en decibeles y las señales de que el rodamiento ya está dañado.",
+      "portada": "/images/servicios/analisis-de-ultrasonido/analista-con-audifonos.jpg"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
