@@ -168,11 +168,11 @@ function Fila({
   );
   const textoBloque = (
     <Aparece desde={invertir ? "izquierda" : "derecha"} className={ancho ? "mx-auto max-w-3xl text-center" : ""}>
-      <h2 className="text-3xl font-extrabold leading-tight text-[#0d1a38] lg:text-4xl">{titulo}</h2>
-      <p className={`mt-4 text-lg leading-relaxed text-slate-600 ${ancho ? "sm:text-center" : "text-justify"}`}>{texto}</p>
+      <h2 className="text-2xl font-extrabold leading-tight text-[#0d1a38] lg:text-3xl">{titulo}</h2>
+      <p className={`mt-3 text-base leading-relaxed text-slate-600 ${ancho ? "sm:text-center" : "text-justify"}`}>{texto}</p>
       <a
         href="#demo-idap"
-        className="mt-7 inline-flex items-center gap-2 rounded-full px-7 py-3 font-bold text-[#0a142e] transition-transform hover:scale-105"
+        className="mt-6 inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-bold text-[#0a142e] transition-transform hover:scale-105"
         style={{ background: ORO_IDAP }}
       >
         Agendar demo <Flecha />
@@ -188,7 +188,12 @@ function Fila({
     );
   }
   return (
-    <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+    <div
+      className={`grid grid-cols-1 items-center gap-10 lg:gap-14 ${
+        // el recurso visual ocupa más que el texto
+        invertir ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.55fr)]" : "lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)]"
+      }`}
+    >
       <div className={invertir ? "lg:order-2" : ""}>{recurso}</div>
       <div className={invertir ? "lg:order-1" : ""}>{textoBloque}</div>
     </div>
@@ -272,7 +277,7 @@ export default function PaginaIdap() {
           .idap-flota { animation: idap-flota 4s ease-in-out infinite }
           @media (prefers-reduced-motion: reduce) { .idap-flota { animation: none } }
         `}</style>
-        <div className="mx-auto max-w-6xl space-y-28 px-6 lg:space-y-36">
+        <div className="mx-auto max-w-7xl space-y-24 px-6 lg:space-y-32">
           <Fila
             icono="planta"
             titulo="La salud de todas tus plantas, en una sola vista"
