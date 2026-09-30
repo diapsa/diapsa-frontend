@@ -1,0 +1,56 @@
+{
+  "slug": "alineacion-de-ejes-motor-bomba-laser-vs-reloj-comparador",
+  "titulo": "Alineación de ejes motor-bomba: láser o reloj comparador, y por qué empezar por la pata coja",
+  "extracto": "Cómo se alinea un motor con su bomba, qué cambia entre el láser y el reloj comparador, cómo se detecta y corrige la pata coja, y los errores que hacen que una alineación no dure.",
+  "portada": "/images/servicios/alineacion-balanceo/campo-sensores-acople.webp",
+  "fecha": "2026-09-30T22:00:00.000000Z",
+  "seo": {
+    "titulo": "Alineación de ejes motor-bomba: láser vs reloj comparador",
+    "descripcion": "Cómo alinear un motor con su bomba, diferencias entre la alineación láser y el reloj comparador, cómo revisar y corregir la pata coja y los errores más comunes que hacen que la alineación no dure."
+  },
+  "bloques": [
+    ["p", "El motor con su bomba es el equipo acoplado más común en cualquier planta, y también el que más seguido se desalinea: después de cambiar un sello, de reponer un motor o simplemente porque la base se fue asentando. Alinearlo bien no es difícil, pero tiene un orden, y saltarse un paso es la razón más común de que la alineación no dure."],
+
+    ["h2", "El orden correcto"],
+    ["numerada", [
+      "Revisar la base, los tornillos y que no haya tuberías jalando la bomba.",
+      "Revisar y corregir la pata coja.",
+      "Hacer una alineación gruesa con regla para quedar en rango.",
+      "Medir con láser o reloj comparador y calcular cuánto calzar y mover.",
+      "Corregir primero el plano vertical con calzas y después el horizontal moviendo el motor.",
+      "Apretar en el orden correcto y volver a medir."
+    ]],
+    ["p", "Casi siempre se mueve el motor y la bomba se deja fija, porque la bomba está sujeta a la tubería y moverla puede meterle esfuerzos."],
+
+    ["h2", "La pata coja"],
+    ["p", "Pata coja es cuando una de las patas de la máquina no asienta plana sobre su base. Puede ser porque la base está torcida, porque hay calzas de más o mal puestas, o porque hay suciedad u óxido debajo. Al apretar el tornillo, la pata baja a la fuerza y deforma la carcasa del motor. El resultado es una alineación que cambia cada vez que se aprieta o se afloja algo, y a veces vibración al doble de la frecuencia de la red."],
+    ["p", "Se revisa aflojando una pata a la vez y midiendo cuánto se levanta, con el láser, con un reloj comparador o con lainas. Si se levanta más de unas cuantas centésimas de milímetro, hay que corregirla con calzas antes de seguir."],
+
+    ["h2", "Reloj comparador y láser"],
+    ["p", "Los dos métodos alinean, y bien usados llegan a resultados parecidos. La diferencia está en cuánto depende el resultado de quien mide."],
+    ["p", "El reloj comparador es el método clásico. Se montan uno o dos relojes en un eje apuntando al otro, se giran los ejes y se anotan las lecturas. Con ellas se calcula, a mano o con una gráfica, cuánto calzar y mover. Es barato y confiable, pero lleva tiempo, y hay detalles que afectan la lectura: el pandeo del soporte del reloj, la holgura del acople y los errores al anotar o calcular."],
+    ["p", "El láser hace lo mismo con dos cabezales, uno en cada eje. Mide en segundos, evita varios de los errores del reloj, calcula solo las correcciones y muestra en vivo cómo cambia la alineación mientras se mueve el motor. Además guarda el antes y el después, lo que sirve para dejar evidencia del trabajo."],
+    ["p", "Para un equipo crítico o de alta velocidad, el láser es la opción más práctica. Para un equipo sencillo y de baja velocidad, un técnico con experiencia puede dejarlo bien con reloj comparador."],
+
+    ["h2", "Errores que hacen que la alineación no dure"],
+    ["lista", [
+      "No corregir la pata coja antes de alinear.",
+      "Usar muchas calzas delgadas en lugar de pocas del espesor correcto.",
+      "Calzas sucias, dobladas o con rebaba.",
+      "Dejar la tubería forzando la bomba.",
+      "Apretar los tornillos sin orden y no volver a medir después.",
+      "No considerar el crecimiento térmico en equipos que trabajan calientes."
+    ]],
+
+    ["h2", "Cómo saber si quedó bien"],
+    ["p", "Con los valores finales dentro de la [tabla de tolerancias](/blog/tabla-de-tolerancias-para-alineacion-de-ejes) para la velocidad del equipo, y con la vibración. Al arrancar, la vibración axial y el 2X del lado acople deben bajar. Si no bajaron, o la desalineación no era el problema o algo se movió al apretar."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Se puede alinear con el acople armado?"],
+    ["p", "Sí. Con láser se mide con el acople puesto; solo hace falta que los ejes se puedan girar juntos."],
+    ["h3", "¿Y si el motor no tiene espacio para moverse?"],
+    ["p", "Pasa seguido: los tornillos llegan al tope o el barreno está justo. A veces hay que agrandar los barrenos o ajustar la base, y eso se señala en el informe."],
+
+    ["nota", "Alineamos tus motor-bomba con láser, corregimos la pata coja y comprobamos el resultado con vibración antes y después. Conoce nuestro servicio de [alineación y balanceo](/servicios/monitoreo-condicion/alineacion-balanceo)."]
+  ]
+}

@@ -190,5 +190,44 @@
       "titulo": "Análisis de Vibraciones Mecánicas",
       "resumen": "Rutas de medición e interpretación espectral en tu planta, con analistas Categoría III ISO 18436-2."
     }
+  },
+  {
+    "articulo": {
+      "slug": "tabla-de-tolerancias-para-alineacion-de-ejes",
+      "titulo": "Tabla de tolerancias para alineación de ejes",
+      "resumen": "Cuánta desalineación paralela y angular se acepta según la velocidad del equipo.",
+      "portada": "/images/servicios/alineacion-balanceo/pantalla-tolerancias.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/alineacion-balanceo",
+      "titulo": "Alineación y Balanceo",
+      "resumen": "Alineación láser de ejes y balanceo dinámico en sitio, con la vibración medida antes y después."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "balanceo-dinamico-en-sitio-y-grado-de-balanceo-g",
+      "titulo": "Balanceo dinámico en sitio y grado G",
+      "resumen": "Cómo se balancea sin desmontar y qué significan G 6.3 y G 2.5.",
+      "portada": "/images/gallery/campo/vibracion-ventilador-torre.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/alineacion-balanceo",
+      "titulo": "Alineación y Balanceo",
+      "resumen": "Alineación láser de ejes y balanceo dinámico en sitio, con la vibración medida antes y después."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "alineacion-de-ejes-motor-bomba-laser-vs-reloj-comparador",
+      "titulo": "Alineación motor-bomba: láser o reloj comparador",
+      "resumen": "El orden correcto, la pata coja y los errores que hacen que no dure.",
+      "portada": "/images/servicios/alineacion-balanceo/campo-sensores-acople.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/alineacion-balanceo",
+      "titulo": "Alineación y Balanceo",
+      "resumen": "Alineación láser de ejes y balanceo dinámico en sitio, con la vibración medida antes y después."
+    }
   }
 ]

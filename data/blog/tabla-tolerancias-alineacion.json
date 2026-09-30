@@ -1,0 +1,48 @@
+{
+  "slug": "tabla-de-tolerancias-para-alineacion-de-ejes",
+  "titulo": "Tabla de tolerancias para alineación de ejes: cuánto es suficiente según la velocidad",
+  "extracto": "Qué significan la desalineación paralela y la angular, la tabla de tolerancias por velocidad que usan los equipos láser y por qué el fabricante del equipo siempre tiene la última palabra.",
+  "portada": "/images/servicios/alineacion-balanceo/pantalla-tolerancias.webp",
+  "fecha": "2026-09-30T21:00:00.000000Z",
+  "seo": {
+    "titulo": "Tabla de tolerancias para alineación de ejes por velocidad",
+    "descripcion": "Tolerancias de alineación de ejes por rango de velocidad: desalineación paralela en milímetros y angular en milímetros por cada 100 mm, cómo leerlas y cuándo usar las del fabricante."
+  },
+  "bloques": [
+    ["p", "Ningún par de ejes queda perfectamente alineado, y tampoco hace falta. Lo que se busca es que la desalineación quede tan chica que el acople, los rodamientos y los sellos no la resientan. La pregunta de siempre es cuánto es suficiente, y la respuesta depende sobre todo de qué tan rápido gira la máquina."],
+
+    ["h2", "Paralela y angular: las dos medidas que importan"],
+    ["p", "La desalineación paralela, también llamada offset, es la distancia entre las líneas de los dos ejes medida en el centro del acople. Se da en milímetros. La angular es el ángulo que forman entre sí, y se expresa como milímetros de abertura por cada 100 mm de diámetro, es decir, cuánto se abre el acople de un lado respecto al otro."],
+    ["p", "Las dos se revisan en el plano vertical y en el horizontal, así que al final hay cuatro números. Los cuatro tienen que quedar dentro de tolerancia."],
+
+    ["h2", "La tabla por velocidad"],
+    ["p", "Esta es la tabla general que traen de fábrica muchos equipos de alineación láser para acoples cortos. Es un buen punto de partida cuando el fabricante de la máquina no dice otra cosa:"],
+    ["lista", [
+      "De 0 a 1000 rpm: paralela 0.10 mm y angular 0.13 mm por cada 100 mm.",
+      "De 1000 a 2000 rpm: paralela 0.08 mm y angular 0.10 mm por cada 100 mm.",
+      "De 2000 a 3000 rpm: paralela 0.07 mm y angular 0.07 mm por cada 100 mm.",
+      "De 3000 a 4000 rpm: paralela 0.06 mm y angular 0.05 mm por cada 100 mm.",
+      "De 4000 a 6000 rpm: paralela 0.05 mm y angular 0.03 mm por cada 100 mm."
+    ]],
+    ["p", "La lógica es sencilla: entre más rápido gira el equipo, más veces por minuto se repite el esfuerzo que causa la desalineación, y más cerrada tiene que ser la tolerancia. Un motor de dos polos a 3600 rpm pide bastante más precisión que uno de ocho polos a 900 rpm."],
+
+    ["h2", "Aceptable no es lo mismo que excelente"],
+    ["p", "Algunos fabricantes de equipos de alineación publican dos columnas, una de valores aceptables y otra de valores excelentes, bastante más cerrados. Si el equipo es crítico, o si ya tuvo fallas repetidas de rodamientos o sellos, vale la pena apuntar a la columna excelente. Casi siempre cuesta solo unos minutos más de calzas y ajustes."],
+
+    ["h2", "Cuando el fabricante tiene su propia tolerancia"],
+    ["p", "La tabla general sirve cuando no hay otra referencia. Si el fabricante de la bomba, del compresor o del acople da sus propios valores, esos mandan. También cuentan las condiciones de trabajo: un equipo que opera caliente crece con la temperatura, y a veces se deja desalineado a propósito en frío para que quede en línea al llegar a su temperatura de operación."],
+
+    ["h2", "Antes de alinear: la pata coja"],
+    ["p", "No sirve de nada llegar a la tolerancia si una de las patas no asienta bien. Al apretar los tornillos, esa pata deforma la carcasa y la alineación se mueve. Por eso lo primero es revisar la pata coja y corregirla con calzas. Te lo contamos con más detalle en la guía de [alineación motor-bomba](/blog/alineacion-de-ejes-motor-bomba-laser-vs-reloj-comparador)."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Estas tolerancias sirven para acoples con espaciador?"],
+    ["p", "No directamente. Con un espaciador largo se trabaja con el ángulo en cada extremo, y los equipos láser tienen su propia configuración para eso."],
+    ["h3", "¿Cada cuánto se debe revisar la alineación?"],
+    ["p", "Después de cualquier montaje, cambio de motor o reparación, y cuando el análisis de vibraciones muestra señales de desalineación, como 1X y 2X altos con vibración axial. Lo explicamos en la guía de [desbalance y desalineación](/blog/diferencia-entre-desbalance-y-desalineacion)."],
+    ["h3", "¿Qué pasa si se queda un poco fuera?"],
+    ["p", "El equipo va a funcionar, pero con más carga en rodamientos, sellos y acople. La desalineación es de las causas más comunes de fallas repetidas de rodamientos."],
+
+    ["nota", "Alineamos tus equipos con láser, dejamos escrita la tolerancia aplicada y medimos la vibración antes y después para comprobar el resultado. Conoce nuestro servicio de [alineación y balanceo](/servicios/monitoreo-condicion/alineacion-balanceo)."]
+  ]
+}

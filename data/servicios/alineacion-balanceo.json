@@ -22,13 +22,13 @@
   ],
   "header": {
     "title": "Alineación y Balanceo",
-    "subtitle": "Corregimos en campo las dos causas que más vibración generan en equipo rotativo",
+    "subtitle": "Alineación láser de ejes y balanceo dinámico en sitio para motores, bombas y ventiladores industriales",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Alineación láser de ejes y balanceo dinámico en sitio para motores, bombas y ventiladores. Se mide antes, se corrige y se vuelve a medir para probar el resultado.",
+  "seoDescription": "Alineación láser de ejes motor-bomba y balanceo dinámico en sitio para equipo industrial en México: se mide antes, se corrige y se vuelve a medir para probar el resultado.",
   "content": {
     "title": "El análisis las encuentra; esto las corrige",
-    "subtitle": "Desalineación y desbalanceo son, juntas, la causa de buena parte de la vibración en máquinas rotativas. El análisis las identifica en el espectro, pero identificarlas no las arregla. Aquí las corregimos en su propia base, con alineación láser y balanceo en sitio, y se vuelve a medir para probar que quedó.",
+    "subtitle": "El análisis de vibraciones encuentra la desalineación y el desbalance; aquí los corregimos en su propia base y volvemos a medir para probar que quedó.",
     "image": "/images/disciplinas/alineacion-balaceo.jpg",
     "items": [
       {
@@ -131,7 +131,7 @@
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "Esto es lo que recibes",
-    "descripcion": "Un informe que prueba el resultado con números, no con una firma de conformidad. El corazón es esta ficha: lo que se midió antes de tocar el equipo, lo que quedó después y contra qué tolerancia se comparó.",
+    "descripcion": "Un informe que prueba el resultado con números: lo que se midió antes, lo que quedó después y contra qué tolerancia se comparó.",
     "contenido": [
       "Estado del equipo antes de la corrección, medido",
       "Valores de desalineación encontrados y la tolerancia aplicada",
@@ -184,27 +184,39 @@
   "faq": [
     {
       "question": "¿Cuál es la diferencia entre alineación y balanceo?",
-      "answer": "La alineación corrige la relación entre dos ejes acoplados: que el del motor y el de la bomba queden en la misma línea, sin desfase ni ángulo entre ellos. El balanceo corrige la distribución de masa de un solo rotor que gira, para que su centro de masa coincida con su centro de giro. Son problemas distintos y se corrigen distinto, aunque los dos se manifiesten como vibración."
+      "answer": "La alineación deja en la misma línea los ejes de dos máquinas acopladas, como el motor y la bomba. El balanceo reparte bien la masa de una pieza que gira, como un impulsor o un ventilador. Son fallas distintas y se corrigen distinto."
     },
     {
       "question": "¿Cómo sé cuál de las dos necesita mi equipo?",
-      "answer": "Por el espectro de vibración. El desbalanceo aparece principalmente a la velocidad de giro y la desalineación suele mostrarse al doble, con componente axial. Por eso el trabajo empieza siempre midiendo: es la medición la que decide qué se corrige, no la sospecha."
+      "answer": "Por el espectro de vibración: el desbalance aparece sobre todo a la velocidad de giro en radial, y la desalineación a 1X y 2X con vibración axial. Por eso siempre empezamos midiendo."
     },
     {
       "question": "¿Se puede balancear sin desmontar el rotor?",
-      "answer": "Sí, y es lo habitual. El balanceo en sitio se hace con el rotor montado en su propia chumacera y girando a su velocidad de trabajo, que además es la condición real en la que va a operar. Solo cuando el equipo no puede girar en sitio, o la geometría no lo permite, se recurre a una máquina balanceadora."
+      "answer": "Sí, es lo normal. Se balancea con el rotor en su propia chumacera y a su velocidad de trabajo. Solo se desmonta cuando la pieza no se puede balancear en sitio."
     },
     {
       "question": "¿Qué tolerancia de alineación aplican?",
-      "answer": "La que indique el fabricante del equipo cuando la tiene documentada y, si no, la que corresponda a su velocidad de giro según la práctica aceptada: a mayor velocidad, tolerancia más cerrada. La tolerancia usada queda escrita en el informe junto con el valor alcanzado, para que se pueda revisar."
+      "answer": "La del fabricante del equipo cuando la tiene y, si no, la que corresponde a su velocidad: entre más rápido gira, más cerrada es la tolerancia. La tolerancia usada queda escrita en la ficha de resultado."
     },
     {
       "question": "¿Cuánto tiempo toma?",
-      "answer": "Una alineación normal se resuelve en una jornada, contando la medición inicial, la corrección y la verificación. Un balanceo en sitio puede tomar más, porque requiere varios arranques para ir corrigiendo. El tiempo real depende del acceso al equipo y de la ventana que dé operación."
+      "answer": "Una alineación normal se resuelve en una jornada, con la medición inicial, la corrección y la verificación. Un balanceo puede tardar más porque necesita varios arranques."
+    },
+    {
+      "question": "¿Qué es la pata coja?",
+      "answer": "Es cuando una de las patas de la máquina no asienta bien en su base. Al apretar los tornillos se deforma la carcasa y la alineación no se sostiene. Por eso se revisa y se corrige antes de alinear."
+    },
+    {
+      "question": "¿Qué significa un grado de balanceo G 6.3?",
+      "answer": "Es la calidad de balanceo que pide la norma ISO 21940 para la mayoría de los ventiladores, bombas y motores industriales. Las máquinas más rápidas o de precisión piden grados más finos, como G 2.5."
+    },
+    {
+      "question": "¿Láser o reloj comparador?",
+      "answer": "Los dos alinean, pero el láser es más rápido, más preciso y dice directamente cuánto calzar y mover en cada pata. El reloj comparador depende mucho de la experiencia de quien lo usa."
     },
     {
       "question": "¿Qué necesito para cotizar?",
-      "answer": "El tipo de equipo y su potencia, la velocidad de giro, si está acoplado directo o por bandas, y si ya tienes una medición de vibración que muestre el problema. Con eso preparamos la propuesta."
+      "answer": "El tipo de equipo, su potencia y velocidad, si está acoplado directo o por bandas, y si ya tienes una medición de vibración."
     }
   ],
   "certificacion": "Ejecutado por analistas de vibración certificados · ISO 18436-2",
@@ -244,7 +256,7 @@
   ],
   "cta": {
     "title": "¿Tienes un equipo que vibra desde que lo instalaron?",
-    "text": "Cuéntanos qué equipo es y qué medición tienes, y te preparamos una propuesta de corrección con verificación incluida.",
+    "text": "Cuéntanos qué equipo es y qué medición tienes, y te preparamos la propuesta con verificación incluida.",
     "whatsappMessage": "Hola, quiero cotizar alineación y balanceo para un equipo de mi planta.",
     "datos": [
       "Registro REPSE vigente",
@@ -298,5 +310,150 @@
         "ilustracion": "motor"
       }
     ]
-  }
+  },
+  "seoTitle": "Alineación láser de ejes y balanceo dinámico en sitio",
+  "introBeneficios": {
+    "beneficios": [
+      {
+        "icono": "engrane",
+        "titulo": "Menos vibración desde el arranque",
+        "texto": "Se mide antes y después: el resultado queda en números."
+      },
+      {
+        "icono": "paro",
+        "titulo": "Rodamientos y sellos que duran",
+        "texto": "Un equipo alineado y balanceado deja de comerse sus refacciones."
+      },
+      {
+        "icono": "calendario",
+        "titulo": "Una jornada, sin desmontar",
+        "texto": "Se corrige en la base del equipo, sin sacar el acople ni el rotor."
+      },
+      {
+        "icono": "documento",
+        "titulo": "Resultado comprobado",
+        "texto": "Ficha con el antes, el después y la tolerancia aplicada."
+      }
+    ],
+    "modalidades": [
+      {
+        "titulo": "Cuando la vibración lo señala",
+        "texto": "El análisis de vibraciones dice si es desalineación, desbalance o las dos.",
+        "enlace": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "titulo": "Equipo nuevo o reparado",
+        "texto": "Antes de arrancarlo, para que empiece dentro de tolerancia."
+      }
+    ],
+    "fotos": [
+      {
+        "src": "/images/servicios/alineacion-balanceo/campo-analista-tablet.webp",
+        "alt": "Analista de DIAPSA siguiendo en el equipo láser la alineación de un motor de proceso."
+      },
+      {
+        "src": "/images/servicios/alineacion-balanceo/campo-sensores-acople.webp",
+        "alt": "Cabezales del láser montados en el acople, con la máquina en su base."
+      },
+      {
+        "src": "/images/servicios/alineacion-balanceo/campo-analista-equipo.webp",
+        "alt": "Ajuste de las patas del motor mientras el láser marca el desfase en vivo."
+      },
+      {
+        "src": "/images/servicios/alineacion-balanceo/pantalla-resultados.webp",
+        "alt": "Antes y después en la misma pantalla: el desfase baja hasta quedar en tolerancia."
+      },
+      {
+        "src": "/images/disciplinas/alineacion-balaceo.jpg",
+        "alt": "Analista de DIAPSA midiendo sobre un motor acoplado antes de corregir la alineación."
+      },
+      {
+        "src": "/images/gallery/campo-img-9.jpg",
+        "alt": "Intervención en sitio, con el equipo en su base y sin desmontar el acople."
+      }
+    ],
+    "idap": {
+      "titulo": "Tus datos viven en IDAP",
+      "texto": "El antes y el después de cada corrección entran a la ficha del equipo como su nueva línea base, junto con las demás técnicas.",
+      "puntos": [
+        "Antes y después de cada corrección",
+        "Tolerancia aplicada y calzas colocadas",
+        "Historial y tendencias de cada equipo"
+      ],
+      "video": "/videos/idap/idap-equipo",
+      "descripcionVideo": "Ficha de un equipo en IDAP: gemelo digital, estado por componente y diagnóstico por disciplina",
+      "enlace": "/servicios/idap"
+    }
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Del dato a la decisión",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "Se mide, se corrige y se vuelve a medir",
+          "texto": "Antes de tocar el equipo se mide la vibración y se confirma qué tiene. Se corrige en su base y se vuelve a medir: si no bajó, no está terminado.",
+          "video": "/videos/alineacion-balanceo/ali-proceso",
+          "descripcion": "Los cinco pasos de una alineación: medición inicial, diagnóstico en el espectro, corrección con láser, verificación y ficha de resultado",
+          "pasos": [
+            "Medición inicial",
+            "Diagnóstico en el espectro",
+            "Corrección en sitio",
+            "Verificación con el equipo operando",
+            "Registro del antes y el después"
+          ]
+        }
+      ]
+    },
+    {
+      "lugar": "cobertura",
+      "etiqueta": "Qué corregimos",
+      "titulo": "¿Dónde aplica y qué corrige?",
+      "texto": "Alineación láser de ejes en equipos acoplados y balanceo dinámico en sitio de rotores, impulsores y ventiladores.",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "Alineación láser de ejes",
+          "texto": "Motor con bomba, ventilador, compresor o reductor: el láser dice cuánto calzar y mover en cada pata, sin desmontar el acople.",
+          "video": "/videos/alineacion-balanceo/ali-laser",
+          "descripcion": "Secuencia real del equipo láser: cabezales en el acople, lectura inicial fuera de tolerancia y lectura final dentro de tolerancia"
+        },
+        {
+          "titulo": "Balanceo dinámico en sitio",
+          "texto": "En uno o dos planos, con el rotor en su propia chumacera y a su velocidad de trabajo, hasta el grado de balanceo que le corresponde.",
+          "video": "/videos/alineacion-balanceo/ali-balanceo",
+          "descripcion": "Diagrama polar de la vibración a 1X que se reduce de 6.2 a 0.9 mm/s con el peso de corrección"
+        }
+      ],
+      "listas": [
+        {
+          "titulo": "Equipos",
+          "items": [
+            "Motor con bomba",
+            "Motor con ventilador",
+            "Motor con compresor",
+            "Motor con reductor",
+            "Ventiladores e impulsores",
+            "Rotores de motor",
+            "Sopladores",
+            "Poleas"
+          ]
+        },
+        {
+          "titulo": "Lo que corrige",
+          "items": [
+            "Desalineación angular",
+            "Desalineación paralela",
+            "Pata coja",
+            "Desbalance estático",
+            "Desbalance dinámico",
+            "Vibración alta por desbalance o desalineación",
+            "Desgaste prematuro de rodamientos y sellos"
+          ]
+        }
+      ]
+    }
+  ]
 }
