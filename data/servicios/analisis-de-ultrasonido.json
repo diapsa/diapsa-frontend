@@ -2336,21 +2336,6 @@
     "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA, con el estado por disciplina y los niveles de ultrasonido medidos",
     "dato": "3",
     "datoTexto": "disciplinas en un solo informe",
-    "idap": {
-      "src": "/images/idap/capturas/inspeccion-vibraciones.jpg",
-      "alt": "Inspección integral en IDAP con la pestaña de ultrasonido",
-      "texto": "La misma inspección dentro de IDAP: el resumen con el diagnóstico y lo que costaría la falla, y en ultrasonido la forma de onda, cada punto contra su línea base y la escala de severidad. Pasa el cursor por una técnica para abrirla.",
-      "escena": "us",
-      "imagenes": {
-        "principal": "/images/idap/inspeccion/termica-1.jpg",
-        "miniaturas": [
-          "/images/idap/inspeccion/termica-1.jpg",
-          "/images/idap/inspeccion/termica-2.jpg",
-          "/images/idap/inspeccion/termica-3.jpg"
-        ]
-      },
-      "inspeccion": "ultra"
-    },
     "anotado": {
       "paginas": [
         {
