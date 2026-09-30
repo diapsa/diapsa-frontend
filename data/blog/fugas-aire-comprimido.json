@@ -1,0 +1,60 @@
+{
+  "slug": "fugas-de-aire-comprimido-cuanto-cuestan-y-como-detectarlas",
+  "titulo": "Fugas de aire comprimido: cuánto cuestan y cómo detectarlas",
+  "extracto": "Por qué las fugas de aire comprimido son de las pérdidas más caras de una planta, cómo calcular lo que cuesta cada una y cómo encontrarlas con ultrasonido aunque la producción esté en marcha.",
+  "portada": "/images/servicios/analisis-de-ultrasonido/campo-valvulas.webp",
+  "fecha": "2026-09-29T00:00:00.000000Z",
+  "seo": {
+    "titulo": "Fugas de aire comprimido: cuánto cuestan y cómo detectarlas",
+    "descripcion": "Cómo calcular el costo de una fuga de aire comprimido, dónde aparecen, cómo detectarlas con ultrasonido y cómo armar un programa de fugas en tu planta."
+  },
+  "bloques": [
+    ["p", "El aire comprimido parece gratis porque sale de un tubo, pero es de lo más caro que se produce en una planta. El compresor toma electricidad y la convierte en presión, y en ese camino se pierde buena parte de la energía. Luego, una parte de ese aire que tanto costó hacer ni siquiera llega a trabajar: se escapa por fugas que casi nadie ve ni escucha."],
+    ["p", "El Departamento de Energía de Estados Unidos calcula que una planta que no atiende sus fugas puede estar perdiendo entre 20 y 30 % de lo que producen sus compresores. En esta guía te explicamos cómo sacar la cuenta de lo que te cuesta cada fuga, dónde buscarlas y cómo encontrarlas."],
+
+    ["h2", "Por qué salen tan caras"],
+    ["p", "La primera razón es obvia: el compresor trabaja para producir aire que se va a la atmósfera, y si la planta opera día y noche, eso pasa las 24 horas. Pero hay más. Con muchas fugas, la presión baja en los puntos de uso y la reacción típica es subirle al compresor. Como regla práctica, cada 2 psi de más cuestan cerca de 1 % más de energía. A veces incluso se termina comprando o encendiendo otro compresor para cubrir un consumo que en realidad son fugas. Y en la línea, las herramientas y los cilindros trabajan con menos presión, los ciclos se alargan y aparecen paros."],
+
+    ["h2", "Cómo calcular cuánto te cuesta una fuga"],
+    ["p", "La cuenta es más sencilla de lo que parece:"],
+    ["nota", "Costo al año = caudal de la fuga (cfm) × energía por cada cfm (kW/cfm) × horas de operación × tarifa ($/kWh)"],
+    ["p", "Un compresor de tornillo trabajando alrededor de 100 psi gasta más o menos entre 0.18 y 0.22 kW por cada cfm que produce. El caudal de la fuga depende del tamaño del agujero. Como referencia, a 100 psig un orificio de 1/16 de pulgada deja escapar unos 6.5 cfm, uno de 1/8 unos 26 cfm y uno de 1/4 unos 104 cfm."],
+    ["p", "Hagamos un ejemplo. Una fuga de 1/8 de pulgada, más o menos del tamaño de la punta de un lápiz, pierde unos 26 cfm. Con 0.2 kW por cfm son 5.2 kW. En una planta que trabaja 8,000 horas al año eso suma 41,600 kWh, y con una tarifa de ejemplo de $2.50 por kWh, esa sola fuga cuesta más de 100 mil pesos al año. Te recomendamos hacer la cuenta con la tarifa de tu recibo para ver tu caso real."],
+
+    ["h2", "Dónde se esconden"],
+    ["p", "Casi nunca están en la tubería principal. Donde más aparecen es en los puntos de uso: acoplamientos rápidos y conexiones, mangueras y abrazaderas, filtros, reguladores y lubricadores, trampas de condensado que se quedaron abiertas, válvulas y cilindros neumáticos, uniones roscadas y bridas, y herramientas o tomas que ya nadie usa pero siguen con presión."],
+
+    ["h2", "Cómo se encuentran"],
+    ["h3", "A oído o con agua jabonosa"],
+    ["p", "Funcionan para las fugas grandes y cuando la planta está en silencio. Con la producción andando, la mayoría pasa desapercibida, y el agua jabonosa es lenta y poco práctica en lugares difíciles de alcanzar."],
+    ["h3", "Con ultrasonido"],
+    ["p", "Cuando el aire sale por un agujero hace una turbulencia que produce ultrasonido, alrededor de los 40 kHz. El detector lo separa del ruido de la planta, así que las fugas se encuentran con la producción en marcha, se ubican con precisión y se clasifican por su nivel. Es lo que hacemos en el [análisis de ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido)."],
+    ["h3", "Con cámara acústica"],
+    ["p", "Muestra la fuga sobre la imagen del equipo y estima cuánto aire se va y cuánto cuesta. Es muy rápida para recorrer redes grandes y deja evidencia visual de cada fuga."],
+    ["h3", "Con la prueba de carga y descarga del compresor"],
+    ["p", "Con la planta sin consumo, se mide cuánto tiempo pasa el compresor cargado y cuánto descargado. Si al tiempo cargado le llamamos T y al descargado t, el porcentaje de fugas es aproximadamente T × 100 / (T + t). No te dice dónde están, pero sí cuánto se está perdiendo en total, y eso sirve como punto de partida."],
+
+    ["h2", "Cómo armar un programa de fugas"],
+    ["numerada", [
+      "Mide cuánto se fuga en total, con la prueba de carga y descarga o con un medidor de flujo.",
+      "Recorre la red con ultrasonido y etiqueta cada fuga con un número, su ubicación, su tamaño y su costo aproximado.",
+      "Decide el orden de reparación según lo que cuesta cada fuga y qué tan fácil es arreglarla.",
+      "Repara. Muchas se corrigen con la planta andando: un acoplamiento, una abrazadera, una manguera.",
+      "Verifica con ultrasonido que la fuga quedó bien.",
+      "Repite cada tres a seis meses, porque las fugas vuelven a salir. Un programa bien llevado busca mantenerlas por debajo de 10 % de lo que producen los compresores."
+    ]],
+
+    ["h2", "No solo es aire"],
+    ["p", "Lo mismo aplica para las trampas de vapor que no cierran, para las fugas de vacío, donde el aire entra en lugar de salir, y para gases de proceso como nitrógeno, CO₂ o argón, donde cada fuga es gas que compraste y se está yendo."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Hay que parar la planta para buscar fugas?"],
+    ["p", "No. Con ultrasonido se buscan con la producción en marcha. De hecho, es cuando la red tiene presión y las fugas suenan."],
+    ["h3", "¿Cuánto se puede ahorrar?"],
+    ["p", "Depende de cuánto se fuga hoy y de lo que pagas por la electricidad. La forma honesta de saberlo es medir el total y sumar el costo de cada fuga encontrada; así ves el retorno antes de reparar."],
+    ["h3", "¿El ruido de la planta no tapa las fugas?"],
+    ["p", "El ruido de la planta está casi todo en frecuencias que sí oímos. El detector trabaja en ultrasonido y deja ese ruido fuera, por eso encuentra fugas que a oído serían imposibles."],
+
+    ["nota", "¿Quieres saber cuánto aire se te está escapando? Recorremos tu red con ultrasonido y te entregamos cada fuga ubicada, con su nivel y su costo aproximado, para que las repares en orden. Conoce nuestro [análisis de ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido)."]
+  ]
+}
