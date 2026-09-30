@@ -49,7 +49,7 @@ const CSS = `.idap-wrap{container-type:inline-size;width:100%;max-width:1024px;m
 @keyframes growX{from{transform:scaleX(0)}}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,255,255,.8)}100%{box-shadow:0 0 0 .7em rgba(255,255,255,0)}}
 .idap .hd{display:flex;align-items:flex-end;justify-content:space-between;gap:1em}
-.idap .hd h1{margin:0;font-size:1.25em;font-weight:600;letter-spacing:-.01em}
+.idap .hd .ttl{margin:0;font-size:1.25em;font-weight:600;letter-spacing:-.01em}
 .idap .hd .sub{margin-top:.2em;color:var(--mut);font-size:.8125em;display:flex;gap:.5em;align-items:center}
 .idap .hd .sub .dot{width:.25em;height:.25em;border-radius:50%;background:var(--dim)}
 .idap .badges{display:flex;gap:.5em;flex-wrap:wrap}
@@ -272,7 +272,7 @@ const MARCADO = `<div class="idap" id="idap" role="img" aria-label="Inspección 
 
   <header class="hd">
     <div>
-      <h1>Inspección integral</h1>
+      <p class="ttl">Inspección integral</p>
       <div class="sub"><span>Motor</span><span class="dot"></span><span>14 mar 2026 · 10:32</span></div>
     </div>
     <div class="badges">

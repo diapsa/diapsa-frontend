@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Antetitulo from "../atoms/Antetitulo";
 import EscenaIdap from "./EscenaIdap";
+import EscenaInspeccion from "./EscenaInspeccion";
+import InformeMuestra from "./InformeMuestra";
 import HojaInforme from "./HojaInforme";
 import AlertaSensor from "./AlertaSensor";
 import ResumenRuta from "./ResumenRuta";
@@ -58,225 +60,237 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
 
   return (
     <section className="w-full overflow-hidden bg-white py-12 lg:py-20">
-      <div
-        className={`mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:gap-16 ${
-          entregable.hoja
-            ? "lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]"
-            : conVitrina
-              ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]"
-              : ""
-        }`}
-      >
-        {/* Texto. Sin vitrina se limita el ancho de lectura, pero se mantiene
-            el borde izquierdo de las demás secciones: centrarlo rompería la
-            alineación de toda la página. */}
-        <div className={conVitrina ? "" : "max-w-3xl"}>
-          <Antetitulo paso={paso}>{entregable.etiqueta}</Antetitulo>
-          <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
-            {entregable.titulo}
-          </h2>
-          <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">
-            {entregable.descripcion}
-          </p>
-
-          {/* Lo que trae el informe, en tarjetas numeradas (2026-09-28): se
-              recorre de un vistazo en lugar de leer una lista */}
-          {entregable.contenido.length > 0 && (
-          <ul className={`mt-7 grid grid-cols-1 gap-3 ${conVitrina ? "sm:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
-            {entregable.contenido.map((punto, i) => (
-              <li
-                key={punto}
-                className="flex items-start gap-3 rounded-sm bg-gray-50 p-4 text-sm font-semibold leading-snug text-primary ring-1 ring-black/5 transition-colors hover:bg-white hover:shadow-md"
-              >
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-black text-secondary">
-                  {i + 1}
-                </span>
-                <span className="pt-1">{punto}</span>
-              </li>
-            ))}
-          </ul>
-          )}
-        </div>
-
-        {/* Vitrina C: la ficha del informe de una ruta.
-            Las páginas de los laboratorios explican cómo leer un informe pero
-            no enseñan el suyo: ni Bureau Veritas, ni Trico, ni TestOil ponen
-            una sola captura ni una etiqueta de color. Aquí se enseña, porque
-            lo que compra el cliente no es la medición sino la ruta ya
-            priorizada: cuántos equipos hay en cada nivel y qué toca hacer con
-            los que salieron mal. Los colores son los mismos del semáforo que
-            va justo abajo, y esa es la relación: aquí se ven aplicados, ahí
-            se explica qué obliga cada uno. */}
-        {entregable.pilares ? (
-          /* Vitrina G: lo que se obtiene, en dos columnas (cumplimiento y seguridad) */
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5">
-            {entregable.pilares.map((p, n, todos) => (
-              /* Con tres, el último va a lo ancho para no dejar un hueco */
-              <div key={p.titulo} className={`rounded-sm bg-primary p-6 text-white shadow-xl lg:p-7 ${todos.length % 2 === 1 && n === todos.length - 1 ? "sm:col-span-2" : ""}`}>
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-primary" aria-hidden="true">
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                    {p.icono === "escudo" ? (
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l7.5 3v5.25c0 4.5-3.2 8.4-7.5 9.75-4.3-1.35-7.5-5.25-7.5-9.75V6L12 3zm-3 9l2 2 4-4" />
-                    ) : p.icono === "ahorro" ? (
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.25h4.5a2.25 2.25 0 000-4.5h-3a2.25 2.25 0 010-4.5H15M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    ) : p.icono === "rayo" ? (
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 3L4.5 13.5H12L11 21l8.5-10.5H12L13 3z" />
-                    ) : (
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l2 2 4-4M7.5 3.75h6.75L18.75 8.25V19.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V4.5a.75.75 0 01.75-.75z" />
-                    )}
-                  </svg>
-                </span>
-                <p className="mt-4 text-2xl font-extrabold">{p.titulo}</p>
-                <ul className="mt-3 space-y-2">
-                  {p.items.map((i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm leading-snug text-white/85 lg:text-base">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" aria-hidden="true" />
-                      {i}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+      {entregable.muestra ? (
+        /* La hoja del informe con cada punto de la lista resaltado */
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-8 max-w-3xl">
+            <Antetitulo paso={paso}>{entregable.etiqueta}</Antetitulo>
+            <h2 className="mt-2 text-2xl font-extrabold leading-tight text-primary lg:text-3xl">{entregable.titulo}</h2>
+            <p className="mt-3 text-justify text-base leading-relaxed text-tertiary">{entregable.descripcion}</p>
           </div>
-        ) : entregable.alerta ? (
-          /* Vitrina F: la alerta como llega al teléfono (sensores) */
-          <AlertaSensor alerta={entregable.alerta} />
-        ) : entregable.resumenRuta ? (
-          /* Vitrina E: la portada de una ruta, con la barra por estado */
-          <ResumenRuta resumen={entregable.resumenRuta} />
-        ) : entregable.hoja ? (
-          /* Vitrina D: la hoja de un equipo, tal como sale en el informe */
-          <HojaInforme hoja={entregable.hoja} />
-        ) : entregable.informe ? (
-          <div className="mx-auto w-full max-w-xl overflow-hidden rounded-sm bg-white shadow-2xl ring-1 ring-black/10">
-            <div className="bg-primary px-5 py-4 lg:px-6">
-              <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">
-                {entregable.informe.etiqueta}
-              </p>
-              <p className="mt-1 text-lg font-extrabold text-white lg:text-xl">
-                {entregable.informe.titulo}
-              </p>
-              <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
-                {entregable.informe.resumen.map((r) => {
-                  const color = nivel(r.clave);
-                  return (
-                    <li key={r.clave} className="flex items-baseline gap-2">
-                      <span
-                        aria-hidden="true"
-                        className={`h-2 w-2 shrink-0 translate-y-[-1px] rounded-full ${color.punto}`}
-                      />
-                      <span className={`text-xl font-extrabold tabular-nums ${color.cifra}`}>
-                        {r.total}
-                      </span>
-                      <span className="text-[11px] uppercase tracking-wider text-white/60">
-                        {r.etiqueta}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-
-            <ul className="px-5 lg:px-6">
-              {entregable.informe.filas.map((f) => (
-                <li key={f.equipo} className="border-t border-gray-100 py-4 first:border-t-0">
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="min-w-0">
-                      <p className="text-sm font-bold leading-snug text-primary">{f.equipo}</p>
-                      <p className="mt-0.5 text-xs text-tertiary">{f.componente}</p>
-                    </div>
-                    <span
-                      className={`shrink-0 rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider ${nivel(f.clave).chip}`}
-                    >
-                      {f.estado}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-tertiary">{f.accion}</p>
+          <InformeMuestra puntos={entregable.contenido} />
+        </div>
+      ) : (
+      <div
+          className={`mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:gap-16 ${
+            entregable.hoja
+              ? "lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]"
+              : conVitrina
+                ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]"
+                : ""
+          }`}
+        >
+          {/* Texto. Sin vitrina se limita el ancho de lectura, pero se mantiene
+              el borde izquierdo de las demás secciones: centrarlo rompería la
+              alineación de toda la página. */}
+          <div className={conVitrina ? "" : "max-w-3xl"}>
+            <Antetitulo paso={paso}>{entregable.etiqueta}</Antetitulo>
+            <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">
+              {entregable.titulo}
+            </h2>
+            <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">
+              {entregable.descripcion}
+            </p>
+  
+            {/* Lo que trae el informe, en tarjetas numeradas (2026-09-28): se
+                recorre de un vistazo en lugar de leer una lista */}
+            {entregable.contenido.length > 0 && (
+            <ul className={`mt-7 grid grid-cols-1 gap-3 ${conVitrina ? "sm:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
+              {entregable.contenido.map((punto, i) => (
+                <li
+                  key={punto}
+                  className="flex items-start gap-3 rounded-sm bg-gray-50 p-4 text-sm font-semibold leading-snug text-primary ring-1 ring-black/5 transition-colors hover:bg-white hover:shadow-md"
+                >
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-black text-secondary">
+                    {i + 1}
+                  </span>
+                  <span className="pt-1">{punto}</span>
                 </li>
               ))}
             </ul>
-
-            <p className="border-t border-gray-200 bg-gray-50 px-5 py-3 text-justify text-xs leading-relaxed text-tertiary lg:px-6">
-              {entregable.informe.nota}
-            </p>
+            )}
           </div>
-        ) : /* Vitrina A: la ficha de resultado, para lo correctivo */
-        entregable.resultado ? (
-          <div className="mx-auto w-full max-w-xl overflow-hidden rounded-sm bg-white shadow-2xl ring-1 ring-black/10">
-            <div className="bg-primary px-5 py-4 lg:px-6">
-              <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">
-                {entregable.resultado.etiqueta}
-              </p>
-              <div className="mt-1 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-                <p className="text-lg font-extrabold text-white lg:text-xl">{entregable.resultado.equipo}</p>
-                <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-300">
-                  {entregable.resultado.estado}
-                </span>
-              </div>
-            </div>
-
-            <div className="px-5 py-2 lg:px-6">
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 py-2 text-[10px] font-bold uppercase tracking-wider text-tertiary lg:gap-x-6">
-                <span aria-hidden="true" />
-                <span className="text-right">Antes</span>
-                <span className="text-right">Después</span>
-              </div>
-              {entregable.resultado.filas.map((f) => (
-                <div
-                  key={f.concepto}
-                  className="grid grid-cols-[1fr_auto_auto] items-baseline gap-x-4 border-t border-gray-100 py-3 lg:gap-x-6"
-                >
-                  <span className="text-sm leading-snug text-primary">{f.concepto}</span>
-                  <span className="text-right text-sm font-semibold tabular-nums text-red-500">{f.antes}</span>
-                  <span className="text-right text-base font-extrabold tabular-nums text-emerald-600">
-                    {f.despues}
+  
+          {/* Vitrina C: la ficha del informe de una ruta.
+              Las páginas de los laboratorios explican cómo leer un informe pero
+              no enseñan el suyo: ni Bureau Veritas, ni Trico, ni TestOil ponen
+              una sola captura ni una etiqueta de color. Aquí se enseña, porque
+              lo que compra el cliente no es la medición sino la ruta ya
+              priorizada: cuántos equipos hay en cada nivel y qué toca hacer con
+              los que salieron mal. Los colores son los mismos del semáforo que
+              va justo abajo, y esa es la relación: aquí se ven aplicados, ahí
+              se explica qué obliga cada uno. */}
+          {entregable.pilares ? (
+            /* Vitrina G: lo que se obtiene, en dos columnas (cumplimiento y seguridad) */
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5">
+              {entregable.pilares.map((p, n, todos) => (
+                /* Con tres, el último va a lo ancho para no dejar un hueco */
+                <div key={p.titulo} className={`rounded-sm bg-primary p-6 text-white shadow-xl lg:p-7 ${todos.length % 2 === 1 && n === todos.length - 1 ? "sm:col-span-2" : ""}`}>
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-primary" aria-hidden="true">
+                    <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      {p.icono === "escudo" ? (
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l7.5 3v5.25c0 4.5-3.2 8.4-7.5 9.75-4.3-1.35-7.5-5.25-7.5-9.75V6L12 3zm-3 9l2 2 4-4" />
+                      ) : p.icono === "ahorro" ? (
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.25h4.5a2.25 2.25 0 000-4.5h-3a2.25 2.25 0 010-4.5H15M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      ) : p.icono === "rayo" ? (
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 3L4.5 13.5H12L11 21l8.5-10.5H12L13 3z" />
+                      ) : (
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75l2 2 4-4M7.5 3.75h6.75L18.75 8.25V19.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V4.5a.75.75 0 01.75-.75z" />
+                      )}
+                    </svg>
                   </span>
+                  <p className="mt-4 text-2xl font-extrabold">{p.titulo}</p>
+                  <ul className="mt-3 space-y-2">
+                    {p.items.map((i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm leading-snug text-white/85 lg:text-base">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary" aria-hidden="true" />
+                        {i}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
-
-            <p className="border-t border-gray-200 bg-gray-50 px-5 py-3 text-justify text-xs leading-relaxed text-tertiary lg:px-6">
-              {entregable.resultado.nota}
-            </p>
-          </div>
-        ) : entregable.paginas && entregable.paginas.length > 1 ? (
-        /* Vitrina B: las páginas reales del informe, escalonadas */
-        <div className="group relative mx-auto w-full max-w-xl">
-          {/* Página 2 al fondo, girada, asomando por detrás */}
-          <div className="absolute right-0 top-6 hidden w-[78%] rotate-[4deg] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5 transition-transform duration-500 motion-safe:group-hover:rotate-[6deg] motion-safe:group-hover:-translate-y-2 sm:block">
-            <Image
-              src={entregable.paginas[1]}
-              alt=""
-              aria-hidden="true"
-              width={1253}
-              height={1457}
-              className="h-auto w-full"
-              sizes="(max-width: 1024px) 60vw, 380px"
-            />
-          </div>
-
-          {/* Página 1 al frente */}
-          <div className="relative w-[88%] overflow-hidden rounded-sm shadow-2xl ring-1 ring-black/10 transition-transform duration-500 motion-safe:group-hover:-translate-y-1.5">
-            <Image
-              src={entregable.paginas[0]}
-              alt={entregable.altPaginas ?? ""}
-              width={1253}
-              height={890}
-              className="h-auto w-full"
-              sizes="(max-width: 1024px) 90vw, 460px"
-            />
-          </div>
-
-          {/* Sello flotante con lo que trae el informe */}
-          {entregable.dato && (
-            <div className="absolute -bottom-4 right-0 rounded-sm bg-primary px-5 py-3 text-white shadow-xl sm:right-4">
-              <p className="text-2xl font-extrabold leading-none text-secondary">{entregable.dato}</p>
-              <p className="mt-1 text-xs uppercase tracking-wider text-white/80">{entregable.datoTexto}</p>
+          ) : entregable.alerta ? (
+            /* Vitrina F: la alerta como llega al teléfono (sensores) */
+            <AlertaSensor alerta={entregable.alerta} />
+          ) : entregable.resumenRuta ? (
+            /* Vitrina E: la portada de una ruta, con la barra por estado */
+            <ResumenRuta resumen={entregable.resumenRuta} />
+          ) : entregable.hoja ? (
+            /* Vitrina D: la hoja de un equipo, tal como sale en el informe */
+            <HojaInforme hoja={entregable.hoja} />
+          ) : entregable.informe ? (
+            <div className="mx-auto w-full max-w-xl overflow-hidden rounded-sm bg-white shadow-2xl ring-1 ring-black/10">
+              <div className="bg-primary px-5 py-4 lg:px-6">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">
+                  {entregable.informe.etiqueta}
+                </p>
+                <p className="mt-1 text-lg font-extrabold text-white lg:text-xl">
+                  {entregable.informe.titulo}
+                </p>
+                <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
+                  {entregable.informe.resumen.map((r) => {
+                    const color = nivel(r.clave);
+                    return (
+                      <li key={r.clave} className="flex items-baseline gap-2">
+                        <span
+                          aria-hidden="true"
+                          className={`h-2 w-2 shrink-0 translate-y-[-1px] rounded-full ${color.punto}`}
+                        />
+                        <span className={`text-xl font-extrabold tabular-nums ${color.cifra}`}>
+                          {r.total}
+                        </span>
+                        <span className="text-[11px] uppercase tracking-wider text-white/60">
+                          {r.etiqueta}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+  
+              <ul className="px-5 lg:px-6">
+                {entregable.informe.filas.map((f) => (
+                  <li key={f.equipo} className="border-t border-gray-100 py-4 first:border-t-0">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <p className="text-sm font-bold leading-snug text-primary">{f.equipo}</p>
+                        <p className="mt-0.5 text-xs text-tertiary">{f.componente}</p>
+                      </div>
+                      <span
+                        className={`shrink-0 rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider ${nivel(f.clave).chip}`}
+                      >
+                        {f.estado}
+                      </span>
+                    </div>
+                    <p className="mt-2 text-sm leading-relaxed text-tertiary">{f.accion}</p>
+                  </li>
+                ))}
+              </ul>
+  
+              <p className="border-t border-gray-200 bg-gray-50 px-5 py-3 text-justify text-xs leading-relaxed text-tertiary lg:px-6">
+                {entregable.informe.nota}
+              </p>
             </div>
-          )}
+          ) : /* Vitrina A: la ficha de resultado, para lo correctivo */
+          entregable.resultado ? (
+            <div className="mx-auto w-full max-w-xl overflow-hidden rounded-sm bg-white shadow-2xl ring-1 ring-black/10">
+              <div className="bg-primary px-5 py-4 lg:px-6">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">
+                  {entregable.resultado.etiqueta}
+                </p>
+                <div className="mt-1 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                  <p className="text-lg font-extrabold text-white lg:text-xl">{entregable.resultado.equipo}</p>
+                  <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-300">
+                    {entregable.resultado.estado}
+                  </span>
+                </div>
+              </div>
+  
+              <div className="px-5 py-2 lg:px-6">
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 py-2 text-[10px] font-bold uppercase tracking-wider text-tertiary lg:gap-x-6">
+                  <span aria-hidden="true" />
+                  <span className="text-right">Antes</span>
+                  <span className="text-right">Después</span>
+                </div>
+                {entregable.resultado.filas.map((f) => (
+                  <div
+                    key={f.concepto}
+                    className="grid grid-cols-[1fr_auto_auto] items-baseline gap-x-4 border-t border-gray-100 py-3 lg:gap-x-6"
+                  >
+                    <span className="text-sm leading-snug text-primary">{f.concepto}</span>
+                    <span className="text-right text-sm font-semibold tabular-nums text-red-500">{f.antes}</span>
+                    <span className="text-right text-base font-extrabold tabular-nums text-emerald-600">
+                      {f.despues}
+                    </span>
+                  </div>
+                ))}
+              </div>
+  
+              <p className="border-t border-gray-200 bg-gray-50 px-5 py-3 text-justify text-xs leading-relaxed text-tertiary lg:px-6">
+                {entregable.resultado.nota}
+              </p>
+            </div>
+          ) : entregable.paginas && entregable.paginas.length > 1 ? (
+          /* Vitrina B: las páginas reales del informe, escalonadas */
+          <div className="group relative mx-auto w-full max-w-xl">
+            {/* Página 2 al fondo, girada, asomando por detrás */}
+            <div className="absolute right-0 top-6 hidden w-[78%] rotate-[4deg] overflow-hidden rounded-sm shadow-xl ring-1 ring-black/5 transition-transform duration-500 motion-safe:group-hover:rotate-[6deg] motion-safe:group-hover:-translate-y-2 sm:block">
+              <Image
+                src={entregable.paginas[1]}
+                alt=""
+                aria-hidden="true"
+                width={1253}
+                height={1457}
+                className="h-auto w-full"
+                sizes="(max-width: 1024px) 60vw, 380px"
+              />
+            </div>
+  
+            {/* Página 1 al frente */}
+            <div className="relative w-[88%] overflow-hidden rounded-sm shadow-2xl ring-1 ring-black/10 transition-transform duration-500 motion-safe:group-hover:-translate-y-1.5">
+              <Image
+                src={entregable.paginas[0]}
+                alt={entregable.altPaginas ?? ""}
+                width={1253}
+                height={890}
+                className="h-auto w-full"
+                sizes="(max-width: 1024px) 90vw, 460px"
+              />
+            </div>
+  
+            {/* Sello flotante con lo que trae el informe */}
+            {entregable.dato && (
+              <div className="absolute -bottom-4 right-0 rounded-sm bg-primary px-5 py-3 text-white shadow-xl sm:right-4">
+                <p className="text-2xl font-extrabold leading-none text-secondary">{entregable.dato}</p>
+                <p className="mt-1 text-xs uppercase tracking-wider text-white/80">{entregable.datoTexto}</p>
+              </div>
+            )}
+          </div>
+          ) : null}
         </div>
-        ) : null}
-      </div>
+      )}
 
       {/* La misma inspección dentro de IDAP, a todo lo ancho */}
       {entregable.idap && (
@@ -301,7 +315,9 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
               <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
               <span className="ml-3 rounded-sm bg-white/5 px-3 py-0.5 text-[11px] text-white/50">idap.app</span>
             </div>
-            {entregable.idap.escena ? (
+            {entregable.idap.inspeccion ? (
+              <EscenaInspeccion pestana={entregable.idap.inspeccion} />
+            ) : entregable.idap.escena ? (
               <EscenaIdap disciplina={entregable.idap.escena} imagenes={entregable.idap.imagenes} />
             ) : (
               <Image

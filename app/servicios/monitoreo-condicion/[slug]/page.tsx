@@ -22,6 +22,8 @@ import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import PorQueMuestrear from "@/components/organisms/PorQueMuestrear";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
+import VideosServicio from "@/components/organisms/VideosServicio";
+import IntroBeneficios from "@/components/organisms/IntroBeneficios";
 import Semaforo from "@/components/organisms/Semaforo";
 import GraficaTendencia from "@/components/organisms/GraficaTendencia";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
@@ -90,16 +92,17 @@ export async function generateMetadata({
     // La descripción para Google puede ser más larga y vendedora que el
     // subtítulo visible del hero; por eso se separan.
     const descripcion = service.seoDescription ?? service.header.subtitle;
+    const titulo = service.seoTitle ?? service.header.title;
 
     return {
-        title: service.header.title,
+        title: titulo,
         description: descripcion,
         keywords,
         alternates: {
             canonical: `${SITE_CONFIG.baseUrl}/servicios/monitoreo-condicion/${slug}`,
         },
         openGraph: {
-            title: `${service.header.title} | Grupo DIAPSA`,
+            title: `${titulo} | Grupo DIAPSA`,
             description: descripcion,
             url: `${SITE_CONFIG.baseUrl}/servicios/monitoreo-condicion/${slug}`,
             type: "website",
@@ -118,7 +121,7 @@ export async function generateMetadata({
         twitter: {
             card: "summary_large_image",
             site: "@grupodiapsa",
-            title: `${service.header.title} | Grupo DIAPSA`,
+            title: `${titulo} | Grupo DIAPSA`,
             description: descripcion,
             images: [OG_IMAGE],
         },
@@ -238,7 +241,9 @@ export default async function ServicePage({
                         servicio a quien entra sin saber qué es un análisis
                         de lubricante. En su lugar: qué contesta la muestra
                         y cómo se toma, con fotos reales de una ruta. */}
-                    {service.porQue ? (
+                    {service.introBeneficios ? (
+                        <IntroBeneficios intro={service.introBeneficios} />
+                    ) : service.porQue ? (
                         <PorQueMuestrear porQue={service.porQue} />
                     ) : (
                         <ServicePuntos puntos={detailItems} foto={fotoPuntos} />
@@ -312,7 +317,11 @@ export default async function ServicePage({
                 </section>
             )}
 
-            {service.diagramas?.includes("flujo-servicio") && (
+            {/* Si el servicio trae videos para el flujo, van en lugar del diagrama. */}
+            {service.videos?.filter((g) => g.lugar === "flujo").map((g) => (
+                <VideosServicio key={g.titulo} grupo={g} paso={paso()} />
+            ))}
+            {service.diagramas?.includes("flujo-servicio") && !service.videos?.some((g) => g.lugar === "flujo") && (
                 <DiagramaServicio
                     clave="flujo-servicio"
                     paso={paso()}
@@ -360,7 +369,11 @@ export default async function ServicePage({
 
             {/* Dónde aplica y qué detecta: la última duda antes de cotizar,
                 "¿sirve para mis equipos?", contestada en fichas. */}
-            {service.cobertura && <Cobertura cobertura={service.cobertura} paso={paso()} />}
+            {service.videos?.some((g) => g.lugar === "cobertura")
+                ? service.videos
+                      .filter((g) => g.lugar === "cobertura")
+                      .map((g) => <VideosServicio key={g.titulo} grupo={g} paso={paso()} />)
+                : service.cobertura && <Cobertura cobertura={service.cobertura} paso={paso()} />}
 
             {/* Related Products */}
             {/* <RelatedProducts
