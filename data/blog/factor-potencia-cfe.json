@@ -1,0 +1,50 @@
+{
+  "slug": "factor-de-potencia-cfe-cargo-y-bonificacion-como-se-calcula",
+  "titulo": "Factor de potencia y CFE: cómo se calcula el cargo o la bonificación en tu recibo",
+  "extracto": "Qué es el factor de potencia, por qué CFE cobra cuando está por debajo de 0.90 y bonifica cuando está arriba, la fórmula con un ejemplo y cómo se corrige con un banco de capacitores.",
+  "portada": "/images/servicios/estudios-electricos/campo-medicion-alimentador.webp",
+  "fecha": "2026-09-30T23:59:58.000000Z",
+  "seo": {
+    "titulo": "Factor de potencia CFE: cargo, bonificación y fórmula",
+    "descripcion": "Cómo calcula CFE el cargo por bajo factor de potencia (menor a 0.90) y la bonificación cuando es mayor, con la fórmula, un ejemplo resuelto y cómo corregirlo con un banco de capacitores."
+  },
+  "bloques": [
+    ["p", "Si en el recibo de luz de tu planta aparece un renglón por factor de potencia, estás pagando por algo que casi siempre se puede corregir. Y si tu factor de potencia es bueno, CFE incluso te da una pequeña bonificación. Aquí te explicamos cómo se calcula y qué hacer."],
+
+    ["h2", "Qué es el factor de potencia"],
+    ["p", "Los motores y transformadores necesitan dos tipos de energía: la que hace el trabajo, llamada activa, y la que crea los campos magnéticos para que funcionen, llamada reactiva. El factor de potencia dice qué parte de la energía total es la que realmente hace trabajo. Un factor de 1 es perfecto; uno de 0.80 quiere decir que la red está cargando mucha energía que no produce nada."],
+    ["p", "Para CFE, un factor de potencia bajo significa cables, transformadores y generadores más cargados sin vender más energía. Por eso lo cobra."],
+
+    ["h2", "Cómo se calcula el cargo o la bonificación"],
+    ["p", "En las tarifas para usuarios con demanda medida, CFE toma como referencia un factor de potencia de 0.90, o 90 %:"],
+    ["lista", [
+      "Si es menor a 90 %, se aplica un recargo: 3/5 × (90 ÷ FP − 1) × 100, en porcentaje.",
+      "Si es de 90 % o más, se aplica una bonificación: 1/4 × (1 − 90 ÷ FP) × 100, en porcentaje.",
+      "El recargo tiene un tope de 120 % y la bonificación, de 2.5 %."
+    ]],
+    ["p", "El porcentaje se aplica sobre el importe de la facturación. Revisa tu tarifa y tu recibo, porque las disposiciones pueden cambiar."],
+
+    ["h2", "Un ejemplo"],
+    ["p", "Una planta con factor de potencia de 86 %: 3/5 × (90 ÷ 86 − 1) × 100 = 2.8 % de recargo. Si esa planta paga 500,000 pesos al mes, son unos 14,000 pesos cada mes, casi 170,000 al año, por algo que se corrige una sola vez."],
+    ["p", "Si la misma planta sube su factor a 95 %, la cuenta se invierte: 1/4 × (1 − 90 ÷ 95) × 100 = 1.3 % de bonificación."],
+
+    ["h2", "Cómo se corrige"],
+    ["numerada", [
+      "Medir: registrar el factor de potencia y los armónicos durante un ciclo completo de producción.",
+      "Dimensionar el banco de capacitores para la demanda real, no a ojo.",
+      "Si hay armónicos, usar un banco desintonizado, con reactores, para que no entre en resonancia.",
+      "Revisar los bancos existentes: muchos cargos vienen de capacitores dañados o desconectados.",
+      "Volver a medir para confirmar."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Con 0.90 ya cumplo el Código de Red?"],
+    ["p", "No. El Código de Red pide al menos 0.95 a los centros de carga en media y alta tensión. Lo explicamos en la guía del [Código de Red](/blog/codigo-de-red-que-pide-a-los-centros-de-carga)."],
+    ["h3", "¿Por qué se dañan los bancos de capacitores?"],
+    ["p", "Muchas veces por armónicos: los capacitores ofrecen un camino fácil a las corrientes de alta frecuencia y pueden entrar en resonancia. Lo contamos en la guía de [armónicos eléctricos](/blog/armonicos-electricos-y-thd-que-son-y-limites-ieee-519)."],
+    ["h3", "¿Cuánto tarda en pagarse un banco de capacitores?"],
+    ["p", "Depende del cargo que se paga hoy y del tamaño del banco, pero cuando el cargo es alto, suele pagarse en pocos meses."],
+
+    ["nota", "Medimos tu factor de potencia y tus armónicos y te decimos qué banco necesitas. Conoce el [estudio de calidad de la energía](/servicios/monitoreo-condicion/calidad-de-energia)."]
+  ]
+}
