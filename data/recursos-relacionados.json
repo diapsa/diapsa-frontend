@@ -398,5 +398,44 @@
       "titulo": "Tierras Físicas",
       "resumen": "Estudio de tierras físicas y pararrayos conforme a NOM-022-STPS-2015, con reporte validado."
     }
+  },
+  {
+    "articulo": {
+      "slug": "nom-029-stps-2011-que-pide-sobre-arco-electrico",
+      "titulo": "NOM-029-STPS-2011 y arco eléctrico",
+      "resumen": "Qué pide antes de trabajar con equipo energizado y qué revisa la STPS.",
+      "portada": "/images/servicios/termografia-infrarroja/campo-05.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/arco-electrico",
+      "titulo": "Estudio de Arco Eléctrico",
+      "resumen": "Energía incidente, categoría de EPP y etiqueta por tablero, conforme a NOM-029-STPS-2011."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "energia-incidente-y-categorias-de-epp-arco-electrico",
+      "titulo": "Energía incidente y categorías de EPP",
+      "resumen": "Qué significan las cal/cm² y cómo se baja la energía.",
+      "portada": "/images/servicios/termografia-infrarroja/campo-63.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/arco-electrico",
+      "titulo": "Estudio de Arco Eléctrico",
+      "resumen": "Energía incidente, categoría de EPP y etiqueta por tablero, conforme a NOM-029-STPS-2011."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "fronteras-de-proteccion-y-etiqueta-de-arco-electrico-como-leerla",
+      "titulo": "Fronteras y etiqueta de arco eléctrico",
+      "resumen": "Las tres fronteras y la etiqueta, renglón por renglón.",
+      "portada": "/images/servicios/analisis-de-aceite/dga-gabinete.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/arco-electrico",
+      "titulo": "Estudio de Arco Eléctrico",
+      "resumen": "Energía incidente, categoría de EPP y etiqueta por tablero, conforme a NOM-029-STPS-2011."
+    }
   }
 ]
