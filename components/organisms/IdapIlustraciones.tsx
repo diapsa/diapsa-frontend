@@ -5,11 +5,10 @@
  * (2026-09-28). Cada una cuenta su beneficio en un bucle corto, en SVG
  * (escala a cualquier ancho) con la paleta de IDAP. Datos de ejemplo: sin
  * nombres de clientes ni de plantas. Con prefers-reduced-motion se ve el
- * estado final quieto. Las de "Anticipa" y "Técnicas" se reemplazaron por
+ * estado final quieto. Las de "Anticipa", "Prioriza" y "Técnicas" se reemplazaron por
  * videos de Remotion (public/videos/idap/).
  */
 
-const ORO = "#ffc34d";
 const VERDE = "#22c55e";
 const AMARILLO = "#facc15";
 const NARANJA = "#fc9f01";
@@ -17,7 +16,6 @@ const ROJO = "#ef4444";
 const TEXTO = "#e6edf8";
 const TENUE = "#8ea3c7";
 const TARJETA = "#0f1f40";
-const LINEA = "rgba(255,255,255,0.08)";
 const FUENTE = "inherit";
 
 /* Animaciones compartidas: todas en bucle de 8 s */
@@ -55,44 +53,6 @@ function Marco({ children, titulo }: { children: React.ReactNode; titulo: string
       <rect width="640" height="400" fill="#0a142e" />
       {children}
     </svg>
-  );
-}
-
-/* 2. Prioriza: la IA ordena los equipos por criticidad y estado */
-export function IlustracionPrioriza() {
-  const filas = [
-    { eq: "Compresor de aire 2", crit: "Alta", cc: ROJO, est: "Precaución", ec: NARANJA },
-    { eq: "Bomba de condensado", crit: "Alta", cc: ROJO, est: "Observación", ec: AMARILLO },
-    { eq: "Ventilador de torre 1", crit: "Media", cc: AMARILLO, est: "Alarma", ec: ROJO },
-    { eq: "Motor banda 4", crit: "Baja", cc: VERDE, est: "Observación", ec: AMARILLO },
-  ];
-  return (
-    <Marco titulo="Lista de equipos ordenada por la IA según criticidad y estado, con el primero resaltado">
-      <rect x="24" y="20" width="592" height="360" rx="14" fill={TARJETA} />
-      <text x="44" y="56" fill={TEXTO} fontSize="18" fontWeight="700">Orden de atención sugerido</text>
-      <g transform="translate(470 38)">
-        <rect width="126" height="28" rx="14" fill={`${ORO}22`} stroke={ORO} />
-        <text x="63" y="19" textAnchor="middle" fill={ORO} fontSize="12" fontWeight="800">Sugerido por IA</text>
-      </g>
-      <text x="96" y="92" fill={TENUE} fontSize="11" fontWeight="700">EQUIPO</text>
-      <text x="360" y="92" fill={TENUE} fontSize="11" fontWeight="700">CRITICIDAD</text>
-      <text x="480" y="92" fill={TENUE} fontSize="11" fontWeight="700">ESTADO</text>
-      {filas.map((f, i) => {
-        const y = 106 + i * 66;
-        return (
-          <g key={f.eq} className="ii-sec" style={{ ["--a" as string]: `${(8 + i * 10) * 0.08}s` }}>
-            <rect x="40" y={y} width="560" height="56" rx="10" fill={i === 0 ? "#162a55" : "#0c1834"} stroke={i === 0 ? ORO : LINEA} strokeWidth={i === 0 ? 2 : 1} className={i === 0 ? "ii-pulso" : undefined} />
-            <circle cx="68" cy={y + 28} r="14" fill={i === 0 ? ORO : "rgba(255,255,255,0.08)"} />
-            <text x="68" y={y + 33} textAnchor="middle" fill={i === 0 ? "#0a142e" : TEXTO} fontSize="13" fontWeight="800">{i + 1}</text>
-            <text x="96" y={y + 33} fill={TEXTO} fontSize="15" fontWeight="700">{f.eq}</text>
-            <rect x="360" y={y + 15} width="80" height="26" rx="13" fill={`${f.cc}22`} stroke={f.cc} />
-            <text x="400" y={y + 32} textAnchor="middle" fill={f.cc} fontSize="12" fontWeight="700">{f.crit}</text>
-            <rect x="480" y={y + 15} width="100" height="26" rx="13" fill={`${f.ec}22`} stroke={f.ec} />
-            <text x="530" y={y + 32} textAnchor="middle" fill={f.ec} fontSize="12" fontWeight="700">{f.est}</text>
-          </g>
-        );
-      })}
-    </Marco>
   );
 }
 

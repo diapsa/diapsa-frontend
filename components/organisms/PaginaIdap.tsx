@@ -5,7 +5,7 @@ import VideoBucle from "@/components/atoms/VideoBucle";
 import EscenaIdap from "@/components/organisms/EscenaIdap";
 import EscenaIdapHero from "@/components/organisms/EscenaIdapHero";
 import IdapFormulario from "@/components/organisms/IdapFormulario";
-import { IlustracionPrioriza, IlustracionRespalda } from "@/components/organisms/IdapIlustraciones";
+import { IlustracionRespalda } from "@/components/organisms/IdapIlustraciones";
 import { FONDO_IDAP, ORO_IDAP, PIE_IDAP } from "@/lib/idap-estilo";
 
 /**
@@ -294,12 +294,13 @@ export default function PaginaIdap() {
 
           <Fila
             icono="ia"
-            titulo="IA que ordena tus prioridades"
+            titulo="PIA, la IA que ordena tus prioridades"
             texto="Cruza el estado de cada equipo con lo que pesa en tu proceso y te dice qué atender primero. Un especialista de DIAPSA valida cada decisión."
           >
-            <div className="aspect-[16/10]">
-              <IlustracionPrioriza />
-            </div>
+            <VideoIdap
+              nombre="idap-pia"
+              descripcion="PIA, la IA de IDAP, ordena los equipos con hallazgos por orden de atención y un especialista de DIAPSA valida la primera prioridad"
+            />
           </Fila>
 
           <Fila
