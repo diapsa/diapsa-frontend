@@ -1,0 +1,59 @@
+{
+  "slug": "lubricacion-por-ultrasonido-como-engrasar-rodamientos",
+  "titulo": "Lubricación por ultrasonido: cómo engrasar rodamientos en su punto",
+  "extracto": "Engrasar por calendario deja rodamientos con falta y con exceso de grasa. Con ultrasonido se engrasa cuando el rodamiento lo pide y se sabe cuándo parar. Paso a paso y criterios.",
+  "portada": "/images/servicios/analisis-de-ultrasonido/analista-con-audifonos.jpg",
+  "fecha": "2026-09-29T00:00:00.000000Z",
+  "seo": {
+    "titulo": "Lubricación por ultrasonido: guía para engrasar rodamientos",
+    "descripcion": "Cómo funciona la lubricación asistida por ultrasonido, el procedimiento paso a paso, los criterios en decibeles y las señales de que el rodamiento ya está dañado."
+  },
+  "bloques": [
+    ["p", "La lubricación es una de las razones más comunes por las que un rodamiento falla antes de tiempo. Y casi siempre por lo mismo: se engrasa por calendario, con la misma cantidad para todos, sin saber si ese rodamiento en particular la necesitaba. Al final, unos se quedan cortos y otros reciben de más."],
+    ["p", "Con ultrasonido la pregunta cambia. Ya no es cuándo toca, sino si de verdad lo necesita y cuánto. En esta guía te contamos cómo funciona, cómo se hace paso a paso y cómo darte cuenta de cuando el problema ya no es de grasa."],
+
+    ["h2", "El problema de engrasar por calendario"],
+    ["p", "Cuando falta grasa, la película de lubricante se rompe, hay contacto de metal con metal, sube la fricción y empieza el desgaste. Cuando sobra, el rodamiento se llena de más, la grasa se bate, sube la temperatura, se dañan los sellos y el lubricante se echa a perder antes de tiempo. Y si además se mezclan grasas que no son compatibles o entra polvo con la engrasadora, la falla llega todavía más rápido."],
+
+    ["h2", "Cómo funciona"],
+    ["p", "Un rodamiento que gira produce fricción, y la fricción produce ultrasonido. Cuando está bien lubricado, las bolas o los rodillos ruedan sobre una capa de grasa y el sonido es bajo y parejo. Cuando le falta, la fricción aumenta y el nivel en decibeles sube."],
+    ["p", "Si engrasas con el detector puesto, puedes oír y ver cómo el nivel baja con cada disparo. En el momento en que deja de bajar, el rodamiento ya tiene lo que necesita. Así no te quedas corto ni te pasas."],
+
+    ["h2", "Paso a paso"],
+    ["numerada", [
+      "Toma la línea base de cada rodamiento: siempre en el mismo punto, con el mismo sensor y en el mismo ángulo. Sin línea base no tienes contra qué comparar.",
+      "Compara la lectura con esa línea base. Si está unos 8 dB arriba y el sonido es un siseo áspero pero parejo, lo más probable es que le falte grasa.",
+      "Aplica un disparo y espera unos segundos a que la grasa se reparta dentro del rodamiento.",
+      "Sigue así mientras el nivel vaya bajando. Cada disparo debería notarse en la lectura.",
+      "Detente cuando el nivel ya no baje o empiece a subir. Ese es el punto.",
+      "Anota cuánta grasa pusiste y la lectura final. Con ese historial vas a saber cada cuánto necesita grasa cada rodamiento."
+    ]],
+
+    ["h2", "Los criterios en decibeles"],
+    ["p", "En ultrasonido de rodamientos se suelen usar estas referencias, siempre contra la línea base de cada punto: cerca de 8 dB por encima indica falta de lubricación, de 12 a 16 dB apunta a un daño que está empezando, y más de 35 dB por encima habla de un daño avanzado."],
+
+    ["h2", "Cuando el problema ya no es la grasa"],
+    ["p", "Hay señales que te dicen que engrasar no va a resolver nada. Si el nivel no baja después de varios disparos, lo más probable es que el rodamiento ya tenga daño. Si sube cuando engrasas, puede ser exceso de grasa, una grasa que no es compatible o la purga tapada. Si en lugar de un siseo parejo escuchas golpeteo o crepitar, hay daño en las pistas o en los elementos que ruedan. Y si la temperatura sube después de engrasar, seguramente te pasaste."],
+    ["p", "En esos casos vale la pena confirmar con [análisis de vibraciones](/servicios/monitoreo-condicion/vibraciones-mecanicas), que te dice qué tipo de daño es y qué tan avanzado está."],
+
+    ["h2", "Buenas prácticas"],
+    ["lista", [
+      "Limpia la grasera antes de engrasar para no meter polvo.",
+      "Usa la grasa correcta para ese rodamiento y no mezcles tipos que no son compatibles.",
+      "Conoce cuántos gramos da cada disparo de tu engrasadora.",
+      "Si el alojamiento tiene purga, ábrela para que salga la grasa vieja.",
+      "En rodamientos muy lentos la señal es baja; sube la sensibilidad y compara siempre contra su propia línea base.",
+      "Respeta las guardas y los procedimientos de seguridad, porque el equipo está en operación."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Necesito algún equipo especial?"],
+    ["p", "Un detector de ultrasonido con sensor de contacto o con adaptador para la engrasadora, y audífonos para ir escuchando mientras engrasas."],
+    ["h3", "¿Cada cuánto se engrasa?"],
+    ["p", "Cuando el rodamiento lo pide. Con las lecturas de cada ruta vas viendo cuáles suben rápido y cuáles aguantan más, y ajustas la frecuencia de cada uno en lugar de seguir un calendario igual para todos."],
+    ["h3", "¿Reemplaza al análisis de vibraciones?"],
+    ["p", "No, se complementan. El ultrasonido es muy sensible a la lubricación y a los daños que apenas empiezan; las vibraciones te dicen qué tipo de falla es y qué tan grave está. Juntos te dan el diagnóstico completo."],
+
+    ["nota", "¿Quieres dejar de engrasar a ciegas? Medimos tus rodamientos con ultrasonido, sacamos su línea base y te decimos cuáles necesitan grasa, cuánta y cuáles ya tienen daño. Conoce nuestro [análisis de ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido)."]
+  ]
+}

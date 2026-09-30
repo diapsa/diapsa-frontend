@@ -25,7 +25,8 @@ import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
-import { getArticuloPorServicio } from "@/lib/recursos";
+import { getArticulosPorServicio } from "@/lib/recursos";
+import GuiasRelacionadas from "@/components/organisms/GuiasRelacionadas";
 
 const OG_IMAGE = "/images/og-images/og-image.jpg";
 
@@ -145,7 +146,7 @@ export default async function ServicePage({
     // Solo si el JSON del servicio trae preguntas frecuentes.
     const faqJsonLd = service.faq?.length ? createFaqSchema(service.faq) : null;
     // Artículo del blog que trata el mismo tema, si existe.
-    const articuloRelacionado = getArticuloPorServicio(`/servicios/monitoreo-continuo/${slug}`);
+    const articulosRelacionados = getArticulosPorServicio(`/servicios/monitoreo-continuo/${slug}`);
     const overviewTitle =
         service.content.title || `Servicio especializado de ${service.header.title}`;
     const overviewSubtitle =
@@ -384,36 +385,11 @@ export default async function ServicePage({
                 </section>
             )}
 
-            {/* Artículo del blog sobre el mismo tema. Ahí vive lo educativo
+            {/* Artículos del blog sobre el mismo tema. Ahí vive lo educativo
                 que esta página ya no carga: curva P-F, modos de falla,
                 severidad. Sirve al lector que todavía está aprendiendo y no
                 listo para cotizar. */}
-            {articuloRelacionado && (
-                <section className="w-full bg-white py-12 lg:py-16">
-                    <div className="max-w-4xl mx-auto px-6">
-                        <div className="rounded-sm border-l-4 border-secondary bg-white p-6 lg:p-8 shadow-sm">
-                            <p className="text-xs font-bold uppercase tracking-widest text-secondary">
-                                Para entender la técnica a fondo
-                            </p>
-                            <h2 className="mt-2 text-2xl lg:text-3xl font-extrabold text-primary leading-snug">
-                                {articuloRelacionado.titulo}
-                            </h2>
-                            <p className="mt-3 text-tertiary text-base lg:text-lg leading-relaxed text-justify">
-                                {articuloRelacionado.resumen}
-                            </p>
-                            <Link
-                                href={`/blog/${articuloRelacionado.slug}`}
-                                className="mt-5 inline-flex items-center gap-2 border-2 border-primary text-primary font-bold px-6 py-2.5 rounded-xs hover:bg-primary hover:text-white transition-all duration-300"
-                            >
-                                Leer la guía
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </Link>
-                        </div>
-                    </div>
-                </section>
-            )}
+            <GuiasRelacionadas articulos={articulosRelacionados} />
 
             {/* Llamado a la acción específico del servicio. Va justo después
                 del FAQ porque la última pregunta ("¿cuánto cuesta?") deja al

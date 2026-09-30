@@ -16,6 +16,8 @@ export type ArticuloRelacionado = {
   slug: string;
   titulo: string;
   resumen: string;
+  /** Portada, para mostrarlo como tarjeta cuando un servicio tiene varias guías. */
+  portada?: string;
 };
 
 export type ServicioRelacionado = {
@@ -39,4 +41,9 @@ export function getServicioPorArticulo(slug: string): ServicioRelacionado | null
 /** Artículo del blog que corresponde a una ruta de servicio, si lo hay. */
 export function getArticuloPorServicio(href: string): ArticuloRelacionado | null {
   return CORRESPONDENCIAS.find((c) => c.servicio.href === href)?.articulo ?? null;
+}
+
+/** Todos los artículos del blog que corresponden a una ruta de servicio. */
+export function getArticulosPorServicio(href: string): ArticuloRelacionado[] {
+  return CORRESPONDENCIAS.filter((c) => c.servicio.href === href).map((c) => c.articulo);
 }

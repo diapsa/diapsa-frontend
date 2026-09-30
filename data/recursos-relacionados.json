@@ -58,5 +58,57 @@
       "titulo": "DIAPSA START",
       "resumen": "El programa para implementar monitoreo de condición en tu planta paso a paso."
     }
+  },
+  {
+    "articulo": {
+      "slug": "fugas-de-aire-comprimido-cuanto-cuestan-y-como-detectarlas",
+      "titulo": "Fugas de aire comprimido: cuánto cuestan y cómo detectarlas",
+      "resumen": "Cómo calcular lo que cuesta cada fuga, dónde buscarlas y cómo encontrarlas con ultrasonido con la planta en marcha.",
+      "portada": "/images/servicios/analisis-de-ultrasonido/campo-valvulas.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
+      "titulo": "Análisis de Ultrasonido",
+      "resumen": "Rodamientos, fugas de aire comprimido y efecto corona detectados con el equipo en marcha, con cada hallazgo clasificado y su acción."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "efecto-corona-que-es-y-como-se-detecta",
+      "titulo": "Efecto corona: qué es, dónde aparece y cómo se detecta",
+      "resumen": "Qué es, por qué daña aisladores y tableros, cómo se distingue del tracking y del arco, y cómo se detecta sin abrir el equipo.",
+      "portada": "/images/servicios/analisis-de-ultrasonido/campo-ultrasonido-exterior.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
+      "titulo": "Análisis de Ultrasonido",
+      "resumen": "Rodamientos, fugas de aire comprimido y efecto corona detectados con el equipo en marcha, con cada hallazgo clasificado y su acción."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "lubricacion-por-ultrasonido-como-engrasar-rodamientos",
+      "titulo": "Lubricación por ultrasonido: cómo engrasar rodamientos en su punto",
+      "resumen": "El procedimiento paso a paso, los criterios en decibeles y las señales de que el rodamiento ya está dañado.",
+      "portada": "/images/servicios/analisis-de-ultrasonido/analista-con-audifonos.jpg"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
+      "titulo": "Análisis de Ultrasonido",
+      "resumen": "Rodamientos, fugas de aire comprimido y efecto corona detectados con el equipo en marcha, con cada hallazgo clasificado y su acción."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "futuro-del-ultrasonido-pasivo-en-la-industria",
+      "titulo": "El futuro del ultrasonido pasivo en la industria",
+      "resumen": "Monitoreo continuo, inteligencia artificial y arreglos de micrófonos, según la investigación reciente.",
+      "portada": "/images/servicios/analisis-de-ultrasonido/campo-pantalla-espectro.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
+      "titulo": "Análisis de Ultrasonido",
+      "resumen": "Rodamientos, fugas de aire comprimido y efecto corona detectados con el equipo en marcha, con cada hallazgo clasificado y su acción."
+    }
   }
 ]
