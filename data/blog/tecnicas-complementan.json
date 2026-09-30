@@ -1,0 +1,47 @@
+{
+  "slug": "tecnicas-de-mantenimiento-predictivo-como-se-complementan",
+  "titulo": "Técnicas de mantenimiento predictivo: qué ve cada una y cómo se complementan",
+  "extracto": "Vibraciones, termografía, ultrasonido y análisis de aceite: qué detecta cada técnica, en qué es débil, cómo se confirman entre sí con un ejemplo real y cuándo conviene combinarlas.",
+  "portada": "/images/servicios/diagnostico-integral/campo-equipo-ruta.webp",
+  "fecha": "2026-09-30T23:59:54.000000Z",
+  "seo": {
+    "titulo": "Técnicas de mantenimiento predictivo y cómo se complementan",
+    "descripcion": "Las principales técnicas de mantenimiento predictivo (vibraciones, termografía, ultrasonido y análisis de aceite): qué detecta cada una, sus límites y cómo se combinan para llegar a un diagnóstico."
+  },
+  "bloques": [
+    ["p", "Cuando se habla de mantenimiento predictivo, casi siempre salen las mismas cuatro técnicas: vibraciones, termografía, ultrasonido y análisis de aceite. Cada una es buena para algo y débil para otra cosa. Entender eso es lo que permite elegir bien y, sobre todo, combinarlas para que se corrijan entre sí."],
+
+    ["h2", "Qué ve cada una"],
+    ["h3", "Análisis de vibraciones"],
+    ["p", "Es la que más fallas cubre en equipo rotativo: desbalance, desalineación, holguras, rodamientos, engranes y algunas fallas eléctricas. Su gran ventaja es que dice qué pieza está fallando. Su límite es que no ve bien lo que no mueve la máquina, como un problema de lubricación que apenas empieza."],
+    ["h3", "Termografía"],
+    ["p", "Ve el calor. Es la reina en tableros y conexiones eléctricas, y en equipo mecánico detecta rodamientos calientes, acoplamientos y fricción. Su límite es que en equipo rotativo el calor suele aparecer tarde, cuando la falla ya avanzó."],
+    ["h3", "Ultrasonido"],
+    ["p", "Oye lo que el oído no alcanza: la fricción de un rodamiento mal lubricado, una fuga de aire o una descarga eléctrica. Es muy temprano para problemas de lubricación y es la técnica de las fugas. Su límite es que dice que algo cambió, pero no siempre qué pieza es."],
+    ["h3", "Análisis de aceite"],
+    ["p", "Ve lo que el equipo trae por dentro: metales de desgaste, contaminación y el estado del propio aceite. Es de las primeras en detectar desgaste y dice de qué material viene. Su límite es que solo aplica a equipos con aceite en circulación y que la respuesta tarda lo que tarda el laboratorio."],
+
+    ["h2", "Cómo se confirman entre sí"],
+    ["p", "Un ejemplo real: en el motor de un ventilador de torre de enfriamiento, el ultrasonido marcaba 12 decibeles arriba de su línea base, el aceite mostraba hierro en aumento y la vibración tenía las frecuencias de falla del rodamiento del lado libre. La termografía todavía no veía calentamiento. Cruzadas, las cuatro decían lo mismo: rodamiento en etapa temprana, con margen para pedir la refacción y programar el paro."],
+    ["p", "Con una sola técnica, la historia habría sido otra. Con solo termografía, no se habría visto nada. Con solo ultrasonido, se habría sabido que algo cambió, pero no qué. La combinación es lo que convierte un síntoma en un diagnóstico."],
+
+    ["h2", "Cuándo conviene combinarlas"],
+    ["lista", [
+      "En las máquinas críticas, donde una falla detiene la línea o la refacción tarda semanas.",
+      "Cuando una técnica da una alarma y hace falta confirmar antes de parar.",
+      "Cuando hay reportes de distintos proveedores que se contradicen.",
+      "Cuando se quiere saber no solo qué falla, sino cuánto margen queda."
+    ]],
+    ["p", "En equipos de respaldo o de bajo costo, una sola técnica bien aplicada suele ser suficiente."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Hay otras técnicas predictivas?"],
+    ["p", "Sí: análisis de circuitos de motor, pruebas eléctricas, medición de espesores, calidad de energía y otras. Las cuatro de esta guía son las más usadas en equipo rotativo."],
+    ["h3", "¿Combinar técnicas sale más caro?"],
+    ["p", "Si se miden en la misma visita y las cruza el mismo analista, suele salir más barato por equipo que contratarlas por separado, y se recibe un diagnóstico en lugar de cuatro reportes."],
+    ["h3", "¿En qué orden detectan una falla?"],
+    ["p", "Normalmente aceite, ultrasonido, vibraciones y termografía. Lo explicamos en la guía de la [curva P-F](/blog/curva-p-f-en-mantenimiento-predictivo-que-es-y-como-usarla)."],
+
+    ["nota", "En el [diagnóstico integral](/servicios/monitoreo-condicion/diagnostico-de-maquinaria) un solo analista cruza las cuatro técnicas y te entrega un diagnóstico por máquina."]
+  ]
+}

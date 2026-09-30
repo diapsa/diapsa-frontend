@@ -75,7 +75,7 @@
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
   },
-  "seoDescription": "Diagnóstico integral de maquinaria crítica: análisis de vibraciones, termografía infrarroja, análisis de aceite y ultrasonido aplicados al mismo equipo y cruzados en un solo diagnóstico, con la causa, la severidad y la acción, no cuatro reportes sueltos.",
+  "seoDescription": "Diagnóstico integral de maquinaria con las cuatro técnicas de mantenimiento predictivo: vibraciones, termografía, ultrasonido y análisis de aceite sobre el mismo equipo, cruzadas por un analista en un solo diagnóstico con la etapa de la falla en la curva P-F.",
   "porQue": {
     "foto": {
       "src": "/images/servicios/diagnostico-integral/campo-analista-motor.webp",
@@ -130,31 +130,90 @@
   ],
   "entregable": {
     "etiqueta": "Qué recibes",
-    "titulo": "Recibes certeza y ahorro",
-    "descripcion": "Un diagnóstico por máquina en lugar de cuatro reportes, y una sola lista para decidir qué se atiende primero.",
-    "contenido": [],
-    "pilares": [
-      {
-        "titulo": "Certeza",
-        "icono": "documento",
-        "items": [
-          "La causa de cada hallazgo, confirmada por más de una técnica",
-          "La etapa de la falla y cuánto margen queda",
-          "Una sola lista de máquinas por prioridad",
-          "El historial de cada máquina en IDAP"
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "Además de la ficha de cada máquina, la lista de la ruta completa por prioridad: cuánto margen le queda a cada una contra lo que tarda su refacción. Pasa el cursor por la lista para ver dónde va cada cosa.",
+    "contenido": [
+      "Resumen de la ruta en semáforo",
+      "Margen de cada máquina contra su refacción",
+      "El estado con que se califica",
+      "La máquina que va primero",
+      "Qué hacer y cuándo"
+    ],
+    "muestra": {
+      "titulo": "Informe integral",
+      "equipo": "Ruta de 40 máquinas · agosto de 2026",
+      "subtitulo": "Vibraciones · termografía · ultrasonido · aceite",
+      "estado": {
+        "texto": "1 en alarma",
+        "color": "#dc2626",
+        "punto": 0
+      },
+      "lecturas": {
+        "titulo": "Margen estimado contra tiempo de refacción · días",
+        "unidad": "d",
+        "max": 100,
+        "nota": "La marca es lo que tarda en llegar la refacción. Si el margen queda por debajo, se pide hoy.",
+        "punto": 1,
+        "filas": [
+          {
+            "p": "Bomba de alimentación",
+            "valor": 20,
+            "ref": 30,
+            "color": "#dc2626"
+          },
+          {
+            "p": "Ventilador de torre",
+            "valor": 45,
+            "ref": 10,
+            "color": "#ca8a04"
+          },
+          {
+            "p": "Reductor 3",
+            "valor": 60,
+            "ref": 20,
+            "color": "#ca8a04"
+          },
+          {
+            "p": "Compresor 2",
+            "valor": 90,
+            "ref": 45,
+            "color": "#16a34a"
+          }
         ]
       },
-      {
-        "titulo": "Ahorro",
-        "icono": "ahorro",
-        "items": [
-          "Las cuatro técnicas en una sola visita",
-          "La pieza correcta a la primera",
-          "Paros programados con la refacción en mano",
-          "El presupuesto en la máquina que sí va a parar"
+      "escala": {
+        "titulo": "Estado de cada máquina",
+        "punto": 2,
+        "niveles": [
+          {
+            "t": "Normal",
+            "r": "siguiente ruta",
+            "c": "#16a34a"
+          },
+          {
+            "t": "Precaución",
+            "r": "programar",
+            "c": "#ca8a04"
+          },
+          {
+            "t": "Alarma",
+            "r": "actuar ya",
+            "c": "#dc2626"
+          }
         ]
+      },
+      "hallazgo": {
+        "titulo": "Bomba de alimentación: menos margen que refacción",
+        "texto": "Tres técnicas confirman el rodamiento. Le quedan unos 20 días y la refacción tarda 30.",
+        "punto": 3
+      },
+      "recomendacion": {
+        "titulo": "Pedir la refacción hoy y medir cada semana",
+        "urgencia": "inmediata",
+        "texto": "Y programar el cambio en cuanto llegue, sin esperar al paro general.",
+        "punto": 4
       }
-    ]
+    }
   },
   "mostrarClientes": true,
   "faq": [
@@ -177,6 +236,14 @@
     {
       "question": "¿Cada cuánto se mide?",
       "answer": "Vibraciones, termografía y ultrasonido en cada ruta, normalmente mensual; aceite cada uno a tres meses en equipo crítico, porque el laboratorio tarda y el aceite cambia más despacio. Un equipo con hallazgo entra a seguimiento con la frecuencia que su etapa de falla pida."
+    },
+    {
+      "question": "¿Qué es la curva P-F?",
+      "answer": "Es la forma de ver cómo avanza una falla en el tiempo: desde el punto P, cuando ya se puede detectar, hasta el punto F, cuando la máquina falla. Entre más temprano se detecta, más margen hay para planear. Cada técnica la ve en un punto distinto de esa curva."
+    },
+    {
+      "question": "¿Qué técnica detecta primero una falla de rodamiento?",
+      "answer": "Normalmente el aceite, por las partículas de desgaste, seguido del ultrasonido. La vibración la confirma y dice qué pieza es, y la termografía la ve cuando ya está avanzada. Por eso se combinan."
     },
     {
       "question": "¿Qué necesito para cotizar?",
@@ -376,49 +443,6 @@
       }
     ]
   },
-  "diferencias": {
-    "etiqueta": "Por qué DIAPSA",
-    "titulo": "¿Qué nos hace diferentes?",
-    "items": [
-      {
-        "id": "visita",
-        "grafico": "int-visita",
-        "title": "Las cuatro, en la misma visita",
-        "content": "Vibraciones, termografía, ultrasonido y aceite sobre la misma máquina, en los mismos puntos y el mismo día. Las lecturas se pueden comparar entre sí y con la ruta anterior, y el costo por equipo es menor que contratarlas por separado."
-      },
-      {
-        "id": "cruce",
-        "grafico": "int-cruce",
-        "title": "Un solo analista cruza las cuatro",
-        "content": "No son cuatro reportes de cuatro proveedores que se contradicen. Un analista pone las cuatro lecturas lado a lado y escribe un diagnóstico por máquina: la causa, la pieza y la etapa de la falla."
-      },
-      {
-        "id": "pieza",
-        "grafico": "int-pieza",
-        "title": "La pieza correcta a la primera",
-        "content": "Una vibración alta puede ser desbalance, desalineación o un rodamiento. Cuando el ultrasonido y el aceite dicen lo mismo, la causa queda confirmada y no se cambia lo que no estaba mal."
-      },
-      {
-        "id": "lista",
-        "grafico": "int-lista",
-        "title": "Una sola lista por prioridad",
-        "content": "Todas las máquinas de la ruta ordenadas por severidad y por lo que cuesta que falle cada una, con la acción y la ventana. El presupuesto se va a la máquina que sí va a parar la línea."
-      },
-      {
-        "id": "historial",
-        "grafico": "int-historial",
-        "title": "Cada ruta suma al historial",
-        "content": "Cada máquina guarda en IDAP sus cuatro técnicas, ruta tras ruta. Cuando una sube, se ve junto a las otras tres, y la tendencia combinada dice cuánto margen queda."
-      }
-    ]
-  },
-  "traduccion": {
-    "etiqueta": "En qué se traduce",
-    "tipo": "etapas",
-    "titulo": "Saber en qué etapa va la falla, y cuánto margen queda",
-    "texto": "Cada técnica ve la falla en un momento distinto. Ver en cuáles ya aparece dice qué tan avanzada está, y cuánto tiempo hay para conseguir la refacción y agendar el paro.",
-    "cierre": "La intervención se programa en ventana, con la refacción en mano, en lugar de hacerse de emergencia con la línea parada."
-  },
   "motor360": {
     "etiqueta": "Un rodamiento, cuatro instrumentos",
     "titulo": "Cuatro técnicas miden lo mismo y dicen lo mismo",
@@ -490,5 +514,86 @@
         "pie": "Cuatro instrumentos distintos miden el mismo rodamiento, en el orden en que cada uno detecta la falla, y dicen lo mismo. Caso compuesto con hallazgos reales de distintas rutas."
       }
     }
+  },
+  "seoTitle": "Diagnóstico integral de maquinaria: cuatro técnicas predictivas, un diagnóstico",
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Del dato a la decisión",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "Cuatro técnicas, un diagnóstico por máquina",
+          "texto": "Se eligen las máquinas que importan, se miden las cuatro técnicas en la misma visita y un analista las cruza para decir la causa, la etapa y qué hacer primero.",
+          "video": "/videos/diagnostico-integral/int-proceso",
+          "descripcion": "Los cinco pasos del diagnóstico integral: criticidad, ruta con las cuatro técnicas, cruce de lecturas del motor del ventilador de torre, diagnóstico y lista única por prioridad",
+          "pasos": [
+            "Criticidad",
+            "Ruta integrada",
+            "Cruce",
+            "Diagnóstico",
+            "Lista única"
+          ]
+        }
+      ]
+    },
+    {
+      "lugar": "cobertura",
+      "etiqueta": "Por qué cuatro técnicas",
+      "titulo": "La etapa de la falla, y una sola lista",
+      "texto": "Cruzar las cuatro dice qué tan avanzada va la falla y convierte cuatro reportes en una decisión.",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "Cada técnica la ve en un momento distinto",
+          "texto": "El aceite ve el desgaste primero, luego el ultrasonido, luego la vibración y al final el calor. En cuáles ya aparece dice cuánto margen queda para pedir la refacción y programar el paro.",
+          "video": "/videos/diagnostico-integral/int-etapas",
+          "descripcion": "Curva P-F de un rodamiento con el punto en que lo detecta cada técnica: aceite, ultrasonido, vibraciones y termografía, antes de la falla funcional"
+        },
+        {
+          "titulo": "De cuatro reportes a una sola lista",
+          "texto": "En lugar de cuatro reportes de cuatro proveedores que hay que conciliar, un diagnóstico por máquina y una lista ordenada por lo que hay que atender primero.",
+          "video": "/videos/diagnostico-integral/int-lista",
+          "descripcion": "Cuatro reportes por técnica que se integran en un informe y una lista de máquinas ordenada por prioridad"
+        }
+      ],
+      "listas": [
+        {
+          "titulo": "Equipos",
+          "items": [
+            "Motores eléctricos",
+            "Bombas",
+            "Compresores",
+            "Reductores y cajas de engranes",
+            "Ventiladores",
+            "Turbinas",
+            "Generadores",
+            "Sistemas hidráulicos"
+          ]
+        },
+        {
+          "titulo": "Fallas que detecta",
+          "items": [
+            "Desgaste de rodamientos",
+            "Desbalance y desalineación",
+            "Holgura mecánica",
+            "Problemas de lubricación",
+            "Contaminación del aceite",
+            "Desgaste interno",
+            "Calentamiento anormal",
+            "Fugas",
+            "Fallas eléctricas en motores"
+          ]
+        }
+      ]
+    }
+  ],
+  "servicioRelacionado": {
+    "href": "/servicios/idap",
+    "etiqueta": "Donde vive el diagnóstico",
+    "titulo": "IDAP",
+    "texto": "Cada máquina guarda en IDAP sus cuatro técnicas, ruta tras ruta, con su gemelo digital y su diagnóstico. Cuando una sube, se ve junto a las otras tres, y la inteligencia de IDAP ordena la planta por lo que hay que atender primero.",
+    "enlace": "Conocer IDAP"
   }
 }

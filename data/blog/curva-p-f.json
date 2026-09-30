@@ -1,0 +1,47 @@
+{
+  "slug": "curva-p-f-en-mantenimiento-predictivo-que-es-y-como-usarla",
+  "titulo": "Curva P-F en mantenimiento predictivo: qué es y cómo usarla para decidir",
+  "extracto": "Qué es la curva P-F, qué significan el punto P y el punto F, en qué momento la ve cada técnica predictiva y cómo se usa el intervalo P-F para decidir cada cuánto medir.",
+  "portada": "/images/servicios/diagnostico-integral/campo-ruta-bombas.webp",
+  "fecha": "2026-09-30T23:59:52.000000Z",
+  "seo": {
+    "titulo": "Curva P-F en mantenimiento predictivo: qué es y cómo se usa",
+    "descripcion": "Qué es la curva P-F en mantenimiento, el punto de falla potencial y la falla funcional, en qué momento detecta la falla cada técnica predictiva y cómo usar el intervalo P-F para definir frecuencias."
+  },
+  "bloques": [
+    ["p", "Casi ninguna falla mecánica pasa de un día para otro. Un rodamiento empieza a dañarse semanas o meses antes de trabarse, y durante ese tiempo va dejando señales. La curva P-F es la forma más sencilla de ver ese camino, y es la idea que está detrás de todo el mantenimiento predictivo."],
+
+    ["h2", "Qué es la curva P-F"],
+    ["p", "Es una gráfica de la condición de un equipo contra el tiempo. Al principio la condición es buena y se mantiene. En algún momento empieza la falla, y a partir de ahí la condición cae, primero despacio y luego cada vez más rápido, hasta que el equipo deja de hacer su función."],
+    ["lista", [
+      "Punto P, de falla potencial: el momento en que la falla ya se puede detectar.",
+      "Punto F, de falla funcional: el momento en que el equipo deja de hacer lo que debe.",
+      "Intervalo P-F: el tiempo entre los dos. Es el margen que hay para actuar."
+    ]],
+
+    ["h2", "Cada técnica la ve en un momento distinto"],
+    ["p", "El punto P no es uno solo: depende de con qué se mira. En una falla de rodamiento típica, el orden suele ser este:"],
+    ["numerada", [
+      "Análisis de aceite: aparecen partículas de desgaste antes de que la pieza haga ruido.",
+      "Ultrasonido: el rodamiento empieza a sonar distinto por la fricción.",
+      "Vibraciones: aparecen las frecuencias de falla del rodamiento y dicen qué pieza es.",
+      "Termografía: el rodamiento se calienta, cuando la falla ya está avanzada.",
+      "Ruido audible, calor al tacto y, al final, la falla."
+    ]],
+    ["p", "Entre más temprano se detecta, más largo es el intervalo P-F y más tiempo hay para conseguir la refacción y programar el paro. Por eso combinar técnicas no es un lujo: es ganar margen."],
+
+    ["h2", "Cómo se usa para decidir cada cuánto medir"],
+    ["p", "La regla práctica es medir con una frecuencia menor que el intervalo P-F, para que la falla no pase de detectable a falla entre una medición y otra. Muchos programas usan como referencia medir al menos dos o tres veces dentro de ese intervalo. Si una falla tarda tres meses en avanzar, una ruta cada seis meses no la va a ver a tiempo; una mensual, sí."],
+    ["p", "Cuando una falla avanza en horas o días, como en algunos equipos de alta velocidad, ninguna ruta alcanza, y lo que conviene son sensores en línea."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Todas las fallas tienen curva P-F?"],
+    ["p", "No. Hay fallas que no avisan, como algunas electrónicas o las causadas por un error de operación. La curva P-F aplica a las fallas que se desarrollan con el tiempo, que en equipo rotativo son la mayoría."],
+    ["h3", "¿Cómo sé cuánto dura el intervalo P-F de mi equipo?"],
+    ["p", "Con experiencia y con historial. Al principio se usan referencias por tipo de equipo, y con las mediciones se va ajustando para cada máquina."],
+    ["h3", "¿Qué técnica conviene si solo puedo pagar una?"],
+    ["p", "Para equipo rotativo, casi siempre vibraciones, porque cubre más tipos de falla y dice qué pieza es. Lo explicamos en la guía de [técnicas de mantenimiento predictivo](/blog/tecnicas-de-mantenimiento-predictivo-como-se-complementan)."],
+
+    ["nota", "En el [diagnóstico integral](/servicios/monitoreo-condicion/diagnostico-de-maquinaria) medimos las cuatro técnicas sobre la misma máquina para verla lo más temprano posible en su curva P-F."]
+  ]
+}
