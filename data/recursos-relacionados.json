@@ -359,5 +359,44 @@
       "titulo": "Análisis de Aceite",
       "resumen": "Muestreo en planta, laboratorio acreditado y DGA en transformadores, interpretados por analistas certificados."
     }
+  },
+  {
+    "articulo": {
+      "slug": "nom-022-stps-2015-que-pide-sobre-tierras-fisicas-y-pararrayos",
+      "titulo": "NOM-022-STPS-2015: tierras y pararrayos",
+      "resumen": "A quién aplica, qué pide medir y qué revisa la STPS.",
+      "portada": "/images/servicios/tierras-fisicas/medicion-registro.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/tierras-fisicas",
+      "titulo": "Tierras Físicas",
+      "resumen": "Estudio de tierras físicas y pararrayos conforme a NOM-022-STPS-2015, con reporte validado."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "valor-de-resistencia-de-tierra-fisica-cuanto-debe-medir",
+      "titulo": "Valor de resistencia de tierra",
+      "resumen": "Cuánto debe medir y qué hacer si sale alto.",
+      "portada": "/images/servicios/tierras-fisicas/lectura-ohm.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/tierras-fisicas",
+      "titulo": "Tierras Físicas",
+      "resumen": "Estudio de tierras físicas y pararrayos conforme a NOM-022-STPS-2015, con reporte validado."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "metodo-de-caida-de-potencial-como-se-mide-una-tierra-fisica",
+      "titulo": "Método de caída de potencial",
+      "resumen": "Cómo se mide una tierra y la regla del 62 %.",
+      "portada": "/images/servicios/tierras-fisicas/electrodo-auxiliar.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/tierras-fisicas",
+      "titulo": "Tierras Físicas",
+      "resumen": "Estudio de tierras físicas y pararrayos conforme a NOM-022-STPS-2015, con reporte validado."
+    }
   }
 ]
