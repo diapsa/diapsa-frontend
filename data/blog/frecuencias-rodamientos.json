@@ -1,0 +1,51 @@
+{
+  "slug": "frecuencias-de-falla-de-rodamientos-bpfo-bpfi-bsf-ftf",
+  "titulo": "Frecuencias de falla de rodamientos: qué son BPFO, BPFI, BSF y FTF y cómo se calculan",
+  "extracto": "Qué son las frecuencias de falla de un rodamiento, cómo se calcula cada una con un ejemplo, una regla rápida para estimarlas y cómo se usan para diagnosticar en el espectro.",
+  "portada": "/images/servicios/sensores-vibracion/sensor-rodamiento.webp",
+  "fecha": "2026-09-30T23:59:59.600000Z",
+  "seo": {
+    "titulo": "Frecuencias de falla de rodamientos: BPFO, BPFI, BSF y FTF",
+    "descripcion": "Qué son las frecuencias de falla de rodamientos (pista externa BPFO, pista interna BPFI, elementos rodantes BSF y jaula FTF), sus fórmulas, un ejemplo resuelto y cómo se usan en el análisis de vibraciones."
+  },
+  "bloques": [
+    ["p", "Cuando un rodamiento empieza a dañarse, cada vez que un elemento rodante pasa por el defecto produce un pequeño golpe. Esos golpes se repiten a una frecuencia que depende de la geometría del rodamiento y de la velocidad. Conocerlas es lo que permite decir, mirando un espectro, no solo que un rodamiento está mal, sino dónde está el daño."],
+
+    ["h2", "Las cuatro frecuencias"],
+    ["lista", [
+      "BPFO: defecto en la pista externa. Es la más común, porque la pista externa no gira y el daño queda siempre en la zona de carga.",
+      "BPFI: defecto en la pista interna. Suele venir acompañada de bandas laterales a la velocidad de giro.",
+      "BSF: defecto en un elemento rodante, sea bola o rodillo.",
+      "FTF: frecuencia de la jaula, que es más baja que la velocidad de giro."
+    ]],
+
+    ["h2", "Cómo se calculan"],
+    ["p", "Hacen falta cinco datos del rodamiento: el número de elementos rodantes (n), el diámetro de cada elemento (d), el diámetro primitivo (D, el del círculo que pasa por el centro de los elementos), el ángulo de contacto (θ) y la frecuencia de giro (f)."],
+    ["lista", [
+      "BPFO = (n ÷ 2) × f × (1 − d ÷ D × cos θ).",
+      "BPFI = (n ÷ 2) × f × (1 + d ÷ D × cos θ).",
+      "BSF = (D ÷ 2d) × f × (1 − (d ÷ D × cos θ)²).",
+      "FTF = (f ÷ 2) × (1 − d ÷ D × cos θ)."
+    ]],
+    ["p", "En la práctica no hace falta calcularlas a mano: los fabricantes publican estas frecuencias para cada modelo, y el software de análisis las trae cargadas."],
+
+    ["h2", "Un ejemplo"],
+    ["p", "Un rodamiento de bolas con 9 bolas, bolas de 12 mm, diámetro primitivo de 60 mm y ángulo de contacto de cero, en un motor que gira a 1,780 rpm, es decir, 29.7 Hz. La relación d ÷ D es 0.2."],
+    ["lista", [
+      "BPFO = 4.5 × 29.7 × 0.8 = 106.9 Hz, unas 3.6 veces la velocidad de giro.",
+      "BPFI = 4.5 × 29.7 × 1.2 = 160.4 Hz, unas 5.4 veces la velocidad de giro."
+    ]],
+    ["p", "Si en el espectro de ese motor aparece un pico cerca de 107 Hz con sus armónicos, el daño está en la pista externa."],
+
+    ["h2", "Una regla rápida"],
+    ["p", "Para la mayoría de los rodamientos, la BPFO queda cerca de 0.4 veces el número de elementos por la velocidad de giro, y la BPFI cerca de 0.6 veces. Sirve para una primera revisión cuando no se tienen los datos del rodamiento."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Por qué no coinciden exactamente con el espectro?"],
+    ["p", "Porque hay pequeños deslizamientos y la velocidad real puede variar. Por eso se buscan picos cerca de la frecuencia calculada, no exactamente en ella."],
+    ["h3", "¿En qué etapa de la falla aparecen?"],
+    ["p", "En la segunda etapa, cuando ya hay defectos pequeños. Antes, el daño se ve mejor con ultrasonido o en alta frecuencia. Lo explicamos en la guía de [falla de rodamientos en motores](/blog/falla-de-rodamientos-en-motores-electricos-como-detectarla-a-tiempo)."],
+
+    ["nota", "Nuestros especialistas revisan el espectro antes de cada alerta de los [sensores de vibración](/servicios/monitoreo-continuo/sensores-vibracion), para decirte qué rodamiento es y dónde está el daño."]
+  ]
+}

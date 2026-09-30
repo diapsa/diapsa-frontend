@@ -554,5 +554,57 @@
       "titulo": "Monitoreo Continuo",
       "resumen": "Sensores en línea instalados por analistas, con alarmas a la medida y análisis remoto."
     }
+  },
+  {
+    "articulo": {
+      "slug": "frecuencias-de-falla-de-rodamientos-bpfo-bpfi-bsf-ftf",
+      "titulo": "Frecuencias de falla de rodamientos",
+      "resumen": "BPFO, BPFI, BSF y FTF: qué son y cómo se calculan.",
+      "portada": "/images/servicios/sensores-vibracion/sensor-rodamiento.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/sensores-vibracion",
+      "titulo": "Sensores de Vibración",
+      "resumen": "Una lectura cada 10 minutos, instalados por especialistas y con cada alerta revisada."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "cavitacion-en-bombas-centrifugas-como-detectarla-y-evitarla",
+      "titulo": "Cavitación en bombas centrífugas",
+      "resumen": "Cómo se detecta con vibración y cómo evitarla.",
+      "portada": "/images/gallery/campo/vibracion-bomba-verde.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/sensores-vibracion",
+      "titulo": "Sensores de Vibración",
+      "resumen": "Una lectura cada 10 minutos, instalados por especialistas y con cada alerta revisada."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "holgura-mecanica-tipos-y-como-se-ve-en-el-espectro-de-vibracion",
+      "titulo": "Holgura mecánica",
+      "resumen": "Sus tres tipos y cómo se ve en el espectro.",
+      "portada": "/images/gallery/campo/vibracion-motor-grande.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/sensores-vibracion",
+      "titulo": "Sensores de Vibración",
+      "resumen": "Una lectura cada 10 minutos, instalados por especialistas y con cada alerta revisada."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "sensores-inalambricos-de-vibracion-como-elegirlos-e-instalarlos",
+      "titulo": "Sensores inalámbricos de vibración",
+      "resumen": "Cómo elegirlos e instalarlos para que sirvan.",
+      "portada": "/images/servicios/sensores-vibracion/instalacion-sensor.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/sensores-vibracion",
+      "titulo": "Sensores de Vibración",
+      "resumen": "Una lectura cada 10 minutos, instalados por especialistas y con cada alerta revisada."
+    }
   }
 ]

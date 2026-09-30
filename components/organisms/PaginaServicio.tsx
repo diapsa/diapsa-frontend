@@ -25,6 +25,7 @@ import VideosServicio from "@/components/organisms/VideosServicio";
 import IntroBeneficios from "@/components/organisms/IntroBeneficios";
 import Semaforo from "@/components/organisms/Semaforo";
 import GraficaTendencia from "@/components/organisms/GraficaTendencia";
+import TendenciaIntervencion from "@/components/organisms/TendenciaIntervencion";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
 import Cobertura from "@/components/organisms/Cobertura";
 import ValorParo from "@/components/organisms/ValorParo";
@@ -239,6 +240,12 @@ export default function PaginaServicio({ service, href }: { service: Servicio; h
             {/* En qué se traduce: la misma falla con y sin el servicio. */}
             {service.valor && <ValorParo valor={service.valor} paso={paso()} />}
             {service.traduccion && <EnQueSeTraduce traduccion={service.traduccion} paso={paso()} />}
+
+            {/* Sensores: un punto real día por día, la intervención y su efecto
+                (venía de la plantilla de monitoreo continuo). */}
+            {service.tendenciaIntervencion && (
+                <TendenciaIntervencion tendencia={service.tendenciaIntervencion} paso={paso()} />
+            )}
 
             {/* Qué recibes. Va después del flujo porque es su desenlace: el
                 último paso del proceso es el informe, y aquí se enseña. */}
