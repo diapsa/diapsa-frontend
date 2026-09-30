@@ -9,6 +9,9 @@ import termografiaMotores from "@/data/blog/termografia-motores.json";
 import tablaIso from "@/data/blog/tabla-iso-10816-3.json";
 import desbalanceDesalineacion from "@/data/blog/desbalance-desalineacion.json";
 import vibracionesMotoresBombas from "@/data/blog/vibraciones-motores-bombas.json";
+import tablaTolerancias from "@/data/blog/tabla-tolerancias-alineacion.json";
+import balanceoGrado from "@/data/blog/balanceo-dinamico-grado-g.json";
+import alineacionMotorBomba from "@/data/blog/alineacion-motor-bomba.json";
 
 /**
  * Artículos del blog que viven en el sitio y no en el CMS (2026-09-29).
@@ -97,7 +100,7 @@ function aBlog(a: ArticuloLocal, i: number): Blog {
   };
 }
 
-export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas] as ArticuloLocal[]).map(aBlog);
+export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba] as ArticuloLocal[]).map(aBlog);
 
 export function getBlogLocal(slug: string): Blog | null {
   return BLOGS_LOCALES.find((b) => b.slug === slug) ?? null;
