@@ -1,0 +1,54 @@
+{
+  "slug": "tabla-neta-termografia-como-se-califica-un-punto-caliente",
+  "titulo": "Tabla NETA en termografía: cómo se califica un punto caliente",
+  "extracto": "Qué es la tabla de la NETA, cómo se usan sus dos criterios (contra un componente similar y contra el ambiente), por qué importa la carga y cómo pasar de un número a una decisión.",
+  "portada": "/images/servicios/termografia-infrarroja/campo-23.webp",
+  "fecha": "2026-09-30T06:00:00.000000Z",
+  "seo": {
+    "titulo": "Tabla NETA en termografía: criterios de severidad y ΔT",
+    "descripcion": "Cómo se califica un punto caliente con la tabla de la NETA: diferencia contra un componente similar y contra el ambiente, rangos de severidad y qué hacer en cada caso."
+  },
+  "bloques": [
+    ["p", "Una imagen térmica llena de rojos y amarillos impresiona, pero no dice por sí sola qué tan grave es lo que estás viendo. Un conector a 60 °C puede ser normal en un equipo y una alarma en otro. Para pasar del color a una decisión hace falta un criterio, y en el mundo eléctrico el más usado es la tabla de la NETA."],
+    ["p", "Aquí te explicamos qué es, cómo se usan sus dos formas de comparar, por qué la carga lo cambia todo y cómo convertir un número en una acción concreta."],
+
+    ["h2", "¿Qué es la NETA?"],
+    ["p", "La NETA es la asociación internacional de pruebas eléctricas de Estados Unidos (InterNational Electrical Testing Association). Publica las especificaciones de mantenimiento ANSI/NETA MTS, que incluyen una tabla con las acciones sugeridas según la diferencia de temperatura que encuentra una inspección termográfica. Es una referencia muy extendida en México para calificar puntos calientes en equipo eléctrico."],
+
+    ["h2", "Los dos criterios de la tabla"],
+    ["h3", "Contra un componente similar"],
+    ["p", "Es el más útil: se compara el punto caliente contra el mismo componente en otra fase, con una carga parecida. La tabla lo divide así:"],
+    ["lista", [
+      "De 1 a 3 °C: posible deficiencia. Conviene investigar.",
+      "De 4 a 15 °C: deficiencia probable. Se repara cuando el tiempo lo permita.",
+      "Más de 15 °C: deficiencia mayor. Se repara de inmediato."
+    ]],
+    ["h3", "Contra el ambiente"],
+    ["p", "Cuando no hay un componente similar para comparar, se usa la diferencia contra la temperatura ambiente. Aquí los rangos son más amplios:"],
+    ["lista", [
+      "De 1 a 10 °C: posible deficiencia.",
+      "De 11 a 20 °C: deficiencia probable.",
+      "De 21 a 40 °C: hay que vigilar hasta poder corregir.",
+      "Más de 40 °C: deficiencia mayor, reparar de inmediato."
+    ]],
+
+    ["h2", "Un ejemplo"],
+    ["p", "En un tablero en operación, las conexiones de un interruptor marcan 44 °C en la fase A, 58 °C en la B y 45 °C en la C. La diferencia de la fase B contra sus vecinas es de unos 14 °C. Según la tabla, cae en deficiencia probable: hay que programar la reparación, que casi siempre consiste en desenergizar, limpiar, reapretar a su torque y revisar el conector. Después de reparar, se vuelve a medir para confirmar que la fase quedó igual que las otras."],
+
+    ["h2", "Por qué la carga lo cambia todo"],
+    ["p", "El calor en una conexión depende de la corriente que pasa por ella. Una misma falla puede dar 5 °C de diferencia con poca carga y 20 °C a plena carga. Por eso se recomienda medir con al menos 40 % de la carga nominal y anotar la carga en el informe. Si se midió con poca carga, conviene ser más estricto con los rangos, porque el problema real es mayor de lo que se ve."],
+
+    ["h2", "Lo que la tabla no te dice"],
+    ["p", "La tabla es una guía, no una sentencia. No sabe si el equipo es crítico para tu proceso, si la tendencia viene subiendo desde la ruta anterior o si el componente tiene un límite de temperatura propio. Por eso el termógrafo la combina con el criterio de la criticidad del equipo, la historia de ese punto y las temperaturas máximas que permite el fabricante."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Es obligatoria la tabla de la NETA en México?"],
+    ["p", "No es una norma mexicana obligatoria, pero es una referencia técnica muy aceptada, y la NFPA 70B pide que las inspecciones termográficas se hagan y se documenten de forma periódica. Lo importante es que el informe diga con qué criterio se calificó cada hallazgo."],
+    ["h3", "¿Qué pasa si no hay otra fase para comparar?"],
+    ["p", "Se usa el criterio contra el ambiente, o se compara contra el historial de ese mismo punto en rutas anteriores."],
+    ["h3", "¿Se aplica también a motores?"],
+    ["p", "La tabla está pensada para equipo eléctrico. En motores y equipo mecánico se usan otros criterios, como los límites de la clase de aislamiento o la comparación entre rodamientos; lo explicamos en la guía de [termografía en motores eléctricos](/blog/termografia-en-motores-electricos-que-revisa-y-como-interpretarla)."],
+
+    ["nota", "En nuestros informes cada hallazgo trae su diferencia de temperatura, el criterio con el que se calificó y qué hacer. Conoce nuestra [termografía infrarroja](/servicios/monitoreo-condicion/termografia-infrarroja) y la guía de [termografía en tableros eléctricos](/blog/termografia-en-tableros-electricos-como-se-hace-y-que-buscar)."]
+  ]
+}

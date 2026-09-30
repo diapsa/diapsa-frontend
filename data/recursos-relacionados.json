@@ -15,7 +15,8 @@
     "articulo": {
       "slug": "termografia-industrial-una-herramienta-clave-para-el-mantenimiento-predictivo",
       "titulo": "Termografía industrial: una herramienta clave para el mantenimiento predictivo",
-      "resumen": "Cómo la inspección térmica detecta problemas eléctricos y mecánicos antes de que se vuelvan falla."
+      "resumen": "Cómo la inspección térmica detecta problemas eléctricos y mecánicos antes de que se vuelvan falla.",
+      "portada": "/images/servicios/termografia-infrarroja/campo-09.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/termografia-infrarroja",
@@ -109,6 +110,45 @@
       "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
       "titulo": "Análisis de Ultrasonido",
       "resumen": "Rodamientos, fugas de aire comprimido y efecto corona detectados con el equipo en marcha, con cada hallazgo clasificado y su acción."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "termografia-en-tableros-electricos-como-se-hace-y-que-buscar",
+      "titulo": "Termografía en tableros eléctricos: cómo se hace y qué buscar",
+      "resumen": "Qué detecta, cómo se hace bien el estudio termográfico, qué debe traer el informe y los errores más comunes.",
+      "portada": "/images/servicios/termografia-infrarroja/campo-06.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/termografia-infrarroja",
+      "titulo": "Termografía Infrarroja",
+      "resumen": "Inspección termográfica de tableros, motores y procesos con reporte de hallazgos priorizado."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "tabla-neta-termografia-como-se-califica-un-punto-caliente",
+      "titulo": "Tabla NETA en termografía: cómo se califica un punto caliente",
+      "resumen": "Los dos criterios de la tabla, por qué importa la carga y cómo pasar de un número a una decisión.",
+      "portada": "/images/servicios/termografia-infrarroja/campo-23.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/termografia-infrarroja",
+      "titulo": "Termografía Infrarroja",
+      "resumen": "Inspección termográfica de tableros, motores y procesos con reporte de hallazgos priorizado."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "termografia-en-motores-electricos-que-revisa-y-como-interpretarla",
+      "titulo": "Termografía en motores eléctricos: qué revisa y cómo interpretarla",
+      "resumen": "Rodamientos, acoplamientos, ventilación y caja de conexiones, y cuándo confirmar con otra técnica.",
+      "portada": "/images/servicios/termografia-infrarroja/campo-35.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/termografia-infrarroja",
+      "titulo": "Termografía Infrarroja",
+      "resumen": "Inspección termográfica de tableros, motores y procesos con reporte de hallazgos priorizado."
     }
   }
 ]
