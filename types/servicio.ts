@@ -118,6 +118,8 @@ export interface ResumenRuta {
 }
 
 export interface ServiceEntregable {
+  /** Hoja de informe dibujada en HTML (InformeMuestra) en lugar de las capturas. */
+  muestra?: "ultrasonido";
   /** Antetítulo corto, ej. "El entregable". */
   etiqueta: string;
   titulo: string;
@@ -175,6 +177,10 @@ export interface ServiceEntregable {
     escena?: "term" | "vib" | "us";
     /** Fotografías térmicas reales para la pestaña de termografía de la escena. */
     imagenes?: { principal?: string; miniaturas?: string[]; visual?: string };
+    /** Si viene, se muestra la inspección integral nueva (EscenaInspeccion, la
+        de /servicios/idap) alternando el resumen y esta pestaña; tiene
+        prioridad sobre `escena`. */
+    inspeccion?: "termo" | "vib" | "ultra" | "aceite" | "elec";
   };
 }
 
@@ -584,6 +590,8 @@ export interface Servicio {
   relatedProducts: RelatedProducts;
   /** Meta descripción para Google. Si falta, se usa header.subtitle
       (que también es el subtítulo visible del hero). */
+  /** Título para Google si debe ser distinto del H1 (lleva la palabra clave principal). */
+  seoTitle?: string;
   seoDescription?: string;
   /** Preguntas frecuentes. Si existen, la página las muestra y emite
       schema FAQPage (elegible para resultado enriquecido en Google). */
@@ -647,6 +655,11 @@ export interface Servicio {
   diferencias?: ServiceDiferencias;
   /** Qué equipos se vigilan y qué fallas se detectan, en fichas. */
   cobertura?: ServiceCobertura;
+  /** Grupos de bloques con video en bucle (VideosServicio). `lugar` dice qué
+      sección reemplazan: el flujo del servicio o la cobertura. */
+  videos?: GrupoVideos[];
+  /** Primera parte reestructurada (IntroBeneficios) en lugar de ServicePuntos. */
+  introBeneficios?: ServiceIntroBeneficios;
   /** Encabezado propio del flujo "Cómo trabajamos". */
   flujoEncabezado?: { titulo: string; texto: string };
   /** En qué se traduce, en dinero, con las cifras del visitante. */
@@ -655,4 +668,33 @@ export interface Servicio {
   ocultarAhorro?: boolean;
   /** En qué se traduce, con una visual propia del servicio. */
   traduccion?: ServiceTraduccion;
+}
+
+export interface BloqueVideo {
+  titulo: string;
+  texto: string;
+  /** Ruta sin extensión: se usan `${video}.mp4` y `${video}.jpg` (imagen fija). */
+  video: string;
+  descripcion: string;
+  /** Pasos cortos numerados debajo del texto (opcional). */
+  pasos?: string[];
+}
+
+export interface GrupoVideos {
+  lugar: "flujo" | "cobertura";
+  etiqueta: string;
+  titulo: string;
+  texto?: string;
+  fondo?: "blanco" | "gris";
+  bloques: BloqueVideo[];
+  /** Listas cortas en fichas debajo de los bloques (equipos, fallas). */
+  listas?: { titulo: string; items: string[] }[];
+}
+
+export interface ServiceIntroBeneficios {
+  beneficiosTitulo?: string;
+  beneficios: { icono: "paro" | "gota" | "aire" | "rayo"; titulo: string; texto: string }[];
+  modalidades?: { titulo: string; texto: string; enlace?: string }[];
+  fotos: { src: string; alt: string }[];
+  idap: { titulo: string; texto: string; puntos: string[]; video: string; descripcionVideo: string; enlace: string };
 }

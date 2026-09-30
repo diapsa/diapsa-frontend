@@ -15,9 +15,15 @@ import Image from "next/image";
  */
 
 type Foto = { src: string; alt: string };
-type Props = { fotos: Foto[]; intervalo?: number; prioridad?: boolean };
+type Props = { fotos: Foto[]; intervalo?: number; prioridad?: boolean; etiqueta?: string; className?: string };
 
-export default function CarruselFotos({ fotos, intervalo = 3000, prioridad = false }: Props) {
+export default function CarruselFotos({
+  fotos,
+  intervalo = 3000,
+  prioridad = false,
+  etiqueta = "Fotografías de cursos de DIAPSA",
+  className = "aspect-[4/3] rounded-md shadow-xl ring-1 ring-black/10",
+}: Props) {
   const [activa, setActiva] = useState(0);
   const [pausa, setPausa] = useState(false);
   const total = fotos.length;
@@ -33,10 +39,10 @@ export default function CarruselFotos({ fotos, intervalo = 3000, prioridad = fal
 
   return (
     <div
-      className="relative aspect-[4/3] overflow-hidden rounded-md bg-primary shadow-xl ring-1 ring-black/10"
+      className={`relative overflow-hidden bg-primary ${className}`}
       role="group"
       aria-roledescription="carrusel"
-      aria-label="Fotografías de cursos de DIAPSA"
+      aria-label={etiqueta}
       onMouseEnter={() => setPausa(true)}
       onMouseLeave={() => setPausa(false)}
       onFocus={() => setPausa(true)}
