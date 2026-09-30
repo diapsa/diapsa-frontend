@@ -22,6 +22,8 @@ const ICONOS: Record<string, React.ReactNode> = {
   rayo: <path strokeLinecap="round" strokeLinejoin="round" d="M13 3L4.5 13.5H12L11 21l8.5-10.5H12L13 3z" />,
   fuego: <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c-3.6 0-6-2.5-6-5.8 0-3.3 2.4-5.2 3.4-8.2.9 1.6 1.2 2.8 1.2 4 1.3-1.1 2.3-3.3 2.2-6.5 3 2.3 5.2 6 5.2 10.2 0 3.6-2.4 6.3-6 6.3z" />,
   documento: <path strokeLinecap="round" strokeLinejoin="round" d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6" />,
+  engrane: <path strokeLinecap="round" strokeLinejoin="round" d="M12 9a3 3 0 100 6 3 3 0 000-6zM12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" />,
+  calendario: <path strokeLinecap="round" strokeLinejoin="round" d="M4 6.5h16v13H4zM8 4v5M16 4v5M4 10.5h16M9 15l2 2 4-4" />,
 };
 
 function Check() {

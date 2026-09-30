@@ -1,0 +1,58 @@
+{
+  "slug": "tabla-iso-10816-3-y-20816-3-limites-de-vibracion",
+  "titulo": "Tabla ISO 10816-3 y 20816-3: cómo leer los límites de vibración",
+  "extracto": "Qué dice la tabla de severidad de la ISO 10816-3, cómo saber en qué grupo y tipo de base está tu máquina, qué significan las zonas A, B, C y D y qué cambió con la ISO 20816-3.",
+  "portada": "/images/gallery/campo/vibracion-analizador-mano.webp",
+  "fecha": "2026-09-30T18:00:00.000000Z",
+  "seo": {
+    "titulo": "Tabla ISO 10816-3 y 20816-3: límites de vibración por zonas",
+    "descripcion": "Cómo leer la tabla de severidad de vibración de la ISO 10816-3 y la ISO 20816-3: grupos de máquinas, base rígida o flexible, zonas A a D y valores en mm/s."
+  },
+  "bloques": [
+    ["p", "Cuando mides la vibración de un motor y el colector te dice 5.6 mm/s, la pregunta inmediata es si eso es mucho o poco. La respuesta depende del tamaño de la máquina y de cómo está montada, y para eso existe la tabla de severidad de la ISO 10816-3, que en campo se sigue usando todos los días aunque la ISO 20816-3 ya la está reemplazando."],
+    ["p", "Aquí te explicamos cómo leerla, cómo ubicar tu máquina en ella y qué cosas no te dice."],
+
+    ["h2", "¿Qué cubre la ISO 10816-3?"],
+    ["p", "Es la parte de la norma que da los límites de vibración para máquinas industriales medidas en sitio, sobre las cajas de los rodamientos: motores, bombas, ventiladores, compresores y turbinas de más de 15 kW, que giran entre 120 y 15,000 revoluciones por minuto. La medición es de velocidad, en milímetros por segundo RMS."],
+
+    ["h2", "Primero: ¿en qué grupo está tu máquina?"],
+    ["p", "La norma separa las máquinas en dos grupos principales. El grupo 1 son las grandes, de 300 kW a 50 MW. El grupo 2 son las medianas, de 15 a 300 kW, que es donde cae la mayoría de los motores y bombas de una planta."],
+    ["p", "Luego hay que ver la base. Se considera rígida cuando la máquina y su base son mucho más rígidas que la frecuencia de giro, como un motor bien anclado a un piso de concreto; flexible cuando la estructura puede moverse con la máquina, como una base metálica o un equipo sobre una plataforma. En la práctica, si hay duda, el analista toma el criterio más conservador."],
+
+    ["h2", "Las cuatro zonas"],
+    ["lista", [
+      "Zona A: vibración típica de una máquina nueva o recién reparada.",
+      "Zona B: la máquina puede operar sin restricción por tiempo indefinido.",
+      "Zona C: no es adecuada para operar por largo tiempo; se puede seguir mientras se programa la corrección.",
+      "Zona D: la vibración ya es suficiente para dañar la máquina."
+    ]],
+
+    ["h2", "Los valores de la tabla"],
+    ["p", "Estos son los límites entre zonas, en mm/s RMS:"],
+    ["lista", [
+      "Grupo 1, base rígida: A/B 2.3 · B/C 4.5 · C/D 7.1.",
+      "Grupo 1, base flexible: A/B 3.5 · B/C 7.1 · C/D 11.0.",
+      "Grupo 2, base rígida: A/B 1.4 · B/C 2.8 · C/D 4.5.",
+      "Grupo 2, base flexible: A/B 2.3 · B/C 4.5 · C/D 7.1."
+    ]],
+    ["p", "Con el ejemplo del principio: un motor de 75 kW, grupo 2, sobre base flexible, con 5.6 mm/s está en zona C. Puede seguir trabajando, pero hay que encontrar la causa y programar la corrección."],
+
+    ["h2", "¿Qué cambió con la ISO 20816-3?"],
+    ["p", "La serie ISO 20816 está reemplazando a la ISO 10816 y a la ISO 7919, que juntaba la vibración medida en la carcasa y la del eje. La ISO 20816-3 se publicó en 2022, amplía el rango de velocidades a 30,000 revoluciones por minuto y conserva la misma lógica de zonas de la A a la D. Antes de usar un límite exacto en un contrato o en una especificación, conviene consultar la versión vigente de la norma."],
+
+    ["h2", "Lo que la tabla no te dice"],
+    ["p", "La tabla habla de severidad, no de causa. Un 5.6 mm/s puede ser desbalance, desalineación o un rodamiento dañado, y cada uno se corrige distinto. Para eso está el espectro; te lo contamos en la guía de [desbalance y desalineación](/blog/diferencia-entre-desbalance-y-desalineacion)."],
+    ["p", "Tampoco te dice cómo viene la tendencia. La propia norma considera importante un cambio de alrededor de 25 % del límite B/C aunque la máquina siga en zona B: si un equipo pasó de 1.5 a 2.7 mm/s en dos meses, algo está pasando aunque todavía esté \"bien\"."],
+    ["p", "Y hay máquinas con su propia parte de la norma, como las bombas centrífugas, que tienen la ISO 10816-7. Lo explicamos en la guía de [vibraciones en motores y bombas](/blog/analisis-de-vibraciones-en-motores-y-bombas-centrifugas)."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Se mide en velocidad o en aceleración?"],
+    ["p", "Los límites de la ISO 10816-3 son de velocidad RMS. La aceleración se usa además para ver fallas de alta frecuencia, como las de rodamientos, pero no para esta tabla."],
+    ["h3", "¿En qué dirección se mide?"],
+    ["p", "En cada rodamiento, en horizontal, vertical y axial. Para la zona se toma el valor más alto."],
+    ["h3", "¿Puedo usarla para cualquier máquina?"],
+    ["p", "No. No aplica a máquinas reciprocantes, a equipos de menos de 15 kW ni a los que tienen su propia parte de la norma. En esos casos se usa la parte que corresponde o el criterio del fabricante."],
+
+    ["nota", "En nuestros informes cada equipo trae su nivel, la zona ISO que le corresponde y la causa que muestra el espectro. Conoce nuestro [análisis de vibraciones](/servicios/monitoreo-condicion/vibraciones-mecanicas) y la [guía completa de vibraciones](/blog/analisis-de-vibraciones-guia-completa-de-fallas-parametros-y-normas-iso)."]
+  ]
+}

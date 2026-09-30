@@ -693,7 +693,7 @@ export interface GrupoVideos {
 
 export interface ServiceIntroBeneficios {
   beneficiosTitulo?: string;
-  beneficios: { icono: "paro" | "gota" | "aire" | "rayo" | "fuego" | "documento"; titulo: string; texto: string }[];
+  beneficios: { icono: "paro" | "gota" | "aire" | "rayo" | "fuego" | "documento" | "engrane" | "calendario"; titulo: string; texto: string }[];
   modalidades?: { titulo: string; texto: string; enlace?: string }[];
   fotos: { src: string; alt: string }[];
   idap: { titulo: string; texto: string; puntos: string[]; video: string; descripcionVideo: string; enlace: string };
