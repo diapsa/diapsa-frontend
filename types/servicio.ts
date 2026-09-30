@@ -119,7 +119,7 @@ export interface ResumenRuta {
 
 export interface ServiceEntregable {
   /** Hoja de informe dibujada en HTML (InformeMuestra) en lugar de las capturas. */
-  muestra?: "ultrasonido";
+  muestra?: HojaMuestra;
   /** Antetítulo corto, ej. "El entregable". */
   etiqueta: string;
   titulo: string;
@@ -693,8 +693,29 @@ export interface GrupoVideos {
 
 export interface ServiceIntroBeneficios {
   beneficiosTitulo?: string;
-  beneficios: { icono: "paro" | "gota" | "aire" | "rayo"; titulo: string; texto: string }[];
+  beneficios: { icono: "paro" | "gota" | "aire" | "rayo" | "fuego" | "documento"; titulo: string; texto: string }[];
   modalidades?: { titulo: string; texto: string; enlace?: string }[];
   fotos: { src: string; alt: string }[];
   idap: { titulo: string; texto: string; puntos: string[]; video: string; descripcionVideo: string; enlace: string };
+}
+
+/** Contenido de la hoja de informe de ejemplo (InformeMuestra). `punto` es el
+    índice del renglón de `contenido` que resalta cada sección. */
+export interface HojaMuestra {
+  titulo: string;
+  equipo: string;
+  subtitulo: string;
+  estado: { texto: string; color: string; punto: number };
+  imagen?: { titulo: string; termica: string; visual: string; altTermica: string; altVisual: string; punto: number };
+  lecturas: {
+    titulo: string;
+    unidad: string;
+    max: number;
+    nota?: string;
+    punto: number;
+    filas: { p: string; valor: number; ref: number; color: string }[];
+  };
+  escala?: { titulo: string; punto: number; niveles: { t: string; r: string; c: string }[] };
+  hallazgo: { titulo: string; texto: string; punto: number };
+  recomendacion: { titulo: string; texto: string; urgencia: string; punto: number };
 }

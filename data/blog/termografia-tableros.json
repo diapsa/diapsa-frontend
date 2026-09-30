@@ -1,0 +1,58 @@
+{
+  "slug": "termografia-en-tableros-electricos-como-se-hace-y-que-buscar",
+  "titulo": "Termografía en tableros eléctricos: cómo se hace y qué buscar",
+  "extracto": "Qué detecta la termografía en tableros y centros de carga, cómo se hace bien un estudio termográfico eléctrico, qué debe traer el informe y los errores que lo echan a perder.",
+  "portada": "/images/servicios/termografia-infrarroja/campo-06.webp",
+  "fecha": "2026-09-30T00:00:00.000000Z",
+  "seo": {
+    "titulo": "Termografía en tableros eléctricos: guía del estudio termográfico",
+    "descripcion": "Cómo se hace un estudio termográfico de tableros eléctricos, qué fallas detecta, qué debe traer el informe y los errores más comunes al medir."
+  },
+  "bloques": [
+    ["p", "Casi todas las fallas en un tablero eléctrico avisan antes de pasar, y avisan con calor. Una conexión que se afloja, un fusible que se degrada o una fase que carga más que las otras se calientan poco a poco durante semanas. El problema es que a simple vista no se nota nada, hasta el día en que algo se quema."],
+    ["p", "La termografía sirve justo para eso: ver ese calor antes de que se convierta en falla. En esta guía te contamos qué detecta, cómo se hace bien un estudio termográfico en tableros, qué debe traer el informe y en qué se equivoca más la gente."],
+
+    ["h2", "Qué detecta la termografía en un tablero"],
+    ["lista", [
+      "Conexiones flojas o sulfatadas en interruptores, barras y zapatas.",
+      "Fusibles y contactores dañados o con mal contacto.",
+      "Desbalance entre fases, cuando una carga más que las otras.",
+      "Sobrecarga de conductores o de interruptores.",
+      "Componentes que se están degradando por dentro, como un interruptor con los contactos gastados."
+    ]],
+    ["p", "Lo que tienen en común es que todas generan resistencia donde no debería haberla, y la resistencia se convierte en calor."],
+
+    ["h2", "Cómo se hace bien"],
+    ["h3", "Con el tablero en operación y con carga"],
+    ["p", "Un punto caliente solo aparece cuando pasa corriente. Si el tablero está con poca carga, la falla casi no se nota. Por eso lo recomendable es medir con al menos 40 % de la carga nominal, y anotar la carga del momento en el informe."],
+    ["h3", "Comparando fase contra fase"],
+    ["p", "La temperatura por sí sola dice poco. Lo que importa es la diferencia contra un componente igual con carga parecida: la misma conexión en la fase vecina. Si las tres fases están a 40 °C no hay problema; si dos están a 40 y una a 55, ahí está el hallazgo."],
+    ["h3", "Con la seguridad por delante"],
+    ["p", "Para ver las conexiones muchas veces hay que abrir el tablero energizado, y eso implica riesgo de arco eléctrico. Se hace con el equipo de protección adecuado y con personal capacitado. Una buena alternativa en tableros críticos son las ventanas de inspección infrarroja, que permiten ver dentro sin abrir la puerta."],
+
+    ["h2", "Cómo se califica un punto caliente"],
+    ["p", "La referencia más usada es la tabla de la NETA, que califica la diferencia de temperatura contra un componente similar con carga similar. De 1 a 3 °C es una posible deficiencia que conviene investigar, de 4 a 15 °C una deficiencia probable que se repara cuando se pueda, y más de 15 °C una deficiencia mayor que se repara de inmediato. Te lo explicamos a fondo en nuestra guía de la [tabla NETA en termografía](/blog/tabla-neta-termografia-como-se-califica-un-punto-caliente)."],
+
+    ["h2", "Qué debe traer el informe"],
+    ["p", "Un buen estudio termográfico no es una carpeta de fotos de colores. Por cada hallazgo debería traer la imagen térmica y la foto visual del mismo punto, la temperatura máxima y la diferencia contra la referencia, la carga al momento de medir, el componente y la causa probable, la severidad y qué hacer y con qué urgencia. Con eso, el equipo de mantenimiento puede actuar sin tener que interpretar nada."],
+
+    ["h2", "Los errores más comunes"],
+    ["lista", [
+      "Medir con poca carga y dar por bueno un tablero que en realidad tiene problemas.",
+      "Fijarse solo en el color de la imagen y no en la diferencia de temperatura.",
+      "No ajustar la emisividad: las superficies metálicas brillantes reflejan calor y engañan a la cámara.",
+      "Medir a través del acrílico o de la puerta cerrada, que bloquean el infrarrojo.",
+      "No volver a medir después de la reparación para confirmar que quedó bien."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Cada cuánto se hace?"],
+    ["p", "En tableros y subestaciones, al menos una vez al año, como pide la NFPA 70B, y más seguido si la carga es alta o el ambiente es agresivo. Si quieres conocer la norma, revisa nuestra guía de la [NFPA 70B 2023](/blog/nfpa-70b-2023-el-mantenimiento-electrico-dejo-de-ser-opcional)."],
+    ["h3", "¿Hay que parar la planta?"],
+    ["p", "No. De hecho, se tiene que hacer con todo funcionando, porque sin carga los puntos calientes no aparecen."],
+    ["h3", "¿La termografía lo encuentra todo?"],
+    ["p", "Encuentra muy bien lo que se calienta, pero hay fallas que casi no generan calor, como el efecto corona en media tensión. Para eso se complementa con ultrasonido; lo explicamos en la guía de [efecto corona](/blog/efecto-corona-que-es-y-como-se-detecta)."],
+
+    ["nota", "¿Quieres saber cómo están tus tableros? Hacemos el estudio termográfico con el equipo en operación y te entregamos cada hallazgo con su imagen térmica, su foto, su severidad y qué hacer. Conoce nuestra [termografía infrarroja](/servicios/monitoreo-condicion/termografia-infrarroja)."]
+  ]
+}

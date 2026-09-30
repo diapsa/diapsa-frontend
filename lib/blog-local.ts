@@ -3,6 +3,9 @@ import efectoCorona from "@/data/blog/efecto-corona.json";
 import fugasAire from "@/data/blog/fugas-aire-comprimido.json";
 import lubricacion from "@/data/blog/lubricacion-por-ultrasonido.json";
 import futuroUltrasonido from "@/data/blog/futuro-ultrasonido-pasivo.json";
+import termografiaTableros from "@/data/blog/termografia-tableros.json";
+import tablaNeta from "@/data/blog/tabla-neta-termografia.json";
+import termografiaMotores from "@/data/blog/termografia-motores.json";
 
 /**
  * Artículos del blog que viven en el sitio y no en el CMS (2026-09-29).
@@ -91,7 +94,7 @@ function aBlog(a: ArticuloLocal, i: number): Blog {
   };
 }
 
-export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido] as ArticuloLocal[]).map(aBlog);
+export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores] as ArticuloLocal[]).map(aBlog);
 
 export function getBlogLocal(slug: string): Blog | null {
   return BLOGS_LOCALES.find((b) => b.slug === slug) ?? null;
