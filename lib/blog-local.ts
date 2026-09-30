@@ -2,6 +2,7 @@ import type { Blog } from "@/types/post";
 import efectoCorona from "@/data/blog/efecto-corona.json";
 import fugasAire from "@/data/blog/fugas-aire-comprimido.json";
 import lubricacion from "@/data/blog/lubricacion-por-ultrasonido.json";
+import futuroUltrasonido from "@/data/blog/futuro-ultrasonido-pasivo.json";
 
 /**
  * Artículos del blog que viven en el sitio y no en el CMS (2026-09-29).
@@ -14,7 +15,7 @@ import lubricacion from "@/data/blog/lubricacion-por-ultrasonido.json";
  *
  * Formato de cada bloque: ["p", texto] · ["h2", texto] · ["h3", texto] ·
  * ["lista", [textos]] · ["numerada", [textos]] · ["nota", texto] ·
- * ["img", src, alt]. En los textos, **negritas** y [enlace](/ruta).
+ * ["img", src, alt]. En los textos, **negritas**, *cursivas* y [enlace](/ruta).
  */
 
 type Bloque = [string, ...unknown[]];
@@ -34,13 +35,14 @@ type Nodo = Record<string, unknown>;
 /** Texto con **negritas** y [enlaces](/ruta) a nodos de texto de Tiptap. */
 function textos(texto: string): Nodo[] {
   const nodos: Nodo[] = [];
-  const re = /\*\*(.+?)\*\*|\[(.+?)\]\((.+?)\)/g;
+  const re = /\*\*(.+?)\*\*|\*(.+?)\*|\[(.+?)\]\((.+?)\)/g;
   let ultimo = 0;
   let m: RegExpExecArray | null;
   while ((m = re.exec(texto))) {
     if (m.index > ultimo) nodos.push({ type: "text", text: texto.slice(ultimo, m.index) });
     if (m[1]) nodos.push({ type: "text", text: m[1], marks: [{ type: "bold" }] });
-    else nodos.push({ type: "text", text: m[2], marks: [{ type: "link", attrs: { href: m[3] } }] });
+    else if (m[2]) nodos.push({ type: "text", text: m[2], marks: [{ type: "italic" }] });
+    else nodos.push({ type: "text", text: m[3], marks: [{ type: "link", attrs: { href: m[4] } }] });
     ultimo = m.index + m[0].length;
   }
   if (ultimo < texto.length) nodos.push({ type: "text", text: texto.slice(ultimo) });
@@ -89,7 +91,7 @@ function aBlog(a: ArticuloLocal, i: number): Blog {
   };
 }
 
-export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion] as ArticuloLocal[]).map(aBlog);
+export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido] as ArticuloLocal[]).map(aBlog);
 
 export function getBlogLocal(slug: string): Blog | null {
   return BLOGS_LOCALES.find((b) => b.slug === slug) ?? null;

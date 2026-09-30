@@ -49,7 +49,7 @@ export default function GuiasRelacionadas({ articulos }: { articulos: ArticuloRe
           <p className="text-xs font-bold uppercase tracking-widest text-secondary">Para entender la técnica a fondo</p>
           <h2 className="mt-2 text-2xl font-extrabold leading-tight text-primary lg:text-3xl">Guías para tu equipo</h2>
         </div>
-        <ul className={`grid grid-cols-1 gap-6 ${articulos.length >= 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
+        <ul className={`grid grid-cols-1 gap-6 ${articulos.length === 4 ? "md:grid-cols-2 lg:grid-cols-4" : articulos.length >= 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
           {articulos.map((a) => (
             <li key={a.slug}>
               <Link

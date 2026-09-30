@@ -97,5 +97,18 @@
       "titulo": "Análisis de Ultrasonido",
       "resumen": "Rodamientos, fugas de aire comprimido y efecto corona detectados con el equipo en marcha, con cada hallazgo clasificado y su acción."
     }
+  },
+  {
+    "articulo": {
+      "slug": "futuro-del-ultrasonido-pasivo-en-la-industria",
+      "titulo": "El futuro del ultrasonido pasivo en la industria",
+      "resumen": "Monitoreo continuo, inteligencia artificial y arreglos de micrófonos, según la investigación reciente.",
+      "portada": "/images/gallery/campo/acustica-pantalla-planta.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
+      "titulo": "Análisis de Ultrasonido",
+      "resumen": "Rodamientos, fugas de aire comprimido y efecto corona detectados con el equipo en marcha, con cada hallazgo clasificado y su acción."
+    }
   }
 ]
