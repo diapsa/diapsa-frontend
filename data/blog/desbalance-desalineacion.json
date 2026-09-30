@@ -1,0 +1,46 @@
+{
+  "slug": "diferencia-entre-desbalance-y-desalineacion",
+  "titulo": "Desbalance y desalineación: en qué se diferencian y cómo se ven en el espectro",
+  "extracto": "Las dos fallas más comunes en equipo rotativo se confunden a menudo. Qué es cada una, qué las provoca, cómo se distinguen en el espectro y con la fase, y cómo se corrigen.",
+  "portada": "/images/gallery/campo/vibracion-bomba-roja.webp",
+  "fecha": "2026-09-30T19:00:00.000000Z",
+  "seo": {
+    "titulo": "Diferencia entre desbalance y desalineación en vibraciones",
+    "descripcion": "Qué es el desbalance y qué es la desalineación, cómo se ven en el espectro de vibración (1X radial contra 1X y 2X axial), cómo confirmarlo con la fase y cómo se corrigen."
+  },
+  "bloques": [
+    ["p", "Si juntas las fallas que más paran motores, bombas y ventiladores, el desbalance y la desalineación están casi siempre en los primeros lugares. Las dos hacen vibrar la máquina, las dos se notan a la velocidad de giro y por eso es fácil confundirlas. Pero se corrigen de forma muy distinta, y equivocarse significa perder un paro de mantenimiento sin resolver nada."],
+    ["p", "Aquí te contamos qué es cada una, cómo se distinguen en el espectro y cómo se corrigen."],
+
+    ["h2", "¿Qué es el desbalance?"],
+    ["p", "Es una masa mal repartida en la parte que gira. El centro de masa no coincide con el eje de giro, y en cada vuelta la pieza \"jala\" hacia un lado. Puede venir de fábrica, pero en planta casi siempre aparece por acumulación de material en las aspas de un ventilador, desgaste o erosión, una pieza que se rompió o se perdió, o una reparación mal hecha."],
+
+    ["h2", "¿Qué es la desalineación?"],
+    ["p", "Es que los ejes de dos máquinas acopladas, por ejemplo un motor y una bomba, no están en la misma línea. Puede ser paralela, cuando los ejes quedan desplazados; angular, cuando forman un ángulo; o una combinación de las dos, que es lo más común. Suele aparecer después de un montaje, un cambio de equipo, por dilatación térmica, por bases que se asientan o por una pata coja."],
+
+    ["h2", "Cómo se ven en el espectro"],
+    ["h3", "Desbalance"],
+    ["p", "Un pico dominante a 1X, es decir, a la velocidad de giro, sobre todo en dirección radial, con poca vibración axial. Los armónicos casi no aparecen."],
+    ["h3", "Desalineación"],
+    ["p", "Picos a 1X y a 2X, y a veces 3X. La angular se nota con la vibración axial alta; la paralela, con 2X alto en radial. En los dos casos, los rodamientos junto al acoplamiento son los que más vibran."],
+
+    ["h2", "Cómo confirmarlo con la fase"],
+    ["p", "Cuando el espectro deja duda, el analista mide la fase, que dice en qué momento de la vuelta se mueve cada punto. En desbalance, la fase entre la dirección horizontal y la vertical de un mismo rodamiento suele estar a unos 90 grados. En desalineación, al comparar los dos lados del acoplamiento, la fase aparece a unos 180 grados: en axial si es angular, en radial si es paralela."],
+
+    ["h2", "¿Y si hay las dos?"],
+    ["p", "Pasa seguido. Por eso el orden importa: primero se alinea y luego se balancea, porque una máquina desalineada puede dar lecturas engañosas al balancear. Y después de cada corrección se vuelve a medir para confirmar que la vibración de verdad bajó."],
+
+    ["h2", "Cómo se corrigen"],
+    ["p", "El desbalance se corrige con balanceo: dinámico en sitio, agregando o quitando masa en uno o dos planos, o en taller si la pieza se puede desmontar. La desalineación se corrige con alineación, idealmente láser, dejando los ejes dentro de las tolerancias para su velocidad y revisando antes que no haya pata coja. Las dos las hacemos en campo en el servicio de [alineación y balanceo](/servicios/monitoreo-condicion/alineacion-balanceo)."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Qué pasa si no se corrige?"],
+    ["p", "Las dos cargan de más a los rodamientos, los sellos y el acoplamiento. Con el tiempo terminan en daño de rodamientos, fugas en sellos, ejes fracturados o acoplamientos rotos."],
+    ["h3", "¿Se puede ver sin analizador?"],
+    ["p", "Con un vibrómetro sabes que algo vibra de más, pero no por qué. Para distinguir entre las dos hace falta el espectro, y muchas veces la fase."],
+    ["h3", "¿Cada cuánto se revisa la alineación?"],
+    ["p", "Después de cualquier montaje o reparación, y cuando el análisis de vibraciones la señala. Si quieres ver qué tan grave es un nivel, revisa la guía de la [tabla ISO 10816-3](/blog/tabla-iso-10816-3-y-20816-3-limites-de-vibracion)."],
+
+    ["nota", "Primero lo diagnosticamos con el [análisis de vibraciones](/servicios/monitoreo-condicion/vibraciones-mecanicas) y luego lo corregimos en campo con [alineación y balanceo](/servicios/monitoreo-condicion/alineacion-balanceo), midiendo antes y después."]
+  ]
+}

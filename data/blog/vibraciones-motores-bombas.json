@@ -1,0 +1,58 @@
+{
+  "slug": "analisis-de-vibraciones-en-motores-y-bombas-centrifugas",
+  "titulo": "Análisis de vibraciones en motores y bombas centrífugas: dónde medir y qué buscar",
+  "extracto": "Los puntos de medición en un motor-bomba, cómo se nombran, las fallas típicas de cada uno (del desbalance a la cavitación) y las buenas prácticas para que las mediciones sirvan.",
+  "portada": "/images/gallery/campo/vibracion-bomba-vertical.webp",
+  "fecha": "2026-09-30T20:00:00.000000Z",
+  "seo": {
+    "titulo": "Vibraciones en motores y bombas centrífugas: puntos de medición",
+    "descripcion": "Dónde se mide la vibración en motores eléctricos y bombas centrífugas, cómo se nombran los puntos, qué fallas son típicas de cada uno y cómo medir para poder comparar."
+  },
+  "bloques": [
+    ["p", "Si en tu planta hay un equipo que no puede faltar en ninguna ruta de vibraciones, es el motor-bomba. Mueve agua de enfriamiento, alimenta calderas, recircula procesos y casi siempre está en el camino crítico. La buena noticia es que es de los equipos que mejor se diagnostican con vibraciones, siempre que se mida en los lugares correctos y de la misma forma cada vez."],
+
+    ["h2", "Dónde se mide"],
+    ["p", "Se mide en cada rodamiento, lo más cerca posible de él, sobre una superficie firme de la caja del rodamiento. En un motor-bomba típico son cuatro rodamientos: el lado libre y el lado acople del motor, y el lado acople y el lado libre de la bomba. En cada uno se toman tres direcciones: horizontal, vertical y axial."],
+    ["p", "Para no perderse, los puntos se numeran del lado libre del motor hacia la bomba, y se les agrega la dirección: 1H, 1V y 1A para el primer rodamiento, 2H, 2V y 2A para el segundo, y así. Lo importante es que el punto quede marcado en la máquina y se mida siempre ahí; si no, las tendencias no sirven."],
+
+    ["h2", "Fallas típicas del motor"],
+    ["lista", [
+      "Desbalance: pico a 1X en radial.",
+      "Desalineación con la bomba: 1X y 2X altos, con vibración axial en el lado acople.",
+      "Rodamientos: picos a sus frecuencias de falla, que no coinciden con la velocidad de giro.",
+      "Holgura: muchos armónicos de la velocidad de giro, a veces medios armónicos.",
+      "Problemas eléctricos: un pico al doble de la frecuencia de la red, 120 Hz en México, que desaparece en cuanto se desenergiza el motor."
+    ]],
+
+    ["h2", "Fallas típicas de la bomba"],
+    ["lista", [
+      "Paso de álabes: un pico a la velocidad de giro multiplicada por el número de álabes del impulsor. Es normal que exista; lo que preocupa es que crezca.",
+      "Cavitación: un ruido de banda ancha en alta frecuencia, muchas veces acompañado de un sonido como de grava pasando por la bomba.",
+      "Operar lejos de su punto de mejor eficiencia: recirculación y vibración a baja frecuencia que cambia con el flujo.",
+      "Rodamientos, desbalance del impulsor y desalineación, igual que en el motor."
+    ]],
+    ["p", "Para la severidad, las bombas centrífugas tienen su propia parte de la norma, la ISO 10816-7. Para el resto de las máquinas se usa la ISO 10816-3; te explicamos cómo leerla en la guía de la [tabla ISO 10816-3](/blog/tabla-iso-10816-3-y-20816-3-limites-de-vibracion)."],
+
+    ["h2", "Buenas prácticas para que las mediciones sirvan"],
+    ["lista", [
+      "Marca los puntos en la máquina y mide siempre en el mismo lugar.",
+      "Monta el sensor sobre metal limpio y plano; un imán mal asentado cambia la lectura.",
+      "Mide con el equipo en condiciones parecidas de carga y flujo en cada ruta.",
+      "Anota la velocidad y, en bombas, el flujo o la presión si se puede.",
+      "Compara contra la ruta anterior, no solo contra la tabla."
+    ]],
+
+    ["h2", "Rutas o sensores en línea"],
+    ["p", "Para la mayoría de los motor-bomba, una ruta mensual o bimestral es suficiente. Para los equipos de los que depende toda la planta, o los que están en lugares difíciles de alcanzar, conviene poner [sensores de vibración en línea](/servicios/monitoreo-continuo/sensores-vibracion) que avisen en cuanto algo cambia."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Se puede medir una bomba vertical igual?"],
+    ["p", "Sí, pero los puntos cambian: se mide en el motor, arriba, y en la parte alta de la estructura. Las bombas verticales tienen mucha tendencia a la resonancia, así que conviene que el analista la revise."],
+    ["h3", "¿Qué hago si sale cavitación?"],
+    ["p", "Revisar la succión: nivel del tanque, filtros tapados, válvulas cerradas a medias y que la bomba no esté trabajando fuera de su curva. La cavitación daña el impulsor aunque la vibración global no se vea tan alta."],
+    ["h3", "¿Cómo distingo un problema eléctrico de uno mecánico?"],
+    ["p", "Si el pico a 120 Hz desaparece en el instante en que se corta la energía, es eléctrico; si baja poco a poco con la velocidad, es mecánico. Para las fallas del lado de la máquina, revisa la guía de [desbalance y desalineación](/blog/diferencia-entre-desbalance-y-desalineacion)."],
+
+    ["nota", "Medimos tus motor-bomba punto por punto y te decimos qué tiene cada uno y qué atender primero. Conoce nuestro [análisis de vibraciones](/servicios/monitoreo-condicion/vibraciones-mecanicas)."]
+  ]
+}
