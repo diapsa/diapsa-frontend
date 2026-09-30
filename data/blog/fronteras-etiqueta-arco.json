@@ -1,0 +1,53 @@
+{
+  "slug": "fronteras-de-proteccion-y-etiqueta-de-arco-electrico-como-leerla",
+  "titulo": "Fronteras de protección y etiqueta de arco eléctrico: cómo leerla",
+  "extracto": "Las tres fronteras alrededor de un tablero, qué pide cada una, y cómo leer renglón por renglón la etiqueta de advertencia de arco eléctrico con un ejemplo real.",
+  "portada": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
+  "fecha": "2026-09-30T23:59:50.000000Z",
+  "seo": {
+    "titulo": "Fronteras de arco eléctrico y cómo leer la etiqueta",
+    "descripcion": "Qué son la frontera de arco, la frontera limitada y la frontera restringida según NFPA 70E, qué pide cada una y cómo leer la etiqueta de advertencia de arco eléctrico de un tablero."
+  },
+  "bloques": [
+    ["p", "Un estudio de arco eléctrico termina en una etiqueta pegada en cada tablero. Esa etiqueta es lo que ve el electricista justo antes de abrirlo, y en unos cuantos renglones le dice todo lo que necesita saber. Pero solo sirve si se entiende. Aquí la leemos con un ejemplo real."],
+
+    ["h2", "Las tres fronteras"],
+    ["p", "Alrededor de cada tablero energizado hay tres distancias donde cambian las reglas:"],
+    ["h3", "Frontera de arco"],
+    ["p", "Es la distancia a la que un arco podría causar una quemadura de segundo grado. Más cerca de esa línea, hace falta ropa resistente al arco de la categoría del tablero. Depende de la energía, así que cambia de un tablero a otro."],
+    ["h3", "Frontera limitada"],
+    ["p", "Es la distancia a partir de la cual hay riesgo de choque eléctrico. Solo puede cruzarla personal calificado, o alguien que vaya acompañado por una persona calificada. Depende del voltaje."],
+    ["h3", "Frontera restringida"],
+    ["p", "Es la más cercana. Dentro de ella, solo personal calificado, con protección contra choque eléctrico, como guantes aislantes, y con un plan de trabajo."],
+
+    ["h2", "Cómo leer la etiqueta, renglón por renglón"],
+    ["p", "Esta es la del interruptor principal de un estudio real de 18 tableros:"],
+    ["lista", [
+      "Equipo y voltaje: interruptor principal, 480 V.",
+      "Energía incidente: 5.88 cal/cm², a la distancia de trabajo.",
+      "Distancia de trabajo: 46 cm, la posición típica de las manos y la cara al trabajar.",
+      "Categoría de EPP: 2, es decir, ropa de al menos 8 cal/cm².",
+      "Frontera de arco: 124 cm.",
+      "Frontera limitada: 100 cm.",
+      "Frontera restringida: 30 cm.",
+      "Guantes: clase 00, para protección contra choque."
+    ]],
+    ["p", "Leída en orden: a más de 124 cm, cualquier persona puede estar sin EPP de arco; entre 124 y 100 cm, hace falta la ropa de categoría 2; a menos de 100 cm, solo personal calificado; y a menos de 30 cm, además, protección contra choque."],
+
+    ["h2", "Errores comunes con las etiquetas"],
+    ["lista", [
+      "Etiquetas genéricas que no salen de un cálculo del tablero.",
+      "Etiquetas viejas que no se actualizaron después de un cambio en la instalación.",
+      "Etiquetas pegadas donde no se ven al abrir el tablero.",
+      "Personal que no sabe leerlas porque nadie se las explicó."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿La etiqueta es obligatoria?"],
+    ["p", "La NOM-029-STPS-2011 pide señalizar el riesgo y dar el EPP adecuado, y la etiqueta es la forma más clara de hacerlo en cada tablero. Lo resumimos en la guía de la [NOM-029-STPS-2011](/blog/nom-029-stps-2011-que-pide-sobre-arco-electrico)."],
+    ["h3", "¿Qué significa la categoría?"],
+    ["p", "Es el nivel de ropa de protección que pide el tablero. Lo explicamos en la guía de [energía incidente y categorías de EPP](/blog/energia-incidente-y-categorias-de-epp-arco-electrico)."],
+
+    ["nota", "Te entregamos una etiqueta por tablero, lista para pegar, y te ayudamos a que tu personal sepa leerla. Conoce el [estudio de arco eléctrico](/servicios/monitoreo-condicion/arco-electrico)."]
+  ]
+}
