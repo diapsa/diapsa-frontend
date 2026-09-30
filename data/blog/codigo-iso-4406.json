@@ -1,0 +1,60 @@
+{
+  "slug": "codigo-iso-4406-como-leer-la-tabla-de-limpieza-del-aceite",
+  "titulo": "Código ISO 4406: cómo leer la tabla de limpieza del aceite",
+  "extracto": "Qué significan los tres números del código ISO 4406, la tabla de rangos para convertir partículas a código, un ejemplo real de una chumacera y cómo decidir qué tan limpio debe estar tu aceite.",
+  "portada": "/images/servicios/analisis-de-aceite/muestreo-cabezal.webp",
+  "fecha": "2026-09-30T23:56:00.000000Z",
+  "seo": {
+    "titulo": "Código ISO 4406: tabla de limpieza del aceite y cómo leerla",
+    "descripcion": "Qué es el código de limpieza ISO 4406, qué significan sus tres números, la tabla de rangos de partículas por mililitro, un ejemplo real y cómo fijar el nivel de limpieza de cada equipo."
+  },
+  "bloques": [
+    ["p", "Cuando llega un informe de análisis de aceite, casi siempre trae un renglón con tres números separados por diagonales, algo como 18/16/13. Es el código ISO 4406, y es la forma más usada de decir qué tan limpio está un aceite. Vale la pena entenderlo, porque la suciedad es la causa más común del desgaste de rodamientos, engranes y componentes hidráulicos."],
+
+    ["h2", "Qué significan los tres números"],
+    ["p", "El laboratorio cuenta cuántas partículas hay en un mililitro de aceite, en tres tamaños: mayores a 4 micras, mayores a 6 micras y mayores a 14 micras. Cada cantidad se convierte en un número de código con una tabla. Así, en 18/16/13, el 18 corresponde a las partículas mayores a 4 micras, el 16 a las mayores a 6 y el 13 a las mayores a 14."],
+    ["p", "Para darse una idea del tamaño: un cabello humano mide alrededor de 70 micras. Las partículas que más daño hacen son justo las que no se ven, porque son del tamaño de las holguras internas de las piezas."],
+
+    ["h2", "La tabla de rangos"],
+    ["p", "Cada número de código cubre un rango de partículas por mililitro, y cada vez que el código sube uno, el rango se duplica:"],
+    ["lista", [
+      "Código 13: de 40 a 80 partículas por mililitro.",
+      "Código 14: de 80 a 160.",
+      "Código 15: de 160 a 320.",
+      "Código 16: de 320 a 640.",
+      "Código 17: de 640 a 1,300.",
+      "Código 18: de 1,300 a 2,500.",
+      "Código 19: de 2,500 a 5,000.",
+      "Código 20: de 5,000 a 10,000.",
+      "Código 21: de 10,000 a 20,000.",
+      "Código 22: de 20,000 a 40,000."
+    ]],
+    ["p", "Eso quiere decir que pasar de un 18 a un 20 no es un cambio menor: son unas cuatro veces más partículas."],
+
+    ["h2", "Un ejemplo real"],
+    ["p", "Esta es la serie de una chumacera de bomba de proceso, contando las partículas mayores a 4 micras. En diciembre tenía 1,118 por mililitro, código 17. Para junio había subido a 27,288, código 22, y el laboratorio la calificó en alarma. Se filtró el aceite en sitio y la siguiente muestra bajó a 4,112, código 19, y se mantuvo ahí en las dos muestras que siguieron. Sin la serie, la alarma habría sido una sorpresa y la mejora, una suposición."],
+
+    ["h2", "Qué tan limpio debe estar tu aceite"],
+    ["p", "No hay un solo número correcto: depende del equipo. Los sistemas hidráulicos con servoválvulas o válvulas proporcionales tienen holguras muy chicas y piden aceites muy limpios. Los reductores y cajas de engranes toleran más. La referencia correcta es la que pide el fabricante del equipo o del componente más sensible del sistema."],
+    ["p", "Lo práctico es fijar un código objetivo para cada equipo y medir contra él. Si la muestra sale más sucia que el objetivo, se busca por dónde entra la suciedad antes de filtrar, porque filtrar sin cerrar la entrada es pagar dos veces."],
+
+    ["h2", "Por dónde entra la suciedad"],
+    ["lista", [
+      "Respiraderos sin filtro, que meten polvo cada vez que el nivel baja.",
+      "Sellos dañados en ejes y vástagos.",
+      "Aceite nuevo que llega sucio del tambor y se agrega sin filtrar.",
+      "Tapas y registros abiertos durante el mantenimiento.",
+      "Desgaste interno: las partículas que el propio equipo genera."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Por qué a veces el código tiene solo dos números?"],
+    ["p", "Porque algunos métodos de conteo, como el microscopio, no cuentan las partículas de 4 micras. En ese caso se reporta con un guion en el primer lugar, por ejemplo -/16/13."],
+    ["h3", "¿El aceite nuevo está limpio?"],
+    ["p", "No necesariamente. El aceite nuevo de tambor muchas veces viene más sucio de lo que pide un sistema hidráulico. Por eso conviene filtrarlo al llenar."],
+    ["h3", "¿El código ISO 4406 dice de dónde vienen las partículas?"],
+    ["p", "No, solo cuántas hay. Para saber si son de desgaste o de polvo se revisan los metales y el silicio en la espectrometría. Lo explicamos en la guía de [pruebas del análisis de aceite](/blog/analisis-de-aceite-en-mantenimiento-predictivo-pruebas-y-muestreo)."],
+
+    ["nota", "Muestreamos tus equipos, los mandamos a laboratorio acreditado y te decimos qué significa cada código para tu equipo. Conoce nuestro [análisis de aceite](/servicios/monitoreo-condicion/analisis-de-aceite)."]
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "analisis-de-aceite-en-mantenimiento-predictivo-pruebas-y-muestreo",
+  "titulo": "Análisis de aceite en mantenimiento predictivo: qué pruebas incluye y cómo tomar la muestra",
+  "extracto": "Las pruebas de un análisis de aceite lubricante y qué dice cada una, cómo tomar una muestra que sirva, cada cuánto muestrear y cómo leer el informe sin perderse en los números.",
+  "portada": "/images/servicios/analisis-de-aceite/muestreo-motor-azul.webp",
+  "fecha": "2026-09-30T23:58:00.000000Z",
+  "seo": {
+    "titulo": "Análisis de aceite en mantenimiento predictivo: pruebas y muestreo",
+    "descripcion": "Qué pruebas incluye un análisis de aceite industrial (espectrometría, viscosidad, agua, acidez, conteo de partículas), cómo tomar una muestra de aceite correctamente y cada cuánto muestrear."
+  },
+  "bloques": [
+    ["p", "El análisis de aceite es de las técnicas predictivas más baratas y de las que avisan más temprano. Antes de que un rodamiento o un engrane vibre o se caliente, ya está soltando partículas de metal al aceite. El truco está en saber qué pruebas pedir, tomar bien la muestra y leer el resultado contra el equipo y contra la muestra anterior."],
+
+    ["h2", "Las pruebas y qué dice cada una"],
+    ["h3", "Espectrometría de metales"],
+    ["p", "Mide cuántas partes por millón hay de cada metal. Los metales de desgaste dicen qué pieza se está gastando: hierro de engranes, ejes y rodamientos; cobre de bujes y enfriadores; plomo y estaño de cojinetes. También mide contaminantes, como el silicio, que casi siempre es polvo, y los aditivos del aceite."],
+    ["h3", "Viscosidad"],
+    ["p", "Es la propiedad más importante de un lubricante. Si sube, el aceite se está oxidando o se mezcló con uno más grueso; si baja, puede haber dilución con combustible o se agregó un aceite equivocado. Se mide a 40 °C para aceites industriales."],
+    ["h3", "Agua"],
+    ["p", "El agua reduce la capacidad del aceite para proteger y acelera la oxidación y la corrosión. Se mide en partes por millón, normalmente con el método Karl Fischer."],
+    ["h3", "Acidez"],
+    ["p", "El número ácido dice qué tan oxidado está el aceite. Cuando sube, el aceite está llegando al final de su vida útil."],
+    ["h3", "Conteo de partículas"],
+    ["p", "Cuenta las partículas por tamaño y lo expresa con el código ISO 4406. Es clave en sistemas hidráulicos y en turbinas. Te explicamos cómo leerlo en la guía del [código ISO 4406](/blog/codigo-iso-4406-como-leer-la-tabla-de-limpieza-del-aceite)."],
+
+    ["h2", "Cómo tomar una muestra que sirva"],
+    ["numerada", [
+      "Con el equipo operando y a temperatura de trabajo, que es cuando el aceite lleva en suspensión lo que interesa ver.",
+      "Siempre del mismo punto, idealmente una válvula de muestreo instalada en la línea de retorno o antes del filtro.",
+      "Purgar primero el punto, para no mandar al laboratorio el aceite que estaba estancado.",
+      "Usar un frasco limpio y nuevo, sin abrirlo antes de tiempo.",
+      "Identificar la muestra con el equipo, el tipo de aceite, las horas de uso y si hubo cambio o relleno.",
+      "Enviarla pronto al laboratorio."
+    ]],
+    ["p", "Una muestra mal tomada da un resultado que no sirve, por bueno que sea el laboratorio. Tomarla del fondo de un cárter o del drenado después de parar el equipo es el error más común."],
+
+    ["h2", "Cada cuánto muestrear"],
+    ["p", "Como punto de partida, los equipos críticos cada tres meses y los demás cada seis. Cuando un resultado sale fuera, se acorta el plazo hasta confirmar la tendencia. Lo que vale es la serie: un valor suelto dice poco."],
+
+    ["h2", "Cómo leer el informe"],
+    ["lista", [
+      "Empieza por la condición general del equipo y lo que recomienda el analista.",
+      "Compara cada parámetro contra la muestra anterior, no solo contra el límite.",
+      "Si suben juntos el silicio y el hierro, entra polvo y ya está causando desgaste.",
+      "Si sube el agua, busca la entrada antes de cambiar el aceite.",
+      "Si todo está estable, no cambies el aceite solo porque tocaba por calendario."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Hay que parar el equipo para muestrear?"],
+    ["p", "No. Al contrario: la muestra se toma con el equipo en operación."],
+    ["h3", "¿Cuánto tardan los resultados?"],
+    ["p", "Normalmente unos días desde que la muestra llega al laboratorio."],
+    ["h3", "¿Sirve para transformadores?"],
+    ["p", "Sí, pero con otras pruebas. En el aceite de transformadores se hace el análisis de gases disueltos. Lo explicamos en la guía de [DGA y triángulo de Duval](/blog/analisis-de-gases-disueltos-dga-en-transformadores-y-triangulo-de-duval)."],
+
+    ["nota", "Armamos tu programa de muestreo, tomamos las muestras con el procedimiento correcto y te entregamos el diagnóstico con la tendencia de cada equipo. Conoce nuestro [análisis de aceite](/servicios/monitoreo-condicion/analisis-de-aceite)."]
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "analisis-de-gases-disueltos-dga-en-transformadores-y-triangulo-de-duval",
+  "titulo": "Análisis de gases disueltos (DGA) en transformadores y el triángulo de Duval",
+  "extracto": "Qué gases se forman en el aceite de un transformador, qué falla indica cada uno, cómo se lee el triángulo de Duval con un ejemplo, cómo se toma la muestra y cada cuánto conviene hacerlo.",
+  "portada": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
+  "fecha": "2026-09-30T23:57:00.000000Z",
+  "seo": {
+    "titulo": "DGA en transformadores: gases disueltos y triángulo de Duval",
+    "descripcion": "Qué es el análisis de gases disueltos (DGA) en el aceite de transformadores, qué indica cada gas, cómo leer el triángulo de Duval con un ejemplo, cómo se toma la muestra y con qué frecuencia."
+  },
+  "bloques": [
+    ["p", "Un transformador puede tener una falla interna durante meses sin que nada se note por fuera: no vibra distinto, no hace ruido y a veces ni siquiera se calienta por fuera. Pero por dentro, el aceite y el papel aislante se están descomponiendo y liberando gases que se quedan disueltos en el aceite. El análisis de gases disueltos, o DGA, los mide y dice qué está pasando dentro."],
+
+    ["h2", "Qué gases se miden y qué indica cada uno"],
+    ["lista", [
+      "Hidrógeno: aparece en casi todas las fallas, y solo, o casi solo, es típico de descargas parciales.",
+      "Metano y etano: sobrecalentamiento del aceite a temperaturas relativamente bajas.",
+      "Etileno: sobrecalentamiento a temperaturas más altas.",
+      "Acetileno: arqueo o temperaturas muy altas. Aunque sea poco, siempre merece atención.",
+      "Monóxido y dióxido de carbono: el papel aislante se está degradando por temperatura."
+    ]],
+    ["p", "Lo importante no es un gas suelto, sino la combinación y cómo cambia de una muestra a otra. Por eso existen métodos de interpretación que usan las proporciones entre gases."],
+
+    ["h2", "El triángulo de Duval"],
+    ["p", "Es el método de interpretación más usado. Toma solo tres gases, metano, etileno y acetileno, calcula qué porcentaje representa cada uno del total de los tres, y con eso ubica un punto dentro de un triángulo. El triángulo está dividido en zonas, y cada zona es un tipo de falla:"],
+    ["lista", [
+      "PD: descargas parciales.",
+      "T1: falla térmica menor a 300 °C.",
+      "T2: falla térmica de 300 a 700 °C.",
+      "T3: falla térmica mayor a 700 °C.",
+      "D1: descargas de baja energía.",
+      "D2: descargas de alta energía, es decir, arqueo.",
+      "DT: una mezcla de falla térmica y eléctrica."
+    ]],
+
+    ["h2", "Un ejemplo"],
+    ["p", "Una muestra reporta 180 ppm de metano, 120 ppm de etileno y 1 ppm de acetileno. El total de los tres es 301. El metano es el 60 %, el etileno el 40 % y el acetileno casi cero. Ese punto cae en la zona T2: una falla térmica de entre 300 y 700 °C, típica de una conexión caliente o de corrientes circulando donde no deben. No es una emergencia de un día para otro, pero sí pide una segunda muestra pronto para ver qué tan rápido crecen los gases, y revisar la carga del equipo."],
+
+    ["h2", "Cómo se toma la muestra"],
+    ["p", "La muestra se toma de la válvula de muestreo del tanque, con el transformador en operación, que es cuando los gases están en el aceite. Se usa una jeringa de vidrio o un recipiente especial, sin dejar burbujas, porque los gases se escapan al aire y el resultado saldría bajo. Como se trabaja cerca de un equipo energizado, se hace con el equipo de protección que exige la tarea."],
+
+    ["h2", "Cada cuánto conviene hacerlo"],
+    ["p", "Para la mayoría de los transformadores de distribución y potencia en planta, una vez al año es un buen punto de partida. Si un resultado sale alto o los gases crecen, se acorta el plazo. En transformadores muy críticos, existen monitores en línea que miden los gases de forma continua."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Qué normas aplican?"],
+    ["p", "Para la interpretación se usan sobre todo la IEEE C57.104 y la IEC 60599, que incluye el triángulo de Duval. Cada una propone límites y criterios un poco distintos, así que el informe debe decir con cuál se evaluó."],
+    ["h3", "¿El DGA sustituye las pruebas fisicoquímicas del aceite?"],
+    ["p", "No, se complementan. El DGA dice si hay una falla incubándose. Las pruebas fisicoquímicas, como rigidez dieléctrica, humedad y acidez, dicen en qué estado está el aceite como aislante."],
+    ["h3", "¿Hay que desenergizar el transformador?"],
+    ["p", "No. La muestra se toma con el equipo en carga, que además es la condición en que el resultado sirve más."],
+
+    ["nota", "Tomamos la muestra de tus transformadores en carga, la analizamos en laboratorio acreditado y te entregamos la interpretación. Conoce nuestro [análisis de aceite y DGA](/servicios/monitoreo-condicion/analisis-de-aceite)."]
+  ]
+}
