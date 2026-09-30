@@ -26,7 +26,7 @@ import { montarIdap } from "@/lib/idap-escena";
 
 type Props = {
   /** Pestaña que se abre sola en el bucle: la disciplina de la página. */
-  disciplina?: "term" | "vib" | "us";
+  disciplina?: "term" | "vib" | "us" | "oil" | "ele";
   /** Fotografías térmicas reales para los huecos de la pestaña de termografía. */
   imagenes?: { principal?: string; miniaturas?: string[]; visual?: string };
 };
@@ -64,7 +64,14 @@ const CSS = `.idap-wrap{container-type:inline-size;width:100%;max-width:1024px;m
 .idap .toast svg{width:1.2em;height:1.2em;color:var(--b)}
 .idap .toast.in svg{animation:spin .9s linear 2}
 @keyframes spin{to{transform:rotate(360deg)}}
-.idap .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1em}
+.idap .cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.75em}
+.idap .card .v{font-size:1.1em}
+.idap .ogrid{display:grid;grid-template-columns:1.35fr 1fr;gap:.75em;height:100%}
+.idap .ogrid .pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.idap .onote{font-size:.75em;color:var(--mut);line-height:1.45}
+.idap .onote b{color:#fff}
+.idap .pane[data-pane=oil].show .tile, .idap .pane[data-pane=ele].show .tile{animation:fadeUp .35s both;animation-delay:calc(.2s + var(--i)*.12s)}
+.idap .pane[data-pane=oil].show .row, .idap .pane[data-pane=ele].show .row{animation:fadeUp .35s both;animation-delay:calc(.6s + var(--i)*.1s)}
 .idap .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.875em 1em;display:flex;flex-direction:column;gap:.55em;cursor:pointer;
   transition:border-color .2s,background .2s;position:relative}
 .idap .card:hover, .idap .card.active{border-color:rgba(255,255,255,.18);background:#141c2c}
@@ -247,7 +254,7 @@ const CSS = `.idap-wrap{container-type:inline-size;width:100%;max-width:1024px;m
 .idap .hd{flex-direction:column;align-items:flex-start;gap:.6em}
 .idap .cards{grid-template-columns:1fr}
 .idap .panel{overflow:visible}
-.idap .grid3, .idap .tgrid, .idap .ugrid{grid-template-columns:1fr;grid-template-rows:none;height:auto}
+.idap .grid3, .idap .tgrid, .idap .ugrid, .idap .ogrid{grid-template-columns:1fr;grid-template-rows:none;height:auto}
 .idap .tspots, .idap .uwave, .idap .usev{grid-column:auto}
 .idap .pgrid{grid-template-columns:1fr 1fr}
 .idap .wrow{flex-direction:column}
@@ -256,7 +263,7 @@ const CSS = `.idap-wrap{container-type:inline-size;width:100%;max-width:1024px;m
 .idap .reco{transform:translateY(40%)}
 .idap .tabs{gap:1em;overflow-x:auto;overflow-y:hidden;padding-bottom:1px}}`;
 
-const MARCADO = `<div class="idap" id="idap" role="img" aria-label="Inspección integral del equipo Motor en IDAP: termografía en alarma, vibraciones en precaución, ultrasonido en alarma. Recomendación: programar cambio de rodamiento del lado de carga en la próxima ventana de producción.">
+const MARCADO = `<div class="idap" id="idap" role="img" aria-label="Inspección integral del equipo Motor en IDAP: termografía en alarma, vibraciones en precaución, ultrasonido en alarma, aceite en observación y análisis eléctrico en buen estado. Recomendación: programar cambio de rodamiento del lado de carga en la próxima ventana de producción.">
 
   <div class="toast" id="toast" aria-hidden="true">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.5 6.3L3 16"></path><path d="M3 21v-5h5"></path><path d="M3 12a9 9 0 0 1 15.5-6.3L21 8"></path><path d="M21 3v5h-5"></path></svg>
@@ -270,7 +277,7 @@ const MARCADO = `<div class="idap" id="idap" role="img" aria-label="Inspección 
     </div>
     <div class="badges">
       <span class="badge">Integral</span>
-      <span class="badge">3 disciplinas evaluadas</span>
+      <span class="badge">5 disciplinas evaluadas</span>
       <span class="badge r">Alarma</span>
     </div>
   </header>
@@ -303,6 +310,24 @@ const MARCADO = `<div class="idap" id="idap" role="img" aria-label="Inspección 
       </div>
       <div class="st"><span class="sk"></span><span class="badge r">Alarma</span></div>
     </div>
+    <div class="card" data-tab="oil" tabindex="0">
+      <div class="lab">Aceite
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-6 6.6-6 11a6 6 0 0 0 12 0c0-4.4-6-11-6-11z"></path></svg></div>
+      <div class="vals">
+        <span class="v"><span class="sk"></span><span class="n"><b data-count="42" data-dec="0">0</b> ppm Fe</span></span>
+        <span class="s"><span class="sk"></span><span class="n"><b data-count="68.2" data-dec="1">0.0</b> cSt</span></span>
+      </div>
+      <div class="st"><span class="sk"></span><span class="badge y">Observación</span></div>
+    </div>
+    <div class="card" data-tab="ele" tabindex="0">
+      <div class="lab">Eléctrico
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"></path></svg></div>
+      <div class="vals">
+        <span class="v"><span class="sk"></span><span class="n"><b data-count="1.2" data-dec="1">0.0</b> % desb.</span></span>
+        <span class="s"><span class="sk"></span><span class="n">THD <b data-count="3.1" data-dec="1">0.0</b> %</span></span>
+      </div>
+      <div class="st"><span class="sk"></span><span class="badge g">Bueno</span></div>
+    </div>
   </div>
 
   <nav class="tabs" id="tabs">
@@ -310,6 +335,8 @@ const MARCADO = `<div class="idap" id="idap" role="img" aria-label="Inspección 
     <button class="tab" data-tab="term">Termografía</button>
     <button class="tab" data-tab="vib">Vibraciones</button>
     <button class="tab" data-tab="us">Ultrasonido</button>
+    <button class="tab" data-tab="oil">Aceite</button>
+    <button class="tab" data-tab="ele">Eléctrico</button>
   </nav>
 
   <div class="panel" id="panel">
@@ -370,7 +397,7 @@ const MARCADO = `<div class="idap" id="idap" role="img" aria-label="Inspección 
           <div class="rb rows" style="--i:2">
             <div class="row"><span>Componente</span><b>Rodamiento, lado de carga</b></div>
             <div class="row"><span>Urgencia</span><b>Próxima ventana de producción</b></div>
-            <div class="row"><span>Seguimiento</span><b>Reinspección en 30 días</b></div>
+            <div class="row"><span>Confirmado por</span><b>Termografía, ultrasonido y aceite</b></div>
           </div>
           <div class="rb" style="--i:3">
             <span class="rl">Tendencia</span>
@@ -472,6 +499,56 @@ const MARCADO = `<div class="idap" id="idap" role="img" aria-label="Inspección 
           <div class="sev">
             <div class="segs"><span>Bueno, 15 a 23</span><span>Observación, 24 a 31</span><span>Precaución, 32 a 39</span><span>Alarma, mayor a 39</span></div>
             <div class="smark"><span>47 dB</span><i></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aceite -->
+    <div class="pane" data-pane="oil">
+      <div class="ogrid">
+        <div class="blk">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-6 6.6-6 11a6 6 0 0 0 12 0c0-4.4-6-11-6-11z"></path></svg>Análisis de aceite, cojinete lado carga</h3>
+          <div class="pgrid">
+            <div class="tile on g" style="--i:0"><span class="k">VISCOSIDAD 40 °C</span><span class="val">68.2<small>cSt</small></span></div>
+            <div class="tile on g" style="--i:1"><span class="k">AGUA</span><span class="val">120<small>ppm</small></span></div>
+            <div class="tile on y" style="--i:2"><span class="k">HIERRO</span><span class="val">42<small>ppm</small></span></div>
+            <div class="tile on y" style="--i:3"><span class="k">ÍNDICE PQ</span><span class="val">38</span></div>
+          </div>
+          <p class="onote">Partículas de desgaste en aumento: <b>coinciden con el daño del rodamiento</b> que marcan la termografía y el ultrasonido.</p>
+        </div>
+        <div class="blk">
+          <h3>Indicadores principales</h3>
+          <div class="rows">
+            <div class="row" style="--i:0"><span>Hierro, muestra anterior</span><b>18 ppm</b></div>
+            <div class="row" style="--i:1"><span>Límite de observación</span><b>35 ppm</b></div>
+            <div class="row" style="--i:2"><span>Contaminación por agua</span><b>Normal</b></div>
+            <div class="row" style="--i:3"><span>Estado</span><b><span class="badge y">Observación</span></b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Eléctrico -->
+    <div class="pane" data-pane="ele">
+      <div class="ogrid">
+        <div class="blk">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"></path></svg>Análisis eléctrico del motor</h3>
+          <div class="pgrid">
+            <div class="tile on g" style="--i:0"><span class="k">CORRIENTE FASE A</span><span class="val">48.2<small>A</small></span></div>
+            <div class="tile on g" style="--i:1"><span class="k">CORRIENTE FASE B</span><span class="val">47.6<small>A</small></span></div>
+            <div class="tile on g" style="--i:2"><span class="k">CORRIENTE FASE C</span><span class="val">48.0<small>A</small></span></div>
+            <div class="tile on g" style="--i:3"><span class="k">AISLAMIENTO</span><span class="val">1.8<small>GΩ</small></span></div>
+          </div>
+          <p class="onote">Alimentación y aislamiento en buen estado: <b>la falla es mecánica, no eléctrica.</b></p>
+        </div>
+        <div class="blk">
+          <h3>Indicadores principales</h3>
+          <div class="rows">
+            <div class="row" style="--i:0"><span>Desbalance de corriente</span><b>1.2 %</b></div>
+            <div class="row" style="--i:1"><span>Distorsión armónica (THD)</span><b>3.1 %</b></div>
+            <div class="row" style="--i:2"><span>Tensión entre fases</span><b>460 V</b></div>
+            <div class="row" style="--i:3"><span>Estado</span><b><span class="badge g">Bueno</span></b></div>
           </div>
         </div>
       </div>
