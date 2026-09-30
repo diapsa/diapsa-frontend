@@ -1,0 +1,52 @@
+{
+  "slug": "falla-de-rodamientos-en-motores-electricos-como-detectarla-a-tiempo",
+  "titulo": "Falla de rodamientos en motores eléctricos: causas y cómo detectarla a tiempo",
+  "extracto": "Por qué fallan los rodamientos de los motores, las etapas de la falla, qué ve cada técnica predictiva en cada etapa y qué hacer cuando se detecta.",
+  "portada": "/images/servicios/diagnostico-integral/campo-analista-motor.webp",
+  "fecha": "2026-09-30T23:59:56.000000Z",
+  "seo": {
+    "titulo": "Falla de rodamientos en motores eléctricos: causas y detección",
+    "descripcion": "Causas más comunes de falla de rodamientos en motores eléctricos, las etapas de la falla y cómo detectarla a tiempo con análisis de aceite, ultrasonido, vibraciones y termografía."
+  },
+  "bloques": [
+    ["p", "Los rodamientos son la causa más común de falla en motores eléctricos. La buena noticia es que casi nunca fallan de golpe: pasan por varias etapas, y en cada una dejan señales que se pueden detectar. Saber leerlas es la diferencia entre cambiar un rodamiento en un paro programado o cambiar el motor completo a media noche."],
+
+    ["h2", "Por qué fallan"],
+    ["lista", [
+      "Lubricación: poca grasa, demasiada, la grasa equivocada o grasa contaminada. Es la causa número uno.",
+      "Contaminación: polvo o agua que entra por los sellos.",
+      "Desalineación y desbalance, que cargan de más al rodamiento.",
+      "Montaje: golpes al instalarlo o ajustes incorrectos en el eje o el alojamiento.",
+      "Corrientes que pasan por el rodamiento, sobre todo en motores con variador de frecuencia."
+    ]],
+
+    ["h2", "Las etapas de la falla y qué ve cada técnica"],
+    ["h3", "Etapa 1: el daño apenas empieza"],
+    ["p", "Hay cambios microscópicos en las pistas o problemas de lubricación. El ultrasonido ya puede notar más fricción, y el aceite, donde aplica, empieza a mostrar partículas. La vibración global casi no cambia."],
+    ["h3", "Etapa 2: aparecen defectos pequeños"],
+    ["p", "Las frecuencias de falla del rodamiento aparecen en el espectro de vibraciones. Es el momento ideal para planear el cambio: se sabe qué rodamiento es y todavía hay margen."],
+    ["h3", "Etapa 3: el defecto crece"],
+    ["p", "La vibración sube y aparecen armónicos. El ruido ya se puede oír y la termografía empieza a ver calentamiento. Hay que programar el cambio pronto."],
+    ["h3", "Etapa 4: cerca de la falla"],
+    ["p", "Mucho ruido, calor y vibración. El rodamiento puede trabarse y dañar el eje o el devanado del motor. Aquí ya no se planea: se reacciona."],
+
+    ["h2", "Qué hacer cuando se detecta"],
+    ["numerada", [
+      "Confirmar con una segunda técnica, para no parar por una falsa alarma.",
+      "Revisar la lubricación: a veces una falla en etapa temprana se detiene con el engrase correcto.",
+      "Estimar el margen y compararlo con lo que tarda la refacción.",
+      "Pedir la refacción y programar el cambio en una ventana.",
+      "Buscar la causa: si el rodamiento falló por desalineación o contaminación, el nuevo va a fallar igual."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Cada cuánto se engrasa un rodamiento de motor?"],
+    ["p", "Depende del tamaño, la velocidad y las condiciones. Lo indica el fabricante del motor. El ultrasonido ayuda a engrasar lo justo; lo explicamos en la guía de [lubricación por ultrasonido](/blog/lubricacion-por-ultrasonido-como-engrasar-rodamientos)."],
+    ["h3", "¿Se puede saber cuánto le queda a un rodamiento?"],
+    ["p", "Con una estimación razonable, sí, sobre todo si se tiene el historial de mediciones. Por eso se mide con frecuencia y se sigue la tendencia."],
+    ["h3", "¿Qué técnica lo ve primero?"],
+    ["p", "Normalmente el ultrasonido o el aceite, y la vibración dice qué rodamiento es. Lo explicamos en la guía de la [curva P-F](/blog/curva-p-f-en-mantenimiento-predictivo-que-es-y-como-usarla)."],
+
+    ["nota", "En el [diagnóstico integral](/servicios/monitoreo-condicion/diagnostico-de-maquinaria) cruzamos las cuatro técnicas para detectar la falla de rodamiento en su etapa más temprana."]
+  ]
+}

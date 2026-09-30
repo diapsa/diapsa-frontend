@@ -437,5 +437,44 @@
       "titulo": "Estudio de Arco Eléctrico",
       "resumen": "Energía incidente, categoría de EPP y etiqueta por tablero, conforme a NOM-029-STPS-2011."
     }
+  },
+  {
+    "articulo": {
+      "slug": "tecnicas-de-mantenimiento-predictivo-como-se-complementan",
+      "titulo": "Técnicas de mantenimiento predictivo",
+      "resumen": "Qué ve cada una y cómo se confirman entre sí.",
+      "portada": "/images/servicios/diagnostico-integral/campo-equipo-ruta.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/diagnostico-de-maquinaria",
+      "titulo": "Diagnóstico Integral de Maquinaria",
+      "resumen": "Vibraciones, termografía, ultrasonido y aceite sobre la misma máquina, en un solo diagnóstico."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "curva-p-f-en-mantenimiento-predictivo-que-es-y-como-usarla",
+      "titulo": "Curva P-F",
+      "resumen": "Qué es y cómo se usa para decidir cada cuánto medir.",
+      "portada": "/images/servicios/diagnostico-integral/campo-ruta-bombas.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/diagnostico-de-maquinaria",
+      "titulo": "Diagnóstico Integral de Maquinaria",
+      "resumen": "Vibraciones, termografía, ultrasonido y aceite sobre la misma máquina, en un solo diagnóstico."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "falla-de-rodamientos-en-motores-electricos-como-detectarla-a-tiempo",
+      "titulo": "Falla de rodamientos en motores",
+      "resumen": "Causas, etapas y qué ve cada técnica.",
+      "portada": "/images/servicios/diagnostico-integral/campo-analista-motor.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/diagnostico-de-maquinaria",
+      "titulo": "Diagnóstico Integral de Maquinaria",
+      "resumen": "Vibraciones, termografía, ultrasonido y aceite sobre la misma máquina, en un solo diagnóstico."
+    }
   }
 ]
