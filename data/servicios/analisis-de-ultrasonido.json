@@ -22,10 +22,10 @@
   ],
   "header": {
     "title": "Análisis de Ultrasonido",
-    "subtitle": "Rodamientos, fugas y descargas eléctricas detectados por el sonido que el oído no alcanza",
+    "subtitle": "Inspección por ultrasonido para mantenimiento predictivo: rodamientos, fugas de aire comprimido y efecto corona, detectados antes de la falla",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Ultrasonido industrial en México: detección de fallas en rodamientos, fugas de aire comprimido y descargas eléctricas con analistas certificados. Informe en menos de 2 días hábiles.",
+  "seoDescription": "Inspección por ultrasonido para mantenimiento predictivo en México: rodamientos y lubricación, fugas de aire comprimido y efecto corona en tableros. Informe en 2 días.",
   "content": {
     "title": "Oímos la falla antes de que se sienta",
     "subtitle": "Un rodamiento que falla, una fuga de aire o una descarga en un tablero suenan antes de verse o calentar. Los oímos, los medimos en decibeles y te decimos qué atender primero.",
@@ -2375,6 +2375,18 @@
       "answer": "Sí. Ubicamos cada fuga aun con el ruido de la planta y el informe las ordena por tamaño para repararlas por prioridad."
     },
     {
+      "question": "¿Qué es el efecto corona y cómo se detecta?",
+      "answer": "Es una descarga en el aire alrededor de un conductor o aislador con el campo eléctrico muy alto. Produce ultrasonido al ritmo de los 60 Hz, así que se detecta en tableros, subestaciones, aisladores y transformadores sin tocar nada ni abrir el tablero."
+    },
+    {
+      "question": "¿Qué es la lubricación por ultrasonido?",
+      "answer": "Engrasar con el detector puesto en el rodamiento: cada disparo baja el nivel y cuando deja de bajar se detiene. Así se evita la falta y el exceso de grasa, que son de las causas más comunes de falla."
+    },
+    {
+      "question": "¿Es lo mismo que el ultrasonido de soldaduras?",
+      "answer": "No. El de ensayos no destructivos mide espesores y defectos en soldaduras con un palpador en contacto. El de mantenimiento predictivo escucha la fricción, las fugas y las descargas con el equipo en operación. Nosotros hacemos el segundo."
+    },
+    {
       "question": "¿Qué necesito para cotizar?",
       "answer": "El listado o número aproximado de equipos, tableros y líneas de aire, y si la planta pide documentos de ingreso."
     }
@@ -2601,19 +2613,19 @@
       "fondo": "gris",
       "bloques": [
         {
-          "titulo": "Rodamientos: lubrica cuando lo piden",
+          "titulo": "Lubricación por ultrasonido: engrasa cuando el rodamiento lo pide",
           "texto": "Con el detector puesto, cada disparo de grasa baja el nivel. Cuando deja de bajar, se detiene: ni de menos ni de más.",
           "video": "/videos/ultrasonido/us-lubricacion",
           "descripcion": "Lubricación guiada por ultrasonido: el nivel del rodamiento baja con cada disparo de grasa hasta su línea base"
         },
         {
-          "titulo": "Aire comprimido: cada fuga con su costo",
+          "titulo": "Detección de fugas de aire comprimido, cada una con su costo",
           "texto": "Recorremos la red y marcamos cada fuga con su nivel y lo que cuesta al año, para que repares primero las que más pesan.",
           "video": "/videos/ultrasonido/us-fugas",
           "descripcion": "Recorrido por una red de aire comprimido: cinco fugas ubicadas con su nivel y su costo anual"
         },
         {
-          "titulo": "Tableros: la descarga se oye cerrado",
+          "titulo": "Efecto corona y descargas parciales, con el tablero cerrado",
           "texto": "Por rejillas y juntas oímos el efecto corona y el arco incipiente sin abrir el tablero, antes de que llegue a falla.",
           "video": "/videos/ultrasonido/us-electrico",
           "descripcion": "Detector de ultrasonido recorriendo un tablero de media tensión cerrado: efecto corona en la sección 2 clasificado en precaución"
@@ -2650,7 +2662,9 @@
             "Cavitación"
           ]
         }
-      ]
+      ],
+      "texto": "Lubricación por ultrasonido, detección de fugas de aire comprimido e inspección eléctrica de tableros y subestaciones."
     }
-  ]
+  ],
+  "seoTitle": "Análisis de ultrasonido para mantenimiento predictivo"
 }

@@ -91,16 +91,17 @@ export async function generateMetadata({
     // La descripción para Google puede ser más larga y vendedora que el
     // subtítulo visible del hero; por eso se separan.
     const descripcion = service.seoDescription ?? service.header.subtitle;
+    const titulo = service.seoTitle ?? service.header.title;
 
     return {
-        title: service.header.title,
+        title: titulo,
         description: descripcion,
         keywords,
         alternates: {
             canonical: `${SITE_CONFIG.baseUrl}/servicios/monitoreo-condicion/${slug}`,
         },
         openGraph: {
-            title: `${service.header.title} | Grupo DIAPSA`,
+            title: `${titulo} | Grupo DIAPSA`,
             description: descripcion,
             url: `${SITE_CONFIG.baseUrl}/servicios/monitoreo-condicion/${slug}`,
             type: "website",
@@ -119,7 +120,7 @@ export async function generateMetadata({
         twitter: {
             card: "summary_large_image",
             site: "@grupodiapsa",
-            title: `${service.header.title} | Grupo DIAPSA`,
+            title: `${titulo} | Grupo DIAPSA`,
             description: descripcion,
             images: [OG_IMAGE],
         },

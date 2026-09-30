@@ -588,6 +588,8 @@ export interface Servicio {
   relatedProducts: RelatedProducts;
   /** Meta descripción para Google. Si falta, se usa header.subtitle
       (que también es el subtítulo visible del hero). */
+  /** Título para Google si debe ser distinto del H1 (lleva la palabra clave principal). */
+  seoTitle?: string;
   seoDescription?: string;
   /** Preguntas frecuentes. Si existen, la página las muestra y emite
       schema FAQPage (elegible para resultado enriquecido en Google). */

@@ -40,7 +40,7 @@ export default function VideosServicio({ grupo, paso }: Props) {
                 }`}
               >
                 <div className={invertir ? "lg:order-2" : ""}>
-                  <div className="overflow-hidden rounded-2xl bg-[#0b0f19] p-2 shadow-[0_30px_70px_-30px_rgba(10,20,46,0.6)] sm:p-3">
+                  <div className="overflow-hidden rounded-2xl bg-white p-2 shadow-[0_30px_70px_-35px_rgba(13,26,56,0.35)] ring-1 ring-primary/10 sm:p-3">
                     <VideoBucle
                       className="block aspect-[16/10] w-full rounded-xl object-cover"
                       src={`${b.video}.mp4`}
