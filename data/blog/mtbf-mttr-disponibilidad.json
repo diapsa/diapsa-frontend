@@ -1,0 +1,58 @@
+{
+  "slug": "mtbf-mttr-y-disponibilidad-formulas-y-ejemplos",
+  "titulo": "MTBF, MTTR y disponibilidad: qué son, fórmulas y un ejemplo resuelto",
+  "extracto": "Los tres indicadores de mantenimiento más usados explicados sin rodeos: qué mide cada uno, cómo se calculan con un ejemplo y los errores que hacen que los números no sirvan.",
+  "portada": "/images/diapsa-start/medicion-campo.webp",
+  "fecha": "2026-09-30T23:50:00.000000Z",
+  "seo": {
+    "titulo": "MTBF, MTTR y disponibilidad: fórmulas y ejemplos resueltos",
+    "descripcion": "Qué son el MTBF y el MTTR, cómo se calculan, cómo se obtiene la disponibilidad a partir de ellos, un ejemplo resuelto paso a paso y los errores más comunes al medirlos."
+  },
+  "bloques": [
+    ["p", "Si alguna vez te han pedido indicadores de mantenimiento, casi seguro aparecieron tres siglas: MTBF, MTTR y disponibilidad. Son los más usados porque responden tres preguntas sencillas: cada cuánto falla un equipo, cuánto tardamos en repararlo y qué parte del tiempo estuvo listo para trabajar."],
+
+    ["h2", "MTBF: tiempo medio entre fallas"],
+    ["p", "Viene del inglés mean time between failures. Mide cuánto tiempo opera un equipo, en promedio, entre una falla y la siguiente. Entre más alto, mejor."],
+    ["p", "MTBF = tiempo de operación ÷ número de fallas."],
+
+    ["h2", "MTTR: tiempo medio de reparación"],
+    ["p", "Viene de mean time to repair. Mide cuánto tarda, en promedio, volver a poner el equipo en marcha después de una falla. Entre más bajo, mejor. Incluye todo lo que el equipo está parado por la falla: diagnosticar, conseguir la refacción, reparar y probar."],
+    ["p", "MTTR = tiempo total de reparación ÷ número de fallas."],
+
+    ["h2", "Disponibilidad"],
+    ["p", "Es la parte del tiempo en que el equipo estuvo listo para trabajar. Se puede sacar directamente de los dos anteriores:"],
+    ["p", "Disponibilidad = MTBF ÷ (MTBF + MTTR)."],
+
+    ["h2", "Un ejemplo resuelto"],
+    ["p", "Una bomba de proceso debía operar todo un trimestre, 2,160 horas. En ese tiempo falló 3 veces y cada reparación tardó 12, 20 y 16 horas."],
+    ["numerada", [
+      "Tiempo parado por fallas: 12 + 20 + 16 = 48 horas.",
+      "Tiempo de operación: 2,160 − 48 = 2,112 horas.",
+      "MTBF: 2,112 ÷ 3 = 704 horas.",
+      "MTTR: 48 ÷ 3 = 16 horas.",
+      "Disponibilidad: 704 ÷ (704 + 16) = 0.978, es decir, 97.8 %."
+    ]],
+    ["p", "Un 97.8 % suena bien, pero son dos días completos de paro en un trimestre. En un equipo crítico, eso puede ser mucho dinero. Te explicamos cómo calcularlo en la guía del [costo de un paro no programado](/blog/costo-de-un-paro-no-programado-como-calcularlo)."],
+
+    ["h2", "Qué mueve cada indicador"],
+    ["p", "El mantenimiento predictivo sube el MTBF porque encuentra las fallas cuando apenas empiezan y permite corregirlas antes de que paren el equipo. También baja el MTTR, porque la reparación se planea: la refacción ya está en el almacén y el trabajo se hace en un paro programado, no a media noche."],
+
+    ["h2", "Errores comunes"],
+    ["lista", [
+      "Contar como falla cualquier paro, incluidos los programados. El MTBF debe usar solo las fallas.",
+      "No registrar las fallas cortas. Muchas fallas de minutos hacen más daño que una grande.",
+      "Calcularlo para toda la planta junta. Se calcula por equipo o por grupo de equipos parecidos.",
+      "Compararlo mes contra mes con muy pocas fallas. Con dos o tres fallas, un solo evento mueve mucho el número; conviene ver la tendencia de varios meses."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Qué diferencia hay entre MTBF y MTTF?"],
+    ["p", "El MTTF, tiempo medio hasta la falla, se usa para piezas que no se reparan sino que se cambian, como un rodamiento o un foco. El MTBF se usa para equipos que se reparan y vuelven a trabajar."],
+    ["h3", "¿Cuál es un buen valor de disponibilidad?"],
+    ["p", "Depende del tipo de planta y del equipo. Más que buscar un número de referencia, conviene medir la tuya y ver que mejore con el tiempo, empezando por los equipos críticos."],
+    ["h3", "¿Qué otros indicadores conviene llevar?"],
+    ["p", "En un programa predictivo también sirven el porcentaje de rutas a tiempo, los hallazgos cerrados y el porcentaje de trabajo planeado. Los explicamos en la guía de [indicadores de un programa predictivo](/blog/kpi-de-mantenimiento-predictivo-cuales-medir)."],
+
+    ["nota", "En [DIAPSA START](/servicios/diapsa-start) dejamos funcionando los indicadores de tu programa predictivo desde el primer mes, cargados en IDAP y con metas claras."]
+  ]
+}

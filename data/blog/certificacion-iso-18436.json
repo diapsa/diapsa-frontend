@@ -1,0 +1,48 @@
+{
+  "slug": "certificacion-iso-18436-2-categorias-de-analista-de-vibraciones",
+  "titulo": "Certificación ISO 18436-2: las cuatro categorías de analista de vibraciones",
+  "extracto": "Qué es la ISO 18436, qué sabe hacer un analista en cada categoría de la I a la IV, qué pide cada una en formación y experiencia, y qué nivel necesita tu planta.",
+  "portada": "/images/diapsa-start/aula-capacitacion.webp",
+  "fecha": "2026-09-30T23:54:00.000000Z",
+  "seo": {
+    "titulo": "Certificación ISO 18436-2: categorías de analista de vibraciones",
+    "descripcion": "Qué es la certificación ISO 18436-2 para analistas de vibraciones, qué hace cada categoría de la I a la IV, requisitos de formación y experiencia, y qué nivel necesita una planta industrial."
+  },
+  "bloques": [
+    ["p", "Cuando una planta arma su programa predictivo, tarde o temprano aparece la pregunta de la certificación. ¿Hace falta que mi personal esté certificado? ¿En qué nivel? La norma que responde estas preguntas en vibraciones es la ISO 18436-2, y entenderla ayuda a decidir cuánto invertir en formación y qué esperar de cada persona."],
+
+    ["h2", "Qué es la ISO 18436"],
+    ["p", "Es una familia de normas que define qué debe saber y qué experiencia debe tener el personal que hace monitoreo de condición. Cada técnica tiene su parte: la 18436-2 es para vibraciones, la 18436-7 para termografía y la 18436-8 para ultrasonido. La certificación la otorga un organismo que cumple la ISO/IEC 17024, después de un curso y un examen."],
+
+    ["h2", "Las cuatro categorías en vibraciones"],
+    ["h3", "Categoría I"],
+    ["p", "Toma datos confiables siguiendo una ruta ya definida: sabe colocar el sensor, reconocer una lectura mala y comparar contra alarmas. No diagnostica. Es el perfil del técnico que hace las rutas."],
+    ["h3", "Categoría II"],
+    ["p", "Interpreta espectros y diagnostica las fallas más comunes: desbalance, desalineación, holguras y rodamientos. Puede armar rutas y definir alarmas. Es el perfil mínimo para que un programa tenga diagnóstico propio."],
+    ["h3", "Categoría III"],
+    ["p", "Maneja técnicas avanzadas como la fase, el análisis en arranque y paro, y el balanceo. Diseña y dirige programas, decide qué técnica usar en cada equipo y supervisa a las categorías I y II."],
+    ["h3", "Categoría IV"],
+    ["p", "Es el nivel de especialista: dinámica de rotores, análisis modal y problemas que no se resuelven con las herramientas habituales. Pocas plantas lo necesitan de planta; se suele contratar para casos difíciles."],
+
+    ["h2", "Qué pide cada categoría"],
+    ["p", "Cada categoría pide horas de curso y meses de experiencia comprobable en la técnica, y cada una exige haber pasado por la anterior. Los requisitos crecen de una a otra: la categoría I pide unos meses de experiencia y la IV, varios años. Los valores exactos los fija la norma vigente y el organismo certificador, así que conviene revisarlos antes de planear la formación de tu equipo."],
+
+    ["h2", "Qué nivel necesita tu planta"],
+    ["lista", [
+      "Si un proveedor hace el análisis, basta con que tu personal tenga categoría I para hacer rutas de buena calidad.",
+      "Si quieres diagnosticar en casa las fallas comunes, necesitas al menos una persona categoría II.",
+      "Si quieres que tu equipo dirija el programa completo, alguien debería llegar a categoría III con el tiempo."
+    ]],
+    ["p", "La certificación no sustituye la práctica. Una persona certificada que no mide seguido pierde el ojo, y una que mide todos los días en su planta aprende cosas que ningún curso enseña. Por eso lo ideal es combinar la formación formal con práctica en los propios equipos."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿La certificación tiene vigencia?"],
+    ["p", "Sí. Se renueva cada cierto número de años demostrando que se sigue practicando la técnica o volviendo a presentar el examen, según las reglas del organismo certificador."],
+    ["h3", "¿Existe lo mismo para termografía y ultrasonido?"],
+    ["p", "Sí: la ISO 18436-7 para termografía y la ISO 18436-8 para ultrasonido, con categorías parecidas."],
+    ["h3", "¿Dónde me preparo?"],
+    ["p", "En DIAPSA damos los [cursos de certificación](/cursos) en vibraciones, termografía y ultrasonido, con práctica en equipos reales."],
+
+    ["nota", "En [DIAPSA START](/servicios/diapsa-start) la formación se hace en tu planta y con tus equipos, y te orientamos sobre qué certificación conviene a cada persona de tu equipo."]
+  ]
+}
