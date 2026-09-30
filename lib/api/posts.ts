@@ -6,6 +6,7 @@
 import { apiFetch } from './config';
 import type { ApiResponse, PaginatedResponse } from '@/types/api';
 import type { Announcement, Blog, SuccessCase } from '@/types/post';
+import { conBlogsLocales, getBlogLocal } from '@/lib/blog-local';
 
 export interface PostListFilters {
   limit?: number;
@@ -138,10 +139,12 @@ export async function getFeaturedBlogs(): Promise<Blog[]> {
 export async function getBlogs(
   filters: PostListFilters = {}
 ): Promise<Blog[]> {
-  const response = await apiFetch<ApiResponse<Blog[]>>(
-    buildListEndpoint('/blogs', filters)
-  );
-  return response.data;
+  // Se piden sin límite y se aplica después, para que las guías locales
+  // (lib/blog-local.ts) entren en orden de fecha con las del CMS. Si el CMS
+  // no responde, se sirven al menos las locales.
+  const response = await apiFetch<ApiResponse<Blog[]>>(buildListEndpoint('/blogs')).catch(() => null);
+  const todos = conBlogsLocales(response?.data ?? []);
+  return filters.limit ? todos.slice(0, filters.limit) : todos;
 }
 
 /**
@@ -151,9 +154,32 @@ export async function getBlogs(
 export async function getPaginatedBlogs(
   filters: PostPaginationFilters = {}
 ): Promise<PaginatedResponse<Blog>> {
-  return apiFetch<PaginatedResponse<Blog>>(
-    buildListEndpoint('/blogs', filters)
-  );
+  // El CMS tiene pocos artículos: se traen todos, se suman los locales y se
+  // pagina aquí.
+  const perPage = filters.perPage ?? 9;
+  const page = Math.max(1, filters.page ?? 1);
+  const todos = await getBlogs();
+  const total = todos.length;
+  const lastPage = Math.max(1, Math.ceil(total / perPage));
+  const inicio = (page - 1) * perPage;
+  const data = todos.slice(inicio, inicio + perPage);
+  return {
+    data,
+    meta: {
+      current_page: page,
+      from: data.length ? inicio + 1 : 0,
+      last_page: lastPage,
+      per_page: perPage,
+      to: inicio + data.length,
+      total,
+    },
+    links: {
+      first: "/blog",
+      last: `/blog?page=${lastPage}`,
+      prev: page > 1 ? `/blog?page=${page - 1}` : null,
+      next: page < lastPage ? `/blog?page=${page + 1}` : null,
+    },
+  };
 }
 
 /**
@@ -161,6 +187,8 @@ export async function getPaginatedBlogs(
  * GET /api/v1/blogs/{slug}
  */
 export async function getBlogBySlug(slug: string): Promise<Blog> {
+  const local = getBlogLocal(slug);
+  if (local) return local;
   const response = await apiFetch<ApiResponse<Blog>>(`/blogs/${slug}`);
   return response.data;
 }

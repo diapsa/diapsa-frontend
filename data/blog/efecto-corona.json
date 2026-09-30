@@ -1,0 +1,85 @@
+{
+  "slug": "efecto-corona-que-es-y-como-se-detecta",
+  "titulo": "Efecto corona: qué es, dónde aparece y cómo se detecta",
+  "extracto": "Qué es el efecto corona, por qué daña aisladores, transformadores y tableros, cómo se distingue del tracking y del arco, y cómo se detecta con ultrasonido sin abrir el equipo.",
+  "portada": "/images/gallery/campo/acustica-subestacion-analista.webp",
+  "fecha": "2026-09-29T00:00:00.000000Z",
+  "seo": {
+    "titulo": "Efecto corona: qué es y cómo detectarlo en subestaciones y tableros",
+    "descripcion": "Qué es el efecto corona, dónde aparece (subestaciones, aisladores, transformadores, tableros), cómo se distingue del tracking y del arco y cómo se detecta con ultrasonido."
+  },
+  "bloques": [
+    ["p", "El efecto corona es una de las fallas eléctricas más fáciles de pasar por alto: casi no calienta, no dispara protecciones y muchas veces solo se delata con un zumbido que nadie escucha por encima del ruido de la planta. Mientras tanto, va deteriorando aisladores, terminales y barras hasta que un día se convierte en tracking o en arco."],
+    ["p", "En esta guía explicamos qué es, dónde aparece, por qué importa, cómo se distingue de otras descargas y cómo se detecta sin abrir el tablero ni detener el equipo."],
+
+    ["h2", "¿Qué es el efecto corona?"],
+    ["p", "Es una **descarga eléctrica parcial en el aire** alrededor de un conductor. Ocurre cuando el campo eléctrico en su superficie supera la rigidez dieléctrica del aire, del orden de 30 kV por centímetro a nivel del mar. El aire que rodea al conductor se ioniza y produce un zumbido o chisporroteo, luz ultravioleta, ozono y, con humedad, óxidos de nitrógeno que forman ácido nítrico."],
+    ["p", "No es un cortocircuito ni una falla franca, pero sí es la señal de que el aislamiento o la geometría de la instalación ya no están controlando el campo eléctrico. Y sus productos, el ozono y el ácido, atacan poco a poco todo lo que tienen cerca."],
+
+    ["h2", "¿Dónde aparece?"],
+    ["lista", [
+      "**Líneas de alta tensión y sus herrajes**, sobre todo en puntas, tornillos y conductores con daño.",
+      "**Aisladores de subestaciones**, en especial cuando están sucios, húmedos o fisurados.",
+      "**Boquillas y terminales de transformadores.**",
+      "**Tableros y celdas de media tensión:** barras, soportes, terminales de cable y aisladores internos.",
+      "**Terminales y empalmes de cable de media tensión** mal preparados o sin el control de esfuerzo eléctrico adecuado.",
+      "**Motores y generadores de media tensión**, donde las descargas en los devanados se conocen como descargas parciales."
+    ]],
+
+    ["h2", "¿Por qué importa?"],
+    ["lista", [
+      "**Degrada materiales.** El ozono y el ácido nítrico atacan aislamientos y polímeros; dejan polvo blanco en los aisladores y corrosión verdosa en el cobre.",
+      "**Abre el camino al tracking.** La descarga superficial deja un rastro carbonizado que conduce cada vez mejor y puede terminar en arco.",
+      "**Aumenta el riesgo de falla y de arco eléctrico** en tableros de media tensión, con el peligro que eso implica para el personal.",
+      "**Genera pérdidas e interferencia de radio**, relevantes en líneas y subestaciones."
+    ]],
+
+    ["h2", "Corona, tracking, arco y descargas parciales"],
+    ["p", "Se parecen, pero no son lo mismo, y distinguirlos cambia la urgencia de la acción:"],
+    ["lista", [
+      "**Corona:** descarga en el aire alrededor del conductor. Suena como un zumbido o siseo parejo, al ritmo de la red eléctrica.",
+      "**Tracking:** descarga sobre la superficie de un aislante contaminado o húmedo. Suena más irregular, con chasquidos, y deja un rastro carbonizado.",
+      "**Arco:** la descarga salta un espacio de forma intermitente. Suena con estallidos fuertes y erráticos. Es el más peligroso de los tres.",
+      "**Descargas parciales:** es el término general. Incluye las internas, dentro de huecos del aislamiento, que no se oyen desde afuera y se miden con pruebas eléctricas."
+    ]],
+
+    ["h2", "Qué lo favorece"],
+    ["lista", [
+      "**La altitud.** Con aire menos denso, el efecto aparece a menor voltaje. Es un factor a considerar en plantas del Altiplano, como las de Ciudad de México, Toluca, Puebla o San Luis Potosí.",
+      "**La humedad y la condensación**, sobre todo en tableros sin calefacción o mal sellados.",
+      "**La contaminación:** polvo, sal en zonas costeras, polvo de cemento o químicos de proceso.",
+      "**La geometría:** bordes filosos, puntas de tornillo, terminales mal hechas y conductores con poca separación."
+    ]],
+
+    ["h2", "Cómo se detecta"],
+    ["h3", "Ultrasonido"],
+    ["p", "La ionización produce ultrasonido que un detector capta alrededor de los 40 kHz y convierte a un sonido audible. Se mide **con el tablero cerrado**, por rejillas, juntas y ventilas, lo que la hace la forma más segura de revisar equipo energizado. El patrón de la señal, enganchado a los 60 Hz de la red, lo distingue del ruido mecánico, y con la grabación el analista clasifica si es corona, tracking o arco. Así lo hacemos en el [análisis de ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido)."],
+    ["h3", "Cámara acústica"],
+    ["p", "Un arreglo de micrófonos muestra sobre la imagen el punto exacto de donde viene el sonido. Es muy útil en subestaciones y líneas, porque ubica la descarga a distancia y en poco tiempo."],
+    ["h3", "Cámara ultravioleta"],
+    ["p", "Ve la luz ultravioleta que emite la descarga, incluso de día con cámaras especiales. Se usa sobre todo en líneas y subestaciones de alta tensión."],
+    ["h3", "Termografía"],
+    ["p", "La corona casi no genera calor, así que la termografía puede pasarla por alto en sus primeras etapas, igual que al tracking. En cambio, es muy buena para conexiones flojas y sobrecargas. Por eso conviene combinarla con ultrasonido; ver [termografía infrarroja](/servicios/monitoreo-condicion/termografia-infrarroja)."],
+    ["h3", "Pruebas de descargas parciales"],
+    ["p", "Con sensores en línea o pruebas fuera de línea se miden las descargas internas del aislamiento, que el ultrasonido desde afuera no alcanza. Son el complemento para cables y máquinas de media tensión."],
+
+    ["h2", "Qué hacer cuando se detecta"],
+    ["numerada", [
+      "**Clasificar** la descarga y ubicar el componente: no es lo mismo corona en un herraje que tracking en un aislador interno.",
+      "**Limpiar y secar** aisladores y superficies contaminadas en la siguiente ventana de mantenimiento.",
+      "**Corregir la geometría:** redondear bordes, instalar anillos equipotenciales o rehacer terminales de cable.",
+      "**Controlar la humedad** con calefactores, sellos y ventilación adecuada.",
+      "**Volver a medir** después de la corrección y seguir la tendencia en cada ruta."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿El efecto corona es peligroso?"],
+    ["p", "Por sí mismo no es un cortocircuito, pero sí es un deterioro activo. En tableros de media tensión puede avanzar a tracking y a arco, que sí es un riesgo serio para el equipo y para las personas."],
+    ["h3", "¿Se puede detectar con el equipo energizado?"],
+    ["p", "Sí, y así debe hacerse: la descarga solo existe con voltaje. Con ultrasonido se mide desde afuera, sin abrir el tablero."],
+    ["h3", "¿Cada cuánto se revisa?"],
+    ["p", "Depende de la criticidad y del ambiente. En tableros críticos o en ambientes húmedos y contaminados conviene incluirlo en cada ruta de mantenimiento eléctrico, junto con la termografía. Si te interesa el marco normativo, revisa nuestra guía de la [NFPA 70B 2023](/blog/nfpa-70b-2023-el-mantenimiento-electrico-dejo-de-ser-opcional)."],
+
+    ["nota", "¿Tienes tableros o subestaciones con zumbido, polvo blanco o humedad? En DIAPSA los revisamos con ultrasonido sin abrirlos y te entregamos cada hallazgo clasificado, con su prioridad. Conoce el [análisis de ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido) y el [estudio de arco eléctrico](/servicios/monitoreo-condicion/arco-electrico)."]
+  ]
+}
