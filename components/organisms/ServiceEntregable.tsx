@@ -2,7 +2,7 @@ import Image from "next/image";
 import Antetitulo from "../atoms/Antetitulo";
 import EscenaIdap from "./EscenaIdap";
 import EscenaInspeccion from "./EscenaInspeccion";
-import InformeAnotado from "./InformeAnotado";
+import InformeMuestra from "./InformeMuestra";
 import HojaInforme from "./HojaInforme";
 import AlertaSensor from "./AlertaSensor";
 import ResumenRuta from "./ResumenRuta";
@@ -60,19 +60,15 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
 
   return (
     <section className="w-full overflow-hidden bg-white py-12 lg:py-20">
-      {entregable.anotado ? (
-        /* El informe real con cada punto señalado en su página */
+      {entregable.muestra ? (
+        /* La hoja del informe con cada punto de la lista resaltado */
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-8 max-w-3xl">
             <Antetitulo paso={paso}>{entregable.etiqueta}</Antetitulo>
             <h2 className="mt-2 text-2xl font-extrabold leading-tight text-primary lg:text-3xl">{entregable.titulo}</h2>
             <p className="mt-3 text-justify text-base leading-relaxed text-tertiary">{entregable.descripcion}</p>
           </div>
-          <InformeAnotado
-            paginas={entregable.anotado.paginas}
-            alt={entregable.altPaginas ?? "Página de un informe de Grupo DIAPSA"}
-            puntos={entregable.contenido.map((texto, i) => ({ texto, ...entregable.anotado!.puntos[i] }))}
-          />
+          <InformeMuestra puntos={entregable.contenido} />
         </div>
       ) : (
       <div

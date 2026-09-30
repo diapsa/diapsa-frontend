@@ -118,12 +118,8 @@ export interface ResumenRuta {
 }
 
 export interface ServiceEntregable {
-  /** El informe real con cada punto de `contenido` señalado en su página
-      (InformeAnotado). Recuadros en porcentaje: [x, y, ancho, alto]. */
-  anotado?: {
-    paginas: { src: string; ancho: number; alto: number }[];
-    puntos: { pagina: number; recuadro: [number, number, number, number] }[];
-  };
+  /** Hoja de informe dibujada en HTML (InformeMuestra) en lugar de las capturas. */
+  muestra?: "ultrasonido";
   /** Antetítulo corto, ej. "El entregable". */
   etiqueta: string;
   titulo: string;
