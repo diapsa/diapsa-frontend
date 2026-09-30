@@ -28,13 +28,13 @@
   "seoDescription": "Ultrasonido industrial en México: detección de fallas en rodamientos, fugas de aire comprimido y descargas eléctricas con analistas certificados. Informe en menos de 2 días hábiles.",
   "content": {
     "title": "Oímos la falla antes de que se sienta",
-    "subtitle": "Un rodamiento que empieza a fallar, una fuga de aire o una descarga en un tablero suenan mucho antes de verse o de calentar. Con el detector de ultrasonido los oímos, los medimos en decibeles y te decimos qué atender y con qué urgencia.",
+    "subtitle": "Un rodamiento que falla, una fuga de aire o una descarga en un tablero suenan antes de verse o calentar. Los oímos, los medimos en decibeles y te decimos qué atender primero.",
     "image": "/images/servicios/analisis-de-ultrasonido/campo-trampas-vapor.webp",
     "items": [
       {
         "id": "aplicaciones",
         "title": "Dónde se aplica",
-        "content": "Rodamientos de motores y bombas, fugas de aire comprimido, vapor y gases, descargas parciales y efecto corona en tableros y subestaciones, trampas de vapor y válvulas que no cierran.",
+        "content": "Rodamientos, fugas de aire, vapor y gases, descargas en tableros, trampas de vapor y válvulas.",
         "foto": {
           "src": "/images/servicios/analisis-de-ultrasonido/campo-trampas-vapor.webp",
           "alt": "Analista de DIAPSA con audífonos y detector de ultrasonido revisando una línea de trampas de vapor"
@@ -43,7 +43,7 @@
       {
         "id": "beneficios",
         "title": "Qué ganas",
-        "content": "Menos paros por rodamiento, lubricación en el momento justo y no por calendario, aire comprimido que deja de escaparse y tableros que no llegan al arco.",
+        "content": "Menos paros, lubricación justa, menos aire perdido y tableros que no llegan al arco.",
         "grafico": "paros",
         "foto": {
           "src": "/images/servicios/analisis-de-ultrasonido/analista-con-audifonos.jpg",
@@ -53,7 +53,7 @@
       {
         "id": "modalidades",
         "title": "Puntual o continuo",
-        "content": "Rutas periódicas con detector y audífonos por un analista certificado, o sensores acústicos en línea donde una fuga o un rodamiento no pueden esperar a la siguiente visita.",
+        "content": "Rutas con detector y analista certificado, o sensores acústicos en línea para lo crítico.",
         "foto": {
           "src": "/images/servicios/analisis-de-ultrasonido/campo-bomba-alimentacion.webp",
           "alt": "Analista de DIAPSA con audífonos midiendo con ultrasonido los rodamientos de una bomba de agua de alimentación"
@@ -62,7 +62,7 @@
       {
         "id": "plataforma-idap",
         "title": "Tus datos viven en IDAP",
-        "content": "Cada punto con su nivel contra la línea base, la grabación de lo que se oyó, historial y tendencias consultables en línea cuando las necesites.",
+        "content": "Cada punto contra su línea base, con su grabación, historial y tendencias en línea.",
         "foto": {
           "src": "/images/idap/mockup.png",
           "alt": "Pantallas de IDAP con el tablero, la lista de equipos y el historial de inspecciones",
@@ -78,12 +78,12 @@
   },
   "comparadorSonoro": {
     "titulo": "Cada falla tiene su propia firma sonora",
-    "texto": "Un rodamiento dañado, una fuga de aire y una descarga en un tablero suenan distinto entre sí y distinto de un equipo sano. Elige qué quieres ver.",
+    "texto": "Un rodamiento dañado, una fuga y una descarga suenan distinto entre sí y de un equipo sano. Elige cuál ver.",
     "grupos": [
       {
         "id": "rodamientos",
         "etiqueta": "Dinámico",
-        "resumen": "Motores, bombas y ventiladores. La fricción de un rodamiento que empieza a fallar se oye mucho antes de que el equipo vibre o caliente.",
+        "resumen": "Motores, bombas y ventiladores. La fricción se oye antes de que el equipo vibre o caliente.",
         "origen": "real",
         "escalaTexto": "Nivel en decibeles",
         "escalaMax": 70,
@@ -107,7 +107,7 @@
             "titulo": "Motor de ventilador",
             "nivel": "20 dB",
             "estado": "normal",
-            "descripcion": "Siseo uniforme, sin picos. El rodamiento gira sobre su película de lubricante y no hay contacto metal con metal. Sigue en ruta.",
+            "descripcion": "Siseo parejo, sin picos: el rodamiento gira lubricado. Sigue en ruta.",
             "envolvente": [
               0.541,
               0.856,
@@ -236,7 +236,7 @@
             "titulo": "Motor de bomba de lubricación",
             "nivel": "62 dB",
             "estado": "alarma",
-            "descripcion": "Crepitar áspero con impactos. Más de cuarenta decibeles por encima de un equipo sano: el rodamiento ya trabaja con daño. Se recomendó su cambio en la siguiente ventana.",
+            "descripcion": "Crepitar áspero con impactos, más de 40 dB sobre un equipo sano. Cambio en la siguiente ventana.",
             "envolvente": [
               0.517,
               0.936,
@@ -416,7 +416,7 @@
       {
         "id": "aire",
         "etiqueta": "Fuga",
-        "resumen": "Líneas, acoples y conexiones. Una fuga suena como un chorro parejo y continuo, y se ubica aun con el ruido de la producción encima.",
+        "resumen": "Líneas, acoples y conexiones. La fuga suena como un chorro parejo, aun con la producción encima.",
         "origen": "tipico",
         "escalaTexto": "Nivel en decibeles",
         "escalaMax": 70,
@@ -440,7 +440,7 @@
             "titulo": "Tramo de aire comprimido",
             "nivel": "8 dB",
             "estado": "normal",
-            "descripcion": "Solo el fondo de la planta. Sin turbulencia, el detector no registra nada por encima del ruido ambiente.",
+            "descripcion": "Solo el fondo de la planta: nada por encima del ruido ambiente.",
             "envolvente": [
               0.071,
               0.081,
@@ -569,7 +569,7 @@
             "titulo": "Acople de línea de aire",
             "nivel": "52 dB",
             "estado": "alarma",
-            "descripcion": "Chorro sostenido y parejo, sin impactos. El nivel se relaciona con el tamaño de la fuga, y por ahí se va el aire que el compresor vuelve a producir.",
+            "descripcion": "Chorro sostenido y parejo. El nivel indica el tamaño de la fuga y el aire que se pierde.",
             "envolvente": [
               0.747,
               0.781,
@@ -699,7 +699,7 @@
       {
         "id": "electrico",
         "etiqueta": "Descargas parciales",
-        "resumen": "Tableros, subestaciones y celdas. Las descargas parciales y el efecto corona estallan al ritmo de la onda eléctrica, mucho antes de dejar marca de calor.",
+        "resumen": "Tableros, subestaciones y celdas. La descarga estalla al ritmo de la red, antes de dejar calor.",
         "origen": "tipico",
         "escalaTexto": "Nivel en decibeles",
         "escalaMax": 70,
@@ -723,7 +723,7 @@
             "titulo": "Celda de media tensión",
             "nivel": "6 dB",
             "estado": "normal",
-            "descripcion": "Silencio ultrasónico. El aislamiento hace su trabajo y no hay ionización alrededor de los conductores.",
+            "descripcion": "Silencio ultrasónico: el aislamiento hace su trabajo.",
             "envolvente": [
               0.063,
               0.057,
@@ -852,7 +852,7 @@
             "titulo": "Celda con descarga parcial",
             "nivel": "44 dB",
             "estado": "alarma",
-            "descripcion": "Estallidos repetidos a intervalo constante, enganchados a la onda de 60 hercios. Ese patrón regular es lo que distingue una descarga eléctrica de cualquier otro ruido.",
+            "descripcion": "Estallidos a intervalo constante, al ritmo de los 60 Hz: así se distingue una descarga.",
             "envolvente": [
               0.869,
               0.521,
@@ -2321,7 +2321,7 @@
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "Esto es lo que recibes",
-    "descripcion": "No una lista de decibeles para que la interpretes tú: cada punto con su nivel, el diagnóstico del analista y qué hacer. Las páginas son de un informe real, con los datos de la planta omitidos.",
+    "descripcion": "Cada punto con su nivel, el diagnóstico del analista y qué hacer. Páginas de un informe real, sin los datos de la planta.",
     "contenido": [
       "Nivel de cada punto contra su línea base",
       "Estado de cada equipo en semáforo",
@@ -2356,27 +2356,27 @@
   "faq": [
     {
       "question": "¿Qué es el ultrasonido industrial?",
-      "answer": "Es la escucha de sonidos por encima de lo que el oído humano alcanza, entre 20 y 100 kilohercios, con un detector que los traduce a un rango audible y los mide en decibeles. La fricción, la turbulencia y las descargas eléctricas producen ultrasonido mucho antes de producir ruido, calor o vibración perceptibles."
+      "answer": "Escuchar lo que el oído no alcanza, de 20 a 100 kHz, con un detector que lo mide en decibeles. La fricción, las fugas y las descargas lo producen antes de hacer ruido, calor o vibración."
     },
     {
       "question": "¿Qué fallas detecta?",
-      "answer": "Rodamientos en las primeras etapas de daño y con falta o exceso de lubricante, fugas de aire comprimido, vapor, gases y vacío, descargas parciales, efecto corona y arco incipiente en tableros y subestaciones, trampas de vapor que no cierran y válvulas con paso interno."
+      "answer": "Rodamientos con daño incipiente o mal lubricados, fugas de aire, vapor, gases y vacío, descargas parciales, efecto corona, trampas de vapor y válvulas que pasan."
     },
     {
       "question": "¿Cómo se sabe si un rodamiento está mal?",
-      "answer": "Cada rodamiento tiene una línea base. Un aumento de 8 decibeles sobre ella indica falta de lubricación; de 12 a 16, daño incipiente; más de 35, daño avanzado. Además del número, el analista escucha: un rodamiento sano sisea parejo y uno dañado crepita con impactos."
+      "answer": "Contra su línea base: 8 dB más indica falta de lubricación; de 12 a 16, daño incipiente; más de 35, daño avanzado. El analista además lo escucha."
     },
     {
       "question": "¿Se puede hacer con la planta operando?",
-      "answer": "Sí, es la única forma de hacerlo. La medición se realiza con el equipo en operación normal, sin abrir ni detener nada, y una ruta completa toma unas horas."
+      "answer": "Sí, así se hace: con el equipo en marcha, sin abrir ni detener nada. Una ruta toma unas horas."
     },
     {
       "question": "¿Sirve para ahorrar aire comprimido?",
-      "answer": "Sí. Las fugas de aire comprimido son de las pérdidas más caras y menos vistas de una planta. El detector las ubica una por una, aun con el ruido de fondo de la producción, y el informe las lista con su tamaño estimado para que se reparen por prioridad."
+      "answer": "Sí. Ubicamos cada fuga aun con el ruido de la planta y el informe las ordena por tamaño para repararlas por prioridad."
     },
     {
       "question": "¿Qué necesito para cotizar?",
-      "answer": "El listado de equipos rotativos, tableros y líneas de aire que quieres cubrir, o el número aproximado, y si la planta exige documentación de ingreso. Con eso preparamos la propuesta con el número de puntos y la ruta."
+      "answer": "El listado o número aproximado de equipos, tableros y líneas de aire, y si la planta pide documentos de ingreso."
     }
   ],
   "certificacion": "Analistas Nivel II · ASNT SNT-TC-1A",
@@ -2488,7 +2488,7 @@
   ],
   "cta": {
     "title": "¿Cuántos rodamientos y tableros críticos tiene tu planta?",
-    "text": "Compártenos tu listado de equipos, tableros y líneas de aire y te preparamos una ruta de medición con propuesta a la medida, sin compromiso.",
+    "text": "Mándanos tu listado de equipos, tableros y líneas de aire y te armamos la ruta con propuesta, sin compromiso.",
     "whatsappMessage": "Hola, quiero cotizar análisis de ultrasonido para mi planta.",
     "datos": [
       "Registro REPSE vigente",
@@ -2571,5 +2571,86 @@
         "ilustracion": "subestacion"
       }
     ]
-  }
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Del dato a la decisión",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "De la medición a la recomendación, en cinco pasos",
+          "texto": "Medimos con el equipo en marcha, comparamos contra su línea base y te decimos qué hacer y cuándo. Luego volvemos a medir hasta que el punto regresa a su nivel.",
+          "video": "/videos/ultrasonido/us-proceso",
+          "descripcion": "Los cinco pasos del análisis de ultrasonido: medición, escucha y nivel, diagnóstico, recomendación y seguimiento de un rodamiento",
+          "pasos": [
+            "Medición en campo",
+            "Escucha y nivel contra la línea base",
+            "Diagnóstico: componente, causa y severidad",
+            "Recomendación con su urgencia",
+            "Seguimiento hasta la línea base"
+          ]
+        }
+      ]
+    },
+    {
+      "lugar": "cobertura",
+      "etiqueta": "Dónde aplica",
+      "titulo": "¿Dónde aplica y qué detecta?",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "Rodamientos: lubrica cuando lo piden",
+          "texto": "Con el detector puesto, cada disparo de grasa baja el nivel. Cuando deja de bajar, se detiene: ni de menos ni de más.",
+          "video": "/videos/ultrasonido/us-lubricacion",
+          "descripcion": "Lubricación guiada por ultrasonido: el nivel del rodamiento baja con cada disparo de grasa hasta su línea base"
+        },
+        {
+          "titulo": "Aire comprimido: cada fuga con su costo",
+          "texto": "Recorremos la red y marcamos cada fuga con su nivel y lo que cuesta al año, para que repares primero las que más pesan.",
+          "video": "/videos/ultrasonido/us-fugas",
+          "descripcion": "Recorrido por una red de aire comprimido: cinco fugas ubicadas con su nivel y su costo anual"
+        },
+        {
+          "titulo": "Tableros: la descarga se oye cerrado",
+          "texto": "Por rejillas y juntas oímos el efecto corona y el arco incipiente sin abrir el tablero, antes de que llegue a falla.",
+          "video": "/videos/ultrasonido/us-electrico",
+          "descripcion": "Detector de ultrasonido recorriendo un tablero de media tensión cerrado: efecto corona en la sección 2 clasificado en precaución"
+        }
+      ],
+      "listas": [
+        {
+          "titulo": "Equipos",
+          "items": [
+            "Rodamientos",
+            "Motores",
+            "Bombas",
+            "Compresores",
+            "Válvulas",
+            "Trampas de vapor",
+            "Redes de aire comprimido",
+            "Tableros y subestaciones",
+            "Aisladores y líneas",
+            "Transformadores"
+          ]
+        },
+        {
+          "titulo": "Fallas que detecta",
+          "items": [
+            "Falta o exceso de grasa",
+            "Desgaste de rodamientos",
+            "Fugas de aire y gases",
+            "Fugas de vacío",
+            "Válvulas que pasan",
+            "Trampas de vapor fallando",
+            "Descargas parciales",
+            "Efecto corona",
+            "Arco superficial (tracking)",
+            "Cavitación"
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -22,6 +22,7 @@ import DiagramaServicio from "@/components/organisms/DiagramaServicio";
 import ServicePuntos from "@/components/organisms/ServicePuntos";
 import PorQueMuestrear from "@/components/organisms/PorQueMuestrear";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
+import VideosServicio from "@/components/organisms/VideosServicio";
 import Semaforo from "@/components/organisms/Semaforo";
 import GraficaTendencia from "@/components/organisms/GraficaTendencia";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
@@ -312,7 +313,11 @@ export default async function ServicePage({
                 </section>
             )}
 
-            {service.diagramas?.includes("flujo-servicio") && (
+            {/* Si el servicio trae videos para el flujo, van en lugar del diagrama. */}
+            {service.videos?.filter((g) => g.lugar === "flujo").map((g) => (
+                <VideosServicio key={g.titulo} grupo={g} paso={paso()} />
+            ))}
+            {service.diagramas?.includes("flujo-servicio") && !service.videos?.some((g) => g.lugar === "flujo") && (
                 <DiagramaServicio
                     clave="flujo-servicio"
                     paso={paso()}
@@ -360,7 +365,11 @@ export default async function ServicePage({
 
             {/* Dónde aplica y qué detecta: la última duda antes de cotizar,
                 "¿sirve para mis equipos?", contestada en fichas. */}
-            {service.cobertura && <Cobertura cobertura={service.cobertura} paso={paso()} />}
+            {service.videos?.some((g) => g.lugar === "cobertura")
+                ? service.videos
+                      .filter((g) => g.lugar === "cobertura")
+                      .map((g) => <VideosServicio key={g.titulo} grupo={g} paso={paso()} />)
+                : service.cobertura && <Cobertura cobertura={service.cobertura} paso={paso()} />}
 
             {/* Related Products */}
             {/* <RelatedProducts

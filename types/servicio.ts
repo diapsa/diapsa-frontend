@@ -651,6 +651,9 @@ export interface Servicio {
   diferencias?: ServiceDiferencias;
   /** Qué equipos se vigilan y qué fallas se detectan, en fichas. */
   cobertura?: ServiceCobertura;
+  /** Grupos de bloques con video en bucle (VideosServicio). `lugar` dice qué
+      sección reemplazan: el flujo del servicio o la cobertura. */
+  videos?: GrupoVideos[];
   /** Encabezado propio del flujo "Cómo trabajamos". */
   flujoEncabezado?: { titulo: string; texto: string };
   /** En qué se traduce, en dinero, con las cifras del visitante. */
@@ -659,4 +662,25 @@ export interface Servicio {
   ocultarAhorro?: boolean;
   /** En qué se traduce, con una visual propia del servicio. */
   traduccion?: ServiceTraduccion;
+}
+
+export interface BloqueVideo {
+  titulo: string;
+  texto: string;
+  /** Ruta sin extensión: se usan `${video}.mp4` y `${video}.jpg` (imagen fija). */
+  video: string;
+  descripcion: string;
+  /** Pasos cortos numerados debajo del texto (opcional). */
+  pasos?: string[];
+}
+
+export interface GrupoVideos {
+  lugar: "flujo" | "cobertura";
+  etiqueta: string;
+  titulo: string;
+  texto?: string;
+  fondo?: "blanco" | "gris";
+  bloques: BloqueVideo[];
+  /** Listas cortas en fichas debajo de los bloques (equipos, fallas). */
+  listas?: { titulo: string; items: string[] }[];
 }
