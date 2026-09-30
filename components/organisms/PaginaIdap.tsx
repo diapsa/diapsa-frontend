@@ -4,7 +4,7 @@ import Contador from "@/components/atoms/Contador";
 import EscenaIdap from "@/components/organisms/EscenaIdap";
 import EscenaIdapHero from "@/components/organisms/EscenaIdapHero";
 import IdapFormulario from "@/components/organisms/IdapFormulario";
-import { IlustracionAnticipa, IlustracionPrioriza, IlustracionRespalda, IlustracionTecnicas } from "@/components/organisms/IdapIlustraciones";
+import { IlustracionPrioriza, IlustracionRespalda, IlustracionTecnicas } from "@/components/organisms/IdapIlustraciones";
 import { FONDO_IDAP, ORO_IDAP, PIE_IDAP } from "@/lib/idap-estilo";
 
 /**
@@ -190,6 +190,27 @@ function Fila({
   );
 }
 
+/**
+ * Video en bucle al estilo Fracttal: sin sonido ni controles, con su
+ * imagen fija mientras carga. Hechos en Remotion (proyecto diapsa-videos)
+ * y exportados a 1280 x 800 en public/videos/idap/.
+ */
+function VideoIdap({ nombre, descripcion }: { nombre: string; descripcion: string }) {
+  return (
+    <video
+      className="block aspect-[16/10] w-full object-cover"
+      src={`/videos/idap/${nombre}.mp4`}
+      poster={`/videos/idap/${nombre}.jpg`}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      aria-label={descripcion}
+    />
+  );
+}
+
 export default function PaginaIdap() {
   const oro = { background: ORO_IDAP };
   return (
@@ -260,17 +281,9 @@ export default function PaginaIdap() {
             titulo="La salud de todas tus plantas, en una sola vista"
             texto="Cada planta con su gemelo digital, sus equipos por estado y el ahorro de las fallas evitadas. Del tablero general a cada medición en un clic."
           >
-            {/* Video en bucle al estilo Fracttal: sin sonido ni controles */}
-            <video
-              className="block aspect-[16/10] w-full object-cover"
-              src="/videos/idap/idap-plantas.mp4"
-              poster="/videos/idap/idap-plantas.jpg"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label="Recorrido por IDAP: salud de tres plantas de ciclo combinado y el tablero de métricas"
+            <VideoIdap
+              nombre="idap-plantas"
+              descripcion="Recorrido por IDAP: salud de tres plantas de ciclo combinado y el tablero de métricas"
             />
           </Fila>
 
@@ -280,9 +293,10 @@ export default function PaginaIdap() {
             titulo="Sabes qué equipo va a fallar antes del paro"
             texto="Cada medición se califica de Bueno a Alarma. Cuando un equipo empieza a empeorar, te avisamos antes de que detenga la línea."
           >
-            <div className="aspect-[16/10]">
-              <IlustracionAnticipa />
-            </div>
+            <VideoIdap
+              nombre="idap-anticipa"
+              descripcion="La tendencia de vibración de un motor cruza el límite de precaución y llega un aviso al jefe de mantenimiento"
+            />
           </Fila>
 
           <Fila

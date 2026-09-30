@@ -1,11 +1,12 @@
 /**
  * IdapIlustraciones
- * Las cuatro ilustraciones animadas de "Toma el control" en
+ * Las ilustraciones animadas de los bloques de
  * /servicios/idap. Reemplazan las infografías que no le gustaron a Emiliano
  * (2026-09-28). Cada una cuenta su beneficio en un bucle corto, en SVG
  * (escala a cualquier ancho) con la paleta de IDAP. Datos de ejemplo: sin
  * nombres de clientes ni de plantas. Con prefers-reduced-motion se ve el
- * estado final quieto.
+ * estado final quieto. La de "Anticipa" se reemplazó por un video de
+ * Remotion (public/videos/idap/idap-anticipa.mp4).
  */
 
 const ORO = "#ffc34d";
@@ -54,42 +55,6 @@ function Marco({ children, titulo }: { children: React.ReactNode; titulo: string
       <rect width="640" height="400" fill="#0a142e" />
       {children}
     </svg>
-  );
-}
-
-/* 1. Anticipa: la tendencia cruza el límite y llega el aviso */
-export function IlustracionAnticipa() {
-  const puntos = "40,300 90,296 140,292 190,288 240,280 290,268 340,250 390,226 440,196 490,164 540,128 590,96";
-  return (
-    <Marco titulo="La tendencia de vibración de un motor cruza el límite de precaución y llega un aviso">
-      <rect x="24" y="20" width="592" height="360" rx="14" fill={TARJETA} />
-      <text x="44" y="56" fill={TEXTO} fontSize="18" fontWeight="700">Motor bomba de alimentación</text>
-      <text x="44" y="78" fill={TENUE} fontSize="13">Vibración · mm/s · últimos 90 días</text>
-      {/* Estado que va cambiando */}
-      <g transform="translate(470 40)">
-        <g className="ii-b"><rect width="126" height="30" rx="15" fill={`${VERDE}26`} stroke={VERDE} /><text x="63" y="20" textAnchor="middle" fill={VERDE} fontSize="13" fontWeight="700">Bueno</text></g>
-        <g className="ii-o"><rect width="126" height="30" rx="15" fill={`${AMARILLO}26`} stroke={AMARILLO} /><text x="63" y="20" textAnchor="middle" fill={AMARILLO} fontSize="13" fontWeight="700">Observación</text></g>
-        <g className="ii-p"><rect width="126" height="30" rx="15" fill={`${NARANJA}26`} stroke={NARANJA} /><text x="63" y="20" textAnchor="middle" fill={NARANJA} fontSize="13" fontWeight="700">Precaución</text></g>
-      </g>
-      {/* Rejilla y límites */}
-      {[130, 180, 230, 280, 330].map((y) => (
-        <line key={y} x1="40" x2="600" y1={y} y2={y} stroke={LINEA} />
-      ))}
-      <line x1="40" x2="600" y1="130" y2="130" stroke={ROJO} strokeDasharray="6 6" strokeWidth="1.5" />
-      <text x="600" y="122" textAnchor="end" fill={ROJO} fontSize="11" fontWeight="700">Alarma</text>
-      <line x1="40" x2="600" y1="200" y2="200" stroke={NARANJA} strokeDasharray="6 6" strokeWidth="1.5" />
-      <text x="600" y="192" textAnchor="end" fill={NARANJA} fontSize="11" fontWeight="700">Precaución</text>
-      {/* Área y línea que se dibujan */}
-      <polyline points={puntos} fill="none" stroke={ORO} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="ii-trazo" style={{ ["--l" as string]: 620 }} />
-      {/* El aviso */}
-      <g className="ii-toast">
-        <rect x="150" y="300" width="340" height="58" rx="12" fill="#101b36" stroke={NARANJA} strokeWidth="1.5" />
-        <circle cx="180" cy="329" r="12" fill={NARANJA} />
-        <text x="180" y="334" textAnchor="middle" fill="#0a142e" fontSize="15" fontWeight="900">!</text>
-        <text x="204" y="324" fill={TEXTO} fontSize="14" fontWeight="700">Precaución detectada</text>
-        <text x="204" y="344" fill={TENUE} fontSize="12">Aviso enviado al jefe de mantenimiento</text>
-      </g>
-    </Marco>
   );
 }
 
