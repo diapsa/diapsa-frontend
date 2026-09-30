@@ -305,8 +305,8 @@ export default function PaginaIdap() {
           <Fila
             invertir
             icono="red"
-            titulo="Todas las técnicas y tus sensores, en un solo lugar"
-            texto="Termografía, vibraciones, ultrasonido, aceite, análisis eléctrico y sensores en línea, en la ficha de cada equipo y con un solo diagnóstico."
+            titulo="Todas las técnicas, un solo diagnóstico"
+            texto="Cada equipo con su gemelo digital y el estado de cada componente. Termografía, vibraciones, ultrasonido, aceite y análisis eléctrico se evalúan juntos y dan un solo diagnóstico."
           >
             <VideoIdap
               nombre="idap-equipo"
