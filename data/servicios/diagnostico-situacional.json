@@ -1,0 +1,181 @@
+{
+  "id": "diagnostico-situacional",
+  "slug": "diagnostico-situacional",
+  "type": "servicio",
+  "breadcrumbs": [
+    { "label": "Inicio", "link": "/" },
+    { "label": "Servicios", "link": "/servicios" },
+    { "label": "Diagnóstico Situacional", "link": "/servicios/diagnostico-situacional" }
+  ],
+  "header": {
+    "title": "Diagnóstico Situacional",
+    "subtitle": "Análisis de criticidad, medición base y hoja de ruta de tu planta: qué equipos importan más, cómo están y por dónde empezar",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoTitle": "Diagnóstico de mantenimiento y análisis de criticidad de equipos",
+  "seoDescription": "Diagnóstico situacional de mantenimiento industrial: inventario técnico, análisis de criticidad de equipos con matriz, medición base con técnicas predictivas, análisis económico y hoja de ruta para tu programa predictivo.",
+  "content": {
+    "title": "Antes de medir, hay que saber qué medir",
+    "subtitle": "No todos los equipos merecen el mismo cuidado. El diagnóstico situacional revisa tu planta equipo por equipo, encuentra los que de verdad pueden pararla, mide cómo están hoy y te deja un plan con prioridades y números.",
+    "image": "/images/diagnostico-situacional/levantamiento-campo.webp",
+    "items": []
+  },
+  "relatedProducts": { "title": "", "subtitle": "", "items": [] },
+  "introBeneficios": {
+    "beneficios": [
+      { "icono": "paro", "titulo": "Sabes qué equipo te para la planta", "texto": "Cada equipo con su criticidad, en una sola lista." },
+      { "icono": "engrane", "titulo": "Una foto real de hoy", "texto": "Los equipos importantes medidos con técnicas predictivas." },
+      { "icono": "calendario", "titulo": "Un plan de doce meses", "texto": "Qué medir, a quién y cada cuánto." },
+      { "icono": "documento", "titulo": "Presupuesto con argumentos", "texto": "El costo de una falla contra el costo de evitarla." }
+    ],
+    "modalidades": [
+      { "titulo": "Para arrancar un programa predictivo", "texto": "Es la etapa central de DIAPSA START.", "enlace": "/servicios/diapsa-start" },
+      { "titulo": "Para reordenar uno que ya existe", "texto": "Cuando se mide mucho y se decide poco." }
+    ],
+    "fotos": [
+      { "src": "/images/diagnostico-situacional/levantamiento-campo.webp", "alt": "Analistas de DIAPSA haciendo el levantamiento de un motor en una planta" },
+      { "src": "/images/gallery/campo/vibracion-analista-motor.webp", "alt": "Medición base de vibraciones en un motor eléctrico" },
+      { "src": "/images/diagnostico-situacional/termografia-tablero.webp", "alt": "Termografía de un centro de control de motores durante el diagnóstico" },
+      { "src": "/images/diagnostico-situacional/analista-informe.webp", "alt": "Analista de DIAPSA integrando los resultados del diagnóstico" }
+    ],
+    "idap": {
+      "titulo": "El diagnóstico vive en IDAP",
+      "texto": "El inventario, la criticidad y la medición base quedan en IDAP como punto de partida: cada medición que sigue se compara contra esta.",
+      "puntos": ["Inventario y criticidad de cada equipo", "Medición base por técnica", "Hoja de ruta y avance de las correcciones"],
+      "video": "/videos/idap/idap-plantas",
+      "descripcionVideo": "IDAP: las plantas con su gemelo digital, la salud de cada una y los ahorros",
+      "enlace": "/servicios/idap"
+    }
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "De la planta completa a un plan",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "Cuatro etapas, una visita",
+          "texto": "Levantamos cada equipo en campo, lo clasificamos por criticidad, medimos los importantes y con eso armamos la hoja de ruta.",
+          "video": "/videos/diagnostico-situacional/diag-proceso",
+          "descripcion": "Las cuatro etapas del diagnóstico: levantamiento de 148 equipos, clasificación por criticidad, medición base de los equipos A y B y hoja de ruta",
+          "pasos": ["Levantamiento en campo", "Análisis de criticidad", "Medición base", "Hoja de ruta"]
+        }
+      ]
+    },
+    {
+      "lugar": "flujo",
+      "etiqueta": "Qué recibes",
+      "titulo": "Tres respuestas para decidir",
+      "texto": "Qué equipos cuidar primero, cómo cuidarlos y cuánto vale hacerlo.",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "Matriz de criticidad",
+          "texto": "Cada equipo en su lugar según qué tan seguido falla y cuánto cuesta cuando lo hace. Salen tres grupos: críticos, importantes y de respaldo.",
+          "video": "/videos/diagnostico-situacional/diag-criticidad",
+          "descripcion": "Matriz de criticidad de cinco por cinco con los equipos de la planta y la lista de los más críticos"
+        },
+        {
+          "titulo": "Hoja de ruta",
+          "texto": "El calendario del año con las técnicas y la frecuencia de cada grupo, y las correcciones que hay que hacer primero.",
+          "video": "/videos/diagnostico-situacional/diag-ruta",
+          "descripcion": "Calendario de doce meses con las rutas de vibraciones, termografía, aceite e inspección, y las correcciones del primer mes"
+        },
+        {
+          "titulo": "Análisis económico",
+          "texto": "Lo que cuesta una falla en tus equipos críticos contra lo que cuesta vigilarlos. Con eso se defiende el presupuesto.",
+          "video": "/videos/diagnostico-situacional/diag-economico",
+          "descripcion": "Costo de una falla de un compresor crítico desglosado, comparado contra el costo anual de monitorearlo"
+        }
+      ],
+      "listas": [
+        { "titulo": "Qué revisamos de cada equipo", "items": ["Placa de datos y función en el proceso", "Manuales y recomendaciones del fabricante", "Historial de fallas y reparaciones", "Programa de mantenimiento actual", "Refacciones y tiempos de entrega", "Condición medida en campo"] },
+        { "titulo": "Para qué plantas", "items": ["Generación de energía", "Alimentos y bebidas", "Tratamiento de agua", "Química y petroquímica", "Minería y metales", "Manufactura en general"] }
+      ]
+    }
+  ],
+  "entregable": {
+    "etiqueta": "El informe",
+    "titulo": "La ficha de cada equipo",
+    "descripcion": "Además de la matriz, la hoja de ruta y el análisis económico, cada equipo importante tiene su ficha. Pasa el cursor por la lista para ver dónde va cada cosa.",
+    "contenido": [
+      "Clase de criticidad del equipo",
+      "Puntaje en cada criterio",
+      "Cómo se calcula la criticidad",
+      "Lo que encontramos en campo",
+      "Qué hacer y cada cuánto medirlo"
+    ],
+    "muestra": {
+      "titulo": "Diagnóstico situacional",
+      "equipo": "Compresor de aire de proceso",
+      "subtitulo": "Ficha 1 de 59 · equipos A y B",
+      "estado": { "texto": "Criticidad A", "color": "#dc2626", "punto": 0 },
+      "lecturas": {
+        "titulo": "Puntaje por criterio · de 1 a 5",
+        "unidad": "",
+        "max": 5,
+        "nota": "La marca es el puntaje a partir del cual el criterio pesa en la clasificación.",
+        "punto": 1,
+        "filas": [
+          { "p": "Producción", "valor": 5, "ref": 3, "color": "#dc2626" },
+          { "p": "Seguridad y ambiente", "valor": 3, "ref": 3, "color": "#ca8a04" },
+          { "p": "Costo de reparar", "valor": 4, "ref": 3, "color": "#dc2626" },
+          { "p": "Tiempo de refacción", "valor": 5, "ref": 3, "color": "#dc2626" },
+          { "p": "Frecuencia de falla", "valor": 4, "ref": 3, "color": "#dc2626" }
+        ]
+      },
+      "escala": {
+        "titulo": "Criticidad = frecuencia × consecuencia",
+        "punto": 2,
+        "niveles": [
+          { "t": "A", "r": "15 a 25", "c": "#dc2626" },
+          { "t": "B", "r": "8 a 14", "c": "#ca8a04" },
+          { "t": "C", "r": "1 a 7", "c": "#16a34a" }
+        ]
+      },
+      "hallazgo": {
+        "titulo": "Sin respaldo y con defecto en rodamiento",
+        "texto": "No hay compresor de reserva, la refacción es de importación y la medición base muestra un defecto incipiente en el rodamiento del motor.",
+        "punto": 3
+      },
+      "recomendacion": {
+        "titulo": "Cambiar el rodamiento y entrar a ruta mensual",
+        "urgencia": "este mes",
+        "texto": "Vibraciones y termografía cada mes, aceite cada tres meses, y tener la refacción en almacén.",
+        "punto": 4
+      }
+    }
+  },
+  "mostrarClientes": true,
+  "servicioRelacionado": {
+    "href": "/servicios/diapsa-start",
+    "etiqueta": "El programa completo",
+    "titulo": "DIAPSA START",
+    "texto": "El diagnóstico situacional es la etapa central de DIAPSA START, el programa para arrancar el mantenimiento predictivo desde cero: capacitación de tu personal, diagnóstico, mediciones y manejo de la información.",
+    "enlace": "Ver DIAPSA START"
+  },
+  "faq": [
+    { "question": "¿Qué es un diagnóstico situacional de mantenimiento?", "answer": "Es una revisión completa de los equipos de una planta para saber cuáles son críticos, en qué estado están y qué programa de mantenimiento necesita cada uno. Es el punto de partida de un programa predictivo." },
+    { "question": "¿Qué es el análisis de criticidad de equipos?", "answer": "Es ordenar los equipos según el riesgo que representan. A cada uno se le califica qué tan seguido falla y qué pasa cuando falla, en producción, seguridad, costo y tiempo de reparación. Multiplicando las dos cosas sale su criticidad." },
+    { "question": "¿Qué es una matriz de criticidad?", "answer": "Una tabla con la frecuencia de falla en un eje y la consecuencia en el otro. Cada equipo cae en una celda y el color de la celda dice si es crítico, importante o de respaldo." },
+    { "question": "¿En qué se diferencia de una inspección normal?", "answer": "Una inspección mide equipos. El diagnóstico decide cuáles medir, con qué técnica y cada cuánto, y deja la medición base contra la que se va a comparar todo lo que siga." },
+    { "question": "¿Cuánto tarda?", "answer": "Depende del tamaño de la planta. El trabajo en campo suele tomar de unos días a un par de semanas, y el informe se entrega después del análisis." },
+    { "question": "¿Qué necesito tener listo?", "answer": "El listado de equipos si lo tienes, los manuales, el historial de fallas y el programa de mantenimiento actual. Si falta algo, lo levantamos en campo." },
+    { "question": "¿Qué pasa después del diagnóstico?", "answer": "Puedes seguir la hoja de ruta con tu propio personal, con nosotros o combinando. Si quieres arrancar el programa completo, el siguiente paso es DIAPSA START." },
+    { "question": "¿Cuánto cuesta un diagnóstico situacional?", "answer": "Depende del número de equipos y de las técnicas de la medición base. Cuéntanos de tu planta y te hacemos una propuesta sin compromiso." }
+  ],
+  "galeria": [
+    { "src": "/images/diagnostico-situacional/levantamiento-campo.webp", "alt": "Levantamiento en campo de un motor y su acople." },
+    { "src": "/images/gallery/campo/vibracion-punto-medicion.webp", "alt": "Registro de un punto de medición durante la medición base." },
+    { "src": "/images/diagnostico-situacional/termografia-tablero.webp", "alt": "Termografía de un centro de control de motores." },
+    { "src": "/images/gallery/campo/vibracion-motor-grande.webp", "alt": "Medición de vibraciones en un motor de gran tamaño." },
+    { "src": "/images/diagnostico-situacional/analista-informe.webp", "alt": "Integración de resultados para el informe del diagnóstico." }
+  ],
+  "cta": {
+    "title": "¿Por dónde empieza el mantenimiento de tu planta?",
+    "text": "Cuéntanos cuántos equipos tienes y qué tanto sabes de ellos hoy, y te preparamos la propuesta del diagnóstico.",
+    "whatsappMessage": "Hola, quiero cotizar un diagnóstico situacional para mi planta.",
+    "datos": ["Registro REPSE vigente", "Análisis de criticidad incluido", "Servicio en todo México"]
+  }
+}

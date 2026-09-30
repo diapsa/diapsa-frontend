@@ -12,6 +12,9 @@ import vibracionesMotoresBombas from "@/data/blog/vibraciones-motores-bombas.jso
 import tablaTolerancias from "@/data/blog/tabla-tolerancias-alineacion.json";
 import balanceoGrado from "@/data/blog/balanceo-dinamico-grado-g.json";
 import alineacionMotorBomba from "@/data/blog/alineacion-motor-bomba.json";
+import matrizCriticidad from "@/data/blog/matriz-criticidad.json";
+import programaPredictivo from "@/data/blog/programa-predictivo.json";
+import costoParo from "@/data/blog/costo-paro-no-programado.json";
 
 /**
  * Artículos del blog que viven en el sitio y no en el CMS (2026-09-29).
@@ -100,7 +103,7 @@ function aBlog(a: ArticuloLocal, i: number): Blog {
   };
 }
 
-export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba] as ArticuloLocal[]).map(aBlog);
+export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba, matrizCriticidad, programaPredictivo, costoParo] as ArticuloLocal[]).map(aBlog);
 
 export function getBlogLocal(slug: string): Blog | null {
   return BLOGS_LOCALES.find((b) => b.slug === slug) ?? null;

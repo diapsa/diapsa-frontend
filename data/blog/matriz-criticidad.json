@@ -1,0 +1,67 @@
+{
+  "slug": "analisis-de-criticidad-de-equipos-como-hacer-una-matriz",
+  "titulo": "Análisis de criticidad de equipos: cómo hacer una matriz de criticidad paso a paso",
+  "extracto": "Qué es la criticidad de un equipo, qué criterios usar, cómo armar la matriz de frecuencia por consecuencia con un ejemplo, y qué hacer con cada grupo una vez clasificado.",
+  "portada": "/images/diagnostico-situacional/levantamiento-campo.webp",
+  "fecha": "2026-09-30T23:00:00.000000Z",
+  "seo": {
+    "titulo": "Análisis de criticidad de equipos: matriz de criticidad con ejemplo",
+    "descripcion": "Cómo hacer un análisis de criticidad de equipos en mantenimiento: criterios, matriz de frecuencia por consecuencia, ejemplo con puntajes, clases A, B y C y qué estrategia aplicar a cada una."
+  },
+  "bloques": [
+    ["p", "En cualquier planta hay equipos que pueden fallar y nadie se entera hasta el siguiente turno, y otros que si fallan paran la producción en minutos. Tratarlos igual es gastar de más en los primeros y de menos en los segundos. El análisis de criticidad sirve justo para eso: ordenar los equipos según el riesgo que representan y decidir cuánto cuidado merece cada uno."],
+
+    ["h2", "Qué es la criticidad de un equipo"],
+    ["p", "La criticidad junta dos preguntas: qué tan seguido falla el equipo y qué pasa cuando falla. Un equipo que falla poco pero que detiene toda la planta puede ser más crítico que uno que falla seguido pero tiene respaldo. La forma más usada de medirlo es multiplicar las dos cosas:"],
+    ["p", "Criticidad = frecuencia de falla × consecuencia."],
+
+    ["h2", "Los criterios de consecuencia"],
+    ["p", "La consecuencia no es una sola cosa. Lo común es calificar varios criterios de 1 a 5 y quedarse con el más alto, o con un promedio ponderado si la planta ya tiene una política definida:"],
+    ["lista", [
+      "Producción: cuánto se pierde si el equipo se para, y si tiene respaldo.",
+      "Seguridad y ambiente: si la falla puede lastimar a alguien o provocar una fuga o un derrame.",
+      "Costo de reparación: refacciones, mano de obra y servicios externos.",
+      "Tiempo de reparación: incluye lo que tarda en llegar la refacción.",
+      "Calidad: si la falla afecta el producto aunque la línea siga andando."
+    ]],
+    ["p", "La frecuencia se califica también de 1 a 5, con el historial de fallas si existe o con la experiencia del personal si no. Por ejemplo: 1, menos de una falla en cinco años; 5, más de una falla al año."],
+
+    ["h2", "Cómo se arma la matriz"],
+    ["numerada", [
+      "Haz el listado de equipos, con su función en el proceso. Sin inventario no hay análisis.",
+      "Reúne a producción, mantenimiento y seguridad. La criticidad no la decide un área sola.",
+      "Califica la frecuencia y cada criterio de consecuencia de cada equipo.",
+      "Multiplica y coloca el equipo en la matriz de cinco por cinco.",
+      "Define los cortes de cada clase y revisa que el resultado tenga sentido para la gente de planta."
+    ]],
+
+    ["h2", "Un ejemplo"],
+    ["p", "Con cortes de 15 o más para la clase A, de 8 a 14 para la B y de 7 o menos para la C, así quedarían algunos equipos típicos:"],
+    ["lista", [
+      "Compresor de aire de proceso sin respaldo: frecuencia 4, consecuencia 5, criticidad 20, clase A.",
+      "Bomba de alimentación a caldera: 4 por 4, criticidad 16, clase A.",
+      "Ventilador de tiro inducido: 3 por 5, criticidad 15, clase A.",
+      "Motor-bomba de agua de enfriamiento con respaldo: 3 por 4, criticidad 12, clase B.",
+      "Transportador de banda secundario: 2 por 3, criticidad 6, clase C."
+    ]],
+    ["p", "En una planta mediana es normal que los equipos A sean alrededor de uno de cada diez. Si más de la mitad salen críticos, los cortes o las calificaciones están muy altos y conviene revisarlos."],
+
+    ["h2", "Qué hacer con cada clase"],
+    ["lista", [
+      "Clase A: monitoreo de condición frecuente, con varias técnicas, refacciones en almacén y análisis de causa raíz cuando fallan.",
+      "Clase B: monitoreo periódico con menos frecuencia y mantenimiento preventivo bien planeado.",
+      "Clase C: inspecciones sencillas y, en muchos casos, dejar que operen hasta que fallen con la refacción a la mano."
+    ]],
+    ["p", "La matriz no es para siempre. Se revisa cuando cambia el proceso, cuando se agrega un respaldo o cuando un equipo falla más de lo que se esperaba."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Hay una norma para el análisis de criticidad?"],
+    ["p", "No hay una sola obligatoria. Muchas empresas se basan en la ISO 31000 para la gestión del riesgo, en la ISO 55001 para la gestión de activos o en la norma NORSOK Z-008, que viene del sector petrolero. Lo importante es que los criterios sean claros y se apliquen igual a todos los equipos."],
+    ["h3", "¿Se puede hacer en Excel?"],
+    ["p", "Sí, y es como empieza la mayoría. El problema llega después, cuando hay que mantenerla al día y cruzarla con las mediciones. Por eso conviene tenerla en la misma plataforma donde viven los datos de condición."],
+    ["h3", "¿Qué pasa si no tengo historial de fallas?"],
+    ["p", "Se califica con la experiencia del personal y se ajusta con el tiempo. Una estimación honesta es mucho mejor que no clasificar."],
+
+    ["nota", "En el [diagnóstico situacional](/servicios/diagnostico-situacional) hacemos contigo la matriz de criticidad de tu planta, medimos los equipos importantes y te dejamos la hoja de ruta de cada clase."]
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "costo-de-un-paro-no-programado-como-calcularlo",
+  "titulo": "Costo de un paro no programado: cómo calcularlo y usarlo para decidir",
+  "extracto": "Qué incluye el costo real de una falla, una fórmula sencilla con un ejemplo, los costos que casi siempre se olvidan y cómo usar el número para justificar el presupuesto de mantenimiento.",
+  "portada": "/images/diagnostico-situacional/analista-informe.webp",
+  "fecha": "2026-09-30T23:45:00.000000Z",
+  "seo": {
+    "titulo": "Costo de un paro no programado: cómo calcular el costo de falla",
+    "descripcion": "Cómo calcular el costo de un paro no programado o costo de falla en mantenimiento industrial: producción perdida, refacciones, mano de obra y costos ocultos, con un ejemplo y cómo usarlo para priorizar."
+  },
+  "bloques": [
+    ["p", "Cuando se discute el presupuesto de mantenimiento, casi siempre se compara lo que cuesta el programa contra nada. Y contra nada, cualquier gasto parece caro. La comparación correcta es contra lo que cuesta que el equipo falle. Ese número casi nadie lo tiene calculado, y cuando se calcula suele sorprender."],
+
+    ["h2", "Qué incluye el costo de una falla"],
+    ["lista", [
+      "Producción perdida: las horas que el equipo o la línea están parados, por lo que deja de producirse en cada hora.",
+      "Refacciones: el precio de la pieza, y lo que se paga de más por pedirla urgente.",
+      "Mano de obra: horas extra, turnos adicionales y contratistas.",
+      "Daños secundarios: una falla de rodamiento que termina dañando el eje o el devanado.",
+      "Producto perdido: lo que estaba en proceso y se tiene que tirar o reprocesar.",
+      "Penalizaciones: entregas tarde, multas o reclamos de clientes."
+    ]],
+
+    ["h2", "Una fórmula sencilla"],
+    ["p", "Costo de la falla = horas de paro × costo por hora de paro + refacciones + mano de obra + otros costos."],
+    ["p", "Lo más difícil es el costo por hora de paro. Una forma práctica es tomar el margen que deja la línea en una hora de operación normal. Si no se tiene, producción y finanzas pueden dar una estimación razonable en una tarde."],
+
+    ["h2", "Un ejemplo"],
+    ["p", "Un compresor de aire de proceso sin respaldo falla por un rodamiento. La planta se detiene 36 horas mientras llega la refacción de importación. Con cifras de ejemplo:"],
+    ["lista", [
+      "Producción detenida: 36 horas por $85,000 la hora, $3,060,000.",
+      "Refacción con envío urgente: $420,000.",
+      "Mano de obra extra y contratistas: $120,000.",
+      "Costo total de la falla: $3,600,000."
+    ]],
+    ["p", "Vigilar ese compresor con vibraciones, termografía y aceite cuesta una fracción de eso al año. Y lo más importante: con el defecto detectado a tiempo, el cambio del rodamiento se hace en un paro programado, con la refacción ya en almacén y en unas cuantas horas."],
+
+    ["h2", "Los costos que casi siempre se olvidan"],
+    ["p", "El arranque después del paro, que suele tardar y generar producto fuera de especificación. El desgaste extra en otros equipos que trabajan de más mientras uno está parado. El tiempo de los supervisores y gerentes atendiendo la emergencia. Y el riesgo de seguridad, que no siempre tiene precio pero sí consecuencias."],
+
+    ["h2", "Cómo usar el número"],
+    ["p", "El costo de falla es la mitad de la consecuencia en el [análisis de criticidad](/blog/analisis-de-criticidad-de-equipos-como-hacer-una-matriz). Calculado para los equipos críticos, dice dónde poner primero el presupuesto: en los equipos donde una sola falla cuesta más que años de monitoreo. También sirve para medir el programa después: cada falla detectada a tiempo es un costo evitado que se puede sumar."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Tengo que calcularlo para todos los equipos?"],
+    ["p", "No. Basta con los críticos y algunos importantes. Para el resto, la clasificación de criticidad es suficiente."],
+    ["h3", "¿Qué pasa si el equipo tiene respaldo?"],
+    ["p", "El costo baja mucho, porque no hay producción perdida, pero no desaparece: la reparación se paga igual, y mientras tanto la planta opera sin respaldo."],
+    ["h3", "¿Cómo lo presento a la dirección?"],
+    ["p", "Con pocos números: el costo de las fallas del último año o de una falla típica, el costo del programa y cuántas fallas tendría que evitar para pagarse. Casi siempre la respuesta es menos de una."],
+
+    ["nota", "El [diagnóstico situacional](/servicios/diagnostico-situacional) incluye el análisis económico de tus equipos críticos: cuánto cuesta una falla, cuánto cuesta evitarla y por dónde empezar."]
+  ]
+}
