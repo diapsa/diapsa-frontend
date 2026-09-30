@@ -268,5 +268,57 @@
       "titulo": "Diagnóstico Situacional",
       "resumen": "Análisis de criticidad, medición base, análisis económico y hoja de ruta de tu planta."
     }
+  },
+  {
+    "articulo": {
+      "slug": "kpi-de-mantenimiento-predictivo-cuales-medir",
+      "titulo": "KPI de mantenimiento predictivo",
+      "resumen": "Los cinco indicadores que dicen si el programa funciona y cómo poner las metas.",
+      "portada": "/images/diapsa-start/medicion-tableros.webp"
+    },
+    "servicio": {
+      "href": "/servicios/diapsa-start",
+      "titulo": "DIAPSA START",
+      "resumen": "El programa para implementar el mantenimiento predictivo en tu planta, en cuatro etapas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "mtbf-mttr-y-disponibilidad-formulas-y-ejemplos",
+      "titulo": "MTBF, MTTR y disponibilidad",
+      "resumen": "Qué mide cada uno, fórmulas y un ejemplo resuelto.",
+      "portada": "/images/diapsa-start/medicion-campo.webp"
+    },
+    "servicio": {
+      "href": "/servicios/diapsa-start",
+      "titulo": "DIAPSA START",
+      "resumen": "El programa para implementar el mantenimiento predictivo en tu planta, en cuatro etapas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "certificacion-iso-18436-2-categorias-de-analista-de-vibraciones",
+      "titulo": "Certificación ISO 18436-2",
+      "resumen": "Las cuatro categorías de analista de vibraciones y qué nivel necesita tu planta.",
+      "portada": "/images/diapsa-start/aula-capacitacion.webp"
+    },
+    "servicio": {
+      "href": "/servicios/diapsa-start",
+      "titulo": "DIAPSA START",
+      "resumen": "El programa para implementar el mantenimiento predictivo en tu planta, en cuatro etapas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "como-hacer-un-programa-de-mantenimiento-predictivo",
+      "titulo": "Cómo hacer un programa de mantenimiento predictivo",
+      "resumen": "Los pasos en orden, de inventario a frecuencias, y los errores al empezar.",
+      "portada": "/images/gallery/campo/vibracion-analista-motor.webp"
+    },
+    "servicio": {
+      "href": "/servicios/diapsa-start",
+      "titulo": "DIAPSA START",
+      "resumen": "El programa para implementar el mantenimiento predictivo en tu planta, en cuatro etapas."
+    }
   }
 ]

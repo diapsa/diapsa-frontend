@@ -1,0 +1,49 @@
+{
+  "slug": "kpi-de-mantenimiento-predictivo-cuales-medir",
+  "titulo": "KPI de mantenimiento predictivo: cuáles medir para saber si el programa funciona",
+  "extracto": "Los indicadores que de verdad dicen si un programa predictivo está funcionando, cómo se calcula cada uno, qué meta poner al empezar y cómo presentarlos a la dirección.",
+  "portada": "/images/diapsa-start/medicion-tableros.webp",
+  "fecha": "2026-09-30T23:52:00.000000Z",
+  "seo": {
+    "titulo": "KPI de mantenimiento predictivo: indicadores que sí sirven",
+    "descripcion": "Qué indicadores KPI llevar en un programa de mantenimiento predictivo industrial: cumplimiento de rutas, hallazgos cerrados, trabajo planeado, paros no programados y MTBF, con fórmula y meta de arranque."
+  },
+  "bloques": [
+    ["p", "Un programa predictivo que no se mide termina igual que muchos: con rutas que se hacen cada vez menos, reportes que nadie lee y una dirección que un día pregunta para qué se paga. Los indicadores sirven para evitar eso. No hacen falta muchos: con cinco bien llevados basta para saber si el programa está funcionando."],
+
+    ["h2", "Indicadores de que el programa se está haciendo"],
+    ["h3", "Cumplimiento de rutas"],
+    ["p", "Rutas hechas a tiempo ÷ rutas programadas. Si las rutas no se hacen, lo demás no importa. Al arrancar, una meta razonable es arriba del 90 %."],
+    ["h3", "Hallazgos cerrados"],
+    ["p", "Hallazgos corregidos en el plazo recomendado ÷ hallazgos reportados. Mide si lo que encuentra el predictivo se convierte en acciones. Es el indicador que más dice de un programa, y el que más se descuida."],
+
+    ["h2", "Indicadores de que el programa está dando resultados"],
+    ["h3", "Trabajo planeado"],
+    ["p", "Horas de trabajo planeado ÷ horas totales de mantenimiento. Cuando el predictivo funciona, cada vez más trabajo se programa con tiempo y menos llega como emergencia."],
+    ["h3", "Paros no programados"],
+    ["p", "Número de paros por falla en los equipos críticos, por mes o por trimestre. Es el indicador que la dirección entiende sin explicación."],
+    ["h3", "Tiempo medio entre fallas"],
+    ["p", "El MTBF de los equipos críticos. Sube cuando las fallas se detectan y corrigen a tiempo. Te explicamos cómo calcularlo en la guía de [MTBF, MTTR y disponibilidad](/blog/mtbf-mttr-y-disponibilidad-formulas-y-ejemplos)."],
+
+    ["h2", "Cómo poner las metas al empezar"],
+    ["p", "El primer mes no hay contra qué comparar, así que la primera meta es tener los datos. Durante los primeros tres meses se mide cómo está la planta, y a partir de ahí se ponen metas de mejora para cada indicador. Poner metas muy altas desde el día uno solo sirve para que el equipo deje de creer en ellas."],
+
+    ["h2", "Cómo presentarlos"],
+    ["lista", [
+      "Una sola hoja al mes, con los cinco indicadores contra su meta.",
+      "Una línea con lo más importante que pasó: la falla que se evitó o el hallazgo que sigue abierto.",
+      "Qué sigue y quién lo hace.",
+      "Cada trimestre, las fallas evitadas traducidas a dinero."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Hay que llevar indicadores de cada técnica?"],
+    ["p", "No hace falta al principio. Es mejor llevar pocos indicadores del programa completo que muchos de cada técnica."],
+    ["h3", "¿En Excel o en un software?"],
+    ["p", "Se puede empezar en Excel, pero en cuanto hay varias técnicas y varias personas midiendo, conviene una plataforma donde las rutas, los hallazgos y los indicadores estén juntos. Es lo que hace [IDAP](/servicios/idap)."],
+    ["h3", "¿Cada cuánto se revisan?"],
+    ["p", "Los de ejecución, cada mes. Los de resultados, cada trimestre, porque necesitan tiempo para moverse."],
+
+    ["nota", "En [DIAPSA START](/servicios/diapsa-start) arrancamos tu programa predictivo con estos indicadores desde el primer mes. Si quieres empezar por saber qué equipos cuidar, revisa la guía de la [matriz de criticidad](/blog/analisis-de-criticidad-de-equipos-como-hacer-una-matriz)."]
+  ]
+}

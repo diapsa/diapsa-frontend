@@ -15,6 +15,9 @@ import alineacionMotorBomba from "@/data/blog/alineacion-motor-bomba.json";
 import matrizCriticidad from "@/data/blog/matriz-criticidad.json";
 import programaPredictivo from "@/data/blog/programa-predictivo.json";
 import costoParo from "@/data/blog/costo-paro-no-programado.json";
+import mtbfMttr from "@/data/blog/mtbf-mttr-disponibilidad.json";
+import kpiPredictivo from "@/data/blog/kpi-mantenimiento-predictivo.json";
+import certificacionIso from "@/data/blog/certificacion-iso-18436.json";
 
 /**
  * Artículos del blog que viven en el sitio y no en el CMS (2026-09-29).
@@ -103,7 +106,7 @@ function aBlog(a: ArticuloLocal, i: number): Blog {
   };
 }
 
-export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba, matrizCriticidad, programaPredictivo, costoParo] as ArticuloLocal[]).map(aBlog);
+export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba, matrizCriticidad, programaPredictivo, costoParo, mtbfMttr, kpiPredictivo, certificacionIso] as ArticuloLocal[]).map(aBlog);
 
 export function getBlogLocal(slug: string): Blog | null {
   return BLOGS_LOCALES.find((b) => b.slug === slug) ?? null;

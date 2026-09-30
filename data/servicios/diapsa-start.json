@@ -1,0 +1,181 @@
+{
+  "id": "diapsa-start",
+  "slug": "diapsa-start",
+  "type": "servicio",
+  "breadcrumbs": [
+    { "label": "Inicio", "link": "/" },
+    { "label": "Servicios", "link": "/servicios" },
+    { "label": "DIAPSA START", "link": "/servicios/diapsa-start" }
+  ],
+  "header": {
+    "title": "DIAPSA START",
+    "subtitle": "Implementa el mantenimiento predictivo en tu planta, desde cero o para reordenarlo: formación de tu personal, diagnóstico, mediciones e indicadores",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoTitle": "DIAPSA START: implementación de mantenimiento predictivo en tu planta",
+  "seoDescription": "Programa para implementar el mantenimiento predictivo y el monitoreo de condición en tu planta: capacitación en vibraciones, termografía y ultrasonido, análisis de criticidad, rutas de medición e indicadores de mantenimiento.",
+  "content": {
+    "title": "Un programa predictivo que se queda en tu planta",
+    "subtitle": "Comprar un equipo o contratar una ruta no hace un programa predictivo. DIAPSA START lo arma contigo en cuatro etapas: forma a tu gente, decide qué equipos cuidar, arranca las mediciones y deja los números para saber si está funcionando.",
+    "image": "/images/diapsa-start/practica-termografia.webp",
+    "items": []
+  },
+  "relatedProducts": { "title": "", "subtitle": "", "items": [] },
+  "introBeneficios": {
+    "beneficios": [
+      { "icono": "engrane", "titulo": "Tu gente sabe medir e interpretar", "texto": "Formación en planta en tres disciplinas." },
+      { "icono": "paro", "titulo": "Menos paros sin aviso", "texto": "Los equipos críticos en ruta desde el tercer mes." },
+      { "icono": "calendario", "titulo": "Un método, no un servicio suelto", "texto": "Cuatro etapas, en orden y con fechas." },
+      { "icono": "documento", "titulo": "Resultados que se pueden medir", "texto": "Indicadores mes a mes para la dirección." }
+    ],
+    "modalidades": [
+      { "titulo": "Desde cero", "texto": "Para plantas que hoy trabajan solo con correctivo y preventivo." },
+      { "titulo": "Para reordenar", "texto": "Cuando ya se mide pero los datos no llegan a decisiones." }
+    ],
+    "fotos": [
+      { "src": "/images/diapsa-start/practica-termografia.webp", "alt": "Práctica de termografía con técnicos de la planta" },
+      { "src": "/images/diapsa-start/aula-capacitacion.webp", "alt": "Sesión teórica del programa en aula" },
+      { "src": "/images/diapsa-start/medicion-tableros.webp", "alt": "Ruta de termografía en tableros con el personal de la planta" },
+      { "src": "/images/diapsa-start/campo-registro.webp", "alt": "Levantamiento de datos técnicos en una planta de generación" },
+      { "src": "/images/diapsa-start/medicion-campo.webp", "alt": "Analista de DIAPSA midiendo en campo" }
+    ],
+    "idap": {
+      "titulo": "El programa vive en IDAP",
+      "texto": "Inventario, criticidad, rutas, hallazgos e indicadores en un solo lugar, para tu equipo y para nosotros.",
+      "puntos": ["Rutas y mediciones de tu personal y del nuestro", "Hallazgos con responsable y fecha", "Indicadores de confiabilidad al día"],
+      "video": "/videos/idap/idap-confiabilidad",
+      "descripcionVideo": "Indicadores de confiabilidad en IDAP: tiempo medio entre fallas, disponibilidad y tendencia",
+      "enlace": "/servicios/idap"
+    }
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Cuatro etapas, un año",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "De la formación a los números",
+          "texto": "Primero se forma a tu personal, luego se decide qué equipos cuidar, se arrancan las rutas y desde el primer mes se llevan los indicadores.",
+          "video": "/videos/diapsa-start/start-proceso",
+          "descripcion": "Las cuatro etapas de DIAPSA START: formación en tres disciplinas, diagnóstico de 148 equipos por criticidad, 59 equipos en ruta y paros no programados que bajan de 9 a 3 por trimestre",
+          "pasos": ["Formación técnica aplicada", "Diagnóstico situacional", "Mediciones de monitoreo de condición", "Gestión de la información"]
+        }
+      ]
+    },
+    {
+      "lugar": "flujo",
+      "etiqueta": "Qué incluye",
+      "titulo": "Cada etapa, de cerca",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "Formación técnica aplicada",
+          "texto": "Teoría en aula y práctica en tus propios equipos, con las rutas que tu gente va a hacer después. No es un curso genérico.",
+          "video": "/videos/diapsa-start/start-capacitacion",
+          "descripcion": "Temario de la formación en cinco módulos con fotos reales del aula, la práctica con cámara térmica y una ruta de tableros"
+        },
+        {
+          "titulo": "Diagnóstico situacional",
+          "texto": "Inventario, criticidad, medición base y análisis económico de tu planta. Es la etapa central: de aquí sale el plan.",
+          "video": "/videos/diagnostico-situacional/diag-criticidad",
+          "descripcion": "Matriz de criticidad de cinco por cinco con los equipos de la planta y la lista de los más críticos"
+        },
+        {
+          "titulo": "Gestión de la información",
+          "texto": "Tiempo medio entre fallas, rutas a tiempo, hallazgos cerrados y trabajo planeado, mes a mes. Así se sabe si el programa funciona.",
+          "video": "/videos/diapsa-start/start-indicadores",
+          "descripcion": "Tiempo medio entre fallas de los equipos A que sube durante el año y cuatro indicadores al cierre"
+        }
+      ],
+      "listas": [
+        { "titulo": "Lo que queda en tu planta", "items": ["Personal formado en tres disciplinas", "Matriz de criticidad de todos los equipos", "Rutas de medición con puntos marcados", "Medición base de los equipos A y B", "Indicadores y tablero mensual", "Todo cargado en IDAP"] },
+        { "titulo": "Para quién es", "items": ["Plantas sin programa predictivo", "Programas que se quedaron en reportes", "Equipos de mantenimiento nuevos o con rotación", "Plantas nuevas antes de arrancar"] }
+      ]
+    }
+  ],
+  "entregable": {
+    "etiqueta": "El informe",
+    "titulo": "El tablero mensual del programa",
+    "descripcion": "Cada mes, una hoja con el avance del programa contra sus metas. Pasa el cursor por la lista para ver dónde va cada cosa.",
+    "contenido": [
+      "Estado general del programa",
+      "Indicadores del mes contra su meta",
+      "En qué etapa va cada frente",
+      "Lo más importante que pasó",
+      "Qué sigue y quién lo hace"
+    ],
+    "muestra": {
+      "titulo": "DIAPSA START",
+      "equipo": "Tablero del programa · mes 6",
+      "subtitulo": "148 equipos · 59 en ruta · 8 técnicos formados",
+      "estado": { "texto": "En meta", "color": "#16a34a", "punto": 0 },
+      "lecturas": {
+        "titulo": "Indicadores del mes · %",
+        "unidad": "%",
+        "max": 100,
+        "nota": "La marca es la meta de cada indicador.",
+        "punto": 1,
+        "filas": [
+          { "p": "Rutas a tiempo", "valor": 96, "ref": 95, "color": "#16a34a" },
+          { "p": "Hallazgos cerrados", "valor": 85, "ref": 90, "color": "#ca8a04" },
+          { "p": "Trabajo planeado", "valor": 64, "ref": 70, "color": "#ca8a04" },
+          { "p": "Personal formado", "valor": 100, "ref": 100, "color": "#16a34a" }
+        ]
+      },
+      "escala": {
+        "titulo": "Avance por etapa",
+        "punto": 2,
+        "niveles": [
+          { "t": "Formación", "r": "terminada", "c": "#16a34a" },
+          { "t": "Diagnóstico", "r": "terminado", "c": "#16a34a" },
+          { "t": "Mediciones", "r": "en curso", "c": "#1d4ed8" },
+          { "t": "Gestión", "r": "en curso", "c": "#1d4ed8" }
+        ]
+      },
+      "hallazgo": {
+        "titulo": "Rodamiento del compresor detectado a tiempo",
+        "texto": "La ruta de vibraciones lo encontró en etapa temprana y se cambió en un paro programado, sin detener la producción.",
+        "punto": 3
+      },
+      "recomendacion": {
+        "titulo": "Sumar aceite a la ruta de los equipos A",
+        "urgencia": "mes 7",
+        "texto": "Tu personal toma las muestras y nosotros acompañamos las dos primeras rutas.",
+        "punto": 4
+      }
+    }
+  },
+  "mostrarClientes": true,
+  "servicioRelacionado": {
+    "href": "/casos-exito/diapsa-start-en-planta-de-tratamiento-de-agua-residual",
+    "etiqueta": "Caso real",
+    "titulo": "DIAPSA START en una planta de tratamiento de agua residual",
+    "texto": "Una planta con alta rotación de personal y poca experiencia técnica en mantenimiento pasó de inspecciones sueltas a un programa estructurado: personal formado en tres disciplinas, activos priorizados con análisis económico y mediciones con historial.",
+    "enlace": "Ver el caso"
+  },
+  "faq": [
+    { "question": "¿Qué es DIAPSA START?", "answer": "Es un programa para implementar el mantenimiento predictivo en una planta, en cuatro etapas: formación del personal, diagnóstico situacional, mediciones de monitoreo de condición y gestión de la información." },
+    { "question": "¿Cuánto dura?", "answer": "El arranque completo suele tomar alrededor de un año, pero las primeras mediciones de los equipos críticos empiezan desde el tercer mes. La duración exacta depende del tamaño de la planta." },
+    { "question": "¿Qué disciplinas incluye la formación?", "answer": "Las tres principales del monitoreo de condición: análisis de vibraciones, termografía y ultrasonido. Se pueden sumar análisis de aceite y otras técnicas según tus equipos." },
+    { "question": "¿Mi personal queda certificado?", "answer": "La formación del programa es práctica y enfocada en tu planta. Si además quieres certificaciones formales, como la ISO 18436-2 para analistas de vibraciones, te orientamos con los cursos de certificación." },
+    { "question": "¿Qué indicadores se llevan?", "answer": "Los que permiten saber si el programa funciona: rutas a tiempo, hallazgos cerrados, porcentaje de trabajo planeado, paros no programados y tiempo medio entre fallas de los equipos críticos." },
+    { "question": "¿Necesito comprar equipos de medición?", "answer": "No para empezar. El programa puede arrancar con nuestros equipos y te ayudamos a decidir cuáles conviene comprar cuando tu personal ya sabe usarlos." },
+    { "question": "¿Y si ya tengo un programa predictivo?", "answer": "Entonces se trabaja para reordenarlo: se revisa la criticidad, las rutas y los indicadores, y se completa lo que falta en lugar de empezar de cero." },
+    { "question": "¿Cuánto cuesta?", "answer": "Depende del número de equipos, las disciplinas y cuánta formación necesita tu personal. Cuéntanos de tu planta y te hacemos una propuesta sin compromiso." }
+  ],
+  "galeria": [
+    { "src": "/images/diapsa-start/practica-termografia.webp", "alt": "Práctica de termografía durante la formación." },
+    { "src": "/images/diapsa-start/aula-capacitacion.webp", "alt": "Sesión teórica del programa." },
+    { "src": "/images/diapsa-start/medicion-tableros.webp", "alt": "Ruta de termografía en tableros con técnicos de la planta." },
+    { "src": "/images/diapsa-start/campo-registro.webp", "alt": "Levantamiento de datos en campo." },
+    { "src": "/images/diapsa-start/medicion-campo.webp", "alt": "Medición en campo durante la ruta." }
+  ],
+  "cta": {
+    "title": "¿Quieres arrancar el predictivo en tu planta?",
+    "text": "Cuéntanos cuántos equipos tienes y cómo trabaja hoy tu mantenimiento, y te proponemos cómo arrancar.",
+    "whatsappMessage": "Hola, quiero información de DIAPSA START para mi planta.",
+    "datos": ["Registro REPSE vigente", "Formación en planta", "Servicio en todo México"]
+  }
+}
