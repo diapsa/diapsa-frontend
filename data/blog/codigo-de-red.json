@@ -1,0 +1,44 @@
+{
+  "slug": "codigo-de-red-que-pide-a-los-centros-de-carga",
+  "titulo": "Código de Red: qué pide a los centros de carga y cómo demostrar que cumples",
+  "extracto": "Qué es el Código de Red de la CRE, a qué plantas aplica, qué requisitos de calidad de la energía pide a los centros de carga y cómo se demuestra el cumplimiento.",
+  "portada": "/images/servicios/estudios-electricos/campo-tablero-transductores.webp",
+  "fecha": "2026-09-30T23:59:57.000000Z",
+  "seo": {
+    "titulo": "Código de Red: qué pide a los centros de carga en México",
+    "descripcion": "Qué es el Código de Red de la CRE, a qué centros de carga aplica, qué pide en factor de potencia, armónicos, desbalance y variaciones de tensión, y cómo demostrar el cumplimiento con un estudio de calidad de la energía."
+  },
+  "bloques": [
+    ["p", "Durante años, la calidad de la energía dentro de una planta era un tema técnico que solo preocupaba cuando algo fallaba. Con el Código de Red eso cambió: ahora es una obligación regulatoria para muchas plantas, y la Comisión Reguladora de Energía puede verificarla. Aquí te contamos qué pide y cómo se demuestra, en palabras sencillas."],
+
+    ["h2", "Qué es el Código de Red"],
+    ["p", "Es el conjunto de reglas que emitió la CRE para que el sistema eléctrico nacional opere con seguridad y calidad. Una parte está dirigida a los centros de carga, es decir, a los usuarios que consumen energía, como las plantas industriales. La versión vigente se conoce como Código de Red 2.0."],
+
+    ["h2", "A quién aplica"],
+    ["p", "A los centros de carga conectados en media y alta tensión. En la práctica, eso incluye a la mayoría de las plantas industriales con subestación propia."],
+
+    ["h2", "Qué pide, en resumen"],
+    ["lista", [
+      "Factor de potencia de al menos 0.95.",
+      "Distorsión armónica de corriente y de tensión dentro de límites.",
+      "Desbalance de tensión y de corriente controlado.",
+      "Fluctuaciones y variaciones de tensión dentro de rango.",
+      "Evidencia de que se cumple, y un plan para corregir lo que no."
+    ]],
+    ["p", "El factor de potencia de 0.95 es más exigente que el 0.90 a partir del cual CFE deja de cobrar el cargo en el recibo. Una planta puede no pagar cargo y aun así no cumplir el Código de Red."],
+
+    ["h2", "Cómo se demuestra el cumplimiento"],
+    ["p", "Con mediciones. Un estudio de calidad de la energía registra durante un ciclo completo de producción, normalmente una semana, el factor de potencia, los armónicos, el desbalance y los eventos de tensión en el punto de conexión y en los tableros principales. Cada valor se compara con su límite y, si algo está fuera, el estudio dice qué carga lo provoca y cómo se corrige."],
+    ["p", "Ese informe es la evidencia que se presenta ante una verificación, una auditoría corporativa o una aseguradora."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Qué pasa si no cumplo?"],
+    ["p", "La CRE puede verificar el cumplimiento e imponer sanciones. Además, los mismos problemas que te sacan del Código de Red, como los armónicos y el bajo factor de potencia, se pagan en el recibo y en equipos dañados."],
+    ["h3", "¿Cada cuánto hay que medir?"],
+    ["p", "Conviene medir al menos una vez al año y cada vez que se agregan cargas importantes, como variadores, hornos de inducción o nuevas líneas."],
+    ["h3", "¿Qué se hace si el factor de potencia está bajo?"],
+    ["p", "Casi siempre se corrige con un banco de capacitores del tamaño correcto, y desintonizado si hay armónicos. Lo explicamos en la guía del [factor de potencia y el cargo de CFE](/blog/factor-de-potencia-cfe-cargo-y-bonificacion-como-se-calcula)."],
+
+    ["nota", "Medimos cada requisito del Código de Red en tu planta y te decimos qué corregir para cumplir. Conoce el [estudio de calidad de la energía](/servicios/monitoreo-condicion/calidad-de-energia). Este resumen es orientativo; para cualquier duda de cumplimiento, la referencia es el texto oficial del Código de Red."]
+  ]
+}

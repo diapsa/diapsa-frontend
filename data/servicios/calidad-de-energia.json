@@ -22,12 +22,12 @@
   ],
   "header": {
     "title": "Análisis de Calidad de Energía",
-    "subtitle": "Armónicos, factor de potencia, desbalance y eventos de tensión, medidos con tu planta operando",
+    "subtitle": "Estudio de calidad de la energía conforme al Código de Red: cumple con la CRE, evita cargos en tu recibo y acredita tus auditorías",
     "backgroundImage": "/images/fondo-hero.webp"
   },
   "content": {
-    "title": "Qué tan sana es la energía que alimenta tu planta",
-    "subtitle": "Armónicos, bajo factor de potencia y caídas de tensión calientan motores, disparan protecciones y dañan capacitores sin dejar rastro a simple vista. Un analizador conectado en tu tablero lo registra una semana seguida, con todo operando, y señala qué carga lo provoca.",
+    "title": "Cumplir el Código de Red, y saber qué le pasa a tu energía",
+    "subtitle": "La razón principal es el cumplimiento: el Código de Red obliga a las plantas conectadas en media y alta tensión a mantener la calidad de la energía dentro de límites, y la CRE puede verificarlo. El estudio es la evidencia que te protege de una sanción y de las auditorías, y además explica los armónicos, el bajo factor de potencia y las caídas de tensión que calientan motores, disparan protecciones y se cobran en el recibo.",
     "image": "/images/servicios/estudios-electricos/campo-analista-tablero.webp",
     "items": [
       {
@@ -70,33 +70,7 @@
       }
     ]
   },
-  "seoDescription": "Análisis de calidad de la energía en planta y cumplimiento del Código de Red: armónicos, factor de potencia, desbalance, caídas y picos de tensión, registrados una semana con todo operando.",
-  "porQue": {
-    "foto": {
-      "src": "/images/servicios/estudios-electricos/campo-tablero-transductores.webp",
-      "alt": "Transductores de corriente flexibles en las tres fases de un interruptor principal"
-    },
-    "preguntas": [
-      {
-        "pregunta": "Sin paro",
-        "texto": "El analizador se conecta con toda la planta operando."
-      },
-      {
-        "pregunta": "Una semana de registro",
-        "texto": "Turnos, arranques y fines de semana, contra IEEE 519 y el Código de Red."
-      },
-      {
-        "pregunta": "La causa, no solo el valor",
-        "texto": "Qué carga provoca cada problema y cómo se corrige."
-      }
-    ],
-    "escena": "calidad",
-    "destacado": {
-      "titulo": "Lo que no se ve en el tablero, pero sí en el recibo y en los motores",
-      "texto": "Armónicos, bajo factor de potencia y caídas de tensión calientan motores, disparan protecciones y se cobran mes con mes. El estudio los mide, encuentra la carga que los provoca y deja la planta dentro del Código de Red.",
-      "insignia": "RED"
-    }
-  },
+  "seoDescription": "Estudio de calidad de la energía eléctrica para cumplir el Código de Red de la CRE, evitar el cargo por bajo factor de potencia de CFE y acreditar auditorías: armónicos contra IEEE 519, factor de potencia, desbalance y eventos, registrados una semana con la planta operando.",
   "tecnicas": {
     "etiqueta": "Qué medimos",
     "titulo": "Una semana de registro, con todo operando",
@@ -223,41 +197,91 @@
   ],
   "entregable": {
     "etiqueta": "Qué recibes",
-    "titulo": "Recibes ahorro, confiabilidad y cumplimiento",
-    "descripcion": "No solo cuánto se desvía cada valor: qué carga lo provoca, cómo se corrige y cuánto te cuesta dejarlo así.",
-    "contenido": [],
-    "pilares": [
-      {
-        "titulo": "Ahorro",
-        "icono": "ahorro",
-        "items": [
-          "Adiós al cargo por bajo factor de potencia",
-          "El banco de capacitores del tamaño correcto",
-          "Menos energía perdida en calor"
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "Un informe por tablero con cada parámetro contra su referencia, qué carga lo provoca y cómo se corrige. Pasa el cursor por la lista para ver dónde va cada cosa.",
+    "contenido": [
+      "El estado de cada tablero",
+      "Cada parámetro contra su referencia",
+      "Las referencias que se aplican",
+      "Lo que provoca el problema",
+      "Cómo se corrige y en qué orden"
+    ],
+    "muestra": {
+      "titulo": "Calidad de la energía",
+      "equipo": "Tablero general 480 V",
+      "subtitulo": "Registro de 7 días · IEEE 519 · Código de Red",
+      "estado": {
+        "texto": "Precaución",
+        "color": "#ca8a04",
+        "punto": 0
+      },
+      "lecturas": {
+        "titulo": "Parámetros medidos · %",
+        "unidad": "%",
+        "max": 22,
+        "nota": "La marca es la referencia de cada parámetro.",
+        "punto": 1,
+        "filas": [
+          {
+            "p": "Distorsión de corriente",
+            "valor": 18.4,
+            "ref": 8,
+            "color": "#dc2626"
+          },
+          {
+            "p": "Distorsión de tensión",
+            "valor": 3.4,
+            "ref": 5,
+            "color": "#16a34a"
+          },
+          {
+            "p": "Desbalance de tensión",
+            "valor": 1.2,
+            "ref": 2,
+            "color": "#16a34a"
+          }
         ]
       },
-      {
-        "titulo": "Confiabilidad",
-        "icono": "rayo",
-        "items": [
-          "La causa de cada disparo y cada paro",
-          "Motores y transformadores más frescos",
-          "Capacitores que no se dañan por armónicos"
+      "escala": {
+        "titulo": "Factor de potencia",
+        "punto": 2,
+        "niveles": [
+          {
+            "t": "0.86",
+            "r": "medido",
+            "c": "#dc2626"
+          },
+          {
+            "t": "0.90",
+            "r": "mínimo de CFE",
+            "c": "#ca8a04"
+          },
+          {
+            "t": "0.95",
+            "r": "Código de Red",
+            "c": "#16a34a"
+          }
         ]
       },
-      {
-        "titulo": "Cumplimiento",
-        "icono": "documento",
-        "items": [
-          "Cada requisito del Código de Red, medido",
-          "Informe por tablero contra IEEE 519, listo para auditoría",
-          "Certificados de calibración de los instrumentos"
-        ]
+      "hallazgo": {
+        "titulo": "Armónicos por variadores sin filtro",
+        "texto": "Y un factor de potencia de 0.86 que se cobra en el recibo y queda fuera del Código de Red.",
+        "punto": 3
+      },
+      "recomendacion": {
+        "titulo": "Filtro en los variadores y banco desintonizado",
+        "urgencia": "antes del siguiente recibo",
+        "texto": "Y un registro de comprobación después de corregir.",
+        "punto": 4
       }
-    ]
+    }
   },
   "mostrarClientes": true,
   "faq": [
+    {
+      "question": "¿Para qué sirve el estudio de calidad de la energía?",
+      "answer": "Ante todo, para cumplir el Código de Red, que obliga a las plantas en media y alta tensión a mantener la calidad de la energía dentro de límites. El estudio es la evidencia ante la CRE y las auditorías, baja el cargo por factor de potencia en el recibo de CFE y explica disparos y calentamientos sin causa aparente."
+    },
     {
       "question": "¿Hay que parar la planta?",
       "answer": "No. El analizador se conecta con todo operando, porque lo que interesa es cómo se comporta la red mientras produces."
@@ -285,6 +309,10 @@
     {
       "question": "¿Qué normas aplican?",
       "answer": "El Código de Red de la CRE, que fija los requisitos de calidad de la energía para los centros de carga en media y alta tensión. Como referencia técnica, IEEE 519 para armónicos e IEEE 1159 para clasificar los eventos de tensión. El factor de potencia se compara además contra lo que pide tu tarifa."
+    },
+    {
+      "question": "¿Qué es el THD?",
+      "answer": "Es la distorsión armónica total: qué tanto se aleja la onda de corriente o de tensión de una senoidal limpia, en porcentaje. La norma IEEE 519 da los límites según el nivel de tensión y el tamaño de la carga."
     },
     {
       "question": "¿Qué necesito para cotizar?",
@@ -384,5 +412,147 @@
         "ilustracion": "centro-datos"
       }
     ]
+  },
+  "seoTitle": "Estudio de calidad de la energía eléctrica y Código de Red",
+  "introBeneficios": {
+    "beneficios": [
+      {
+        "icono": "documento",
+        "titulo": "Cumple el Código de Red",
+        "texto": "Evidencia medida para la CRE y tus auditorías."
+      },
+      {
+        "icono": "paro",
+        "titulo": "Adiós al cargo en el recibo",
+        "texto": "Factor de potencia arriba de 0.90 con CFE."
+      },
+      {
+        "icono": "rayo",
+        "titulo": "La causa de cada disparo",
+        "texto": "Qué carga provoca cada problema."
+      },
+      {
+        "icono": "calendario",
+        "titulo": "Sin paro",
+        "texto": "Una semana de registro con todo operando."
+      }
+    ],
+    "modalidades": [
+      {
+        "titulo": "Diagnóstico de cumplimiento",
+        "texto": "Cada requisito del Código de Red, medido en tu planta."
+      },
+      {
+        "titulo": "Cuando algo falla",
+        "texto": "Disparos, calentamientos o cargos sin explicación."
+      }
+    ],
+    "fotos": [
+      {
+        "src": "/images/servicios/estudios-electricos/campo-analista-tablero.webp",
+        "alt": "Analista de DIAPSA conectando el analizador en un tablero de distribución energizado."
+      },
+      {
+        "src": "/images/servicios/estudios-electricos/campo-tablero-transductores.webp",
+        "alt": "Transductores de corriente flexibles en las tres fases de un interruptor principal"
+      },
+      {
+        "src": "/images/servicios/estudios-electricos/campo-armonicos-pantalla.webp",
+        "alt": "Lectura de armónicos por fase en el analizador"
+      },
+      {
+        "src": "/images/servicios/estudios-electricos/campo-forma-de-onda.webp",
+        "alt": "Forma de onda de corriente medida en el interruptor"
+      },
+      {
+        "src": "/images/servicios/estudios-electricos/campo-medicion-alimentador.webp",
+        "alt": "Medición de corriente en un alimentador con pinza"
+      }
+    ],
+    "idap": {
+      "titulo": "Tus datos viven en IDAP",
+      "texto": "Cada registro queda con sus gráficas y sus hallazgos, y el siguiente se compara contra este para comprobar que la corrección funcionó.",
+      "puntos": [
+        "Registro de cada tablero",
+        "Hallazgos con su corrección",
+        "Comparación antes y después"
+      ],
+      "video": "/videos/idap/idap-informe",
+      "descripcionVideo": "Informe de una inspección en IDAP",
+      "enlace": "/servicios/idap"
+    }
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Del registro a la corrección",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "Una semana con todo operando",
+          "texto": "Se eligen los tableros, se conecta el analizador sin paro, se registra una semana completa y cada valor se compara contra su referencia para decir qué carga lo provoca.",
+          "video": "/videos/calidad-de-energia/cal-proceso",
+          "descripcion": "Los cinco pasos del estudio de calidad de la energía: alcance, conexión segura, registro de siete días de distorsión de corriente, análisis contra referencia y corrección",
+          "pasos": [
+            "Alcance",
+            "Conexión segura",
+            "Registro",
+            "Análisis",
+            "Reporte y corrección"
+          ]
+        }
+      ]
+    },
+    {
+      "lugar": "cobertura",
+      "etiqueta": "Por qué importa",
+      "titulo": "Evita sanciones, cargos y acredita auditorías",
+      "texto": "El estudio es la evidencia de que tu planta cumple el Código de Red, y lo que baja el cargo por factor de potencia en tu recibo.",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "Código de Red y recibo de CFE",
+          "texto": "El Código de Red pide factor de potencia de al menos 0.95, armónicos y desbalance dentro de límites. Y CFE cobra un cargo cuando el factor de potencia baja de 0.90, y bonifica cuando lo supera.",
+          "video": "/videos/calidad-de-energia/cal-cumplimiento",
+          "descripcion": "Los requisitos del Código de Red para centros de carga, la diferencia entre cumplir y no tener evidencia, y el cargo o la bonificación por factor de potencia en el recibo de CFE"
+        },
+        {
+          "titulo": "Armónicos: el problema que no se ve",
+          "texto": "Los variadores, UPS y fuentes electrónicas deforman la corriente. Esa distorsión calienta motores y transformadores, daña capacitores y dispara protecciones sin causa aparente.",
+          "video": "/videos/calidad-de-energia/cal-armonicos",
+          "descripcion": "Onda de corriente limpia contra una distorsionada por variadores, con su espectro de armónicos 5 y 7 y lo que provoca"
+        }
+      ],
+      "listas": [
+        {
+          "titulo": "Lo que pide el Código de Red",
+          "items": [
+            "Factor de potencia de al menos 0.95",
+            "Armónicos dentro de los límites permitidos",
+            "Desbalance de tensión y corriente controlado",
+            "Fluctuaciones y variaciones de tensión dentro de rango"
+          ]
+        },
+        {
+          "titulo": "Fallas que detecta",
+          "items": [
+            "Armónicos fuera de referencia",
+            "Bajo factor de potencia",
+            "Desbalance de fases",
+            "Caídas y picos de tensión",
+            "Sobrecarga en el neutro",
+            "Resonancia en bancos de capacitores"
+          ]
+        }
+      ]
+    }
+  ],
+  "servicioRelacionado": {
+    "href": "/servicios/monitoreo-condicion/arco-electrico",
+    "etiqueta": "Se contrata junto con",
+    "titulo": "Estudio de Arco Eléctrico",
+    "texto": "Con el analizador ya en los tableros y el diagrama unifilar revisado, el estudio de arco eléctrico sale en la misma visita: la energía de cada tablero, la protección que pide y la etiqueta para cumplir la NOM-029-STPS.",
+    "enlace": "Ver arco eléctrico"
   }
 }

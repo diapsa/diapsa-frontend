@@ -1,0 +1,64 @@
+{
+  "slug": "armonicos-electricos-y-thd-que-son-y-limites-ieee-519",
+  "titulo": "Armónicos eléctricos y THD: qué son, qué los provoca y los límites de IEEE 519",
+  "extracto": "Qué son los armónicos y la distorsión armónica total, qué cargas los generan, qué daños provocan en una planta, los límites de IEEE 519 y cómo se corrigen.",
+  "portada": "/images/servicios/estudios-electricos/campo-armonicos-pantalla.webp",
+  "fecha": "2026-09-30T23:59:59.000000Z",
+  "seo": {
+    "titulo": "Armónicos eléctricos y THD: qué son y límites de IEEE 519",
+    "descripcion": "Qué son los armónicos eléctricos y la distorsión armónica total (THD y TDD), qué cargas los generan, qué daños causan en motores, transformadores y capacitores, los límites de IEEE 519 y cómo se corrigen."
+  },
+  "bloques": [
+    ["p", "La corriente que llega a una planta debería tener forma de onda senoidal, suave y pareja. Pero muchas de las cargas modernas la deforman. Esa deformación se llama distorsión armónica, y es una de las causas más comunes de calentamientos, disparos y capacitores dañados que nadie sabe explicar."],
+
+    ["h2", "Qué son los armónicos"],
+    ["p", "Son corrientes y tensiones con frecuencias múltiplos de la frecuencia de la red. En México la red es de 60 Hz, así que el armónico 5 es de 300 Hz, el 7 de 420 Hz, y así. Sumados a la onda original, la deforman."],
+    ["p", "La distorsión armónica total, o THD, dice qué tanto se aleja la onda de una senoidal limpia, en porcentaje. Para la corriente también se usa el TDD, que compara la distorsión contra la corriente de demanda máxima y es el que usa IEEE 519 para los límites."],
+
+    ["h2", "Qué los provoca"],
+    ["lista", [
+      "Variadores de frecuencia, sobre todo sin filtro.",
+      "UPS, rectificadores y cargadores de baterías.",
+      "Fuentes de alimentación de equipos electrónicos y computadoras.",
+      "Hornos de inducción y de arco.",
+      "Iluminación LED en grandes cantidades."
+    ]],
+    ["p", "Los variadores de seis pulsos, los más comunes, generan sobre todo los armónicos 5 y 7."],
+
+    ["h2", "Qué daños provocan"],
+    ["lista", [
+      "Motores y transformadores más calientes, que envejecen antes.",
+      "Bancos de capacitores dañados o en resonancia.",
+      "Conductores del neutro sobrecargados.",
+      "Interruptores que disparan sin razón aparente.",
+      "Errores en equipos electrónicos y medidores."
+    ]],
+
+    ["h2", "Los límites de IEEE 519"],
+    ["p", "IEEE 519 es la referencia más usada. Para la tensión, en su versión de 2014, los límites de THD son:"],
+    ["lista", [
+      "Hasta 1 kV: 8 %.",
+      "De 1 a 69 kV: 5 %.",
+      "De 69 a 161 kV: 2.5 %.",
+      "Más de 161 kV: 1.5 %."
+    ]],
+    ["p", "Para la corriente, el límite de TDD depende de qué tan fuerte es la red comparada con la carga de la planta: va de 5 % en las redes más débiles a 20 % en las más robustas. Por eso el límite de corriente de cada planta hay que calcularlo, no copiarlo de otra."],
+
+    ["h2", "Cómo se corrigen"],
+    ["numerada", [
+      "Medir para saber qué armónicos hay y qué carga los genera.",
+      "Instalar reactores o filtros en los variadores que más distorsionan.",
+      "Usar filtros activos cuando hay muchas cargas distintas.",
+      "Cambiar los bancos de capacitores por bancos desintonizados.",
+      "Volver a medir para comprobar."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Los armónicos se pagan en el recibo?"],
+    ["p", "No directamente, pero bajan el factor de potencia real y dañan los capacitores que lo corrigen, y eso sí se paga. Lo explicamos en la guía del [factor de potencia y CFE](/blog/factor-de-potencia-cfe-cargo-y-bonificacion-como-se-calcula)."],
+    ["h3", "¿El Código de Red pide límites de armónicos?"],
+    ["p", "Sí, a los centros de carga en media y alta tensión. Lo resumimos en la guía del [Código de Red](/blog/codigo-de-red-que-pide-a-los-centros-de-carga)."],
+
+    ["nota", "Registramos los armónicos de tus tableros una semana completa y te decimos qué carga los provoca y cómo corregirlos. Conoce el [estudio de calidad de la energía](/servicios/monitoreo-condicion/calidad-de-energia)."]
+  ]
+}

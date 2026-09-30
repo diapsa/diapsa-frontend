@@ -476,5 +476,44 @@
       "titulo": "Diagnóstico Integral de Maquinaria",
       "resumen": "Vibraciones, termografía, ultrasonido y aceite sobre la misma máquina, en un solo diagnóstico."
     }
+  },
+  {
+    "articulo": {
+      "slug": "codigo-de-red-que-pide-a-los-centros-de-carga",
+      "titulo": "Código de Red",
+      "resumen": "Qué pide a los centros de carga y cómo demostrar que cumples.",
+      "portada": "/images/servicios/estudios-electricos/campo-tablero-transductores.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/calidad-de-energia",
+      "titulo": "Análisis de Calidad de Energía",
+      "resumen": "Código de Red, factor de potencia y armónicos, registrados una semana con la planta operando."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "factor-de-potencia-cfe-cargo-y-bonificacion-como-se-calcula",
+      "titulo": "Factor de potencia y CFE",
+      "resumen": "Cómo se calcula el cargo o la bonificación en tu recibo.",
+      "portada": "/images/servicios/estudios-electricos/campo-medicion-alimentador.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/calidad-de-energia",
+      "titulo": "Análisis de Calidad de Energía",
+      "resumen": "Código de Red, factor de potencia y armónicos, registrados una semana con la planta operando."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "armonicos-electricos-y-thd-que-son-y-limites-ieee-519",
+      "titulo": "Armónicos y THD",
+      "resumen": "Qué son, qué los provoca y los límites de IEEE 519.",
+      "portada": "/images/servicios/estudios-electricos/campo-armonicos-pantalla.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/calidad-de-energia",
+      "titulo": "Análisis de Calidad de Energía",
+      "resumen": "Código de Red, factor de potencia y armónicos, registrados una semana con la planta operando."
+    }
   }
 ]
