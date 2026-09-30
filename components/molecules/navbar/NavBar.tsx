@@ -21,10 +21,10 @@ const [monitoreoCondicion, monitoreoContinuo, ...sueltos] = services;
 // Foto de cada servicio suelto para las tarjetas del menú. Son fotos que ya
 // están publicadas en sus páginas, sin datos de cliente.
 const fotosSueltos: Record<string, string> = {
-    "/servicios/diapsa-start": "/images/diapsa-start/mediciones-diapsa-start.jpg",
+    "/servicios/diapsa-start": "/images/diapsa-start/medicion-tableros.webp",
     "/servicios/idap": "/images/idap/capturas/inspeccion-vibraciones.jpg",
     "/servicios/deteccion-gas": "/images/deteccion-gas/campo/inspeccion-planta.webp",
-    "/servicios/diagnostico-situacional": "/images/diagnostico-situacional/engineer-checking-machinery.webp",
+    "/servicios/diagnostico-situacional": "/images/diagnostico-situacional/levantamiento-campo-tarjeta.webp",
 };
 // Monitoreo continuo también en tarjetas con foto (2026-09-28, Emiliano: "que
 // se vean igual que Más servicios").
