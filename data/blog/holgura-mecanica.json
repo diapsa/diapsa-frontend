@@ -1,0 +1,41 @@
+{
+  "slug": "holgura-mecanica-tipos-y-como-se-ve-en-el-espectro-de-vibracion",
+  "titulo": "Holgura mecánica: tipos y cómo se ve en el espectro de vibración",
+  "extracto": "Qué es la holgura mecánica, sus tres tipos (estructural, en la base y rotativa), cómo se ve cada una en el espectro de vibración y qué revisar para corregirla.",
+  "portada": "/images/gallery/campo/vibracion-motor-grande.webp",
+  "fecha": "2026-09-30T23:59:59.500000Z",
+  "seo": {
+    "titulo": "Holgura mecánica en vibraciones: tipos y espectro",
+    "descripcion": "Qué es la holgura mecánica en máquinas rotativas, sus tipos (estructural, pernos flojos y holgura rotativa), cómo se ve en el espectro de vibración y cómo se corrige."
+  },
+  "bloques": [
+    ["p", "La holgura mecánica es cualquier juego que no debería existir entre piezas de una máquina: una base que no está bien apretada, un perno flojo, un rodamiento que gira dentro de su alojamiento. Sola, a veces no parece grave, pero amplifica cualquier otra falla y termina rompiendo cosas."],
+
+    ["h2", "Los tres tipos"],
+    ["h3", "Holgura estructural"],
+    ["p", "Viene de la base o la estructura: una base débil, concreto fracturado, un bastidor que se deforma. En el espectro se ve sobre todo un pico a la velocidad de giro, más alto en una dirección que en otra. Se parece al desbalance, pero la vibración cambia mucho entre la máquina y la base."],
+    ["h3", "Holgura en la base o en pernos"],
+    ["p", "Pernos de anclaje flojos, una pata que no asienta o una fractura en el soporte. Suele aparecer un pico fuerte a dos veces la velocidad de giro y, a veces, a la mitad."],
+    ["h3", "Holgura rotativa"],
+    ["p", "Juego entre piezas que giran y sus alojamientos: un rodamiento flojo en el eje o en la caja, un impulsor mal ajustado. Es la más fácil de reconocer: aparecen muchos armónicos de la velocidad de giro, a veces hasta diez o más, y también medios armónicos."],
+
+    ["h2", "Cómo se confirma"],
+    ["lista", [
+      "Comparar la vibración entre la máquina, la base y el piso.",
+      "Revisar la fase: en holgura suele cambiar de forma errática.",
+      "Apretar y volver a medir, para ver si la vibración baja.",
+      "Revisar físicamente pernos, bases y ajustes."
+    ]],
+
+    ["h2", "Por qué no hay que dejarla"],
+    ["p", "La holgura hace que las demás fallas se vean peores y que se desarrollen más rápido. Un pequeño desbalance en una máquina floja produce mucha más vibración, que a su vez afloja más la máquina. Es un círculo que termina en fracturas, rodamientos dañados o ejes rotos."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Se puede confundir con desbalance?"],
+    ["p", "Sí, sobre todo la holgura estructural. La diferencia está en cómo cambia la vibración entre direcciones y entre la máquina y la base. Lo explicamos en la guía de [desbalance y desalineación](/blog/diferencia-entre-desbalance-y-desalineacion)."],
+    ["h3", "¿Y la pata coja?"],
+    ["p", "Es una forma de holgura en la base. Se revisa antes de alinear; lo contamos en la guía de [alineación motor-bomba](/blog/alineacion-de-ejes-motor-bomba-laser-vs-reloj-comparador)."],
+
+    ["nota", "Detectamos la holgura con [sensores de vibración](/servicios/monitoreo-continuo/sensores-vibracion) o en ruta con el [análisis de vibraciones](/servicios/monitoreo-condicion/vibraciones-mecanicas), y te decimos qué revisar."]
+  ]
+}

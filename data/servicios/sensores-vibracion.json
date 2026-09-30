@@ -25,10 +25,10 @@
     "subtitle": "Tus equipos críticos medidos cada 10 minutos, con un analista viendo la tendencia",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Monitoreo continuo con sensores de vibración inalámbricos: lectura cada 10 minutos en equipos críticos, alertas por cambio de tendencia y análisis remoto por especialistas de DIAPSA. Instalación, estación base y plataforma IDAP.",
+  "seoDescription": "Sensores inalámbricos de vibración para motores, bombas, ventiladores y compresores: una lectura cada 10 minutos, instalados por especialistas Categoría III y con cada alerta revisada contra el espectro antes de avisarte. Monitoreo de vibraciones en línea con IDAP.",
   "content": {
-    "title": "La falla que nace entre dos rutas, la ve el sensor",
-    "subtitle": "El sensor se queda en la máquina, mide cada 10 minutos y un especialista revisa cada cambio antes de avisarte.",
+    "title": "Tus equipos críticos, medidos cada 10 minutos",
+    "subtitle": "El sensor se queda en la máquina, manda una lectura cada 10 minutos y un especialista revisa cada cambio contra el espectro antes de avisarte. La falla que nace entre dos rutas se ve el mismo día, y los equipos a los que nadie debería subir se miden sin exponer a nadie.",
     "image": "/images/servicios/sensores-vibracion/sensor-motor.webp",
     "items": [
       {
@@ -63,57 +63,6 @@
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
-  },
-  "porQue": {
-    "foto": {
-      "src": "/images/servicios/sensores-vibracion/instalacion-sensor.webp",
-      "alt": "Técnica de DIAPSA instalando un sensor de vibración inalámbrico en un equipo de proceso"
-    },
-    "preguntas": [
-      {
-        "pregunta": "Cada 10 minutos",
-        "texto": "De día y de noche. La falla que nace entre dos rutas se ve el mismo día."
-      },
-      {
-        "pregunta": "Cada alerta, revisada",
-        "texto": "Un especialista la confirma contra el espectro antes de que te llegue."
-      },
-      {
-        "pregunta": "Sin exponer a nadie",
-        "texto": "Torres, alturas y zonas calientes se miden sin subir ni entrar."
-      }
-    ],
-    "comoSeHace": {
-      "titulo": "Así se instala",
-      "pasos": [
-        {
-          "foto": {
-            "src": "/images/servicios/sensores-vibracion/sensor-rodamiento.webp",
-            "alt": "Sensor inalámbrico fijado con epóxico sobre el alojamiento de un rodamiento"
-          },
-          "texto": "Cada sensor se fija sobre el alojamiento del rodamiento, en el mismo punto donde el analista mediría a mano, con base de epóxico o tornillo."
-        },
-        {
-          "foto": {
-            "src": "/images/servicios/sensores-vibracion/estacion-base.webp",
-            "alt": "Técnico de DIAPSA con la estación base inalámbrica en planta"
-          },
-          "texto": "Una estación base recibe las lecturas de todos los sensores del área por radio y las envía a la plataforma, sin cablear la planta."
-        },
-        {
-          "foto": {
-            "src": "/images/servicios/sensores-vibracion/sensor-motor.webp",
-            "alt": "Sensor de vibración montado en un motor en operación"
-          },
-          "texto": "Con las primeras semanas de lecturas se fija la línea base de cada equipo y sus umbrales; a partir de ahí, cada cambio de tendencia se revisa."
-        }
-      ]
-    },
-    "escena": "sensores",
-    "destacado": {
-      "titulo": "Instalado y analizado por especialistas en vibraciones Categoría III",
-      "texto": "No por analistas de datos. Quien elige el punto, monta el sensor y revisa cada alerta es un especialista certificado que lee el espectro de la máquina, no solo una gráfica."
-    }
   },
   "certificacion": "Instalación y análisis por especialistas en vibraciones Categoría III · Sensores KCF Technologies · IDAP",
   "diagramas": [
@@ -415,42 +364,6 @@
       }
     ]
   },
-  "diferencias": {
-    "etiqueta": "Por qué DIAPSA",
-    "titulo": "¿Qué nos hace diferentes?",
-    "items": [
-      {
-        "id": "especialistas",
-        "title": "Especialistas Categoría III en campo",
-        "content": "Quien elige el punto y monta cada sensor es un especialista en vibraciones Categoría III, no un instalador ni un analista de datos. El punto decide qué tan bien se ve la falla.",
-        "grafico": "sen-especialistas"
-      },
-      {
-        "id": "continuo",
-        "title": "Datos cada 10 minutos desde el primer día",
-        "content": "Sensores inalámbricos KCF con estación base, instalados con el equipo operando y sin cablear la planta. La tendencia empieza a correr el mismo día.",
-        "grafico": "sen-continuo"
-      },
-      {
-        "id": "estandar",
-        "title": "Un estándar para cada punto",
-        "content": "Con semanas de lecturas se fija cómo vibra cada punto cuando está sano, en cada régimen de operación. Las alarmas salen de ahí, no de un valor genérico.",
-        "grafico": "sen-estandar"
-      },
-      {
-        "id": "alertas",
-        "title": "Cada alerta, revisada contra el espectro",
-        "content": "Antes de llegarte, un especialista confirma qué es: rodamiento, desbalance, resonancia o una lectura sin importancia. Recibes el diagnóstico y la acción.",
-        "grafico": "sen-alertas"
-      },
-      {
-        "id": "prueba",
-        "title": "La prueba de cada reparación",
-        "content": "Después de intervenir, el sensor dice si sirvió: con la máquina operando igual, se compara cada punto antes y después.",
-        "grafico": "sen-prueba"
-      }
-    ]
-  },
   "cobertura": {
     "etiqueta": "Dónde aplica",
     "titulo": "¿Sirve para tus equipos?",
@@ -513,11 +426,162 @@
     "titulo": "Del sensor a la decisión, en cinco pasos",
     "texto": "No vendemos sensores: vendemos saber a tiempo qué le pasa a tu equipo y qué hacer. Así se llega de la lectura al aviso."
   },
-  "traduccion": {
-    "etiqueta": "En qué se traduce",
-    "tipo": "margen",
-    "titulo": "Semanas para decidir, en lugar de horas para reaccionar",
-    "texto": "Un rodamiento avisa semanas antes de fallar. El sensor ve ese primer cambio; la ruta mensual suele llegar cuando ya es tarde.",
-    "cierre": "Con semanas de margen, la refacción llega a tiempo y la reparación cabe en una ventana programada."
+  "seoTitle": "Sensores inalámbricos de vibración con monitoreo en línea",
+  "introBeneficios": {
+    "beneficios": [
+      {
+        "icono": "paro",
+        "titulo": "La falla entre rutas, el mismo día",
+        "texto": "Una lectura cada 10 minutos, día y noche."
+      },
+      {
+        "icono": "engrane",
+        "titulo": "Instalado por especialistas",
+        "texto": "Categoría III, en el punto de cada rodamiento."
+      },
+      {
+        "icono": "documento",
+        "titulo": "Cada alerta, revisada",
+        "texto": "Confirmada contra el espectro, con qué hacer."
+      },
+      {
+        "icono": "fuego",
+        "titulo": "Sin exponer a nadie",
+        "texto": "Torres, alturas y zonas calientes."
+      }
+    ],
+    "modalidades": [
+      {
+        "titulo": "Equipos críticos",
+        "texto": "Los que detienen la línea si fallan."
+      },
+      {
+        "titulo": "Acceso difícil o peligroso",
+        "texto": "Donde una ruta cuesta o arriesga."
+      }
+    ],
+    "fotos": [
+      {
+        "src": "/images/servicios/sensores-vibracion/instalacion-sensor.webp",
+        "alt": "Especialista de DIAPSA instalando un sensor de vibración inalámbrico"
+      },
+      {
+        "src": "/images/servicios/sensores-vibracion/sensor-motor.webp",
+        "alt": "Sensor de vibración montado en un motor"
+      },
+      {
+        "src": "/images/servicios/sensores-vibracion/sensor-rodamiento.webp",
+        "alt": "Sensor montado sobre la caja de un rodamiento"
+      },
+      {
+        "src": "/images/servicios/sensores-vibracion/estacion-base.webp",
+        "alt": "Estación base que recibe los datos de los sensores"
+      },
+      {
+        "src": "/images/gallery/campo/vibracion-ventilador-torre.webp",
+        "alt": "Ventilador de torre de enfriamiento, un equipo típico para sensor"
+      }
+    ],
+    "idap": {
+      "titulo": "Tus datos viven en IDAP",
+      "texto": "Cada sensor manda su tendencia a IDAP, junto con las rutas y las demás técnicas del mismo equipo. La alerta llega con el diagnóstico y queda el seguimiento hasta cerrarla.",
+      "puntos": [
+        "Tendencia cada 10 minutos",
+        "Alertas con diagnóstico y acción",
+        "Historial junto a las rutas"
+      ],
+      "video": "/videos/idap/idap-aviso",
+      "descripcionVideo": "Un aviso en IDAP: tendencia, diagnóstico y acción recomendada",
+      "enlace": "/servicios/idap"
+    }
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Del sensor al aviso",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "Cinco pasos, del montaje a la alerta",
+          "texto": "Se eligen los equipos, un especialista instala cada sensor, las primeras semanas dicen cómo vibra el equipo sano y, cuando algo cambia, el especialista confirma la causa antes de avisarte.",
+          "video": "/videos/sensores-vibracion/sv-proceso",
+          "descripcion": "Los cinco pasos del monitoreo con sensores de vibración: selección, instalación por un especialista Categoría III, línea base, revisión del espectro y la alerta con qué hacer",
+          "pasos": [
+            "Selección de equipos",
+            "Instalación",
+            "Línea base",
+            "Vigilancia",
+            "Aviso y acción"
+          ]
+        }
+      ]
+    },
+    {
+      "lugar": "cobertura",
+      "etiqueta": "Dónde aplica",
+      "titulo": "¿Sirve para tus equipos?",
+      "texto": "Qué fallas ve el sensor, y dónde vale más que una ruta.",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "Cada falla deja su firma",
+          "texto": "Desbalance, desalineación, rodamientos y holgura se ven distinto en el espectro. Por eso la alerta no dice solo que algo subió: dice qué es.",
+          "video": "/videos/sensores-vibracion/sv-fallas",
+          "descripcion": "Espectros típicos de desbalance, desalineación, falla de rodamiento y holgura mecánica"
+        },
+        {
+          "titulo": "Donde la ruta no llega, o llega con riesgo",
+          "texto": "Ventiladores de torres de enfriamiento, motores en altura y equipos en zonas calientes. Se sube una vez para instalar y después los datos bajan solos.",
+          "video": "/videos/sensores-vibracion/sv-acceso",
+          "descripcion": "Equipos en torres de enfriamiento, en altura y en estructuras que se miden con sensor sin exponer al personal"
+        }
+      ],
+      "listas": [
+        {
+          "titulo": "Equipos",
+          "items": [
+            "Motores eléctricos",
+            "Bombas centrífugas",
+            "Bombas de desplazamiento positivo",
+            "Homogeneizadores",
+            "Compresores",
+            "Ventiladores",
+            "Sopladores",
+            "Reductores y cajas de engranes",
+            "Torres de enfriamiento",
+            "Transportadores",
+            "Mezcladoras",
+            "Molinos",
+            "Tuberías de proceso"
+          ]
+        },
+        {
+          "titulo": "Modos de falla",
+          "items": [
+            "Desgaste de rodamientos",
+            "Falla de lubricación",
+            "Desbalance",
+            "Desalineación",
+            "Holgura mecánica",
+            "Holgura estructural",
+            "Resonancia",
+            "Pulsación",
+            "Cavitación",
+            "Desgaste de engranes",
+            "Desgaste de bandas",
+            "Excentricidad",
+            "Soltura de base"
+          ]
+        }
+      ]
+    }
+  ],
+  "servicioRelacionado": {
+    "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas",
+    "etiqueta": "Se complementa con",
+    "titulo": "Análisis de Vibraciones por rutas",
+    "texto": "Los sensores van en los equipos que lo justifican; el resto de la planta sigue en ruta periódica, que cuesta menos por equipo. Los dos datos terminan en IDAP, en la misma ficha de cada máquina.",
+    "enlace": "Ver análisis de vibraciones"
   }
 }

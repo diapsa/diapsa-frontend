@@ -27,6 +27,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
 import { getArticulosPorServicio } from "@/lib/recursos";
 import GuiasRelacionadas from "@/components/organisms/GuiasRelacionadas";
+import PaginaServicio from "@/components/organisms/PaginaServicio";
 
 const OG_IMAGE = "/images/og-images/og-image.jpg";
 
@@ -81,16 +82,17 @@ export async function generateMetadata({
     // La descripción para Google puede ser más larga y vendedora que el
     // subtítulo visible del hero; por eso se separan.
     const descripcion = service.seoDescription ?? service.header.subtitle;
+    const titulo = service.seoTitle ?? service.header.title;
 
     return {
-        title: service.header.title,
+        title: titulo,
         description: descripcion,
         keywords,
         alternates: {
             canonical: `${SITE_CONFIG.baseUrl}/servicios/monitoreo-continuo/${slug}`,
         },
         openGraph: {
-            title: `${service.header.title} | Grupo DIAPSA`,
+            title: `${titulo} | Grupo DIAPSA`,
             description: descripcion,
             url: `${SITE_CONFIG.baseUrl}/servicios/monitoreo-continuo/${slug}`,
             type: "website",
@@ -109,7 +111,7 @@ export async function generateMetadata({
         twitter: {
             card: "summary_large_image",
             site: "@grupodiapsa",
-            title: `${service.header.title} | Grupo DIAPSA`,
+            title: `${titulo} | Grupo DIAPSA`,
             description: descripcion,
             images: [OG_IMAGE],
         },
@@ -126,6 +128,13 @@ export default async function ServicePage({
 
     if (!service) {
         notFound();
+    }
+
+    // Las páginas de sensores que ya tienen el paquete nuevo (beneficios,
+    // videos y guías) usan la plantilla común de servicios; las demás siguen
+    // con esta hasta que se rehagan (2026-09-30).
+    if (service.introBeneficios) {
+        return <PaginaServicio service={service} href={`/servicios/monitoreo-continuo/${slug}`} />;
     }
 
     // Datos estructurados para el servicio
