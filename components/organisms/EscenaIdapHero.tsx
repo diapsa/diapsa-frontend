@@ -4,9 +4,10 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * EscenaIdapHero
- * La escena 3D del inicio de /servicios/idap (lib/escena-idap-hero.js),
- * hecha por Emiliano en Claude Diseño: las mediciones vuelan al monitor
- * de IDAP y actualizan el tablero hasta la recomendación.
+ * La escena 3D del inicio de /servicios/idap (lib/escena-idap-gemelo.js),
+ * hecha por Emiliano en Claude Diseño: el gemelo digital de una central de
+ * ciclo combinado, el semáforo de sus equipos y las prioridades de
+ * mantenimiento que alargan la vida útil.
  *
  * Mismo montaje que las demás escenas: Three.js por import dinámico,
  * respaldo por scroll si el IntersectionObserver no avisa, limpieza al
@@ -30,12 +31,12 @@ export default function EscenaIdapHero() {
       iniciada = true;
       observador.disconnect();
       window.removeEventListener("scroll", comprobar);
-      Promise.all([import("three"), import("@/lib/escena-idap-hero")])
-        .then(([THREE, { montarEscenaIdapHero }]) => {
+      Promise.all([import("three"), import("@/lib/escena-idap-gemelo")])
+        .then(([THREE, { montarEscenaIdapGemelo }]) => {
           if (cancelado) return;
           try {
-            // el texto del monitor con la tipografía del sitio
-            limpiar = montarEscenaIdapHero(THREE, root, { fuente: getComputedStyle(document.body).fontFamily });
+            // las etiquetas con la tipografía del sitio
+            limpiar = montarEscenaIdapGemelo(THREE, root, { fuente: getComputedStyle(document.body).fontFamily });
             setMontada(true);
           } catch (e) {
             console.warn("[escena idap] no pudo montarse:", e);

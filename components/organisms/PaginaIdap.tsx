@@ -203,7 +203,7 @@ export default function PaginaIdap() {
             backgroundSize: "48px 48px",
           }}
         />
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-6 pb-10 pt-32 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:pb-16 lg:pt-36">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-6 pb-10 pt-32 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:pb-16 lg:pt-36">
           <Aparece desde="izquierda">
             <Image src="/images/idap/idap-bco.png" alt="IDAP" width={220} height={66} priority className="h-auto w-40 lg:w-52" />
             <h1 className="mt-6 text-4xl font-extrabold leading-tight lg:text-5xl">
@@ -224,7 +224,7 @@ export default function PaginaIdap() {
               </a>
             </div>
           </Aparece>
-          <div className="relative h-[340px] w-full sm:h-[420px] lg:h-[560px]">
+          <div className="relative h-[460px] w-full sm:h-[520px] lg:h-[600px]">
             <div className="pointer-events-none absolute inset-12 rounded-full blur-3xl" style={{ background: `${ORO_IDAP}18` }} />
             <EscenaIdapHero />
           </div>
