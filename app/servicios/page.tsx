@@ -82,16 +82,16 @@ const services = [
     category: "Diagnóstico inicial",
     categoryColor: "bg-teal-500/10 text-teal-600 border-teal-400/30",
     title: "Diagnóstico Situacional",
-    tagline: "El historial médico de tus activos industriales.",
+    tagline: "Qué equipo te para la planta y por dónde empezar.",
     description:
-      "El punto de partida de todo programa predictivo eficiente. Documentamos el estado actual, el historial de cada equipo y los patrones de comportamiento para establecer la línea base de tu programa de mantenimiento — porque sin referencia no hay predicción.",
+      "El punto de partida de un programa predictivo: revisamos la planta equipo por equipo, los clasificamos por criticidad, medimos los importantes y te dejamos una hoja de ruta con prioridades y números.",
     features: [
-      "Inventario y clasificación de activos",
-      "Medición de condición base",
-      "Análisis e interpretación de datos",
-      "Reporte ejecutivo con hoja de ruta",
+      "Análisis de criticidad de equipos",
+      "Medición base con técnicas predictivas",
+      "Análisis económico de fallas",
+      "Hoja de ruta de doce meses",
     ],
-    image: "/images/diagnostico-situacional/engineer-checking-machinery.webp",
+    image: "/images/diagnostico-situacional/levantamiento-campo.webp",
     imageAlt: "Especialista realizando diagnóstico situacional en planta industrial",
     featured: false,
     icon: (
