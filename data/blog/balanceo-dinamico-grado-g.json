@@ -1,0 +1,51 @@
+{
+  "slug": "balanceo-dinamico-en-sitio-y-grado-de-balanceo-g",
+  "titulo": "Balanceo dinámico en sitio: qué es el grado G y cómo se decide cuándo balancear",
+  "extracto": "Cómo se balancea un rotor sin desmontarlo, qué significan los grados G 6.3 y G 2.5 de la ISO 21940-11, y cómo saber si la vibración es desbalance antes de mover un solo gramo.",
+  "portada": "/images/gallery/campo/vibracion-ventilador-torre.webp",
+  "fecha": "2026-09-30T21:30:00.000000Z",
+  "seo": {
+    "titulo": "Balanceo dinámico en sitio y grado de balanceo G 6.3 y G 2.5",
+    "descripcion": "Qué es el balanceo dinámico en sitio, en uno y dos planos, cómo se usa el peso de prueba, qué significan los grados de balanceo G 6.3 y G 2.5 según ISO 21940-11 y cuándo conviene balancear."
+  },
+  "bloques": [
+    ["p", "Un ventilador que vibra un poco más cada mes, un impulsor que regresó de reparación y ya no quedó igual, un rotor que junta polvo en las aspas. En muchos de estos casos la respuesta es balancear, y casi siempre se puede hacer en sitio, con el rotor en su propia base y girando a su velocidad de trabajo."],
+
+    ["h2", "Primero hay que confirmar que es desbalance"],
+    ["p", "Balancear una máquina que en realidad tiene otro problema es perder el tiempo. El desbalance se ve en el espectro como un pico dominante a la velocidad de giro, sobre todo en dirección radial, con poca vibración axial. Si además aparecen 2X alto o vibración axial importante, probablemente también hay desalineación, y esa se corrige primero. La guía de [desbalance y desalineación](/blog/diferencia-entre-desbalance-y-desalineacion) explica cómo distinguirlas."],
+    ["p", "También hay que descartar lo que se parece al desbalance pero no lo es: una base floja, un rodamiento con holgura, una resonancia o aspas dañadas. Nada de eso se arregla agregando peso."],
+
+    ["h2", "Cómo se balancea en sitio"],
+    ["p", "Se coloca un sensor de vibración en el rodamiento y una referencia de fase en el eje, casi siempre una marca reflectiva y un tacómetro óptico. Con eso se mide cuánto vibra a 1X y en qué punto de la vuelta ocurre."],
+    ["numerada", [
+      "Se mide la vibración original: amplitud y fase.",
+      "Se para el equipo y se pone un peso de prueba conocido en una posición marcada.",
+      "Se arranca y se vuelve a medir. El cambio en amplitud y fase dice cómo responde el rotor.",
+      "Con esa respuesta se calcula el peso de corrección y dónde ponerlo.",
+      "Se quita el peso de prueba, se pone el de corrección y se verifica. Si hace falta, se hace un ajuste fino."
+    ]],
+    ["p", "Cuando el rotor es angosto, como la mayoría de los ventiladores de una sola rueda, basta un plano. Cuando es largo o tiene la masa repartida, como un rodillo o un ventilador de doble entrada, se balancea en dos planos, con un peso de prueba en cada uno."],
+
+    ["h2", "Qué es el grado de balanceo G"],
+    ["p", "La norma ISO 21940-11 clasifica la calidad de balanceo con grados G. El número indica la velocidad, en milímetros por segundo, a la que se mueve el centro de masa del rotor alrededor de su eje. Entre más chico el número, más fino el balanceo."],
+    ["lista", [
+      "G 6.3: la calidad que se pide a la mayoría de los ventiladores, bombas, motores eléctricos y maquinaria industrial en general.",
+      "G 2.5: para máquinas más rápidas o delicadas, como turbinas, turbocompresores y algunos motores de alta velocidad.",
+      "G 16 y superiores: para piezas más toscas, como ejes cardán o maquinaria agrícola."
+    ]],
+    ["p", "Con el grado, la masa del rotor y su velocidad se calcula el desbalance residual permitido. En sitio, la forma práctica de comprobar el resultado es que la vibración a 1X baje a niveles aceptables para la máquina según la [tabla ISO 10816-3](/blog/tabla-iso-10816-3-y-20816-3-limites-de-vibracion)."],
+
+    ["h2", "En sitio o en taller"],
+    ["p", "En sitio se balancea el conjunto completo, con sus rodamientos, su base y su velocidad real, así que el resultado refleja cómo va a trabajar. No hay que desmontar, transportar ni volver a alinear. En taller se consigue un balanceo muy fino de la pieza sola, útil para rotores nuevos o reconstruidos. Muchas veces lo mejor es combinar: la pieza sale balanceada de taller y se hace un ajuste final en sitio."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Por qué un ventilador se desbalancea con el tiempo?"],
+    ["p", "Por acumulación de polvo o producto en las aspas, por desgaste o erosión, o porque se desprende material de forma desigual. A veces limpiar las aspas resuelve el problema sin balancear."],
+    ["h3", "¿Cuánto tarda un balanceo?"],
+    ["p", "Depende de cuánto tarda el equipo en arrancar y en parar. Un ventilador pequeño puede quedar en un par de horas; uno grande, con arranques lentos, puede ocupar la jornada."],
+    ["h3", "¿Hay que balancear después de cambiar rodamientos?"],
+    ["p", "No siempre, pero conviene medir la vibración al arrancar. Si el rotor se movió o se golpeó durante la reparación, el desbalance aparece enseguida."],
+
+    ["nota", "Balanceamos en sitio con el rotor en su base, en uno o dos planos, y te entregamos la vibración antes y después. Conoce nuestro servicio de [alineación y balanceo](/servicios/monitoreo-condicion/alineacion-balanceo)."]
+  ]
+}

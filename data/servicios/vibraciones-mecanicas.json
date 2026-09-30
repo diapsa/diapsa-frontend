@@ -262,7 +262,7 @@
     },
     {
       "src": "/images/gallery/campo/vibracion-motor-ventilador.webp",
-      "alt": "Toma de datos en el motor de un ventilador industrial."
+      "alt": "Toma de datos en el motor de una bomba de circulación."
     },
     {
       "src": "/images/gallery/campo/vibracion-transmision-bandas.webp",
@@ -495,7 +495,7 @@
           "titulo": "Desbalance: un pico a 1X",
           "texto": "La vibración domina a la velocidad de giro y es mayor en radial. Se corrige con balanceo en sitio.",
           "video": "/videos/vibraciones/vib-desbalance",
-          "descripcion": "Espectro con un pico dominante a 1X en un ventilador con desbalance"
+          "descripcion": "Espectro con un pico dominante a 1X en un motor-bomba con desbalance"
         },
         {
           "titulo": "Desalineación: 1X y 2X en axial",
