@@ -229,5 +229,44 @@
       "titulo": "Alineación y Balanceo",
       "resumen": "Alineación láser de ejes y balanceo dinámico en sitio, con la vibración medida antes y después."
     }
+  },
+  {
+    "articulo": {
+      "slug": "analisis-de-criticidad-de-equipos-como-hacer-una-matriz",
+      "titulo": "Análisis de criticidad: cómo hacer la matriz",
+      "resumen": "Criterios, matriz de frecuencia por consecuencia y un ejemplo con puntajes.",
+      "portada": "/images/diagnostico-situacional/levantamiento-campo.webp"
+    },
+    "servicio": {
+      "href": "/servicios/diagnostico-situacional",
+      "titulo": "Diagnóstico Situacional",
+      "resumen": "Análisis de criticidad, medición base, análisis económico y hoja de ruta de tu planta."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "como-hacer-un-programa-de-mantenimiento-predictivo",
+      "titulo": "Cómo hacer un programa de mantenimiento predictivo",
+      "resumen": "Los pasos en orden, de inventario a frecuencias, y los errores al empezar.",
+      "portada": "/images/gallery/campo/vibracion-analista-motor.webp"
+    },
+    "servicio": {
+      "href": "/servicios/diagnostico-situacional",
+      "titulo": "Diagnóstico Situacional",
+      "resumen": "Análisis de criticidad, medición base, análisis económico y hoja de ruta de tu planta."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "costo-de-un-paro-no-programado-como-calcularlo",
+      "titulo": "Costo de un paro no programado",
+      "resumen": "Qué incluye, cómo calcularlo con un ejemplo y cómo usarlo para decidir.",
+      "portada": "/images/diagnostico-situacional/analista-informe.webp"
+    },
+    "servicio": {
+      "href": "/servicios/diagnostico-situacional",
+      "titulo": "Diagnóstico Situacional",
+      "resumen": "Análisis de criticidad, medición base, análisis económico y hoja de ruta de tu planta."
+    }
   }
 ]

@@ -1,0 +1,59 @@
+{
+  "slug": "como-hacer-un-programa-de-mantenimiento-predictivo",
+  "titulo": "Cómo hacer un programa de mantenimiento predictivo: por dónde empezar",
+  "extracto": "Los pasos para arrancar un programa predictivo que funcione: inventario, criticidad, elegir las técnicas de cada equipo, la medición base, las frecuencias y los errores más comunes al empezar.",
+  "portada": "/images/gallery/campo/vibracion-analista-motor.webp",
+  "fecha": "2026-09-30T23:30:00.000000Z",
+  "seo": {
+    "titulo": "Cómo hacer un programa de mantenimiento predictivo paso a paso",
+    "descripcion": "Guía para hacer un programa de mantenimiento predictivo: inventario de equipos, análisis de criticidad, qué técnica aplicar a cada equipo, medición base, frecuencias de medición y errores comunes."
+  },
+  "bloques": [
+    ["p", "Muchas plantas empiezan con el mantenimiento predictivo al revés: compran un analizador de vibraciones o contratan una ruta de termografía, miden todo lo que pueden y a los pocos meses tienen un cerro de reportes y las mismas fallas de siempre. El problema no es la técnica. Es que nadie decidió antes qué medir, para qué y qué hacer con el resultado."],
+    ["p", "Estos son los pasos que funcionan, en el orden en que conviene darlos."],
+
+    ["h2", "1. Saber qué equipos tienes"],
+    ["p", "Parece obvio, pero es donde más plantas se atoran. Hace falta un listado con cada equipo, su función en el proceso, sus datos de placa y, si existe, su historial de fallas. Sin este inventario no hay forma de priorizar ni de comparar."],
+
+    ["h2", "2. Decidir cuáles importan más"],
+    ["p", "No todos los equipos merecen monitoreo. El análisis de criticidad los ordena según qué tan seguido fallan y qué pasa cuando fallan, y los separa en tres grupos. Te explicamos cómo hacerlo en la guía de la [matriz de criticidad](/blog/analisis-de-criticidad-de-equipos-como-hacer-una-matriz)."],
+
+    ["h2", "3. Elegir la técnica para cada equipo"],
+    ["p", "Cada técnica ve cosas distintas, así que se eligen según las fallas que puede tener cada equipo:"],
+    ["lista", [
+      "Vibraciones: desbalance, desalineación, holguras, rodamientos y engranes en equipo rotativo.",
+      "Termografía: conexiones flojas y sobrecargas en tableros, y calentamiento en motores y rodamientos.",
+      "Ultrasonido: lubricación de rodamientos, fugas de aire y descargas eléctricas.",
+      "Análisis de aceite: desgaste interno y contaminación en reductores, compresores y sistemas hidráulicos."
+    ]],
+    ["p", "Un equipo crítico suele necesitar dos o tres técnicas. Uno de respaldo, a veces solo una inspección sencilla."],
+
+    ["h2", "4. Tomar la medición base"],
+    ["p", "La primera medición de cada equipo es la referencia contra la que se va a comparar todo lo que siga. Tiene que hacerse en puntos marcados, con el equipo en condiciones normales de operación y con los datos bien registrados. Esta primera ronda también encuentra lo que ya está mal y hay que corregir de inmediato."],
+
+    ["h2", "5. Definir cada cuánto se mide"],
+    ["p", "La frecuencia depende de la criticidad y de qué tan rápido avanza la falla que se quiere detectar. Como punto de partida, los equipos críticos cada mes, los importantes cada dos o tres meses y los de respaldo cada seis. Donde una falla avanza en horas, conviene poner sensores en línea."],
+
+    ["h2", "6. Cerrar el ciclo"],
+    ["p", "Un programa predictivo vale por lo que se corrige, no por lo que se mide. Cada hallazgo necesita un responsable, una fecha y una medición después de la corrección para confirmar que quedó. Y cada cierto tiempo hay que revisar los números: fallas evitadas, paros no programados y costo de mantenimiento."],
+
+    ["h2", "Errores comunes al empezar"],
+    ["lista", [
+      "Medir todo con la misma frecuencia sin haber hecho la criticidad.",
+      "No marcar los puntos de medición y perder la comparación entre rutas.",
+      "Guardar los reportes en carpetas donde nadie les da seguimiento.",
+      "No medir después de corregir, y no saber si la corrección sirvió.",
+      "Esperar resultados en el primer mes. El valor aparece con la tendencia."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Conviene hacerlo con personal propio o contratarlo?"],
+    ["p", "Las dos cosas funcionan. Muchas plantas empiezan con un proveedor y van formando a su gente, o combinan: el personal propio hace las rutas y el proveedor hace el análisis de los casos difíciles."],
+    ["h3", "¿Cuánto tarda en dar resultados?"],
+    ["p", "Los primeros hallazgos salen desde la medición base. El ahorro medible suele verse en el primer año, cuando ya hay fallas evitadas que comparar contra el historial."],
+    ["h3", "¿Cómo calculo si vale la pena?"],
+    ["p", "Comparando lo que cuesta una falla de tus equipos críticos contra lo que cuesta vigilarlos. Lo explicamos en la guía del [costo de un paro no programado](/blog/costo-de-un-paro-no-programado-como-calcularlo)."],
+
+    ["nota", "El [diagnóstico situacional](/servicios/diagnostico-situacional) hace los primeros cinco pasos por ti: inventario, criticidad, técnicas, medición base y frecuencias. Si quieres arrancar el programa completo con capacitación de tu personal, conoce [DIAPSA START](/servicios/diapsa-start)."]
+  ]
+}
