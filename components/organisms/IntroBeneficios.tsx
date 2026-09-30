@@ -20,6 +20,8 @@ const ICONOS: Record<string, React.ReactNode> = {
   gota: <path strokeLinecap="round" strokeLinejoin="round" d="M12 3.5c3 4 6 7.2 6 10.5a6 6 0 01-12 0c0-3.3 3-6.5 6-10.5zM9.5 14.5a2.5 2.5 0 002.5 2.5" />,
   aire: <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h11a3 3 0 10-3-3M3 12h15a3 3 0 11-3 3M3 16h7" />,
   rayo: <path strokeLinecap="round" strokeLinejoin="round" d="M13 3L4.5 13.5H12L11 21l8.5-10.5H12L13 3z" />,
+  fuego: <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c-3.6 0-6-2.5-6-5.8 0-3.3 2.4-5.2 3.4-8.2.9 1.6 1.2 2.8 1.2 4 1.3-1.1 2.3-3.3 2.2-6.5 3 2.3 5.2 6 5.2 10.2 0 3.6-2.4 6.3-6 6.3z" />,
+  documento: <path strokeLinecap="round" strokeLinejoin="round" d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6" />,
 };
 
 function Check() {

@@ -22,13 +22,13 @@
   ],
   "header": {
     "title": "Termografía Infrarroja",
-    "subtitle": "Puntos calientes en tableros, subestaciones y motores, detectados con el equipo en operación",
+    "subtitle": "Termografía eléctrica e industrial: puntos calientes en tableros, subestaciones y motores, detectados con el equipo en operación",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Termografía infrarroja industrial en México: inspección de tableros, subestaciones y motores con cámara térmica y termógrafos certificados. Informe en menos de 2 días hábiles.",
+  "seoDescription": "Estudio e inspección termográfica de tableros eléctricos, subestaciones y motores en México, con termógrafos certificados y criterios NETA. Informe en 2 días.",
   "content": {
     "title": "Vemos el calor antes de que se vuelva falla",
-    "subtitle": "Inspeccionamos tableros, subestaciones y equipos con cámara térmica, en operación y con carga, y te decimos qué punto caliente atender, por qué y con qué urgencia.",
+    "subtitle": "Inspeccionamos con cámara térmica, en operación y con carga, y te decimos qué punto caliente atender, por qué y con qué urgencia.",
     "image": "/images/servicios/termografia-infrarroja/termograma-subestacion.jpg",
     "items": [
       {
@@ -79,7 +79,7 @@
   },
   "comparador": {
     "titulo": "El problema no se ve. La cámara sí lo ve.",
-    "texto": "Los mismos aisladores de una subestación, fotografiados en la misma inspección. A simple vista no hay nada que reportar; en la imagen térmica el conector marcado está a 45 grados mientras los vecinos siguen fríos. Ese es el hallazgo que evita el paro.",
+    "texto": "Los mismos aisladores, en la misma inspección. A simple vista no hay nada; en la imagen térmica el conector marcado está a 45 grados y sus vecinos siguen fríos.",
     "visual": {
       "src": "/images/servicios/termografia-infrarroja/par-visual.jpg",
       "alt": "Aisladores y conectores de una subestación eléctrica vistos a simple vista"
@@ -88,7 +88,7 @@
       "src": "/images/servicios/termografia-infrarroja/termograma-punto-caliente.jpg",
       "alt": "Los mismos aisladores en imagen térmica, con el conector caliente marcado por la cámara"
     },
-    "pie": "Imágenes de una inspección real de DIAPSA, con la identificación de la planta omitida. La temperatura se lee en operación y con carga; por eso la inspección no requiere detener nada."
+    "pie": "Inspección real de DIAPSA, sin los datos de la planta. Se mide en operación y con carga, sin detener nada."
   },
   "diagramas": [
     "flujo-servicio"
@@ -118,11 +118,11 @@
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "Esto es lo que recibes",
-    "descripcion": "No una carpeta de fotos térmicas para que las interpretes tú. Un informe donde cada hallazgo trae su imagen térmica y su foto visual, la temperatura contra la referencia, el diagnóstico del termógrafo y qué hacer al respecto. Las páginas que ves son de un informe real, con los datos de la planta omitidos.",
+    "descripcion": "Cada hallazgo con su imagen térmica, su foto, la temperatura contra la referencia y qué hacer. Pasa el cursor por la lista para ver dónde va cada cosa en el informe.",
     "contenido": [
-      "Imagen térmica y foto visual de cada hallazgo, lado a lado",
+      "Imagen térmica y foto visual de cada hallazgo",
       "Temperatura máxima y diferencia contra la referencia",
-      "Estado de cada equipo en semáforo, para leerlo de un vistazo",
+      "Estado de cada equipo en semáforo",
       "Componente afectado y causa probable",
       "Acción recomendada y con qué urgencia"
     ],
@@ -133,20 +133,81 @@
     "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA, con el estado por disciplina y las imágenes termográficas de los hallazgos",
     "dato": "3",
     "datoTexto": "disciplinas en un solo informe",
-    "idap": {
-      "src": "/images/idap/capturas/inspeccion-termografia.jpg",
-      "alt": "Inspección integral en IDAP: pestaña de termografía con la imagen térmica del motor, la temperatura máxima, la ambiente y los valores de cada punto marcado",
-      "texto": "Así se ve la misma inspección dentro de IDAP: la inspección llega desde campo, cada disciplina se llena con sus valores y se califica en semáforo, y en la pestaña de termografía quedan la imagen térmica con el punto marcado, los indicadores y la temperatura de cada punto. Pasa el cursor por una disciplina para abrirla.",
-      "ancho": 1945,
-      "alto": 1240,
-      "escena": "term",
-      "imagenes": {
-        "principal": "/images/idap/inspeccion/termica-1.jpg",
-        "miniaturas": [
-          "/images/idap/inspeccion/termica-1.jpg",
-          "/images/idap/inspeccion/termica-2.jpg",
-          "/images/idap/inspeccion/termica-3.jpg"
+    "muestra": {
+      "titulo": "Informe de termografía",
+      "equipo": "Subestación principal · boquillas del transformador",
+      "subtitulo": "Ruta trimestral · 28/09/2026 · termógrafo Nivel II · carga 72 %",
+      "estado": {
+        "texto": "Observación",
+        "color": "#d97706",
+        "punto": 2
+      },
+      "imagen": {
+        "titulo": "Imagen térmica y foto visual",
+        "termica": "/images/servicios/termografia-infrarroja/termograma-punto-caliente.jpg",
+        "visual": "/images/servicios/termografia-infrarroja/par-visual.jpg",
+        "altTermica": "Termograma de las boquillas de una subestación con un conector marcado",
+        "altVisual": "Foto visual de las mismas boquillas",
+        "punto": 0
+      },
+      "lecturas": {
+        "titulo": "Temperatura máxima por conector · °C",
+        "unidad": "°C",
+        "max": 60,
+        "nota": "La marca es la referencia: la fase vecina con carga similar.",
+        "punto": 1,
+        "filas": [
+          {
+            "p": "Fase A",
+            "valor": 45.1,
+            "ref": 45.3,
+            "color": "#16a34a"
+          },
+          {
+            "p": "Fase B",
+            "valor": 49.0,
+            "ref": 45.3,
+            "color": "#d97706"
+          },
+          {
+            "p": "Fase C",
+            "valor": 45.3,
+            "ref": 45.3,
+            "color": "#16a34a"
+          }
         ]
+      },
+      "escala": {
+        "titulo": "Tabla NETA · diferencia contra componentes similares",
+        "punto": 1,
+        "niveles": [
+          {
+            "t": "Posible",
+            "r": "1 a 3 °C",
+            "c": "#ca8a04"
+          },
+          {
+            "t": "Probable",
+            "r": "4 a 15 °C",
+            "c": "#ea580c"
+          },
+          {
+            "t": "Mayor",
+            "r": "más de 15 °C",
+            "c": "#dc2626"
+          }
+        ]
+      },
+      "hallazgo": {
+        "titulo": "Conector de boquilla, fase B",
+        "texto": "3.7 °C arriba de sus vecinas con carga similar: posible conexión con alta resistencia.",
+        "punto": 3
+      },
+      "recomendacion": {
+        "titulo": "Revisar y reapretar el conector",
+        "urgencia": "próxima libranza",
+        "texto": "Mientras tanto, volver a medir en la siguiente ruta.",
+        "punto": 4
       }
     }
   },
@@ -154,27 +215,39 @@
   "faq": [
     {
       "question": "¿Qué es la termografía infrarroja industrial?",
-      "answer": "Es la inspección de equipos con una cámara que ve la temperatura en lugar de la luz. Un componente que se está degradando, una conexión floja o un rodamiento sin lubricación se calientan antes de fallar, y la cámara lo muestra sin tocar el equipo ni detenerlo."
+      "answer": "Es revisar los equipos con una cámara que ve la temperatura en lugar de la luz. Una conexión floja o un rodamiento sin grasa se calientan antes de fallar, y la cámara lo muestra sin tocar ni detener nada."
     },
     {
       "question": "¿Qué fallas detecta la termografía?",
-      "answer": "Conexiones flojas o sulfatadas en tableros, desbalance de fases, fusibles y contactores degradados, transformadores con puntos calientes, rodamientos y acoplamientos sobrecalentados, refractario dañado en hornos, aislamiento perdido en tuberías y trampas de vapor que no cierran."
+      "answer": "Conexiones flojas o sulfatadas, desbalance de fases, fusibles y contactores dañados, puntos calientes en transformadores, rodamientos y acoplamientos calientes, refractario dañado, aislamiento perdido y trampas de vapor que no cierran."
     },
     {
       "question": "¿Se puede hacer con la planta operando?",
-      "answer": "Sí, y de hecho debe hacerse así. La inspección se realiza con el equipo en operación y con carga, porque un tablero sin carga no muestra los puntos calientes. No hay que parar nada."
+      "answer": "Sí, y así debe hacerse: con el equipo en operación y con carga, porque un tablero sin carga no muestra sus puntos calientes."
     },
     {
       "question": "¿Cada cuánto conviene inspeccionar?",
-      "answer": "Para tableros y subestaciones, una vez al año es la práctica mínima que recomienda NFPA 70B, y cada seis meses en plantas con carga alta o ambientes agresivos. Los equipos con hallazgo se reinspeccionan hasta que se corrigen."
+      "answer": "En tableros y subestaciones, al menos una vez al año, como pide NFPA 70B, y cada seis meses con carga alta o ambientes agresivos. Lo que sale con hallazgo se vuelve a revisar hasta que se corrige."
     },
     {
       "question": "¿Qué norma respalda el servicio?",
-      "answer": "Nuestros termógrafos están certificados conforme a ISO 18436-7 y la evaluación de severidad sigue los criterios de NFPA 70B y de la norma ISO 18434-1 para termografía en monitoreo de condición."
+      "answer": "Nuestros termógrafos están certificados conforme a ISO 18436-7 y la severidad se evalúa con NFPA 70B, la tabla de la ANSI/NETA y la ISO 18434-1."
+    },
+    {
+      "question": "¿Qué es un estudio termográfico eléctrico?",
+      "answer": "Es la inspección con cámara térmica de las instalaciones eléctricas de la planta, con un informe que trae la imagen térmica y la foto de cada hallazgo, su temperatura, su severidad y qué hacer."
+    },
+    {
+      "question": "¿Cómo se califica un punto caliente?",
+      "answer": "Por la diferencia de temperatura contra un componente igual con carga similar. Con la tabla de la NETA: de 1 a 3 °C es una posible deficiencia, de 4 a 15 °C una probable y más de 15 °C una deficiencia mayor que se repara de inmediato."
+    },
+    {
+      "question": "¿Con cuánta carga debe estar el equipo?",
+      "answer": "Lo recomendable es al menos 40 % de su carga nominal. Con menos carga los puntos calientes casi no se notan y el estudio pierde valor."
     },
     {
       "question": "¿Qué necesito para cotizar?",
-      "answer": "El listado de tableros, subestaciones y equipos que quieres cubrir, o el número aproximado, y si la planta exige documentación de ingreso. Con eso preparamos la propuesta con el número de puntos y la ruta."
+      "answer": "El listado o número aproximado de tableros, subestaciones y equipos, y si la planta pide documentos de ingreso."
     }
   ],
   "certificacion": "Termógrafos certificados · ISO 18436-7",
@@ -382,7 +455,7 @@
   ],
   "cta": {
     "title": "¿Cuántos tableros y equipos críticos tiene tu planta?",
-    "text": "Compártenos tu listado de tableros, subestaciones y equipos y te preparamos una ruta de inspección con propuesta a la medida, sin compromiso.",
+    "text": "Mándanos tu listado de tableros, subestaciones y equipos y te armamos la ruta con propuesta, sin compromiso.",
     "whatsappMessage": "Hola, quiero cotizar termografía infrarroja para mi planta.",
     "datos": [
       "Registro REPSE vigente",
@@ -459,5 +532,161 @@
         "ilustracion": "horno"
       }
     ]
-  }
+  },
+  "seoTitle": "Termografía eléctrica e industrial: estudio termográfico",
+  "introBeneficios": {
+    "beneficios": [
+      {
+        "icono": "rayo",
+        "titulo": "Menos paros por falla eléctrica",
+        "texto": "El punto caliente aparece semanas antes de que la conexión falle."
+      },
+      {
+        "icono": "fuego",
+        "titulo": "Menos riesgo de incendio",
+        "texto": "Una conexión sobrecalentada se ve antes de que se queme."
+      },
+      {
+        "icono": "paro",
+        "titulo": "Motores y procesos bajo control",
+        "texto": "Rodamientos, acoplamientos, hornos y aislamientos también avisan con calor."
+      },
+      {
+        "icono": "documento",
+        "titulo": "Evidencia para NFPA 70B",
+        "texto": "Imagen térmica, foto y severidad de cada hallazgo, para tu programa y tu aseguradora."
+      }
+    ],
+    "modalidades": [
+      {
+        "titulo": "Rutas con termógrafo",
+        "texto": "Cámara térmica en operación y con carga, por un termógrafo certificado."
+      },
+      {
+        "titulo": "Cámaras térmicas fijas",
+        "texto": "Vigilancia las 24 horas donde un incendio no da tiempo de reaccionar.",
+        "enlace": "/servicios/monitoreo-continuo/camaras-termicas"
+      }
+    ],
+    "fotos": [
+      {
+        "src": "/images/servicios/termografia-infrarroja/campo-09.webp",
+        "alt": "Termógrafo de DIAPSA inspeccionando un centro de control de motores con las puertas abiertas y la carga en operación."
+      },
+      {
+        "src": "/images/servicios/termografia-infrarroja/campo-06.webp",
+        "alt": "Inspección termográfica de interruptores dentro de un tablero de baja tensión."
+      },
+      {
+        "src": "/images/servicios/termografia-infrarroja/campo-35.webp",
+        "alt": "Termografía de un equipo de proceso desde la plataforma de mantenimiento."
+      },
+      {
+        "src": "/images/servicios/termografia-infrarroja/campo-63.webp",
+        "alt": "Termografía con traje de protección contra arco eléctrico, frente a equipo energizado."
+      },
+      {
+        "src": "/images/servicios/termografia-infrarroja/campo-05.webp",
+        "alt": "Analista con careta y traje de protección, con la cámara térmica lista para abrir el tablero."
+      },
+      {
+        "src": "/images/servicios/termografia-infrarroja/campo-21.webp",
+        "alt": "Cámara térmica apuntando a un equipo eléctrico tras la reja de protección."
+      }
+    ],
+    "idap": {
+      "titulo": "Tus datos viven en IDAP",
+      "texto": "Cada termograma entra a la ficha del equipo junto con las demás técnicas, y se consulta en línea cuando lo necesites.",
+      "puntos": [
+        "Imagen térmica y visual de cada hallazgo",
+        "Temperatura y diferencia contra la referencia",
+        "Historial y tendencias de cada equipo"
+      ],
+      "video": "/videos/idap/idap-equipo",
+      "descripcionVideo": "Ficha de un equipo en IDAP: gemelo digital, estado por componente y diagnóstico por disciplina",
+      "enlace": "/servicios/idap"
+    }
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Del dato a la decisión",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "De la imagen térmica a la recomendación",
+          "texto": "Comparamos cada punto contra su fase vecina y la carga del momento, y lo calificamos con la tabla NETA. Luego volvemos a medir hasta que la temperatura regresa a lo normal.",
+          "video": "/videos/termografia/term-proceso",
+          "descripcion": "Los cinco pasos de una inspección termográfica: inspección, imagen térmica, diagnóstico con la tabla NETA, recomendación y seguimiento",
+          "pasos": [
+            "Inspección en operación y con carga",
+            "Imagen térmica fase contra fase",
+            "Diagnóstico por diferencia de temperatura",
+            "Recomendación con su urgencia",
+            "Seguimiento hasta que se corrige"
+          ]
+        }
+      ]
+    },
+    {
+      "lugar": "cobertura",
+      "etiqueta": "Dónde aplica",
+      "titulo": "¿Dónde aplica y qué detecta?",
+      "texto": "Termografía eléctrica en tableros y subestaciones, y termografía mecánica en motores, hornos y procesos.",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "Termografía en tableros eléctricos",
+          "texto": "Fase contra fase, con el tablero en operación: conexiones flojas, fusibles, barras, desbalance y sobrecarga.",
+          "video": "/videos/termografia/term-tableros",
+          "descripcion": "Termograma de un tablero con una fase más caliente que sus vecinas"
+        },
+        {
+          "titulo": "Subestaciones y transformadores",
+          "texto": "Conectores, boquillas, aisladores y cuchillas: lo que a simple vista no se ve, a distancia y sin libranza.",
+          "video": "/videos/termografia/term-subestacion",
+          "descripcion": "Foto visual y termograma de una subestación con un conector más caliente que su vecino"
+        },
+        {
+          "titulo": "Motores, mecánica y procesos",
+          "texto": "Rodamientos, acoplamientos, hornos, refractarios, aislamientos y trampas de vapor también avisan con calor.",
+          "video": "/videos/termografia/term-mecanico",
+          "descripcion": "Termograma de un equipo mecánico con una zona muy por encima del resto"
+        }
+      ],
+      "listas": [
+        {
+          "titulo": "Equipos",
+          "items": [
+            "Tableros y centros de carga",
+            "Subestaciones",
+            "Transformadores",
+            "Interruptores y cuchillas",
+            "Bancos de capacitores",
+            "Motores",
+            "Rodamientos y acoplamientos",
+            "Hornos y refractarios",
+            "Aislamientos térmicos",
+            "Trampas de vapor"
+          ]
+        },
+        {
+          "titulo": "Fallas que detecta",
+          "items": [
+            "Conexiones flojas o sulfatadas",
+            "Sobrecarga",
+            "Desbalance de fases",
+            "Fusibles en mal estado",
+            "Componentes dañados",
+            "Rodamientos con fricción",
+            "Acoplamientos desalineados",
+            "Daño en refractario",
+            "Aislamiento térmico dañado",
+            "Trampas de vapor fugando"
+          ]
+        }
+      ]
+    }
+  ]
 }
