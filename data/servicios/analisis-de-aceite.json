@@ -22,13 +22,13 @@
   ],
   "header": {
     "title": "Análisis de Aceite",
-    "subtitle": "El lubricante cuenta lo que pasa dentro del equipo",
+    "subtitle": "Análisis de aceite lubricante y de gases disueltos en transformadores: lo que pasa dentro del equipo, sin abrirlo ni pararlo",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Análisis de aceite lubricante y análisis de gases disueltos (DGA) en transformadores. Muestreo en planta, laboratorio y resultados interpretados por especialistas: desgaste interno, contaminación y degradación del aceite antes de que la falla avance.",
+  "seoDescription": "Análisis de aceite industrial en mantenimiento predictivo: muestreo en planta, laboratorio acreditado ISO/IEC 17025, código ISO 4406, metales de desgaste y análisis de gases disueltos (DGA) en transformadores, interpretado por analistas certificados.",
   "content": {
     "title": "Vemos el desgaste desde adentro, sin abrir el equipo",
-    "subtitle": "Una muestra de aceite contesta tres preguntas sobre el equipo sin abrirlo y sin pararlo: si se está desgastando por dentro, si le está entrando algo que no debe y si el aceite todavía sirve. Vibraciones y termografía ven la falla cuando ya mueve o calienta la máquina; el aceite la delata antes, por lo que trae disuelto.",
+    "subtitle": "Una muestra de aceite dice si el equipo se está desgastando por dentro, si le está entrando algo que no debe y si el aceite todavía sirve. En transformadores, los gases disueltos avisan de una falla eléctrica antes de que se vea.",
     "image": "/images/servicios/analisis-de-aceite/muestreo-motor-azul.webp",
     "items": [
       {
@@ -301,6 +301,14 @@
       "answer": "Por condición, y el análisis es lo que la mide. Cambiar por calendario o por horas casi siempre significa una de dos cosas: tirar aceite que todavía servía o seguir operando con uno que ya perdió sus propiedades. El análisis dice cuándo el aceite realmente pide cambio, y cuándo basta con filtrarlo o con corregir lo que lo está contaminando."
     },
     {
+      "question": "¿Qué es el código ISO 4406?",
+      "answer": "Es la forma de expresar qué tan limpio está un aceite. Son tres números, por ejemplo 18/16/13, que corresponden a las partículas mayores a 4, 6 y 14 micras por mililitro. Cada número que sube casi duplica las partículas."
+    },
+    {
+      "question": "¿Qué es el triángulo de Duval?",
+      "answer": "Es una forma de interpretar los gases disueltos en el aceite de un transformador. Con la proporción de metano, etileno y acetileno, el resultado cae en una zona que indica el tipo de falla: descargas parciales, fallas térmicas o arqueo."
+    },
+    {
       "question": "¿Qué necesito para cotizar?",
       "answer": "La lista de equipos a vigilar con el tipo de aceite que usa cada uno y, si hay transformadores, su capacidad y voltaje. Si ya tienes análisis anteriores, sirven para arrancar con historial. Con eso preparamos el programa de muestreo y la propuesta."
     }
@@ -341,85 +349,6 @@
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
-  },
-  "porQue": {
-    "foto": {
-      "src": "/images/servicios/analisis-de-aceite/muestreo-motor-azul.webp",
-      "alt": "Analista de DIAPSA tomando una muestra de aceite sobre un motor en operación, durante una ruta de monitoreo"
-    },
-    "pie": "Toma de muestra sobre un motor en operación, en una ruta real de análisis de aceite de DIAPSA.",
-    "preguntas": [
-      {
-        "pregunta": "¿Se está desgastando por dentro?",
-        "texto": "Las piezas que rozan sueltan partículas de metal y el aceite las arrastra. El laboratorio mide cuánto metal hay y de qué pieza viene: hierro de engranes y rodamientos, cobre de bujes, plomo y estaño de cojinetes.",
-        "siSaleMal": "Se interviene la pieza que se está gastando, en una ventana programada y antes de que arrastre a las demás."
-      },
-      {
-        "pregunta": "¿Le está entrando algo que no debe?",
-        "texto": "Agua, polvo o refrigerante se cuelan por sellos, respiraderos y tapones, y son la causa más común del desgaste. El análisis los detecta y dice por dónde entran.",
-        "siSaleMal": "Se cierra la entrada y se filtra el aceite. Casi siempre es la corrección más barata de toda la lista."
-      },
-      {
-        "pregunta": "¿El aceite todavía sirve?",
-        "texto": "Con el uso el aceite se oxida, cambia de viscosidad y agota sus aditivos. El análisis dice si sigue protegiendo o si ya nada más está circulando.",
-        "siSaleMal": "Se cambia el aceite cuando lo pide su condición, ni antes ni después: no se tira aceite bueno ni se opera con uno agotado."
-      }
-    ],
-    "comoSeHace": {
-      "titulo": "Así se toma la muestra",
-      "pasos": [
-        {
-          "foto": {
-            "src": "/images/servicios/analisis-de-aceite/toma-de-muestra.webp",
-            "alt": "Analista de DIAPSA extrayendo aceite de un motor en operación"
-          },
-          "texto": "Con el equipo en operación y a temperatura de trabajo, que es cuando el aceite lleva en suspensión lo que interesa ver."
-        },
-        {
-          "foto": {
-            "src": "/images/servicios/analisis-de-aceite/muestreo-bomba-verde.webp",
-            "alt": "Analista de DIAPSA tomando la muestra en el punto de muestreo de una bomba"
-          },
-          "texto": "Siempre del mismo punto y con el mismo procedimiento, para que cada muestra se pueda comparar con la anterior."
-        },
-        {
-          "foto": {
-            "src": "/images/servicios/analisis-de-aceite/muestreo-cabezal.webp",
-            "alt": "Analista de DIAPSA con el frasco de muestra junto a un cabezal de tuberías"
-          },
-          "texto": "Identificada con el equipo, el aceite y las horas, y enviada a un laboratorio acreditado ISO/IEC 17025."
-        }
-      ]
-    }
-  },
-  "apartadoFotos": {
-    "etiqueta": "También en transformadores",
-    "titulo": "El aceite del transformador también avisa: gases disueltos",
-    "texto": "Cuando dentro de un transformador hay sobrecalentamiento, descargas parciales o arqueo, el aceite dieléctrico y el papel aislante se descomponen y liberan gases. Cada tipo de falla produce una combinación distinta. Una muestra tomada con jeringa, sin que el aceite toque el aire, dice si hay una falla incubándose y de qué tipo. Se toma con el transformador en carga, con traje contra arco eléctrico, y no requiere abrirlo ni desenergizarlo.",
-    "datos": [
-      "Transformador de 1,000 kVA en carga",
-      "Muestra con jeringa, sin contacto con el aire",
-      "Traje contra arco eléctrico",
-      "Sin desenergizar"
-    ],
-    "fotos": [
-      {
-        "src": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
-        "alt": "Analista de DIAPSA con traje contra arco eléctrico frente al gabinete abierto de un transformador",
-        "pie": "El gabinete se abre con el transformador en operación. El traje contra arco eléctrico es obligatorio: no se trabaja dentro de un equipo energizado sin él."
-      },
-      {
-        "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
-        "alt": "Analista de DIAPSA arrodillado ante las boquillas de un transformador tipo pedestal, tomando la muestra",
-        "pie": "La muestra se toma de la válvula de muestreo del tanque, con el equipo a plena carga, que es cuando los gases están en el aceite."
-      },
-      {
-        "src": "/images/servicios/analisis-de-aceite/dga-jeringa.webp",
-        "alt": "Jeringa de vidrio con la muestra de aceite dieléctrico, sin burbujas de aire",
-        "pie": "Con jeringa de vidrio y sin burbujas, porque los gases se escapan al aire. Así viaja al laboratorio para la cromatografía."
-      }
-    ],
-    "nota": "Fotos de una toma real en un transformador de 1,000 kVA, con la planta y el equipo omitidos."
   },
   "cobertura": {
     "etiqueta": "Dónde aplica",
@@ -471,51 +400,158 @@
       }
     ]
   },
-  "diferencias": {
-    "etiqueta": "Por qué DIAPSA",
-    "titulo": "¿Qué nos hace diferentes?",
-    "items": [
-      {
-        "id": "analistas",
-        "title": "Interpretado por analistas certificados",
-        "content": "Un laboratorio entrega números; un analista certificado ICML MLA III dice qué significan para tu equipo, contra sus límites y contra la muestra anterior, y qué hacer.",
-        "grafico": "ace-analistas"
-      },
-      {
-        "id": "muestra",
-        "title": "Una muestra bien tomada",
-        "content": "Del mismo punto, con el equipo operando y con el mismo procedimiento cada vez. Una muestra mal tomada da un resultado que no sirve, por bueno que sea el laboratorio.",
-        "grafico": "ace-muestra"
-      },
-      {
-        "id": "laboratorio",
-        "title": "Laboratorio acreditado",
-        "content": "Las pruebas se corren en laboratorio acreditado ISO/IEC 17025: espectrometría, viscosidad, agua, oxidación y conteo de partículas, con resultados comparables muestra tras muestra.",
-        "grafico": "ace-laboratorio"
-      },
-      {
-        "id": "tendencia",
-        "title": "La tendencia de cada equipo",
-        "content": "Cada muestra queda en IDAP junto a las anteriores del mismo equipo. Lo que dice si algo empeora no es un valor suelto, es la serie.",
-        "grafico": "ace-tendencia"
-      },
-      {
-        "id": "transformadores",
-        "title": "También transformadores",
-        "content": "En transformadores, la cromatografía de gases disueltos avisa de fallas eléctricas internas. La muestra se toma con jeringa, con el equipo a plena carga y con el equipo de protección que exige la tarea.",
-        "grafico": "ace-transformadores"
-      }
-    ]
-  },
   "flujoEncabezado": {
     "titulo": "De la muestra a la decisión, en cinco pasos",
     "texto": "No vendemos resultados de laboratorio: vendemos saber qué pasa dentro de tu equipo y qué hacer. Así se llega de la muestra a la acción."
   },
-  "traduccion": {
-    "etiqueta": "En qué se traduce",
-    "tipo": "tambores",
-    "titulo": "Cambiar el aceite cuando lo pide, no cuando toca",
-    "texto": "Por calendario se tira aceite que todavía servía y se sigue usando el que ya no. Por condición, cada cambio se hace cuando la muestra lo justifica.",
-    "cierre": "Menos aceite comprado y desechado, y el desgaste a la vista antes de volverse falla."
+  "seoTitle": "Análisis de aceite lubricante y DGA en transformadores",
+  "introBeneficios": {
+    "beneficios": [
+      {
+        "icono": "engrane",
+        "titulo": "El desgaste antes de la vibración",
+        "texto": "Los metales en el aceite avisan primero."
+      },
+      {
+        "icono": "gota",
+        "titulo": "Cambios de aceite por condición",
+        "texto": "Ni se tira aceite bueno ni se opera con uno agotado."
+      },
+      {
+        "icono": "rayo",
+        "titulo": "Transformadores sin desenergizar",
+        "texto": "Gases disueltos con el equipo en carga."
+      },
+      {
+        "icono": "documento",
+        "titulo": "Interpretado, no solo medido",
+        "texto": "Laboratorio ISO/IEC 17025 y analista ICML MLA III."
+      }
+    ],
+    "modalidades": [
+      {
+        "titulo": "Aceite lubricante",
+        "texto": "Reductores, compresores, hidráulicos, turbinas y motores."
+      },
+      {
+        "titulo": "Aceite dieléctrico",
+        "texto": "Gases disueltos y fisicoquímicos en transformadores."
+      }
+    ],
+    "fotos": [
+      {
+        "src": "/images/servicios/analisis-de-aceite/muestreo-motor-azul.webp",
+        "alt": "Analista de DIAPSA tomando una muestra de aceite sobre un motor en operación"
+      },
+      {
+        "src": "/images/servicios/analisis-de-aceite/toma-de-muestra.webp",
+        "alt": "Extracción de aceite con el equipo en operación"
+      },
+      {
+        "src": "/images/servicios/analisis-de-aceite/muestreo-motor-vertical.webp",
+        "alt": "Toma de muestra en un motor vertical, con el equipo en operación y la planta al fondo."
+      },
+      {
+        "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
+        "alt": "Muestra de aceite dieléctrico en un transformador en carga"
+      },
+      {
+        "src": "/images/servicios/analisis-de-aceite/muestreo-bomba-verde.webp",
+        "alt": "Toma de muestra en una bomba de proceso, desde el punto de muestreo del equipo."
+      }
+    ],
+    "idap": {
+      "titulo": "Tus datos viven en IDAP",
+      "texto": "Cada muestra queda en la ficha del equipo junto a las anteriores y a las demás técnicas. Lo que dice si algo empeora es la serie.",
+      "puntos": [
+        "Historial de muestras por equipo",
+        "Tendencia de cada parámetro",
+        "Diagnóstico junto con vibraciones y termografía"
+      ],
+      "video": "/videos/idap/idap-equipo",
+      "descripcionVideo": "Ficha de un equipo en IDAP: gemelo digital, estado por componente y diagnóstico por disciplina",
+      "enlace": "/servicios/idap"
+    }
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Del dato a la decisión",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "De la muestra a la acción",
+          "texto": "Una muestra bien tomada, un laboratorio acreditado y un analista que lee los números contra el equipo y contra la muestra anterior.",
+          "video": "/videos/analisis-de-aceite/ace-proceso",
+          "descripcion": "Los cinco pasos del análisis de aceite: muestreo, resultados de laboratorio, interpretación, recomendación y la tendencia real de una chumacera",
+          "pasos": [
+            "Muestreo en planta",
+            "Laboratorio acreditado",
+            "Interpretación del analista",
+            "Recomendación",
+            "Tendencia"
+          ]
+        }
+      ]
+    },
+    {
+      "lugar": "cobertura",
+      "etiqueta": "Dónde aplica",
+      "titulo": "¿Dónde aplica y qué detecta?",
+      "texto": "En el aceite que lubrica y en el que aísla.",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "Aceite lubricante",
+          "texto": "Metales de desgaste, contaminación por agua o polvo y la condición del aceite: viscosidad, oxidación y aditivos.",
+          "video": "/videos/analisis-de-aceite/ace-lubricante",
+          "descripcion": "Las tres preguntas que contesta una muestra de aceite lubricante, con fotos reales de muestreo"
+        },
+        {
+          "titulo": "Transformadores: gases disueltos",
+          "texto": "Sobrecalentamiento, descargas parciales o arqueo liberan gases distintos en el aceite. La muestra se toma con jeringa y el equipo en carga.",
+          "video": "/videos/analisis-de-aceite/ace-dga",
+          "descripcion": "Gases disueltos de un transformador y su punto en el triángulo de Duval, en la zona de falla térmica"
+        }
+      ],
+      "listas": [
+        {
+          "titulo": "Equipos",
+          "items": [
+            "Reductores y cajas de engranes",
+            "Compresores",
+            "Sistemas hidráulicos",
+            "Turbinas",
+            "Motores de combustión",
+            "Transformadores",
+            "Bombas",
+            "Chumaceras lubricadas",
+            "Generadores"
+          ]
+        },
+        {
+          "titulo": "Fallas que detecta",
+          "items": [
+            "Desgaste interno de componentes",
+            "Contaminación por agua",
+            "Contaminación por polvo o partículas",
+            "Oxidación del aceite",
+            "Aditivos agotados",
+            "Aceite equivocado o mezclado",
+            "Dilución por combustible",
+            "Fallas eléctricas internas en transformadores",
+            "Humedad en el aislamiento"
+          ]
+        }
+      ]
+    }
+  ],
+  "servicioRelacionado": {
+    "href": "/servicios/monitoreo-condicion/diagnostico-de-maquinaria",
+    "etiqueta": "Se contrata junto con",
+    "titulo": "Diagnóstico Integral de Maquinaria",
+    "texto": "El aceite ve el desgaste antes que nadie, pero no dice si la máquina está desalineada o si un tablero se calienta. En el diagnóstico integral se mide aceite, vibraciones, termografía y ultrasonido sobre el mismo equipo y se entrega un solo diagnóstico.",
+    "enlace": "Ver diagnóstico integral"
   }
 }

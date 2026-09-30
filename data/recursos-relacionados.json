@@ -320,5 +320,44 @@
       "titulo": "DIAPSA START",
       "resumen": "El programa para implementar el mantenimiento predictivo en tu planta, en cuatro etapas."
     }
+  },
+  {
+    "articulo": {
+      "slug": "analisis-de-aceite-en-mantenimiento-predictivo-pruebas-y-muestreo",
+      "titulo": "Análisis de aceite: pruebas y muestreo",
+      "resumen": "Qué dice cada prueba, cómo tomar la muestra y cada cuánto.",
+      "portada": "/images/servicios/analisis-de-aceite/muestreo-motor-azul.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/analisis-de-aceite",
+      "titulo": "Análisis de Aceite",
+      "resumen": "Muestreo en planta, laboratorio acreditado y DGA en transformadores, interpretados por analistas certificados."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "codigo-iso-4406-como-leer-la-tabla-de-limpieza-del-aceite",
+      "titulo": "Código ISO 4406",
+      "resumen": "La tabla de limpieza del aceite y un ejemplo real.",
+      "portada": "/images/servicios/analisis-de-aceite/muestreo-cabezal.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/analisis-de-aceite",
+      "titulo": "Análisis de Aceite",
+      "resumen": "Muestreo en planta, laboratorio acreditado y DGA en transformadores, interpretados por analistas certificados."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "analisis-de-gases-disueltos-dga-en-transformadores-y-triangulo-de-duval",
+      "titulo": "DGA y triángulo de Duval",
+      "resumen": "Qué indica cada gas y cómo se lee el triángulo.",
+      "portada": "/images/servicios/analisis-de-aceite/dga-transformador.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/analisis-de-aceite",
+      "titulo": "Análisis de Aceite",
+      "resumen": "Muestreo en planta, laboratorio acreditado y DGA en transformadores, interpretados por analistas certificados."
+    }
   }
 ]
