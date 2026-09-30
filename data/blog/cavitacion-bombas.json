@@ -1,0 +1,56 @@
+{
+  "slug": "cavitacion-en-bombas-centrifugas-como-detectarla-y-evitarla",
+  "titulo": "Cavitación en bombas centrífugas: cómo detectarla con vibración y cómo evitarla",
+  "extracto": "Qué es la cavitación, por qué daña el impulsor, cómo se reconoce por el ruido y en el espectro de vibración, qué la provoca y cómo se corrige.",
+  "portada": "/images/gallery/campo/vibracion-bomba-verde.webp",
+  "fecha": "2026-09-30T23:59:59.400000Z",
+  "seo": {
+    "titulo": "Cavitación en bombas centrífugas: cómo detectarla y evitarla",
+    "descripcion": "Qué es la cavitación en bombas centrífugas, cómo se detecta con análisis de vibraciones y por el ruido, sus causas más comunes (NPSH, succión, temperatura) y cómo evitarla."
+  },
+  "bloques": [
+    ["p", "Si una bomba suena como si trajera grava adentro, es muy probable que esté cavitando. La cavitación es de las fallas más dañinas en bombas centrífugas, porque se come el impulsor poco a poco, y también de las más fáciles de evitar una vez que se entiende qué la provoca."],
+
+    ["h2", "Qué es la cavitación"],
+    ["p", "Cuando la presión en la entrada del impulsor baja demasiado, el líquido hierve aunque esté frío y se forman burbujas de vapor. Esas burbujas viajan hacia zonas de mayor presión y revientan de golpe contra el metal. Cada implosión es diminuta, pero son millones por segundo, y con el tiempo arrancan material del impulsor y dejan una superficie como esponja."],
+
+    ["h2", "Cómo se reconoce"],
+    ["lista", [
+      "Ruido de grava o de canicas dentro de la bomba.",
+      "Presión de descarga y flujo que fluctúan.",
+      "En el espectro de vibración, un aumento de ruido de banda ancha en alta frecuencia, sin un pico claro.",
+      "Picos a la frecuencia de paso de álabes que cambian con el flujo.",
+      "En el ultrasonido, un ruido constante y crepitante."
+    ]],
+    ["p", "Lo engañoso es que la vibración global a veces no sube mucho. Por eso hace falta mirar el espectro y la alta frecuencia, no solo el número general."],
+
+    ["h2", "Qué la provoca"],
+    ["p", "En el fondo, casi siempre es lo mismo: la presión disponible en la succión, lo que se conoce como NPSH disponible, es menor que la que necesita la bomba, el NPSH requerido. Las causas prácticas son:"],
+    ["lista", [
+      "Filtros o coladores tapados en la succión.",
+      "Válvulas de succión cerradas a medias.",
+      "Nivel bajo en el tanque de succión.",
+      "Líquido más caliente de lo normal, que hierve más fácil.",
+      "Tubería de succión muy larga, delgada o con muchos codos.",
+      "Operar la bomba muy lejos de su punto de mejor eficiencia."
+    ]],
+
+    ["h2", "Cómo se evita"],
+    ["numerada", [
+      "Revisar la succión: filtros, válvulas y nivel del tanque.",
+      "Comprobar que la bomba trabaje cerca de su punto de diseño.",
+      "Bajar la temperatura del líquido si subió.",
+      "Si el problema es de diseño, mejorar la línea de succión o elegir una bomba con menor NPSH requerido."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Existe la cavitación por recirculación?"],
+    ["p", "Sí. Cuando la bomba trabaja con muy poco flujo, el líquido regresa dentro del impulsor y también se forman burbujas, aunque la succión esté bien. Se corrige operando más cerca del flujo de diseño."],
+    ["h3", "¿Un sensor en línea la puede ver?"],
+    ["p", "Sí, si mide alta frecuencia y un especialista revisa el espectro. Es una de las fallas donde el monitoreo continuo ayuda, porque suele aparecer en ciertos momentos de operación."],
+    ["h3", "¿Qué otras fallas tienen las bombas?"],
+    ["p", "Rodamientos, desbalance del impulsor y desalineación con el motor. Lo explicamos en la guía de [vibraciones en motores y bombas](/blog/analisis-de-vibraciones-en-motores-y-bombas-centrifugas)."],
+
+    ["nota", "Vigilamos tus bombas críticas con [sensores de vibración](/servicios/monitoreo-continuo/sensores-vibracion) o en ruta con el [análisis de vibraciones](/servicios/monitoreo-condicion/vibraciones-mecanicas)."]
+  ]
+}
