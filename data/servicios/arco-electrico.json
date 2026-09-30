@@ -22,13 +22,13 @@
   ],
   "header": {
     "title": "Estudios de Arco Eléctrico",
-    "subtitle": "Cuánta energía liberaría un arco en cada tablero, y con qué se puede abrir",
+    "subtitle": "Estudio de arco eléctrico conforme a NOM-029-STPS-2011: cumple con la STPS, evita multas y acredita tus auditorías",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Estudio de arco eléctrico conforme a IEEE 1584 y NFPA 70E: energía incidente por tablero, categoría de EPP, fronteras de protección y etiqueta de advertencia para cada equipo. Cumplimiento de NOM-029-STPS-2011 para trabajos con equipo energizado.",
+  "seoDescription": "Estudio de arco eléctrico conforme a IEEE 1584 y NFPA 70E para cumplir la NOM-029-STPS-2011, evitar multas de la STPS y acreditar auditorías: energía incidente por tablero, categoría de EPP, fronteras de protección y etiqueta para cada equipo.",
   "content": {
-    "title": "Cada tablero tiene un riesgo distinto, y hoy nadie sabe cuál",
-    "subtitle": "Un arco eléctrico libera en milisegundos una energía que quema a metros de distancia. Cuánta, depende de cada tablero: de su corriente de cortocircuito y de qué tan rápido dispara su protección. El estudio calcula ese número para cada punto de la planta y lo convierte en lo que importa: qué ropa hay que traer para abrirlo y a qué distancia empieza el peligro.",
+    "title": "Cumplir con la norma, y saber con qué se abre cada tablero",
+    "subtitle": "La razón principal es el cumplimiento normativo: la NOM-029-STPS-2011 pide un análisis de riesgo y el equipo de protección adecuado antes de trabajar con equipo energizado. El estudio es lo que evita multas en una inspección de la STPS y lo que acredita auditorías de aseguradoras, corporativos y clientes. Y además le dice a cada persona cuánta energía liberaría un arco en cada tablero y con qué ropa puede abrirlo.",
     "image": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
     "items": [
       {
@@ -85,33 +85,6 @@
     "title": "Productos Relacionados",
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
-  },
-  "porQue": {
-    "foto": {
-      "src": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
-      "alt": "Técnico con traje contra arco eléctrico trabajando en un transformador energizado"
-    },
-    "pie": "Intervención en un equipo energizado con el traje que corresponde a su categoría de riesgo. Foto real de una ruta de DIAPSA.",
-    "preguntas": [
-      {
-        "pregunta": "Cuánta energía liberaría",
-        "texto": "Calculada tablero por tablero conforme a IEEE 1584, en cal/cm²."
-      },
-      {
-        "pregunta": "Con qué protección y a qué distancia",
-        "texto": "La categoría de EPP y las fronteras de aproximación de cada tablero."
-      },
-      {
-        "pregunta": "Etiquetado y documentado",
-        "texto": "La etiqueta en cada tablero y el informe que pide la NOM-029-STPS."
-      }
-    ],
-    "escena": "arco",
-    "destacado": {
-      "titulo": "Antes de abrir un tablero energizado, cada persona sabe a qué se expone",
-      "texto": "La NOM-029-STPS-2011 exige el análisis de riesgo y el equipo de protección para trabajar con equipo energizado. El estudio lo resuelve tablero por tablero y lo deja escrito en su etiqueta.",
-      "insignia": "029"
-    }
   },
   "arco": {
     "etiqueta": "Lo que produce el estudio",
@@ -314,34 +287,102 @@
   ],
   "entregable": {
     "etiqueta": "Qué recibes",
-    "titulo": "Recibes seguridad y cumplimiento",
-    "descripcion": "Saber con qué se puede abrir cada tablero, y un estudio que cumple con lo que pide la STPS.",
-    "contenido": [],
-    "pilares": [
-      {
-        "titulo": "Seguridad",
-        "icono": "escudo",
-        "items": [
-          "La energía y la categoría de protección de cada tablero",
-          "Hasta dónde se puede acercar cada persona",
-          "Una etiqueta de advertencia en cada tablero",
-          "Cómo bajar el riesgo donde sale alto"
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "El informe con la energía y la protección de cada tablero, y una etiqueta lista para pegar en cada uno. Pasa el cursor por la lista para ver dónde va cada cosa.",
+    "contenido": [
+      "Resumen del estudio",
+      "Energía incidente de cada tablero",
+      "Las categorías de EPP",
+      "Lo que más riesgo tiene",
+      "Cómo bajar el riesgo"
+    ],
+    "muestra": {
+      "titulo": "Estudio de arco eléctrico",
+      "equipo": "18 tableros · planta de proceso",
+      "subtitulo": "IEEE 1584 · NFPA 70E · NOM-029-STPS-2011",
+      "estado": {
+        "texto": "2 en categoría 2",
+        "color": "#ea580c",
+        "punto": 0
+      },
+      "lecturas": {
+        "titulo": "Energía incidente · cal/cm²",
+        "unidad": "",
+        "max": 8.5,
+        "nota": "La marca es el tope de la categoría 1: 4 cal/cm².",
+        "punto": 1,
+        "filas": [
+          {
+            "p": "Interruptor principal",
+            "valor": 5.88,
+            "ref": 4,
+            "color": "#ea580c"
+          },
+          {
+            "p": "Secundario del transformador",
+            "valor": 5.72,
+            "ref": 4,
+            "color": "#ea580c"
+          },
+          {
+            "p": "Interruptor de proceso",
+            "valor": 0.72,
+            "ref": 4,
+            "color": "#ca8a04"
+          },
+          {
+            "p": "CCM de planta 1",
+            "valor": 0.38,
+            "ref": 4,
+            "color": "#ca8a04"
+          }
         ]
       },
-      {
-        "titulo": "Cumplimiento",
-        "icono": "documento",
-        "items": [
-          "El análisis de riesgo que pide la NOM-029-STPS",
-          "Cálculo conforme a IEEE 1584 y NFPA 70E",
-          "Informe listo para la STPS, auditorías y aseguradora",
-          "Etiquetas listas para imprimir y pegar"
+      "escala": {
+        "titulo": "Categorías de EPP · NFPA 70E",
+        "punto": 2,
+        "niveles": [
+          {
+            "t": "Cat. 1",
+            "r": "4 cal/cm²",
+            "c": "#ca8a04"
+          },
+          {
+            "t": "Cat. 2",
+            "r": "8 cal/cm²",
+            "c": "#ea580c"
+          },
+          {
+            "t": "Cat. 3",
+            "r": "25 cal/cm²",
+            "c": "#dc2626"
+          },
+          {
+            "t": "Cat. 4",
+            "r": "40 cal/cm²",
+            "c": "#7f1d1d"
+          }
         ]
+      },
+      "hallazgo": {
+        "titulo": "Interruptor principal: 5.88 cal/cm²",
+        "texto": "Categoría 2, frontera de arco a 124 cm. Junto con el secundario del transformador, son los únicos dos tableros que piden ropa de 8 cal/cm².",
+        "punto": 3
+      },
+      "recomendacion": {
+        "titulo": "Revisar el ajuste de la protección del principal",
+        "urgencia": "próximo paro",
+        "texto": "Un disparo más rápido puede bajarlo a categoría 1. Mientras, EPP de 8 cal/cm² para abrirlo energizado.",
+        "punto": 4
       }
-    ]
+    }
   },
   "mostrarClientes": true,
   "faq": [
+    {
+      "question": "¿Para qué sirve el estudio de arco eléctrico?",
+      "answer": "Ante todo, para cumplir con la NOM-029-STPS-2011, que pide un análisis de riesgo antes de trabajar con equipo energizado. Tener el estudio evita multas en una inspección de la STPS y es la evidencia que piden las aseguradoras y las auditorías. Además le dice a tu personal con qué protección puede abrir cada tablero."
+    },
     {
       "question": "¿Qué es la energía incidente y por qué se mide en cal/cm²?",
       "answer": "Es la energía térmica que recibiría una persona parada a la distancia de trabajo si ocurriera un arco en ese tablero. Se expresa en calorías por centímetro cuadrado porque así se clasifica la ropa de protección: una prenda de 8 cal/cm² aguanta un arco de hasta 8 cal/cm² sin que la piel debajo sufra una quemadura de segundo grado. Por arriba de 1.2 cal/cm² la ropa normal se enciende."
@@ -365,6 +406,10 @@
     {
       "question": "¿Cada cuánto se actualiza?",
       "answer": "NFPA 70E pide revisarlo cuando cambie la instalación y al menos cada cinco años. En la práctica, cualquier cambio de protección, de transformador o de carga importante invalida el resultado de las barras afectadas, y esas se recalculan."
+    },
+    {
+      "question": "¿Qué son las fronteras de protección?",
+      "answer": "Son las distancias alrededor de un tablero donde cambian las reglas. La frontera de arco marca desde dónde hace falta ropa contra arco; la limitada, desde dónde solo entra personal calificado o acompañado por uno; y la restringida, la más cercana, pide protección contra choque eléctrico."
     },
     {
       "question": "¿Qué necesito para cotizar?",
@@ -413,44 +458,150 @@
       "nota": "El estudio entrega el análisis, la categoría de protección y la etiqueta de cada tablero conforme a IEEE 1584 y NFPA 70E. Los procedimientos de trabajo y la capacitación los completa el centro de trabajo."
     }
   },
-  "diferencias": {
-    "etiqueta": "Por qué DIAPSA",
-    "titulo": "¿Qué nos hace diferentes?",
-    "items": [
-      {
-        "id": "unifilar",
-        "grafico": "arc-unifilar",
-        "title": "Se modela la planta completa",
-        "content": "Desde la acometida hasta el último tablero, con los datos de placa y los ajustes reales de cada protección. Si el diagrama unifilar no existe o está desactualizado, se reconstruye en campo."
-      },
-      {
-        "id": "calculo",
-        "grafico": "arc-calculo",
-        "title": "Calculado conforme a IEEE 1584",
-        "content": "La energía de cada barra sale de la corriente de falla, el tiempo que tarda la protección en abrir y la distancia de trabajo, simulando todos los escenarios de operación."
-      },
-      {
-        "id": "epp",
-        "grafico": "arc-epp",
-        "title": "La protección que pide cada tablero",
-        "content": "Cada valor se traduce en la categoría de equipo de protección de NFPA 70E. Tu gente sabe con qué ropa puede abrir cada tablero, sin adivinar."
-      },
-      {
-        "id": "fronteras",
-        "grafico": "arc-fronteras",
-        "title": "Hasta dónde se puede acercar cada persona",
-        "content": "Las fronteras de arco, de aproximación limitada y restringida, calculadas para cada tablero y escritas en su etiqueta."
-      },
-      {
-        "id": "reducir",
-        "grafico": "arc-reducir",
-        "title": "No solo se etiqueta: se baja el riesgo",
-        "content": "Donde la energía sale alta, el informe dice cómo bajarla: ajustar la protección para que dispare más rápido, usar modo de mantenimiento o no intervenir ese tablero energizado."
-      }
-    ]
-  },
   "flujoEncabezado": {
     "titulo": "Del diagrama unifilar a la etiqueta, en cinco pasos",
     "texto": "No vendemos un cálculo: vendemos que cada persona sepa con qué puede abrir cada tablero, y poder demostrarlo. Así se hace el estudio."
+  },
+  "seoTitle": "Estudio de arco eléctrico NFPA 70E e IEEE 1584 | NOM-029-STPS",
+  "introBeneficios": {
+    "beneficios": [
+      {
+        "icono": "paro",
+        "titulo": "Evita multas de la STPS",
+        "texto": "El análisis de riesgo que pide la NOM-029."
+      },
+      {
+        "icono": "documento",
+        "titulo": "Acredita tus auditorías",
+        "texto": "Aseguradoras, corporativos y clientes."
+      },
+      {
+        "icono": "fuego",
+        "titulo": "Cada tablero con su riesgo",
+        "texto": "Energía incidente y categoría de EPP."
+      },
+      {
+        "icono": "rayo",
+        "titulo": "Una etiqueta por tablero",
+        "texto": "Lista para imprimir y pegar."
+      }
+    ],
+    "modalidades": [
+      {
+        "titulo": "Estudio nuevo",
+        "texto": "Desde el levantamiento y el diagrama unifilar."
+      },
+      {
+        "titulo": "Actualización",
+        "texto": "Cuando cambian transformadores, tableros o protecciones."
+      }
+    ],
+    "fotos": [
+      {
+        "src": "/images/servicios/termografia-infrarroja/campo-05.webp",
+        "alt": "Analista de DIAPSA con traje de protección contra arco eléctrico de 40 cal/cm²"
+      },
+      {
+        "src": "/images/servicios/estudios-electricos/campo-analista-tablero.webp",
+        "alt": "Levantamiento de datos en un tablero eléctrico"
+      },
+      {
+        "src": "/images/servicios/analisis-de-aceite/dga-gabinete.webp",
+        "alt": "Intervención en un gabinete energizado con traje contra arco eléctrico"
+      },
+      {
+        "src": "/images/servicios/termografia-infrarroja/campo-63.webp",
+        "alt": "Analista con traje de protección contra arco listo para trabajar frente a equipo energizado"
+      },
+      {
+        "src": "/images/servicios/subestacion-inspeccion.webp",
+        "alt": "Subestación eléctrica industrial durante el levantamiento"
+      }
+    ],
+    "idap": {
+      "titulo": "Tus datos viven en IDAP",
+      "texto": "Cada tablero con su energía incidente, su categoría y su etiqueta, junto con las demás inspecciones eléctricas del mismo equipo.",
+      "puntos": [
+        "Energía y categoría de cada tablero",
+        "Etiquetas descargables",
+        "Historial de actualizaciones"
+      ],
+      "video": "/videos/idap/idap-informe",
+      "descripcionVideo": "Informe de una inspección en IDAP",
+      "enlace": "/servicios/idap"
+    }
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Del diagrama unifilar a la etiqueta",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "Cinco pasos, una etiqueta por tablero",
+          "texto": "Se levanta la instalación, se modela, se calcula la energía de cada tablero y se traduce a la protección y las distancias que pide cada uno.",
+          "video": "/videos/arco-electrico/arc-proceso",
+          "descripcion": "Los cinco pasos del estudio de arco eléctrico con los datos de un estudio real de 18 tableros: modelado, energía incidente por tablero, categoría 2 del interruptor principal, fronteras y etiqueta",
+          "pasos": [
+            "Levantamiento",
+            "Modelado",
+            "Cálculo conforme a IEEE 1584",
+            "EPP y fronteras conforme a NFPA 70E",
+            "Etiquetas e informe"
+          ]
+        }
+      ]
+    },
+    {
+      "lugar": "cobertura",
+      "etiqueta": "Por qué importa",
+      "titulo": "Evita multas y acredita auditorías",
+      "texto": "El estudio es la evidencia de que tu planta cumple con la NOM-029-STPS-2011, y es lo que te van a pedir.",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "Inspección de la STPS y auditorías",
+          "texto": "El inspector revisa el análisis de riesgo, el EPP según la energía de cada tablero, las etiquetas y las fronteras. Con el estudio al día, la revisión queda cubierta y las auditorías también.",
+          "video": "/videos/arco-electrico/arc-cumplimiento",
+          "descripcion": "Lo que revisa un inspector de la STPS sobre arco eléctrico, la diferencia entre tener el estudio y no tenerlo, y las auditorías acreditadas"
+        },
+        {
+          "titulo": "Quién se acerca, y con qué",
+          "texto": "Cada tablero tiene tres fronteras. El estudio dice a qué distancia empieza cada una y qué protección pide, para que nadie adivine.",
+          "video": "/videos/arco-electrico/arc-fronteras",
+          "descripcion": "Una persona se acerca al interruptor principal y cruza la frontera de arco a 124 cm, la limitada a 100 cm y la restringida a 30 cm"
+        }
+      ],
+      "listas": [
+        {
+          "titulo": "Lo que pide la NOM-029-STPS-2011",
+          "items": [
+            "Análisis de riesgo antes de trabajar con equipo energizado",
+            "Equipo de protección personal según la energía incidente",
+            "Señalización de cada tablero con su riesgo",
+            "Distancias de trabajo seguras alrededor del equipo"
+          ]
+        },
+        {
+          "titulo": "Dónde aplica",
+          "items": [
+            "Interruptores principales",
+            "Tableros de distribución",
+            "Centros de control de motores",
+            "Subestaciones",
+            "Transformadores",
+            "Baja y media tensión"
+          ]
+        }
+      ]
+    }
+  ],
+  "servicioRelacionado": {
+    "href": "/servicios/monitoreo-condicion/tierras-fisicas",
+    "etiqueta": "Se contrata junto con",
+    "titulo": "Estudio de Tierras Físicas",
+    "texto": "El estudio de arco eléctrico dice cuánta energía libera una falla; el de tierras físicas, que la corriente de una falla tenga por dónde irse. Los dos los pide la STPS y se hacen en la misma visita.",
+    "enlace": "Ver tierras físicas"
   }
 }

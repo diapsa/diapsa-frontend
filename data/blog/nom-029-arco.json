@@ -1,0 +1,48 @@
+{
+  "slug": "nom-029-stps-2011-que-pide-sobre-arco-electrico",
+  "titulo": "NOM-029-STPS-2011: qué pide sobre arco eléctrico y trabajos con equipo energizado",
+  "extracto": "Qué es la NOM-029-STPS-2011, qué pide antes de trabajar con equipo energizado, cómo encaja el estudio de arco eléctrico con NFPA 70E e IEEE 1584 y qué revisa un inspector de la STPS.",
+  "portada": "/images/servicios/termografia-infrarroja/campo-05.webp",
+  "fecha": "2026-09-30T23:59:30.000000Z",
+  "seo": {
+    "titulo": "NOM-029-STPS-2011 y arco eléctrico: qué pide y cómo cumplir",
+    "descripcion": "Resumen de lo que pide la NOM-029-STPS-2011 sobre mantenimiento de instalaciones eléctricas y arco eléctrico: análisis de riesgo, EPP, diagrama unifilar, y cómo se complementa con NFPA 70E e IEEE 1584."
+  },
+  "bloques": [
+    ["p", "Si en tu planta alguien abre tableros energizados para medir, revisar o dar mantenimiento, la NOM-029-STPS-2011 te aplica. Es la norma de seguridad para el mantenimiento de instalaciones eléctricas, y es la que un inspector de la STPS usa para revisar cómo se protege al personal frente al choque y al arco eléctrico."],
+
+    ["h2", "Qué pide, en resumen"],
+    ["lista", [
+      "Tener el diagrama unifilar de la instalación actualizado.",
+      "Hacer un análisis de riesgo antes de trabajar con equipo energizado.",
+      "Dar al personal el equipo de protección que corresponde al riesgo.",
+      "Contar con procedimientos de seguridad y autorizaciones para los trabajos.",
+      "Delimitar y señalizar las zonas de trabajo.",
+      "Capacitar al personal que realiza estas actividades."
+    ]],
+
+    ["h2", "Dónde entra el estudio de arco eléctrico"],
+    ["p", "La norma pide que la protección corresponda al riesgo, pero no hay forma de saber cuál es el riesgo de un tablero sin calcularlo. Ahí entra el estudio: calcula cuánta energía liberaría un arco en cada tablero conforme a IEEE 1584 y la traduce en categoría de equipo de protección y fronteras de aproximación conforme a NFPA 70E. El resultado se resume en una etiqueta que se pega en cada tablero."],
+    ["p", "Así, cuando el inspector pregunta con qué criterio se eligió el traje que usa tu electricista para abrir el tablero principal, la respuesta está en el estudio y en la etiqueta."],
+
+    ["h2", "Qué revisa un inspector"],
+    ["lista", [
+      "Que exista el análisis de riesgo, tablero por tablero.",
+      "Que el EPP que usa el personal corresponda a lo que dice ese análisis.",
+      "Que los tableros estén señalizados.",
+      "Que el diagrama unifilar esté al día.",
+      "Que el estudio se haya actualizado si la instalación cambió."
+    ]],
+    ["p", "No tener el análisis, o tener uno que no corresponde a la instalación actual, deja a la planta expuesta a una sanción. Y, más importante, deja a las personas trabajando sin saber a qué se exponen."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿La NOM-029 obliga a usar NFPA 70E?"],
+    ["p", "La norma mexicana pide el análisis de riesgo y la protección adecuada. NFPA 70E e IEEE 1584 son las referencias técnicas más usadas para calcularlo, y son las que piden las aseguradoras y los corporativos."],
+    ["h3", "¿Cada cuánto se actualiza el estudio?"],
+    ["p", "Cada vez que cambia algo que mueve la corriente de falla o el tiempo de disparo: un transformador nuevo, otro tablero, un ajuste de protecciones. Y como referencia, NFPA 70E pide revisarlo al menos cada cinco años."],
+    ["h3", "¿Qué pasa si un tablero sale con mucha energía?"],
+    ["p", "Se buscan formas de bajarla, casi siempre haciendo que la protección dispare más rápido. Mientras tanto, se trabaja con el EPP de su categoría o desenergizado. Lo explicamos en la guía de [energía incidente y categorías de EPP](/blog/energia-incidente-y-categorias-de-epp-arco-electrico)."],
+
+    ["nota", "Hacemos el estudio de arco eléctrico de tu planta con etiqueta por tablero, para cumplir la NOM-029-STPS-2011 y acreditar tus auditorías. Conoce el [estudio de arco eléctrico](/servicios/monitoreo-condicion/arco-electrico). Este resumen es orientativo; para cualquier duda de cumplimiento, la referencia es el texto oficial de la norma."]
+  ]
+}
