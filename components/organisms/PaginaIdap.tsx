@@ -287,8 +287,8 @@ export default function PaginaIdap() {
             texto="Cada medición se califica de Bueno a Alarma. Cuando un equipo empieza a empeorar, te avisamos antes de que detenga la línea."
           >
             <VideoIdap
-              nombre="idap-anticipa"
-              descripcion="La tendencia de vibración de un motor cruza el límite de precaución y llega un aviso al jefe de mantenimiento"
+              nombre="idap-aviso"
+              descripcion="Gemelo digital de un motor-bomba con sensor en línea: la vibración cruza los límites, llega el aviso y queda programada la orden de trabajo antes del paro"
             />
           </Fila>
 
