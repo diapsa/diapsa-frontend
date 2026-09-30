@@ -2321,7 +2321,7 @@
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "Esto es lo que recibes",
-    "descripcion": "Cada punto con su nivel, el diagnóstico del analista y qué hacer. Páginas de un informe real, sin los datos de la planta.",
+    "descripcion": "Cada punto con su nivel, el diagnóstico del analista y qué hacer. Pasa el cursor por la lista para ver dónde aparece en un informe real, sin los datos de la planta.",
     "contenido": [
       "Nivel de cada punto contra su línea base",
       "Estado de cada equipo en semáforo",
@@ -2350,6 +2350,67 @@
         ]
       },
       "inspeccion": "ultra"
+    },
+    "anotado": {
+      "paginas": [
+        {
+          "src": "/images/informe/pagina-1.png",
+          "ancho": 1253,
+          "alto": 890
+        },
+        {
+          "src": "/images/informe/pagina-2.png",
+          "ancho": 1253,
+          "alto": 1457
+        }
+      ],
+      "puntos": [
+        {
+          "pagina": 1,
+          "recuadro": [
+            2.7,
+            77.7,
+            67.7,
+            13.1
+          ]
+        },
+        {
+          "pagina": 0,
+          "recuadro": [
+            75.3,
+            20.3,
+            21.7,
+            19.7
+          ]
+        },
+        {
+          "pagina": 1,
+          "recuadro": [
+            71.3,
+            81.1,
+            25.8,
+            16.6
+          ]
+        },
+        {
+          "pagina": 0,
+          "recuadro": [
+            2.7,
+            58.5,
+            94.3,
+            23.8
+          ]
+        },
+        {
+          "pagina": 0,
+          "recuadro": [
+            2.7,
+            84.6,
+            94.3,
+            12.0
+          ]
+        }
+      ]
     }
   },
   "mostrarClientes": true,
@@ -2666,5 +2727,56 @@
       "texto": "Lubricación por ultrasonido, detección de fugas de aire comprimido e inspección eléctrica de tableros y subestaciones."
     }
   ],
-  "seoTitle": "Análisis de ultrasonido para mantenimiento predictivo"
+  "seoTitle": "Análisis de ultrasonido para mantenimiento predictivo",
+  "introBeneficios": {
+    "beneficios": [
+      {
+        "icono": "paro",
+        "titulo": "Menos paros por rodamiento",
+        "texto": "La falla se oye semanas antes de que el equipo vibre o caliente."
+      },
+      {
+        "icono": "gota",
+        "titulo": "Lubricación en su punto",
+        "texto": "Se engrasa cuando el rodamiento lo pide, no por calendario."
+      },
+      {
+        "icono": "aire",
+        "titulo": "Aire que deja de escaparse",
+        "texto": "Cada fuga ubicada y con su costo, para repararla por prioridad."
+      },
+      {
+        "icono": "rayo",
+        "titulo": "Tableros que no llegan al arco",
+        "texto": "El efecto corona se detecta con el tablero cerrado."
+      }
+    ],
+    "modalidades": [
+      {
+        "titulo": "Rutas con analista",
+        "texto": "Detector y audífonos en manos de un analista certificado."
+      },
+      {
+        "titulo": "Sensores en línea",
+        "texto": "Para lo que no puede esperar a la siguiente visita.",
+        "enlace": "/servicios/monitoreo-continuo/sensores-acusticos"
+      }
+    ],
+    "foto": {
+      "src": "/images/servicios/analisis-de-ultrasonido/campo-bomba-alimentacion.webp",
+      "alt": "Analista de DIAPSA con audífonos midiendo con ultrasonido los rodamientos de una bomba de agua de alimentación"
+    },
+    "idap": {
+      "titulo": "Tus datos viven en IDAP",
+      "texto": "Cada inspección de ultrasonido entra a la ficha del equipo, junto con las demás técnicas, y se consulta en línea cuando la necesites.",
+      "puntos": [
+        "Cada punto contra su línea base",
+        "La grabación de lo que se oyó",
+        "Historial y tendencias de cada equipo"
+      ],
+      "video": "/videos/idap/idap-equipo",
+      "descripcionVideo": "Ficha de un equipo en IDAP: gemelo digital, estado por componente y diagnóstico por disciplina",
+      "enlace": "/servicios/idap"
+    }
+  }
 }

@@ -23,6 +23,7 @@ import ServicePuntos from "@/components/organisms/ServicePuntos";
 import PorQueMuestrear from "@/components/organisms/PorQueMuestrear";
 import ServiceEntregable from "@/components/organisms/ServiceEntregable";
 import VideosServicio from "@/components/organisms/VideosServicio";
+import IntroBeneficios from "@/components/organisms/IntroBeneficios";
 import Semaforo from "@/components/organisms/Semaforo";
 import GraficaTendencia from "@/components/organisms/GraficaTendencia";
 import CursosTeaser from "@/components/organisms/CursosTeaser";
@@ -240,7 +241,9 @@ export default async function ServicePage({
                         servicio a quien entra sin saber qué es un análisis
                         de lubricante. En su lugar: qué contesta la muestra
                         y cómo se toma, con fotos reales de una ruta. */}
-                    {service.porQue ? (
+                    {service.introBeneficios ? (
+                        <IntroBeneficios intro={service.introBeneficios} />
+                    ) : service.porQue ? (
                         <PorQueMuestrear porQue={service.porQue} />
                     ) : (
                         <ServicePuntos puntos={detailItems} foto={fotoPuntos} />

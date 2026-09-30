@@ -118,6 +118,12 @@ export interface ResumenRuta {
 }
 
 export interface ServiceEntregable {
+  /** El informe real con cada punto de `contenido` señalado en su página
+      (InformeAnotado). Recuadros en porcentaje: [x, y, ancho, alto]. */
+  anotado?: {
+    paginas: { src: string; ancho: number; alto: number }[];
+    puntos: { pagina: number; recuadro: [number, number, number, number] }[];
+  };
   /** Antetítulo corto, ej. "El entregable". */
   etiqueta: string;
   titulo: string;
@@ -656,6 +662,8 @@ export interface Servicio {
   /** Grupos de bloques con video en bucle (VideosServicio). `lugar` dice qué
       sección reemplazan: el flujo del servicio o la cobertura. */
   videos?: GrupoVideos[];
+  /** Primera parte reestructurada (IntroBeneficios) en lugar de ServicePuntos. */
+  introBeneficios?: ServiceIntroBeneficios;
   /** Encabezado propio del flujo "Cómo trabajamos". */
   flujoEncabezado?: { titulo: string; texto: string };
   /** En qué se traduce, en dinero, con las cifras del visitante. */
@@ -685,4 +693,12 @@ export interface GrupoVideos {
   bloques: BloqueVideo[];
   /** Listas cortas en fichas debajo de los bloques (equipos, fallas). */
   listas?: { titulo: string; items: string[] }[];
+}
+
+export interface ServiceIntroBeneficios {
+  beneficiosTitulo?: string;
+  beneficios: { icono: "paro" | "gota" | "aire" | "rayo"; titulo: string; texto: string }[];
+  modalidades?: { titulo: string; texto: string; enlace?: string }[];
+  foto: { src: string; alt: string };
+  idap: { titulo: string; texto: string; puntos: string[]; video: string; descripcionVideo: string; enlace: string };
 }
