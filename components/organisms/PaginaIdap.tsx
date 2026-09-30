@@ -120,6 +120,7 @@ const ICONO = {
   red: <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.5h.01M8.5 15a5 5 0 017 0M5.5 12a9 9 0 0113 0M2.5 9a13 13 0 0119 0" />,
   inspeccion: <path strokeLinecap="round" strokeLinejoin="round" d="M9 5h6M9 3h6a1 1 0 011 1v1h2a1 1 0 011 1v14a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h2V4a1 1 0 011-1zM9 12l2 2 4-4" />,
   documento: <path strokeLinecap="round" strokeLinejoin="round" d="M7 3h7l5 5v13H7zM14 3v5h5M10 17v-3M13 17v-5M16 17v-2" />,
+  planta: <path strokeLinecap="round" strokeLinejoin="round" d="M3 21V10l6 3.5V10l6 3.5V6.5l6 2.5V21zM3 21h18M7 17h2M12 17h2M17 17h2" />,
   persona: <path strokeLinecap="round" strokeLinejoin="round" d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0" />,
 };
 
@@ -255,6 +256,26 @@ export default function PaginaIdap() {
         `}</style>
         <div className="mx-auto max-w-6xl space-y-28 px-6 lg:space-y-36">
           <Fila
+            icono="planta"
+            titulo="La salud de todas tus plantas, en una sola vista"
+            texto="Cada planta con su gemelo digital, sus equipos por estado y el ahorro de las fallas evitadas. Del tablero general a cada medición en un clic."
+          >
+            {/* Video en bucle al estilo Fracttal: sin sonido ni controles */}
+            <video
+              className="block aspect-[16/10] w-full object-cover"
+              src="/videos/idap/idap-plantas.mp4"
+              poster="/videos/idap/idap-plantas.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="Recorrido por IDAP: salud de tres plantas de ciclo combinado y el tablero de métricas"
+            />
+          </Fila>
+
+          <Fila
+            invertir
             icono="alerta"
             titulo="Sabes qué equipo va a fallar antes del paro"
             texto="Cada medición se califica de Bueno a Alarma. Cuando un equipo empieza a empeorar, te avisamos antes de que detenga la línea."
@@ -265,7 +286,6 @@ export default function PaginaIdap() {
           </Fila>
 
           <Fila
-            invertir
             icono="ia"
             titulo="IA que ordena tus prioridades"
             texto="Cruza el estado de cada equipo con lo que pesa en tu proceso y te dice qué atender primero. Un especialista de DIAPSA valida cada decisión."
@@ -276,6 +296,7 @@ export default function PaginaIdap() {
           </Fila>
 
           <Fila
+            invertir
             icono="red"
             titulo="Todas las técnicas y tus sensores, en un solo lugar"
             texto="Termografía, vibraciones, ultrasonido, aceite, análisis eléctrico y sensores en línea, en la ficha de cada equipo y con un solo diagnóstico."
@@ -301,7 +322,6 @@ export default function PaginaIdap() {
           </Fila>
 
           <Fila
-            invertir
             icono="documento"
             titulo="Evidencia para justificar cada inversión"
             texto="Historial y tendencias de cada equipo, informes en PDF, datos en Excel y conexión con tu ERP o tu sistema de mantenimiento."
@@ -312,6 +332,7 @@ export default function PaginaIdap() {
           </Fila>
 
           <Fila
+            invertir
             icono="persona"
             titulo="No es software de terceros: es con lo que trabajamos"
             texto="IDAP nació en campo. Detrás de cada estado hay un especialista de DIAPSA y más de 20 años midiendo equipos."
