@@ -68,7 +68,7 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
             <h2 className="mt-2 text-2xl font-extrabold leading-tight text-primary lg:text-3xl">{entregable.titulo}</h2>
             <p className="mt-3 text-justify text-base leading-relaxed text-tertiary">{entregable.descripcion}</p>
           </div>
-          <InformeMuestra puntos={entregable.contenido} />
+          <InformeMuestra puntos={entregable.contenido} hoja={entregable.muestra} />
         </div>
       ) : (
       <div

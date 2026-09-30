@@ -2336,7 +2336,80 @@
     "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA, con el estado por disciplina y los niveles de ultrasonido medidos",
     "dato": "3",
     "datoTexto": "disciplinas en un solo informe",
-    "muestra": "ultrasonido"
+    "muestra": {
+      "titulo": "Informe de ultrasonido",
+      "equipo": "Motor de bomba de alimentación B",
+      "subtitulo": "Ruta mensual · 28/09/2026 · analista Nivel II",
+      "estado": {
+        "texto": "Alarma",
+        "color": "#dc2626",
+        "punto": 1
+      },
+      "lecturas": {
+        "titulo": "Lecturas por punto · dB",
+        "unidad": "dB",
+        "max": 60,
+        "nota": "La marca es la línea base de cada punto.",
+        "punto": 0,
+        "filas": [
+          {
+            "p": "1H · lado acople",
+            "valor": 47,
+            "ref": 15,
+            "color": "#dc2626"
+          },
+          {
+            "p": "2H · lado libre",
+            "valor": 29,
+            "ref": 15,
+            "color": "#d97706"
+          },
+          {
+            "p": "3H · bomba",
+            "valor": 18,
+            "ref": 15,
+            "color": "#16a34a"
+          }
+        ]
+      },
+      "escala": {
+        "titulo": "Criterios de severidad · dB sobre la línea base",
+        "punto": 2,
+        "niveles": [
+          {
+            "t": "Bueno",
+            "r": "15 a 23",
+            "c": "#16a34a"
+          },
+          {
+            "t": "Observación",
+            "r": "24 a 31",
+            "c": "#ca8a04"
+          },
+          {
+            "t": "Precaución",
+            "r": "32 a 39",
+            "c": "#ea580c"
+          },
+          {
+            "t": "Alarma",
+            "r": "más de 39",
+            "c": "#dc2626"
+          }
+        ]
+      },
+      "hallazgo": {
+        "titulo": "Rodamiento lado acople",
+        "texto": "Daño incipiente por falta de lubricación; impactos periódicos al escucharlo.",
+        "punto": 3
+      },
+      "recomendacion": {
+        "titulo": "Lubricar y volver a medir en 7 días",
+        "urgencia": "esta semana",
+        "texto": "Si no baja, cambiar el rodamiento.",
+        "punto": 4
+      }
+    }
   },
   "mostrarClientes": true,
   "faq": [

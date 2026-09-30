@@ -1,0 +1,51 @@
+{
+  "slug": "termografia-en-motores-electricos-que-revisa-y-como-interpretarla",
+  "titulo": "Termografía en motores eléctricos: qué revisa y cómo interpretarla",
+  "extracto": "Qué puede ver la cámara térmica en un motor eléctrico, desde rodamientos y acoplamientos hasta la caja de conexiones, cómo se interpreta y cuándo hay que confirmar con otra técnica.",
+  "portada": "/images/servicios/termografia-infrarroja/campo-35.webp",
+  "fecha": "2026-09-30T12:00:00.000000Z",
+  "seo": {
+    "titulo": "Termografía en motores eléctricos: qué revisa y cómo interpretarla",
+    "descripcion": "Qué detecta la termografía en motores eléctricos: rodamientos, acoplamientos, desalineación, ventilación, caja de conexiones y desbalance, y cómo interpretar cada hallazgo."
+  },
+  "bloques": [
+    ["p", "Cuando se habla de termografía, casi todos piensan en tableros eléctricos. Pero los motores también avisan con calor cuando algo anda mal, y una cámara térmica puede revisar uno completo en un par de minutos, sin tocarlo y sin detenerlo."],
+    ["p", "En esta guía te contamos qué puede ver la termografía en un motor, cómo se interpreta cada hallazgo y cuándo hay que confirmar con otra técnica."],
+
+    ["h2", "Qué revisa la cámara en un motor"],
+    ["h3", "Los rodamientos"],
+    ["p", "Un rodamiento con poca grasa, con grasa de más o con daño se calienta más que su compañero del otro lado. Lo que se busca es la diferencia entre el rodamiento del lado acople y el del lado libre, o contra motores iguales trabajando en condiciones parecidas."],
+    ["h3", "El acoplamiento"],
+    ["p", "Un acoplamiento desalineado o gastado se calienta. Si además uno de los rodamientos cercanos está más caliente que el resto, es muy probable que el problema sea la alineación."],
+    ["h3", "La carcasa y la ventilación"],
+    ["p", "Si la carcasa está caliente de forma pareja, puede ser sobrecarga o mala ventilación: aletas tapadas de polvo, un ventilador dañado o una guarda obstruida. Si el calor está concentrado en una zona, puede haber un problema interno en el devanado."],
+    ["h3", "La caja de conexiones"],
+    ["p", "Es de los lugares más olvidados y de los que más fallan. Una conexión floja en las terminales del motor se ve igual que en un tablero: una fase más caliente que las otras."],
+
+    ["h2", "Cómo se interpreta"],
+    ["p", "En motores no hay una tabla única como la de la NETA para tableros. Se trabaja comparando: el rodamiento de un lado contra el otro, el motor contra otros iguales, la lectura de hoy contra la de la ruta anterior. Además, se toma en cuenta la temperatura máxima que permite la clase de aislamiento del motor, que viene en su placa. Un motor que trabaja cerca de ese límite pierde vida útil aunque no falle todavía."],
+    ["p", "La carga también importa aquí: un motor al 30 % no se calienta igual que uno al 90 %. Por eso conviene anotar la corriente al momento de medir."],
+
+    ["h2", "Cuándo confirmar con otra técnica"],
+    ["p", "La termografía te dice que algo se está calentando, pero no siempre el porqué. Cuando un rodamiento sale caliente, el [análisis de vibraciones](/servicios/monitoreo-condicion/vibraciones-mecanicas) dice si es daño, desalineación o desbalance, y el [ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido) ayuda a saber si es falta de grasa. Si te interesa ese tema, revisa la guía de [lubricación por ultrasonido](/blog/lubricacion-por-ultrasonido-como-engrasar-rodamientos). Juntas, las tres técnicas dan un diagnóstico completo."],
+
+    ["h2", "Buenas prácticas al medir"],
+    ["lista", [
+      "Mide con el motor trabajando a su carga normal, después de que haya alcanzado su temperatura de operación.",
+      "Toma siempre las mismas vistas: lado acople, lado libre, carcasa y caja de conexiones.",
+      "Cuida la emisividad: la pintura mate se mide bien, pero las partes metálicas brillantes engañan a la cámara.",
+      "Anota la temperatura ambiente y la carga.",
+      "Compara contra motores iguales y contra la ruta anterior."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿La termografía sustituye al análisis de vibraciones en motores?"],
+    ["p", "No. Son complementarias: la termografía es rápida para revisar muchos equipos y detectar lo que se calienta; las vibraciones explican qué tipo de falla es y qué tan avanzada está."],
+    ["h3", "¿Se puede revisar un motor sin quitar guardas?"],
+    ["p", "Casi siempre sí, al menos la carcasa, los rodamientos y el acoplamiento visibles. Nunca se quitan guardas con el equipo en movimiento."],
+    ["h3", "¿Cada cuánto se revisan los motores?"],
+    ["p", "Depende de lo críticos que sean. Lo práctico es incluirlos en la misma ruta que los tableros, y revisar más seguido los motores de los que depende la producción."],
+
+    ["nota", "Revisamos tus motores y tableros en la misma ruta, con el equipo en operación, y te decimos qué atender primero. Conoce nuestra [termografía infrarroja](/servicios/monitoreo-condicion/termografia-infrarroja)."]
+  ]
+}
