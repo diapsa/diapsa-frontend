@@ -125,6 +125,7 @@ const ICONO = {
   inspeccion: <path strokeLinecap="round" strokeLinejoin="round" d="M9 5h6M9 3h6a1 1 0 011 1v1h2a1 1 0 011 1v14a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1h2V4a1 1 0 011-1zM9 12l2 2 4-4" />,
   documento: <path strokeLinecap="round" strokeLinejoin="round" d="M7 3h7l5 5v13H7zM14 3v5h5M10 17v-3M13 17v-5M16 17v-2" />,
   planta: <path strokeLinecap="round" strokeLinejoin="round" d="M3 21V10l6 3.5V10l6 3.5V6.5l6 2.5V21zM3 21h18M7 17h2M12 17h2M17 17h2" />,
+  confiabilidad: <path strokeLinecap="round" strokeLinejoin="round" d="M3 4v16h18M7 14l3-4 3 3 5-7M17 6h1v1" />,
   persona: <path strokeLinecap="round" strokeLinejoin="round" d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0" />,
 };
 
@@ -329,6 +330,18 @@ export default function PaginaIdap() {
           </Fila>
 
           <Fila
+            icono="confiabilidad"
+            titulo="Indicadores de confiabilidad de cada equipo"
+            texto="Con el historial de fallas, IDAP calcula el MTTF de cada sistema y subsistema por estadística y por Weibull, dibuja su curva de confiabilidad y señala el componente que limita la vida del equipo, para decidir cada cuánto intervenir."
+          >
+            <VideoIdap
+              nombre="idap-confiabilidad"
+              descripcion="Indicadores de confiabilidad en IDAP: MTTF por estadística descriptiva y por Weibull de un compresor y sus subsistemas, curva de confiabilidad y elemento limitante"
+            />
+          </Fila>
+
+          <Fila
+            invertir
             icono="documento"
             titulo="Evidencia para justificar cada inversión"
             texto="Historial y tendencias de cada equipo, informes en PDF, datos en Excel y conexión con tu ERP o tu sistema de mantenimiento."
@@ -340,7 +353,6 @@ export default function PaginaIdap() {
           </Fila>
 
           <Fila
-            invertir
             icono="persona"
             titulo="No es software de terceros: es con lo que trabajamos"
             texto="IDAP nació en campo. Detrás de cada estado hay un especialista de DIAPSA y más de 20 años midiendo equipos."
