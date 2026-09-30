@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
+import PieSegunRuta from "@/components/organisms/PieSegunRuta";
 import WhatsAppButton from "@/components/atoms/WhatsAppButton";
 import ClarityAnalytics from "@/components/atoms/ClarityAnalytics";
 import JsonLd, {
@@ -136,7 +137,10 @@ export default function RootLayout({
       >
         <Header />
         {children}
-        <Footer />
+        {/* En la página de IDAP el pie toma la identidad de la plataforma */}
+        <PieSegunRuta>
+          <Footer />
+        </PieSegunRuta>
         <WhatsAppButton etiqueta="WhatsApp" />
         <ClarityAnalytics />
       </body>
