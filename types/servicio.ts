@@ -175,6 +175,10 @@ export interface ServiceEntregable {
     escena?: "term" | "vib" | "us";
     /** Fotografías térmicas reales para la pestaña de termografía de la escena. */
     imagenes?: { principal?: string; miniaturas?: string[]; visual?: string };
+    /** Si viene, se muestra la inspección integral nueva (EscenaInspeccion, la
+        de /servicios/idap) alternando el resumen y esta pestaña; tiene
+        prioridad sobre `escena`. */
+    inspeccion?: "termo" | "vib" | "ultra" | "aceite" | "elec";
   };
 }
 

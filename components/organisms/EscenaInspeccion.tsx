@@ -18,9 +18,11 @@ import { useEffect, useRef } from "react";
 type Props = {
   /** Imágenes para los huecos data-slot del diseño (termica-principal, termica-anterior, termica-1…3). */
   imagenes?: Record<string, string>;
+  /** En la página de una técnica: el bucle alterna el resumen y esta pestaña. */
+  pestana?: "termo" | "vib" | "ultra" | "aceite" | "elec";
 };
 
-export default function EscenaInspeccion({ imagenes = {} }: Props) {
+export default function EscenaInspeccion({ imagenes = {}, pestana }: Props) {
   const cuadro = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -50,7 +52,7 @@ export default function EscenaInspeccion({ imagenes = {} }: Props) {
             raiz.querySelector(`img[data-slot="${slot}"]`)?.setAttribute("src", src);
           });
           try {
-            const fin = montar(raiz);
+            const fin = montar(raiz, { pestana });
             limpiar = () => {
               fin();
               raiz.remove();
@@ -83,5 +85,5 @@ export default function EscenaInspeccion({ imagenes = {} }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div ref={cuadro} className="min-h-[640px] w-full lg:min-h-[1000px]" />;
+  return <div ref={cuadro} className="min-h-[640px] w-full lg:min-h-[900px]" />;
 }

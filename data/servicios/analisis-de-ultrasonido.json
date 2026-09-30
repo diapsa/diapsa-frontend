@@ -2339,7 +2339,7 @@
     "idap": {
       "src": "/images/idap/capturas/inspeccion-vibraciones.jpg",
       "alt": "Inspección integral en IDAP con la pestaña de ultrasonido",
-      "texto": "La misma inspección dentro de IDAP: cada técnica calificada en semáforo y, en ultrasonido, la forma de onda, los niveles contra la línea base y los criterios de severidad. Pasa el cursor por una técnica para abrirla.",
+      "texto": "La misma inspección dentro de IDAP: el resumen con el diagnóstico y lo que costaría la falla, y en ultrasonido la forma de onda, cada punto contra su línea base y la escala de severidad. Pasa el cursor por una técnica para abrirla.",
       "escena": "us",
       "imagenes": {
         "principal": "/images/idap/inspeccion/termica-1.jpg",
@@ -2348,7 +2348,8 @@
           "/images/idap/inspeccion/termica-2.jpg",
           "/images/idap/inspeccion/termica-3.jpg"
         ]
-      }
+      },
+      "inspeccion": "ultra"
     }
   },
   "mostrarClientes": true,

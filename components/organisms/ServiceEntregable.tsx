@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Antetitulo from "../atoms/Antetitulo";
 import EscenaIdap from "./EscenaIdap";
+import EscenaInspeccion from "./EscenaInspeccion";
 import HojaInforme from "./HojaInforme";
 import AlertaSensor from "./AlertaSensor";
 import ResumenRuta from "./ResumenRuta";
@@ -301,7 +302,9 @@ export default function ServiceEntregable({ entregable, paso }: Props) {
               <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
               <span className="ml-3 rounded-sm bg-white/5 px-3 py-0.5 text-[11px] text-white/50">idap.app</span>
             </div>
-            {entregable.idap.escena ? (
+            {entregable.idap.inspeccion ? (
+              <EscenaInspeccion pestana={entregable.idap.inspeccion} />
+            ) : entregable.idap.escena ? (
               <EscenaIdap disciplina={entregable.idap.escena} imagenes={entregable.idap.imagenes} />
             ) : (
               <Image
