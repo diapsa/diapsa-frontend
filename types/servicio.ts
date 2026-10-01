@@ -582,7 +582,7 @@ export interface ServiceCta {
 
 export interface Servicio {
   /** Escena 3D a todo lo ancho después de "Qué hacemos" (monitoreo continuo). */
-  escena3d?: "monitoreo-continuo" | "huella" | "sensores" | "termicas";
+  escena3d?: "monitoreo-continuo" | "huella" | "sensores" | "termicas" | "dga";
   /** Foto de respaldo de la escena 3D del primer apartado (sin WebGL). */
   escenaFoto?: { src: string; alt: string };
   id: string;

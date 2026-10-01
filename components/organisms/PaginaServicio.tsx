@@ -38,6 +38,7 @@ import EscenaMonitoreo from "@/components/organisms/EscenaMonitoreo";
 import EscenaHuella from "@/components/organisms/EscenaHuella";
 import EscenaSensores from "@/components/organisms/EscenaSensores";
 import EscenaTermicas from "@/components/organisms/EscenaTermicas";
+import EscenaDga from "@/components/organisms/EscenaDga";
 
 /**
  * PaginaServicio
@@ -147,7 +148,7 @@ export default function PaginaServicio({ service, href }: { service: Servicio; h
                             {overviewSubtitle}
                         </p>
                     </div>
-                    {/* Sensores de vibración, acústicos y cámaras fijas: su escena 3D
+                    {/* Sensores de vibración, acústicos, cámaras fijas y DGA en línea: su escena 3D
                         abre el primer apartado, arriba de los beneficios (Emiliano,
                         2026-10-01). Sin WebGL se ve la foto. */}
                     {service.escenaFoto && service.escena3d && service.escena3d !== "monitoreo-continuo" && (
@@ -156,6 +157,8 @@ export default function PaginaServicio({ service, href }: { service: Servicio; h
                                 <EscenaHuella foto={service.escenaFoto} />
                             ) : service.escena3d === "termicas" ? (
                                 <EscenaTermicas foto={service.escenaFoto} />
+                            ) : service.escena3d === "dga" ? (
+                                <EscenaDga foto={service.escenaFoto} />
                             ) : (
                                 <EscenaSensores foto={service.escenaFoto} />
                             )}
