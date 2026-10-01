@@ -33,13 +33,13 @@ export default function WebinarPage() {
           {/* Webinar Details */}
           <div className="mb-12">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              {/* Imagen del webinar generada en Higgsfield (2026-10-01): un
-                  analista con cámara termográfica y analizador de vibraciones
-                  junto a una motobomba, sin marcas ni texto. */}
+              {/* Imagen del webinar generada en Higgsfield (2026-10-01, elegida
+                  por Emiliano): las herramientas predictivas sobre la mesa
+                  junto a la videollamada, sin marcas ni texto. */}
               <div className="relative aspect-[21/9] w-full">
                 <Image
-                  src="/images/webinar/herramientas-predictivas.webp"
-                  alt="Analista con cámara termográfica y analizador de vibraciones junto a una motobomba"
+                  src="/images/webinar/webinar-herramientas-mesa.webp"
+                  alt="Cámara termográfica, analizador de vibraciones, detector de ultrasonido y muestra de aceite junto a una laptop en videollamada"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 896px"
