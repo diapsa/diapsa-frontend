@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import JsonLd, { createBreadcrumbSchema, createFaqSchema } from "@/components/atoms/JsonLd";
-import VideoBucle from "@/components/atoms/VideoBucle";
 import AcordeonFoto from "@/components/molecules/AcordeonFoto";
+import EscenaGemeloEnergia from "@/components/organisms/EscenaGemeloEnergia";
 import GuiasRelacionadas from "@/components/organisms/GuiasRelacionadas";
 import ContactForm from "@/components/organisms/ContactForm";
 import { getArticulosPorServicio } from "@/lib/recursos";
@@ -14,10 +14,11 @@ import type { Industria } from "@/types/industria";
  * PaginaIndustria
  * Landing por industria (2026-10-01). Emiliano pidió seguir dos
  * referencias: el marco de las páginas por sector de Fracttal (foto grande
- * con una frase, logos de clientes, texto y video, bloques con acordeón y
+ * con una frase, logos de clientes, bloques con acordeón y
  * una foto que cambia con cada punto, tarjetas de servicio) y, en medio, el
  * caso del giro contado como los casos de estudio de Tractian (resultados
- * primero, antes y después, retos, etapas y la gráfica). Poco texto a la
+ * primero, antes y después, retos, etapas y la gráfica). En lugar del video
+ * va el gemelo digital de la central (pedido de Emiliano). Poco texto a la
  * vista: lo largo vive en las guías del blog. Todo viene de
  * data/industrias/<slug>.json.
  */
@@ -51,8 +52,8 @@ export default function PaginaIndustria({ industria }: { industria: Industria })
 
       {/* Encabezado: foto de planta a todo lo ancho, una frase y dos botones. */}
       <section className="relative isolate flex min-h-[78vh] items-end overflow-hidden bg-primary pt-32 text-white lg:min-h-[86vh] lg:items-center">
-        <Image src={industria.hero.foto.src} alt={industria.hero.foto.alt} fill priority sizes="100vw" className="-z-20 object-cover" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary via-primary/80 to-primary/10" />
+        <Image src={industria.hero.foto.src} alt={industria.hero.foto.alt} fill priority sizes="100vw" className="-z-20 object-cover object-[80%_center]" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/90 via-primary/45 to-transparent" />
         <div className="mx-auto w-full max-w-7xl px-6 pb-14 lg:pb-0">
           <nav aria-label="Ruta" className="mb-6 text-sm text-white/60">
             {industria.breadcrumbs.map((b, i) => (
@@ -89,21 +90,15 @@ export default function PaginaIndustria({ industria }: { industria: Industria })
         </div>
       </section>
 
-      {/* Presentación: texto corto y el video del giro. */}
-      <section className="w-full bg-primary/5 py-14 lg:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:gap-14">
-          <div>
-            <h2 className="text-3xl font-extrabold leading-tight text-primary lg:text-4xl">{industria.intro.titulo}</h2>
-            <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">{industria.intro.texto}</p>
+      {/* Gemelo digital del giro: criticidad, técnicas, rutas y sensores, indicadores. */}
+      <section className="w-full bg-[#0b1530] py-14 text-white lg:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-8 max-w-2xl">
+            <h2 className="text-3xl font-extrabold leading-tight lg:text-4xl">{industria.intro.titulo}</h2>
+            <p className="mt-3 text-justify text-lg leading-relaxed text-white/75">{industria.intro.texto}</p>
           </div>
-          <div className="overflow-hidden rounded-2xl bg-white p-2 shadow-[0_30px_70px_-35px_rgba(13,26,56,0.35)] ring-1 ring-primary/10 sm:p-3">
-            <VideoBucle
-              className="block aspect-[16/10] w-full rounded-xl object-cover"
-              src={`/videos/industrias/${industria.intro.video}.mp4`}
-              poster={`/videos/industrias/${industria.intro.video}.jpg`}
-              descripcion={industria.intro.descripcionVideo}
-            />
-          </div>
+          {industria.intro.escena === "gemelo-energia" && <EscenaGemeloEnergia />}
+          <p className="mt-3 text-right text-xs text-white/50">Indicadores de ejemplo.</p>
         </div>
       </section>
 

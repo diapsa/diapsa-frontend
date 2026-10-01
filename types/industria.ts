@@ -41,8 +41,8 @@ export interface Industria {
   hero: { etiqueta: string; titulo: string; texto: string; foto: { src: string; alt: string } };
   seoTitle: string;
   seoDescription: string;
-  /** Presentación corta junto al video de la industria (public/videos/industrias/<video>.mp4 y .jpg). */
-  intro: { titulo: string; texto: string; video: string; descripcionVideo: string };
+  /** Presentación corta sobre el gemelo digital del giro (escena 3D). */
+  intro: { titulo: string; texto: string; escena: "gemelo-energia" };
   bloques: BloqueIndustria[];
   caso?: CasoIndustria;
   servicios: { titulo: string; items: { titulo: string; texto: string; href: string; foto: string }[] };

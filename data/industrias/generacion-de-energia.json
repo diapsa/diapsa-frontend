@@ -20,17 +20,16 @@
     "titulo": "Que tu central siga generando",
     "texto": "Mantenimiento predictivo de la turbina a la subestación, con la central en operación y analistas certificados.",
     "foto": {
-      "src": "/images/servicios/sensores-acusticos/campo-08.webp",
-      "alt": "Especialista de DIAPSA inspeccionando las boquillas de alta tensión de una central de ciclo combinado"
+      "src": "/images/industrias/energia-hero.webp",
+      "alt": "Central de ciclo combinado iluminada al anochecer, con sus chimeneas y la subestación"
     }
   },
   "seoTitle": "Mantenimiento predictivo para plantas de generación de energía",
   "seoDescription": "Mantenimiento predictivo para centrales eléctricas: vibraciones en turbinas de gas y de vapor, análisis de aceite, termografía y ultrasonido en generadores y subestaciones, y monitoreo en línea de transformadores. Más de 20 años de mantenimiento predictivo en plantas de México.",
   "intro": {
-    "titulo": "Un paro no programado se paga dos veces",
-    "texto": "En la reparación y en la energía que no se entregó. Vigilamos toda la central como un sistema, con la técnica que ve la falla de cada equipo.",
-    "video": "energia-central",
-    "descripcionVideo": "Esquema de una central de ciclo combinado: cada equipo se ilumina con las técnicas que lo vigilan, de la turbina de gas a la subestación"
+    "titulo": "Tu central, en un gemelo digital",
+    "texto": "Calificamos la criticidad de cada equipo, le asignamos su técnica, trazamos las rutas e instalamos sensores donde hacen falta. Y medimos cómo mejora la confiabilidad.",
+    "escena": "gemelo-energia"
   },
   "bloques": [
     {
