@@ -2,122 +2,317 @@
   "slug": "generacion-de-energia",
   "nombre": "Generación de energía",
   "breadcrumbs": [
-    { "label": "Inicio", "link": "/" },
-    { "label": "Industrias", "link": "/#industrias" },
-    { "label": "Generación de energía", "link": "/industrias/generacion-de-energia" }
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Industrias",
+      "link": "/#industrias"
+    },
+    {
+      "label": "Generación de energía",
+      "link": "/industrias/generacion-de-energia"
+    }
   ],
-  "header": {
-    "title": "Que tu central siga generando",
-    "subtitle": "Mantenimiento predictivo de la turbina a la subestación, con la central en operación."
+  "hero": {
+    "etiqueta": "Generación de energía",
+    "titulo": "Que tu central siga generando",
+    "texto": "Mantenimiento predictivo de la turbina a la subestación, con la central en operación y analistas certificados.",
+    "foto": {
+      "src": "/images/servicios/sensores-acusticos/campo-08.webp",
+      "alt": "Especialista de DIAPSA inspeccionando las boquillas de alta tensión de una central de ciclo combinado"
+    }
   },
   "seoTitle": "Mantenimiento predictivo para plantas de generación de energía",
   "seoDescription": "Mantenimiento predictivo para centrales eléctricas: vibraciones en turbinas de gas y de vapor, análisis de aceite, termografía y ultrasonido en generadores y subestaciones, y monitoreo en línea de transformadores. Más de 20 años de mantenimiento predictivo en plantas de México.",
-  "certificacion": "Ciclo combinado, térmicas y renovables · Analistas certificados ISO 18436",
   "intro": {
     "titulo": "Un paro no programado se paga dos veces",
-    "texto": "En la reparación y en la energía que no se entregó. Por eso vigilamos toda la central como un sistema, con la técnica que ve la falla de cada equipo.",
+    "texto": "En la reparación y en la energía que no se entregó. Vigilamos toda la central como un sistema, con la técnica que ve la falla de cada equipo.",
     "video": "energia-central",
     "descripcionVideo": "Esquema de una central de ciclo combinado: cada equipo se ilumina con las técnicas que lo vigilan, de la turbina de gas a la subestación"
   },
   "bloques": [
     {
       "titulo": "Cada equipo crítico, con la técnica que ve su falla",
-      "foto": { "src": "/images/gallery/campo/vibracion-motor-grande.webp", "alt": "Analista de DIAPSA midiendo vibraciones en un motor de gran tamaño" },
       "items": [
         {
           "titulo": "Turbinas y generadores",
           "texto": "Desbalance, desalineación, chumaceras y aceite lubricante, vistos semanas antes del disparo.",
+          "foto": {
+            "src": "/images/gallery/campo/vibracion-motor-grande.webp",
+            "alt": "Analista de DIAPSA midiendo vibraciones en un motor de gran tamaño"
+          },
           "enlaces": [
-            { "nombre": "Vibraciones", "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas" },
-            { "nombre": "Análisis de aceite", "href": "/servicios/monitoreo-condicion/analisis-de-aceite" }
+            {
+              "nombre": "Vibraciones",
+              "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+            },
+            {
+              "nombre": "Análisis de aceite",
+              "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+            }
           ]
         },
         {
           "titulo": "Transformadores y subestación",
           "texto": "Gases en el aceite, descargas parciales y conexiones calientes, sin desenergizar.",
+          "foto": {
+            "src": "/images/servicios/termografia-infrarroja/termograma-subestacion.jpg",
+            "alt": "Termograma de una subestación"
+          },
           "enlaces": [
-            { "nombre": "DGA en línea", "href": "/servicios/monitoreo-continuo/dga-en-linea" },
-            { "nombre": "Termografía", "href": "/servicios/monitoreo-condicion/termografia-infrarroja" },
-            { "nombre": "Ultrasonido", "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido" }
+            {
+              "nombre": "DGA en línea",
+              "href": "/servicios/monitoreo-continuo/dga-en-linea"
+            },
+            {
+              "nombre": "Termografía",
+              "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+            },
+            {
+              "nombre": "Ultrasonido",
+              "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+            }
           ]
         },
         {
           "titulo": "Balance de planta",
           "texto": "Bombas de alimentación, torres de enfriamiento y compresores: los que el contrato de la turbina no cubre.",
+          "foto": {
+            "src": "/images/gallery/campo/vibracion-torre-enfriamiento.webp",
+            "alt": "Medición de vibraciones dentro de una torre de enfriamiento"
+          },
           "enlaces": [
-            { "nombre": "Sensores de vibración", "href": "/servicios/monitoreo-continuo/sensores-vibracion" },
-            { "nombre": "Alineación y balanceo", "href": "/servicios/monitoreo-condicion/alineacion-balanceo" }
+            {
+              "nombre": "Sensores de vibración",
+              "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+            },
+            {
+              "nombre": "Alineación y balanceo",
+              "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+            }
           ]
         }
       ]
     },
     {
       "titulo": "Detecta la falla antes de que saque la unidad",
-      "foto": { "src": "/images/gallery/campo/acustica-subestacion-analista.webp", "alt": "Especialista de DIAPSA inspeccionando la subestación de una central de ciclo combinado" },
       "items": [
         {
           "titulo": "Rutas con varias técnicas",
           "texto": "Vibraciones, termografía, ultrasonido y aceite en una sola ruta, con un informe por equipo.",
-          "enlaces": [{ "nombre": "Diagnóstico integral", "href": "/servicios/monitoreo-condicion/diagnostico-de-maquinaria" }]
+          "foto": {
+            "src": "/images/gallery/campo/acustica-planta-equipos.webp",
+            "alt": "Inspección de motores y bombas en el área de equipos de una central"
+          },
+          "enlaces": [
+            {
+              "nombre": "Diagnóstico integral",
+              "href": "/servicios/monitoreo-condicion/diagnostico-de-maquinaria"
+            }
+          ]
         },
         {
           "titulo": "Monitoreo continuo en los críticos",
           "texto": "Sensores, cámaras térmicas y gases en línea donde una ruta mensual no alcanza.",
-          "enlaces": [{ "nombre": "Monitoreo continuo", "href": "/servicios/monitoreo-continuo" }]
+          "foto": {
+            "src": "/images/servicios/sensores-vibracion/sensor-motor.webp",
+            "alt": "Sensor de vibración inalámbrico montado en un motor"
+          },
+          "enlaces": [
+            {
+              "nombre": "Monitoreo continuo",
+              "href": "/servicios/monitoreo-continuo"
+            }
+          ]
         },
         {
           "titulo": "Cada alerta, revisada",
           "texto": "Un especialista confirma la causa y te dice qué hacer. Todo queda en IDAP.",
-          "enlaces": [{ "nombre": "IDAP", "href": "/servicios/idap" }]
+          "foto": {
+            "src": "/images/gallery/campo/vibracion-analizador-mano.webp",
+            "alt": "Analista revisando el espectro de vibración en el analizador"
+          },
+          "enlaces": [
+            {
+              "nombre": "IDAP",
+              "href": "/servicios/idap"
+            }
+          ]
         }
       ]
     },
     {
       "titulo": "Cumple la norma y demuéstralo",
-      "foto": { "src": "/images/servicios/termografia-infrarroja/termograma-subestacion.jpg", "alt": "Termograma de una subestación" },
       "items": [
         {
           "titulo": "NOM-029 y arco eléctrico",
           "texto": "Riesgo de arco identificado, equipo de protección y procedimientos para trabajar en equipo energizado.",
-          "enlaces": [{ "nombre": "Estudio de arco eléctrico", "href": "/servicios/monitoreo-condicion/arco-electrico" }]
+          "foto": {
+            "src": "/images/servicios/termografia-infrarroja/campo-05.webp",
+            "alt": "Inspección de un tablero eléctrico energizado"
+          },
+          "enlaces": [
+            {
+              "nombre": "Estudio de arco eléctrico",
+              "href": "/servicios/monitoreo-condicion/arco-electrico"
+            }
+          ]
         },
         {
           "titulo": "NOM-022 y tierras físicas",
           "texto": "Tierras y pararrayos medidos y registrados, listos para la inspección.",
-          "enlaces": [{ "nombre": "Tierras físicas", "href": "/servicios/monitoreo-condicion/tierras-fisicas" }]
+          "foto": {
+            "src": "/images/servicios/tierras-fisicas/lectura-ohm.webp",
+            "alt": "Lectura de resistencia de una tierra física"
+          },
+          "enlaces": [
+            {
+              "nombre": "Tierras físicas",
+              "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+            }
+          ]
         },
         {
           "titulo": "Código de Red y calidad de energía",
           "texto": "Medición de la energía que entregas, con el reporte que pide la red.",
-          "enlaces": [{ "nombre": "Calidad de energía", "href": "/servicios/monitoreo-condicion/calidad-de-energia" }]
+          "foto": {
+            "src": "/images/servicios/estudios-electricos/campo-armonicos-pantalla.webp",
+            "alt": "Analizador de calidad de energía mostrando armónicos"
+          },
+          "enlaces": [
+            {
+              "nombre": "Calidad de energía",
+              "href": "/servicios/monitoreo-condicion/calidad-de-energia"
+            }
+          ]
         }
       ]
     }
   ],
   "caso": {
     "href": "/casos-exito/generadora-de-ciclo-combinado-y-el-impacto-del-monitoreo-predictivo-en-la-generacion-de-energia",
-    "titulo": "Una central de ciclo combinado, de 2018 a 2024",
+    "etiqueta": "Caso de estudio · Ciclo combinado",
+    "titulo": "Una central de ciclo combinado redujo 98.7 % sus condiciones críticas",
+    "resumen": "Desde 2018, una central a gas natural en México vigila sus equipos con el Monitoreo Integral de Condición de DIAPSA: termografía, vibraciones, ultrasonido y análisis de aceite, con interpretación especializada y seguimiento hasta cerrar cada hallazgo.",
     "cifras": [
-      { "valor": "98.7 %", "etiqueta": "menos condiciones críticas" },
-      { "valor": "75.4 %", "etiqueta": "menos condiciones en precaución" },
-      { "valor": "8,613", "etiqueta": "condiciones monitoreadas" },
-      { "valor": "5.1 M", "etiqueta": "dólares de ahorro estimado" }
-    ]
+      {
+        "valor": "98.7 %",
+        "etiqueta": "menos condiciones críticas"
+      },
+      {
+        "valor": "75.4 %",
+        "etiqueta": "menos condiciones en precaución"
+      },
+      {
+        "valor": "8,613",
+        "etiqueta": "condiciones monitoreadas"
+      },
+      {
+        "valor": "5.1 M",
+        "etiqueta": "dólares de ahorro estimado"
+      }
+    ],
+    "antesDespues": [
+      {
+        "etiqueta": "Condiciones críticas",
+        "antes": 155,
+        "despues": 2,
+        "anioAntes": "2018",
+        "anioDespues": "2024"
+      },
+      {
+        "etiqueta": "Condiciones en precaución",
+        "antes": 273,
+        "despues": 67,
+        "anioAntes": "2018",
+        "anioDespues": "2024"
+      }
+    ],
+    "retos": [
+      {
+        "titulo": "Mantenimiento reactivo",
+        "texto": "La operación dependía de corregir después de la falla."
+      },
+      {
+        "titulo": "Riesgo de fallas severas",
+        "texto": "Sin ver la condición real, una falla podía sacar una unidad completa."
+      },
+      {
+        "titulo": "Penalizaciones por disponibilidad",
+        "texto": "Cada paro no programado ponía en riesgo los compromisos de la central."
+      }
+    ],
+    "etapas": [
+      {
+        "etiqueta": "2018",
+        "titulo": "Monitoreo multidisciplinario",
+        "texto": "Termografía, vibraciones, ultrasonido y aceite, con interpretación especializada."
+      },
+      {
+        "etiqueta": "Seguimiento",
+        "titulo": "Intervención basada en datos",
+        "texto": "Reinspecciones, acompañamiento técnico y validación después de cada mantenimiento."
+      },
+      {
+        "etiqueta": "2024",
+        "titulo": "Operación estable",
+        "texto": "Más del 90 % de los componentes clave estabilizados."
+      }
+    ],
+    "grafica": {
+      "src": "/images/casos-exito/grafica-caso-exito-monitoreo-predictivo-generacion-energia.png",
+      "alt": "Evolución anual de las condiciones de los equipos de la central de 2018 a 2024",
+      "pie": "Evolución anual del estado de los equipos monitoreados, de 2018 a 2024."
+    }
   },
   "servicios": {
     "titulo": "Por dónde empezar",
     "items": [
-      { "titulo": "Diagnóstico situacional", "texto": "Qué equipos pueden sacar una unidad y qué les falta.", "href": "/servicios/diagnostico-situacional" },
-      { "titulo": "Monitoreo de condición", "texto": "Rutas de vibraciones, termografía, ultrasonido y aceite.", "href": "/servicios/monitoreo-condicion" },
-      { "titulo": "Monitoreo continuo", "texto": "Sensores y alertas en los equipos críticos.", "href": "/servicios/monitoreo-continuo" },
-      { "titulo": "IDAP", "texto": "Toda la central en un solo historial.", "href": "/servicios/idap" }
+      {
+        "titulo": "Diagnóstico situacional",
+        "texto": "Qué equipos pueden sacar una unidad y qué les falta.",
+        "href": "/servicios/diagnostico-situacional",
+        "foto": "/images/diagnostico-situacional/levantamiento-campo.webp"
+      },
+      {
+        "titulo": "Monitoreo de condición",
+        "texto": "Rutas de vibraciones, termografía, ultrasonido y aceite.",
+        "href": "/servicios/monitoreo-condicion",
+        "foto": "/images/gallery/campo/vibracion-analista-motor.webp"
+      },
+      {
+        "titulo": "Monitoreo continuo",
+        "texto": "Sensores y alertas en los equipos críticos.",
+        "href": "/servicios/monitoreo-continuo",
+        "foto": "/images/servicios/sensores-vibracion/instalacion-sensor.webp"
+      },
+      {
+        "titulo": "IDAP",
+        "texto": "Toda la central en un solo historial.",
+        "href": "/servicios/idap",
+        "foto": "/images/idap/idap-dashboard.png"
+      }
     ]
   },
   "faq": [
-    { "question": "¿Se mide con la central en operación?", "answer": "Sí. Las técnicas predictivas se aplican con los equipos trabajando, que es cuando las fallas se muestran, sin pedir paros." },
-    { "question": "Ya tenemos contrato con el fabricante de la turbina, ¿esto lo sustituye?", "answer": "No, lo complementa. Esos contratos suelen cubrir turbina y generador, y dejan fuera bombas, torres, compresores, transformadores y subestación." },
-    { "question": "¿Trabajan en centrales eólicas y solares?", "answer": "Sí: multiplicadoras y generadores de aerogeneradores, inversores y conexiones en solar, y la subestación colectora en ambas." },
-    { "question": "¿Por dónde conviene empezar?", "answer": "Por un diagnóstico situacional: calificamos la criticidad de cada equipo y proponemos qué medir, cada cuánto y qué vigilar en continuo." }
+    {
+      "question": "¿Se mide con la central en operación?",
+      "answer": "Sí. Las técnicas predictivas se aplican con los equipos trabajando, que es cuando las fallas se muestran, sin pedir paros."
+    },
+    {
+      "question": "Ya tenemos contrato con el fabricante de la turbina, ¿esto lo sustituye?",
+      "answer": "No, lo complementa. Esos contratos suelen cubrir turbina y generador, y dejan fuera bombas, torres, compresores, transformadores y subestación."
+    },
+    {
+      "question": "¿Trabajan en centrales eólicas y solares?",
+      "answer": "Sí: multiplicadoras y generadores de aerogeneradores, inversores y conexiones en solar, y la subestación colectora en ambas."
+    },
+    {
+      "question": "¿Por dónde conviene empezar?",
+      "answer": "Por un diagnóstico situacional: calificamos la criticidad de cada equipo y proponemos qué medir, cada cuánto y qué vigilar en continuo."
+    }
   ],
   "cta": {
     "title": "¿Qué equipo de tu central no puede fallar?",
