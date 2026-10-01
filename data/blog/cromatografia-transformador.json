@@ -1,0 +1,48 @@
+{
+  "slug": "cromatografia-de-gases-en-transformadores-laboratorio-o-monitor-en-linea",
+  "titulo": "Cromatografía de gases en transformadores: muestra en laboratorio o monitor en línea",
+  "extracto": "La cromatografía de gases del aceite es la prueba más útil para saber qué pasa dentro de un transformador. Cómo funciona, qué da la muestra en laboratorio, qué da el monitor en línea y cuándo conviene cada uno.",
+  "portada": "/images/blog/cromatografia-transformador.webp",
+  "fecha": "2026-10-01T18:00:00.100000Z",
+  "seo": {
+    "titulo": "Cromatografía de gases en transformadores: laboratorio o en línea",
+    "descripcion": "Qué es la cromatografía de gases en el aceite de transformadores, cómo se toma la muestra, qué mide el laboratorio, qué mide un monitor de gases disueltos en línea y cuándo conviene cada uno según la criticidad del transformador."
+  },
+  "bloques": [
+    ["p", "Cuando algo falla dentro de un transformador, el aceite y el papel se descomponen y dejan gases disueltos. Medir esos gases es la forma más directa de saber qué está pasando adentro sin abrir el equipo. A esa prueba se le suele llamar cromatografía de gases, por la técnica de laboratorio que la hace posible, o análisis de gases disueltos."],
+    ["p", "Hoy hay dos formas de hacerla: tomar una muestra y mandarla al laboratorio, o instalar un monitor que mide los gases en el propio transformador. No compiten; se complementan."],
+
+    ["h2", "Cómo funciona la cromatografía"],
+    ["p", "En el laboratorio se extraen los gases disueltos en una muestra de aceite y se hacen pasar por una columna que los separa, porque cada gas la recorre a una velocidad distinta. Un detector mide cuánto sale de cada uno. El resultado es la concentración de cada gas en partes por millón: hidrógeno, metano, etano, etileno, acetileno, monóxido y dióxido de carbono, oxígeno y nitrógeno."],
+    ["p", "Con esos valores se interpreta la falla con herramientas como el triángulo de Duval, las relaciones entre gases y los criterios de IEEE C57.104 e IEC 60599. Lo explicamos en la guía del [triángulo de Duval](/blog/analisis-de-gases-disueltos-dga-en-transformadores-y-triangulo-de-duval)."],
+
+    ["h2", "La muestra en laboratorio"],
+    ["p", "Es la referencia. Mide todos los gases con mucha precisión y, en la misma muestra, se pueden hacer otras pruebas del aceite: humedad, rigidez dieléctrica, acidez y furanos, que dicen cuánto se ha degradado el papel."],
+    ["p", "Su límite es la frecuencia. Lo común es una o dos muestras al año, y una falla que empieza y avanza en semanas puede quedar entre una muestra y otra. Además, la muestra hay que tomarla con cuidado: si entra aire o se pierden gases en la jeringa o el frasco, el resultado cambia."],
+
+    ["h2", "El monitor en línea"],
+    ["p", "Es un equipo instalado en el transformador que toma aceite, extrae los gases, los mide y devuelve el aceite, normalmente cada hora o cada pocas horas. Hay monitores de un solo gas, casi siempre hidrógeno, y monitores de varios gases que dan el diagnóstico completo. Algunos miden por espectroscopia fotoacústica y no necesitan gas portador ni de calibración."],
+    ["p", "Su fuerza es la tendencia: avisa el día que un gas empieza a subir y dice qué tan rápido crece, que es lo que más importa para saber si una falla está activa."],
+
+    ["h2", "Cuándo conviene cada uno"],
+    ["lista", [
+      "Todos los transformadores: muestra en laboratorio con la frecuencia que pida su importancia y su edad.",
+      "Transformadores críticos, sin respaldo o que alimentan toda la planta: monitor en línea, además de la muestra.",
+      "Transformadores que ya mostraron gases: monitor en línea o muestras mucho más frecuentes, para seguir la tendencia.",
+      "Después de un aviso del monitor: muestra en laboratorio para confirmar y completar el diagnóstico."
+    ]],
+
+    ["h2", "Cómo se usan juntos"],
+    ["p", "El monitor vigila todo el día y avisa cuando algo cambia. Entonces se toma una muestra para el laboratorio, que confirma el diagnóstico con todos los gases y con el estado del papel. Y el historial de las dos fuentes se lleva junto, en la misma ficha del transformador, para que cada resultado se compare contra el anterior."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Cada cuánto conviene tomar la muestra?"],
+    ["p", "Como referencia, una vez al año en transformadores de distribución y una o dos veces al año en los de potencia, y con más frecuencia si hay gases que vigilar o si el transformador es crítico. La frecuencia la decide su importancia y su historial."],
+    ["h3", "¿El monitor en línea es tan preciso como el laboratorio?"],
+    ["p", "Para seguir la tendencia, sí es suficiente y es lo que importa entre una muestra y otra. Para el diagnóstico completo y para confirmar una alerta, el laboratorio sigue siendo la referencia."],
+    ["h3", "¿Cuánto tiempo tarda el resultado del laboratorio?"],
+    ["p", "Depende del laboratorio y del envío, normalmente días. El monitor en línea da la lectura en el momento, que es la diferencia cuando una falla avanza rápido."],
+
+    ["nota", "Hacemos el [análisis de aceite](/servicios/monitoreo-condicion/analisis-de-aceite) de tus transformadores en laboratorio e instalamos [monitores de gases disueltos en línea](/servicios/monitoreo-continuo/dga-en-linea) en los críticos, con las dos fuentes en el mismo historial."]
+  ]
+}

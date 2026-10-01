@@ -684,5 +684,44 @@
       "titulo": "Sensores Acústicos",
       "resumen": "Escucha continua de transformadores y subestaciones, con alertas por huella acústica revisadas por especialistas."
     }
+  },
+  {
+    "articulo": {
+      "slug": "acetileno-en-transformadores-que-significa-y-que-hacer",
+      "titulo": "Acetileno en transformadores",
+      "resumen": "Qué significa y qué hacer cuando aparece.",
+      "portada": "/images/blog/acetileno-transformador.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/dga-en-linea",
+      "titulo": "Análisis de Gases Disueltos en Línea",
+      "resumen": "Los gases del aceite de tus transformadores críticos medidos cada hora, con alertas revisadas por especialistas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "hidrogeno-en-el-aceite-del-transformador-de-donde-viene",
+      "titulo": "Hidrógeno en el aceite",
+      "resumen": "De dónde viene y cuándo preocuparse.",
+      "portada": "/images/blog/hidrogeno-transformador.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/dga-en-linea",
+      "titulo": "Análisis de Gases Disueltos en Línea",
+      "resumen": "Los gases del aceite de tus transformadores críticos medidos cada hora, con alertas revisadas por especialistas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "cromatografia-de-gases-en-transformadores-laboratorio-o-monitor-en-linea",
+      "titulo": "Cromatografía de gases",
+      "resumen": "Muestra en laboratorio o monitor en línea.",
+      "portada": "/images/blog/cromatografia-transformador.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/dga-en-linea",
+      "titulo": "Análisis de Gases Disueltos en Línea",
+      "resumen": "Los gases del aceite de tus transformadores críticos medidos cada hora, con alertas revisadas por especialistas."
+    }
   }
 ]
