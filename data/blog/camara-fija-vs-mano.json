@@ -1,0 +1,47 @@
+{
+  "slug": "camara-termica-fija-o-termografia-con-camara-de-mano",
+  "titulo": "Cámara térmica fija o termografía con cámara de mano: cuándo conviene cada una",
+  "extracto": "Qué hace una cámara térmica fija y qué hace una ruta con cámara de mano, qué equipos justifican vigilancia continua, qué se necesita para que una cámara fija funcione y cómo se combinan.",
+  "portada": "/images/blog/camara-fija-poste.webp",
+  "fecha": "2026-09-30T23:59:59.700000Z",
+  "seo": {
+    "titulo": "Cámara térmica fija o termografía de mano: cuándo conviene",
+    "descripcion": "Diferencias entre las cámaras térmicas fijas industriales y la termografía con cámara de mano, qué equipos justifican monitoreo térmico continuo y qué se necesita para que una cámara fija funcione bien."
+  },
+  "bloques": [
+    ["p", "La termografía con cámara de mano es una de las técnicas predictivas más útiles, sobre todo en tableros eléctricos. Pero tiene un límite: el termógrafo pasa por cada punto una vez al mes o cada tres meses. Para la mayoría de los equipos eso basta. Para algunos, no."],
+
+    ["h2", "Qué hace cada una"],
+    ["h3", "Cámara de mano en ruta"],
+    ["p", "Un termógrafo recorre la planta, abre tableros cuando es seguro y revisa cada punto con criterio. Ve muchos equipos por visita, a bajo costo por punto, y puede cambiar de ángulo, acercarse o comparar. Lo que no puede es estar ahí a las 3 de la mañana."],
+    ["h3", "Cámara fija"],
+    ["p", "Se instala apuntando a un punto crítico y mide sin parar, todo el día. Guarda el historial de cada zona de la imagen y avisa cuando algo cambia. No reemplaza al termógrafo: necesita que alguien la diseñe, la configure y revise sus alertas."],
+
+    ["h2", "Qué equipos justifican una cámara fija"],
+    ["lista", [
+      "Tableros principales y subestaciones que alimentan toda la planta.",
+      "Centros de datos, donde un punto caliente puede tirar un rack o una sala.",
+      "Equipos donde una falla se calienta en horas, como una conexión que se afloja.",
+      "Zonas con riesgo de incendio: almacenes de material combustible, bandas y colectores de polvo.",
+      "Procesos de temperatura crítica, como hornos y secadores."
+    ]],
+    ["p", "Para todo lo demás, la ruta con cámara de mano es más económica y suficiente."],
+
+    ["h2", "Qué hace falta para que una cámara fija funcione"],
+    ["numerada", [
+      "Vista directa: la cámara no ve a través de puertas, tapas ni cristal. Hay que planear cómo va a ver el punto.",
+      "La lente y la distancia correctas, para que el punto ocupe suficientes pixeles.",
+      "La emisividad y las zonas de medición bien configuradas.",
+      "Alarmas por patrón, no solo por límite fijo, para no avisar cada tarde de calor.",
+      "Alguien que revise cada alerta y diga qué hacer."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Una cámara fija ve dentro de un tablero cerrado?"],
+    ["p", "No. Se usan ventanas infrarrojas en la puerta o se instala la cámara dentro del gabinete, según el caso."],
+    ["h3", "¿Puedo tener las dos?"],
+    ["p", "Es lo más común: cámaras fijas en los pocos puntos críticos y ruta en el resto, todo en la misma plataforma. Para saber cómo se califica un punto caliente, revisa la guía de la [tabla NETA](/blog/tabla-neta-termografia-como-se-califica-un-punto-caliente)."],
+
+    ["nota", "Diseñamos proyectos de [cámaras térmicas fijas](/servicios/monitoreo-continuo/camaras-termicas) para tus puntos críticos y hacemos la [termografía en ruta](/servicios/monitoreo-condicion/termografia-infrarroja) del resto."]
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "deteccion-temprana-de-incendios-con-camaras-termicas-en-plantas",
+  "titulo": "Detección temprana de incendios con cámaras térmicas en plantas industriales",
+  "extracto": "Por qué una cámara térmica puede ver un incendio antes que un detector de humo, dónde tiene más sentido, cómo se configura para no dar falsas alarmas y qué hace con el sistema contra incendio.",
+  "portada": "/images/blog/almacen-racks.webp",
+  "fecha": "2026-09-30T23:59:59.800000Z",
+  "seo": {
+    "titulo": "Detección temprana de incendios con cámaras térmicas",
+    "descripcion": "Cómo las cámaras térmicas fijas detectan el inicio de un incendio antes que el humo en almacenes, bandas transportadoras, colectores de polvo y patios de material, y cómo se integran al sistema contra incendio."
+  },
+  "bloques": [
+    ["p", "Un detector de humo avisa cuando ya hay humo. Una cámara térmica puede ver antes: el punto que se está calentando en una pila de material, un rodillo de banda trabado o una chispa que quedó dentro de un colector. En plantas con material combustible, esos minutos de ventaja cambian todo."],
+
+    ["h2", "Por qué ve antes"],
+    ["p", "Muchos incendios industriales empiezan como un calentamiento lento: fricción, autocalentamiento de material o una falla eléctrica. Antes de que haya flama o humo, la superficie ya está más caliente que su entorno. La cámara mide esa diferencia en cada punto de la imagen, todo el tiempo."],
+
+    ["h2", "Dónde tiene más sentido"],
+    ["lista", [
+      "Almacenes de material combustible, como papel, cartón, textiles o plásticos.",
+      "Bandas transportadoras, donde un rodillo trabado se calienta por fricción.",
+      "Colectores de polvo y silos.",
+      "Patios de biomasa, carbón o residuos, que pueden autocalentarse.",
+      "Tableros y cuartos eléctricos, origen de muchos incendios."
+    ]],
+
+    ["h2", "Cómo se evita que dé falsas alarmas"],
+    ["numerada", [
+      "Definir zonas de medición en la imagen, dejando fuera lo que se calienta normalmente, como motores o escapes.",
+      "Usar alarmas por diferencia contra el entorno y por velocidad de subida, no solo por un límite fijo.",
+      "Considerar el sol y la hora del día en áreas exteriores.",
+      "Revisar cada alarma y ajustar durante las primeras semanas."
+    ]],
+
+    ["h2", "Qué hace con el sistema contra incendio"],
+    ["p", "La cámara no sustituye al sistema contra incendio: lo adelanta. Su aviso puede ir a la sala de control, al personal de guardia o activar una alarma previa, para que alguien revise antes de que se active la supresión. La integración depende de cada instalación y de su protección civil."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Funciona de noche o con humo?"],
+    ["p", "Sí. La cámara térmica no necesita luz, y a través de humo ligero sigue viendo diferencias de temperatura."],
+    ["h3", "¿Se puede cubrir un almacén grande?"],
+    ["p", "Sí, con varias cámaras y el diseño correcto de ángulos y distancias. Lo que no se ve directo, no se mide, así que las pilas altas y los pasillos se planean con cuidado."],
+    ["h3", "¿Sirve también para mantenimiento?"],
+    ["p", "Sí: las mismas cámaras vigilan motores, rodillos y tableros de la zona. Lo contamos en la guía de [cámara fija o de mano](/blog/camara-termica-fija-o-termografia-con-camara-de-mano)."],
+
+    ["nota", "Diseñamos proyectos de [cámaras térmicas fijas](/servicios/monitoreo-continuo/camaras-termicas) para zonas con riesgo de incendio, con alarmas por patrón revisadas por termógrafos."]
+  ]
+}

@@ -581,6 +581,8 @@ export interface ServiceCta {
 }
 
 export interface Servicio {
+  /** Escena 3D a todo lo ancho después de "Qué hacemos" (monitoreo continuo). */
+  escena3d?: "monitoreo-continuo";
   id: string;
   slug: string;
   type: string;
