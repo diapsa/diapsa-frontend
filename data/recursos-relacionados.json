@@ -66,7 +66,7 @@
       "slug": "fugas-de-aire-comprimido-cuanto-cuestan-y-como-detectarlas",
       "titulo": "Fugas de aire comprimido: cuánto cuestan y cómo detectarlas",
       "resumen": "Cómo calcular lo que cuesta cada fuga, dónde buscarlas y cómo encontrarlas con ultrasonido con la planta en marcha.",
-      "portada": "/images/servicios/analisis-de-ultrasonido/campo-valvulas.webp"
+      "portada": "/images/blog/compresor-aire.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
@@ -79,7 +79,7 @@
       "slug": "efecto-corona-que-es-y-como-se-detecta",
       "titulo": "Efecto corona: qué es, dónde aparece y cómo se detecta",
       "resumen": "Qué es, por qué daña aisladores y tableros, cómo se distingue del tracking y del arco, y cómo se detecta sin abrir el equipo.",
-      "portada": "/images/servicios/analisis-de-ultrasonido/campo-ultrasonido-exterior.webp"
+      "portada": "/images/blog/aisladores-transformador.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
@@ -261,7 +261,7 @@
       "slug": "costo-de-un-paro-no-programado-como-calcularlo",
       "titulo": "Costo de un paro no programado",
       "resumen": "Qué incluye, cómo calcularlo con un ejemplo y cómo usarlo para decidir.",
-      "portada": "/images/diagnostico-situacional/analista-informe.webp"
+      "portada": "/images/blog/planta-produccion.webp"
     },
     "servicio": {
       "href": "/servicios/diagnostico-situacional",
@@ -287,7 +287,7 @@
       "slug": "mtbf-mttr-y-disponibilidad-formulas-y-ejemplos",
       "titulo": "MTBF, MTTR y disponibilidad",
       "resumen": "Qué mide cada uno, fórmulas y un ejemplo resuelto.",
-      "portada": "/images/diapsa-start/medicion-campo.webp"
+      "portada": "/images/blog/ingenieros-planta.webp"
     },
     "servicio": {
       "href": "/servicios/diapsa-start",
@@ -365,7 +365,7 @@
       "slug": "nom-022-stps-2015-que-pide-sobre-tierras-fisicas-y-pararrayos",
       "titulo": "NOM-022-STPS-2015: tierras y pararrayos",
       "resumen": "A quién aplica, qué pide medir y qué revisa la STPS.",
-      "portada": "/images/servicios/tierras-fisicas/medicion-registro.webp"
+      "portada": "/images/blog/rayo-tormenta.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/tierras-fisicas",
@@ -482,7 +482,7 @@
       "slug": "codigo-de-red-que-pide-a-los-centros-de-carga",
       "titulo": "Código de Red",
       "resumen": "Qué pide a los centros de carga y cómo demostrar que cumples.",
-      "portada": "/images/servicios/estudios-electricos/campo-tablero-transductores.webp"
+      "portada": "/images/blog/torres-transmision.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/calidad-de-energia",
@@ -495,7 +495,7 @@
       "slug": "factor-de-potencia-cfe-cargo-y-bonificacion-como-se-calcula",
       "titulo": "Factor de potencia y CFE",
       "resumen": "Cómo se calcula el cargo o la bonificación en tu recibo.",
-      "portada": "/images/servicios/estudios-electricos/campo-medicion-alimentador.webp"
+      "portada": "/images/blog/medidores-electricos.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/calidad-de-energia",
@@ -605,6 +605,45 @@
       "href": "/servicios/monitoreo-continuo/sensores-vibracion",
       "titulo": "Sensores de Vibración",
       "resumen": "Una lectura cada 10 minutos, instalados por especialistas y con cada alerta revisada."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "camara-termica-fija-o-termografia-con-camara-de-mano",
+      "titulo": "Cámara fija o de mano",
+      "resumen": "Cuándo conviene vigilar sin parar y qué hace falta.",
+      "portada": "/images/blog/camara-fija-poste.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/camaras-termicas",
+      "titulo": "Cámaras Térmicas Fijas",
+      "resumen": "Vigilancia térmica continua para equipos críticos, con alertas por patrón revisadas por termógrafos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "deteccion-temprana-de-incendios-con-camaras-termicas-en-plantas",
+      "titulo": "Detección temprana de incendios",
+      "resumen": "Cómo una cámara térmica ve antes que el humo.",
+      "portada": "/images/blog/almacen-racks.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/camaras-termicas",
+      "titulo": "Cámaras Térmicas Fijas",
+      "resumen": "Vigilancia térmica continua para equipos críticos, con alertas por patrón revisadas por termógrafos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "monitoreo-termico-en-centros-de-datos-que-vigilar",
+      "titulo": "Monitoreo térmico en centros de datos",
+      "resumen": "Qué se calienta y qué revisar primero.",
+      "portada": "/images/blog/rack-servidores.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/camaras-termicas",
+      "titulo": "Cámaras Térmicas Fijas",
+      "resumen": "Vigilancia térmica continua para equipos críticos, con alertas por patrón revisadas por termógrafos."
     }
   }
 ]

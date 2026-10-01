@@ -34,6 +34,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
 import { getArticulosPorServicio } from "@/lib/recursos";
 import GuiasRelacionadas from "@/components/organisms/GuiasRelacionadas";
+import EscenaMonitoreo from "@/components/organisms/EscenaMonitoreo";
 
 /**
  * PaginaServicio
@@ -156,6 +157,15 @@ export default function PaginaServicio({ service, href }: { service: Servicio; h
                     )}
                 </div>
             </section>
+
+            {/* Escena 3D a todo lo ancho, pegada a "Qué hacemos" (monitoreo continuo). */}
+            {service.escena3d === "monitoreo-continuo" && (
+                <section className="w-full bg-white pb-12 lg:pb-20">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <EscenaMonitoreo />
+                    </div>
+                </section>
+            )}
 
             {/* Diferenciador de termografía: la misma escena a simple vista y
                 con cámara térmica. Va pegado a "Qué hacemos" porque es la
