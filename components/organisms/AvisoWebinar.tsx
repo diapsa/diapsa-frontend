@@ -3,21 +3,22 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Modal from "@/components/atoms/Modal";
 
 /**
  * AvisoWebinar
- * Ventana emergente en la página de inicio que anuncia el webinar de
- * Herramientas Predictivas del 6 de octubre de 2026 (Emiliano, 2026-09-30).
- * Aparece a los pocos segundos, no interrumpe la carga, y una vez cerrada no
- * vuelve a salir en ese navegador. Deja de mostrarse sola cuando el webinar
- * termina, así que no hace falta quitarla a mano al día siguiente.
+ * Aviso en la página de inicio del webinar de Herramientas Predictivas del
+ * 6 de octubre de 2026 (Emiliano, 2026-09-30). Era una ventana emergente que
+ * tapaba la portada a los 4 segundos; el 2026-10-01 Clarity marcó la portada
+ * con solo 16 % de tiempo activo en los mismos días, así que pasó a una
+ * tarjeta en la esquina que no tapa la lectura (la de WhatsApp va a la
+ * derecha). Una vez cerrada no vuelve a salir en ese navegador y deja de
+ * mostrarse sola cuando el webinar termina.
  */
 
 const CLAVE = "aviso-webinar-2026-10-06";
 // 6 de octubre de 2026, 12:30 p.m. hora del centro de México (UTC-6)
 const FIN = Date.parse("2026-10-06T18:30:00Z");
-const RETRASO = 4000;
+const RETRASO = 6000;
 
 export default function AvisoWebinar() {
     const [abierto, setAbierto] = useState(false);
@@ -42,49 +43,52 @@ export default function AvisoWebinar() {
         }
     };
 
+    if (!abierto) return null;
+
     return (
-        <Modal isOpen={abierto} onClose={cerrar} className="w-[calc(100%-2rem)] max-w-lg">
-            <div className="relative aspect-[16/9] w-full">
-                <Image
-                    src="/images/gallery/capacitacion-img-2.jpg"
-                    alt="Sesión de capacitación de Grupo DIAPSA"
-                    fill
-                    sizes="(max-width: 640px) 100vw, 512px"
-                    className="object-cover"
-                />
-                <div className="absolute inset-0 bg-primary/55" />
-                <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    <span className="inline-flex w-fit items-center rounded-full bg-secondary px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">
+        <aside
+            aria-label="Webinar Herramientas Predictivas"
+            className="fixed bottom-4 left-4 z-40 w-[min(22rem,calc(100%-6.5rem))] overflow-hidden rounded-sm bg-white shadow-2xl ring-1 ring-black/10 motion-safe:animate-[aparecer_.4s_ease-out]"
+        >
+            <button
+                type="button"
+                onClick={cerrar}
+                aria-label="Cerrar aviso del webinar"
+                className="absolute right-2 top-2 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-primary shadow hover:bg-secondary"
+            >
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div className="relative h-24 w-full">
+                <Image src="/images/webinar/webinar-herramientas-mesa.webp" alt="" fill sizes="352px" className="object-cover object-[75%_30%]" />
+                <div className="absolute inset-0 bg-primary/60" />
+                <div className="absolute inset-0 flex flex-col justify-end p-4">
+                    <span className="inline-flex w-fit items-center rounded-full bg-secondary px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-primary">
                         Webinar gratuito
                     </span>
-                    <p className="mt-2 text-2xl font-extrabold leading-tight text-white drop-shadow sm:text-3xl">
-                        Herramientas Predictivas
-                    </p>
+                    <p className="mt-1 text-lg font-extrabold leading-tight text-white">Herramientas Predictivas</p>
                 </div>
             </div>
-            <div className="p-6 text-primary">
-                <p className="text-lg font-bold">Martes 6 de octubre · 11:00 a.m.</p>
-                <p className="text-sm text-tertiary">Hora del centro de México · en línea · 60 minutos más preguntas</p>
-                <p className="mt-4 text-base leading-relaxed text-tertiary text-justify">
-                    Qué herramienta predictiva conviene en cada equipo de tu planta y cómo interpretar lo que te dice. Sin costo.
-                </p>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <div className="p-4 text-primary">
+                <p className="text-sm font-bold">Martes 6 de octubre · 11:00 a.m. (centro de México)</p>
+                <div className="mt-3 flex gap-2">
                     <Link
                         href="/webinar"
                         onClick={cerrar}
-                        className="inline-flex flex-1 items-center justify-center rounded-xs bg-primary px-6 py-3 font-bold text-white transition-colors duration-300 hover:bg-secondary hover:text-primary"
+                        className="inline-flex flex-1 items-center justify-center rounded-xs bg-primary px-3 py-2 text-sm font-bold text-white transition-colors duration-300 hover:bg-secondary hover:text-primary"
                     >
-                        Quiero registrarme
+                        Registrarme
                     </Link>
                     <a
                         href="/webinar-herramientas-predictivas.ics"
                         download
-                        className="inline-flex flex-1 items-center justify-center rounded-xs border-2 border-primary px-6 py-2.5 font-bold text-primary transition-colors duration-300 hover:bg-primary hover:text-white"
+                        className="inline-flex flex-1 items-center justify-center rounded-xs border-2 border-primary px-3 py-1.5 text-sm font-bold text-primary transition-colors duration-300 hover:bg-primary hover:text-white"
                     >
-                        Agregar a mi calendario
+                        Al calendario
                     </a>
                 </div>
             </div>
-        </Modal>
+        </aside>
     );
 }
