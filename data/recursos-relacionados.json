@@ -645,5 +645,44 @@
       "titulo": "Cámaras Térmicas Fijas",
       "resumen": "Vigilancia térmica continua para equipos críticos, con alertas por patrón revisadas por termógrafos."
     }
+  },
+  {
+    "articulo": {
+      "slug": "descargas-parciales-en-transformadores-que-son-y-como-se-detectan",
+      "titulo": "Descargas parciales en transformadores",
+      "resumen": "Qué son, qué daño hacen y cómo se detectan.",
+      "portada": "/images/blog/descargas-parciales-transformadores.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/sensores-acusticos",
+      "titulo": "Sensores Acústicos",
+      "resumen": "Escucha continua de transformadores y subestaciones, con alertas por huella acústica revisadas por especialistas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "ruido-en-transformadores-de-potencia-cuando-el-zumbido-es-normal",
+      "titulo": "Ruido en transformadores",
+      "resumen": "Cuándo el zumbido anuncia una falla.",
+      "portada": "/images/blog/ruido-transformador.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/sensores-acusticos",
+      "titulo": "Sensores Acústicos",
+      "resumen": "Escucha continua de transformadores y subestaciones, con alertas por huella acústica revisadas por especialistas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "monitoreo-de-transformadores-de-potencia-que-medir-en-linea",
+      "titulo": "Monitoreo de transformadores de potencia",
+      "resumen": "Qué medir en línea y por dónde empezar.",
+      "portada": "/images/blog/monitoreo-transformadores.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/sensores-acusticos",
+      "titulo": "Sensores Acústicos",
+      "resumen": "Escucha continua de transformadores y subestaciones, con alertas por huella acústica revisadas por especialistas."
+    }
   }
 ]

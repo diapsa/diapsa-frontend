@@ -1,0 +1,59 @@
+{
+  "slug": "ruido-en-transformadores-de-potencia-cuando-el-zumbido-es-normal",
+  "titulo": "Ruido en transformadores de potencia: cuándo el zumbido es normal y cuándo anuncia una falla",
+  "extracto": "Todo transformador zumba, y zumba más con más carga. Por qué suena así, qué cambios en el sonido sí son señal de falla y cómo se escucha un transformador de forma objetiva, sin depender del oído de quien pasa a su lado.",
+  "portada": "/images/blog/ruido-transformador.webp",
+  "fecha": "2026-10-01T12:00:00.200000Z",
+  "seo": {
+    "titulo": "Ruido en transformadores: cuándo el zumbido anuncia una falla",
+    "descripcion": "Por qué zumba un transformador de potencia, por qué el ruido sube con la carga y qué cambios en el sonido sí indican una falla: crujidos, chisporroteos, golpeteos, ventiladores y bombas. Cómo se vigila con sensores acústicos."
+  },
+  "bloques": [
+    ["p", "Quien trabaja cerca de una subestación conoce el zumbido de un transformador. Es tan constante que se deja de oír. Y justo por eso, cuando cambia, casi nadie lo nota. Ese cambio es información valiosa: muchas fallas internas modifican el sonido del equipo antes de dar cualquier otra señal."],
+
+    ["h2", "Por qué zumba un transformador"],
+    ["p", "El núcleo está hecho de láminas de acero que cambian ligeramente de tamaño cada vez que el campo magnético sube y baja. A ese fenómeno se le llama magnetostricción. Como el campo cambia de sentido dos veces en cada ciclo, el núcleo vibra al doble de la frecuencia de la red: en México, donde la red es de 60 Hz, el zumbido principal está en 120 Hz, con múltiplos en 240, 360 y 480 Hz."],
+    ["p", "A eso se suma el sonido de los devanados, que también vibran con la corriente, y el de los ventiladores y las bombas del sistema de enfriamiento cuando están encendidos."],
+
+    ["h2", "Por qué suena más fuerte con carga"],
+    ["p", "Con más carga, los devanados vibran más y el sistema de enfriamiento trabaja más, así que el sonido sube. También cambia con el voltaje y con la temperatura del aceite. Todo eso es normal, y es la razón por la que medir solo el volumen no sirve para saber si un transformador está sano: un transformador cargado al máximo suena más fuerte que uno en vacío, sin que ninguno tenga problema."],
+
+    ["h2", "Qué cambios en el sonido sí son señal de falla"],
+    ["lista", [
+      "Crujidos o chisporroteos: pueden ser descargas parciales dentro del tanque o efecto corona en las boquillas.",
+      "Golpeteos o traqueteos: piezas sueltas, un núcleo o unos devanados que se aflojaron, a veces después de un cortocircuito cercano.",
+      "Un zumbido más fuerte o con otro tono, sin cambio de carga: aflojamiento de las láminas del núcleo o de sus amarres.",
+      "Ruidos en los ventiladores o las bombas: rodamientos dañados, aspas desbalanceadas o una bomba que cavita.",
+      "Sonidos al cambiar de derivación: desgaste o falla en el mecanismo del cambiador."
+    ]],
+    ["p", "Lo que todos tienen en común es que no son más volumen del mismo sonido: son un sonido distinto, que no forma parte de la huella normal del equipo."],
+
+    ["h2", "Por qué el oído no alcanza"],
+    ["p", "Quien recorre la subestación pasa unos segundos junto a cada equipo, con ruido de fondo, protección auditiva y otros transformadores sonando al lado. Además, el sonido de una descarga parcial está sobre todo en alta frecuencia y ultrasonido, donde el oído humano no llega. Y un cambio lento, que se desarrolla en semanas, es imposible de notar de memoria."],
+
+    ["h2", "Cómo se escucha un transformador de forma objetiva"],
+    ["h3", "Inspección con ultrasonido y cámara acústica"],
+    ["p", "En una ruta periódica, el especialista usa un detector de ultrasonido o una cámara acústica que muestra en pantalla de dónde sale el sonido. Sirve para revisar muchos equipos y ubicar descargas en boquillas, conexiones y aisladores."],
+    ["h3", "Sensores acústicos en continuo"],
+    ["p", "En los transformadores críticos, un sensor montado por fuera del tanque escucha todo el día. Los algoritmos aprenden la huella acústica del equipo sano con cada nivel de carga y avisan cuando aparece un sonido que no corresponde, en lugar de avisar solo porque subió el volumen."],
+
+    ["h2", "Qué hacer si el sonido cambia"],
+    ["numerada", [
+      "Anotar cuándo empezó y si coincide con un cambio de carga, de derivación o con una falla en la red.",
+      "Revisar el sistema de enfriamiento: ventiladores, bombas y temperaturas.",
+      "Pedir una inspección de ultrasonido y termografía para ubicar el origen.",
+      "Tomar una muestra de aceite para análisis de gases disueltos.",
+      "Con esos datos, decidir si se vigila de cerca o se programa una intervención."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Es normal que un transformador zumbe más de noche?"],
+    ["p", "Muchas veces no zumba más: se oye más porque el ruido de fondo baja. Si el sonido realmente cambió y no hay un cambio de carga o de voltaje que lo explique, conviene revisarlo."],
+    ["h3", "¿El ruido de un transformador tiene un límite?"],
+    ["p", "Sí, los fabricantes garantizan un nivel de sonido según normas de fabricación y prueba, y en algunos sitios hay límites ambientales de ruido. Pero ese valor sirve para el equipo nuevo, no para saber si uno en servicio está sano. Para eso importa más que el sonido no cambie de huella."],
+    ["h3", "¿Un transformador pequeño de poste también se puede vigilar así?"],
+    ["p", "Se puede, pero rara vez se justifica. La escucha continua conviene en los transformadores de los que depende toda una planta, una subestación o un centro de datos."],
+
+    ["nota", "Escuchamos tus transformadores críticos todo el día con [sensores acústicos](/servicios/monitoreo-continuo/sensores-acusticos) que aprenden su huella, y revisamos el resto en ruta con [ultrasonido y cámara acústica](/servicios/monitoreo-condicion/analisis-de-ultrasonido)."]
+  ]
+}
