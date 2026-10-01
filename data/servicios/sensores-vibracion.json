@@ -25,7 +25,7 @@
     "subtitle": "Tus equipos críticos medidos cada 10 minutos, con un analista viendo la tendencia",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Sensores inalámbricos de vibración para motores, bombas, ventiladores y compresores: una lectura cada 10 minutos, instalados por especialistas Categoría III y con cada alerta revisada contra el espectro antes de avisarte. Monitoreo de vibraciones en línea con IDAP.",
+  "seoDescription": "Sistema de monitoreo de vibraciones en línea para plantas en México: sensores inalámbricos en motores, bombas, ventiladores y compresores que miden cada 10 minutos y detectan fallas de forma automática, con cada alerta revisada contra el espectro por un especialista Categoría III antes de avisarte. Todo en IDAP.",
   "content": {
     "title": "Tus equipos críticos, medidos cada 10 minutos",
     "subtitle": "El sensor se queda en la máquina, manda una lectura cada 10 minutos y un especialista revisa cada cambio contra el espectro antes de avisarte. La falla que nace entre dos rutas se ve el mismo día, y los equipos a los que nadie debería subir se miden sin exponer a nadie.",
@@ -135,6 +135,10 @@
   },
   "mostrarClientes": true,
   "faq": [
+    {
+      "question": "¿El sistema detecta las fallas automáticamente?",
+      "answer": "Sí. El sistema aprende cómo vibra cada equipo sano y avisa solo cuando una lectura se sale de ese comportamiento o de los límites de la norma ISO 10816 y 20816, sin que nadie tenga que revisar los datos todo el día. Además, antes de avisarte, un especialista de DIAPSA confirma la causa en el espectro: así la alerta dice qué falla es y qué hacer, y se filtran las falsas alarmas. Está pensado para plantas en México, con instalación, soporte y seguimiento en español."
+    },
     {
       "question": "¿Sustituye a la ruta de vibraciones?",
       "answer": "No, la complementa. Los sensores van en los equipos que lo justifican: los críticos, los que fallan rápido y los de acceso difícil. El resto de la planta sigue en ruta periódica, que es más económica por equipo. Lo habitual es combinar las dos."

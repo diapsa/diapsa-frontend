@@ -5,13 +5,15 @@ import ContactForm from "@/components/organisms/ContactForm";
 import { getCourses } from "@/lib/api/courses";
 
 export const metadata: Metadata = {
-  title: "Cursos y Capacitación",
-  description: "Más de 3,000 especialistas capacitados en 15 años. Cursos de vibraciones, termografía, ultrasonido y confiabilidad: formación técnica, talleres prácticos y certificación bajo ISO 18436.",
+  // Tablero 2026-10-01: 148 impresiones y 1.4 % de clics con "Cursos y Capacitación".
+  // Se busca por técnica y por certificación ("curso de vibraciones nivel 1", "cursos de termografía").
+  title: { absolute: "Cursos de vibraciones y termografía con certificación ISO 18436 | DIAPSA" },
+  description: "Cursos de vibraciones mecánicas, termografía infrarroja y ultrasonido en México: formación técnica, talleres prácticos y certificación ISO 18436 Categorías I y II. Más de 3,000 especialistas capacitados en 15 años.",
   alternates: {
     canonical: "/cursos",
   },
   openGraph: {
-    title: "Cursos de Mantenimiento Predictivo — Grupo DIAPSA",
+    title: "Cursos de vibraciones y termografía con certificación ISO 18436 | DIAPSA",
     description: "Certificaciones y talleres prácticos en termografía, vibraciones, ultrasonido y diagnóstico de maquinaria industrial.",
     url: "/cursos",
     type: "website",

@@ -186,6 +186,14 @@
       "answer": "Es medir la vibración de la maquinaria rotativa para encontrar fallas que apenas empiezan. Cada falla deja una firma distinta en el espectro, y eso permite saber qué es y corregirla antes de que pare el equipo."
     },
     {
+      "question": "¿Cómo se hace un análisis de vibraciones de máquinas?",
+      "answer": "En cinco pasos. Primero se eligen los equipos y los puntos de medición, normalmente en cada rodamiento en dirección horizontal, vertical y axial. Luego se mide con la máquina operando, con un colector de datos y un acelerómetro. Después un analista revisa el valor global contra la norma ISO 10816 o 20816, y el espectro y la forma de onda para saber qué falla es: desbalance, desalineación, rodamientos, holgura o cavitación, entre otras. Con eso se califica cada máquina en semáforo y se dice qué hacer y con qué urgencia. Al final, después de la corrección, se vuelve a medir para confirmar que la vibración bajó."
+    },
+    {
+      "question": "¿Qué equipo se usa para medir las vibraciones?",
+      "answer": "Un colector y analizador de datos con acelerómetro para las rutas periódicas, y sensores inalámbricos fijos en los equipos que justifican medición continua. Lo importante no es solo el equipo: es que quien lee el espectro sepa distinguir una falla de otra. Por eso el análisis lo hacen analistas certificados ISO 18436."
+    },
+    {
       "question": "¿Qué fallas se pueden detectar con el análisis de vibraciones?",
       "answer": "Desbalance, desalineación, holguras, rodamientos dañados, engranes y bandas, resonancia, ejes doblados y algunas fallas eléctricas en motores. Es la técnica que más tipos de falla cubre en equipo rotativo."
     },
@@ -388,7 +396,7 @@
       }
     ]
   },
-  "seoTitle": "Análisis de vibraciones mecánicas en motores y bombas",
+  "seoTitle": "Análisis de vibraciones mecánicas en máquinas: motores, bombas y ventiladores",
   "introBeneficios": {
     "beneficios": [
       {
