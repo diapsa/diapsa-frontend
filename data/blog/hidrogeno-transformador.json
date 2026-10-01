@@ -1,0 +1,51 @@
+{
+  "slug": "hidrogeno-en-el-aceite-del-transformador-de-donde-viene",
+  "titulo": "Hidrógeno en el aceite del transformador: de dónde viene y cuándo preocuparse",
+  "extracto": "El hidrógeno es el gas que aparece primero en casi cualquier falla de un transformador, y también el que más causas inocentes tiene. Por qué es el indicador de alerta temprana, qué lo produce y cómo saber si el que mides es una falla o no.",
+  "portada": "/images/blog/hidrogeno-transformador.webp",
+  "fecha": "2026-10-01T18:00:00.200000Z",
+  "seo": {
+    "titulo": "Hidrógeno en transformadores: de dónde viene y cuándo preocuparse",
+    "descripcion": "Presencia de hidrógeno en el aceite del transformador: por qué es el primer gas de casi toda falla, qué lo produce (descargas parciales, sobrecalentamiento, humedad, gaseo del aceite), cómo interpretarlo con los demás gases y por qué se usa en los monitores en línea."
+  },
+  "bloques": [
+    ["p", "Si hubiera que elegir un solo gas para vigilar un transformador, muchos especialistas escogerían el hidrógeno. Aparece en casi todas las fallas internas, aparece temprano y es fácil de medir. Por eso es el gas que miden los monitores en línea más sencillos."],
+    ["p", "Pero tiene un problema: también aparece por razones que no son una falla. Entender de dónde viene es lo que separa una alerta útil de una falsa alarma."],
+
+    ["h2", "Por qué aparece en casi toda falla"],
+    ["p", "El hidrógeno es la molécula más pequeña y la que se libera con menos energía cuando el aceite se descompone. Por eso se forma con descargas parciales, que son las fallas de menor energía, y sigue formándose con sobrecalentamientos y con arcos. Es el denominador común: rara vez hay una falla interna sin hidrógeno."],
+    ["p", "Eso lo vuelve el mejor indicador de alerta temprana. No dice qué falla es, pero sí dice que algo empezó."],
+
+    ["h2", "Qué lo produce"],
+    ["h3", "Descargas parciales"],
+    ["p", "Es la causa clásica: hidrógeno alto con poco de los demás gases. Las descargas parciales ocurren en burbujas, cavidades o superficies contaminadas del aislamiento, y lo explicamos en la guía de [descargas parciales en transformadores](/blog/descargas-parciales-en-transformadores-que-son-y-como-se-detectan)."],
+    ["h3", "Sobrecalentamiento y arcos"],
+    ["p", "Con fallas térmicas, el hidrógeno sube junto con el metano, el etano o el etileno. Con arcos, junto con el acetileno. En esos casos el hidrógeno acompaña, y son los otros gases los que dicen de qué falla se trata."],
+    ["h3", "Humedad y corrosión"],
+    ["p", "El agua en el transformador puede reaccionar con partes metálicas y liberar hidrógeno. Un hidrógeno que sube junto con la humedad del aceite apunta a un problema de sellos o de secado, más que a una falla eléctrica."],
+    ["h3", "Gaseo del propio aceite"],
+    ["p", "Algunos aceites, sobre todo cuando son nuevos o recién tratados, generan pequeñas cantidades de hidrógeno sin que haya falla. Pasa también en transformadores recién llenados o reparados. Suele estabilizarse con el tiempo, y por eso conviene conocer el comportamiento del aceite desde el inicio."],
+
+    ["h2", "Cómo saber si es una falla"],
+    ["lista", [
+      "Ver los demás gases: si el hidrógeno sube solo, piensa en descargas parciales o en el aceite; si sube con otros, la combinación indica la falla.",
+      "Ver la tendencia: un hidrógeno estable es distinto de uno que sube cada semana.",
+      "Ver la humedad: si suben juntos, revisa los sellos y el secado.",
+      "Ver la historia del equipo: un llenado, una reparación o un cambio de aceite recientes explican mucho.",
+      "Confirmar en laboratorio, con el análisis completo de gases."
+    ]],
+
+    ["h2", "Por qué los monitores en línea empiezan por el hidrógeno"],
+    ["p", "Un monitor de un solo gas, el hidrógeno, es la forma más económica de vigilar un transformador todo el día. No da el diagnóstico completo, pero avisa que algo empezó, y entonces se toma una muestra para el laboratorio o se instala un monitor de varios gases. En los transformadores más críticos conviene un monitor que mida varios gases desde el principio, para tener el diagnóstico sin esperar."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿El hidrógeno en el aceite es peligroso por sí mismo?"],
+    ["p", "En las cantidades que se miden en el aceite, no: lo que importa es lo que indica. El riesgo está en la falla que lo produce, no en el gas."],
+    ["h3", "¿Un hidrógeno alto pero estable es un problema?"],
+    ["p", "No necesariamente. Puede venir de un evento que ya pasó o del gaseo del aceite. Se sigue vigilando, y lo que encendería la alerta es que vuelva a crecer o que aparezcan otros gases."],
+    ["h3", "¿Basta un monitor de hidrógeno?"],
+    ["p", "Para transformadores importantes pero no críticos, puede ser un buen inicio. Para los críticos, conviene medir varios gases, porque el hidrógeno avisa pero no dice qué falla es ni qué tan grave."],
+
+    ["nota", "Vigilamos tus transformadores con [análisis de gases disueltos en línea](/servicios/monitoreo-continuo/dga-en-linea), desde el monitor esencial hasta el de nueve gases, y confirmamos cada cambio con [análisis de aceite](/servicios/monitoreo-condicion/analisis-de-aceite) en laboratorio."]
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "acetileno-en-transformadores-que-significa-y-que-hacer",
+  "titulo": "Acetileno en transformadores: qué significa y qué hacer cuando aparece",
+  "extracto": "El acetileno es el gas que más preocupa en el aceite de un transformador, porque se forma a temperaturas que solo alcanzan un arco o una descarga de energía. Qué lo provoca, qué causa conviene descartar primero y qué hacer cuando aparece.",
+  "portada": "/images/blog/acetileno-transformador.webp",
+  "fecha": "2026-10-01T18:00:00.300000Z",
+  "seo": {
+    "titulo": "Acetileno en transformadores: qué significa y qué hacer",
+    "descripcion": "Qué significa la presencia de acetileno en el aceite de un transformador: arcos y descargas de energía, la fuga del cambiador de derivaciones como causa a descartar, por qué importa qué tan rápido crece y qué hacer cuando aparece."
+  },
+  "bloques": [
+    ["p", "De todos los gases que se miden en el aceite de un transformador, el acetileno es el que más alarma provoca, y con razón. Mientras otros gases aparecen con calentamientos moderados o con el envejecimiento normal del aislamiento, el acetileno necesita temperaturas muy altas para formarse. Cuando aparece, algo dentro del transformador está liberando mucha energía."],
+    ["p", "Eso no siempre significa que el transformador esté a punto de fallar. Pero sí significa que hay que entender pronto de dónde viene."],
+
+    ["h2", "Por qué el acetileno es distinto"],
+    ["p", "El aceite se descompone de forma distinta según la temperatura de la falla. Con calentamientos bajos se forman sobre todo hidrógeno y metano; al subir la temperatura aparecen el etano y el etileno; y el acetileno se forma en cantidades importantes solo con las temperaturas de un arco eléctrico o de descargas de alta energía, de cientos y hasta miles de grados."],
+    ["p", "Por eso, aun en pocas partes por millón, el acetileno pesa mucho en cualquier diagnóstico. Las guías de interpretación como IEEE C57.104 e IEC 60599 lo tratan como uno de los gases de mayor atención, y en el triángulo de Duval su proporción es la que separa las fallas eléctricas de las térmicas."],
+
+    ["h2", "Qué lo puede provocar"],
+    ["lista", [
+      "Arcos internos entre partes con distinto voltaje, por aislamiento dañado.",
+      "Descargas de energía en conexiones flojas o con mal contacto.",
+      "Chisporroteo en partes metálicas que quedaron sin conexión a tierra.",
+      "Puntos calientes muy intensos, cercanos a los 700 °C o más.",
+      "Una fuga de aceite desde el compartimento del cambiador de derivaciones."
+    ]],
+
+    ["h2", "La causa que conviene descartar primero"],
+    ["p", "Muchos transformadores tienen un cambiador de derivaciones bajo carga con su propio compartimento de aceite. Ahí se producen pequeños arcos en cada cambio de derivación, que es normal, y por eso ese aceite tiene acetileno. Si un sello entre ese compartimento y el tanque principal falla, el acetileno pasa al aceite del transformador y parece una falla interna que no existe."],
+    ["p", "Para descartarlo se compara el aceite del tanque principal con el del compartimento del cambiador, y se revisa si el acetileno sube después de los cambios de derivación. Si la fuga se confirma, se repara el sello; si no, la falla está dentro del transformador."],
+
+    ["h2", "Qué importa más que el valor"],
+    ["p", "Un valor de acetileno, solo, dice poco. Lo que más dice es qué tan rápido crece. Un transformador con unas pocas partes por millón estables durante años, por un evento que ya pasó, no es lo mismo que uno donde el acetileno aparece de la nada y sube cada semana. El primero se vigila; el segundo pide actuar."],
+    ["p", "Por eso, cuando aparece acetileno, lo primero es tomar una segunda muestra pronto, en días o semanas y no en meses, para saber si está creciendo. Un monitor de gases en línea lo resuelve de otra forma: mide cada hora y muestra la tendencia desde el primer momento."],
+
+    ["h2", "Qué hacer cuando aparece"],
+    ["numerada", [
+      "Confirmar con una nueva muestra en laboratorio, tomada con cuidado para no perder gases.",
+      "Descartar la fuga del compartimento del cambiador de derivaciones.",
+      "Revisar los demás gases: hidrógeno y etileno juntos con el acetileno apuntan a una falla de energía activa.",
+      "Seguir la tendencia con muestras más frecuentes o con monitoreo en línea.",
+      "Si crece, reducir la carga y programar pruebas eléctricas e inspección interna.",
+      "Si crece rápido, valorar con el especialista sacar el transformador de servicio."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Cuánto acetileno es mucho?"],
+    ["p", "No hay un número único que aplique a todos los transformadores. Las guías de interpretación dan niveles de referencia según el tipo de equipo, su edad y su historial, pero en el acetileno cualquier aparición nueva merece seguimiento, y cualquier aumento sostenido merece atención aunque el valor sea bajo."],
+    ["h3", "¿Se puede quitar el acetileno del aceite?"],
+    ["p", "Se puede desgasificar el aceite, pero eso solo borra la evidencia: si la falla sigue ahí, el acetileno vuelve a aparecer. Desgasificar sin conocer la causa hace perder la historia que ayuda a diagnosticar."],
+    ["h3", "¿Un transformador con acetileno puede seguir en servicio?"],
+    ["p", "Muchas veces sí, con vigilancia más cercana, si el gas está estable y la causa es conocida. Lo que no conviene es dejarlo en servicio sin saber si el acetileno está creciendo."],
+
+    ["nota", "Medimos los gases de tus transformadores críticos cada hora con [análisis de gases disueltos en línea](/servicios/monitoreo-continuo/dga-en-linea) y los confirmamos en laboratorio con [análisis de aceite](/servicios/monitoreo-condicion/analisis-de-aceite). Cómo se interpreta cada combinación de gases lo explicamos en la guía del [triángulo de Duval](/blog/analisis-de-gases-disueltos-dga-en-transformadores-y-triangulo-de-duval)."]
+  ]
+}

@@ -462,6 +462,36 @@
         "licenciaUrl": "https://unsplash.com/license",
         "fuente": "Unsplash",
         "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/acetileno-transformador.webp",
+        "descripcion": "Subestación eléctrica con transformadores",
+        "original": "https://unsplash.com/photos/bbqAh039s6U",
+        "autor": "Jose Manuel Esp",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/hidrogeno-transformador.webp",
+        "descripcion": "Subestación eléctrica al atardecer",
+        "original": "https://unsplash.com/photos/u719UbWj0us",
+        "autor": "American Public Power Association",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/cromatografia-transformador.webp",
+        "descripcion": "Viales de muestra en un equipo de laboratorio",
+        "original": "https://unsplash.com/photos/fd0b-Bl4cFc",
+        "autor": "National Cancer Institute",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
       }
     ]
   }
