@@ -36,6 +36,8 @@ import { getArticulosPorServicio } from "@/lib/recursos";
 import GuiasRelacionadas from "@/components/organisms/GuiasRelacionadas";
 import EscenaMonitoreo from "@/components/organisms/EscenaMonitoreo";
 import EscenaHuella from "@/components/organisms/EscenaHuella";
+import EscenaSensores from "@/components/organisms/EscenaSensores";
+import EscenaTermicas from "@/components/organisms/EscenaTermicas";
 
 /**
  * PaginaServicio
@@ -145,6 +147,20 @@ export default function PaginaServicio({ service, href }: { service: Servicio; h
                             {overviewSubtitle}
                         </p>
                     </div>
+                    {/* Sensores de vibración, acústicos y cámaras fijas: su escena 3D
+                        abre el primer apartado, arriba de los beneficios (Emiliano,
+                        2026-10-01). Sin WebGL se ve la foto. */}
+                    {service.escenaFoto && service.escena3d && service.escena3d !== "monitoreo-continuo" && (
+                        <div className="mx-auto mb-12 w-full max-w-5xl">
+                            {service.escena3d === "huella" ? (
+                                <EscenaHuella foto={service.escenaFoto} />
+                            ) : service.escena3d === "termicas" ? (
+                                <EscenaTermicas foto={service.escenaFoto} />
+                            ) : (
+                                <EscenaSensores foto={service.escenaFoto} />
+                            )}
+                        </div>
+                    )}
                     {/* En aceite el acordeón de puntos no explica el
                         servicio a quien entra sin saber qué es un análisis
                         de lubricante. En su lugar: qué contesta la muestra
@@ -164,16 +180,6 @@ export default function PaginaServicio({ service, href }: { service: Servicio; h
                 <section className="w-full bg-white pb-12 lg:pb-20">
                     <div className="max-w-7xl mx-auto px-6">
                         <EscenaMonitoreo />
-                    </div>
-                </section>
-            )}
-
-            {/* Sensores acústicos: la escena de la huella acústica, que Emiliano
-                pidió conservar al pasar la página a la plantilla común. */}
-            {service.escena3d === "huella" && (
-                <section className="w-full bg-white pb-12 lg:pb-20">
-                    <div className="mx-auto w-full max-w-5xl px-6">
-                        <EscenaHuella foto={{ src: "/images/servicios/sensores-acusticos/campo-08.webp", alt: "Especialista de DIAPSA frente a las boquillas de una subestación de alta tensión" }} />
                     </div>
                 </section>
             )}

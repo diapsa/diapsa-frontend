@@ -397,5 +397,10 @@
     "titulo": "Termografía por rutas",
     "texto": "Las cámaras fijas van en los puntos que no pueden esperar; el resto de la planta se revisa con termografía de mano en ruta, que cuesta menos por punto. Los dos datos terminan en IDAP.",
     "enlace": "Ver termografía infrarroja"
+  },
+  "escena3d": "termicas",
+  "escenaFoto": {
+    "src": "/images/servicios/termografia-infrarroja/campo-02.webp",
+    "alt": "Termograma de un tablero con un punto caliente"
   }
 }
