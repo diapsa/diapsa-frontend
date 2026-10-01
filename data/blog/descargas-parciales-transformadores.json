@@ -1,0 +1,64 @@
+{
+  "slug": "descargas-parciales-en-transformadores-que-son-y-como-se-detectan",
+  "titulo": "Descargas parciales en transformadores: qué son, por qué importan y cómo se detectan",
+  "extracto": "Una descarga parcial no dispara ninguna protección, pero va dañando el aislamiento del transformador hasta que falla. Qué la provoca, qué daño hace y cómo se detecta con el equipo en operación: por su sonido, por los gases que deja en el aceite y por su señal eléctrica.",
+  "portada": "/images/blog/descargas-parciales-transformadores.webp",
+  "fecha": "2026-10-01T12:00:00.300000Z",
+  "seo": {
+    "titulo": "Descargas parciales en transformadores: qué son y cómo detectarlas",
+    "descripcion": "Qué son las descargas parciales en transformadores de potencia, qué las provoca, por qué terminan en falla del aislamiento y cómo se detectan en operación: monitoreo acústico, gases disueltos en el aceite y medición eléctrica."
+  },
+  "bloques": [
+    ["p", "La mayoría de las fallas graves de un transformador empiezan en el aislamiento. Y muchas de ellas empiezan igual: con descargas parciales que nadie nota durante meses. No hacen saltar ninguna protección, no se ven por fuera y el transformador sigue entregando su carga como si nada. Mientras tanto, cada descarga deja una pequeña huella de daño."],
+    ["p", "Entender qué son y cómo se detectan es lo que permite intervenir un transformador en una ventana programada, en lugar de enterarse el día que sale de servicio."],
+
+    ["h2", "Qué es una descarga parcial"],
+    ["p", "Es una descarga eléctrica que atraviesa solo una parte del aislamiento, no todo. Ocurre donde el campo eléctrico se concentra más de lo que ese punto aguanta: una burbuja de gas dentro del aceite, una cavidad en el papel o la resina, una superficie contaminada o una pieza metálica suelta que quedó flotando sin conexión a tierra."],
+    ["p", "Cada descarga es diminuta y dura una fracción de microsegundo, pero se repite miles de veces por segundo, en cada ciclo de la corriente. Y cada una calienta, erosiona y carboniza un poco el material a su alrededor."],
+
+    ["h2", "Por qué terminan en falla"],
+    ["p", "El daño se acumula. La descarga carboniza el papel o degrada el aceite en ese punto, lo que hace que el aislamiento resista menos y que la siguiente descarga sea más fácil y más fuerte. Con el tiempo se forma un camino de material dañado que crece hasta que el aislamiento ya no soporta el voltaje y ocurre una falla completa, que puede dejar el transformador fuera de servicio por meses o provocar un incendio."],
+    ["p", "Ese proceso puede tardar semanas, meses o años, según la causa y la carga. Por eso detectarlo temprano da tiempo de sobra para actuar, y detectarlo tarde casi nunca lo da."],
+
+    ["h2", "Qué las provoca"],
+    ["lista", [
+      "Humedad en el aceite o en el papel, que baja la rigidez del aislamiento.",
+      "Burbujas de gas, por ejemplo después de un llenado de aceite mal hecho o por un calentamiento local.",
+      "Envejecimiento del papel aislante por temperatura y años de servicio.",
+      "Partículas o piezas metálicas sueltas dentro del tanque.",
+      "Contaminación o daño en las boquillas.",
+      "Defectos de fabricación o de reparación en el aislamiento."
+    ]],
+
+    ["h2", "Cómo se detectan con el equipo en operación"],
+    ["p", "Una descarga parcial deja tres tipos de rastro, y cada uno se mide de forma distinta. Lo ideal es combinarlos, porque uno confirma al otro."],
+    ["h3", "Por su sonido"],
+    ["p", "Cada descarga produce una pequeña onda de presión que viaja por el aceite hasta las paredes del tanque, sobre todo en alta frecuencia y ultrasonido. Un sensor acústico montado por fuera del tanque la escucha sin abrir ni desenergizar el equipo. Si hay varios sensores, la diferencia en el tiempo de llegada de la señal a cada uno ayuda a ubicar de qué lado viene la descarga."],
+    ["h3", "Por los gases que deja en el aceite"],
+    ["p", "Las descargas descomponen el aceite y generan gases, principalmente hidrógeno. El análisis de gases disueltos lo mide en una muestra de laboratorio o con un monitor en línea, y herramientas como el triángulo de Duval ayudan a clasificar si el patrón corresponde a descargas parciales, a calentamiento o a arqueo. Lo explicamos en la guía de [análisis de gases disueltos y triángulo de Duval](/blog/analisis-de-gases-disueltos-dga-en-transformadores-y-triangulo-de-duval)."],
+    ["h3", "Por su señal eléctrica"],
+    ["p", "Cada descarga también produce un pulso de corriente y una señal electromagnética. Se mide con equipos especializados conectados a las boquillas o con sensores de muy alta frecuencia. Es la medición más directa, pero suele requerir un paro o una instalación más compleja."],
+
+    ["h2", "Por qué conviene vigilarlas en continuo"],
+    ["p", "Las pruebas eléctricas se hacen en el paro, una vez al año o menos, y la muestra de aceite suele tomarse cada varios meses. Entre una y otra, una descarga puede aparecer y crecer sin que nadie lo sepa. Un sensor acústico escucha todo el día y avisa cuando aparece el patrón, para que la siguiente prueba o la siguiente muestra se hagan cuando hace falta, y no a ciegas."],
+    ["p", "No sustituye a las pruebas ni al aceite: llena el tiempo entre ellas."],
+
+    ["h2", "Qué hacer cuando aparecen"],
+    ["numerada", [
+      "Confirmar con una segunda técnica: análisis de gases disueltos y una inspección de ultrasonido y termografía.",
+      "Ubicar el origen: el tanque, una boquilla, el cambiador de derivaciones o una conexión.",
+      "Vigilar la tendencia: una actividad estable da margen; una que crece pide actuar pronto.",
+      "Programar la intervención en una ventana, con la causa probable identificada."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Se puede oír una descarga parcial a simple vista?"],
+    ["p", "Casi nunca. La mayor parte de su sonido está en alta frecuencia y ultrasonido, fuera del oído humano, y además queda tapado por el zumbido normal del transformador. Por eso se necesita un sensor que separe esa señal del ruido."],
+    ["h3", "¿Es lo mismo que el efecto corona?"],
+    ["p", "Es de la misma familia. El efecto corona es una descarga en el aire, alrededor de conductores y aisladores exteriores. Las descargas parciales de las que habla esta guía ocurren dentro del aislamiento. Lo contamos en la guía de [efecto corona](/blog/efecto-corona-que-es-y-como-se-detecta)."],
+    ["h3", "¿Un transformador seco también tiene descargas parciales?"],
+    ["p", "Sí. En los transformadores secos ocurren en cavidades de la resina o en superficies contaminadas, y también terminan dañando el aislamiento. Se detectan por su sonido y por su señal eléctrica, aunque no hay aceite que analizar."],
+
+    ["nota", "Instalamos [sensores acústicos](/servicios/monitoreo-continuo/sensores-acusticos) que aprenden cómo suena cada transformador sano y avisan cuando aparece un patrón de descarga parcial, y lo confirmamos con [análisis de aceite](/servicios/monitoreo-condicion/analisis-de-aceite) y [ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido)."]
+  ]
+}
