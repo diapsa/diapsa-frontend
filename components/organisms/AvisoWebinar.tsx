@@ -61,7 +61,7 @@ export default function AvisoWebinar() {
                 </svg>
             </button>
             <div className="relative h-24 w-full">
-                <Image src="/images/gallery/capacitacion-img-2.jpg" alt="" fill sizes="352px" className="object-cover" />
+                <Image src="/images/webinar/herramientas-predictivas.webp" alt="" fill sizes="352px" className="object-cover object-[70%_40%]" />
                 <div className="absolute inset-0 bg-primary/60" />
                 <div className="absolute inset-0 flex flex-col justify-end p-4">
                     <span className="inline-flex w-fit items-center rounded-full bg-secondary px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-primary">
