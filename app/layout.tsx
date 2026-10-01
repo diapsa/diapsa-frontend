@@ -6,6 +6,7 @@ import Footer from "@/components/organisms/Footer";
 import PieSegunRuta from "@/components/organisms/PieSegunRuta";
 import WhatsAppButton from "@/components/atoms/WhatsAppButton";
 import ClarityAnalytics from "@/components/atoms/ClarityAnalytics";
+import ClicsWhatsApp from "@/components/atoms/ClicsWhatsApp";
 import JsonLd, {
   organizationSchema,
   localBusinessSchema,
@@ -143,6 +144,7 @@ export default function RootLayout({
         </PieSegunRuta>
         <WhatsAppButton etiqueta="WhatsApp" />
         <ClarityAnalytics />
+        <ClicsWhatsApp />
       </body>
     </html>
   );
