@@ -583,5 +583,10 @@
     "titulo": "Análisis de Vibraciones por rutas",
     "texto": "Los sensores van en los equipos que lo justifican; el resto de la planta sigue en ruta periódica, que cuesta menos por equipo. Los dos datos terminan en IDAP, en la misma ficha de cada máquina.",
     "enlace": "Ver análisis de vibraciones"
+  },
+  "escena3d": "sensores",
+  "escenaFoto": {
+    "src": "/images/servicios/sensores-vibracion/instalacion-sensor.webp",
+    "alt": "Técnica de DIAPSA instalando un sensor de vibración inalámbrico en un equipo de proceso"
   }
 }

@@ -432,6 +432,36 @@
         "licenciaUrl": "https://unsplash.com/license",
         "fuente": "Unsplash",
         "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/descargas-parciales-transformadores.webp",
+        "descripcion": "Transformador de potencia en una subestación",
+        "original": "https://unsplash.com/photos/VuR4oHZ3ucc",
+        "autor": "American Public Power Association",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/ruido-transformador.webp",
+        "descripcion": "Subestación con transformador de potencia",
+        "original": "https://unsplash.com/photos/jnoVECivNJU",
+        "autor": "Aldward Castillo",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/monitoreo-transformadores.webp",
+        "descripcion": "Transformadores de potencia con su sistema de enfriamiento",
+        "original": "https://unsplash.com/photos/RQpeu8lbti4",
+        "autor": "American Public Power Association",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
       }
     ]
   }

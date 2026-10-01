@@ -1,0 +1,55 @@
+{
+  "slug": "monitoreo-de-transformadores-de-potencia-que-medir-en-linea",
+  "titulo": "Monitoreo de transformadores de potencia: qué medir en línea y qué se queda en las pruebas",
+  "extracto": "Un transformador de potencia se puede vigilar todo el día sin desenergizarlo. Qué variables tiene sentido medir en línea, qué falla anuncia cada una, cómo se combinan con las pruebas del paro y por dónde empezar si el presupuesto no alcanza para todo.",
+  "portada": "/images/blog/monitoreo-transformadores.webp",
+  "fecha": "2026-10-01T12:00:00.100000Z",
+  "seo": {
+    "titulo": "Monitoreo de transformadores de potencia: qué medir en línea",
+    "descripcion": "Qué medir en línea en un transformador de potencia: gases disueltos, humedad, temperatura, sonido y descargas parciales, boquillas, cambiador de derivaciones y enfriamiento. Cómo se complementa con las pruebas y por dónde empezar."
+  },
+  "bloques": [
+    ["p", "Un transformador de potencia puede pasar décadas en servicio sin dar problemas, y por eso es fácil olvidarse de él. Pero cuando falla, la reparación tarda meses, un equipo nuevo puede tardar todavía más en llegar y la planta, la subestación o el centro de datos que alimentaba se queda sin respaldo o sin energía."],
+    ["p", "Las pruebas en el paro siguen siendo indispensables. El problema es el tiempo entre una y otra: un año o más en el que el transformador trabaja sin que nadie sepa cómo está por dentro. El monitoreo en línea llena ese hueco."],
+
+    ["h2", "Qué se puede medir con el transformador en operación"],
+    ["h3", "Gases disueltos en el aceite"],
+    ["p", "Es el indicador más usado. Cuando algo falla dentro del tanque, el aceite y el papel se descomponen y generan gases. Cuáles y en qué proporción dice si se trata de un calentamiento, de descargas parciales o de arqueo. Los monitores en línea miden desde un solo gas, normalmente hidrógeno, hasta varios gases, y avisan cuando la tendencia cambia."],
+    ["h3", "Humedad en el aceite"],
+    ["p", "El agua debilita el aislamiento y acelera el envejecimiento del papel. Medirla en línea, junto con la temperatura, ayuda a saber si el secado del transformador sigue siendo bueno o si entra humedad por algún sello."],
+    ["h3", "Temperatura"],
+    ["p", "La temperatura del aceite en la parte superior y la del punto más caliente de los devanados dicen cuánto se está exigiendo al transformador y cuánto se está consumiendo su vida útil. Comparadas contra la carga, revelan problemas de enfriamiento."],
+    ["h3", "Sonido y descargas parciales"],
+    ["p", "Un sensor acústico montado por fuera del tanque escucha las descargas parciales, el aflojamiento del núcleo y los devanados y las fallas del sistema de enfriamiento. Aprende cómo suena el equipo sano y avisa cuando aparece un patrón distinto. Lo detallamos en la guía de [descargas parciales en transformadores](/blog/descargas-parciales-en-transformadores-que-son-y-como-se-detectan)."],
+    ["h3", "Boquillas"],
+    ["p", "Las boquillas son una de las causas más comunes de falla grave. Hay monitores que vigilan los cambios en su aislamiento con el equipo energizado, y la termografía y el ultrasonido en ruta ayudan a revisar sus conexiones."],
+    ["h3", "Cambiador de derivaciones y enfriamiento"],
+    ["p", "El cambiador bajo carga es la única parte que se mueve dentro del transformador, y se desgasta. Se vigila con el consumo de su motor, su sonido y su temperatura. Los ventiladores y las bombas de enfriamiento se vigilan con su estado de operación, su vibración o su sonido."],
+
+    ["h2", "Qué se queda en las pruebas del paro"],
+    ["p", "Hay mediciones que todavía requieren desenergizar el equipo: resistencia de aislamiento, factor de potencia del aislamiento, relación de transformación, resistencia de devanados y respuesta en frecuencia, entre otras. El monitoreo en línea no las sustituye. Lo que hace es decir cuándo conviene adelantarlas y en qué fijarse cuando se hacen."],
+
+    ["h2", "Por dónde empezar"],
+    ["p", "No todo transformador necesita todo. Un buen orden es este:"],
+    ["numerada", [
+      "Hacer una lista de los transformadores y marcar los críticos: los que alimentan toda la operación y los que no tienen respaldo.",
+      "Revisar su historial: edad, resultados de aceite y de pruebas, fallas en la red y reparaciones.",
+      "En los críticos, empezar por gases disueltos y sonido en línea, que cubren la mayoría de las fallas internas.",
+      "Sumar temperatura, humedad, boquillas y cambiador según la edad y el historial de cada equipo.",
+      "Mantener el análisis de aceite de laboratorio y las pruebas del paro en todos, y llevar todo en un mismo historial por equipo."
+    ]],
+
+    ["h2", "Lo que importa es la tendencia"],
+    ["p", "Un valor aislado dice poco. Lo que avisa es el cambio: un gas que empieza a subir, un sonido que antes no estaba, una temperatura que ya no sigue a la carga. Por eso los datos en línea valen más cuando alguien los revisa contra el historial del equipo y contra las demás técnicas, y no solo cuando cruzan un límite."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿El monitoreo en línea sustituye al análisis de aceite de laboratorio?"],
+    ["p", "No. El laboratorio mide más gases y más propiedades del aceite con más precisión. El monitor en línea avisa entre una muestra y otra, y dice cuándo conviene tomar la siguiente antes de tiempo."],
+    ["h3", "¿Vale la pena en un transformador viejo?"],
+    ["p", "Muchas veces es donde más vale. Un transformador con muchos años en servicio tiene más probabilidad de fallar, y conocer su estado ayuda a decidir si se repara, se reemplaza o se sigue operando con vigilancia."],
+    ["h3", "¿Hay que abrir el transformador para instalar los sensores?"],
+    ["p", "Depende de la variable. Los sensores acústicos se montan por fuera del tanque. Los monitores de gases y humedad se conectan a las válvulas del transformador, lo que se planea con el fabricante del equipo y con los procedimientos de la subestación."],
+
+    ["nota", "Vigilamos transformadores críticos con [sensores acústicos](/servicios/monitoreo-continuo/sensores-acusticos) y [monitoreo de gases disueltos en línea](/servicios/monitoreo-continuo/dga-en-linea), y lo complementamos con [análisis de aceite](/servicios/monitoreo-condicion/analisis-de-aceite) de laboratorio."]
+  ]
+}
