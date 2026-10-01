@@ -102,6 +102,336 @@
         "licenciaUrl": "https://unsplash.com/license",
         "fuente": "Unsplash",
         "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/aceite-pruebas-muestreo.webp",
+        "descripcion": "Tubos de muestra junto a un equipo de laboratorio",
+        "original": "https://unsplash.com/photos/yJn0zZdFIwU",
+        "autor": "Daniel Dan",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/alineacion-motor-bomba.webp",
+        "descripcion": "Técnico ajustando un motor con llave",
+        "original": "https://unsplash.com/photos/W_V16LUnHYo",
+        "autor": "Han Dora",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/armonicos-thd.webp",
+        "descripcion": "Controles de un osciloscopio",
+        "original": "https://unsplash.com/photos/RhMA1Oh-r_g",
+        "autor": "Bonnie Kittle",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/balanceo-dinamico-grado-g.webp",
+        "descripcion": "Ventiladores industriales de aspas metálicas",
+        "original": "https://unsplash.com/photos/ZfiNCgSL9_o",
+        "autor": "Brice Cooper",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/caida-de-potencial.webp",
+        "descripcion": "Cable de tierra conectado sobre el terreno",
+        "original": "https://unsplash.com/photos/NCpMIRsjcqk",
+        "autor": "Luke Gallegos",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/cavitacion-bombas.webp",
+        "descripcion": "Bombas con tuberías y válvulas en un cuarto de máquinas",
+        "original": "https://unsplash.com/photos/KWZMx4T8Y1k",
+        "autor": "IYYM IYYM",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/certificacion-iso-18436.webp",
+        "descripcion": "Grupo en un aula de capacitación",
+        "original": "https://unsplash.com/photos/1-aA2Fadydc",
+        "autor": "Quilia",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/codigo-iso-4406.webp",
+        "descripcion": "Aceite vertiéndose desde un pico metálico",
+        "original": "https://unsplash.com/photos/dDWVq_XEhus",
+        "autor": "Xavier von Erlach",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/curva-p-f.webp",
+        "descripcion": "Ingeniera revisando datos junto a una máquina",
+        "original": "https://unsplash.com/photos/ZPeXrWxOjRQ",
+        "autor": "ThisisEngineering",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/desbalance-desalineacion.webp",
+        "descripcion": "Rotor de turbina sobre soportes en taller",
+        "original": "https://unsplash.com/photos/JPtaj2j6sOY",
+        "autor": "CAPTAIN NICK",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/dga-duval.webp",
+        "descripcion": "Boquillas de un transformador de potencia",
+        "original": "https://unsplash.com/photos/dR3Fb6dBEc0",
+        "autor": "American Public Power Association",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/en-linea-vs-rutas.webp",
+        "descripcion": "Sala de control de una planta",
+        "original": "https://unsplash.com/photos/p7Bfwn_VKRQ",
+        "autor": "Miha Meglic",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/energia-incidente-epp.webp",
+        "descripcion": "Electricista con casco y guantes",
+        "original": "https://unsplash.com/photos/_2AlIm-F6pw",
+        "autor": "Emmanuel Ikwuegbu",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/falla-rodamientos.webp",
+        "descripcion": "Rodamiento de rodillos cónicos",
+        "original": "https://unsplash.com/photos/Ww-KZ1lOxM8",
+        "autor": "Farkas Mario",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/falsas-alarmas-iot.webp",
+        "descripcion": "Tableros de control con indicadores",
+        "original": "https://unsplash.com/photos/2CakbXfm_gM",
+        "autor": "Dmitrijs Safrans",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/frecuencias-rodamientos.webp",
+        "descripcion": "Rodamientos de bolas apilados",
+        "original": "https://unsplash.com/photos/YCCddBvQwMA",
+        "autor": "Glen Carrie",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/fronteras-etiqueta-arco.webp",
+        "descripcion": "Señal de riesgo eléctrico",
+        "original": "https://unsplash.com/photos/F_yOvTzX8b4",
+        "autor": "Waldemar Brandt",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/futuro-ultrasonido-pasivo.webp",
+        "descripcion": "Ondas de luz azul sobre fondo negro",
+        "original": "https://unsplash.com/photos/eybM9n4yrpE",
+        "autor": "Pawel Czerwinski",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/holgura-mecanica.webp",
+        "descripcion": "Pernos y tuercas de acero en un taller",
+        "original": "https://unsplash.com/photos/FDTEzCJ11fk",
+        "autor": "Marcel Strauß",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/kpi-mantenimiento-predictivo.webp",
+        "descripcion": "Gráfica de tendencia en una pantalla",
+        "original": "https://unsplash.com/photos/IrRbSND5EUc",
+        "autor": "Markus Winkler",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/lubricacion-por-ultrasonido.webp",
+        "descripcion": "Engranes de una máquina",
+        "original": "https://unsplash.com/photos/z7YSN9f2TkU",
+        "autor": "Dexter Jacobs",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/matriz-criticidad.webp",
+        "descripcion": "Nave industrial con maquinaria y tuberías",
+        "original": "https://unsplash.com/photos/HpPmiduLDC0",
+        "autor": "Lalit Kumar",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/nom-029-arco.webp",
+        "descripcion": "Contactores y cableado de un tablero",
+        "original": "https://unsplash.com/photos/47jO5Y8nsYo",
+        "autor": "mostafa mahmoudi",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/programa-predictivo.webp",
+        "descripcion": "Ingenieros revisando un plano",
+        "original": "https://unsplash.com/photos/xYCBw1uIP_M",
+        "autor": "ThisisEngineering",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/sensores-inalambricos.webp",
+        "descripcion": "Módulo de sensor electrónico",
+        "original": "https://unsplash.com/photos/zjCc0l9l1cI",
+        "autor": "Denis Nuțiu",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/tabla-iso-10816-3.webp",
+        "descripcion": "Motor eléctrico en una planta",
+        "original": "https://unsplash.com/photos/2MLhOfRL_hI",
+        "autor": "Mika Baumeister",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/tabla-neta-termografia.webp",
+        "descripcion": "Imagen térmica con paleta de color",
+        "original": "https://unsplash.com/photos/yHf-0VozpKk",
+        "autor": "Nino Korkelia",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/tabla-tolerancias-alineacion.webp",
+        "descripcion": "Reloj comparador sobre una pieza",
+        "original": "https://unsplash.com/photos/6PKMewe0Lds",
+        "autor": "Jelifer Maniago",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/tecnicas-complementan.webp",
+        "descripcion": "Equipos y tuberías de proceso",
+        "original": "https://unsplash.com/photos/mhUsz2ezlXQ",
+        "autor": "Crystal Kwok",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/termografia-motores.webp",
+        "descripcion": "Motor eléctrico entre tuberías de proceso",
+        "original": "https://unsplash.com/photos/XUEdfpPIhXg",
+        "autor": "Crystal Kwok",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/termografia-tableros.webp",
+        "descripcion": "Prueba de un tablero eléctrico con guantes",
+        "original": "https://unsplash.com/photos/PkHf7BUWbtk",
+        "autor": "Toolmash Expo",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/valor-resistencia-tierra.webp",
+        "descripcion": "Multímetro con puntas de prueba",
+        "original": "https://unsplash.com/photos/g8Pr-LbVbjU",
+        "autor": "Nekhil R",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/vibraciones-motores-bombas.webp",
+        "descripcion": "Motobombas con tubería azul",
+        "original": "https://unsplash.com/photos/2Z7K3Oxig98",
+        "autor": "Jahhid Fitrah Alamsyah",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
       }
     ]
   }
