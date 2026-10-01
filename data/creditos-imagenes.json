@@ -1,1 +1,108 @@
-[]
+[
+  {
+    "pagina": "Blog: portadas de guías",
+    "href": "/blog",
+    "imagenes": [
+      {
+        "src": "/images/blog/camara-fija-poste.webp",
+        "descripcion": "Cámara fija montada en un poste",
+        "original": "https://unsplash.com/photos/security-camera-mounted-on-a-pole-with-blue-sky-FCQF47OIJpY",
+        "autor": "Alberto Lung",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/almacen-racks.webp",
+        "descripcion": "Racks metálicos en un almacén industrial",
+        "original": "https://www.pexels.com/photo/industrial-warehouse-storage-racks-and-shelving-36126272/",
+        "autor": "Adrien Olichon",
+        "licencia": "Licencia de Pexels",
+        "licenciaUrl": "https://www.pexels.com/license/",
+        "fuente": "Pexels",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/rack-servidores.webp",
+        "descripcion": "Rack de servidores en un centro de datos",
+        "original": "https://unsplash.com/photos/a-rack-of-electronic-equipment-in-a-dark-room-OnI_TNcIv9U",
+        "autor": "Tyler",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/planta-produccion.webp",
+        "descripcion": "Línea de producción con robots industriales",
+        "original": "https://unsplash.com/photos/a-factory-filled-with-lots-of-orange-machines-8gr6bObQLOI",
+        "autor": "Simon Kadula",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/ingenieros-planta.webp",
+        "descripcion": "Ingenieros revisando equipos en una planta",
+        "original": "https://unsplash.com/photos/engineers-working-in-automotive-factory-WjOWazUPAss",
+        "autor": "ThisisEngineering",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/torres-transmision.webp",
+        "descripcion": "Torres de transmisión eléctrica al atardecer",
+        "original": "https://unsplash.com/photos/photo-of-truss-towers-yETqkLnhsUI",
+        "autor": "Matthew Henry",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/medidores-electricos.webp",
+        "descripcion": "Medidores eléctricos en un muro",
+        "original": "https://unsplash.com/photos/five-electric-meters-on-wall-veAjsOjXpvQ",
+        "autor": "ABDURREHMAN",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/aisladores-transformador.webp",
+        "descripcion": "Aisladores de un transformador de potencia",
+        "original": "https://unsplash.com/photos/electrical-insulators-on-power-transformer-dR3Fb6dBEc0",
+        "autor": "American Public Power Association",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/compresor-aire.webp",
+        "descripcion": "Compresor de aire industrial",
+        "original": "https://unsplash.com/photos/weathered-blue-industrial-air-compressor-dKthG-i_aFM",
+        "autor": "Bambang Prasetyo",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/rayo-tormenta.webp",
+        "descripcion": "Rayo durante una tormenta",
+        "original": "https://unsplash.com/photos/lightning-bolt-in-dark-storm-3qucB7U2l7I",
+        "autor": "Brandon Morgan",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      }
+    ]
+  }
+]
