@@ -35,6 +35,7 @@ import Link from "next/link";
 import { getArticulosPorServicio } from "@/lib/recursos";
 import GuiasRelacionadas from "@/components/organisms/GuiasRelacionadas";
 import EscenaMonitoreo from "@/components/organisms/EscenaMonitoreo";
+import EscenaHuella from "@/components/organisms/EscenaHuella";
 
 /**
  * PaginaServicio
@@ -163,6 +164,16 @@ export default function PaginaServicio({ service, href }: { service: Servicio; h
                 <section className="w-full bg-white pb-12 lg:pb-20">
                     <div className="max-w-7xl mx-auto px-6">
                         <EscenaMonitoreo />
+                    </div>
+                </section>
+            )}
+
+            {/* Sensores acústicos: la escena de la huella acústica, que Emiliano
+                pidió conservar al pasar la página a la plantilla común. */}
+            {service.escena3d === "huella" && (
+                <section className="w-full bg-white pb-12 lg:pb-20">
+                    <div className="mx-auto w-full max-w-5xl px-6">
+                        <EscenaHuella foto={{ src: "/images/servicios/sensores-acusticos/campo-08.webp", alt: "Especialista de DIAPSA frente a las boquillas de una subestación de alta tensión" }} />
                     </div>
                 </section>
             )}

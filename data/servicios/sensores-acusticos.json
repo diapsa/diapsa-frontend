@@ -417,5 +417,6 @@
     "titulo": "Ultrasonido por rutas",
     "texto": "Los sensores van en los equipos eléctricos que no pueden esperar; el resto de la planta se revisa con ultrasonido y cámara acústica en ruta, que cuesta menos por equipo. Los dos datos terminan en IDAP.",
     "enlace": "Ver análisis de ultrasonido"
-  }
+  },
+  "escena3d": "huella"
 }
