@@ -723,5 +723,44 @@
       "titulo": "Análisis de Gases Disueltos en Línea",
       "resumen": "Los gases del aceite de tus transformadores críticos medidos cada hora, con alertas revisadas por especialistas."
     }
+  },
+  {
+    "articulo": {
+      "slug": "mantenimiento-predictivo-en-centrales-de-ciclo-combinado",
+      "titulo": "Ciclo combinado",
+      "resumen": "Equipos críticos y técnicas para toda la central.",
+      "portada": "/images/blog/ciclo-combinado.webp"
+    },
+    "servicio": {
+      "href": "/industrias/generacion-de-energia",
+      "titulo": "Generación de Energía",
+      "resumen": "Mantenimiento predictivo para centrales: de la turbina a la subestación, con la técnica que ve cada falla."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "vibraciones-en-turbinas-de-vapor-gas-e-hidraulicas",
+      "titulo": "Vibraciones en turbinas",
+      "resumen": "Qué se mide y con qué criterio.",
+      "portada": "/images/blog/vibraciones-turbinas.webp"
+    },
+    "servicio": {
+      "href": "/industrias/generacion-de-energia",
+      "titulo": "Generación de Energía",
+      "resumen": "Mantenimiento predictivo para centrales: de la turbina a la subestación, con la técnica que ve cada falla."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "mantenimiento-de-subestaciones-electricas-que-incluye",
+      "titulo": "Mantenimiento de subestaciones",
+      "resumen": "Qué incluye y qué se revisa energizado.",
+      "portada": "/images/blog/mantenimiento-subestaciones.webp"
+    },
+    "servicio": {
+      "href": "/industrias/generacion-de-energia",
+      "titulo": "Generación de Energía",
+      "resumen": "Mantenimiento predictivo para centrales: de la turbina a la subestación, con la técnica que ve cada falla."
+    }
   }
 ]
