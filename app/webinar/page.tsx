@@ -33,18 +33,19 @@ export default function WebinarPage() {
           {/* Webinar Details */}
           <div className="mb-12">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              {/* Foto real de una sesión de DIAPSA. La página no tenía ninguna
-                  imagen: sólo texto sobre fondo gris. */}
+              {/* Imagen del webinar generada en Higgsfield (2026-10-01, elegida
+                  por Emiliano): las herramientas predictivas sobre la mesa
+                  junto a la videollamada, sin marcas ni texto. */}
               <div className="relative aspect-[21/9] w-full">
                 <Image
-                  src="/images/gallery/capacitacion-img-2.jpg"
-                  alt="Sesión de capacitación de Grupo DIAPSA con participantes usando herramientas de diagnóstico"
+                  src="/images/webinar/webinar-herramientas-mesa.webp"
+                  alt="Cámara termográfica, analizador de vibraciones, detector de ultrasonido y muestra de aceite junto a una laptop en videollamada"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 896px"
                   priority
                 />
-                <div className="absolute inset-0 bg-primary/45" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/30 to-transparent" />
                 <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10">
                   <span className="inline-flex w-fit items-center gap-2 rounded-full bg-secondary px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary">
                     Webinar gratuito

@@ -220,7 +220,11 @@ export default function TiendaProductos({ productos, marcas }: Props) {
     return () => clearInterval(t);
   }, [banners.length]);
   const fotosBanner = banner ? productos.filter((p) => p.brand?.slug === banner.slug && p.main_image).slice(0, 4) : [];
-  const fotosHik = banner?.slug === "hikmicro" ? ["sp60", "g61", "m30", "b20s"].map((m) => `/images/productos/hikmicro/${m}.webp`) : null;
+  // Fotos del banner, cada una con su ficha: en Clarity (2026-10-01) el 10 % de
+  // las sesiones pulsaba estas cámaras esperando entrar a ellas.
+  const fotosHik = banner?.slug === "hikmicro"
+    ? ["sp60", "g61", "m30", "b20s"].map((m) => ({ src: `/images/productos/hikmicro/${m}.webp`, href: `/productos/camaras-termograficas/hikmicro-${m}`, nombre: `HIKMICRO ${m.toUpperCase()}` }))
+    : null;
 
   const promo = cuenta(productos.filter((p) => p.curso_gratis));
 
@@ -355,10 +359,10 @@ export default function TiendaProductos({ productos, marcas }: Props) {
                 )}
               </div>
               <div className="flex h-36 items-end justify-center gap-2 sm:h-44">
-                {(fotosHik ?? fotosBanner.map((p) => getStorageUrl(p.main_image)!)).map((src, i) => (
-                  <div key={src} className={`relative h-full flex-1 ${i > 1 ? "hidden sm:block" : ""}`}>
-                    <Image src={src} alt="" fill sizes="160px" className="object-contain drop-shadow-2xl" />
-                  </div>
+                {(fotosHik ?? fotosBanner.map((p) => ({ src: getStorageUrl(p.main_image)!, href: `/productos/${p.category?.slug}/${p.slug}`, nombre: p.name }))).map((f, i) => (
+                  <Link key={f.src} href={f.href} aria-label={`Ver ${f.nombre}`} className={`relative h-full flex-1 transition-transform hover:-translate-y-1 ${i > 1 ? "hidden sm:block" : ""}`}>
+                    <Image src={f.src} alt="" fill sizes="160px" className="object-contain drop-shadow-2xl" />
+                  </Link>
                 ))}
               </div>
             </div>
