@@ -135,7 +135,7 @@ export default function PaginaProductos({
             {RAZONES.map((r, i) => (
               <li
                 key={r.titulo}
-                className="group flex flex-col overflow-hidden rounded-sm bg-gray-50 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-xl"
+                className="group relative flex flex-col overflow-hidden rounded-sm bg-gray-50 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-xl"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
@@ -159,7 +159,9 @@ export default function PaginaProductos({
                   </p>
                   <Link
                     href={r.href}
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-secondary hover:text-primary"
+                    // La tarjeta entera se ve "clicable" (sombra y foto que crece): el
+                    // enlace la cubre completa para que el clic en la foto no se pierda.
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-secondary after:absolute after:inset-0 hover:text-primary"
                   >
                     {r.enlace} <Flecha />
                   </Link>
