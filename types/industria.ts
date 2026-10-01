@@ -1,4 +1,4 @@
-import type { Breadcrumb, FaqItem, GrupoVideos, ServiceCta, ServiceIntroBeneficios } from "@/types/servicio";
+import type { Breadcrumb, FaqItem, ServiceCta } from "@/types/servicio";
 
 /** Un servicio de DIAPSA enlazado desde una landing de industria. */
 export interface TecnicaEnlace {
@@ -6,35 +6,25 @@ export interface TecnicaEnlace {
   href: string;
 }
 
-/** Un equipo crítico del giro: qué le falla y con qué se vigila. */
-export interface EquipoIndustria {
-  nombre: string;
-  texto: string;
-  fallas: string[];
-  tecnicas: TecnicaEnlace[];
-}
-
-/** Una norma o criterio que aplica en el giro, con el servicio que ayuda a cumplirlo. */
-export interface NormaIndustria {
-  clave: string;
+/** Un punto del acordeón: título, una o dos frases y, si aplica, los servicios que lo resuelven. */
+export interface PuntoIndustria {
   titulo: string;
   texto: string;
-  enlace?: TecnicaEnlace;
+  enlaces?: TecnicaEnlace[];
+}
+
+/** Un bloque de beneficio al estilo Fracttal: una frase, un acordeón de tres puntos y una foto. */
+export interface BloqueIndustria {
+  titulo: string;
+  foto: { src: string; alt: string };
+  items: PuntoIndustria[];
 }
 
 /** Caso de éxito del giro, con cifras ya publicadas en /casos-exito. */
 export interface CasoIndustria {
   href: string;
   titulo: string;
-  texto: string;
   cifras: { valor: string; etiqueta: string }[];
-}
-
-/** Por dónde empezar: los pasos con los que DIAPSA arma el programa en ese giro. */
-export interface PasoIndustria {
-  titulo: string;
-  texto: string;
-  enlace?: TecnicaEnlace;
 }
 
 export interface Industria {
@@ -45,13 +35,11 @@ export interface Industria {
   seoTitle: string;
   seoDescription: string;
   certificacion: string;
-  intro: { titulo: string; texto: string };
-  introBeneficios: ServiceIntroBeneficios;
-  equipos: { titulo: string; texto: string; items: EquipoIndustria[] };
-  videos?: GrupoVideos[];
-  pasos: { titulo: string; texto: string; items: PasoIndustria[] };
+  /** Presentación corta junto al video de la industria (public/videos/industrias/<video>.mp4 y .jpg). */
+  intro: { titulo: string; texto: string; video: string; descripcionVideo: string };
+  bloques: BloqueIndustria[];
   caso?: CasoIndustria;
-  normas: { titulo: string; texto: string; items: NormaIndustria[] };
+  servicios: { titulo: string; items: { titulo: string; texto: string; href: string }[] };
   faq: FaqItem[];
   cta: ServiceCta;
 }
