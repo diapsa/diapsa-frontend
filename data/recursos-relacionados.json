@@ -723,5 +723,18 @@
       "titulo": "Análisis de Gases Disueltos en Línea",
       "resumen": "Los gases del aceite de tus transformadores críticos medidos cada hora, con alertas revisadas por especialistas."
     }
+  },
+  {
+    "articulo": {
+      "slug": "camaras-termicas-industriales-para-control-de-calidad-y-plc",
+      "titulo": "Control de calidad con cámaras térmicas",
+      "resumen": "Cada pieza medida en la línea y conectada al PLC.",
+      "portada": "/images/blog/camaras-termicas-calidad.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/camaras-termicas",
+      "titulo": "Cámaras Térmicas Fijas",
+      "resumen": "Vigilancia térmica continua para equipos críticos, con alertas por patrón revisadas por termógrafos."
+    }
   }
 ]
