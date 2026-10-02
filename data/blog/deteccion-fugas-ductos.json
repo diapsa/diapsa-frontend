@@ -1,0 +1,52 @@
+{
+  "slug": "sistemas-de-deteccion-de-fugas-en-ductos-tipos-y-cual-conviene",
+  "titulo": "Sistemas de detección de fugas en ductos: tipos y cuál conviene",
+  "extracto": "Una fuga en un ducto puede detectarse por lo que cambia en el flujo, por el sonido que hace, por la vibración o por la temperatura que deja. Cómo funciona cada sistema, qué tamaño de fuga alcanza a ver y cómo se combinan.",
+  "portada": "/images/blog/deteccion-fugas-ductos.webp",
+  "fecha": "2026-10-02T18:00:00.200000Z",
+  "seo": {
+    "titulo": "Sistemas de detección de fugas en ductos: tipos y cuál conviene",
+    "descripcion": "Tipos de sistemas de detección de fugas en ductos y gasoductos: balance de masa, ondas de presión, monitoreo acústico, fibra óptica DAS y DTS, e inspección en campo con cámaras acústicas y ópticas. Ventajas de cada uno y cómo se combinan."
+  },
+  "bloques": [
+    ["p", "Una fuga en un ducto no siempre es una ruptura espectacular. Muchas empiezan pequeñas, en una válvula, una brida o un punto debilitado, y crecen con el tiempo. Detectarlas pronto evita pérdidas de producto, riesgos para la gente y daños ambientales, y hay varias formas de hacerlo."],
+    ["p", "Cada sistema mira la fuga desde un ángulo distinto, y por eso los operadores suelen combinar más de uno."],
+
+    ["h2", "Por lo que cambia en el flujo"],
+    ["h3", "Balance de masa o de volumen"],
+    ["p", "Compara lo que entra con lo que sale del ducto, corrigiendo por presión y temperatura. Si sale menos de lo que entra, algo se está perdiendo. Es la base de muchos sistemas computacionales de monitoreo y cubre todo el ducto, pero tarda más en ver las fugas pequeñas y no siempre dice dónde están."],
+    ["h3", "Ondas de presión"],
+    ["p", "Una fuga repentina genera una caída de presión que viaja por el ducto en ambas direcciones. Con sensores en distintos puntos, el tiempo de llegada de esa onda permite ubicar la fuga. Funciona bien con fugas que aparecen de golpe."],
+
+    ["h2", "Por el sonido de la fuga"],
+    ["p", "El gas que escapa a presión por un orificio produce un sonido característico, sobre todo en ultrasonido. Un monitor acústico fijo junto a un pozo, un cabezal o una estación de válvulas lo escucha todo el día y reconoce esa huella con inteligencia artificial. Es muy sensible en las instalaciones donde se concentra el riesgo de fuga."],
+
+    ["h2", "Por la vibración y la temperatura a lo largo del trazo"],
+    ["h3", "Fibra óptica DAS"],
+    ["p", "Una fibra tendida junto al ducto funciona como un micrófono continuo de decenas de kilómetros. Además de excavaciones e intrusiones, puede detectar el ruido de una fuga y decir en qué punto del trazo está."],
+    ["h3", "Fibra óptica DTS"],
+    ["p", "Mide la temperatura a lo largo de la fibra. Una fuga puede cambiar la temperatura del suelo alrededor del ducto, por ejemplo por el enfriamiento del gas que se expande, y la DTS ubica ese cambio."],
+
+    ["h2", "Por inspección en campo"],
+    ["p", "Las cámaras acústicas y las cámaras ópticas de gas permiten ver la fuga en una inspección: muestran de dónde sale el sonido o la nube de gas. No vigilan todo el día, pero confirman y ubican con precisión lo que los sistemas en línea detectan, y revisan a detalle estaciones e instalaciones."],
+
+    ["h2", "Cómo elegir"],
+    ["lista", [
+      "Para todo el ducto y fugas grandes: balance de masa y ondas de presión, desde el sistema de control.",
+      "Para pozos, cabezales y estaciones de válvulas: monitoreo acústico fijo.",
+      "Para tramos largos con fibra tendida o por tender: DAS y DTS.",
+      "Para confirmar y ubicar con precisión: inspección con cámaras acústicas u ópticas.",
+      "Para prevenir el daño que causa muchas fugas: vigilancia del derecho de vía contra excavaciones."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Cuál es el mejor sistema de detección de fugas?"],
+    ["p", "No hay uno solo. Cada sistema ve un tamaño y un tipo de fuga distintos, y la combinación depende del producto, de la longitud del ducto, de sus instalaciones y de los tramos de riesgo."],
+    ["h3", "¿Un sistema acústico detecta fugas lejos del equipo?"],
+    ["p", "Un monitor acústico fijo está pensado para su entorno cercano, como un pozo o una estación. Para tramos largos se usa la fibra óptica, que escucha a lo largo de todo el trazo."],
+    ["h3", "¿La detección de fugas sustituye la inspección en campo?"],
+    ["p", "No. Los sistemas en línea avisan y ubican; la inspección en campo confirma, mide y revisa a detalle. Se complementan."],
+
+    ["nota", "Instalamos [monitoreo acústico de fugas y fibra óptica para ductos](/servicios/monitoreo-continuo/seguridad-de-ductos), y confirmamos cada hallazgo con [detección de fugas de gas](/servicios/deteccion-gas) en campo."]
+  ]
+}

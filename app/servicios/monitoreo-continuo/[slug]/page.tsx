@@ -37,6 +37,7 @@ const serviceSlugs = [
     "sensores-vibracion",
     "sensores-acusticos",
     "dga-en-linea",
+    "seguridad-de-ductos",
 ];
 
 // Generar parámetros estáticos para pre-renderizado

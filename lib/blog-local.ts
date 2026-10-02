@@ -48,6 +48,9 @@ import monitoreoTransformadores from "@/data/blog/monitoreo-transformadores.json
 import acetilenoTransformador from "@/data/blog/acetileno-transformador.json";
 import hidrogenoTransformador from "@/data/blog/hidrogeno-transformador.json";
 import cromatografiaTransformador from "@/data/blog/cromatografia-transformador.json";
+import monitoreoDuctos from "@/data/blog/monitoreo-ductos.json";
+import deteccionFugasDuctos from "@/data/blog/deteccion-fugas-ductos.json";
+import derechoDeVia from "@/data/blog/derecho-de-via.json";
 
 /**
  * Artículos del blog que viven en el sitio y no en el CMS (2026-09-29).
@@ -136,7 +139,7 @@ function aBlog(a: ArticuloLocal, i: number): Blog {
   };
 }
 
-export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba, matrizCriticidad, programaPredictivo, costoParo, mtbfMttr, kpiPredictivo, certificacionIso, codigoIso4406, dgaDuval, aceitePruebas, nom022Tierras, valorResistencia, caidaPotencial, nom029Arco, energiaIncidente, fronterasEtiqueta, curvaPF, tecnicasComplementan, fallaRodamientos, codigoDeRed, factorPotencia, armonicosThd, enLineaRutas, sensoresInalambricos, falsasAlarmas, cavitacionBombas, holguraMecanica, frecuenciasRodamientos, camaraFijaMano, incendiosCamaras, centrosDeDatos, descargasParciales, ruidoTransformador, monitoreoTransformadores, acetilenoTransformador, hidrogenoTransformador, cromatografiaTransformador] as ArticuloLocal[]).map(aBlog);
+export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba, matrizCriticidad, programaPredictivo, costoParo, mtbfMttr, kpiPredictivo, certificacionIso, codigoIso4406, dgaDuval, aceitePruebas, nom022Tierras, valorResistencia, caidaPotencial, nom029Arco, energiaIncidente, fronterasEtiqueta, curvaPF, tecnicasComplementan, fallaRodamientos, codigoDeRed, factorPotencia, armonicosThd, enLineaRutas, sensoresInalambricos, falsasAlarmas, cavitacionBombas, holguraMecanica, frecuenciasRodamientos, camaraFijaMano, incendiosCamaras, centrosDeDatos, descargasParciales, ruidoTransformador, monitoreoTransformadores, acetilenoTransformador, hidrogenoTransformador, cromatografiaTransformador, monitoreoDuctos, deteccionFugasDuctos, derechoDeVia] as ArticuloLocal[]).map(aBlog);
 
 export function getBlogLocal(slug: string): Blog | null {
   return BLOGS_LOCALES.find((b) => b.slug === slug) ?? null;

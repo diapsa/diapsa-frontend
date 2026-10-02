@@ -33,6 +33,7 @@ const fotosContinuo: Record<string, string> = {
     "/servicios/monitoreo-continuo/sensores-vibracion": "/images/servicios/sensores-vibracion/sensor-motor.webp",
     "/servicios/monitoreo-continuo/sensores-acusticos": "/images/servicios/sensores-acusticos/campo-00.webp",
     "/servicios/monitoreo-continuo/dga-en-linea": "/images/servicios/analisis-de-aceite/dga-transformador.webp",
+    "/servicios/monitoreo-continuo/seguridad-de-ductos": "/images/servicios/seguridad-de-ductos/centinela.webp",
 };
 const columnasServicios: ColumnaMenu[] = [
     {

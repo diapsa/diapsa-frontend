@@ -1,0 +1,49 @@
+{
+  "slug": "derecho-de-via-de-ductos-que-es-y-como-vigilarlo",
+  "titulo": "Derecho de vía de ductos: qué es, por qué importa y cómo vigilarlo",
+  "extracto": "El derecho de vía es la franja de terreno que acompaña a un ducto enterrado, y es donde empiezan la mayoría de los daños por terceros. Qué es, qué no se debe hacer en él, cómo se identifica y cómo se vigila en tramos remotos.",
+  "portada": "/images/blog/derecho-de-via.webp",
+  "fecha": "2026-10-02T18:00:00.100000Z",
+  "seo": {
+    "titulo": "Derecho de vía de ductos: qué es y cómo vigilarlo",
+    "descripcion": "Qué es el derecho de vía de un ducto o gasoducto, para qué sirven los postes marcadores, qué actividades ponen en riesgo el ducto y cómo se vigila el derecho de vía con centinelas, fibra óptica y patrullaje."
+  },
+  "bloques": [
+    ["p", "Un ducto enterrado no se ve, y justo por eso es vulnerable. La mayoría de los daños que sufre no vienen de adentro, sino de alguien que excava sin saber que está ahí, o sin respetarlo. La franja de terreno que lo protege se llama derecho de vía, y vigilarla es la primera línea de defensa del ducto."],
+
+    ["h2", "Qué es el derecho de vía"],
+    ["p", "Es la franja de terreno a lo largo del trazo del ducto que el operador tiene reservada para construirlo, operarlo, inspeccionarlo y darle mantenimiento. Su ancho depende del tipo de ducto, de lo que transporta y de lo que establezcan las normas aplicables y los acuerdos de cada tramo. Dentro de ella hay restricciones sobre lo que se puede construir o hacer."],
+
+    ["h2", "Cómo se identifica"],
+    ["p", "El trazo se marca con postes o señales a lo largo del recorrido, sobre todo en cruces con caminos, ríos y vías, y en cambios de dirección. Los postes indican que hay un ducto enterrado y, normalmente, a quién llamar antes de hacer cualquier trabajo. Por eso no deben moverse ni dañarse."],
+
+    ["h2", "Qué pone en riesgo al ducto"],
+    ["lista", [
+      "Excavaciones y obras con maquinaria sin coordinación con el operador.",
+      "Construcciones, cercas o plantaciones de raíz profunda sobre el trazo.",
+      "Paso de vehículos pesados o carga sobre el ducto en sitios no preparados.",
+      "Intrusiones y actividades no autorizadas, a veces con intención de dañar o tomar producto.",
+      "Quemas y almacenamiento de materiales sobre la franja."
+    ]],
+
+    ["h2", "Cómo se vigila"],
+    ["h3", "Patrullaje"],
+    ["p", "Recorridos periódicos a pie, en vehículo o aéreos. Ven mucho, pero solo en el momento en que pasan, y un tramo remoto puede quedar días sin revisión."],
+    ["h3", "Centinelas en los postes marcadores"],
+    ["p", "Equipos autónomos con energía solar que se montan sobre los postes que ya existen. Escuchan el suelo, su inteligencia artificial reconoce una excavación o una intrusión, y mandan la alerta con fotos y ubicación. Son ideales para los tramos de mayor riesgo."],
+    ["h3", "Fibra óptica"],
+    ["p", "Una fibra tendida junto al ducto detecta vibraciones a lo largo de decenas de kilómetros y ubica el punto del evento. Conviene en tramos largos, sobre todo si la fibra ya existe o se tiende durante la construcción."],
+    ["h3", "Comunicación con la comunidad"],
+    ["p", "Mucho daño se evita cuando quienes viven y trabajan cerca saben que hay un ducto y a quién avisar antes de excavar. La señalización y la relación con los vecinos son parte de la vigilancia."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Qué tan ancho es el derecho de vía?"],
+    ["p", "No hay una medida única: depende del ducto, de su diámetro y servicio, de las normas aplicables y de los acuerdos de cada tramo. El operador del ducto es quien la define en cada caso."],
+    ["h3", "¿Se puede sembrar o pasar sobre el derecho de vía?"],
+    ["p", "Muchas actividades agrícolas ligeras se permiten, pero las excavaciones, construcciones y el paso de maquinaria pesada deben coordinarse con el operador. Ante la duda, hay que llamar al número de los postes marcadores."],
+    ["h3", "¿Cómo se vigila un tramo sin luz ni personal?"],
+    ["p", "Con equipos autónomos de energía solar y comunicación celular, como los centinelas, que avisan solos cuando detectan un riesgo."],
+
+    ["nota", "Vigilamos el derecho de vía con centinelas y fibra óptica en proyectos de [seguridad de ductos](/servicios/monitoreo-continuo/seguridad-de-ductos), con alertas que llegan con fotos y ubicación."]
+  ]
+}
