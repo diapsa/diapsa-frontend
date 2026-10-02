@@ -37,8 +37,11 @@ const serviceSlugs = [
     "sensores-vibracion",
     "sensores-acusticos",
     "dga-en-linea",
-    "seguridad-de-ductos",
 ];
+
+// Solo las páginas de la lista: seguridad de ductos tiene su JSON en
+// data/servicios pero vive en /servicios/seguridad-de-ductos (2026-10-02).
+export const dynamicParams = false;
 
 // Generar parámetros estáticos para pre-renderizado
 export async function generateStaticParams() {

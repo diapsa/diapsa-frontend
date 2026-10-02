@@ -12,12 +12,8 @@
       "link": "/servicios"
     },
     {
-      "label": "Monitoreo Continuo",
-      "link": "/servicios/monitoreo-continuo"
-    },
-    {
       "label": "Seguridad de Ductos",
-      "link": "/servicios/monitoreo-continuo/seguridad-de-ductos"
+      "link": "/servicios/seguridad-de-ductos"
     }
   ],
   "header": {

@@ -86,12 +86,6 @@
         "href": "/servicios/monitoreo-continuo/dga-en-linea",
         "descripcion": "Gases del transformador medidos todo el día",
         "icono": "dga"
-      },
-      {
-        "label": "Seguridad de Ductos",
-        "href": "/servicios/monitoreo-continuo/seguridad-de-ductos",
-        "descripcion": "Excavaciones y fugas en el trazo, en línea",
-        "icono": "ductos"
       }
     ]
   },
@@ -112,6 +106,12 @@
     "href": "/servicios/deteccion-gas",
     "descripcion": "Cumplimiento PPCIEM y emisiones de metano",
     "icono": "gas"
+  },
+  {
+    "label": "Seguridad de Ductos",
+    "href": "/servicios/seguridad-de-ductos",
+    "descripcion": "Excavaciones y fugas en el trazo, en línea",
+    "icono": "ductos"
   },
   {
     "label": "Diagnóstico Situacional",

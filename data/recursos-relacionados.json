@@ -732,7 +732,7 @@
       "portada": "/images/blog/monitoreo-ductos.webp"
     },
     "servicio": {
-      "href": "/servicios/monitoreo-continuo/seguridad-de-ductos",
+      "href": "/servicios/seguridad-de-ductos",
       "titulo": "Seguridad de Ductos",
       "resumen": "Excavaciones, intrusiones y fugas en el trazo de tus ductos, detectadas en línea y con evidencia."
     }
@@ -745,7 +745,7 @@
       "portada": "/images/blog/deteccion-fugas-ductos.webp"
     },
     "servicio": {
-      "href": "/servicios/monitoreo-continuo/seguridad-de-ductos",
+      "href": "/servicios/seguridad-de-ductos",
       "titulo": "Seguridad de Ductos",
       "resumen": "Excavaciones, intrusiones y fugas en el trazo de tus ductos, detectadas en línea y con evidencia."
     }
@@ -758,7 +758,7 @@
       "portada": "/images/blog/derecho-de-via.webp"
     },
     "servicio": {
-      "href": "/servicios/monitoreo-continuo/seguridad-de-ductos",
+      "href": "/servicios/seguridad-de-ductos",
       "titulo": "Seguridad de Ductos",
       "resumen": "Excavaciones, intrusiones y fugas en el trazo de tus ductos, detectadas en línea y con evidencia."
     }
