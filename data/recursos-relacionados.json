@@ -726,10 +726,10 @@
   },
   {
     "articulo": {
-      "slug": "que-es-un-programa-ldar-y-como-se-hace",
-      "titulo": "Programa LDAR",
-      "resumen": "Qué es y cómo se hace, paso a paso.",
-      "portada": "/images/blog/programa-ldar.webp"
+      "slug": "importancia-del-ppciem-y-que-pasa-si-no-cumples",
+      "titulo": "Importancia del PPCIEM",
+      "resumen": "Qué exige y qué pasa si no se cumple.",
+      "portada": "/images/blog/ppciem-importancia.webp"
     },
     "servicio": {
       "href": "/servicios/deteccion-gas",
@@ -739,10 +739,10 @@
   },
   {
     "articulo": {
-      "slug": "camara-ogi-o-camara-acustica-para-detectar-fugas-de-gas",
-      "titulo": "Cámara OGI o acústica",
-      "resumen": "Cuál conviene para detectar fugas.",
-      "portada": "/images/blog/ogi-vs-acustica.webp"
+      "slug": "emisiones-fugitivas-de-metano-cuanto-afectan",
+      "titulo": "Emisiones fugitivas de metano",
+      "resumen": "Cuánto gas, dinero y clima se pierde.",
+      "portada": "/images/blog/emisiones-fugitivas-metano.webp"
     },
     "servicio": {
       "href": "/servicios/deteccion-gas",
@@ -752,10 +752,23 @@
   },
   {
     "articulo": {
-      "slug": "deteccion-de-fugas-de-gas-por-ultrasonido-como-funciona",
-      "titulo": "Fugas de gas por ultrasonido",
-      "resumen": "Cómo funciona y qué tan pequeña es la fuga.",
-      "portada": "/images/blog/fugas-gas-ultrasonido.webp"
+      "slug": "efecto-del-metano-en-el-medio-ambiente",
+      "titulo": "El metano y el medio ambiente",
+      "resumen": "Cuánto calienta y cuánto emite México.",
+      "portada": "/images/blog/metano-medio-ambiente.webp"
+    },
+    "servicio": {
+      "href": "/servicios/deteccion-gas",
+      "titulo": "Detección de Fugas de Gas",
+      "resumen": "Programa LDAR con cámara OGI o acústica, evidencia para el PPCIEM y monitoreo en línea con cámaras fijas y sensores de PPM."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "cuantas-empresas-cumplen-con-el-ppciem-en-mexico",
+      "titulo": "Quién cumple con el PPCIEM",
+      "resumen": "Lo que dicen los datos públicos.",
+      "portada": "/images/blog/ppciem-cumplimiento-mexico.webp"
     },
     "servicio": {
       "href": "/servicios/deteccion-gas",

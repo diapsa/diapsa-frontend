@@ -1,0 +1,50 @@
+{
+  "slug": "emisiones-fugitivas-de-metano-cuanto-afectan",
+  "titulo": "Emisiones fugitivas de metano: cuánto afectan a una planta y al clima",
+  "extracto": "Las emisiones fugitivas son el gas que se escapa sin que nadie lo decida: por bridas, válvulas, sellos y conexiones. Una sola parece poca cosa, pero sumadas cuestan dinero, aumentan el riesgo y pesan en el clima. Aquí hacemos las cuentas.",
+  "portada": "/images/blog/emisiones-fugitivas-metano.webp",
+  "fecha": "2026-10-02T22:00:00.300000Z",
+  "seo": {
+    "titulo": "Emisiones fugitivas de metano: cuánto afectan",
+    "descripcion": "Qué son las emisiones fugitivas de metano, de dónde salen, cuánto gas se pierde al año por una fuga pequeña, su equivalente en CO2, el riesgo que representan y cuánto se puede reducir con detección y reparación de fugas."
+  },
+  "bloques": [
+    ["p", "En una instalación de gas hay dos tipos de emisiones de metano. Las que se deciden, como un venteo o una purga, y las que nadie decide: las fugitivas. Son el gas que se escapa por una brida mal apretada, el empaque gastado de una válvula, el sello de un compresor o una conexión roscada."],
+    ["p", "Casi nunca se ven ni se oyen. Por eso duran meses, a veces años, hasta que alguien las busca con el equipo adecuado."],
+
+    ["h2", "De dónde salen"],
+    ["lista", [
+      "Bridas y uniones.",
+      "Empaques de válvulas.",
+      "Sellos de bombas y compresores.",
+      "Conexiones roscadas, instrumentos y tomas de muestra.",
+      "Líneas abiertas, reguladores y equipos de medición."
+    ]],
+    ["p", "Cada componente aporta poco, pero una estación de compresión o una planta de proceso tiene cientos o miles de ellos."],
+
+    ["h2", "Cuánto gas se pierde"],
+    ["p", "Tomemos un ejemplo sencillo. Una fuga de 0.72 litros por minuto, que nadie notaría en campo, suma unos 378 metros cúbicos de gas al año. Veinte fugas así son alrededor de 7,560 metros cúbicos al año. Es gas que la empresa pagó o produjo y que nunca llega a su destino."],
+    ["p", "En una instalación con más presión o con fugas más grandes, las cifras crecen rápido. Una sola fuga grande puede perder más que todas las pequeñas juntas, y por eso cada hallazgo se mide y se prioriza."],
+
+    ["h2", "Cuánto pesa en el clima"],
+    ["p", "Esos 378 metros cúbicos de metano pesan alrededor de un cuarto de tonelada. Como el metano calienta mucho más que el dióxido de carbono, el Panel Intergubernamental sobre el Cambio Climático le asigna un potencial de calentamiento de casi 28 veces el del CO2 en cien años y de más de 80 veces en veinte años. Con el valor a cien años, esa fuga pequeña equivale a unas 7 toneladas de CO2 al año. Las veinte fugas del ejemplo, a unas 140."],
+    ["p", "Son cálculos aproximados, pero muestran por qué la autoridad le pone tanta atención a las fugas: cerrarlas es de las formas más rápidas y baratas de reducir emisiones."],
+
+    ["h2", "El riesgo"],
+    ["p", "El metano es inflamable cuando se mezcla con el aire en una concentración de entre 5 y 15 por ciento. En exteriores, una fuga pequeña se dispersa. En un cuarto cerrado, un sótano o una caseta de medición, puede acumularse. Una fuga que no se atiende también tiende a crecer con el tiempo."],
+
+    ["h2", "Cuánto se puede reducir"],
+    ["p", "La Agencia Internacional de Energía estima que los combustibles fósiles emitieron alrededor de 124 millones de toneladas de metano en 2025. Calcula que cerca del 70 por ciento se puede evitar con tecnología que ya existe, y que más de 35 millones de toneladas se podrían evitar sin costo neto, porque el gas recuperado paga la inversión."],
+    ["p", "En una planta, la herramienta para lograrlo es el ciclo de detección y reparación: inventariar los componentes, revisarlos con cámara OGI o acústica, reparar lo que fuga, comprobar que quedó cerrado y repetir."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Las emisiones fugitivas cuentan en el PPCIEM?"],
+    ["p", "Sí. El programa de detección y reparación de fugas que exige el PPCIEM es precisamente para controlarlas."],
+    ["h3", "¿Cómo sé cuánto pierde mi instalación?"],
+    ["p", "Con una ronda completa de detección. Las cámaras acústicas estiman la tasa de cada fuga, y con eso se calcula la pérdida anual de toda la instalación."],
+    ["h3", "¿Vale la pena si no soy del sector hidrocarburos?"],
+    ["p", "Sí. Cualquier planta con gas natural o gas LP pierde dinero por sus fugas, aunque no tenga que presentar un PPCIEM."],
+
+    ["nota", "Encontramos y medimos las fugas de tu instalación con [cámara OGI y cámara acústica](/servicios/deteccion-gas), y las vigilamos en línea con cámaras fijas y sensores de PPM. Para saber qué pide la ASEA, revisa la [guía del PPCIEM](/servicios/deteccion-gas/guia-ppciem)."]
+  ]
+}
