@@ -726,6 +726,19 @@
   },
   {
     "articulo": {
+      "slug": "camaras-termicas-industriales-para-control-de-calidad-y-plc",
+      "titulo": "Control de calidad con cámaras térmicas",
+      "resumen": "Cada pieza medida en la línea y conectada al PLC.",
+      "portada": "/images/blog/camaras-termicas-calidad.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/camaras-termicas",
+      "titulo": "Cámaras Térmicas Fijas",
+      "resumen": "Vigilancia térmica continua para equipos críticos, con alertas por patrón revisadas por termógrafos."
+    }
+  },
+  {
+    "articulo": {
       "slug": "monitoreo-de-ductos-como-se-vigila-un-gasoducto-en-linea",
       "titulo": "Monitoreo de ductos",
       "resumen": "Cómo se vigila un gasoducto en línea.",
