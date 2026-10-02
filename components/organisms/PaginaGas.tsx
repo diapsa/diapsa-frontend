@@ -5,6 +5,7 @@ import { DibujoInstrumentos, DibujoMetodo, DibujoAuditoria, EvidenciaAcustica, E
 import ContactForm from "@/components/organisms/ContactForm";
 import EscenaLdar from "@/components/organisms/EscenaLdar";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
+import VideoBucle from "@/components/atoms/VideoBucle";
 import JsonLd, { createServiceSchema, createBreadcrumbSchema, createFaqSchema } from "@/components/atoms/JsonLd";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -243,6 +244,44 @@ export default function PaginaGas() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* Monitoreo continuo: cámaras fijas y sensores de PPM (Emiliano, 2026-10-02) */}
+      <section className="w-full bg-gray-50 py-14 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-3xl">
+            <Etiqueta>{datos.fijo.etiqueta}</Etiqueta>
+            <h2 className="mt-3 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">{datos.fijo.titulo}</h2>
+            <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">{datos.fijo.texto}</p>
+          </div>
+          <div className="mt-10 grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-10">
+            <div className="overflow-hidden rounded-2xl bg-white p-2 shadow-[0_30px_70px_-35px_rgba(13,26,56,0.35)] ring-1 ring-primary/10 sm:p-3">
+              <VideoBucle
+                className="block aspect-[16/10] w-full rounded-xl object-cover"
+                src={`${datos.fijo.video}.mp4`}
+                poster={`${datos.fijo.video}.jpg`}
+                descripcion={datos.fijo.descripcionVideo}
+              />
+            </div>
+            <div className="space-y-5">
+              {datos.fijo.items.map((t) => (
+                <article key={t.nombre} className="rounded-sm bg-white p-6 shadow-sm ring-1 ring-black/5">
+                  <h3 className="text-xl font-extrabold text-primary">{t.nombre}</h3>
+                  <p className="mt-2 text-justify text-sm leading-relaxed text-tertiary">{t.texto}</p>
+                  <ul className="mt-3 space-y-1.5">
+                    {t.puntos.map((p) => (
+                      <li key={p} className="flex items-start gap-3 text-sm font-semibold text-primary">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-secondary" aria-hidden="true" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+              <p className="border-l-4 border-secondary pl-4 text-justify text-sm leading-relaxed text-tertiary">{datos.fijo.integracion}</p>
+            </div>
+          </div>
         </div>
       </section>
 

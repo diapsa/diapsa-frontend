@@ -3,7 +3,7 @@ import PaginaGas from "@/components/organisms/PaginaGas";
 
 const OG_IMAGE = "/images/og-images/og-images-gas.jpg";
 const DESCRIPCION =
-    "Detección y reparación de fugas de metano (LDAR): detección con cámara OGI o cámara acústica con láser TDLAS, reparación, reinspección y evidencia para el PPCIEM ante la ASEA. Para el sector hidrocarburos y la industria.";
+    "Detección y reparación de fugas de metano (LDAR): detección con cámara OGI o cámara acústica con láser TDLAS, reparación, reinspección y evidencia para el PPCIEM ante la ASEA, más monitoreo continuo con cámaras acústicas fijas y sensores de PPM conectados a tu PLC. Para el sector hidrocarburos y la industria.";
 
 export const metadata: Metadata = {
     title: "Programa LDAR trimestral para el PPCIEM",
