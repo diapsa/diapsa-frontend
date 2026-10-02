@@ -3,10 +3,22 @@
   "slug": "seguridad-de-ductos",
   "type": "tecnologia",
   "breadcrumbs": [
-    { "label": "Inicio", "link": "/" },
-    { "label": "Servicios", "link": "/servicios" },
-    { "label": "Monitoreo Continuo", "link": "/servicios/monitoreo-continuo" },
-    { "label": "Seguridad de Ductos", "link": "/servicios/monitoreo-continuo/seguridad-de-ductos" }
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo Continuo",
+      "link": "/servicios/monitoreo-continuo"
+    },
+    {
+      "label": "Seguridad de Ductos",
+      "link": "/servicios/monitoreo-continuo/seguridad-de-ductos"
+    }
   ],
   "header": {
     "title": "Seguridad de Ductos",
@@ -41,84 +53,213 @@
     "title": "¿Qué tramo de tu ducto no tiene quién lo vigile?",
     "text": "Compártenos el trazo, los tramos que te preocupan y tus pozos o estaciones de válvulas, y te proponemos las capas de detección y cómo se monitorean.",
     "whatsappMessage": "Hola, quiero información sobre monitoreo y seguridad de ductos.",
-    "datos": ["Para ductos, pozos y válvulas", "IA que separa el ruido del riesgo", "Alertas revisadas por especialistas de DIAPSA"]
+    "datos": [
+      "Para ductos, pozos y válvulas",
+      "IA que separa el ruido del riesgo",
+      "Alertas revisadas por especialistas de DIAPSA"
+    ]
   },
-  "relatedProducts": { "title": "Productos Relacionados", "subtitle": "Equipos y soluciones complementarias", "items": [] },
+  "relatedProducts": {
+    "title": "Productos Relacionados",
+    "subtitle": "Equipos y soluciones complementarias",
+    "items": []
+  },
   "cobertura": {
     "etiqueta": "Dónde aplica",
     "titulo": "¿Dónde aplica y qué detecta?",
     "equiposTitulo": "Activos",
-    "equipos": ["Gasoductos de transporte", "Oleoductos y ductos de petrolíferos", "Pozos de gas y cabezales de pozo", "Estaciones de válvulas y de medición", "Corredores de infraestructura crítica"],
+    "equipos": [
+      "Gasoductos de transporte",
+      "Oleoductos y ductos de petrolíferos",
+      "Pozos de gas y cabezales de pozo",
+      "Estaciones de válvulas y de medición",
+      "Corredores de infraestructura crítica"
+    ],
     "fallasTitulo": "Qué detecta",
-    "fallas": ["Excavaciones con maquinaria", "Excavación manual", "Intrusiones de vehículos y personas", "Fugas en pozos, cabezales y válvulas", "Vibraciones anormales a lo largo del trazo", "Cambios de temperatura en el trazo"],
+    "fallas": [
+      "Excavaciones con maquinaria",
+      "Excavación manual",
+      "Intrusiones de vehículos y personas",
+      "Fugas en pozos, cabezales y válvulas",
+      "Vibraciones anormales a lo largo del trazo",
+      "Cambios de temperatura en el trazo"
+    ],
     "fotos": []
   },
   "certificacion": "Para ductos, pozos y estaciones de válvulas · IA en el equipo · Alertas con fotos y ubicación",
-  "diagramas": ["flujo-servicio"],
+  "diagramas": [
+    "flujo-servicio"
+  ],
   "flujoEncabezado": {
     "titulo": "Del trazo a la alerta, en cinco pasos",
     "texto": "No vendemos sensores: vendemos enterarte a tiempo de lo que pasa en tu derecho de vía. Así se arma el proyecto."
   },
   "flujo": [
-    { "titulo": "Trazo y riesgos", "texto": "Revisamos contigo el trazo y marcamos los tramos de riesgo: cruces con caminos y obras, tramos remotos, pozos, estaciones de válvulas y zonas con antecedentes." },
-    { "titulo": "Diseño de capas", "texto": "Para cada tramo, la capa que conviene: centinelas en los postes marcadores, monitores acústicos en pozos y válvulas, o fibra óptica a lo largo del trazo." },
-    { "titulo": "Instalación", "texto": "Los centinelas se fijan sobre los postes marcadores existentes, sin excavar y con energía solar; los monitores, junto a las válvulas; la fibra, con su equipo de interrogación." },
-    { "titulo": "La IA aprende", "texto": "Con los primeros días de datos, la IA aprende cómo vibra y cómo suena cada tramo, para separar el viento, la lluvia o el tráfico lejano de una excavación o una fuga." },
-    { "titulo": "Vigilancia y aviso", "texto": "La alerta llega con la ubicación, las fotos y qué hacer: revisada por un especialista de DIAPSA o directo a tu centro de control." }
+    {
+      "titulo": "Trazo y riesgos",
+      "texto": "Revisamos contigo el trazo y marcamos los tramos de riesgo: cruces con caminos y obras, tramos remotos, pozos, estaciones de válvulas y zonas con antecedentes."
+    },
+    {
+      "titulo": "Diseño de capas",
+      "texto": "Para cada tramo, la capa que conviene: centinelas en los postes marcadores, monitores acústicos en pozos y válvulas, o fibra óptica a lo largo del trazo."
+    },
+    {
+      "titulo": "Instalación",
+      "texto": "Los centinelas se fijan sobre los postes marcadores existentes, sin excavar y con energía solar; los monitores, junto a las válvulas; la fibra, con su equipo de interrogación."
+    },
+    {
+      "titulo": "La IA aprende",
+      "texto": "Con los primeros días de datos, la IA aprende cómo vibra y cómo suena cada tramo, para separar el viento, la lluvia o el tráfico lejano de una excavación o una fuga."
+    },
+    {
+      "titulo": "Vigilancia y aviso",
+      "texto": "La alerta llega con la ubicación, las fotos y qué hacer: revisada por un especialista de DIAPSA o directo a tu centro de control."
+    }
   ],
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "La alerta llega así: qué es, dónde y qué hacer",
     "descripcion": "No una señal para interpretar. La alerta trae el punto del trazo, qué reconoció la IA, las fotos y la acción. Este es un ejemplo simulado.",
-    "contenido": ["Ubicación en el trazo y distancia al ducto", "Qué reconoció la IA, con fotos y video", "Qué hacer, en orden", "Historial de eventos de cada tramo"],
+    "contenido": [
+      "Ubicación en el trazo y distancia al ducto",
+      "Qué reconoció la IA, con fotos y video",
+      "Qué hacer, en orden",
+      "Historial de eventos de cada tramo"
+    ],
     "alerta": {
       "hora": "02:41",
       "origen": "DIAPSA · Alerta de ducto",
       "equipo": "Centinela km 34 · derecho de vía",
-      "estado": { "clave": "alarma", "etiqueta": "Crítico" },
-      "tendencia": [4, 5, 4, 4, 5, 4, 6, 9, 15, 24, 31, 36, 38],
+      "estado": {
+        "clave": "alarma",
+        "etiqueta": "Crítico"
+      },
+      "tendencia": [
+        4,
+        5,
+        4,
+        4,
+        5,
+        4,
+        6,
+        9,
+        15,
+        24,
+        31,
+        36,
+        38
+      ],
       "que": "La IA reconoció vibración de maquinaria excavando a unos 40 m del ducto desde las 02:37. Las cámaras confirman una excavadora trabajando dentro del derecho de vía.",
-      "acciones": ["Enviar a la cuadrilla de vigilancia al km 34.", "Avisar al centro de control y a seguridad física.", "Guardar las fotos y el video como evidencia del evento."],
+      "acciones": [
+        "Enviar a la cuadrilla de vigilancia al km 34.",
+        "Avisar al centro de control y a seguridad física.",
+        "Guardar las fotos y el video como evidencia del evento."
+      ],
       "firma": "Revisada por un especialista de DIAPSA",
       "insignia": "IA",
       "nota": "Ejemplo simulado: el ducto, el kilómetro y la hora no corresponden a ningún cliente."
     }
   },
   "faq": [
-    { "question": "¿Qué es el monitoreo de ductos?", "answer": "Es vigilar en línea lo que pasa a lo largo de un ducto y en sus instalaciones: excavaciones e intrusiones en el derecho de vía, fugas en pozos y estaciones de válvulas, y vibraciones o cambios de temperatura a lo largo del trazo. Se hace con equipos que se quedan en el campo y avisan solos, en lugar de depender solo del patrullaje." },
-    { "question": "¿Cómo funciona el centinela de ductos?", "answer": "Se fija sobre el poste marcador del ducto y escucha el suelo con un geófono. Su IA distingue la vibración de una excavadora o de una excavación manual del ruido normal del entorno, y cuando detecta un riesgo enciende sus dos cámaras, toma fotos y video y manda la alerta con la ubicación por la red celular. Funciona con energía solar y batería, sin red eléctrica." },
-    { "question": "¿Cómo se detectan las fugas en pozos y válvulas?", "answer": "Con un monitor acústico que se instala junto al cabezal de pozo o la válvula. Escucha desde el rango audible hasta el ultrasonido y reconoce, con IA en el mismo equipo, la huella acústica de una fuga de gas a presión. Las alertas salen por la red o por Modbus TCP hacia tu sistema de control." },
-    { "question": "¿Para qué sirve la fibra óptica DAS y DTS?", "answer": "Convierte una fibra óptica tendida junto al ducto en un sensor continuo de decenas de kilómetros. La DAS detecta vibraciones a lo largo del trazo, como excavaciones, vehículos o pasos, y dice en qué punto ocurren. La DTS mide la temperatura en toda la fibra y sirve para detectar cambios térmicos anormales." },
-    { "question": "¿Hay que excavar o llevar energía para instalarlo?", "answer": "Para los centinelas, no: se montan sobre los postes marcadores que ya existen y trabajan con su panel solar. Los monitores de pozos y válvulas se instalan en la estación. La fibra óptica se aprovecha si ya está tendida junto al ducto o se planea en la obra." },
-    { "question": "¿No darán falsas alarmas el viento, la lluvia o el tráfico?", "answer": "Esa es la razón de la IA: aprende cómo vibra y cómo suena cada tramo en condiciones normales y separa esos ruidos de una excavación o una fuga. Además, las fotos permiten confirmar cada evento antes de mover a la cuadrilla." },
-    { "question": "¿Quién recibe las alertas?", "answer": "Tú decides. Un especialista de DIAPSA puede revisar cada alerta y avisarte con la evidencia, o las alertas pueden llegar directo a tu centro de control o a tu equipo de seguridad. También se pueden tener las dos." },
-    { "question": "¿Qué necesito para cotizar?", "answer": "El trazo del ducto o los tramos que te preocupan, la ubicación de pozos y estaciones de válvulas, y si ya hay fibra óptica tendida. Con eso proponemos las capas de detección y cuántos equipos hacen falta." }
+    {
+      "question": "¿Qué es el monitoreo de ductos?",
+      "answer": "Es vigilar en línea lo que pasa a lo largo de un ducto y en sus instalaciones: excavaciones e intrusiones en el derecho de vía, fugas en pozos y estaciones de válvulas, y vibraciones o cambios de temperatura a lo largo del trazo. Se hace con equipos que se quedan en el campo y avisan solos, en lugar de depender solo del patrullaje."
+    },
+    {
+      "question": "¿Cómo funciona el centinela de ductos?",
+      "answer": "Se fija sobre el poste marcador del ducto y escucha el suelo con un geófono. Su IA distingue la vibración de una excavadora o de una excavación manual del ruido normal del entorno, y cuando detecta un riesgo enciende sus dos cámaras, toma fotos y video y manda la alerta con la ubicación por la red celular. Funciona con energía solar y batería, sin red eléctrica."
+    },
+    {
+      "question": "¿Cómo se detectan las fugas en pozos y válvulas?",
+      "answer": "Con un monitor acústico que se instala junto al cabezal de pozo o la válvula. Escucha desde el rango audible hasta el ultrasonido y reconoce, con IA en el mismo equipo, la huella acústica de una fuga de gas a presión. Las alertas salen por la red o por Modbus TCP hacia tu sistema de control."
+    },
+    {
+      "question": "¿Para qué sirve la fibra óptica DAS y DTS?",
+      "answer": "Convierte una fibra óptica tendida junto al ducto en un sensor continuo de decenas de kilómetros. La DAS detecta vibraciones a lo largo del trazo, como excavaciones, vehículos o pasos, y dice en qué punto ocurren. La DTS mide la temperatura en toda la fibra y sirve para detectar cambios térmicos anormales."
+    },
+    {
+      "question": "¿Hay que excavar o llevar energía para instalarlo?",
+      "answer": "Para los centinelas, no: se montan sobre los postes marcadores que ya existen y trabajan con su panel solar. Los monitores de pozos y válvulas se instalan en la estación. La fibra óptica se aprovecha si ya está tendida junto al ducto o se planea en la obra."
+    },
+    {
+      "question": "¿No darán falsas alarmas el viento, la lluvia o el tráfico?",
+      "answer": "Esa es la razón de la IA: aprende cómo vibra y cómo suena cada tramo en condiciones normales y separa esos ruidos de una excavación o una fuga. Además, las fotos permiten confirmar cada evento antes de mover a la cuadrilla."
+    },
+    {
+      "question": "¿Quién recibe las alertas?",
+      "answer": "Tú decides. Un especialista de DIAPSA puede revisar cada alerta y avisarte con la evidencia, o las alertas pueden llegar directo a tu centro de control o a tu equipo de seguridad. También se pueden tener las dos."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "El trazo del ducto o los tramos que te preocupan, la ubicación de pozos y estaciones de válvulas, y si ya hay fibra óptica tendida. Con eso proponemos las capas de detección y cuántos equipos hacen falta."
+    }
   ],
   "mostrarClientes": true,
   "introBeneficios": {
     "beneficios": [
-      { "icono": "paro", "titulo": "Antes del daño", "texto": "La excavación se detecta cuando empieza." },
-      { "icono": "engrane", "titulo": "IA en el equipo", "texto": "Separa el ruido del entorno del riesgo real." },
-      { "icono": "documento", "titulo": "Evidencia al instante", "texto": "Fotos, video y ubicación en cada alerta." },
-      { "icono": "rayo", "titulo": "Sin red eléctrica", "texto": "Solar, con batería y comunicación 4G." }
+      {
+        "icono": "paro",
+        "titulo": "Antes del daño",
+        "texto": "La excavación se detecta cuando empieza."
+      },
+      {
+        "icono": "engrane",
+        "titulo": "IA en el equipo",
+        "texto": "Separa el ruido del entorno del riesgo real."
+      },
+      {
+        "icono": "documento",
+        "titulo": "Evidencia al instante",
+        "texto": "Fotos, video y ubicación en cada alerta."
+      },
+      {
+        "icono": "rayo",
+        "titulo": "Sin red eléctrica",
+        "texto": "Solar, con batería y comunicación 4G."
+      }
     ],
     "modalidades": [
-      { "titulo": "Derecho de vía", "texto": "Centinelas y fibra DAS contra excavaciones e intrusiones." },
-      { "titulo": "Pozos y estaciones de válvulas", "texto": "Monitoreo acústico de fugas las 24 horas." }
+      {
+        "titulo": "Derecho de vía",
+        "texto": "Centinelas y fibra DAS contra excavaciones e intrusiones."
+      },
+      {
+        "titulo": "Pozos y estaciones de válvulas",
+        "texto": "Monitoreo acústico de fugas las 24 horas."
+      }
     ],
     "fotos": [
-      { "src": "/images/servicios/seguridad-de-ductos/centinela.webp", "alt": "Centinela con panel solar y dos cámaras sobre un poste marcador de un ducto" },
-      { "src": "/images/servicios/seguridad-de-ductos/excavacion.webp", "alt": "Excavadora trabajando cerca del derecho de vía de un ducto" },
-      { "src": "/images/servicios/seguridad-de-ductos/valvulas.webp", "alt": "Cabezal de pozo y válvulas de gas con un monitor acústico" },
-      { "src": "/images/servicios/seguridad-de-ductos/fibra.webp", "alt": "Fibra óptica tendida junto a un ducto para detección distribuida" },
-      { "src": "/images/servicios/seguridad-de-ductos/control.webp", "alt": "Centro de control con el trazo de un ducto y una alerta en el mapa" }
+      {
+        "src": "/images/servicios/seguridad-de-ductos/centinela.webp",
+        "alt": "Centinela con panel solar y dos cámaras sobre un poste marcador de un ducto"
+      },
+      {
+        "src": "/images/servicios/seguridad-de-ductos/excavacion.webp",
+        "alt": "Excavadora trabajando cerca del derecho de vía de un ducto"
+      },
+      {
+        "src": "/images/servicios/seguridad-de-ductos/valvulas.webp",
+        "alt": "Cabezal de pozo y válvulas de gas con un monitor acústico"
+      },
+      {
+        "src": "/images/servicios/seguridad-de-ductos/fibra.webp",
+        "alt": "Fibra óptica tendida junto a un ducto para detección distribuida"
+      },
+      {
+        "src": "/images/servicios/seguridad-de-ductos/control.webp",
+        "alt": "Centro de control con el trazo de un ducto y una alerta en el mapa"
+      }
     ],
     "idap": {
       "titulo": "Tus alertas viven en IDAP",
-      "texto": "Cada evento del trazo queda en IDAP con su ubicación, sus fotos y su seguimiento, junto con el monitoreo de tus estaciones y equipos. Ahí se ve qué tramos concentran los eventos y qué se hizo con cada uno.",
-      "puntos": ["Eventos por tramo y por kilómetro", "Fotos y video de cada alerta", "Seguimiento hasta cerrar el evento"],
-      "video": "/videos/idap/idap-aviso",
-      "descripcionVideo": "Un aviso en IDAP: tendencia, diagnóstico y acción recomendada",
+      "texto": "En IDAP ves el mapa de tu ducto con cada tramo pintado según su integridad, y encima cada evento: la fuga en una estación, la excavación en el derecho de vía, con su ubicación, sus fotos y su seguimiento hasta cerrarlo.",
+      "puntos": [
+        "Mapa del trazo con la integridad de cada tramo",
+        "Fugas y excavaciones ubicadas por kilómetro",
+        "Fotos, video y seguimiento de cada evento"
+      ],
+      "video": "/videos/idap/idap-ducto",
+      "descripcionVideo": "IDAP para ductos: el mapa de un gasoducto de 120 km con la integridad de cada tramo, una excavación en el km 34 y una fuga en la estación del km 58",
       "enlace": "/servicios/idap"
     }
   },
@@ -134,7 +275,13 @@
           "texto": "Marcamos los tramos de riesgo, elegimos la capa para cada uno, instalamos sin excavar, la IA aprende el entorno y la alerta llega con evidencia y qué hacer.",
           "video": "/videos/seguridad-de-ductos/ducto-proceso",
           "descripcion": "Los cinco pasos de un proyecto de seguridad de ductos: trazo y riesgos, diseño de capas, instalación del centinela, la IA que separa el ruido de una excavación, y la alerta",
-          "pasos": ["Trazo y riesgos", "Diseño de capas", "Instalación", "La IA aprende", "Vigilancia y aviso"]
+          "pasos": [
+            "Trazo y riesgos",
+            "Diseño de capas",
+            "Instalación",
+            "La IA aprende",
+            "Vigilancia y aviso"
+          ]
         }
       ]
     },
@@ -159,8 +306,27 @@
         }
       ],
       "listas": [
-        { "titulo": "Activos", "items": ["Gasoductos de transporte", "Oleoductos y ductos de petrolíferos", "Pozos de gas y cabezales de pozo", "Estaciones de válvulas y de medición", "Corredores de infraestructura crítica"] },
-        { "titulo": "Qué detecta", "items": ["Excavaciones con maquinaria", "Excavación manual", "Intrusiones de vehículos y personas", "Fugas en pozos, cabezales y válvulas", "Vibraciones anormales a lo largo del trazo", "Cambios de temperatura en el trazo"] }
+        {
+          "titulo": "Activos",
+          "items": [
+            "Gasoductos de transporte",
+            "Oleoductos y ductos de petrolíferos",
+            "Pozos de gas y cabezales de pozo",
+            "Estaciones de válvulas y de medición",
+            "Corredores de infraestructura crítica"
+          ]
+        },
+        {
+          "titulo": "Qué detecta",
+          "items": [
+            "Excavaciones con maquinaria",
+            "Excavación manual",
+            "Intrusiones de vehículos y personas",
+            "Fugas en pozos, cabezales y válvulas",
+            "Vibraciones anormales a lo largo del trazo",
+            "Cambios de temperatura en el trazo"
+          ]
+        }
       ]
     }
   ],
