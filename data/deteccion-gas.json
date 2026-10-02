@@ -9,7 +9,11 @@
       "Cámara acústica con TDLAS",
       "LDAR trimestral",
       "Monitoreo en línea"
-    ]
+    ],
+    "video": {
+      "src": "/videos/deteccion-gas/gas-hero",
+      "descripcion": "Técnico revisando con una cámara acústica una brida en una estación de compresión de gas, de noche"
+    }
   },
   "aparte": {
     "etiqueta": "Un servicio aparte",
@@ -71,7 +75,11 @@
           "Muestra la nube de gas y hacia dónde se mueve",
           "Recorre la instalación completa en poco tiempo",
           "Cada hallazgo queda grabado en video"
-        ]
+        ],
+        "video": {
+          "src": "/videos/deteccion-gas/gas-ogi",
+          "descripcion": "Vista de una cámara OGI: la nube de gas sale de una brida y se mueve con el viento"
+        }
       },
       {
         "verbo": "Método 2",
@@ -82,7 +90,11 @@
           "Ubica la fuga a distancia, sin tocar el equipo",
           "Marca en pantalla el punto exacto de la fuga",
           "Su láser distingue el metano del aire o el vapor"
-        ]
+        ],
+        "foto": {
+          "src": "/images/deteccion-gas/campo/pantalla-gas-natural.webp",
+          "alt": "Pantalla de la cámara acústica con la fuga marcada en una línea de gas natural"
+        }
       }
     ],
     "texto": "La regulación permite detectar con cámara OGI o con cámara acústica con láser TDLAS. Usamos el que mejor se adapta a cada instalación.",
