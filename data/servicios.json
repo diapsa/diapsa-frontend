@@ -108,6 +108,12 @@
     "icono": "gas"
   },
   {
+    "label": "Monitoreo de Fugas en Línea",
+    "href": "/servicios/deteccion-gas/monitoreo-en-linea",
+    "descripcion": "Cámaras fijas y sensores de PPM las 24 horas",
+    "icono": "gas"
+  },
+  {
     "label": "Diagnóstico Situacional",
     "href": "/servicios/diagnostico-situacional",
     "descripcion": "Referencia objetiva del estado de tus activos",

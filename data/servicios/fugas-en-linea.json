@@ -1,0 +1,166 @@
+{
+  "id": "fugas-en-linea",
+  "slug": "fugas-en-linea",
+  "type": "tecnologia",
+  "breadcrumbs": [
+    { "label": "Inicio", "link": "/" },
+    { "label": "Servicios", "link": "/servicios" },
+    { "label": "Detección de Gas", "link": "/servicios/deteccion-gas" },
+    { "label": "Monitoreo de Fugas en Línea", "link": "/servicios/deteccion-gas/monitoreo-en-linea" }
+  ],
+  "header": {
+    "title": "Monitoreo de Fugas en Línea",
+    "subtitle": "Cámaras fijas y sensores de PPM que vigilan tus compresores, estaciones y cuartos de gas las 24 horas, conectados a tu PLC",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoTitle": "Monitoreo de fugas de gas en línea: cámaras fijas y sensores de PPM",
+  "seoDescription": "Monitoreo de fugas de gas en línea las 24 horas: cámaras acústicas fijas, cámaras con láser de metano y sensores de gas en PPM para compresores, estaciones de regulación y cuartos cerrados, conectados a tu PLC o SCADA para ventilar o parar el equipo. Complementa el programa LDAR y el PPCIEM.",
+  "content": {
+    "title": "Hay fugas que no pueden esperar a la siguiente inspección",
+    "subtitle": "El programa LDAR revisa cada trimestre. Pero en un compresor, una estación de regulación o un cuarto cerrado, una fuga que aparece mañana puede acumularse o crecer mucho antes de la siguiente ronda. Ahí se instalan cámaras fijas y sensores de PPM que vigilan sin parar y avisan al momento.",
+    "image": "/images/deteccion-gas/en-linea/compresion.webp",
+    "items": [
+      {
+        "id": "donde-aplica",
+        "title": "Dónde se aplica",
+        "content": "Estaciones de compresión, estaciones de regulación y medición, patines de proceso, cuartos de compresores y casetas cerradas, y cualquier zona donde el gas pueda fugar o acumularse junto a equipo crítico o personal."
+      },
+      {
+        "id": "que-incluye",
+        "title": "Qué incluye el proyecto",
+        "content": "Revisión de las zonas de riesgo, diseño de qué equipo va en cada punto, instalación con equipos para área clasificada, configuración de límites de alarma, conexión al PLC o SCADA y acompañamiento en la interpretación de cada alerta."
+      },
+      {
+        "id": "beneficios",
+        "title": "Beneficios",
+        "content": "La fuga se detecta cuando aparece y no en la siguiente ronda. La alarma puede encender la ventilación o parar el equipo en segundos, y cada evento queda registrado junto a tu programa LDAR."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Qué zona de tu instalación no puede esperar a la siguiente ronda?",
+    "text": "Cuéntanos qué equipos y cuartos te preocupan y con qué sistema de control trabajas. Te proponemos las cámaras y sensores que hacen falta y cómo se conectan.",
+    "whatsappMessage": "Hola, quiero información sobre monitoreo de fugas de gas en línea con cámaras fijas y sensores de PPM.",
+    "datos": ["Cámaras fijas y sensores de PPM", "Conexión a tu PLC o SCADA", "Alertas revisadas por especialistas de DIAPSA"]
+  },
+  "relatedProducts": { "title": "Productos Relacionados", "subtitle": "Equipos y soluciones complementarias", "items": [] },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué detecta?",
+    "equiposTitulo": "Zonas",
+    "equipos": ["Estaciones de compresión", "Estaciones de regulación y medición", "Patines de proceso", "Cuartos de compresores y casetas", "Terminales y áreas de carga"],
+    "fallasTitulo": "Qué detecta",
+    "fallas": ["Fugas en bridas, válvulas y sellos", "Fugas en compresores y reguladores", "Gas acumulado en cuartos cerrados", "Concentraciones sobre el límite de alarma"],
+    "fotos": []
+  },
+  "certificacion": "Cámaras fijas y sensores de PPM · Conexión a PLC y SCADA · Complemento del programa LDAR",
+  "diagramas": ["flujo-servicio"],
+  "flujoEncabezado": {
+    "titulo": "De la zona de riesgo a la alerta, en cinco pasos",
+    "texto": "No vendemos detectores: vendemos enterarte al momento de que algo está fugando. Así se arma el proyecto."
+  },
+  "flujo": [
+    { "titulo": "Zonas de riesgo", "texto": "Revisamos contigo dónde puede fugar y acumularse el gas: compresores, estaciones, cuartos cerrados y los puntos con fugas repetidas en tu programa LDAR." },
+    { "titulo": "Diseño", "texto": "Para cada zona, el equipo que conviene: cámara acústica fija para equipos abiertos, cámara con láser para medir el metano a distancia, o sensor de PPM donde el gas se acumula." },
+    { "titulo": "Instalación", "texto": "Equipos para área clasificada, con vista directa a cada punto o colocados donde el gas se junta, y conectados al control de la planta." },
+    { "titulo": "Límites", "texto": "Se fija el nivel normal de cada zona y los límites de alarma, para avisar por una fuga real y no por una lectura aislada." },
+    { "titulo": "Vigilancia y aviso", "texto": "La alerta llega con el punto, la lectura y qué hacer, y la señal al PLC puede encender la ventilación o parar el equipo." }
+  ],
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "La alerta llega así: dónde, cuánto y qué hacer",
+    "descripcion": "No una lectura suelta. La alerta trae el punto de la fuga, la concentración y la acción. Este es un ejemplo simulado.",
+    "contenido": ["Punto de la fuga en la imagen de la cámara", "Concentración del sensor y su tendencia", "Qué hacer, en orden", "Historial de cada zona junto al programa LDAR"],
+    "alerta": {
+      "hora": "04:06",
+      "origen": "DIAPSA · Alerta de fuga",
+      "equipo": "Estación de regulación · brida de entrada",
+      "estado": { "clave": "alarma", "etiqueta": "Crítico" },
+      "tendencia": [12, 14, 13, 12, 15, 14, 60, 180, 320, 480, 610, 760, 850],
+      "que": "La cámara acústica fija ubica una fuga en la brida de entrada y el sensor de PPM de la caseta subió de 15 a 850 ppm en 20 minutos. La ventilación se encendió por la señal al PLC.",
+      "acciones": ["Aislar la línea de entrada.", "Cambiar la junta de la brida.", "Confirmar con cámara OGI o acústica después de la reparación."],
+      "firma": "Revisada por un especialista de DIAPSA",
+      "insignia": "PPM",
+      "nota": "Ejemplo simulado: la instalación, las lecturas y la hora no corresponden a ningún cliente."
+    }
+  },
+  "faq": [
+    { "question": "¿Qué es el monitoreo de fugas en línea?", "answer": "Es vigilar las fugas de gas todo el día con equipos fijos, en lugar de solo en las inspecciones. Se usan cámaras acústicas fijas, que ven y ubican la fuga en su imagen, y sensores de PPM, que miden la concentración de gas en el aire. Cuando algo pasa del límite, avisan al momento y pueden mandar la señal a tu sistema de control." },
+    { "question": "¿Qué es un sensor de PPM?", "answer": "Es un detector fijo que mide la concentración de un gas en el aire en partes por millón. Se coloca donde el gas se puede acumular, como cuartos de compresores o casetas, y cuando la concentración pasa del límite configurado da la alarma y manda la señal al PLC." },
+    { "question": "¿Cuándo conviene una cámara fija y cuándo un sensor de PPM?", "answer": "La cámara fija conviene en equipos abiertos, como compresores, patines o estaciones al aire libre, porque ve la fuga y dice exactamente dónde está. El sensor de PPM conviene donde el gas se acumula, como cuartos cerrados o casetas, porque mide cuánto gas hay en el aire. En muchas instalaciones se usan los dos." },
+    { "question": "¿Se conectan a mi PLC o SCADA?", "answer": "Sí. Las alarmas pueden llegar por salidas de relé, por protocolos industriales como Modbus o por la red de la planta, para encender la ventilación, cerrar una válvula o parar el equipo. La conexión se define en el diseño según tu sistema de control." },
+    { "question": "¿Sustituye al programa LDAR?", "answer": "No. El programa LDAR revisa cada componente de la instalación con cámara OGI o acústica y deja la evidencia que pide la ASEA. El monitoreo en línea vigila las zonas críticas entre una inspección y otra. Se complementan, y los eventos del monitoreo se registran junto al programa." },
+    { "question": "¿Los equipos sirven en áreas clasificadas?", "answer": "Sí, se eligen equipos con la clasificación que pida cada zona, como versiones a prueba de explosión. Lo definimos en el diseño junto con tu área de seguridad." },
+    { "question": "¿Qué necesito para cotizar?", "answer": "La lista de zonas o equipos que te preocupan, fotos de cómo están, si son abiertos o cerrados, y con qué sistema de control trabajas. Con eso proponemos qué equipo va en cada punto y cómo se conecta." }
+  ],
+  "mostrarClientes": true,
+  "introBeneficios": {
+    "beneficios": [
+      { "icono": "paro", "titulo": "La fuga, al momento", "texto": "No en la siguiente ronda trimestral." },
+      { "icono": "aire", "titulo": "Ventila o para solo", "texto": "La señal llega directo a tu PLC." },
+      { "icono": "documento", "titulo": "Evidencia de cada evento", "texto": "Punto, lectura y tendencia registrados." },
+      { "icono": "fuego", "titulo": "Para áreas clasificadas", "texto": "Versiones a prueba de explosión." }
+    ],
+    "modalidades": [
+      { "titulo": "Cámaras fijas", "texto": "Ven y ubican la fuga en equipos abiertos." },
+      { "titulo": "Sensores de PPM", "texto": "Miden el gas acumulado en cuartos y casetas." }
+    ],
+    "fotos": [
+      { "src": "/images/deteccion-gas/en-linea/compresion.webp", "alt": "Cámara acústica fija vigilando una estación de compresión de gas" },
+      { "src": "/images/deteccion-gas/en-linea/sensor-cuarto.webp", "alt": "Sensor de gas fijo en un cuarto de compresores con su ventilador" },
+      { "src": "/images/deteccion-gas/en-linea/regulacion.webp", "alt": "Estación de regulación con cámara fija y detector de gas" },
+      { "src": "/images/deteccion-gas/campo/pantalla-gas-natural.webp", "alt": "Fuga localizada en una línea de gas natural, vista en el equipo de detección" }
+    ],
+    "idap": {
+      "titulo": "Tus fugas viven en IDAP",
+      "texto": "Cada zona vigilada guarda su historial de concentración y cada alerta su imagen en IDAP, junto con el programa LDAR y las demás técnicas de la instalación. Ahí se ve qué zonas fugan más y qué se hizo con cada evento.",
+      "puntos": ["Historial de cada zona", "Alertas con punto y lectura", "Junto al programa LDAR"],
+      "video": "/videos/idap/idap-aviso",
+      "descripcionVideo": "Un aviso en IDAP: tendencia, diagnóstico y acción recomendada",
+      "enlace": "/servicios/idap"
+    }
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "De la zona de riesgo a la alerta",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "Un proyecto, no solo detectores",
+          "texto": "Marcamos las zonas de riesgo, elegimos la cámara o el sensor para cada una, instalamos con equipo para área clasificada, fijamos los límites y la alerta llega con qué hacer.",
+          "video": "/videos/deteccion-gas/fugas-proceso",
+          "descripcion": "Los cinco pasos del monitoreo de fugas en línea: zonas de riesgo, diseño, instalación, límites de alarma y la alerta de una fuga en una estación de regulación",
+          "pasos": ["Zonas de riesgo", "Diseño", "Instalación", "Límites", "Vigilancia y aviso"]
+        }
+      ]
+    },
+    {
+      "lugar": "cobertura",
+      "etiqueta": "Dónde aplica",
+      "titulo": "¿Dónde aplica y qué detecta?",
+      "texto": "Cómo trabajan juntas la cámara fija y el sensor de PPM, y dónde va cada una.",
+      "fondo": "gris",
+      "bloques": [
+        {
+          "titulo": "La fuga, vista y medida al momento",
+          "texto": "La cámara acústica fija ubica la fuga en su imagen; el sensor de PPM mide cuánto gas hay en el aire. Cuando pasa el límite, la señal llega al PLC y se enciende la ventilación.",
+          "video": "/videos/deteccion-gas/gas-fijo",
+          "descripcion": "Una cámara acústica fija ubica una fuga en una brida, el sensor de PPM sube por encima de 500 ppm, la señal llega al PLC y se enciende la ventilación"
+        }
+      ],
+      "listas": [
+        { "titulo": "Zonas", "items": ["Estaciones de compresión", "Estaciones de regulación y medición", "Patines de proceso", "Cuartos de compresores y casetas", "Terminales y áreas de carga"] },
+        { "titulo": "Qué detecta", "items": ["Fugas en bridas, válvulas y sellos", "Fugas en compresores y reguladores", "Gas acumulado en cuartos cerrados", "Concentraciones sobre el límite de alarma"] }
+      ]
+    }
+  ],
+  "servicioRelacionado": {
+    "href": "/servicios/deteccion-gas",
+    "etiqueta": "Se complementa con",
+    "titulo": "Programa LDAR y PPCIEM",
+    "texto": "El monitoreo en línea vigila las zonas críticas todo el día; el programa LDAR revisa cada componente cada trimestre y deja la evidencia que pide la ASEA. Los dos registros terminan en el mismo historial.",
+    "enlace": "Ver detección de gas"
+  }
+}
