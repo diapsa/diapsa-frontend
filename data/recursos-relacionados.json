@@ -726,6 +726,58 @@
   },
   {
     "articulo": {
+      "slug": "camaras-termicas-industriales-para-control-de-calidad-y-plc",
+      "titulo": "Control de calidad con cámaras térmicas",
+      "resumen": "Cada pieza medida en la línea y conectada al PLC.",
+      "portada": "/images/blog/camaras-termicas-calidad.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/camaras-termicas",
+      "titulo": "Cámaras Térmicas Fijas",
+      "resumen": "Vigilancia térmica continua para equipos críticos, con alertas por patrón revisadas por termógrafos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "monitoreo-de-ductos-como-se-vigila-un-gasoducto-en-linea",
+      "titulo": "Monitoreo de ductos",
+      "resumen": "Cómo se vigila un gasoducto en línea.",
+      "portada": "/images/blog/monitoreo-ductos.webp"
+    },
+    "servicio": {
+      "href": "/servicios/seguridad-de-ductos",
+      "titulo": "Seguridad de Ductos",
+      "resumen": "Excavaciones, intrusiones y fugas en el trazo de tus ductos, detectadas en línea y con evidencia."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "sistemas-de-deteccion-de-fugas-en-ductos-tipos-y-cual-conviene",
+      "titulo": "Detección de fugas en ductos",
+      "resumen": "Tipos de sistemas y cuál conviene.",
+      "portada": "/images/blog/deteccion-fugas-ductos.webp"
+    },
+    "servicio": {
+      "href": "/servicios/seguridad-de-ductos",
+      "titulo": "Seguridad de Ductos",
+      "resumen": "Excavaciones, intrusiones y fugas en el trazo de tus ductos, detectadas en línea y con evidencia."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "derecho-de-via-de-ductos-que-es-y-como-vigilarlo",
+      "titulo": "Derecho de vía de ductos",
+      "resumen": "Qué es y cómo vigilarlo.",
+      "portada": "/images/blog/derecho-de-via.webp"
+    },
+    "servicio": {
+      "href": "/servicios/seguridad-de-ductos",
+      "titulo": "Seguridad de Ductos",
+      "resumen": "Excavaciones, intrusiones y fugas en el trazo de tus ductos, detectadas en línea y con evidencia."
+    }
+  },
+  {
+    "articulo": {
       "slug": "importancia-del-ppciem-y-que-pasa-si-no-cumples",
       "titulo": "Importancia del PPCIEM",
       "resumen": "Qué exige y qué pasa si no se cumple.",
