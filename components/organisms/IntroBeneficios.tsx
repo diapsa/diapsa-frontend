@@ -57,7 +57,9 @@ export default function IntroBeneficios({ intro }: { intro: ServiceIntroBenefici
           {/* Puntual o continuo */}
           {intro.modalidades && (
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {intro.modalidades.map((m) => {
+              {intro.modalidades.map((m, i, todas) => {
+                // con un número impar, la última ocupa el renglón completo
+                const ancho = todas.length % 2 === 1 && i === todas.length - 1 ? " sm:col-span-2" : "";
                 const contenido = (
                   <>
                     <p className="text-sm font-extrabold text-primary">
@@ -68,11 +70,11 @@ export default function IntroBeneficios({ intro }: { intro: ServiceIntroBenefici
                   </>
                 );
                 return m.enlace ? (
-                  <Link key={m.titulo} href={m.enlace} className="block rounded-xl border-2 border-dashed border-primary/15 p-4 transition-colors hover:border-secondary">
+                  <Link key={m.titulo} href={m.enlace} className={`block rounded-xl border-2 border-dashed border-primary/15 p-4 transition-colors hover:border-secondary${ancho}`}>
                     {contenido}
                   </Link>
                 ) : (
-                  <div key={m.titulo} className="rounded-xl border-2 border-dashed border-primary/15 p-4">
+                  <div key={m.titulo} className={`rounded-xl border-2 border-dashed border-primary/15 p-4${ancho}`}>
                     {contenido}
                   </div>
                 );
