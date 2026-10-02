@@ -1,0 +1,45 @@
+{
+  "slug": "cuantas-empresas-cumplen-con-el-ppciem-en-mexico",
+  "titulo": "Cuántas empresas cumplen con el PPCIEM en México",
+  "extracto": "A casi ocho años de las disposiciones de la ASEA sobre metano, la mayoría de las empresas obligadas todavía no ha entregado su programa. Qué dicen los datos públicos, por qué no hay cifras por planta y qué significa para quien sí cumple.",
+  "portada": "/images/blog/ppciem-cumplimiento-mexico.webp",
+  "fecha": "2026-10-02T22:00:00.100000Z",
+  "seo": {
+    "titulo": "Cuántas empresas cumplen con el PPCIEM en México",
+    "descripcion": "Datos públicos sobre el cumplimiento del PPCIEM de la ASEA: cuántas empresas del sector hidrocarburos han entregado su programa de emisiones de metano, cómo ha cambiado desde 2022, por qué no hay cifras por planta y qué implica para quien cumple."
+  },
+  "bloques": [
+    ["p", "Las disposiciones de la ASEA para controlar el metano del sector hidrocarburos se publicaron en noviembre de 2018. Desde entonces, cada empresa obligada debe entregar su Programa para la Prevención y el Control Integral de las Emisiones de Metano, el PPCIEM, y reportar cada año su cumplimiento. La pregunta obvia es cuántas lo han hecho."],
+
+    ["h2", "Lo que dicen los datos públicos"],
+    ["p", "La ASEA no publica un tablero con el avance. Lo que se sabe viene de solicitudes de información hechas por organizaciones civiles, sobre todo por el Observatorio Mexicano de Emisiones de Metano, que forman el Centro Mexicano de Derecho Ambiental, la Iniciativa Climática de México y Nuestro Futuro."],
+    ["lista", [
+      "Noviembre de 2022: alrededor del 5 por ciento de las empresas obligadas había entregado su programa.",
+      "Enero de 2023: 31 empresas, cerca del 7 por ciento.",
+      "Noviembre de 2023: 99 de 359 empresas obligadas, alrededor del 28 por ciento, según datos de la ASEA citados por el observatorio.",
+      "2026: el observatorio reporta alrededor del 37 por ciento."
+    ]],
+    ["p", "El avance es real, pero lento: casi ocho años después, cerca de dos de cada tres empresas obligadas no aparecen como cumplidas."],
+
+    ["h2", "Entregar no es lo mismo que cumplir"],
+    ["p", "Estas cifras cuentan programas entregados. No dicen cuántas empresas hacen sus rondas de detección cada tres meses, reparan sus fugas a tiempo o presentan el reporte anual. Los propios investigadores del observatorio han advertido que entregar el documento no garantiza que se aplique."],
+
+    ["h2", "Por qué no hay cifras por planta o por zona"],
+    ["p", "Las obligaciones son por empresa y por proyecto, y una empresa puede tener muchas instalaciones. Cuando se emitieron las disposiciones, la evaluación de impacto regulatorio estimó un universo de alrededor de 30 mil instalaciones existentes, pero no hay una lista pública de cuáles cumplen."],
+    ["p", "Además, la información sobre volúmenes de metano de cada empresa se ha reservado por secreto industrial y seguridad nacional. En 2024, la Suprema Corte resolvió que las autoridades no garantizaron el acceso a esa información ambiental, pero el detalle por instalación sigue sin ser público."],
+
+    ["h2", "Qué significa para tu empresa"],
+    ["p", "Que muchas empresas no cumplan no reduce el riesgo para ninguna. La obligación y las sanciones son las mismas, la vigilancia sobre el metano va en aumento y México tiene compromisos internacionales de reducción. Para quien sí cumple, el expediente en orden es una ventaja ante una inspección, ante sus clientes y ante quien financia sus proyectos."],
+    ["p", "Si tu empresa todavía no entrega su programa o no lo ha aplicado, el primer paso es saber dónde están sus fugas: un inventario y una ronda completa de detección dan la base para el diagnóstico y el año base."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Dónde puedo consultar si una empresa cumple?"],
+    ["p", "No hay un registro público por empresa. Las cifras disponibles son agregadas y vienen de solicitudes de información."],
+    ["h3", "¿Hay un plazo vencido?"],
+    ["p", "Los plazos de entrega ya corrieron para las instalaciones existentes, incluida la ampliación que dio la ASEA en 2020. Conviene revisar el caso de cada instalación con tu área legal."],
+    ["h3", "¿Qué pasa si no he entregado el programa?"],
+    ["p", "Te expones a las sanciones de la Ley de la ASEA. Lo explicamos en la guía sobre [la importancia del PPCIEM y qué pasa si no lo cumples](/blog/importancia-del-ppciem-y-que-pasa-si-no-cumples)."],
+
+    ["nota", "Hacemos el inventario, la detección con [cámara OGI y cámara acústica](/servicios/deteccion-gas) y el expediente de cada fuga para tu PPCIEM y tu reporte anual. Revisa también la [guía del PPCIEM](/servicios/deteccion-gas/guia-ppciem)."]
+  ]
+}

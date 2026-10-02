@@ -1,0 +1,60 @@
+{
+  "slug": "importancia-del-ppciem-y-que-pasa-si-no-cumples",
+  "titulo": "Por qué importa el PPCIEM y qué pasa si no lo cumples",
+  "extracto": "El PPCIEM es el programa con el que una empresa del sector hidrocarburos demuestra ante la ASEA que controla sus emisiones de metano. Para qué sirve, qué exige y qué consecuencias tiene no presentarlo, no reportarlo o no cumplirlo.",
+  "portada": "/images/blog/ppciem-importancia.webp",
+  "fecha": "2026-10-02T22:00:00.400000Z",
+  "seo": {
+    "titulo": "Importancia del PPCIEM y consecuencias de no cumplirlo",
+    "descripcion": "Qué es el PPCIEM de la ASEA, por qué es importante para las empresas del sector hidrocarburos y qué consecuencias tiene no cumplirlo: multas de la Ley de la ASEA, clausura, suspensión de permisos y pérdida de gas."
+  },
+  "bloques": [
+    ["p", "El Programa para la Prevención y el Control Integral de las Emisiones de Metano, el PPCIEM, nació con las disposiciones que la ASEA publicó en el Diario Oficial el 6 de noviembre de 2018. Desde entonces, las empresas que exploran, extraen, refinan, almacenan, procesan, comprimen, transportan o distribuyen hidrocarburos tienen que demostrar cómo identifican, miden y reducen el metano que sale de sus instalaciones."],
+    ["p", "Muchas lo ven como un trámite más. No lo es: es el documento que la autoridad revisa para saber si una instalación controla sus fugas, y es la base de cualquier inspección en la materia."],
+
+    ["h2", "Qué exige, en pocas palabras"],
+    ["lista", [
+      "Un diagnóstico que identifique, clasifique y cuantifique las fuentes de metano de cada instalación.",
+      "Un año base contra el cual se mide la reducción.",
+      "Una meta de reducción técnicamente viable para las instalaciones existentes, con su calendario.",
+      "Un programa de detección y reparación de fugas que se aplica cada tres meses.",
+      "Un reporte anual de cumplimiento que se entrega en el primer trimestre de cada año."
+    ]],
+    ["p", "Para las instalaciones existentes, las disposiciones dan un plazo de hasta seis años desde la entrega del programa para alcanzar la meta de reducción."],
+
+    ["h2", "Por qué es importante"],
+    ["h3", "Porque el metano es gas que se pierde"],
+    ["p", "Cada fuga es producto que no se vende ni se usa. En una instalación con decenas de bridas, válvulas y sellos, las fugas pequeñas suman miles de metros cúbicos al año. El PPCIEM obliga a encontrarlas y cerrarlas, y eso se traduce en ahorro."],
+    ["h3", "Porque reduce riesgos"],
+    ["p", "El metano es inflamable. Una fuga que nadie revisa puede crecer y acumularse en un espacio cerrado. El ciclo de detección y reparación es también una práctica de seguridad."],
+    ["h3", "Porque México tiene compromisos de reducción"],
+    ["p", "México se comprometió a reducir sus emisiones de metano y la regulación de la ASEA es la herramienta para lograrlo en el sector hidrocarburos. Eso significa que la vigilancia sobre el tema va a crecer, no a disminuir."],
+    ["h3", "Porque deja evidencia"],
+    ["p", "Un programa bien llevado deja un expediente con cada fuga, su reparación y su comprobación. Ese expediente es lo que protege a la empresa ante una visita de inspección."],
+
+    ["h2", "Qué pasa si no se cumple"],
+    ["p", "La Ley de la Agencia Nacional de Seguridad Industrial y de Protección al Medio Ambiente del Sector Hidrocarburos establece, en su artículo 25, las multas que puede imponer la ASEA. Están expresadas en veces el salario mínimo, que hoy se calculan con la Unidad de Medida y Actualización."],
+    ["lista", [
+      "No informar o no reportar lo que exigen las disposiciones, por ejemplo el reporte anual: de 7,500 a 150,000 veces.",
+      "Proporcionar información falsa o alterada, o simular registros: de 3,750,000 a 7,500,000 veces.",
+      "Violar la ley, sus reglamentos o las disposiciones administrativas de la Agencia: de 750,000 a 7,500,000 veces.",
+      "Impedir el acceso a los inspectores: de 75,000 a 225,000 veces."
+    ]],
+    ["p", "Si la empresa reincide en un plazo de dos años, la multa puede llegar al doble y la ley permite la clausura definitiva de las instalaciones. Además, la ASEA puede suspender o revocar licencias, autorizaciones, permisos y registros."],
+    ["p", "Cuando una instalación representa un riesgo crítico, la Agencia también puede ordenar medidas de seguridad, como suspender trabajos o clausurar de forma temporal, total o parcial."],
+    ["p", "Más allá de la multa, hay costos que no aparecen en la resolución: el gas que se sigue perdiendo, el tiempo que la operación queda detenida y lo que cuesta reconstruir la evidencia cuando la autoridad ya la está pidiendo."],
+
+    ["h2", "Si ya te llegó una observación"],
+    ["p", "Contra los actos de la ASEA se puede interponer el recurso de revisión o el juicio de nulidad. Pero la mejor defensa es técnica: un programa con inventario, rondas de detección, reparaciones y reinspecciones documentadas. Sin eso, cualquier argumento legal queda débil."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Basta con entregar el programa?"],
+    ["p", "No. Entregar el PPCIEM es el primer paso; después hay que aplicarlo, hacer las rondas de detección y reparación y presentar cada año el reporte de cumplimiento."],
+    ["h3", "¿Aplica a una planta que solo consume gas?"],
+    ["p", "Las disposiciones aplican a las actividades del sector hidrocarburos. Una planta que solo consume gas no presenta PPCIEM, pero detectar y cerrar sus fugas le ahorra dinero y reduce riesgos."],
+    ["h3", "¿De cuánto es la multa en pesos?"],
+    ["p", "Depende del valor de la UMA en el año de la infracción y de la gravedad que determine la autoridad dentro de cada rango. Por eso conviene revisarlo con tu área legal para cada caso."],
+
+    ["nota", "Hacemos la detección y reparación de fugas que pide el PPCIEM, con [cámara OGI y cámara acústica](/servicios/deteccion-gas) y el expediente listo para tu reporte anual. Si apenas empiezas, revisa la [guía del PPCIEM](/servicios/deteccion-gas/guia-ppciem)."]
+  ]
+}

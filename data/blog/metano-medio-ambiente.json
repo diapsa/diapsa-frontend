@@ -1,0 +1,48 @@
+{
+  "slug": "efecto-del-metano-en-el-medio-ambiente",
+  "titulo": "Qué efecto tiene el metano en el medio ambiente",
+  "extracto": "El metano dura poco en la atmósfera, pero calienta muchísimo más que el dióxido de carbono mientras está ahí. Cuánto ha contribuido al calentamiento, qué otros daños causa, cuánto emite México y por qué reducirlo da resultados rápidos.",
+  "portada": "/images/blog/metano-medio-ambiente.webp",
+  "fecha": "2026-10-02T22:00:00.200000Z",
+  "seo": {
+    "titulo": "Efecto del metano en el medio ambiente",
+    "descripcion": "Qué efecto tiene el metano en el medio ambiente: potencial de calentamiento frente al CO2, su parte en el calentamiento global, el ozono que forma, cuánto metano emite México y qué parte viene del petróleo y gas."
+  },
+  "bloques": [
+    ["p", "El metano es el componente principal del gas natural. También lo producen el ganado, los rellenos sanitarios y los arrozales. Una vez en la atmósfera, atrapa calor como el dióxido de carbono, pero con mucha más fuerza."],
+
+    ["h2", "Cuánto calienta"],
+    ["p", "El Panel Intergubernamental sobre el Cambio Climático, en su sexto informe, calcula que una tonelada de metano calienta casi 28 veces más que una de CO2 en un horizonte de cien años, y más de 80 veces más en un horizonte de veinte años."],
+    ["p", "La diferencia entre los dos números se explica por su vida corta: el metano dura alrededor de doce años en la atmósfera, mientras que buena parte del CO2 permanece siglos. Mientras está ahí, el metano calienta con mucha intensidad."],
+
+    ["h2", "Su parte en el calentamiento global"],
+    ["p", "Según la Evaluación Mundial del Metano del Programa de las Naciones Unidas para el Medio Ambiente, el metano es responsable de cerca del 30 por ciento del calentamiento desde la época preindustrial. Su concentración en la atmósfera es hoy más de dos veces y media la de antes de la Revolución Industrial."],
+
+    ["h2", "Otros efectos"],
+    ["p", "El metano ayuda a formar ozono cerca del suelo. Ese ozono no es el que nos protege en la estratósfera: a nivel del suelo es un contaminante que afecta la salud respiratoria y reduce el rendimiento de los cultivos. Por eso reducir el metano mejora también la calidad del aire."],
+
+    ["h2", "Por qué reducirlo da resultados rápidos"],
+    ["p", "Como dura poco, lo que se deja de emitir hoy se nota en pocos años. Reducir el CO2 es indispensable a largo plazo, pero reducir el metano es la forma más rápida de frenar el calentamiento en las próximas décadas. Por eso más de cien países, entre ellos México, se sumaron al Compromiso Global de Metano, que busca reducir las emisiones 30 por ciento para 2030 respecto a 2020."],
+
+    ["h2", "Cuánto emite México"],
+    ["p", "El Observatorio Mexicano de Emisiones de Metano ubica a México en el décimo lugar mundial, con alrededor de 6.3 millones de toneladas al año. Según el inventario nacional, la mayor parte viene de la ganadería y de los residuos, y cerca de una décima parte del petróleo y el gas."],
+    ["p", "Ese porcentaje puede quedarse corto. Estudios con satélites han detectado fugas grandes en instalaciones del país, y el mismo observatorio ha señalado que las emisiones reales podrían ser mayores que las reportadas. En el sector hidrocarburos, además, el metano es gas que se pierde, así que reducirlo es ahorro."],
+
+    ["h2", "Qué puede hacer una instalación"],
+    ["lista", [
+      "Inventariar los componentes que pueden fugar.",
+      "Buscar las fugas cada tres meses con cámara OGI o acústica.",
+      "Reparar por prioridad y comprobar que la fuga quedó cerrada.",
+      "Vigilar en línea los equipos más críticos.",
+      "Documentar todo para el reporte ante la autoridad."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿El metano es tóxico?"],
+    ["p", "No en las concentraciones habituales al aire libre. Su riesgo directo es que es inflamable y que, en un espacio cerrado, desplaza el oxígeno. Su daño ambiental es el calentamiento y el ozono que forma."],
+    ["h3", "¿Quemar el metano es mejor que liberarlo?"],
+    ["p", "Para el clima, sí, porque al quemarse se convierte en CO2, que calienta mucho menos por tonelada. Pero lo mejor es no perderlo: aprovecharlo o evitar que fugue."],
+
+    ["nota", "Ayudamos a las instalaciones de gas a encontrar y cerrar sus fugas con un [programa de detección y reparación](/servicios/deteccion-gas) y monitoreo en línea. Para ver cuánto le cuesta una fuga a tu planta, revisa la guía de [emisiones fugitivas de metano](/blog/emisiones-fugitivas-de-metano-cuanto-afectan)."]
+  ]
+}
