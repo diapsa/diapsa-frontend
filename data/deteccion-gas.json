@@ -7,8 +7,13 @@
       "PPCIEM · ASEA",
       "Cámara OGI",
       "Cámara acústica con TDLAS",
-      "LDAR trimestral"
-    ]
+      "LDAR trimestral",
+      "Monitoreo en línea"
+    ],
+    "video": {
+      "src": "/videos/deteccion-gas/gas-hero",
+      "descripcion": "Técnico revisando con una cámara acústica una brida en una estación de compresión de gas, de noche"
+    }
   },
   "aparte": {
     "etiqueta": "Un servicio aparte",
@@ -70,7 +75,11 @@
           "Muestra la nube de gas y hacia dónde se mueve",
           "Recorre la instalación completa en poco tiempo",
           "Cada hallazgo queda grabado en video"
-        ]
+        ],
+        "video": {
+          "src": "/videos/deteccion-gas/gas-ogi",
+          "descripcion": "Vista de una cámara OGI: la nube de gas sale de una brida y se mueve con el viento"
+        }
       },
       {
         "verbo": "Método 2",
@@ -81,10 +90,20 @@
           "Ubica la fuga a distancia, sin tocar el equipo",
           "Marca en pantalla el punto exacto de la fuga",
           "Su láser distingue el metano del aire o el vapor"
-        ]
+        ],
+        "foto": {
+          "src": "/images/deteccion-gas/campo/pantalla-gas-natural.webp",
+          "alt": "Pantalla de la cámara acústica con la fuga marcada en una línea de gas natural"
+        }
       }
     ],
-    "texto": "La regulación permite detectar con cámara OGI o con cámara acústica con láser TDLAS. Usamos el que mejor se adapta a cada instalación."
+    "texto": "La regulación permite detectar con cámara OGI o con cámara acústica con láser TDLAS. Usamos el que mejor se adapta a cada instalación.",
+    "video": {
+      "src": "/videos/deteccion-gas/gas-metodos",
+      "titulo": "La misma fuga, vista de dos formas",
+      "texto": "La cámara OGI hace visible la nube de gas y hacia dónde se mueve. La cámara acústica ubica la fuga por su sonido y, con su láser, mide el metano. Por eso muchas veces se usan las dos: una recorre y la otra confirma.",
+      "descripcion": "La misma fuga en una brida vista con cámara OGI, como una nube de gas, y con cámara acústica con láser, como un mapa de sonido con la lectura de metano"
+    }
   },
   "ciclo": {
     "etiqueta": "El método",
@@ -112,6 +131,42 @@
         "texto": "Se vuelve a revisar cada fuga reparada antes de cerrarla."
       }
     ]
+  },
+  "fijo": {
+    "etiqueta": "Monitoreo en línea",
+    "titulo": "Entre inspecciones, la fuga se vigila sola",
+    "texto": "El programa LDAR revisa cada trimestre. En los equipos donde una fuga no puede esperar, como compresores, estaciones de regulación o cuartos cerrados, instalamos cámaras fijas y sensores de PPM que vigilan las 24 horas y avisan al momento.",
+    "video": "/videos/deteccion-gas/gas-fijo",
+    "descripcionVideo": "Una cámara acústica fija ubica una fuga en una brida, el sensor de PPM sube por encima de 500 ppm, la señal llega al PLC y se enciende la ventilación",
+    "items": [
+      {
+        "nombre": "Cámaras fijas",
+        "texto": "Cámaras acústicas fijas, también con láser para metano, que vigilan compresores, estaciones de regulación y patines, y ubican la fuga en su imagen.",
+        "puntos": [
+          "Para equipos abiertos: compresores, patines y estaciones",
+          "La fuga ubicada en la imagen",
+          "Versiones a prueba de explosión"
+        ],
+        "foto": {
+          "src": "/images/deteccion-gas/en-linea/compresion.webp",
+          "alt": "Cámara acústica fija vigilando una estación de compresión de gas"
+        }
+      },
+      {
+        "nombre": "Sensores de PPM",
+        "texto": "Detectores fijos que miden la concentración de gas en el aire en partes por millón y avisan cuando sube del límite, en cuartos, casetas y junto a los equipos.",
+        "puntos": [
+          "Para donde el gas se acumula: cuartos y casetas",
+          "Concentración en ppm, al momento",
+          "Señal al PLC para ventilar o parar"
+        ],
+        "foto": {
+          "src": "/images/deteccion-gas/en-linea/sensor-cuarto.webp",
+          "alt": "Sensor de gas fijo en un cuarto de compresores con su ventilador"
+        }
+      }
+    ],
+    "integracion": "Las alarmas llegan a tu PLC, SCADA o sistema de control por salidas de relé, Modbus o la red de la planta, para encender la ventilación, cerrar una válvula o parar el equipo, y cada evento queda registrado junto a tu programa LDAR."
   },
   "anio": {
     "etiqueta": "Obligatorio por norma",
@@ -228,7 +283,13 @@
           "Quemadores y equipos de combustión"
         ]
       }
-    ]
+    ],
+    "video": {
+      "src": "/videos/deteccion-gas/gas-costo",
+      "titulo": "Una fuga chica, todo el año",
+      "texto": "Una fuga de menos de un litro por minuto no se oye ni se ve, pero suma cerca de 380 m³ de gas al año. Veinte fugas así son más de 7,500 m³. Encontrarlas y cerrarlas es ahorro, además de cumplimiento.",
+      "descripcion": "Una fuga de 0.72 litros por minuto suma 378 m³ de gas al año; veinte fugas así suman 7,560 m³"
+    }
   },
   "faq": [
     {
@@ -242,6 +303,22 @@
     {
       "question": "¿Qué es una cámara OGI?",
       "answer": "Es una cámara de imagen óptica de gas: hace visible la nube de gas que sale de un componente, que a simple vista no se ve. Permite recorrer una instalación completa y grabar cada fuga en video."
+    },
+    {
+      "question": "¿Se pueden vigilar las fugas en continuo, no solo cada trimestre?",
+      "answer": "Sí. En los equipos donde una fuga no puede esperar a la siguiente inspección, como compresores, estaciones de regulación o cuartos cerrados, se instalan cámaras acústicas fijas y sensores de PPM que vigilan las 24 horas. No sustituyen al programa LDAR: lo complementan entre una inspección y otra."
+    },
+    {
+      "question": "¿Qué es un sensor de PPM y para qué sirve?",
+      "answer": "Es un detector fijo que mide la concentración de un gas en el aire en partes por millón. Se coloca donde el gas se puede acumular, como cuartos de compresores, casetas o junto a los equipos, y cuando la concentración pasa del límite configurado da la alarma y manda la señal al PLC para ventilar o parar el equipo."
+    },
+    {
+      "question": "¿Cuándo conviene una cámara fija y cuándo un sensor de PPM?",
+      "answer": "La cámara fija conviene en equipos abiertos, como compresores, patines o estaciones al aire libre, porque ve la fuga y dice exactamente dónde está. El sensor de PPM conviene donde el gas se acumula, como cuartos cerrados o casetas, porque mide cuánto gas hay en el aire. En muchas instalaciones se usan los dos."
+    },
+    {
+      "question": "¿El monitoreo en línea se conecta a mi PLC o SCADA?",
+      "answer": "Sí. Las alarmas pueden llegar por salidas de relé, por protocolos industriales como Modbus o por la red de la planta, para encender la ventilación, cerrar una válvula o parar el equipo. La conexión se define en el diseño según tu sistema de control, con equipos para la clasificación de área de cada zona."
     },
     {
       "question": "¿Cómo encuentra una fuga la cámara acústica?",

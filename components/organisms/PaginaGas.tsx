@@ -1,10 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
 import datos from "@/data/deteccion-gas.json";
 import GraficoPunto from "@/components/atoms/GraficoPunto";
 import { DibujoInstrumentos, DibujoMetodo, DibujoAuditoria, EvidenciaAcustica, EvidenciaLaser, EvidenciaReparacion, PlanoUbicacion } from "@/components/atoms/IlustracionesGas";
 import ContactForm from "@/components/organisms/ContactForm";
 import EscenaLdar from "@/components/organisms/EscenaLdar";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
+import VideoBucle from "@/components/atoms/VideoBucle";
+import ClientesLogos from "@/components/organisms/ClientesLogos";
+import GuiasRelacionadas from "@/components/organisms/GuiasRelacionadas";
+import { getArticulosPorServicio } from "@/lib/recursos";
 import JsonLd, { createServiceSchema, createBreadcrumbSchema, createFaqSchema } from "@/components/atoms/JsonLd";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -43,63 +48,6 @@ function Etiqueta({ children, clara }: { children: React.ReactNode; clara?: bool
   );
 }
 
-/* El visor de la cámara acústica: la válvula con el mapa de sonido de la fuga */
-function VisorAcustico() {
-  return (
-    <div className="relative mx-auto w-full max-w-xl">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-[#2a3338] ring-1 ring-white/10">
-        <svg viewBox="0 0 400 300" className="absolute inset-0 h-full w-full" aria-hidden="true">
-          <defs>
-            <radialGradient id="gas-vineta" cx="50%" cy="50%" r="70%">
-              <stop offset="60%" stopColor="#000" stopOpacity="0" />
-              <stop offset="100%" stopColor="#000" stopOpacity=".55" />
-            </radialGradient>
-            <linearGradient id="gas-escala" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#ffe14d" />
-              <stop offset="50%" stopColor="#ff8a1f" />
-              <stop offset="100%" stopColor="#1f3b8a" />
-            </linearGradient>
-            <radialGradient id="gas-mapa">
-              <stop offset="0%" stopColor="#ffe14d" />
-              <stop offset="30%" stopColor="#ff8a1f" stopOpacity=".95" />
-              <stop offset="65%" stopColor="#e5261f" stopOpacity=".5" />
-              <stop offset="100%" stopColor="#e5261f" stopOpacity="0" />
-            </radialGradient>
-          </defs>
-          <rect width="400" height="300" fill="#3b464c" />
-          <rect x="0" y="176" width="400" height="34" fill="#6d7a82" />
-          <rect x="0" y="180" width="400" height="6" fill="#86939a" />
-          <rect x="150" y="160" width="20" height="68" rx="3" fill="#56636a" />
-          <rect x="230" y="160" width="20" height="68" rx="3" fill="#56636a" />
-          <rect x="170" y="168" width="60" height="50" fill="#7a878e" />
-          <rect x="194" y="96" width="12" height="74" fill="#56636a" />
-          <rect x="156" y="84" width="88" height="16" rx="8" fill="#56636a" />
-          <rect x="0" y="228" width="400" height="72" fill="#323c41" />
-          {/* Mapa de sonido de la fuga, latiendo */}
-          <circle className="gas-latido" cx="236" cy="170" r="48" fill="url(#gas-mapa)" />
-          {/* Escala de nivel sonoro */}
-          <rect x="372" y="60" width="8" height="150" rx="2" fill="url(#gas-escala)" />
-          <rect width="400" height="300" fill="url(#gas-vineta)" />
-        </svg>
-        {/* Marcas del visor */}
-        {["left-3 top-3 border-l-2 border-t-2", "right-3 top-3 border-r-2 border-t-2", "left-3 bottom-3 border-l-2 border-b-2", "right-3 bottom-3 border-r-2 border-b-2"].map((c) => (
-          <span key={c} className={`absolute h-6 w-6 border-white/70 ${c}`} aria-hidden="true" />
-        ))}
-        <p className="absolute left-5 top-4 flex items-center gap-2 font-mono text-[10px] font-bold text-white/85 sm:text-xs">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" /> REC · Acústica
-        </p>
-        <p className="absolute right-5 top-4 font-mono text-[10px] text-white/60 sm:text-xs">30–48 kHz · SPL 46 dB</p>
-        <span className="absolute left-[58%] top-[55%] h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-sm border-2 border-secondary" aria-hidden="true" />
-        <div className="absolute bottom-4 left-5 right-5 flex flex-wrap items-end justify-between gap-2 font-mono">
-          <p className="rounded-sm bg-black/55 px-2 py-1 text-[10px] text-white sm:text-xs">Brida de succión · 0.72 l/min</p>
-          <p className="rounded-sm bg-secondary px-2 py-1 text-[10px] font-bold text-primary sm:text-xs">CH₄ 1,250 ppm·m</p>
-        </div>
-      </div>
-      <p className="mt-3 text-center font-mono text-[10px] text-white/45 sm:text-xs">Esquema de la vista de una cámara acústica con láser TDLAS, datos simulados</p>
-    </div>
-  );
-}
-
 export default function PaginaGas() {
   const { hero, aparte, tecnologia, ciclo, anio, expediente, paraQuien, faq, cta } = datos;
   const serviceJsonLd = createServiceSchema({ name: hero.titulo, description: hero.texto, serviceType: "Detección y reparación de fugas de gas" });
@@ -115,10 +63,18 @@ export default function PaginaGas() {
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={createFaqSchema(faq)} />
 
-      {/* Apertura: oscura, con el visor de la cámara */}
-      <section className="relative w-full overflow-hidden bg-[#00202f] pb-16 pt-36 text-white lg:pb-24 lg:pt-44" style={RETICULA}>
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16">
-          <div>
+      {/* Apertura: video de fondo con la cámara acústica en campo (Higgsfield, 2026-10-02) */}
+      <section className="relative w-full overflow-hidden bg-[#00202f] pb-16 pt-36 text-white lg:min-h-[44rem] lg:pb-24 lg:pt-44">
+        <VideoBucle
+          className="absolute inset-0 h-full w-full object-cover object-[70%_center]"
+          src={`${hero.video.src}.mp4`}
+          poster={`${hero.video.src}.jpg`}
+          descripcion={hero.video.descripcion}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00202f] via-[#00202f]/80 to-[#00202f]/20" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#00202f]/80 via-transparent to-transparent" aria-hidden="true" />
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="max-w-2xl">
             <nav aria-label="Migas" className="mb-6 font-mono text-[11px] text-white/45">
               <Link href="/" className="hover:text-white">Inicio</Link> / <Link href="/servicios" className="hover:text-white">Servicios</Link> / <span className="text-white/70">Detección de gas</span>
             </nav>
@@ -139,7 +95,6 @@ export default function PaginaGas() {
               </a>
             </div>
           </div>
-          <VisorAcustico />
         </div>
       </section>
 
@@ -192,15 +147,23 @@ export default function PaginaGas() {
           {/* Los dos métodos de detección lado a lado. Si algún día hay un
               tercero, va a lo ancho debajo. */}
           <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
-            {tecnologia.items.map((t, i) => (
+            {tecnologia.items.map((t, i) => {
+              const m = t as { video?: { src: string; descripcion: string }; foto?: { src: string; alt: string } };
+              return (
               <article
                 key={t.nombre}
                 className={`overflow-hidden rounded-sm bg-white/[0.04] ring-1 ring-white/10 ${
                   i === 2 ? "lg:col-span-2 lg:grid lg:grid-cols-2 lg:items-center" : ""
                 }`}
               >
-                <div className="aspect-[4/3] bg-white">
-                  <GraficoPunto clave={t.grafico} />
+                <div className="relative aspect-[4/3] bg-white">
+                  {m.video ? (
+                    <VideoBucle className="absolute inset-0 h-full w-full object-cover" src={`${m.video.src}.mp4`} poster={`${m.video.src}.jpg`} descripcion={m.video.descripcion} />
+                  ) : m.foto ? (
+                    <Image src={m.foto.src} alt={m.foto.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+                  ) : (
+                    <GraficoPunto clave={t.grafico} />
+                  )}
                 </div>
                 <div className="p-6 lg:p-8">
                   <p className="font-mono text-xs font-bold uppercase tracking-widest text-secondary">
@@ -218,7 +181,24 @@ export default function PaginaGas() {
                   </ul>
                 </div>
               </article>
-            ))}
+              );
+            })}
+          </div>
+
+          {/* La misma fuga con los dos métodos (video, 2026-10-02) */}
+          <div className="mt-12 grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:gap-12">
+            <div className="overflow-hidden rounded-2xl bg-white/[0.06] p-2 ring-1 ring-white/10 sm:p-3">
+              <VideoBucle
+                className="block aspect-[16/10] w-full rounded-xl object-cover"
+                src={`${tecnologia.video.src}.mp4`}
+                poster={`${tecnologia.video.src}.jpg`}
+                descripcion={tecnologia.video.descripcion}
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl font-extrabold lg:text-3xl">{tecnologia.video.titulo}</h3>
+              <p className="mt-3 text-justify text-base leading-relaxed text-white/75 lg:text-lg">{tecnologia.video.texto}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -243,6 +223,50 @@ export default function PaginaGas() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* Monitoreo en línea: cámaras fijas y sensores de PPM (Emiliano, 2026-10-02:
+          va unificado con la detección de fugas, no como página aparte) */}
+      <section id="monitoreo-en-linea" className="w-full scroll-mt-24 bg-gray-50 py-14 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-3xl">
+            <Etiqueta>{datos.fijo.etiqueta}</Etiqueta>
+            <h2 className="mt-3 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">{datos.fijo.titulo}</h2>
+            <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">{datos.fijo.texto}</p>
+          </div>
+          <div className="mt-10 grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-10">
+            <div className="overflow-hidden rounded-2xl bg-white p-2 shadow-[0_30px_70px_-35px_rgba(13,26,56,0.35)] ring-1 ring-primary/10 sm:p-3">
+              <VideoBucle
+                className="block aspect-[16/10] w-full rounded-xl object-cover"
+                src={`${datos.fijo.video}.mp4`}
+                poster={`${datos.fijo.video}.jpg`}
+                descripcion={datos.fijo.descripcionVideo}
+              />
+            </div>
+            <div className="space-y-5">
+              {datos.fijo.items.map((t) => (
+                <article key={t.nombre} className="grid grid-cols-1 overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5 sm:grid-cols-[10rem_1fr]">
+                  <div className="relative h-40 sm:h-auto">
+                    <Image src={t.foto.src} alt={t.foto.alt} fill sizes="(min-width: 640px) 160px, 100vw" className="object-cover" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-extrabold text-primary">{t.nombre}</h3>
+                    <p className="mt-2 text-justify text-sm leading-relaxed text-tertiary">{t.texto}</p>
+                    <ul className="mt-3 space-y-1.5">
+                      {t.puntos.map((p) => (
+                        <li key={p} className="flex items-start gap-3 text-sm font-semibold text-primary">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-secondary" aria-hidden="true" />
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+              <p className="border-l-4 border-secondary pl-4 text-justify text-sm leading-relaxed text-tertiary">{datos.fijo.integracion}</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -385,11 +409,29 @@ export default function PaginaGas() {
               </article>
             ))}
           </div>
+          {/* Lo que suma una fuga chica en un año (video, 2026-10-02) */}
+          <div className="mt-12 grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-12">
+            <div className="lg:order-2 overflow-hidden rounded-2xl bg-white p-2 shadow-[0_30px_70px_-35px_rgba(13,26,56,0.35)] ring-1 ring-primary/10 sm:p-3">
+              <VideoBucle
+                className="block aspect-[16/10] w-full rounded-xl object-cover"
+                src={`${paraQuien.video.src}.mp4`}
+                poster={`${paraQuien.video.src}.jpg`}
+                descripcion={paraQuien.video.descripcion}
+              />
+            </div>
+            <div className="lg:order-1">
+              <h3 className="text-2xl font-extrabold text-primary lg:text-3xl">{paraQuien.video.titulo}</h3>
+              <p className="mt-3 text-justify text-base leading-relaxed text-tertiary lg:text-lg">{paraQuien.video.texto}</p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Fotos reales de inspecciones de fugas */}
       {datos.galeria && datos.galeria.length > 0 && <GaleriaCampo fotos={datos.galeria} />}
+
+      {/* Quién ya confía */}
+      <ClientesLogos />
 
       {/* Preguntas frecuentes */}
       <section className="w-full bg-gray-50 py-14 lg:py-20">
@@ -409,6 +451,9 @@ export default function PaginaGas() {
           </div>
         </div>
       </section>
+
+      {/* Guías del blog sobre fugas y LDAR */}
+      <GuiasRelacionadas articulos={getArticulosPorServicio("/servicios/deteccion-gas")} />
 
       {/* Cierre */}
       <section className="w-full bg-[#00202f] py-16 text-white lg:py-24" style={RETICULA}>
