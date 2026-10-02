@@ -7,7 +7,8 @@
       "PPCIEM · ASEA",
       "Cámara OGI",
       "Cámara acústica con TDLAS",
-      "LDAR trimestral"
+      "LDAR trimestral",
+      "Monitoreo en línea"
     ]
   },
   "aparte": {
@@ -114,9 +115,9 @@
     ]
   },
   "fijo": {
-    "etiqueta": "Monitoreo continuo",
+    "etiqueta": "Monitoreo en línea",
     "titulo": "Entre inspecciones, la fuga se vigila sola",
-    "texto": "El programa LDAR revisa cada trimestre. En los equipos donde una fuga no puede esperar, se instalan cámaras fijas y sensores de PPM que vigilan las 24 horas y avisan al momento.",
+    "texto": "El programa LDAR revisa cada trimestre. En los equipos donde una fuga no puede esperar, como compresores, estaciones de regulación o cuartos cerrados, instalamos cámaras fijas y sensores de PPM que vigilan las 24 horas y avisan al momento.",
     "video": "/videos/deteccion-gas/gas-fijo",
     "descripcionVideo": "Una cámara acústica fija ubica una fuga en una brida, el sensor de PPM sube por encima de 500 ppm, la señal llega al PLC y se enciende la ventilación",
     "items": [
@@ -124,22 +125,30 @@
         "nombre": "Cámaras fijas",
         "texto": "Cámaras acústicas fijas, también con láser para metano, que vigilan compresores, estaciones de regulación y patines, y ubican la fuga en su imagen.",
         "puntos": [
-          "Vigilancia las 24 horas",
+          "Para equipos abiertos: compresores, patines y estaciones",
           "La fuga ubicada en la imagen",
           "Versiones a prueba de explosión"
-        ]
+        ],
+        "foto": {
+          "src": "/images/deteccion-gas/en-linea/compresion.webp",
+          "alt": "Cámara acústica fija vigilando una estación de compresión de gas"
+        }
       },
       {
         "nombre": "Sensores de PPM",
         "texto": "Detectores fijos que miden la concentración de gas en el aire en partes por millón y avisan cuando sube del límite, en cuartos, casetas y junto a los equipos.",
         "puntos": [
+          "Para donde el gas se acumula: cuartos y casetas",
           "Concentración en ppm, al momento",
-          "Límites de alarma por zona",
           "Señal al PLC para ventilar o parar"
-        ]
+        ],
+        "foto": {
+          "src": "/images/deteccion-gas/en-linea/sensor-cuarto.webp",
+          "alt": "Sensor de gas fijo en un cuarto de compresores con su ventilador"
+        }
       }
     ],
-    "integracion": "Las alarmas llegan a tu PLC, SCADA o sistema de control para encender la ventilación, cerrar una válvula o parar el equipo, y quedan registradas junto a tu programa LDAR."
+    "integracion": "Las alarmas llegan a tu PLC, SCADA o sistema de control por salidas de relé, Modbus o la red de la planta, para encender la ventilación, cerrar una válvula o parar el equipo, y cada evento queda registrado junto a tu programa LDAR."
   },
   "anio": {
     "etiqueta": "Obligatorio por norma",
@@ -278,6 +287,14 @@
     {
       "question": "¿Qué es un sensor de PPM y para qué sirve?",
       "answer": "Es un detector fijo que mide la concentración de un gas en el aire en partes por millón. Se coloca donde el gas se puede acumular, como cuartos de compresores, casetas o junto a los equipos, y cuando la concentración pasa del límite configurado da la alarma y manda la señal al PLC para ventilar o parar el equipo."
+    },
+    {
+      "question": "¿Cuándo conviene una cámara fija y cuándo un sensor de PPM?",
+      "answer": "La cámara fija conviene en equipos abiertos, como compresores, patines o estaciones al aire libre, porque ve la fuga y dice exactamente dónde está. El sensor de PPM conviene donde el gas se acumula, como cuartos cerrados o casetas, porque mide cuánto gas hay en el aire. En muchas instalaciones se usan los dos."
+    },
+    {
+      "question": "¿El monitoreo en línea se conecta a mi PLC o SCADA?",
+      "answer": "Sí. Las alarmas pueden llegar por salidas de relé, por protocolos industriales como Modbus o por la red de la planta, para encender la ventilación, cerrar una válvula o parar el equipo. La conexión se define en el diseño según tu sistema de control, con equipos para la clasificación de área de cada zona."
     },
     {
       "question": "¿Cómo encuentra una fuga la cámara acústica?",

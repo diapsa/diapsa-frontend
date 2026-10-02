@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import datos from "@/data/deteccion-gas.json";
 import GraficoPunto from "@/components/atoms/GraficoPunto";
 import { DibujoInstrumentos, DibujoMetodo, DibujoAuditoria, EvidenciaAcustica, EvidenciaLaser, EvidenciaReparacion, PlanoUbicacion } from "@/components/atoms/IlustracionesGas";
@@ -247,8 +248,9 @@ export default function PaginaGas() {
         </div>
       </section>
 
-      {/* Monitoreo continuo: cámaras fijas y sensores de PPM (Emiliano, 2026-10-02) */}
-      <section className="w-full bg-gray-50 py-14 lg:py-24">
+      {/* Monitoreo en línea: cámaras fijas y sensores de PPM (Emiliano, 2026-10-02:
+          va unificado con la detección de fugas, no como página aparte) */}
+      <section id="monitoreo-en-linea" className="w-full scroll-mt-24 bg-gray-50 py-14 lg:py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <Etiqueta>{datos.fijo.etiqueta}</Etiqueta>
@@ -266,29 +268,25 @@ export default function PaginaGas() {
             </div>
             <div className="space-y-5">
               {datos.fijo.items.map((t) => (
-                <article key={t.nombre} className="rounded-sm bg-white p-6 shadow-sm ring-1 ring-black/5">
-                  <h3 className="text-xl font-extrabold text-primary">{t.nombre}</h3>
-                  <p className="mt-2 text-justify text-sm leading-relaxed text-tertiary">{t.texto}</p>
-                  <ul className="mt-3 space-y-1.5">
-                    {t.puntos.map((p) => (
-                      <li key={p} className="flex items-start gap-3 text-sm font-semibold text-primary">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-secondary" aria-hidden="true" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
+                <article key={t.nombre} className="grid grid-cols-1 overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5 sm:grid-cols-[10rem_1fr]">
+                  <div className="relative h-40 sm:h-auto">
+                    <Image src={t.foto.src} alt={t.foto.alt} fill sizes="(min-width: 640px) 160px, 100vw" className="object-cover" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-extrabold text-primary">{t.nombre}</h3>
+                    <p className="mt-2 text-justify text-sm leading-relaxed text-tertiary">{t.texto}</p>
+                    <ul className="mt-3 space-y-1.5">
+                      {t.puntos.map((p) => (
+                        <li key={p} className="flex items-start gap-3 text-sm font-semibold text-primary">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-secondary" aria-hidden="true" />
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </article>
               ))}
               <p className="border-l-4 border-secondary pl-4 text-justify text-sm leading-relaxed text-tertiary">{datos.fijo.integracion}</p>
-              <Link
-                href="/servicios/deteccion-gas/monitoreo-en-linea"
-                className="inline-flex items-center gap-2 rounded-xs bg-primary px-6 py-3 font-bold text-white transition-colors hover:bg-secondary hover:text-primary"
-              >
-                Ver monitoreo de fugas en línea
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
             </div>
           </div>
         </div>
