@@ -723,5 +723,44 @@
       "titulo": "Análisis de Gases Disueltos en Línea",
       "resumen": "Los gases del aceite de tus transformadores críticos medidos cada hora, con alertas revisadas por especialistas."
     }
+  },
+  {
+    "articulo": {
+      "slug": "que-es-un-programa-ldar-y-como-se-hace",
+      "titulo": "Programa LDAR",
+      "resumen": "Qué es y cómo se hace, paso a paso.",
+      "portada": "/images/blog/programa-ldar.webp"
+    },
+    "servicio": {
+      "href": "/servicios/deteccion-gas",
+      "titulo": "Detección de Fugas de Gas",
+      "resumen": "Programa LDAR con cámara OGI o acústica, evidencia para el PPCIEM y monitoreo en línea con cámaras fijas y sensores de PPM."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "camara-ogi-o-camara-acustica-para-detectar-fugas-de-gas",
+      "titulo": "Cámara OGI o acústica",
+      "resumen": "Cuál conviene para detectar fugas.",
+      "portada": "/images/blog/ogi-vs-acustica.webp"
+    },
+    "servicio": {
+      "href": "/servicios/deteccion-gas",
+      "titulo": "Detección de Fugas de Gas",
+      "resumen": "Programa LDAR con cámara OGI o acústica, evidencia para el PPCIEM y monitoreo en línea con cámaras fijas y sensores de PPM."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "deteccion-de-fugas-de-gas-por-ultrasonido-como-funciona",
+      "titulo": "Fugas de gas por ultrasonido",
+      "resumen": "Cómo funciona y qué tan pequeña es la fuga.",
+      "portada": "/images/blog/fugas-gas-ultrasonido.webp"
+    },
+    "servicio": {
+      "href": "/servicios/deteccion-gas",
+      "titulo": "Detección de Fugas de Gas",
+      "resumen": "Programa LDAR con cámara OGI o acústica, evidencia para el PPCIEM y monitoreo en línea con cámaras fijas y sensores de PPM."
+    }
   }
 ]

@@ -85,7 +85,13 @@
         ]
       }
     ],
-    "texto": "La regulación permite detectar con cámara OGI o con cámara acústica con láser TDLAS. Usamos el que mejor se adapta a cada instalación."
+    "texto": "La regulación permite detectar con cámara OGI o con cámara acústica con láser TDLAS. Usamos el que mejor se adapta a cada instalación.",
+    "video": {
+      "src": "/videos/deteccion-gas/gas-metodos",
+      "titulo": "La misma fuga, vista de dos formas",
+      "texto": "La cámara OGI hace visible la nube de gas y hacia dónde se mueve. La cámara acústica ubica la fuga por su sonido y, con su láser, mide el metano. Por eso muchas veces se usan las dos: una recorre y la otra confirma.",
+      "descripcion": "La misma fuga en una brida vista con cámara OGI, como una nube de gas, y con cámara acústica con láser, como un mapa de sonido con la lectura de metano"
+    }
   },
   "ciclo": {
     "etiqueta": "El método",
@@ -265,7 +271,13 @@
           "Quemadores y equipos de combustión"
         ]
       }
-    ]
+    ],
+    "video": {
+      "src": "/videos/deteccion-gas/gas-costo",
+      "titulo": "Una fuga chica, todo el año",
+      "texto": "Una fuga de menos de un litro por minuto no se oye ni se ve, pero suma cerca de 380 m³ de gas al año. Veinte fugas así son más de 7,500 m³. Encontrarlas y cerrarlas es ahorro, además de cumplimiento.",
+      "descripcion": "Una fuga de 0.72 litros por minuto suma 378 m³ de gas al año; veinte fugas así suman 7,560 m³"
+    }
   },
   "faq": [
     {

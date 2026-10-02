@@ -1,0 +1,55 @@
+{
+  "slug": "camara-ogi-o-camara-acustica-para-detectar-fugas-de-gas",
+  "titulo": "Cámara OGI o cámara acústica: cuál conviene para detectar fugas de gas",
+  "extracto": "Las dos encuentran fugas de gas sin tocar el equipo, pero lo hacen de forma muy distinta. Qué ve cada una, qué no ve, en qué condiciones funciona mejor y cuándo conviene usar las dos.",
+  "portada": "/images/blog/ogi-vs-acustica.webp",
+  "fecha": "2026-10-02T20:00:00.200000Z",
+  "seo": {
+    "titulo": "Cámara OGI o cámara acústica para detectar fugas de gas",
+    "descripcion": "Diferencias entre la cámara OGI (cámara termográfica para fugas de gas) y la cámara acústica para detección de fugas: cómo funciona cada una, qué gases ve, condiciones de uso, medición de metano con láser y cuál conviene en cada caso."
+  },
+  "bloques": [
+    ["p", "Durante años, encontrar una fuga de gas significaba recorrer la instalación con un detector portátil y acercarlo componente por componente. Hoy hay dos tecnologías que ven la fuga a distancia y mucho más rápido: la cámara de imagen óptica de gas, conocida como OGI, y la cámara acústica. Las dos son válidas, pero no son iguales."],
+
+    ["h2", "Cómo funciona la cámara OGI"],
+    ["p", "Es una cámara infrarroja con un filtro ajustado a la banda donde el gas absorbe energía, por ejemplo la del metano y otros hidrocarburos. En su imagen, la nube de gas que sale de una fuga aparece como un humo que se mueve. Por eso a veces se le llama cámara termográfica para fugas de gas, aunque no mide temperatura como una cámara termográfica normal."],
+    ["h3", "Sus fortalezas"],
+    ["lista", [
+      "Muestra la nube de gas y hacia dónde se mueve.",
+      "Recorre una instalación completa en poco tiempo.",
+      "Cada hallazgo queda grabado en video, que sirve como evidencia."
+    ]],
+    ["h3", "Sus límites"],
+    ["p", "Necesita contraste térmico entre el gas y el fondo, así que el clima, el viento y lo que hay detrás de la fuga influyen. Las fugas muy pequeñas pueden ser difíciles de ver, y la cámara no dice cuánto gas hay sin herramientas adicionales."],
+
+    ["h2", "Cómo funciona la cámara acústica"],
+    ["p", "Tiene un arreglo de micrófonos que escucha el ultrasonido que produce el gas al escapar a presión por un orificio. Sobre la imagen de video dibuja un mapa de sonido que señala exactamente de dónde sale. Algunas incluyen un láser que mide el metano en el aire, en partes por millón por metro."],
+    ["h3", "Sus fortalezas"],
+    ["lista", [
+      "Ubica la fuga con precisión aunque haya mucho equipo alrededor.",
+      "No depende del contraste térmico ni de la temperatura del día.",
+      "Con láser, mide el metano y confirma que la fuga es de gas.",
+      "Estima el tamaño de la fuga a partir del sonido."
+    ]],
+    ["h3", "Sus límites"],
+    ["p", "Necesita que la fuga tenga presión suficiente para hacer ruido. Las fugas a muy baja presión pueden pasar desapercibidas, y en zonas con mucho ruido ultrasónico de otras fuentes hay que filtrar con cuidado."],
+
+    ["h2", "Cuál conviene"],
+    ["lista", [
+      "Para recorrer grandes instalaciones de hidrocarburos y grabar evidencia: cámara OGI.",
+      "Para ubicar fugas con precisión en zonas congestionadas o con condiciones de clima difíciles: cámara acústica.",
+      "Para medir el metano y confirmar el gas: cámara acústica con láser.",
+      "Para un programa LDAR completo: muchas veces se combinan, una para recorrer y otra para confirmar."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Las dos son válidas ante la ASEA?"],
+    ["p", "Las dos son métodos de detección reconocidos para programas de fugas; lo que importa es que el método quede definido en tu programa y que cada hallazgo quede documentado."],
+    ["h3", "¿Sirven para aire comprimido?"],
+    ["p", "La cámara acústica sí, porque escucha cualquier fuga a presión. La OGI no ve el aire, solo los gases que absorben en su banda."],
+    ["h3", "¿Puedo dejar una cámara fija vigilando?"],
+    ["p", "Sí. Hay cámaras acústicas fijas que vigilan compresores y estaciones las 24 horas, y se combinan con sensores de gas en ppm en cuartos cerrados."],
+
+    ["nota", "Detectamos fugas con [cámara OGI y cámara acústica con láser](/servicios/deteccion-gas), y vigilamos las zonas críticas en línea con cámaras fijas y sensores de PPM. El método completo está en la guía de [programa LDAR](/blog/que-es-un-programa-ldar-y-como-se-hace)."]
+  ]
+}

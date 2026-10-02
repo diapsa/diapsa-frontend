@@ -7,6 +7,9 @@ import ContactForm from "@/components/organisms/ContactForm";
 import EscenaLdar from "@/components/organisms/EscenaLdar";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
 import VideoBucle from "@/components/atoms/VideoBucle";
+import ClientesLogos from "@/components/organisms/ClientesLogos";
+import GuiasRelacionadas from "@/components/organisms/GuiasRelacionadas";
+import { getArticulosPorServicio } from "@/lib/recursos";
 import JsonLd, { createServiceSchema, createBreadcrumbSchema, createFaqSchema } from "@/components/atoms/JsonLd";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -222,6 +225,22 @@ export default function PaginaGas() {
               </article>
             ))}
           </div>
+
+          {/* La misma fuga con los dos métodos (video, 2026-10-02) */}
+          <div className="mt-12 grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:gap-12">
+            <div className="overflow-hidden rounded-2xl bg-white/[0.06] p-2 ring-1 ring-white/10 sm:p-3">
+              <VideoBucle
+                className="block aspect-[16/10] w-full rounded-xl object-cover"
+                src={`${tecnologia.video.src}.mp4`}
+                poster={`${tecnologia.video.src}.jpg`}
+                descripcion={tecnologia.video.descripcion}
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl font-extrabold lg:text-3xl">{tecnologia.video.titulo}</h3>
+              <p className="mt-3 text-justify text-base leading-relaxed text-white/75 lg:text-lg">{tecnologia.video.texto}</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -431,11 +450,29 @@ export default function PaginaGas() {
               </article>
             ))}
           </div>
+          {/* Lo que suma una fuga chica en un año (video, 2026-10-02) */}
+          <div className="mt-12 grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-12">
+            <div className="lg:order-2 overflow-hidden rounded-2xl bg-white p-2 shadow-[0_30px_70px_-35px_rgba(13,26,56,0.35)] ring-1 ring-primary/10 sm:p-3">
+              <VideoBucle
+                className="block aspect-[16/10] w-full rounded-xl object-cover"
+                src={`${paraQuien.video.src}.mp4`}
+                poster={`${paraQuien.video.src}.jpg`}
+                descripcion={paraQuien.video.descripcion}
+              />
+            </div>
+            <div className="lg:order-1">
+              <h3 className="text-2xl font-extrabold text-primary lg:text-3xl">{paraQuien.video.titulo}</h3>
+              <p className="mt-3 text-justify text-base leading-relaxed text-tertiary lg:text-lg">{paraQuien.video.texto}</p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Fotos reales de inspecciones de fugas */}
       {datos.galeria && datos.galeria.length > 0 && <GaleriaCampo fotos={datos.galeria} />}
+
+      {/* Quién ya confía */}
+      <ClientesLogos />
 
       {/* Preguntas frecuentes */}
       <section className="w-full bg-gray-50 py-14 lg:py-20">
@@ -455,6 +492,9 @@ export default function PaginaGas() {
           </div>
         </div>
       </section>
+
+      {/* Guías del blog sobre fugas y LDAR */}
+      <GuiasRelacionadas articulos={getArticulosPorServicio("/servicios/deteccion-gas")} />
 
       {/* Cierre */}
       <section className="w-full bg-[#00202f] py-16 text-white lg:py-24" style={RETICULA}>
