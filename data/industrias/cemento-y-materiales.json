@@ -1,0 +1,304 @@
+{
+  "slug": "cemento-y-materiales",
+  "nombre": "Cemento y materiales",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Industrias",
+      "link": "/#industrias"
+    },
+    {
+      "label": "Cemento y materiales",
+      "link": "/industrias/cemento-y-materiales"
+    }
+  ],
+  "seoTitle": "Mantenimiento predictivo para plantas de cemento y materiales",
+  "seoDescription": "Mantenimiento predictivo y monitoreo de condición para plantas de cemento, cal, agregados y materiales de construcción: molinos, hornos, trituradoras, ventiladores de proceso, bandas, reductores y subestación. Rutas con la planta en operación y monitoreo en línea.",
+  "hero": {
+    "etiqueta": "Industria / Cemento y materiales",
+    "titulo": "Molinos, hornos y trituradoras. Nada aquí se detiene barato.",
+    "texto": "Los equipos de una cementera son grandes, pesados y trabajan con polvo y carga de impacto. Combinamos rutas predictivas, análisis de aceite, monitoreo en línea e IDAP para que la falla del reductor o del rodamiento se encuentre con semanas de anticipación.",
+    "foto": {
+      "src": "/images/servicios/termografia-infrarroja/campo-73.webp",
+      "alt": "Analista de DIAPSA con cámara termográfica frente a una cantera"
+    },
+    "nota": "Para plantas de cemento, cal, agregados, concreto, yeso y materiales de construcción, y para sus equipos de mantenimiento."
+  },
+  "senales": {
+    "etiqueta": "Una visión con varias técnicas",
+    "titulo": "Ve la falla antes de que pare el molino.",
+    "texto": "En una cementera, un reductor de molino o un rodamiento de horno no se cambian en un turno. Las fallas avisan antes: una vibración que sube en el piñón, un cambio en el aceite del reductor, un punto caliente en el motor del ventilador de proceso o un rodillo de banda que empieza a sonar. Cada señal pide su técnica, y el programa se arma alrededor de los equipos que paran la línea de producción.",
+    "items": [
+      {
+        "titulo": "Vibración",
+        "texto": "Desbalance, desalineación, holguras y rodamientos en motores, bombas, ventiladores y reductores."
+      },
+      {
+        "titulo": "Temperatura",
+        "texto": "Conexiones flojas, sobrecargas y aislamientos dañados en tableros, transformadores y motores."
+      },
+      {
+        "titulo": "Ultrasonido",
+        "texto": "Fugas de aire, vapor y gas, falta de lubricación y descargas eléctricas que el oído no alcanza."
+      },
+      {
+        "titulo": "Aceite y gases",
+        "texto": "Desgaste, contaminación y gases disueltos en reductores, compresores y transformadores."
+      }
+    ]
+  },
+  "areas": [
+    {
+      "id": "molienda",
+      "nombre": "Molinos y reductores",
+      "titulo": "Vigila los reductores más caros de la planta.",
+      "texto": "Molinos de bolas y verticales, prensas de rodillos y sus reductores. Sus engranes y rodamientos trabajan bajo carga de impacto, y su cambio tarda semanas. La vibración y el aceite cuentan su estado con tiempo para planear.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-maquina-proceso.webp",
+        "alt": "Analista de DIAPSA midiendo vibraciones en maquinaria de proceso"
+      },
+      "prioridades": [
+        "Vibración en piñones, coronas y rodamientos",
+        "Aceite de reductores con tendencia de desgaste",
+        "Termografía de motores principales",
+        "Sensores en línea en los reductores críticos"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        }
+      ],
+      "accion": "Analizar molinos y reductores"
+    },
+    {
+      "id": "horno",
+      "nombre": "Horno, enfriador y ventiladores",
+      "titulo": "Cuida el corazón térmico del proceso.",
+      "texto": "Rodillos de apoyo, motores de accionamiento, ventiladores de tiro y de proceso, enfriador y sus reductores. Un ventilador de proceso con desbalance o un rodamiento de rodillo dañado limitan el horno completo.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-ventilador-torre.webp",
+        "alt": "Analista de DIAPSA midiendo un ventilador industrial"
+      },
+      "prioridades": [
+        "Vibración y balanceo de ventiladores de proceso",
+        "Rodillos de apoyo y accionamiento del horno",
+        "Termografía de la coraza y de motores",
+        "Aceite de reductores del enfriador"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Alineación y balanceo",
+          "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        }
+      ],
+      "accion": "Revisar horno y ventiladores"
+    },
+    {
+      "id": "trituracion",
+      "nombre": "Trituración y transporte",
+      "titulo": "Mantén el flujo de material.",
+      "texto": "Trituradoras, bandas transportadoras, elevadores de cangilones y cribas. Trabajan con polvo y carga de impacto, y sus rodamientos y reductores fallan con frecuencia. La ruta los cubre y el ultrasonido guía la lubricación.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-transmision-bandas.webp",
+        "alt": "Analista de DIAPSA revisando una transmisión por bandas"
+      },
+      "prioridades": [
+        "Vibración en trituradoras y reductores de banda",
+        "Lubricación guiada por ultrasonido",
+        "Rodillos y poleas con termografía",
+        "Alineación de transmisiones"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Alineación y balanceo",
+          "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+        }
+      ],
+      "accion": "Revisar trituración y transporte"
+    },
+    {
+      "id": "electrico",
+      "nombre": "Subestación y centros de control",
+      "titulo": "Mantén la energía de la planta en orden.",
+      "texto": "Transformadores, celdas de media tensión, centros de control de motores y variadores de gran potencia. Un punto caliente o una descarga saca la planta completa, y la NOM-029, la NOM-022 y el Código de Red piden evidencia.",
+      "foto": {
+        "src": "/images/servicios/termografia-infrarroja/campo-65.webp",
+        "alt": "Analista de DIAPSA inspeccionando un tablero eléctrico con termografía"
+      },
+      "prioridades": [
+        "Puntos calientes en conexiones y celdas",
+        "Gases disueltos en transformadores",
+        "Tierras físicas y arco eléctrico",
+        "Calidad de energía y Código de Red"
+      ],
+      "servicios": [
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "DGA en línea",
+          "href": "/servicios/monitoreo-continuo/dga-en-linea"
+        },
+        {
+          "nombre": "Tierras físicas",
+          "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+        },
+        {
+          "nombre": "Calidad de energía",
+          "href": "/servicios/monitoreo-condicion/calidad-de-energia"
+        }
+      ],
+      "accion": "Revisar subestación y tableros"
+    }
+  ],
+  "mapa": {
+    "etiqueta": "Mapa de activo y señal",
+    "titulo": "Cada riesgo, con la técnica que lo detecta.",
+    "texto": "Un programa para toda la planta no necesita el mismo equipo en todas partes. Necesita una relación clara entre el activo, la señal que avisa primero y la forma de capturarla.",
+    "filas": [
+      {
+        "activo": "Reductor de molino",
+        "senal": "Vibración en engranes y desgaste en el aceite",
+        "servicio": "Vibraciones mecánicas",
+        "detalle": "Rutas periódicas o sensores en línea.",
+        "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "activo": "Ventilador de proceso",
+        "senal": "Desbalance y vibración",
+        "servicio": "Alineación y balanceo",
+        "detalle": "Balanceo en sitio y ruta de vibración.",
+        "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+      },
+      {
+        "activo": "Rodillos y rodamientos de banda",
+        "senal": "Falta de lubricación y temperatura",
+        "servicio": "Análisis de ultrasonido",
+        "detalle": "Ruta de ultrasonido y termografía.",
+        "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+      },
+      {
+        "activo": "Motores principales",
+        "senal": "Punto caliente y vibración",
+        "servicio": "Termografía infrarroja",
+        "detalle": "Inspección en ruta o cámara fija.",
+        "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+      },
+      {
+        "activo": "Transformador de potencia",
+        "senal": "Gases disueltos y humedad",
+        "servicio": "DGA en línea",
+        "detalle": "Tendencia continua del aceite.",
+        "href": "/servicios/monitoreo-continuo/dga-en-linea"
+      },
+      {
+        "activo": "Instalación eléctrica",
+        "senal": "Resistencia de tierras y arco",
+        "servicio": "Tierras físicas",
+        "detalle": "Estudios con evidencia normativa.",
+        "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+      }
+    ]
+  },
+  "arquitectura": {
+    "etiqueta": "Cómo lo armamos",
+    "titulo": "El programa se construye alrededor de lo que no puede fallar.",
+    "texto": "La ruta con analista, el monitoreo en línea y la plataforma cumplen funciones distintas. Las combinamos según la criticidad de cada equipo y lo que ya tiene la planta.",
+    "items": [
+      {
+        "titulo": "Diagnóstico situacional",
+        "texto": "Calificamos la criticidad de cada equipo y definimos qué medir y cada cuánto.",
+        "href": "/servicios/diagnostico-situacional"
+      },
+      {
+        "titulo": "Rutas predictivas",
+        "texto": "Vibración, termografía, ultrasonido y aceite con la planta en operación.",
+        "href": "/servicios/monitoreo-condicion"
+      },
+      {
+        "titulo": "Monitoreo en línea",
+        "texto": "Sensores y cámaras fijas en los equipos críticos, con alertas revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo"
+      },
+      {
+        "titulo": "IDAP",
+        "texto": "Cada hallazgo, su tendencia y su seguimiento en una sola plataforma.",
+        "href": "/servicios/idap"
+      },
+      {
+        "titulo": "Cumplimiento",
+        "texto": "NOM-029, NOM-022 y Código de Red, con su evidencia.",
+        "href": "/servicios/monitoreo-condicion/arco-electrico"
+      }
+    ]
+  },
+  "cierre": {
+    "etiqueta": "Planea la siguiente etapa",
+    "titulo": "Cuéntanos qué planta operas y qué reductor no puede fallar.",
+    "texto": "Dinos qué planta operas, cuáles son sus equipos críticos y cómo los inspeccionas hoy. Te proponemos la combinación de rutas, sensores y plataforma que le conviene."
+  },
+  "faq": [
+    {
+      "question": "¿Se mide con la planta en operación?",
+      "answer": "Sí. Las técnicas predictivas se aplican con los equipos trabajando, que es cuando las fallas se muestran, sin pedir paros."
+    },
+    {
+      "question": "¿Por dónde conviene empezar?",
+      "answer": "Por un diagnóstico situacional: calificamos la criticidad de cada equipo y proponemos qué medir, cada cuánto y qué vigilar en continuo."
+    },
+    {
+      "question": "¿Pueden medir con polvo y en altura?",
+      "answer": "Sí. Los analistas trabajan con el equipo de seguridad que exige cada planta, y los sensores en línea se instalan donde la medición manual es difícil o peligrosa."
+    },
+    {
+      "question": "¿Cada cuánto se analiza el aceite del reductor?",
+      "answer": "Depende del equipo y de su historial. En el diagnóstico situacional definimos la frecuencia por reductor, y la tendencia del aceite dice si hay que acortarla."
+    }
+  ],
+  "cta": {
+    "title": "¿Qué reductor de tu planta no puede fallar?",
+    "text": "Cuéntanos qué produces y te proponemos el programa.",
+    "whatsappMessage": "Hola, quiero información sobre mantenimiento predictivo para una planta de cemento o materiales."
+  }
+}

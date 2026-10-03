@@ -68,7 +68,7 @@ export default function PaginaIndustria({ industria }: { industria: Industria })
             <p className="mt-6 text-justify text-lg leading-relaxed text-tertiary">{hero.texto}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#areas" className="inline-flex items-center justify-center gap-2 rounded-xs bg-secondary px-7 py-3.5 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
-                Explorar las áreas de la central
+                Explorar las áreas de la planta
               </a>
               <a href="#contacto" className="inline-flex items-center justify-center gap-2 rounded-xs border border-primary/25 bg-white px-7 py-3.5 font-bold text-primary transition-colors hover:border-primary">
                 Solicitar diagnóstico
@@ -84,7 +84,7 @@ export default function PaginaIndustria({ industria }: { industria: Industria })
         <div className="relative aspect-[16/9] lg:hidden">
           <Image src={hero.foto.src} alt="" fill sizes="100vw" className="object-cover" />
         </div>
-        <nav aria-label="Áreas de la central" className="relative border-t border-gray-200 bg-white/95">
+        <nav aria-label="Áreas de la planta" className="relative border-t border-gray-200 bg-white/95">
           <div className="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4">
             {areas.map((a, i) => (
               <a key={a.id} href={`#${a.id}`} className="group border-gray-200 px-6 py-5 transition-colors hover:bg-gray-50 [&:not(:first-child)]:border-l max-lg:[&:nth-child(3)]:border-l-0 max-lg:[&:nth-child(n+3)]:border-t">
