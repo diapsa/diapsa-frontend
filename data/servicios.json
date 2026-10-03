@@ -108,6 +108,12 @@
     "icono": "gas"
   },
   {
+    "label": "Seguridad de Ductos",
+    "href": "/servicios/seguridad-de-ductos",
+    "descripcion": "Excavaciones y fugas en el trazo, en línea",
+    "icono": "ductos"
+  },
+  {
     "label": "Diagnóstico Situacional",
     "href": "/servicios/diagnostico-situacional",
     "descripcion": "Referencia objetiva del estado de tus activos",

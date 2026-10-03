@@ -726,6 +726,110 @@
   },
   {
     "articulo": {
+      "slug": "camaras-termicas-industriales-para-control-de-calidad-y-plc",
+      "titulo": "Control de calidad con cámaras térmicas",
+      "resumen": "Cada pieza medida en la línea y conectada al PLC.",
+      "portada": "/images/blog/camaras-termicas-calidad.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-continuo/camaras-termicas",
+      "titulo": "Cámaras Térmicas Fijas",
+      "resumen": "Vigilancia térmica continua para equipos críticos, con alertas por patrón revisadas por termógrafos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "monitoreo-de-ductos-como-se-vigila-un-gasoducto-en-linea",
+      "titulo": "Monitoreo de ductos",
+      "resumen": "Cómo se vigila un gasoducto en línea.",
+      "portada": "/images/blog/monitoreo-ductos.webp"
+    },
+    "servicio": {
+      "href": "/servicios/seguridad-de-ductos",
+      "titulo": "Seguridad de Ductos",
+      "resumen": "Excavaciones, intrusiones y fugas en el trazo de tus ductos, detectadas en línea y con evidencia."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "sistemas-de-deteccion-de-fugas-en-ductos-tipos-y-cual-conviene",
+      "titulo": "Detección de fugas en ductos",
+      "resumen": "Tipos de sistemas y cuál conviene.",
+      "portada": "/images/blog/deteccion-fugas-ductos.webp"
+    },
+    "servicio": {
+      "href": "/servicios/seguridad-de-ductos",
+      "titulo": "Seguridad de Ductos",
+      "resumen": "Excavaciones, intrusiones y fugas en el trazo de tus ductos, detectadas en línea y con evidencia."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "derecho-de-via-de-ductos-que-es-y-como-vigilarlo",
+      "titulo": "Derecho de vía de ductos",
+      "resumen": "Qué es y cómo vigilarlo.",
+      "portada": "/images/blog/derecho-de-via.webp"
+    },
+    "servicio": {
+      "href": "/servicios/seguridad-de-ductos",
+      "titulo": "Seguridad de Ductos",
+      "resumen": "Excavaciones, intrusiones y fugas en el trazo de tus ductos, detectadas en línea y con evidencia."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "importancia-del-ppciem-y-que-pasa-si-no-cumples",
+      "titulo": "Importancia del PPCIEM",
+      "resumen": "Qué exige y qué pasa si no se cumple.",
+      "portada": "/images/blog/ppciem-importancia.webp"
+    },
+    "servicio": {
+      "href": "/servicios/deteccion-gas",
+      "titulo": "Detección de Fugas de Gas",
+      "resumen": "Programa LDAR con cámara OGI o acústica, evidencia para el PPCIEM y monitoreo en línea con cámaras fijas y sensores de PPM."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "emisiones-fugitivas-de-metano-cuanto-afectan",
+      "titulo": "Emisiones fugitivas de metano",
+      "resumen": "Cuánto gas, dinero y clima se pierde.",
+      "portada": "/images/blog/emisiones-fugitivas-metano.webp"
+    },
+    "servicio": {
+      "href": "/servicios/deteccion-gas",
+      "titulo": "Detección de Fugas de Gas",
+      "resumen": "Programa LDAR con cámara OGI o acústica, evidencia para el PPCIEM y monitoreo en línea con cámaras fijas y sensores de PPM."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "efecto-del-metano-en-el-medio-ambiente",
+      "titulo": "El metano y el medio ambiente",
+      "resumen": "Cuánto calienta y cuánto emite México.",
+      "portada": "/images/blog/metano-medio-ambiente.webp"
+    },
+    "servicio": {
+      "href": "/servicios/deteccion-gas",
+      "titulo": "Detección de Fugas de Gas",
+      "resumen": "Programa LDAR con cámara OGI o acústica, evidencia para el PPCIEM y monitoreo en línea con cámaras fijas y sensores de PPM."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "cuantas-empresas-cumplen-con-el-ppciem-en-mexico",
+      "titulo": "Quién cumple con el PPCIEM",
+      "resumen": "Lo que dicen los datos públicos.",
+      "portada": "/images/blog/ppciem-cumplimiento-mexico.webp"
+    },
+    "servicio": {
+      "href": "/servicios/deteccion-gas",
+      "titulo": "Detección de Fugas de Gas",
+      "resumen": "Programa LDAR con cámara OGI o acústica, evidencia para el PPCIEM y monitoreo en línea con cámaras fijas y sensores de PPM."
+    }
+  },
+  {
+    "articulo": {
       "slug": "mantenimiento-predictivo-en-centrales-de-ciclo-combinado",
       "titulo": "Ciclo combinado",
       "resumen": "Equipos críticos y técnicas para toda la central.",

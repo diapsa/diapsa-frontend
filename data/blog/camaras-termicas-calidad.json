@@ -1,0 +1,67 @@
+{
+  "slug": "camaras-termicas-industriales-para-control-de-calidad-y-plc",
+  "titulo": "Cámaras térmicas industriales para control de calidad: cómo se inspecciona cada pieza y se conecta al PLC",
+  "extracto": "Una cámara térmica fija no solo vigila tableros y motores: también puede medir cada pieza que pasa por la línea y avisar al PLC cuando una sale fuera de rango. Dónde sirve, cómo funciona, cómo se conecta al control de la planta y qué hace falta para que funcione bien.",
+  "portada": "/images/blog/camaras-termicas-calidad.webp",
+  "fecha": "2026-10-02T12:00:00.100000Z",
+  "seo": {
+    "titulo": "Cámaras térmicas industriales para control de calidad y PLC",
+    "descripcion": "Cómo se usan las cámaras térmicas industriales para control de calidad en línea: sellados, soldaduras, piezas que salen del horno, inyección y curado. Cómo se conectan al PLC, al SCADA o al MES para rechazar piezas o ajustar el proceso."
+  },
+  "bloques": [
+    ["p", "Muchos defectos de producción son, antes que nada, un problema de temperatura. Un sellado que no llegó al calor suficiente, una soldadura fría, una pieza que salió del horno sin el tratamiento completo o un molde que se enfría disparejo. A simple vista la pieza se ve bien, y el defecto aparece después, en el cliente o en la prueba destructiva de una muestra."],
+    ["p", "Una cámara térmica fija puede ver esa diferencia en cada pieza, sin tocarla y a la velocidad de la línea. Y si está conectada al control de la planta, puede hacer algo con lo que ve."],
+
+    ["h2", "Dónde sirve en el control de calidad"],
+    ["lista", [
+      "Sellado de empaques y bolsas: una zona fría en la línea de sello es un sellado incompleto.",
+      "Soldadura de plástico y de metal: la huella térmica dice si la unión recibió el calor que debía.",
+      "Piezas que salen de un horno, de un tratamiento térmico o de un secador: si salen fuera de temperatura, no recibieron el proceso completo.",
+      "Moldeo por inyección y extrusión: zonas calientes o frías en la pieza o en el molde anticipan deformaciones y rechazos.",
+      "Curado de adhesivos, pinturas y recubrimientos: la temperatura dice si el curado fue parejo.",
+      "Vidrio, acero y laminados: la uniformidad de temperatura en la hoja o la placa afecta la calidad final.",
+      "Alimentos: temperatura de cocción, horneado o enfriamiento de cada producto en la banda."
+    ]],
+
+    ["h2", "Cómo funciona"],
+    ["p", "La cámara se monta sobre la línea con vista directa a la pieza. En su imagen se definen zonas de medición, como la franja del sello o el cordón de soldadura, y para cada una se fija el rango aceptable. Cada vez que pasa una pieza, la cámara mide esas zonas y compara contra el rango. Si todo está dentro, la pieza sigue. Si algo sale, la cámara genera una alarma."],
+    ["p", "Lo importante no es solo la temperatura máxima. Muchas veces el defecto se ve como una diferencia: una zona más fría que el resto del sello, un lado de la pieza más caliente que el otro. Por eso las reglas se definen por zona y por comparación, no solo con un límite fijo."],
+
+    ["h2", "Cómo se conecta al PLC y al control de la planta"],
+    ["p", "Ver el defecto sirve de poco si nadie actúa a tiempo. Por eso la cámara se integra con el control de la línea. Las formas más comunes son:"],
+    ["h3", "Salidas de alarma"],
+    ["p", "La cámara cierra un contacto cuando una pieza sale de rango, y el PLC lo lee como una entrada más. Es lo más sencillo y lo más rápido para activar un expulsor o detener la banda."],
+    ["h3", "Protocolos industriales"],
+    ["p", "Según el modelo, la cámara puede entregar sus mediciones por Modbus TCP u otros protocolos de red industrial. Así el PLC no solo recibe la alarma, sino el valor de cada zona, y puede decidir con más información."],
+    ["h3", "SCADA, MES y sistemas más complejos"],
+    ["p", "Las mediciones también pueden llegar al SCADA para verlas en la sala de control, o al MES para guardar el registro térmico de cada pieza o de cada lote. Con eso, la calidad queda documentada y se puede rastrear después."],
+    ["p", "El tipo de conexión depende de la cámara, del PLC y de lo que se quiera hacer con la señal. Se define en el diseño del proyecto, junto con el equipo de control de la planta."],
+
+    ["h2", "Qué se puede hacer con la señal"],
+    ["numerada", [
+      "Rechazar la pieza defectuosa de forma automática, con un expulsor o una desviación.",
+      "Detener la línea si los defectos se repiten, para no seguir produciendo mal.",
+      "Ajustar el proceso, por ejemplo la temperatura de la mordaza de sellado o del horno, antes de que aparezcan defectos.",
+      "Guardar el registro de cada pieza para las auditorías de calidad y los reclamos de clientes."
+    ]],
+
+    ["h2", "Qué hace falta para que funcione bien"],
+    ["lista", [
+      "Vista directa: la radiación infrarroja no atraviesa vidrio común ni la mayoría de los plásticos, así que la cámara debe ver la superficie que se mide.",
+      "Emisividad: las superficies brillantes, como el metal pulido, reflejan y engañan la medición; se compensa en la configuración o con el punto de medición.",
+      "Velocidad: la cámara y su frecuencia de medición deben ser suficientes para la velocidad de la línea.",
+      "Resolución y lente: la zona que se mide debe ocupar suficientes píxeles en la imagen.",
+      "Protección: polvo, vapor o calor del proceso pueden pedir carcasa, enfriamiento o purga de aire."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Es lo mismo que una cámara de visión artificial?"],
+    ["p", "No. La visión artificial ve forma, color y dimensiones; la cámara térmica ve temperatura. Se complementan: una dice si la pieza está completa y la otra si recibió el proceso térmico correcto."],
+    ["h3", "¿La misma cámara puede vigilar equipos y calidad?"],
+    ["p", "A veces sí. En hornos, secadores o bandas, la misma vista puede servir para la calidad del producto y para el estado del equipo, como el refractario o los rodillos. Se decide en el diseño."],
+    ["h3", "¿Hay que cambiar el PLC?"],
+    ["p", "Normalmente no. Con una salida de alarma basta una entrada libre en el PLC. Para recibir los valores por red, se revisa qué protocolos maneja el equipo de la planta."],
+
+    ["nota", "Diseñamos proyectos de [cámaras térmicas fijas](/servicios/monitoreo-continuo/camaras-termicas) para control de calidad en línea y para equipos críticos, con la conexión a tu PLC, SCADA o MES definida desde el diseño."]
+  ]
+}

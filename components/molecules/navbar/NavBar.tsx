@@ -24,6 +24,7 @@ const fotosSueltos: Record<string, string> = {
     "/servicios/diapsa-start": "/images/diapsa-start/medicion-tableros.webp",
     "/servicios/idap": "/images/idap/capturas/inspeccion-vibraciones.jpg",
     "/servicios/deteccion-gas": "/images/deteccion-gas/campo/inspeccion-planta.webp",
+    "/servicios/seguridad-de-ductos": "/images/servicios/seguridad-de-ductos/centinela.webp",
     "/servicios/diagnostico-situacional": "/images/diagnostico-situacional/levantamiento-campo-tarjeta.webp",
 };
 // Monitoreo continuo también en tarjetas con foto (2026-09-28, Emiliano: "que

@@ -1,0 +1,57 @@
+{
+  "slug": "monitoreo-de-ductos-como-se-vigila-un-gasoducto-en-linea",
+  "titulo": "Monitoreo de ductos: cómo se vigila un gasoducto o un oleoducto en línea",
+  "extracto": "Un ducto recorre decenas o cientos de kilómetros, casi siempre lejos de cualquier vigilancia. Qué riesgos lo amenazan, qué tecnologías lo vigilan en línea, qué ve cada una y cómo se combinan para cubrir todo el trazo.",
+  "portada": "/images/blog/monitoreo-ductos.webp",
+  "fecha": "2026-10-02T18:00:00.300000Z",
+  "seo": {
+    "titulo": "Monitoreo de ductos: cómo se vigila un gasoducto en línea",
+    "descripcion": "Cómo se hace el monitoreo de ductos, gasoductos y oleoductos: riesgos del derecho de vía, centinelas con IA en los postes marcadores, monitoreo acústico de fugas en pozos y válvulas, y fibra óptica DAS y DTS a lo largo del trazo."
+  },
+  "bloques": [
+    ["p", "Un gasoducto o un oleoducto es una de las instalaciones más difíciles de vigilar. Recorre decenas o cientos de kilómetros enterrado, cruza caminos, parcelas y zonas despobladas, y casi todo su trazo queda lejos de una caseta o de una patrulla. Lo que le pasa en un tramo remoto a las tres de la mañana, nadie lo ve."],
+    ["p", "El monitoreo en línea cambia eso: equipos que se quedan en el campo, escuchan o miden todo el día y avisan solos cuando algo no es normal."],
+
+    ["h2", "Qué amenaza a un ducto"],
+    ["lista", [
+      "Excavaciones de terceros: obras, maquinaria agrícola o construcción que no saben, o no respetan, por dónde pasa el ducto.",
+      "Intrusiones en el derecho de vía: vehículos, personas o actividades no autorizadas sobre el trazo.",
+      "Fugas en pozos, cabezales y estaciones de válvulas, donde hay conexiones, sellos y equipos a presión.",
+      "Daños por movimientos de terreno, deslaves o cambios que afectan el trazo.",
+      "Corrosión y defectos del propio ducto, que se vigilan con otros programas de integridad."
+    ]],
+    ["p", "Las primeras tres son las que más se benefician del monitoreo en línea, porque suceden rápido y en cualquier momento."],
+
+    ["h2", "Las tecnologías que vigilan en línea"],
+    ["h3", "Centinelas en los postes marcadores"],
+    ["p", "Son equipos autónomos que se montan sobre los postes que marcan el trazo. Escuchan el suelo con un geófono y su inteligencia artificial distingue la vibración de una excavadora o de una excavación manual del ruido normal del entorno. Cuando detectan un riesgo, toman fotos y video con sus cámaras y mandan la alerta con la ubicación por la red celular. Funcionan con energía solar, sin red eléctrica."],
+    ["h3", "Monitoreo acústico en pozos y válvulas"],
+    ["p", "Un monitor junto al cabezal de pozo o a la válvula escucha desde el rango audible hasta el ultrasonido y reconoce la huella acústica de una fuga de gas a presión. La alerta puede llegar al sistema de control por la red o por protocolos industriales."],
+    ["h3", "Fibra óptica DAS"],
+    ["p", "La detección acústica distribuida convierte una fibra óptica tendida junto al ducto en miles de micrófonos a lo largo de decenas de kilómetros. Detecta vibraciones como excavaciones, vehículos o pasos, y dice en qué punto del trazo ocurren."],
+    ["h3", "Fibra óptica DTS"],
+    ["p", "La detección de temperatura distribuida mide la temperatura a lo largo de toda la fibra. Sirve para detectar cambios térmicos anormales en el trazo, en cables o en túneles de servicios."],
+
+    ["h2", "Cómo se combinan"],
+    ["p", "Ninguna tecnología sola cubre todo. Los centinelas son ideales en tramos de riesgo puntual, como cruces y zonas con antecedentes, y no necesitan obra. La fibra cubre tramos largos de forma continua, sobre todo si ya está tendida o si se planea en la construcción. Los monitores acústicos van donde el riesgo es la fuga: pozos y estaciones de válvulas. Un buen proyecto empieza por marcar los tramos de riesgo y decide la capa para cada uno."],
+
+    ["h2", "Qué debe traer una buena alerta"],
+    ["numerada", [
+      "Dónde: el kilómetro o el punto del trazo, y la distancia al ducto.",
+      "Qué: lo que reconoció el sistema, por ejemplo maquinaria excavando o una fuga.",
+      "La evidencia: fotos, video o la señal registrada.",
+      "Qué hacer: a quién avisar y a quién enviar al sitio.",
+      "El historial: para ver qué tramos concentran los eventos."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Sustituye al patrullaje?"],
+    ["p", "No del todo, pero lo hace mucho más eficiente: la cuadrilla deja de recorrer a ciegas y va al punto donde algo está pasando, con la evidencia en la mano."],
+    ["h3", "¿Funciona en tramos sin luz ni señal?"],
+    ["p", "Los centinelas trabajan con energía solar y batería. Para enviar alertas necesitan cobertura celular o un enlace alterno; la cobertura se revisa en el diseño de cada tramo."],
+    ["h3", "¿Qué pasa con las falsas alarmas?"],
+    ["p", "La inteligencia artificial aprende cómo vibra y suena cada tramo en condiciones normales, y las fotos permiten confirmar el evento antes de mover a la cuadrilla."],
+
+    ["nota", "Diseñamos e instalamos proyectos de [seguridad de ductos](/servicios/seguridad-de-ductos) con centinelas, monitores acústicos y fibra óptica, y lo complementamos con [detección de fugas de gas](/servicios/deteccion-gas) en campo."]
+  ]
+}
