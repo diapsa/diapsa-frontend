@@ -1,25 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import JsonLd, { createBreadcrumbSchema, createFaqSchema } from "@/components/atoms/JsonLd";
-import AcordeonFoto from "@/components/molecules/AcordeonFoto";
-import EscenaGemeloEnergia from "@/components/organisms/EscenaGemeloEnergia";
 import GuiasRelacionadas from "@/components/organisms/GuiasRelacionadas";
 import ContactForm from "@/components/organisms/ContactForm";
 import { getArticulosPorServicio } from "@/lib/recursos";
 import { SITE_CONFIG } from "@/lib/constants";
-import clientes from "@/data/clients.json";
 import type { Industria } from "@/types/industria";
 
 /**
  * PaginaIndustria
- * Landing por industria (2026-10-01). Emiliano pidió seguir dos
- * referencias: el marco de las páginas por sector de Fracttal (foto grande
- * con una frase, logos de clientes, bloques con acordeón y
- * una foto que cambia con cada punto, tarjetas de servicio) y, en medio, el
- * caso del giro contado como los casos de estudio de Tractian (resultados
- * primero, antes y después, retos, etapas y la gráfica). En lugar del video
- * va el gemelo digital de la central (pedido de Emiliano). Poco texto a la
- * vista: lo largo vive en las guías del blog. Todo viene de
+ * Landing por industria. Después de probar el marco de Fracttal y Tractian,
+ * Emiliano eligió como referencia la página por sector de Hertzinno
+ * (es.hertzinno.com/pages/power-utilities, 2026-10-02): encabezado claro con
+ * la foto desvanecida y cuatro pestañas de áreas, las señales tempranas, un
+ * bloque por área de activos (prioridades de monitoreo y servicios), el mapa
+ * de activo y señal, la arquitectura del programa y el cierre. Todo viene de
  * data/industrias/<slug>.json.
  */
 
@@ -29,9 +24,11 @@ const Flecha = () => (
   </svg>
 );
 
-const LOGOS = (clientes.clients as { name: string; logo: string | null }[]).filter(
-  (c): c is { name: string; logo: string } => Boolean(c.logo),
-);
+const n = (i: number) => String(i + 1).padStart(2, "0");
+
+function Etiqueta({ children, clara }: { children: React.ReactNode; clara?: boolean }) {
+  return <p className={`text-xs font-bold uppercase tracking-[0.2em] ${clara ? "text-secondary" : "text-secondary-dark"}`}>{children}</p>;
+}
 
 export default function PaginaIndustria({ industria }: { industria: Industria }) {
   const href = `/industrias/${industria.slug}`;
@@ -43,183 +40,200 @@ export default function PaginaIndustria({ industria }: { industria: Industria })
   const faqJsonLd = industria.faq.length ? createFaqSchema(industria.faq) : null;
   const articulos = getArticulosPorServicio(href);
   const wa = `https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent(industria.cta.whatsappMessage)}`;
-  const caso = industria.caso;
+  const { hero, senales, areas, mapa, arquitectura, caso, cierre } = industria;
 
   return (
     <main>
       <JsonLd data={breadcrumbJsonLd} />
       {faqJsonLd && <JsonLd data={faqJsonLd} />}
 
-      {/* Encabezado: foto de planta a todo lo ancho, una frase y dos botones. */}
-      <section className="relative isolate flex min-h-[78vh] items-end overflow-hidden bg-primary pt-32 text-white lg:min-h-[86vh] lg:items-center">
-        <Image src={industria.hero.foto.src} alt={industria.hero.foto.alt} fill priority sizes="100vw" className="-z-20 object-cover object-[80%_center]" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/90 via-primary/45 to-transparent" />
-        <div className="mx-auto w-full max-w-7xl px-6 pb-14 lg:pb-0">
-          <nav aria-label="Ruta" className="mb-6 text-sm text-white/60">
+      {/* Encabezado claro: texto a la izquierda, foto desvanecida a la derecha y las cuatro áreas abajo. */}
+      <section className="relative overflow-hidden bg-white pt-32 lg:pt-36">
+        <div className="absolute inset-y-0 right-0 hidden w-[62%] lg:block">
+          <Image src={hero.foto.src} alt={hero.foto.alt} fill priority sizes="62vw" className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/55 to-transparent" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6">
+          <nav aria-label="Ruta" className="mb-6 text-sm text-tertiary">
             {industria.breadcrumbs.map((b, i) => (
               <span key={b.link}>
                 {i > 0 && <span className="mx-2">/</span>}
-                {i < industria.breadcrumbs.length - 1 ? <Link href={b.link} className="hover:text-white">{b.label}</Link> : <span className="text-white/90">{b.label}</span>}
+                {i < industria.breadcrumbs.length - 1 ? <Link href={b.link} className="hover:text-primary">{b.label}</Link> : <span className="text-primary">{b.label}</span>}
               </span>
             ))}
           </nav>
-          <p className="text-sm font-bold uppercase tracking-widest text-secondary">{industria.hero.etiqueta}</p>
-          <h1 className="mt-3 max-w-2xl text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">{industria.hero.titulo}</h1>
-          <p className="mt-5 max-w-xl text-justify text-lg leading-relaxed text-white/85">{industria.hero.texto}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#contacto" className="inline-flex items-center justify-center gap-2 rounded-xs bg-secondary px-7 py-3.5 font-bold text-primary transition-colors hover:bg-white">
-              Quiero un diagnóstico <Flecha />
-            </a>
-            <a href={wa} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xs border-2 border-white/70 px-7 py-3 font-bold text-white transition-colors hover:bg-white hover:text-primary">
-              Escríbenos por WhatsApp
-            </a>
+          <div className="max-w-2xl pb-12 lg:pb-14">
+            <Etiqueta>{hero.etiqueta}</Etiqueta>
+            <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] text-primary sm:text-5xl lg:text-[3.5rem]">{hero.titulo}</h1>
+            <p className="mt-6 text-justify text-lg leading-relaxed text-tertiary">{hero.texto}</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="#areas" className="inline-flex items-center justify-center gap-2 rounded-xs bg-secondary px-7 py-3.5 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                Explorar las áreas de la central
+              </a>
+              <a href="#contacto" className="inline-flex items-center justify-center gap-2 rounded-xs border border-primary/25 bg-white px-7 py-3.5 font-bold text-primary transition-colors hover:border-primary">
+                Solicitar diagnóstico
+              </a>
+            </div>
+            <p className="mt-8 flex items-start gap-3 text-sm text-tertiary">
+              <span className="mt-2.5 h-px w-8 shrink-0 bg-secondary" aria-hidden="true" />
+              {hero.nota}
+            </p>
           </div>
         </div>
-      </section>
-
-      {/* Logos de quien ya mide con nosotros, justo debajo, como Fracttal. */}
-      <section aria-label="Clientes" className="w-full border-b border-gray-100 bg-white py-8">
-        <div className="mx-auto max-w-7xl px-6">
-          <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-            {LOGOS.slice(0, 8).map((c) => (
-              <li key={c.name} className="relative h-9 w-28 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0">
-                <Image src={c.logo} alt={c.name} fill sizes="112px" className="object-contain brightness-0" />
-              </li>
+        {/* En celular la foto va debajo del texto */}
+        <div className="relative aspect-[16/9] lg:hidden">
+          <Image src={hero.foto.src} alt="" fill sizes="100vw" className="object-cover" />
+        </div>
+        <nav aria-label="Áreas de la central" className="relative border-t border-gray-200 bg-white/95">
+          <div className="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4">
+            {areas.map((a, i) => (
+              <a key={a.id} href={`#${a.id}`} className="group border-gray-200 px-6 py-5 transition-colors hover:bg-gray-50 [&:not(:first-child)]:border-l max-lg:[&:nth-child(3)]:border-l-0 max-lg:[&:nth-child(n+3)]:border-t">
+                <span className="text-xs font-bold text-secondary-dark">{n(i)}</span>
+                <span className="mt-1 block font-bold text-primary group-hover:underline">{a.nombre}</span>
+              </a>
             ))}
-          </ul>
-        </div>
+          </div>
+        </nav>
       </section>
 
-      {/* Gemelo digital del giro: criticidad, técnicas, rutas y sensores, indicadores. */}
-      <section className="w-full bg-[#0b1530] py-14 text-white lg:py-20">
+      {/* Las señales tempranas */}
+      <section className="w-full bg-gray-50 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-8 max-w-2xl">
-            <h2 className="text-3xl font-extrabold leading-tight lg:text-4xl">{industria.intro.titulo}</h2>
-            <p className="mt-3 text-justify text-lg leading-relaxed text-white/75">{industria.intro.texto}</p>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <Etiqueta>{senales.etiqueta}</Etiqueta>
+              <h2 className="mt-4 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">{senales.titulo}</h2>
+            </div>
+            <p className="text-justify text-lg leading-relaxed text-tertiary lg:pt-10">{senales.texto}</p>
           </div>
-          {industria.intro.escena === "gemelo-energia" && <EscenaGemeloEnergia />}
-          <p className="mt-3 text-right text-xs text-white/50">Indicadores de ejemplo.</p>
+          <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-gray-200 bg-gray-200 sm:grid-cols-2 lg:grid-cols-4">
+            {senales.items.map((s, i) => (
+              <div key={s.titulo} className="bg-white p-6 lg:p-8">
+                <span className="text-xs font-bold text-secondary-dark">{n(i)}</span>
+                <span className="mt-4 block h-px w-10 bg-secondary" aria-hidden="true" />
+                <h3 className="mt-4 text-lg font-extrabold text-primary">{s.titulo}</h3>
+                <p className="mt-2 text-justify text-sm leading-relaxed text-tertiary">{s.texto}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Bloques con acordeón y foto que cambia. */}
-      {industria.bloques.map((b, i) => (
-        <section key={b.titulo} className="w-full bg-white py-14 lg:py-20">
-          <div className="mx-auto max-w-7xl px-6">
-            <h2 className="mb-10 max-w-2xl text-3xl font-extrabold leading-tight text-primary lg:text-[2.6rem]">{b.titulo}</h2>
-            <AcordeonFoto items={b.items} invertir={i % 2 === 1} />
-          </div>
-        </section>
-      ))}
-
-      {/* Caso del giro contado como Tractian. */}
-      {caso && (
-        <section className="w-full bg-[#0b1530] py-16 text-white lg:py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <p className="text-sm font-bold uppercase tracking-widest text-secondary">{caso.etiqueta}</p>
-            <div className="mt-3 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:items-end">
-              <div>
-                <h2 className="text-3xl font-extrabold leading-tight lg:text-[2.6rem]">{caso.titulo}</h2>
-                <p className="mt-4 text-justify text-lg leading-relaxed text-white/75">{caso.resumen}</p>
+      {/* Un bloque por área de activos, con la foto alternando de lado */}
+      <div id="areas" className="scroll-mt-24">
+        {areas.map((a, i) => (
+          <section key={a.id} id={a.id} className={`w-full scroll-mt-24 py-16 lg:py-24 ${i % 2 ? "bg-gray-50" : "bg-white"}`}>
+            <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
+              <div className={`relative aspect-[4/3] overflow-hidden rounded-sm ${i % 2 ? "lg:order-2" : ""}`}>
+                <Image src={a.foto.src} alt={a.foto.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
               </div>
-              <dl className="grid grid-cols-2 gap-4">
-                {caso.cifras.map((c) => (
-                  <div key={c.etiqueta} className="flex flex-col-reverse rounded-xl bg-white/5 p-5 ring-1 ring-white/10">
-                    <dt className="mt-1 text-sm leading-snug text-white/70">{c.etiqueta}</dt>
-                    <dd className="text-3xl font-extrabold text-secondary lg:text-4xl">{c.valor}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-
-            {/* Antes y después, en barras. */}
-            <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
-              {caso.antesDespues.map((a) => (
-                <div key={a.etiqueta} className="rounded-xl bg-white/5 p-6 ring-1 ring-white/10">
-                  <p className="text-sm font-bold uppercase tracking-widest text-white/60">{a.etiqueta}</p>
-                  {[
-                    { anio: a.anioAntes, v: a.antes, color: "bg-red-500" },
-                    { anio: a.anioDespues, v: a.despues, color: "bg-emerald-400" },
-                  ].map((f) => (
-                    <div key={f.anio} className="mt-4 flex items-center gap-4">
-                      <span className="w-12 shrink-0 text-sm font-bold text-white/70">{f.anio}</span>
-                      <div className="h-8 flex-1 rounded-sm bg-white/5">
-                        <div className={`h-full rounded-sm ${f.color}`} style={{ width: `${Math.max(2, (f.v / Math.max(a.antes, a.despues)) * 100)}%` }} />
-                      </div>
-                      <span className="w-12 shrink-0 text-right text-2xl font-extrabold">{f.v}</span>
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-
-            {/* Retos y cómo se resolvió. */}
-            <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2">
               <div>
-                <h3 className="text-2xl font-extrabold">Retos</h3>
-                <ul className="mt-6 space-y-6">
-                  {caso.retos.map((r) => (
-                    <li key={r.titulo} className="border-l-4 border-secondary pl-5">
-                      <p className="text-lg font-extrabold">{r.titulo}</p>
-                      <p className="mt-1 text-justify text-white/70">{r.texto}</p>
+                <p className="text-sm font-bold text-secondary-dark">{n(i)} / {a.nombre}</p>
+                <h2 className="mt-3 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">{a.titulo}</h2>
+                <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">{a.texto}</p>
+                <p className="mt-8 text-xs font-bold uppercase tracking-[0.2em] text-secondary-dark">Prioridades típicas de monitoreo</p>
+                <ul className="mt-4 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
+                  {a.prioridades.map((p) => (
+                    <li key={p} className="flex items-start gap-3 text-base font-semibold text-primary">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-secondary" aria-hidden="true" />
+                      {p}
                     </li>
                   ))}
                 </ul>
-              </div>
-              <div>
-                <h3 className="text-2xl font-extrabold">Cómo se resolvió</h3>
-                <ol className="mt-6 space-y-6">
-                  {caso.etapas.map((e) => (
-                    <li key={e.titulo} className="flex gap-4">
-                      <span className="mt-0.5 h-fit min-w-[6.5rem] shrink-0 whitespace-nowrap rounded-full bg-secondary px-3 py-1 text-center text-xs font-extrabold text-primary">{e.etiqueta}</span>
-                      <div>
-                        <p className="text-lg font-extrabold">{e.titulo}</p>
-                        <p className="mt-1 text-justify text-white/70">{e.texto}</p>
-                      </div>
+                <p className="mt-8 text-xs font-bold uppercase tracking-[0.2em] text-tertiary">Servicios relacionados</p>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {a.servicios.map((s) => (
+                    <li key={s.href}>
+                      <Link href={s.href} className="inline-flex items-center gap-1.5 rounded-sm border border-gray-200 bg-white px-3 py-2 text-sm font-bold text-primary transition-colors hover:border-primary">
+                        {s.nombre} <Flecha />
+                      </Link>
                     </li>
                   ))}
-                </ol>
+                </ul>
+                <a href="#contacto" className="mt-8 inline-flex items-center gap-2 font-bold text-primary underline decoration-secondary decoration-2 underline-offset-8 hover:decoration-primary">
+                  {a.accion} <Flecha />
+                </a>
               </div>
             </div>
+          </section>
+        ))}
+      </div>
 
-            {caso.grafica && (
-              <figure className="mt-16 overflow-hidden rounded-2xl bg-white p-4 lg:p-6">
-                <Image src={caso.grafica.src} alt={caso.grafica.alt} width={1116} height={557} sizes="(min-width: 1280px) 1200px, 100vw" className="h-auto w-full" />
-                <figcaption className="mt-3 text-justify text-sm text-tertiary">{caso.grafica.pie}</figcaption>
-              </figure>
-            )}
-
-            <div className="mt-10">
-              <Link href={caso.href} className="inline-flex items-center gap-2 rounded-xs bg-secondary px-6 py-3 font-bold text-primary transition-colors hover:bg-white">
-                Leer el caso completo <Flecha />
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Tarjetas de servicio con foto, como las de producto de Fracttal. */}
-      <section className="w-full bg-gray-50 py-14 lg:py-20">
+      {/* Mapa de activo y señal */}
+      <section className="w-full bg-white py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-extrabold leading-tight text-primary lg:text-[2.6rem]">{industria.servicios.titulo}</h2>
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {industria.servicios.items.map((s) => (
-              <Link key={s.href} href={s.href} className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-xl">
-                <div className="relative h-40 overflow-hidden">
-                  <Image src={s.foto} alt="" fill sizes="(min-width: 1024px) 25vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <h3 className="text-lg font-extrabold leading-snug text-primary">{s.titulo}</h3>
-                  <p className="mt-1.5 flex-1 text-justify text-sm leading-relaxed text-tertiary">{s.texto}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-primary group-hover:text-secondary">
-                    Conocer más <Flecha />
-                  </span>
-                </div>
+          <div className="max-w-3xl">
+            <Etiqueta>{mapa.etiqueta}</Etiqueta>
+            <h2 className="mt-4 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">{mapa.titulo}</h2>
+            <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">{mapa.texto}</p>
+          </div>
+          <div className="mt-12 overflow-hidden rounded-sm border border-gray-200">
+            <div className="hidden grid-cols-3 bg-primary text-xs font-bold uppercase tracking-[0.15em] text-white md:grid">
+              <span className="px-6 py-4">Activo o riesgo</span>
+              <span className="px-6 py-4">Señal temprana</span>
+              <span className="px-6 py-4 text-secondary">Servicio DIAPSA</span>
+            </div>
+            {mapa.filas.map((f) => (
+              <div key={f.activo} className="grid grid-cols-1 border-t border-gray-200 first:border-t-0 md:grid-cols-3 md:first:border-t">
+                <span className="px-6 pt-5 font-bold text-primary md:py-5">{f.activo}</span>
+                <span className="px-6 pt-1 text-tertiary md:py-5">{f.senal}</span>
+                <span className="px-6 pb-5 pt-2 md:py-5">
+                  <Link href={f.href} className="font-bold text-primary hover:underline">{f.servicio}</Link>
+                  <span className="mt-1 block text-sm text-tertiary">{f.detalle}</span>
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Arquitectura del programa */}
+      <section className="w-full bg-gray-50 py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <Etiqueta>{arquitectura.etiqueta}</Etiqueta>
+              <h2 className="mt-4 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">{arquitectura.titulo}</h2>
+            </div>
+            <p className="text-justify text-lg leading-relaxed text-tertiary lg:pt-10">{arquitectura.texto}</p>
+          </div>
+          <div className="mt-12 overflow-hidden rounded-sm border border-gray-200 bg-white">
+            {arquitectura.items.map((a, i) => (
+              <Link key={a.titulo} href={a.href} className="group grid grid-cols-[2.5rem_1fr_auto] items-start gap-x-4 gap-y-1 border-t border-gray-200 px-6 py-5 transition-colors first:border-t-0 hover:bg-gray-50 md:grid-cols-[3rem_16rem_1fr_auto] md:items-center">
+                <span className="text-sm font-bold text-secondary-dark">{n(i)}</span>
+                <h3 className="text-lg font-extrabold text-primary">{a.titulo}</h3>
+                <p className="col-start-2 row-start-2 text-justify text-base leading-relaxed text-tertiary md:col-start-3 md:row-start-1">{a.texto}</p>
+                <span className="col-start-3 row-start-1 inline-flex text-primary transition-transform group-hover:translate-x-1 md:col-start-4"><Flecha /></span>
               </Link>
             ))}
           </div>
         </div>
       </section>
+
+      {/* El caso del giro, en corto */}
+      {caso && (
+        <section className="w-full bg-primary py-16 text-white lg:py-20">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16">
+            <div>
+              <Etiqueta clara>{caso.etiqueta}</Etiqueta>
+              <h2 className="mt-4 text-3xl font-extrabold leading-tight lg:text-4xl">{caso.titulo}</h2>
+              <p className="mt-4 text-justify text-lg leading-relaxed text-white/75">{caso.resumen}</p>
+              <Link href={caso.href} className="mt-6 inline-flex items-center gap-2 font-bold text-secondary hover:text-white">
+                Leer el caso completo <Flecha />
+              </Link>
+            </div>
+            <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-sm bg-white/10">
+              {caso.cifras.map((c) => (
+                <div key={c.etiqueta} className="bg-primary p-6 lg:p-8">
+                  <dt className="sr-only">{c.etiqueta}</dt>
+                  <dd className="text-3xl font-extrabold text-secondary lg:text-5xl">{c.valor}</dd>
+                  <dd className="mt-2 text-sm text-white/70">{c.etiqueta}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
 
       {industria.faq.length > 0 && (
         <section className="w-full bg-white py-14 lg:py-20">
@@ -244,15 +258,19 @@ export default function PaginaIndustria({ industria }: { industria: Industria })
 
       <GuiasRelacionadas articulos={articulos} />
 
-      <section className="w-full bg-secondary py-14 lg:py-20">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="mb-4 text-3xl font-extrabold leading-tight text-primary lg:text-[2.75rem]">{industria.cta.title}</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-justify text-lg leading-relaxed text-primary/80 sm:text-center">{industria.cta.text}</p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="#contacto" className="inline-flex items-center gap-2 rounded-xs bg-primary px-8 py-3.5 font-bold text-white shadow-md transition-all duration-300 hover:bg-white hover:text-primary">
-              Quiero un diagnóstico
+      {/* Cierre */}
+      <section className="w-full border-t border-gray-200 bg-white py-16 lg:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-end gap-8 px-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:gap-16">
+          <div>
+            <Etiqueta>{cierre.etiqueta}</Etiqueta>
+            <h2 className="mt-4 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">{cierre.titulo}</h2>
+            <p className="mt-4 max-w-2xl text-justify text-lg leading-relaxed text-tertiary">{cierre.texto}</p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+            <a href="#contacto" className="inline-flex items-center justify-center gap-2 rounded-xs bg-secondary px-7 py-3.5 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+              Solicitar propuesta
             </a>
-            <a href={wa} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xs border-2 border-primary px-8 py-3 font-bold text-primary transition-all duration-300 hover:bg-primary hover:text-white">
+            <a href={wa} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xs border border-primary/25 px-7 py-3.5 font-bold text-primary transition-colors hover:border-primary">
               Escríbenos por WhatsApp
             </a>
           </div>
