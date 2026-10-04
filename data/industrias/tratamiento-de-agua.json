@@ -1,0 +1,316 @@
+{
+  "slug": "tratamiento-de-agua",
+  "nombre": "Tratamiento de agua",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Industrias",
+      "link": "/#industrias"
+    },
+    {
+      "label": "Tratamiento de agua",
+      "link": "/industrias/tratamiento-de-agua"
+    }
+  ],
+  "seoTitle": "Mantenimiento predictivo para plantas de tratamiento de agua",
+  "seoDescription": "Mantenimiento predictivo y monitoreo de condición para plantas de tratamiento de agua potable y residual: bombas, sopladores, motores, reductores, tableros y subestación. Rutas de vibración, termografía, ultrasonido y aceite con la planta en operación, y monitoreo en línea.",
+  "hero": {
+    "etiqueta": "Industria / Tratamiento de agua",
+    "titulo": "El agua no deja de llegar. Tus bombas tampoco deberían fallar.",
+    "texto": "Bombas de cárcamo, sopladores, agitadores y cientos de motores trabajan día y noche con agua y ambiente corrosivo. Combinamos rutas predictivas, monitoreo en línea y formación del personal para que la falla se encuentre antes del derrame o del paro.",
+    "foto": {
+      "src": "/images/gallery/campo/vibracion-motor-bomba-azul.webp",
+      "alt": "Analista de DIAPSA midiendo un motor de bomba"
+    },
+    "nota": "Para plantas de tratamiento de agua residual y potable, organismos operadores, plantas industriales de agua y sus equipos de mantenimiento."
+  },
+  "senales": {
+    "etiqueta": "Una visión con varias técnicas",
+    "titulo": "Ve la falla antes de que pare la bomba.",
+    "texto": "En una planta de agua, una bomba que se detiene puede derramar, inundar o dejar sin servicio. Las fallas avisan antes: una vibración que sube en el rodamiento del motor vertical, un punto caliente en el arrancador, un soplador que cambia de sonido o un reductor de agitador que pierde aceite. Cada señal pide su técnica, y el programa se arma alrededor de los equipos sin relevo.",
+    "items": [
+      {
+        "titulo": "Vibración",
+        "texto": "Desbalance, desalineación, holguras y rodamientos en motores, bombas, ventiladores y reductores."
+      },
+      {
+        "titulo": "Temperatura",
+        "texto": "Conexiones flojas, sobrecargas y aislamientos dañados en tableros, transformadores y motores."
+      },
+      {
+        "titulo": "Ultrasonido",
+        "texto": "Fugas de aire, vapor y gas, falta de lubricación y descargas eléctricas que el oído no alcanza."
+      },
+      {
+        "titulo": "Aceite y gases",
+        "texto": "Desgaste, contaminación y gases disueltos en reductores, compresores y transformadores."
+      }
+    ]
+  },
+  "areas": [
+    {
+      "id": "bombeo",
+      "nombre": "Bombas y motores",
+      "titulo": "Vigila el bombeo principal.",
+      "texto": "Bombas de cárcamo, de recirculación y de lodos, motores verticales y horizontales. Trabajan con agua, humedad y a veces sin relevo. La vibración y la termografía cuentan el estado de rodamientos, acoplamientos y sellos.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-bomba-vertical.webp",
+        "alt": "Analista de DIAPSA midiendo una bomba vertical"
+      },
+      "prioridades": [
+        "Vibración en rodamientos y acoplamientos",
+        "Alineación y balanceo tras cada reparación",
+        "Termografía de motores y arrancadores",
+        "Sensores en línea en el bombeo sin relevo"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Alineación y balanceo",
+          "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        }
+      ],
+      "accion": "Analizar bombas y motores"
+    },
+    {
+      "id": "aireacion",
+      "nombre": "Sopladores, agitadores y reductores",
+      "titulo": "Cuida el equipo del proceso biológico.",
+      "texto": "Sopladores de aireación, agitadores, rastras y sus reductores. Son los equipos que más energía consumen y los que más cuesta detener. El aceite y la vibración revelan el desgaste de engranes y rodamientos.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-motor-vertical.webp",
+        "alt": "Analista de DIAPSA midiendo un motor vertical"
+      },
+      "prioridades": [
+        "Vibración en sopladores y reductores",
+        "Aceite de reductores con tendencia de desgaste",
+        "Lubricación guiada por ultrasonido",
+        "Termografía de motores de alta carga"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        }
+      ],
+      "accion": "Revisar sopladores y agitadores"
+    },
+    {
+      "id": "electrico",
+      "nombre": "Tableros y subestación",
+      "titulo": "Evita el paro eléctrico y cumple la norma.",
+      "texto": "Centros de control de motores, arrancadores, variadores y transformadores en ambiente húmedo y corrosivo. Un punto caliente saca el bombeo completo, y la NOM-029 y la NOM-022 piden evidencia del estado de la instalación.",
+      "foto": {
+        "src": "/images/servicios/termografia-infrarroja/campo-10.webp",
+        "alt": "Analista de DIAPSA inspeccionando un tablero eléctrico con termografía"
+      },
+      "prioridades": [
+        "Puntos calientes en tableros y arrancadores",
+        "Tierras físicas y arco eléctrico",
+        "Calidad de energía y factor de potencia",
+        "Termografía de cuartos eléctricos en línea"
+      ],
+      "servicios": [
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Tierras físicas",
+          "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+        },
+        {
+          "nombre": "Arco eléctrico",
+          "href": "/servicios/monitoreo-condicion/arco-electrico"
+        },
+        {
+          "nombre": "Calidad de energía",
+          "href": "/servicios/monitoreo-condicion/calidad-de-energia"
+        }
+      ],
+      "accion": "Revisar tableros y subestación"
+    },
+    {
+      "id": "programa",
+      "nombre": "El programa y el personal",
+      "titulo": "Deja el programa en manos de tu equipo.",
+      "texto": "Las plantas de agua suelen tener rotación de personal y poca experiencia en técnicas predictivas. DIAPSA START combina capacitación práctica, diagnóstico situacional y las primeras mediciones, para que el programa se sostenga con el personal de planta.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-aplicando-recomendaciones.webp",
+        "alt": "Personal de planta aplicando las recomendaciones del diagnóstico"
+      },
+      "prioridades": [
+        "Capacitación práctica del personal",
+        "Matriz de criticidad de los equipos",
+        "Rutas y frecuencias por equipo",
+        "Historial y tendencias en IDAP"
+      ],
+      "servicios": [
+        {
+          "nombre": "DIAPSA START",
+          "href": "/servicios/diapsa-start"
+        },
+        {
+          "nombre": "Diagnóstico situacional",
+          "href": "/servicios/diagnostico-situacional"
+        },
+        {
+          "nombre": "IDAP",
+          "href": "/servicios/idap"
+        }
+      ],
+      "accion": "Planear el programa con tu equipo"
+    }
+  ],
+  "mapa": {
+    "etiqueta": "Mapa de activo y señal",
+    "titulo": "Cada riesgo, con la técnica que lo detecta.",
+    "texto": "Un programa para toda la planta no necesita el mismo equipo en todas partes. Necesita una relación clara entre el activo, la señal que avisa primero y la forma de capturarla.",
+    "filas": [
+      {
+        "activo": "Bomba de cárcamo sin relevo",
+        "senal": "Cambio en la vibración y temperatura",
+        "servicio": "Sensores de vibración",
+        "detalle": "Alertas en línea revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+      },
+      {
+        "activo": "Motores verticales",
+        "senal": "Rodamientos y desalineación",
+        "servicio": "Vibraciones mecánicas",
+        "detalle": "Rutas periódicas y balanceo en sitio.",
+        "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "activo": "Sopladores y reductores",
+        "senal": "Desgaste en el aceite y engranes",
+        "servicio": "Análisis de aceite",
+        "detalle": "Muestreo periódico con tendencia.",
+        "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+      },
+      {
+        "activo": "Arrancadores y tableros",
+        "senal": "Punto caliente",
+        "servicio": "Termografía infrarroja",
+        "detalle": "Inspección en ruta o cámara fija.",
+        "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+      },
+      {
+        "activo": "Instalación eléctrica",
+        "senal": "Resistencia de tierras y arco",
+        "servicio": "Tierras físicas",
+        "detalle": "Estudios con evidencia normativa.",
+        "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+      },
+      {
+        "activo": "Toda la planta",
+        "senal": "Personal nuevo y equipos sin criticidad",
+        "servicio": "DIAPSA START",
+        "detalle": "Capacitación, diagnóstico y primeras mediciones.",
+        "href": "/servicios/diapsa-start"
+      }
+    ]
+  },
+  "arquitectura": {
+    "etiqueta": "Cómo lo armamos",
+    "titulo": "El programa se construye alrededor de lo que no puede fallar.",
+    "texto": "La ruta con analista, el monitoreo en línea y la plataforma cumplen funciones distintas. Las combinamos según la criticidad de cada equipo y lo que ya tiene la planta.",
+    "items": [
+      {
+        "titulo": "Diagnóstico situacional",
+        "texto": "Calificamos la criticidad de cada equipo y definimos qué medir y cada cuánto.",
+        "href": "/servicios/diagnostico-situacional"
+      },
+      {
+        "titulo": "Rutas predictivas",
+        "texto": "Vibración, termografía, ultrasonido y aceite con la planta en operación.",
+        "href": "/servicios/monitoreo-condicion"
+      },
+      {
+        "titulo": "Monitoreo en línea",
+        "texto": "Sensores y cámaras fijas en los equipos críticos, con alertas revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo"
+      },
+      {
+        "titulo": "IDAP",
+        "texto": "Cada hallazgo, su tendencia y su seguimiento en una sola plataforma.",
+        "href": "/servicios/idap"
+      },
+      {
+        "titulo": "Cumplimiento",
+        "texto": "NOM-029, NOM-022 y Código de Red, con su evidencia.",
+        "href": "/servicios/monitoreo-condicion/arco-electrico"
+      }
+    ]
+  },
+  "caso": {
+    "href": "/casos-exito/diapsa-start-en-planta-de-tratamiento-de-agua-residual",
+    "etiqueta": "Caso de estudio · Agua residual",
+    "titulo": "Una planta de agua residual pasó de inspecciones aisladas a un programa de confiabilidad",
+    "resumen": "Con alta rotación de personal y poca experiencia técnica, la planta aplicó DIAPSA START: capacitación práctica en tres disciplinas, diagnóstico situacional equipo por equipo, mediciones por criticidad y gestión de la información para decidir con datos.",
+    "cifras": [
+      {
+        "valor": "4",
+        "etiqueta": "etapas del programa"
+      },
+      {
+        "valor": "3",
+        "etiqueta": "disciplinas predictivas implementadas"
+      }
+    ]
+  },
+  "cierre": {
+    "etiqueta": "Planea la siguiente etapa",
+    "titulo": "Cuéntanos qué planta operas y qué bomba no puede fallar.",
+    "texto": "Dinos qué planta operas, cuáles son sus equipos críticos y cómo los inspeccionas hoy. Te proponemos la combinación de rutas, sensores y plataforma que le conviene."
+  },
+  "faq": [
+    {
+      "question": "¿Se mide con la planta en operación?",
+      "answer": "Sí. Las técnicas predictivas se aplican con los equipos trabajando, que es cuando las fallas se muestran, sin pedir paros."
+    },
+    {
+      "question": "¿Por dónde conviene empezar?",
+      "answer": "Por un diagnóstico situacional: calificamos la criticidad de cada equipo y proponemos qué medir, cada cuánto y qué vigilar en continuo."
+    },
+    {
+      "question": "¿Pueden medir en ambiente húmedo y corrosivo?",
+      "answer": "Sí. Las mediciones se hacen desde fuera del equipo, y los sensores en línea se eligen con el grado de protección que pide cada área de la planta."
+    },
+    {
+      "question": "¿Qué pasa si mi personal cambia seguido?",
+      "answer": "DIAPSA START forma al personal con práctica en campo y deja el historial de cada equipo en IDAP, para que el programa no dependa de una sola persona."
+    }
+  ],
+  "cta": {
+    "title": "¿Qué bomba de tu planta no puede fallar?",
+    "text": "Cuéntanos qué planta operas y te proponemos el programa.",
+    "whatsappMessage": "Hola, quiero información sobre mantenimiento predictivo para una planta de tratamiento de agua."
+  }
+}

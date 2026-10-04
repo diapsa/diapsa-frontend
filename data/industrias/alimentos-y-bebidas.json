@@ -1,0 +1,324 @@
+{
+  "slug": "alimentos-y-bebidas",
+  "nombre": "Alimentos y bebidas",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Industrias",
+      "link": "/#industrias"
+    },
+    {
+      "label": "Alimentos y bebidas",
+      "link": "/industrias/alimentos-y-bebidas"
+    }
+  ],
+  "seoTitle": "Mantenimiento predictivo para la industria de alimentos y bebidas",
+  "seoDescription": "Mantenimiento predictivo y monitoreo de condición para plantas de alimentos y bebidas: líneas de envasado, refrigeración, compresores de amoniaco, calderas, tableros y motores. Rutas con la planta en operación, sin detener la producción, y monitoreo en línea.",
+  "hero": {
+    "etiqueta": "Industria / Alimentos y bebidas",
+    "titulo": "La línea no espera. Tu mantenimiento tampoco debería.",
+    "texto": "Envasadoras, compresores de refrigeración, calderas y cientos de motores trabajan en turnos continuos. Combinamos rutas predictivas con la planta en operación, monitoreo en línea e IDAP para que el paro se programe y no sorprenda.",
+    "foto": {
+      "src": "/images/servicios/sensores-vibracion/instalacion-sensor.webp",
+      "alt": "Analista de DIAPSA instalando un sensor en una planta de alimentos"
+    },
+    "nota": "Para plantas de alimentos, bebidas, lácteos, cárnicos y panificación, y para sus equipos de mantenimiento."
+  },
+  "senales": {
+    "etiqueta": "Una visión con varias técnicas",
+    "titulo": "Ve la falla antes de que pare la línea.",
+    "texto": "En una planta de alimentos, un equipo que se detiene tira producto y turnos completos. Las fallas avisan antes: una vibración que sube en el compresor de amoniaco, un punto caliente en el tablero de la envasadora, una fuga de aire que nadie oye o un rodamiento que empieza a sonar en el transportador. Cada señal pide su técnica, y el programa se arma alrededor de la línea que no puede parar.",
+    "items": [
+      {
+        "titulo": "Vibración",
+        "texto": "Desbalance, desalineación, holguras y rodamientos en motores, bombas, ventiladores y reductores."
+      },
+      {
+        "titulo": "Temperatura",
+        "texto": "Conexiones flojas, sobrecargas y aislamientos dañados en tableros, transformadores y motores."
+      },
+      {
+        "titulo": "Ultrasonido",
+        "texto": "Fugas de aire, vapor y gas, falta de lubricación y descargas eléctricas que el oído no alcanza."
+      },
+      {
+        "titulo": "Aceite y gases",
+        "texto": "Desgaste, contaminación y gases disueltos en reductores, compresores y transformadores."
+      }
+    ]
+  },
+  "areas": [
+    {
+      "id": "lineas",
+      "nombre": "Líneas de proceso y envasado",
+      "titulo": "Vigila la línea que no puede parar.",
+      "texto": "Llenadoras, etiquetadoras, transportadores, mezcladoras y bombas sanitarias. Trabajan en continuo, en ambiente húmedo y con lavados frecuentes. Sus motores, rodamientos y reductores cuentan su estado en la vibración y en la temperatura.",
+      "foto": {
+        "src": "/images/servicios/sensores-vibracion/instalacion-tuberia.webp",
+        "alt": "Analista de DIAPSA instalando un sensor en una línea de proceso"
+      },
+      "prioridades": [
+        "Vibración en motores, reductores y transportadores",
+        "Alineación y balanceo tras cada cambio",
+        "Termografía de motores y tableros de línea",
+        "Sensores en línea en la línea crítica"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Alineación y balanceo",
+          "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        }
+      ],
+      "accion": "Analizar las líneas de proceso"
+    },
+    {
+      "id": "frio",
+      "nombre": "Refrigeración y servicios",
+      "titulo": "Cuida el frío, el vapor y el aire.",
+      "texto": "Compresores de amoniaco, condensadores, calderas, compresores de aire y torres de enfriamiento. Si el frío falla, el producto se pierde; si el aire fuga, se paga todos los días. Son los equipos que más cuesta detener y menos atención reciben.",
+      "foto": {
+        "src": "/images/servicios/analisis-de-ultrasonido/campo-torre-enfriamiento.webp",
+        "alt": "Analista de DIAPSA revisando una torre de enfriamiento con ultrasonido"
+      },
+      "prioridades": [
+        "Vibración en compresores y ventiladores",
+        "Aceite de compresores de refrigeración",
+        "Fugas de aire comprimido y trampas de vapor",
+        "Monitoreo en línea del cuarto de máquinas"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        }
+      ],
+      "accion": "Revisar refrigeración y servicios"
+    },
+    {
+      "id": "electrico",
+      "nombre": "Tableros y subestación",
+      "titulo": "Evita el paro eléctrico y cumple la norma.",
+      "texto": "Centros de control de motores, variadores, transformadores y tableros de distribución. Un punto caliente saca una línea completa, y la NOM-029 y la NOM-022 piden evidencia del estado de la instalación eléctrica.",
+      "foto": {
+        "src": "/images/servicios/termografia-infrarroja/campo-19.webp",
+        "alt": "Analista de DIAPSA inspeccionando un tablero con cámara termográfica"
+      },
+      "prioridades": [
+        "Puntos calientes en tableros y conexiones",
+        "Tierras físicas y arco eléctrico",
+        "Calidad de energía y factor de potencia",
+        "Termografía de cuartos eléctricos en línea"
+      ],
+      "servicios": [
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Tierras físicas",
+          "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+        },
+        {
+          "nombre": "Arco eléctrico",
+          "href": "/servicios/monitoreo-condicion/arco-electrico"
+        },
+        {
+          "nombre": "Calidad de energía",
+          "href": "/servicios/monitoreo-condicion/calidad-de-energia"
+        }
+      ],
+      "accion": "Revisar tableros y subestación"
+    },
+    {
+      "id": "inocuidad",
+      "nombre": "Confiabilidad e inocuidad",
+      "titulo": "Mide sin tocar el producto ni abrir el equipo.",
+      "texto": "Las técnicas predictivas se aplican desde fuera del equipo, con la línea trabajando, sin detener la producción ni comprometer la inocuidad. Y cada hallazgo queda en IDAP con su evidencia, listo para la auditoría.",
+      "foto": {
+        "src": "/images/servicios/sensores-vibracion/preparacion-sensor.webp",
+        "alt": "Analista de DIAPSA preparando un sensor en una planta de alimentos"
+      },
+      "prioridades": [
+        "Mediciones sin contacto con el producto",
+        "Rutas en turno sin detener la línea",
+        "Evidencia para auditorías de calidad",
+        "Capacitación del personal de planta"
+      ],
+      "servicios": [
+        {
+          "nombre": "Diagnóstico situacional",
+          "href": "/servicios/diagnostico-situacional"
+        },
+        {
+          "nombre": "DIAPSA START",
+          "href": "/servicios/diapsa-start"
+        },
+        {
+          "nombre": "IDAP",
+          "href": "/servicios/idap"
+        }
+      ],
+      "accion": "Planear el programa de confiabilidad"
+    }
+  ],
+  "mapa": {
+    "etiqueta": "Mapa de activo y señal",
+    "titulo": "Cada riesgo, con la técnica que lo detecta.",
+    "texto": "Un programa para toda la planta no necesita el mismo equipo en todas partes. Necesita una relación clara entre el activo, la señal que avisa primero y la forma de capturarla.",
+    "filas": [
+      {
+        "activo": "Línea de envasado",
+        "senal": "Cambio en la vibración de motores y reductores",
+        "servicio": "Sensores de vibración",
+        "detalle": "Alertas en línea revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+      },
+      {
+        "activo": "Compresor de amoniaco",
+        "senal": "Vibración y desgaste en el aceite",
+        "servicio": "Vibraciones mecánicas",
+        "detalle": "Rutas periódicas y análisis de aceite.",
+        "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "activo": "Aire comprimido y vapor",
+        "senal": "Fuga que el oído no alcanza",
+        "servicio": "Análisis de ultrasonido",
+        "detalle": "Inspección en ruta con su estimación de pérdida.",
+        "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+      },
+      {
+        "activo": "Tableros y centros de control",
+        "senal": "Punto caliente",
+        "servicio": "Termografía infrarroja",
+        "detalle": "Inspección en ruta o cámara fija.",
+        "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+      },
+      {
+        "activo": "Instalación eléctrica",
+        "senal": "Resistencia de tierras y arco",
+        "servicio": "Tierras físicas",
+        "detalle": "Estudios con evidencia normativa.",
+        "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+      },
+      {
+        "activo": "Toda la planta",
+        "senal": "Equipos sin criticidad definida",
+        "servicio": "Diagnóstico situacional",
+        "detalle": "Diagnóstico situacional para empezar.",
+        "href": "/servicios/diagnostico-situacional"
+      }
+    ]
+  },
+  "arquitectura": {
+    "etiqueta": "Cómo lo armamos",
+    "titulo": "El programa se construye alrededor de lo que no puede fallar.",
+    "texto": "La ruta con analista, el monitoreo en línea y la plataforma cumplen funciones distintas. Las combinamos según la criticidad de cada equipo y lo que ya tiene la planta.",
+    "items": [
+      {
+        "titulo": "Diagnóstico situacional",
+        "texto": "Calificamos la criticidad de cada equipo y definimos qué medir y cada cuánto.",
+        "href": "/servicios/diagnostico-situacional"
+      },
+      {
+        "titulo": "Rutas predictivas",
+        "texto": "Vibración, termografía, ultrasonido y aceite con la planta en operación.",
+        "href": "/servicios/monitoreo-condicion"
+      },
+      {
+        "titulo": "Monitoreo en línea",
+        "texto": "Sensores y cámaras fijas en los equipos críticos, con alertas revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo"
+      },
+      {
+        "titulo": "IDAP",
+        "texto": "Cada hallazgo, su tendencia y su seguimiento en una sola plataforma.",
+        "href": "/servicios/idap"
+      },
+      {
+        "titulo": "Cumplimiento",
+        "texto": "NOM-029, NOM-022 y Código de Red, con su evidencia.",
+        "href": "/servicios/monitoreo-condicion/arco-electrico"
+      }
+    ]
+  },
+  "caso": {
+    "href": "/casos-exito/vision-predictiva-y-ahorros-millonarios-en-industria-alimenticia",
+    "etiqueta": "Caso de estudio · Alimentos",
+    "titulo": "Una empresa alimenticia global cuantificó más de 12 millones de dólares en ahorros",
+    "resumen": "Durante cinco años, un programa de termografía en todas sus instalaciones encontró miles de anomalías térmicas, redujo más del 90 por ciento del riesgo de fallas críticas y auditó las naves nuevas antes de arrancar.",
+    "cifras": [
+      {
+        "valor": "12.2 M",
+        "etiqueta": "dólares de ahorro cuantificado"
+      },
+      {
+        "valor": "7,181",
+        "etiqueta": "anomalías térmicas encontradas"
+      },
+      {
+        "valor": "1,373",
+        "etiqueta": "hallazgos críticos atendidos"
+      },
+      {
+        "valor": "90 %",
+        "etiqueta": "menos riesgo de falla crítica"
+      }
+    ]
+  },
+  "cierre": {
+    "etiqueta": "Planea la siguiente etapa",
+    "titulo": "Cuéntanos qué planta operas y qué línea no puede parar.",
+    "texto": "Dinos qué planta operas, cuáles son sus equipos críticos y cómo los inspeccionas hoy. Te proponemos la combinación de rutas, sensores y plataforma que le conviene."
+  },
+  "faq": [
+    {
+      "question": "¿Se mide con la planta en operación?",
+      "answer": "Sí. Las técnicas predictivas se aplican con los equipos trabajando, que es cuando las fallas se muestran, sin pedir paros."
+    },
+    {
+      "question": "¿Por dónde conviene empezar?",
+      "answer": "Por un diagnóstico situacional: calificamos la criticidad de cada equipo y proponemos qué medir, cada cuánto y qué vigilar en continuo."
+    },
+    {
+      "question": "¿Afecta la inocuidad del producto?",
+      "answer": "No. Las mediciones se hacen desde fuera del equipo, sin contacto con el producto ni con las superficies sanitarias, y los analistas siguen las reglas de acceso y vestimenta de cada planta."
+    },
+    {
+      "question": "¿Pueden medir durante el turno de producción?",
+      "answer": "Sí, y es lo ideal: las fallas se muestran con la línea trabajando. Las rutas se programan en turno sin detener la producción."
+    }
+  ],
+  "cta": {
+    "title": "¿Qué línea de tu planta no puede parar?",
+    "text": "Cuéntanos qué produces y te proponemos el programa.",
+    "whatsappMessage": "Hola, quiero información sobre mantenimiento predictivo para una planta de alimentos y bebidas."
+  }
+}

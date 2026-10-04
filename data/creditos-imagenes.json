@@ -492,6 +492,36 @@
         "licenciaUrl": "https://unsplash.com/license",
         "fuente": "Unsplash",
         "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/vibraciones-turbinas.webp",
+        "descripcion": "Interior de una turbina con sus álabes",
+        "original": "https://unsplash.com/photos/dqrwTvNAAH0",
+        "autor": "Joao",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/ciclo-combinado.webp",
+        "descripcion": "Central de turbinas de gas al atardecer",
+        "original": "https://unsplash.com/photos/TF-DL_2L1JM",
+        "autor": "American Public Power Association",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
+      },
+      {
+        "src": "/images/blog/mantenimiento-subestaciones.webp",
+        "descripcion": "Subestación eléctrica con líneas de alta tensión",
+        "original": "https://unsplash.com/photos/XmpGqQsJxxU",
+        "autor": "janilson furtado",
+        "licencia": "Licencia de Unsplash",
+        "licenciaUrl": "https://unsplash.com/license",
+        "fuente": "Unsplash",
+        "cambios": "Recortada y convertida a webp"
       }
     ]
   }

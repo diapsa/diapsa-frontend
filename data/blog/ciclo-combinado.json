@@ -1,0 +1,57 @@
+{
+  "slug": "mantenimiento-predictivo-en-centrales-de-ciclo-combinado",
+  "titulo": "Mantenimiento predictivo en centrales de ciclo combinado: equipos críticos y técnicas",
+  "extracto": "En una central de ciclo combinado, la turbina de gas no es lo único que puede sacar una unidad de línea. Qué equipos son críticos, qué técnica ve la falla de cada uno y cómo se arma un programa predictivo que cubra toda la central.",
+  "portada": "/images/blog/ciclo-combinado.webp",
+  "fecha": "2026-10-01T20:00:00.100000Z",
+  "seo": {
+    "titulo": "Mantenimiento predictivo en centrales de ciclo combinado",
+    "descripcion": "Cómo se arma el mantenimiento predictivo de una central de ciclo combinado: turbinas de gas y de vapor, generador, caldera de recuperación, transformador elevador, bombas, torres de enfriamiento y subestación, con la técnica que ve la falla de cada uno."
+  },
+  "bloques": [
+    ["p", "Una central de ciclo combinado aprovecha dos veces el mismo combustible: la turbina de gas genera energía, y el calor de sus gases de escape produce vapor en una caldera de recuperación que mueve una turbina de vapor. Es un diseño eficiente, pero también uno donde todo está encadenado. Si falla un equipo del ciclo, la unidad baja carga o sale de línea."],
+    ["p", "Por eso el mantenimiento predictivo aquí no se piensa por equipo suelto, sino por sistema."],
+
+    ["h2", "Los equipos que pueden sacar una unidad de línea"],
+    ["h3", "Turbinas de gas y de vapor"],
+    ["p", "Son las más vigiladas, y muchas veces tienen contrato de servicio con el fabricante. Su vibración, el estado de sus chumaceras y la calidad del aceite lubricante son lo primero que se revisa."],
+    ["h3", "Generador"],
+    ["p", "Tiene fallas mecánicas, como el desbalance, y eléctricas, como las descargas parciales en el aislamiento o el calentamiento en conexiones."],
+    ["h3", "Transformador elevador"],
+    ["p", "Si falla, no hay forma de entregar la energía, y uno nuevo puede tardar meses en llegar. Sus gases en el aceite y su sonido dicen cómo está por dentro."],
+    ["h3", "El balance de planta"],
+    ["p", "Bombas de alimentación de la caldera y de condensado, ventiladores de la torre de enfriamiento, compresores, sistemas de lubricación y la subestación. Son equipos que el contrato de la turbina no suele cubrir, y que pueden detener la central igual que ella."],
+
+    ["h2", "Qué técnica ve cada falla"],
+    ["lista", [
+      "Vibraciones: turbinas, generador, bombas, ventiladores y compresores.",
+      "Análisis de aceite: lubricación de turbinas, cajas y reductores, y gases disueltos en transformadores.",
+      "Termografía: generador, transformadores, subestación, tableros y la envolvente de la caldera.",
+      "Ultrasonido: fugas de vapor y de aire, trampas de vapor, rodamientos lentos y descargas en equipo eléctrico.",
+      "Monitoreo en línea: sensores de vibración en bombas y torres, gases y sonido en el transformador elevador, cámaras térmicas en la subestación."
+    ]],
+    ["p", "Ninguna técnica sola ve todo. Lo que más dice es la combinación: una bomba con vibración alta, temperatura alta en el rodamiento y partículas en el aceite cuenta una historia mucho más clara que cualquiera de las tres por separado."],
+
+    ["h2", "Cómo se arma el programa"],
+    ["numerada", [
+      "Levantar todos los equipos de la central y calificar su criticidad: cuáles bajan carga y cuáles sacan la unidad.",
+      "Definir para cada uno qué técnica se usa y cada cuánto, en rutas periódicas con la central operando.",
+      "Vigilar en continuo los equipos más críticos o de acceso difícil.",
+      "Llevar todo en un mismo historial por equipo, para comparar cada medición con la anterior.",
+      "Dar seguimiento a cada hallazgo hasta cerrarlo, con reinspección después del mantenimiento."
+    ]],
+
+    ["h2", "Lo que se gana"],
+    ["p", "En una central de ciclo combinado que mantiene este tipo de programa desde 2018, combinando termografía, vibraciones, ultrasonido y análisis de aceite, las condiciones críticas se redujeron en 98.7 % y las de precaución en 75.4 % entre 2018 y 2024, con un ahorro estimado de 5.1 millones de dólares. Lo contamos en el [caso de éxito](/casos-exito/generadora-de-ciclo-combinado-y-el-impacto-del-monitoreo-predictivo-en-la-generacion-de-energia)."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿El contrato con el fabricante no cubre todo esto?"],
+    ["p", "Normalmente cubre la turbina y el generador. El balance de planta, los transformadores y la subestación suelen quedar fuera, y son los que más sorpresas dan."],
+    ["h3", "¿Se mide con la central operando?"],
+    ["p", "Sí. Las técnicas predictivas se aplican con los equipos trabajando, que es cuando las fallas se muestran, y sin pedir paros."],
+    ["h3", "¿Por dónde conviene empezar?"],
+    ["p", "Por la criticidad: saber qué equipos pueden sacar la unidad de línea y cómo se vigilan hoy. Con eso se decide qué medir primero."],
+
+    ["nota", "Armamos programas predictivos para centrales de ciclo combinado, térmicas y renovables. Lo resumimos en la página de [generación de energía](/industrias/generacion-de-energia), y puedes empezar con un [diagnóstico situacional](/servicios/diagnostico-situacional)."]
+  ]
+}

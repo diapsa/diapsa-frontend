@@ -56,6 +56,9 @@ import ppciemImportancia from "@/data/blog/ppciem-importancia.json";
 import emisionesFugitivas from "@/data/blog/emisiones-fugitivas-metano.json";
 import metanoAmbiente from "@/data/blog/metano-medio-ambiente.json";
 import ppciemCumplimiento from "@/data/blog/ppciem-cumplimiento-mexico.json";
+import vibracionesTurbinas from "@/data/blog/vibraciones-turbinas.json";
+import mantenimientoSubestaciones from "@/data/blog/mantenimiento-subestaciones.json";
+import cicloCombinado from "@/data/blog/ciclo-combinado.json";
 
 /**
  * Artículos del blog que viven en el sitio y no en el CMS (2026-09-29).
@@ -144,7 +147,7 @@ function aBlog(a: ArticuloLocal, i: number): Blog {
   };
 }
 
-export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba, matrizCriticidad, programaPredictivo, costoParo, mtbfMttr, kpiPredictivo, certificacionIso, codigoIso4406, dgaDuval, aceitePruebas, nom022Tierras, valorResistencia, caidaPotencial, nom029Arco, energiaIncidente, fronterasEtiqueta, curvaPF, tecnicasComplementan, fallaRodamientos, codigoDeRed, factorPotencia, armonicosThd, enLineaRutas, sensoresInalambricos, falsasAlarmas, cavitacionBombas, holguraMecanica, frecuenciasRodamientos, camaraFijaMano, incendiosCamaras, centrosDeDatos, camarasCalidad, descargasParciales, ruidoTransformador, monitoreoTransformadores, acetilenoTransformador, hidrogenoTransformador, cromatografiaTransformador, monitoreoDuctos, deteccionFugasDuctos, derechoDeVia, ppciemImportancia, emisionesFugitivas, metanoAmbiente, ppciemCumplimiento] as ArticuloLocal[]).map(aBlog);
+export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba, matrizCriticidad, programaPredictivo, costoParo, mtbfMttr, kpiPredictivo, certificacionIso, codigoIso4406, dgaDuval, aceitePruebas, nom022Tierras, valorResistencia, caidaPotencial, nom029Arco, energiaIncidente, fronterasEtiqueta, curvaPF, tecnicasComplementan, fallaRodamientos, codigoDeRed, factorPotencia, armonicosThd, enLineaRutas, sensoresInalambricos, falsasAlarmas, cavitacionBombas, holguraMecanica, frecuenciasRodamientos, camaraFijaMano, incendiosCamaras, centrosDeDatos, camarasCalidad, descargasParciales, ruidoTransformador, monitoreoTransformadores, acetilenoTransformador, hidrogenoTransformador, cromatografiaTransformador, monitoreoDuctos, deteccionFugasDuctos, derechoDeVia, ppciemImportancia, emisionesFugitivas, metanoAmbiente, ppciemCumplimiento, vibracionesTurbinas, mantenimientoSubestaciones, cicloCombinado] as ArticuloLocal[]).map(aBlog);
 
 export function getBlogLocal(slug: string): Blog | null {
   return BLOGS_LOCALES.find((b) => b.slug === slug) ?? null;

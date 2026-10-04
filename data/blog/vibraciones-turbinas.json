@@ -1,0 +1,55 @@
+{
+  "slug": "vibraciones-en-turbinas-de-vapor-gas-e-hidraulicas",
+  "titulo": "Vibraciones en turbinas de vapor, de gas e hidráulicas: qué se mide y con qué criterio",
+  "extracto": "Una turbina no se mide igual que un motor con rodamientos. Qué cambia cuando el rotor gira sobre una película de aceite, qué fallas se ven en la vibración, qué pasa en los arranques y paros, y qué partes de la norma ISO 20816 aplican a cada tipo de turbina.",
+  "portada": "/images/blog/vibraciones-turbinas.webp",
+  "fecha": "2026-10-01T20:00:00.300000Z",
+  "seo": {
+    "titulo": "Vibraciones en turbinas de vapor, de gas e hidráulicas",
+    "descripcion": "Análisis de vibraciones en turbinas: medición del eje con sensores de proximidad y de la carcasa, fallas típicas (desbalance, desalineación, rozamiento, inestabilidad de chumaceras), arranques y paros, y la norma ISO 20816 para turbinas de vapor, de gas e hidráulicas."
+  },
+  "bloques": [
+    ["p", "En la mayoría de los equipos de una planta, la vibración se mide en la caja del rodamiento y con eso basta. En una turbina grande no. El rotor gira sobre chumaceras de película de aceite, que amortiguan buena parte de la vibración antes de que llegue a la carcasa, y muchas de las fallas importantes ocurren en el movimiento del eje dentro de la chumacera. Por eso una turbina se mide de dos formas a la vez."],
+
+    ["h2", "Lo que se mide en una turbina"],
+    ["h3", "El eje, con sensores de proximidad"],
+    ["p", "Son sensores fijos, instalados en la chumacera, que miden la distancia al eje sin tocarlo. Dicen cuánto se mueve el eje dentro de la chumacera, en micras de pico a pico, y en qué posición está. Casi todas las turbinas grandes los tienen de fábrica como parte de su sistema de protección, el que dispara la máquina si la vibración pasa un límite."],
+    ["h3", "La carcasa, con sensores de velocidad o aceleración"],
+    ["p", "Se miden en la carcasa de las chumaceras, como en cualquier otra máquina. Ven bien lo que se transmite a la estructura y las frecuencias altas, como las de engranes o de las aspas, que el sensor de proximidad no alcanza."],
+    ["p", "El sistema de protección vigila que la vibración no pase un límite. El análisis va más allá: separa la vibración por frecuencias, ve la forma del movimiento del eje y la compara contra su historia para saber qué la está causando."],
+
+    ["h2", "Las fallas que se ven en la vibración"],
+    ["lista", [
+      "Desbalance: vibración a la velocidad de giro, que crece con la velocidad.",
+      "Desalineación entre turbina, caja y generador: vibración a una y dos veces la velocidad, con mucha componente axial y precarga en las chumaceras.",
+      "Rozamiento del rotor con sellos o partes fijas: cambios en la amplitud y la fase, a veces con componentes fraccionarias de la velocidad.",
+      "Inestabilidad de la película de aceite: una vibración a menos de la mitad de la velocidad de giro, que puede crecer de golpe.",
+      "Grietas en el eje: cambios en la vibración a una y dos veces la velocidad que no se explican por otra causa.",
+      "Problemas de la chumacera: desgaste, holgura o cambios en la temperatura y la presión del aceite."
+    ]],
+
+    ["h2", "Los arranques y los paros dicen mucho"],
+    ["p", "Al arrancar o parar, la turbina pasa por sus velocidades críticas, donde la vibración sube por resonancia. Grabar la vibración durante esos transitorios muestra si las críticas se movieron, si la respuesta cambió o si aparece algo que a velocidad constante no se ve. Comparar cada arranque contra el anterior es de las mejores formas de detectar un cambio en el rotor."],
+
+    ["h2", "Turbinas de gas, de vapor e hidráulicas"],
+    ["h3", "Turbinas de gas"],
+    ["p", "Giran rápido y con temperaturas muy altas. Además de la vibración del rotor importan la caja de engranes, si la tiene, y el aceite lubricante, que trabaja muy exigido."],
+    ["h3", "Turbinas de vapor"],
+    ["p", "Rotores largos y pesados, sensibles a la expansión térmica, al balance y a la alineación con el generador. El agua en el aceite es un problema frecuente que conviene vigilar junto con la vibración."],
+    ["h3", "Turbinas hidráulicas"],
+    ["p", "Giran lento y con mucha masa. Además de las fallas mecánicas, la vibración muestra efectos del agua, como la cavitación o los remolinos en el tubo de aspiración a ciertas cargas, que cambian con el punto de operación."],
+
+    ["h2", "Qué norma aplica"],
+    ["p", "La familia ISO 20816 da los criterios para calificar la vibración, y tiene partes específicas para estas máquinas: la parte 2 para turbinas de vapor, turbinas de gas y generadores grandes montados en tierra, la parte 4 para turbinas de gas con chumaceras de película de aceite y la parte 5 para turbinas hidráulicas. Cada una da zonas de severidad para la carcasa y para el eje. Sirven de referencia, pero en una turbina lo que más dice es el cambio contra su propia historia."],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Si la turbina ya tiene sistema de protección, para qué el análisis?"],
+    ["p", "Porque la protección avisa cuando la vibración ya es alta, para evitar un daño mayor. El análisis encuentra la causa mucho antes, cuando todavía se puede corregir en un paro programado."],
+    ["h3", "¿Se pueden aprovechar los sensores que ya tiene la turbina?"],
+    ["p", "Sí. Las señales de los sensores de proximidad suelen tener salidas de prueba donde se conecta el equipo de análisis, sin tocar la protección. Se complementan con mediciones en la carcasa."],
+    ["h3", "¿Cada cuánto conviene analizarla?"],
+    ["p", "Depende de la máquina y de su historia, pero en turbinas críticas lo usual es combinar el monitoreo continuo de la protección con análisis periódicos y con el registro de cada arranque y paro."],
+
+    ["nota", "Analizamos la vibración de turbinas, generadores y del balance de planta con analistas certificados en el [análisis de vibraciones](/servicios/monitoreo-condicion/vibraciones-mecanicas), y lo cruzamos con el [análisis de aceite](/servicios/monitoreo-condicion/analisis-de-aceite) del sistema de lubricación. Lo que vigilamos en una central lo resumimos en la página de [generación de energía](/industrias/generacion-de-energia)."]
+  ]
+}

@@ -21,6 +21,8 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-tertiary: var(--tertiary);
+  /* Naranja oscuro para etiquetas sobre fondo blanco (contraste) */
+  --color-secondary-dark: #b45f00;
 }
 
 @media (prefers-color-scheme: dark) {

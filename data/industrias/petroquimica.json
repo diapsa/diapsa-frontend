@@ -1,0 +1,300 @@
+{
+  "slug": "petroquimica",
+  "nombre": "Petroquímica",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Industrias",
+      "link": "/#industrias"
+    },
+    {
+      "label": "Petroquímica",
+      "link": "/industrias/petroquimica"
+    }
+  ],
+  "seoTitle": "Mantenimiento predictivo para plantas petroquímicas",
+  "seoDescription": "Mantenimiento predictivo y monitoreo de condición para plantas petroquímicas y de refinación: bombas de proceso, compresores, agitadores, torres de enfriamiento, trampas de vapor, subestaciones y detección de fugas. Rutas con la planta en operación y monitoreo en línea.",
+  "hero": {
+    "etiqueta": "Industria / Petroquímica",
+    "titulo": "El proceso no se detiene. Sus equipos rotativos tampoco deberían.",
+    "texto": "Bombas de proceso, compresores, agitadores y extrusoras trabajan en continuo y con producto peligroso. Combinamos rutas predictivas, monitoreo en línea y detección de fugas para que la falla se encuentre en el reporte y no en el paro.",
+    "foto": {
+      "src": "/images/servicios/analisis-de-ultrasonido/acustica-en-planta.webp",
+      "alt": "Analista de DIAPSA con cámara acústica en una planta de proceso"
+    },
+    "nota": "Para plantas petroquímicas, refinerías, plantas de polímeros y fertilizantes, y para sus equipos de confiabilidad."
+  },
+  "senales": {
+    "etiqueta": "Una visión con varias técnicas",
+    "titulo": "Ve la falla antes de que pare el proceso.",
+    "texto": "En una planta de proceso continuo, un equipo que se detiene arrastra a los demás. Las fallas avisan antes: una vibración que sube en la bomba de carga, un sello que empieza a fugar, un punto caliente en el centro de control de motores o una trampa de vapor que se quedó abierta. Cada señal pide su técnica, y el programa se arma alrededor de los equipos sin respaldo.",
+    "items": [
+      {
+        "titulo": "Vibración",
+        "texto": "Desbalance, desalineación, holguras y rodamientos en motores, bombas, ventiladores y reductores."
+      },
+      {
+        "titulo": "Temperatura",
+        "texto": "Conexiones flojas, sobrecargas y aislamientos dañados en tableros, transformadores y motores."
+      },
+      {
+        "titulo": "Ultrasonido",
+        "texto": "Fugas de aire, vapor y gas, falta de lubricación y descargas eléctricas que el oído no alcanza."
+      },
+      {
+        "titulo": "Aceite y gases",
+        "texto": "Desgaste, contaminación y gases disueltos en reductores, compresores y transformadores."
+      }
+    ]
+  },
+  "areas": [
+    {
+      "id": "rotativos",
+      "nombre": "Bombas y compresores de proceso",
+      "titulo": "Vigila los equipos sin respaldo.",
+      "texto": "Bombas de carga, compresores de gas de proceso, sopladores y turbinas de accionamiento. Muchos no tienen equipo de relevo, así que su falla es un paro de planta. La vibración, el aceite y la alineación cuentan su estado con semanas de anticipación.",
+      "foto": {
+        "src": "/images/servicios/analisis-de-ultrasonido/campo-bomba-alimentacion.webp",
+        "alt": "Analista de DIAPSA midiendo una bomba de alimentación"
+      },
+      "prioridades": [
+        "Vibración en rodamientos y sellos",
+        "Aceite de lubricación y desgaste",
+        "Alineación y balanceo tras cada intervención",
+        "Sensores en línea en los equipos sin relevo"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Alineación y balanceo",
+          "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        }
+      ],
+      "accion": "Analizar bombas y compresores"
+    },
+    {
+      "id": "agitacion",
+      "nombre": "Reactores, agitadores y extrusoras",
+      "titulo": "Cuida la maquinaria que transforma el producto.",
+      "texto": "Agitadores de reactores, extrusoras, peletizadoras y reductores de alta carga. Sus rodamientos y engranes trabajan bajo esfuerzo y temperatura, y sus fallas se anuncian en la vibración, en el aceite y en el ultrasonido de la lubricación.",
+      "foto": {
+        "src": "/images/servicios/diagnostico-integral/campo-motor-estructura.webp",
+        "alt": "Analista de DIAPSA midiendo un motor sobre estructura en una planta"
+      },
+      "prioridades": [
+        "Vibración en reductores y engranes",
+        "Lubricación guiada por ultrasonido",
+        "Aceite de reductores y unidades hidráulicas",
+        "Termografía de motores de alta carga"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        }
+      ],
+      "accion": "Revisar reactores y extrusoras"
+    },
+    {
+      "id": "servicios",
+      "nombre": "Vapor, aire y torres de enfriamiento",
+      "titulo": "Deja de pagar lo que se fuga.",
+      "texto": "Trampas de vapor abiertas, fugas de aire comprimido y ventiladores de torre con desbalance. Son servicios auxiliares, pero cuestan energía todos los días y pueden limitar la producción.",
+      "foto": {
+        "src": "/images/servicios/analisis-de-ultrasonido/campo-trampas-vapor.webp",
+        "alt": "Analista de DIAPSA revisando trampas de vapor con ultrasonido"
+      },
+      "prioridades": [
+        "Trampas de vapor y válvulas de purga",
+        "Fugas de aire comprimido",
+        "Ventiladores y reductores de torre",
+        "Bombas de agua de enfriamiento"
+      ],
+      "servicios": [
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Alineación y balanceo",
+          "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+        }
+      ],
+      "accion": "Planear los servicios auxiliares"
+    },
+    {
+      "id": "electrico",
+      "nombre": "Subestación y centros de control",
+      "titulo": "Mantén la energía de la planta en orden.",
+      "texto": "Transformadores, celdas de media tensión, centros de control de motores y variadores. Un punto caliente o una descarga en el patio eléctrico puede sacar la planta completa, y las normas exigen evidencia de su estado.",
+      "foto": {
+        "src": "/images/servicios/termografia-infrarroja/campo-20.webp",
+        "alt": "Analista de DIAPSA inspeccionando un centro de control de motores con termografía"
+      },
+      "prioridades": [
+        "Puntos calientes en conexiones y celdas",
+        "Descargas parciales y efecto corona",
+        "Gases disueltos en transformadores",
+        "Tierras físicas, arco eléctrico y calidad de energía"
+      ],
+      "servicios": [
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "DGA en línea",
+          "href": "/servicios/monitoreo-continuo/dga-en-linea"
+        },
+        {
+          "nombre": "Calidad de energía",
+          "href": "/servicios/monitoreo-condicion/calidad-de-energia"
+        }
+      ],
+      "accion": "Revisar subestación y tableros"
+    }
+  ],
+  "mapa": {
+    "etiqueta": "Mapa de activo y señal",
+    "titulo": "Cada riesgo, con la técnica que lo detecta.",
+    "texto": "Un programa para toda la planta no necesita el mismo equipo en todas partes. Necesita una relación clara entre el activo, la señal que avisa primero y la forma de capturarla.",
+    "filas": [
+      {
+        "activo": "Bomba de carga sin relevo",
+        "senal": "Cambio en la vibración y en el sello",
+        "servicio": "Sensores de vibración",
+        "detalle": "Alertas en línea revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+      },
+      {
+        "activo": "Compresor de proceso",
+        "senal": "Vibración y desgaste en el aceite",
+        "servicio": "Vibraciones mecánicas",
+        "detalle": "Rutas periódicas y análisis de aceite.",
+        "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "activo": "Reductor y agitador",
+        "senal": "Engranes y falta de lubricación",
+        "servicio": "Análisis de ultrasonido",
+        "detalle": "Ruta de ultrasonido y aceite.",
+        "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+      },
+      {
+        "activo": "Trampas de vapor y aire",
+        "senal": "Fuga que el oído no alcanza",
+        "servicio": "Análisis de ultrasonido",
+        "detalle": "Inspección en ruta con su estimación de pérdida.",
+        "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+      },
+      {
+        "activo": "Transformador de potencia",
+        "senal": "Gases disueltos y humedad",
+        "servicio": "DGA en línea",
+        "detalle": "Tendencia continua del aceite.",
+        "href": "/servicios/monitoreo-continuo/dga-en-linea"
+      },
+      {
+        "activo": "Celdas, tableros y conexiones",
+        "senal": "Punto caliente y ultrasonido",
+        "servicio": "Termografía infrarroja",
+        "detalle": "Inspección en ruta o cámara fija.",
+        "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+      }
+    ]
+  },
+  "arquitectura": {
+    "etiqueta": "Cómo lo armamos",
+    "titulo": "El programa se construye alrededor de lo que no puede fallar.",
+    "texto": "La ruta con analista, el monitoreo en línea y la plataforma cumplen funciones distintas. Las combinamos según la criticidad de cada equipo y lo que ya tiene la planta.",
+    "items": [
+      {
+        "titulo": "Diagnóstico situacional",
+        "texto": "Calificamos la criticidad de cada equipo y definimos qué medir y cada cuánto.",
+        "href": "/servicios/diagnostico-situacional"
+      },
+      {
+        "titulo": "Rutas predictivas",
+        "texto": "Vibración, termografía, ultrasonido y aceite con la planta en operación.",
+        "href": "/servicios/monitoreo-condicion"
+      },
+      {
+        "titulo": "Monitoreo en línea",
+        "texto": "Sensores y cámaras fijas en los equipos críticos, con alertas revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo"
+      },
+      {
+        "titulo": "IDAP",
+        "texto": "Cada hallazgo, su tendencia y su seguimiento en una sola plataforma.",
+        "href": "/servicios/idap"
+      },
+      {
+        "titulo": "Cumplimiento",
+        "texto": "NOM-029, NOM-022 y Código de Red, con su evidencia.",
+        "href": "/servicios/monitoreo-condicion/arco-electrico"
+      }
+    ]
+  },
+  "cierre": {
+    "etiqueta": "Planea la siguiente etapa",
+    "titulo": "Cuéntanos qué planta operas y qué equipo sin relevo no puede fallar.",
+    "texto": "Dinos qué planta operas, cuáles son sus equipos críticos y cómo los inspeccionas hoy. Te proponemos la combinación de rutas, sensores y plataforma que le conviene."
+  },
+  "faq": [
+    {
+      "question": "¿Se mide con la planta en operación?",
+      "answer": "Sí. Las técnicas predictivas se aplican con los equipos trabajando, que es cuando las fallas se muestran, sin pedir paros."
+    },
+    {
+      "question": "¿Por dónde conviene empezar?",
+      "answer": "Por un diagnóstico situacional: calificamos la criticidad de cada equipo y proponemos qué medir, cada cuánto y qué vigilar en continuo."
+    },
+    {
+      "question": "¿Pueden vigilar en continuo los equipos sin relevo?",
+      "answer": "Sí. Instalamos sensores de vibración y temperatura en los equipos críticos, y un analista revisa cada alerta antes de avisar, para que el aviso llegue con diagnóstico y no solo con un número."
+    },
+    {
+      "question": "¿Detectan fugas de gas y de vapor?",
+      "answer": "Sí. Las fugas de gas se encuentran con cámara OGI o acústica, y las de vapor y aire comprimido con ultrasonido, con su estimación de pérdida para priorizar la reparación."
+    }
+  ],
+  "cta": {
+    "title": "¿Qué equipo de tu planta no tiene relevo?",
+    "text": "Cuéntanos qué proceso operas y te proponemos el programa.",
+    "whatsappMessage": "Hola, quiero información sobre mantenimiento predictivo para una planta petroquímica."
+  }
+}

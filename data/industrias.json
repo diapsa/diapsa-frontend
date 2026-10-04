@@ -1,13 +1,37 @@
 {
-  "_nota": "Industrias que atiende DIAPSA, en el orden en que se muestran en la portada.",
+  "_nota": "Industrias que atiende DIAPSA, en el orden en que se muestran en la portada. Las que tienen landing (lib/industrias.ts) se enlazan a /industrias/<slug>.",
   "industrias": [
-    "Generación de energía",
-    "Petróleo y gas",
-    "Petroquímica",
-    "Alimentos y bebidas",
-    "Automotriz",
-    "Manufactura",
-    "Cemento y materiales",
-    "Tratamiento de agua"
+    {
+      "nombre": "Generación de energía",
+      "slug": "generacion-de-energia"
+    },
+    {
+      "nombre": "Petróleo y gas",
+      "slug": "petroleo-y-gas"
+    },
+    {
+      "nombre": "Petroquímica",
+      "slug": "petroquimica"
+    },
+    {
+      "nombre": "Alimentos y bebidas",
+      "slug": "alimentos-y-bebidas"
+    },
+    {
+      "nombre": "Automotriz",
+      "slug": "automotriz"
+    },
+    {
+      "nombre": "Manufactura",
+      "slug": "manufactura"
+    },
+    {
+      "nombre": "Cemento y materiales",
+      "slug": "cemento-y-materiales"
+    },
+    {
+      "nombre": "Tratamiento de agua",
+      "slug": "tratamiento-de-agua"
+    }
   ]
 }

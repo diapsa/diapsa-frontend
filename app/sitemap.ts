@@ -5,6 +5,7 @@ import { getCourses } from "@/lib/api/courses";
 import { getCategories } from "@/lib/api/categories";
 import { getProducts } from "@/lib/api/products";
 import { productosLocales } from "@/lib/productos-locales";
+import { getIndustrias } from "@/lib/industrias";
 import { SITE_CONFIG } from "@/lib/constants";
 import type { Category } from "@/types/category";
 import type { Product } from "@/types/product";
@@ -116,6 +117,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
 
+  // Landings por industria (lib/industrias.ts).
+  const industriaPages: MetadataRoute.Sitemap = getIndustrias().map((i) => ({
+    url: `${SITE_CONFIG.baseUrl}/industrias/${i.slug}`,
+    lastModified: new Date("2026-10-01T00:00:00Z"),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   const categoryPages: MetadataRoute.Sitemap = [...new Set(getRootCategorySlugs(categories))].map((slug) => ({
     url: `${SITE_CONFIG.baseUrl}/productos/${slug}`,
     lastModified: ULTIMA_REVISION,
@@ -144,7 +153,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...servicePages, ...categoryPages, ...productPages, ...blogPages, ...cursosPages];
+  return [...staticPages, ...servicePages, ...industriaPages, ...categoryPages, ...productPages, ...blogPages, ...cursosPages];
 
 
 }

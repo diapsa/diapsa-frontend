@@ -1,0 +1,296 @@
+{
+  "slug": "petroleo-y-gas",
+  "nombre": "Petróleo y gas",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Industrias",
+      "link": "/#industrias"
+    },
+    {
+      "label": "Petróleo y gas",
+      "link": "/industrias/petroleo-y-gas"
+    }
+  ],
+  "seoTitle": "Mantenimiento predictivo para petróleo y gas",
+  "seoDescription": "Mantenimiento predictivo y monitoreo de condición para instalaciones de petróleo y gas: compresores, bombas, estaciones de regulación, subestaciones y ductos. Detección de fugas de gas con cámara OGI y acústica, programa LDAR para el PPCIEM y vigilancia del derecho de vía.",
+  "hero": {
+    "etiqueta": "Industria / Petróleo y gas",
+    "titulo": "Tus activos trabajan a presión. La vigilancia también debería.",
+    "texto": "De los compresores a la subestación y del patín de gas al ducto, combinamos rutas predictivas, detección de fugas y monitoreo en línea para encontrar la falla y la fuga antes de que detengan la operación o lleguen a la autoridad.",
+    "foto": {
+      "src": "/images/deteccion-gas/campo/estacion-compresion.webp",
+      "alt": "Equipo de DIAPSA en una estación de compresión de gas"
+    },
+    "nota": "Para estaciones de compresión, plantas de proceso, terminales de almacenamiento, transporte por ducto y distribución de gas natural."
+  },
+  "senales": {
+    "etiqueta": "Una visión con varias técnicas",
+    "titulo": "Ve la fuga y la falla antes de que se vuelvan un evento.",
+    "texto": "En una instalación de hidrocarburos, lo que falla casi nunca avisa con una alarma. Primero es una vibración que sube en el compresor, un punto caliente en una conexión, el ultrasonido de una fuga que nadie oye o un gas que empieza a aparecer en el aceite del transformador. Cada señal pide su técnica, y el programa tiene que ajustarse al equipo, a la presión y al riesgo.",
+    "items": [
+      {
+        "titulo": "Vibración",
+        "texto": "Desbalance, desalineación, holguras y rodamientos en motores, bombas, ventiladores y reductores."
+      },
+      {
+        "titulo": "Temperatura",
+        "texto": "Conexiones flojas, sobrecargas y aislamientos dañados en tableros, transformadores y motores."
+      },
+      {
+        "titulo": "Ultrasonido",
+        "texto": "Fugas de aire, vapor y gas, falta de lubricación y descargas eléctricas que el oído no alcanza."
+      },
+      {
+        "titulo": "Aceite y gases",
+        "texto": "Desgaste, contaminación y gases disueltos en reductores, compresores y transformadores."
+      }
+    ]
+  },
+  "areas": [
+    {
+      "id": "compresion",
+      "nombre": "Compresores y bombas",
+      "titulo": "Vigila los equipos que mueven el producto.",
+      "texto": "Compresores reciprocantes y centrífugos, bombas de proceso, motores y turbinas de accionamiento. Un paro no programado en cualquiera de ellos detiene la línea completa, y sus fallas se anuncian primero en la vibración y en el aceite.",
+      "foto": {
+        "src": "/images/servicios/analisis-de-ultrasonido/campo-compresor.webp",
+        "alt": "Analista de DIAPSA midiendo un compresor de gas"
+      },
+      "prioridades": [
+        "Vibración en rodamientos y cruzetas",
+        "Aceite de lubricación y desgaste",
+        "Alineación de motor y compresor",
+        "Sensores en línea en los críticos"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Alineación y balanceo",
+          "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        }
+      ],
+      "accion": "Analizar compresores y bombas"
+    },
+    {
+      "id": "gas",
+      "nombre": "Fugas y emisiones",
+      "titulo": "Encuentra cada fuga y documéntala.",
+      "texto": "Bridas, válvulas, sellos y conexiones fugan sin que nadie lo note. El programa de detección y reparación de fugas que pide el PPCIEM las encuentra con cámara OGI o acústica, las repara por prioridad y deja la evidencia para el reporte anual ante la ASEA.",
+      "foto": {
+        "src": "/images/deteccion-gas/campo/inspeccion-planta.webp",
+        "alt": "Analista de DIAPSA inspeccionando líneas de gas en una planta"
+      },
+      "prioridades": [
+        "Programa LDAR con cámara OGI y acústica",
+        "Cámaras fijas y sensores de PPM en línea",
+        "Expediente para el PPCIEM",
+        "Fugas de aire y vapor en servicios"
+      ],
+      "servicios": [
+        {
+          "nombre": "Detección de gas",
+          "href": "/servicios/deteccion-gas"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "Cámaras térmicas",
+          "href": "/servicios/monitoreo-continuo/camaras-termicas"
+        }
+      ],
+      "accion": "Planear el programa de fugas"
+    },
+    {
+      "id": "ductos",
+      "nombre": "Ductos y derecho de vía",
+      "titulo": "Vigila el ducto a lo largo de todo su trazo.",
+      "texto": "Excavaciones, maquinaria y tomas clandestinas sobre el derecho de vía, y fugas que aparecen entre dos recorridos. Los sensores acústicos, la fibra óptica y las cámaras avisan del evento y de dónde ocurre.",
+      "foto": {
+        "src": "/images/servicios/seguridad-de-ductos/centinela.webp",
+        "alt": "Poste de vigilancia sobre el derecho de vía de un ducto"
+      },
+      "prioridades": [
+        "Intrusión y excavación sobre el derecho de vía",
+        "Fugas y golpes de ariete en la línea",
+        "Temperatura a lo largo del trazo",
+        "Integración al centro de control"
+      ],
+      "servicios": [
+        {
+          "nombre": "Seguridad de ductos",
+          "href": "/servicios/seguridad-de-ductos"
+        },
+        {
+          "nombre": "Sensores acústicos",
+          "href": "/servicios/monitoreo-continuo/sensores-acusticos"
+        },
+        {
+          "nombre": "Cámaras térmicas",
+          "href": "/servicios/monitoreo-continuo/camaras-termicas"
+        }
+      ],
+      "accion": "Revisar la seguridad del ducto"
+    },
+    {
+      "id": "electrico",
+      "nombre": "Subestación y tableros",
+      "titulo": "Mantén la energía de la instalación en orden.",
+      "texto": "Transformadores, celdas de media tensión, centros de control de motores y sistemas de tierras. Un punto caliente o una descarga en el patio eléctrico puede sacar la planta completa, y la norma exige evidencia de su estado.",
+      "foto": {
+        "src": "/images/servicios/termografia-infrarroja/campo-05.webp",
+        "alt": "Analista de DIAPSA inspeccionando un tablero eléctrico con cámara termográfica"
+      },
+      "prioridades": [
+        "Puntos calientes en conexiones y celdas",
+        "Descargas parciales y efecto corona",
+        "Gases disueltos en transformadores",
+        "Tierras físicas y arco eléctrico"
+      ],
+      "servicios": [
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "DGA en línea",
+          "href": "/servicios/monitoreo-continuo/dga-en-linea"
+        },
+        {
+          "nombre": "Tierras físicas",
+          "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+        }
+      ],
+      "accion": "Revisar subestación y tableros"
+    }
+  ],
+  "mapa": {
+    "etiqueta": "Mapa de activo y señal",
+    "titulo": "Cada riesgo, con la técnica que lo detecta.",
+    "texto": "Un programa para toda la planta no necesita el mismo equipo en todas partes. Necesita una relación clara entre el activo, la señal que avisa primero y la forma de capturarla.",
+    "filas": [
+      {
+        "activo": "Compresor y turbina",
+        "senal": "Cambio en la vibración y en el aceite",
+        "servicio": "Vibraciones mecánicas",
+        "detalle": "Rutas periódicas o sensores en línea.",
+        "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "activo": "Bridas, válvulas y sellos",
+        "senal": "Fuga de metano",
+        "servicio": "Detección de gas",
+        "detalle": "Programa LDAR y monitoreo en línea.",
+        "href": "/servicios/deteccion-gas"
+      },
+      {
+        "activo": "Ducto y derecho de vía",
+        "senal": "Vibración del suelo y evento acústico",
+        "servicio": "Seguridad de ductos",
+        "detalle": "Sensores sobre el trazo y centro de control.",
+        "href": "/servicios/seguridad-de-ductos"
+      },
+      {
+        "activo": "Transformador de potencia",
+        "senal": "Gases disueltos y humedad",
+        "servicio": "DGA en línea",
+        "detalle": "Tendencia continua del aceite.",
+        "href": "/servicios/monitoreo-continuo/dga-en-linea"
+      },
+      {
+        "activo": "Celdas, tableros y conexiones",
+        "senal": "Punto caliente y ultrasonido",
+        "servicio": "Termografía infrarroja",
+        "detalle": "Inspección en ruta o cámara fija.",
+        "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+      },
+      {
+        "activo": "Red eléctrica interna",
+        "senal": "Resistencia de tierras y arco",
+        "servicio": "Tierras físicas",
+        "detalle": "Estudios con evidencia normativa.",
+        "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+      }
+    ]
+  },
+  "arquitectura": {
+    "etiqueta": "Cómo lo armamos",
+    "titulo": "El programa se construye alrededor de lo que no puede fallar.",
+    "texto": "La ruta con analista, el monitoreo en línea y la plataforma cumplen funciones distintas. Las combinamos según la criticidad de cada equipo y lo que ya tiene la planta.",
+    "items": [
+      {
+        "titulo": "Diagnóstico situacional",
+        "texto": "Calificamos la criticidad de cada equipo y definimos qué medir y cada cuánto.",
+        "href": "/servicios/diagnostico-situacional"
+      },
+      {
+        "titulo": "Rutas predictivas",
+        "texto": "Vibración, termografía, ultrasonido y aceite con la planta en operación.",
+        "href": "/servicios/monitoreo-condicion"
+      },
+      {
+        "titulo": "Monitoreo en línea",
+        "texto": "Sensores y cámaras fijas en los equipos críticos, con alertas revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo"
+      },
+      {
+        "titulo": "IDAP",
+        "texto": "Cada hallazgo, su tendencia y su seguimiento en una sola plataforma.",
+        "href": "/servicios/idap"
+      },
+      {
+        "titulo": "Cumplimiento",
+        "texto": "PPCIEM, NOM-029 y NOM-022, con su evidencia.",
+        "href": "/servicios/deteccion-gas"
+      }
+    ]
+  },
+  "cierre": {
+    "etiqueta": "Planea la siguiente etapa",
+    "titulo": "Cuéntanos qué instalación operas y qué equipo o ducto no puede fallar.",
+    "texto": "Dinos qué planta operas, cuáles son sus equipos críticos y cómo los inspeccionas hoy. Te proponemos la combinación de rutas, sensores y plataforma que le conviene."
+  },
+  "faq": [
+    {
+      "question": "¿Se mide con la planta en operación?",
+      "answer": "Sí. Las técnicas predictivas se aplican con los equipos trabajando, que es cuando las fallas se muestran, sin pedir paros."
+    },
+    {
+      "question": "¿Por dónde conviene empezar?",
+      "answer": "Por un diagnóstico situacional: calificamos la criticidad de cada equipo y proponemos qué medir, cada cuánto y qué vigilar en continuo."
+    },
+    {
+      "question": "¿Hacen el programa de fugas que pide el PPCIEM?",
+      "answer": "Sí. Hacemos la detección con cámara OGI o acústica, el registro de cada fuga, el seguimiento hasta la reparación y la evidencia para el reporte anual ante la ASEA."
+    },
+    {
+      "question": "¿Trabajan en instalaciones con área clasificada?",
+      "answer": "Sí. Nuestros analistas cumplen los requisitos de acceso de cada instalación y los equipos de detección de gas trabajan sin tocar el equipo ni abrir el proceso."
+    }
+  ],
+  "cta": {
+    "title": "¿Qué equipo o ducto de tu instalación no puede fallar?",
+    "text": "Cuéntanos qué instalación operas y te proponemos el programa.",
+    "whatsappMessage": "Hola, quiero información sobre mantenimiento predictivo y detección de fugas para una instalación de petróleo y gas."
+  }
+}

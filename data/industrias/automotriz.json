@@ -1,0 +1,304 @@
+{
+  "slug": "automotriz",
+  "nombre": "Automotriz",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Industrias",
+      "link": "/#industrias"
+    },
+    {
+      "label": "Automotriz",
+      "link": "/industrias/automotriz"
+    }
+  ],
+  "seoTitle": "Mantenimiento predictivo para la industria automotriz",
+  "seoDescription": "Mantenimiento predictivo y monitoreo de condición para plantas automotrices y de autopartes: prensas, robots y transportadores de línea, compresores de aire, hornos de pintura, tableros y subestación. Rutas con la planta en operación y monitoreo en línea.",
+  "hero": {
+    "etiqueta": "Industria / Automotriz",
+    "titulo": "La línea produce cada minuto. Un paro cuesta en todos.",
+    "texto": "Prensas, transportadores, compresores de aire y hornos de pintura marcan el ritmo de la planta. Combinamos rutas predictivas, monitoreo en línea e IDAP para que el mantenimiento entre en el calendario y no en el reporte de paros.",
+    "foto": {
+      "src": "/images/servicios/alineacion-balanceo/campo-analista-tablet.webp",
+      "alt": "Analista de DIAPSA revisando un equipo en una planta de manufactura"
+    },
+    "nota": "Para armadoras, plantas de autopartes, estampado, fundición, pintura y ensamble, y para sus equipos de mantenimiento."
+  },
+  "senales": {
+    "etiqueta": "Una visión con varias técnicas",
+    "titulo": "Ve la falla antes de que pare la línea.",
+    "texto": "En una planta automotriz, el costo de un paro se mide por minuto y se cobra en toda la línea. Las fallas avisan antes: una vibración que sube en el reductor de un transportador, un punto caliente en el tablero de la prensa, una fuga de aire que nadie oye o un rodamiento de ventilador del horno que empieza a sonar. Cada señal pide su técnica, y el programa se arma alrededor del cuello de botella.",
+    "items": [
+      {
+        "titulo": "Vibración",
+        "texto": "Desbalance, desalineación, holguras y rodamientos en motores, bombas, ventiladores y reductores."
+      },
+      {
+        "titulo": "Temperatura",
+        "texto": "Conexiones flojas, sobrecargas y aislamientos dañados en tableros, transformadores y motores."
+      },
+      {
+        "titulo": "Ultrasonido",
+        "texto": "Fugas de aire, vapor y gas, falta de lubricación y descargas eléctricas que el oído no alcanza."
+      },
+      {
+        "titulo": "Aceite y gases",
+        "texto": "Desgaste, contaminación y gases disueltos en reductores, compresores y transformadores."
+      }
+    ]
+  },
+  "areas": [
+    {
+      "id": "prensas",
+      "nombre": "Prensas y estampado",
+      "titulo": "Cuida el equipo que marca el ritmo.",
+      "texto": "Prensas mecánicas e hidráulicas, cizallas y líneas de estampado. Sus reductores, embragues, unidades hidráulicas y motores trabajan bajo carga de impacto, y sus fallas se anuncian en la vibración, en el aceite y en la temperatura.",
+      "foto": {
+        "src": "/images/servicios/diagnostico-integral/campo-unidad-hidraulica.webp",
+        "alt": "Analista de DIAPSA revisando una unidad hidráulica"
+      },
+      "prioridades": [
+        "Vibración en reductores y motores principales",
+        "Aceite de unidades hidráulicas y reductores",
+        "Termografía de motores y tableros de prensa",
+        "Sensores en línea en la prensa crítica"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        }
+      ],
+      "accion": "Analizar prensas y estampado"
+    },
+    {
+      "id": "linea",
+      "nombre": "Transportadores, robots y ensamble",
+      "titulo": "Vigila los motores que mueven la línea.",
+      "texto": "Cientos de motorreductores en transportadores, elevadores y estaciones de ensamble. Ninguno es grande, pero cualquiera detiene la línea. La ruta de vibración y la termografía los cubren en turno, y los críticos se vigilan en línea.",
+      "foto": {
+        "src": "/images/servicios/diagnostico-integral/campo-equipo-ruta.webp",
+        "alt": "Analista de DIAPSA en ruta de medición en una planta"
+      },
+      "prioridades": [
+        "Vibración en motorreductores de línea",
+        "Termografía de motores y variadores",
+        "Alineación y balanceo tras cada cambio",
+        "Rutas con varias técnicas por equipo"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Alineación y balanceo",
+          "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+        },
+        {
+          "nombre": "Diagnóstico de maquinaria",
+          "href": "/servicios/monitoreo-condicion/diagnostico-de-maquinaria"
+        }
+      ],
+      "accion": "Revisar transportadores y ensamble"
+    },
+    {
+      "id": "servicios",
+      "nombre": "Aire comprimido, pintura y servicios",
+      "titulo": "Deja de pagar lo que se fuga.",
+      "texto": "Compresores de aire, secadores, ventiladores de cabinas de pintura y hornos, bombas de enfriamiento. El aire comprimido es de los servicios más caros de la planta, y sus fugas se pagan todos los días.",
+      "foto": {
+        "src": "/images/servicios/diagnostico-integral/campo-ventilador-motor.webp",
+        "alt": "Analista de DIAPSA midiendo el motor de un ventilador"
+      },
+      "prioridades": [
+        "Fugas de aire comprimido con estimación de pérdida",
+        "Vibración en compresores y ventiladores de horno",
+        "Aceite de compresores",
+        "Termografía de hornos y cabinas"
+      ],
+      "servicios": [
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Cámaras térmicas",
+          "href": "/servicios/monitoreo-continuo/camaras-termicas"
+        }
+      ],
+      "accion": "Planear los servicios de planta"
+    },
+    {
+      "id": "electrico",
+      "nombre": "Tableros y subestación",
+      "titulo": "Evita el paro eléctrico y cumple la norma.",
+      "texto": "Centros de control de motores, variadores, transformadores y tableros de distribución. Un punto caliente saca una línea completa, y la NOM-029 y la NOM-022 piden evidencia del estado de la instalación eléctrica.",
+      "foto": {
+        "src": "/images/servicios/termografia-infrarroja/campo-15.webp",
+        "alt": "Analista de DIAPSA inspeccionando un tablero eléctrico con termografía"
+      },
+      "prioridades": [
+        "Puntos calientes en tableros y conexiones",
+        "Tierras físicas y arco eléctrico",
+        "Calidad de energía y Código de Red",
+        "Termografía de cuartos eléctricos en línea"
+      ],
+      "servicios": [
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Tierras físicas",
+          "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+        },
+        {
+          "nombre": "Arco eléctrico",
+          "href": "/servicios/monitoreo-condicion/arco-electrico"
+        },
+        {
+          "nombre": "Calidad de energía",
+          "href": "/servicios/monitoreo-condicion/calidad-de-energia"
+        }
+      ],
+      "accion": "Revisar tableros y subestación"
+    }
+  ],
+  "mapa": {
+    "etiqueta": "Mapa de activo y señal",
+    "titulo": "Cada riesgo, con la técnica que lo detecta.",
+    "texto": "Un programa para toda la planta no necesita el mismo equipo en todas partes. Necesita una relación clara entre el activo, la señal que avisa primero y la forma de capturarla.",
+    "filas": [
+      {
+        "activo": "Prensa principal",
+        "senal": "Vibración y desgaste en el aceite",
+        "servicio": "Vibraciones mecánicas",
+        "detalle": "Rutas periódicas o sensores en línea.",
+        "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "activo": "Motorreductores de línea",
+        "senal": "Cambio en la vibración y temperatura",
+        "servicio": "Diagnóstico de maquinaria",
+        "detalle": "Ruta con varias técnicas por equipo.",
+        "href": "/servicios/monitoreo-condicion/diagnostico-de-maquinaria"
+      },
+      {
+        "activo": "Compresores de aire",
+        "senal": "Fugas y vibración",
+        "servicio": "Análisis de ultrasonido",
+        "detalle": "Inspección en ruta con su estimación de pérdida.",
+        "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+      },
+      {
+        "activo": "Hornos y cabinas de pintura",
+        "senal": "Punto caliente y ventiladores",
+        "servicio": "Cámaras térmicas",
+        "detalle": "Cámara fija o ruta de termografía.",
+        "href": "/servicios/monitoreo-continuo/camaras-termicas"
+      },
+      {
+        "activo": "Tableros y centros de control",
+        "senal": "Punto caliente",
+        "servicio": "Termografía infrarroja",
+        "detalle": "Inspección en ruta o cámara fija.",
+        "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+      },
+      {
+        "activo": "Instalación eléctrica",
+        "senal": "Resistencia de tierras y arco",
+        "servicio": "Tierras físicas",
+        "detalle": "Estudios con evidencia normativa.",
+        "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+      }
+    ]
+  },
+  "arquitectura": {
+    "etiqueta": "Cómo lo armamos",
+    "titulo": "El programa se construye alrededor de lo que no puede fallar.",
+    "texto": "La ruta con analista, el monitoreo en línea y la plataforma cumplen funciones distintas. Las combinamos según la criticidad de cada equipo y lo que ya tiene la planta.",
+    "items": [
+      {
+        "titulo": "Diagnóstico situacional",
+        "texto": "Calificamos la criticidad de cada equipo y definimos qué medir y cada cuánto.",
+        "href": "/servicios/diagnostico-situacional"
+      },
+      {
+        "titulo": "Rutas predictivas",
+        "texto": "Vibración, termografía, ultrasonido y aceite con la planta en operación.",
+        "href": "/servicios/monitoreo-condicion"
+      },
+      {
+        "titulo": "Monitoreo en línea",
+        "texto": "Sensores y cámaras fijas en los equipos críticos, con alertas revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo"
+      },
+      {
+        "titulo": "IDAP",
+        "texto": "Cada hallazgo, su tendencia y su seguimiento en una sola plataforma.",
+        "href": "/servicios/idap"
+      },
+      {
+        "titulo": "Cumplimiento",
+        "texto": "NOM-029, NOM-022 y Código de Red, con su evidencia.",
+        "href": "/servicios/monitoreo-condicion/arco-electrico"
+      }
+    ]
+  },
+  "cierre": {
+    "etiqueta": "Planea la siguiente etapa",
+    "titulo": "Cuéntanos qué planta operas y qué línea no puede parar.",
+    "texto": "Dinos qué planta operas, cuáles son sus equipos críticos y cómo los inspeccionas hoy. Te proponemos la combinación de rutas, sensores y plataforma que le conviene."
+  },
+  "faq": [
+    {
+      "question": "¿Se mide con la planta en operación?",
+      "answer": "Sí. Las técnicas predictivas se aplican con los equipos trabajando, que es cuando las fallas se muestran, sin pedir paros."
+    },
+    {
+      "question": "¿Por dónde conviene empezar?",
+      "answer": "Por un diagnóstico situacional: calificamos la criticidad de cada equipo y proponemos qué medir, cada cuánto y qué vigilar en continuo."
+    },
+    {
+      "question": "¿Pueden cubrir cientos de motores pequeños?",
+      "answer": "Sí. La ruta de vibración y termografía cubre muchos equipos por turno, y los que son cuello de botella se vigilan en línea con sensores."
+    },
+    {
+      "question": "¿Se integra con nuestro sistema de mantenimiento?",
+      "answer": "Los hallazgos quedan en IDAP con su evidencia y su prioridad, y de ahí se generan las órdenes de trabajo en tu sistema."
+    }
+  ],
+  "cta": {
+    "title": "¿Qué línea de tu planta no puede parar?",
+    "text": "Cuéntanos qué fabricas y te proponemos el programa.",
+    "whatsappMessage": "Hola, quiero información sobre mantenimiento predictivo para una planta automotriz."
+  }
+}
