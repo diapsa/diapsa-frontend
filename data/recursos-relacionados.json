@@ -866,5 +866,278 @@
       "titulo": "Generación de Energía",
       "resumen": "Mantenimiento predictivo para centrales: de la turbina a la subestación, con la técnica que ve cada falla."
     }
+  },
+  {
+    "articulo": {
+      "slug": "importancia-del-ppciem-y-que-pasa-si-no-cumples",
+      "titulo": "Importancia del PPCIEM",
+      "resumen": "Qué exige y qué pasa si no se cumple.",
+      "portada": "/images/blog/ppciem-importancia.webp"
+    },
+    "servicio": {
+      "href": "/industrias/petroleo-y-gas",
+      "titulo": "Petróleo y gas",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para petróleo y gas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "emisiones-fugitivas-de-metano-cuanto-afectan",
+      "titulo": "Emisiones fugitivas de metano",
+      "resumen": "Cuánto gas, dinero y clima se pierde.",
+      "portada": "/images/blog/emisiones-fugitivas-metano.webp"
+    },
+    "servicio": {
+      "href": "/industrias/petroleo-y-gas",
+      "titulo": "Petróleo y gas",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para petróleo y gas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "monitoreo-de-ductos-como-se-vigila-un-gasoducto-en-linea",
+      "titulo": "Monitoreo de ductos",
+      "resumen": "Cómo se vigila un ducto en línea.",
+      "portada": "/images/blog/monitoreo-ductos.webp"
+    },
+    "servicio": {
+      "href": "/industrias/petroleo-y-gas",
+      "titulo": "Petróleo y gas",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para petróleo y gas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "cavitacion-en-bombas-centrifugas-como-detectarla-y-evitarla",
+      "titulo": "Cavitación en bombas",
+      "resumen": "Cómo detectarla con vibración y ultrasonido.",
+      "portada": "/images/blog/cavitacion-bombas.webp"
+    },
+    "servicio": {
+      "href": "/industrias/petroquimica",
+      "titulo": "Petroquímica",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para petroquímica."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "lubricacion-por-ultrasonido-como-engrasar-rodamientos",
+      "titulo": "Lubricación por ultrasonido",
+      "resumen": "Cómo engrasar rodamientos en su punto.",
+      "portada": "/images/blog/lubricacion-por-ultrasonido.webp"
+    },
+    "servicio": {
+      "href": "/industrias/petroquimica",
+      "titulo": "Petroquímica",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para petroquímica."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "monitoreo-en-linea-o-rutas-cuando-conviene-cada-uno",
+      "titulo": "En línea o rutas",
+      "resumen": "Cuándo conviene cada uno.",
+      "portada": "/images/blog/en-linea-vs-rutas.webp"
+    },
+    "servicio": {
+      "href": "/industrias/petroquimica",
+      "titulo": "Petroquímica",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para petroquímica."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "fugas-de-aire-comprimido-cuanto-cuestan-y-como-detectarlas",
+      "titulo": "Fugas de aire comprimido",
+      "resumen": "Cuánto cuestan y cómo detectarlas.",
+      "portada": "/images/blog/compresor-aire.webp"
+    },
+    "servicio": {
+      "href": "/industrias/alimentos-y-bebidas",
+      "titulo": "Alimentos y bebidas",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para alimentos y bebidas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "termografia-en-tableros-electricos-como-se-hace-y-que-buscar",
+      "titulo": "Termografía en tableros",
+      "resumen": "Cómo se hace y qué busca.",
+      "portada": "/images/blog/termografia-tableros.webp"
+    },
+    "servicio": {
+      "href": "/industrias/alimentos-y-bebidas",
+      "titulo": "Alimentos y bebidas",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para alimentos y bebidas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "falla-de-rodamientos-en-motores-electricos-como-detectarla-a-tiempo",
+      "titulo": "Falla de rodamientos",
+      "resumen": "Cómo detectarla a tiempo en motores.",
+      "portada": "/images/blog/falla-rodamientos.webp"
+    },
+    "servicio": {
+      "href": "/industrias/alimentos-y-bebidas",
+      "titulo": "Alimentos y bebidas",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para alimentos y bebidas."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "fugas-de-aire-comprimido-cuanto-cuestan-y-como-detectarlas",
+      "titulo": "Fugas de aire comprimido",
+      "resumen": "Cuánto cuestan y cómo detectarlas.",
+      "portada": "/images/blog/compresor-aire.webp"
+    },
+    "servicio": {
+      "href": "/industrias/automotriz",
+      "titulo": "Automotriz",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para automotriz."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "costo-de-un-paro-no-programado-como-calcularlo",
+      "titulo": "Costo de un paro",
+      "resumen": "Cómo calcularlo y usarlo.",
+      "portada": "/images/blog/planta-produccion.webp"
+    },
+    "servicio": {
+      "href": "/industrias/automotriz",
+      "titulo": "Automotriz",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para automotriz."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "sensores-inalambricos-de-vibracion-como-elegirlos-e-instalarlos",
+      "titulo": "Sensores inalámbricos",
+      "resumen": "Cómo elegirlos e instalarlos.",
+      "portada": "/images/blog/sensores-inalambricos.webp"
+    },
+    "servicio": {
+      "href": "/industrias/automotriz",
+      "titulo": "Automotriz",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para automotriz."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "como-hacer-un-programa-de-mantenimiento-predictivo",
+      "titulo": "Programa predictivo",
+      "resumen": "Por dónde empezar.",
+      "portada": "/images/blog/programa-predictivo.webp"
+    },
+    "servicio": {
+      "href": "/industrias/manufactura",
+      "titulo": "Manufactura",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para manufactura."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "analisis-de-criticidad-de-equipos-como-hacer-una-matriz",
+      "titulo": "Matriz de criticidad",
+      "resumen": "Cómo calificar cada equipo.",
+      "portada": "/images/blog/matriz-criticidad.webp"
+    },
+    "servicio": {
+      "href": "/industrias/manufactura",
+      "titulo": "Manufactura",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para manufactura."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "termografia-en-motores-electricos-que-revisa-y-como-interpretarla",
+      "titulo": "Termografía en motores",
+      "resumen": "Qué revisa y cómo interpretarla.",
+      "portada": "/images/blog/termografia-motores.webp"
+    },
+    "servicio": {
+      "href": "/industrias/manufactura",
+      "titulo": "Manufactura",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para manufactura."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "frecuencias-de-falla-de-rodamientos-bpfo-bpfi-bsf-ftf",
+      "titulo": "Frecuencias de rodamientos",
+      "resumen": "BPFO, BPFI, BSF y FTF explicadas.",
+      "portada": "/images/blog/frecuencias-rodamientos.webp"
+    },
+    "servicio": {
+      "href": "/industrias/cemento-y-materiales",
+      "titulo": "Cemento y materiales",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para cemento y materiales."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "analisis-de-aceite-en-mantenimiento-predictivo-pruebas-y-muestreo",
+      "titulo": "Análisis de aceite",
+      "resumen": "Qué pruebas y cómo muestrear.",
+      "portada": "/images/blog/aceite-pruebas-muestreo.webp"
+    },
+    "servicio": {
+      "href": "/industrias/cemento-y-materiales",
+      "titulo": "Cemento y materiales",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para cemento y materiales."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "balanceo-dinamico-en-sitio-y-grado-de-balanceo-g",
+      "titulo": "Balanceo en sitio",
+      "resumen": "Qué es el grado G.",
+      "portada": "/images/blog/balanceo-dinamico-grado-g.webp"
+    },
+    "servicio": {
+      "href": "/industrias/cemento-y-materiales",
+      "titulo": "Cemento y materiales",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para cemento y materiales."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "cavitacion-en-bombas-centrifugas-como-detectarla-y-evitarla",
+      "titulo": "Cavitación en bombas",
+      "resumen": "Cómo detectarla y evitarla.",
+      "portada": "/images/blog/cavitacion-bombas.webp"
+    },
+    "servicio": {
+      "href": "/industrias/tratamiento-de-agua",
+      "titulo": "Tratamiento de agua",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para tratamiento de agua."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "analisis-de-vibraciones-en-motores-y-bombas-centrifugas",
+      "titulo": "Vibraciones en motores y bombas",
+      "resumen": "Dónde medir y qué buscar.",
+      "portada": "/images/blog/vibraciones-motores-bombas.webp"
+    },
+    "servicio": {
+      "href": "/industrias/tratamiento-de-agua",
+      "titulo": "Tratamiento de agua",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para tratamiento de agua."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "mtbf-mttr-y-disponibilidad-formulas-y-ejemplos",
+      "titulo": "MTBF, MTTR y disponibilidad",
+      "resumen": "Fórmulas y un ejemplo.",
+      "portada": "/images/blog/ingenieros-planta.webp"
+    },
+    "servicio": {
+      "href": "/industrias/tratamiento-de-agua",
+      "titulo": "Tratamiento de agua",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para tratamiento de agua."
+    }
   }
 ]

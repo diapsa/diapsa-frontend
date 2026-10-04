@@ -3,6 +3,11 @@ import Link from "next/link";
 import JsonLd, { createBreadcrumbSchema, createFaqSchema } from "@/components/atoms/JsonLd";
 import GuiasRelacionadas from "@/components/organisms/GuiasRelacionadas";
 import ContactForm from "@/components/organisms/ContactForm";
+import VideoBucle from "@/components/atoms/VideoBucle";
+import IconoMenu from "@/components/atoms/IconoMenu";
+import EscenaGemeloEnergia from "@/components/organisms/EscenaGemeloEnergia";
+import clientes from "@/data/clients.json";
+import presencia from "@/data/presencia-mexico.json";
 import { getArticulosPorServicio } from "@/lib/recursos";
 import { SITE_CONFIG } from "@/lib/constants";
 import type { Industria } from "@/types/industria";
@@ -25,6 +30,35 @@ const Flecha = () => (
 );
 
 const n = (i: number) => String(i + 1).padStart(2, "0");
+
+/* Logotipos de clientes (los mismos de la portada) y cifras ya publicadas. */
+const LOGOS = (clientes.clients as { name: string; logo: string | null }[]).filter(
+  (c): c is { name: string; logo: string } => Boolean(c.logo),
+);
+const ESTADOS = presencia.estados.filter((e) => e.trabajamos).length;
+const PAISES = presencia.internacional.length + 1;
+const CIFRAS = [
+  { valor: "+20", etiqueta: "años midiendo equipos en operación" },
+  { valor: String(ESTADOS), etiqueta: "estados de México" },
+  { valor: String(PAISES), etiqueta: "países" },
+];
+
+/* Ícono de línea según la técnica que nombra el texto. */
+function iconoDe(texto: string): string {
+  const t = texto.toLowerCase();
+  if (t.includes("vibra") || t.includes("balanceo") || t.includes("alinea")) return "vibraciones";
+  if (t.includes("termo") || t.includes("temperatura") || t.includes("cámara")) return "termografia";
+  if (t.includes("ultrasonido") || t.includes("acústic") || t.includes("fuga")) return "ultrasonido";
+  if (t.includes("aceite") || t.includes("dga") || t.includes("gases")) return "aceite";
+  if (t.includes("gas") || t.includes("metano")) return "gas";
+  if (t.includes("ducto")) return "ductos";
+  if (t.includes("tierra")) return "tierras";
+  if (t.includes("arco")) return "arco";
+  if (t.includes("calidad") || t.includes("eléctric") || t.includes("armónic")) return "electricos";
+  if (t.includes("diagnóstico") || t.includes("start") || t.includes("criticidad")) return "situacional";
+  if (t.includes("idap")) return "idap";
+  return "diagnostico";
+}
 
 function Etiqueta({ children, clara }: { children: React.ReactNode; clara?: boolean }) {
   return <p className={`text-xs font-bold uppercase tracking-[0.2em] ${clara ? "text-secondary" : "text-secondary-dark"}`}>{children}</p>;
@@ -96,6 +130,27 @@ export default function PaginaIndustria({ industria }: { industria: Industria })
         </nav>
       </section>
 
+      {/* Quién ya confía: cifras y logotipos, antes de entrar al detalle */}
+      <section className="w-full border-b border-gray-200 bg-white py-10 lg:py-12">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-6 lg:grid-cols-[auto_1fr] lg:gap-14">
+          <dl className="flex gap-8 lg:gap-10">
+            {CIFRAS.map((c) => (
+              <div key={c.etiqueta}>
+                <dd className="text-3xl font-extrabold text-primary lg:text-4xl">{c.valor}</dd>
+                <dt className="mt-1 max-w-[9rem] text-xs leading-snug text-tertiary">{c.etiqueta}</dt>
+              </div>
+            ))}
+          </dl>
+          <ul className="grid grid-cols-3 items-center gap-x-6 gap-y-4 sm:grid-cols-6 lg:grid-cols-9">
+            {LOGOS.map((c) => (
+              <li key={c.name} className="flex items-center justify-center">
+                <Image src={c.logo} alt={c.name} width={120} height={40} className="h-8 w-auto max-w-full object-contain opacity-50 brightness-0 transition-opacity hover:opacity-90" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Las señales tempranas */}
       <section className="w-full bg-gray-50 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6">
@@ -109,7 +164,10 @@ export default function PaginaIndustria({ industria }: { industria: Industria })
           <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-gray-200 bg-gray-200 sm:grid-cols-2 lg:grid-cols-4">
             {senales.items.map((s, i) => (
               <div key={s.titulo} className="bg-white p-6 lg:p-8">
-                <span className="text-xs font-bold text-secondary-dark">{n(i)}</span>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-secondary-dark">{n(i)}</span>
+                  <IconoMenu icono={iconoDe(s.titulo)} className="h-7 w-7 text-primary" />
+                </div>
                 <span className="mt-4 block h-px w-10 bg-secondary" aria-hidden="true" />
                 <h3 className="mt-4 text-lg font-extrabold text-primary">{s.titulo}</h3>
                 <p className="mt-2 text-justify text-sm leading-relaxed text-tertiary">{s.texto}</p>
@@ -177,9 +235,12 @@ export default function PaginaIndustria({ industria }: { industria: Industria })
               <div key={f.activo} className="grid grid-cols-1 border-t border-gray-200 first:border-t-0 md:grid-cols-3 md:first:border-t">
                 <span className="px-6 pt-5 font-bold text-primary md:py-5">{f.activo}</span>
                 <span className="px-6 pt-1 text-tertiary md:py-5">{f.senal}</span>
-                <span className="px-6 pb-5 pt-2 md:py-5">
+                <span className="flex items-start gap-3 px-6 pb-5 pt-2 md:py-5">
+                  <IconoMenu icono={iconoDe(f.servicio)} className="mt-0.5 h-6 w-6 shrink-0 text-primary" />
+                  <span>
                   <Link href={f.href} className="font-bold text-primary hover:underline">{f.servicio}</Link>
                   <span className="mt-1 block text-sm text-tertiary">{f.detalle}</span>
+                  </span>
                 </span>
               </div>
             ))}
@@ -197,15 +258,31 @@ export default function PaginaIndustria({ industria }: { industria: Industria })
             </div>
             <p className="text-justify text-lg leading-relaxed text-tertiary lg:pt-10">{arquitectura.texto}</p>
           </div>
-          <div className="mt-12 overflow-hidden rounded-sm border border-gray-200 bg-white">
+          <div className="mt-12 grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:gap-12">
+          {industria.slug === "generacion-de-energia" ? (
+            <div className="overflow-hidden rounded-sm">
+              <EscenaGemeloEnergia />
+            </div>
+          ) : (
+            <div className="overflow-hidden rounded-2xl bg-white p-2 shadow-[0_30px_70px_-35px_rgba(13,26,56,0.35)] ring-1 ring-primary/10 sm:p-3">
+              <VideoBucle
+                className="block aspect-[16/10] w-full rounded-xl object-cover"
+                src="/videos/industrias/programa.mp4"
+                poster="/videos/industrias/programa.jpg"
+                descripcion="Cómo se arma el programa: los equipos se califican por criticidad, la ruta les asigna sus técnicas, los críticos reciben sensores en línea y todo se sigue en IDAP"
+              />
+            </div>
+          )}
+          <div className="overflow-hidden rounded-sm border border-gray-200 bg-white">
             {arquitectura.items.map((a, i) => (
-              <Link key={a.titulo} href={a.href} className="group grid grid-cols-[2.5rem_1fr_auto] items-start gap-x-4 gap-y-1 border-t border-gray-200 px-6 py-5 transition-colors first:border-t-0 hover:bg-gray-50 md:grid-cols-[3rem_16rem_1fr_auto] md:items-center">
+              <Link key={a.titulo} href={a.href} className="group grid grid-cols-[2.5rem_1fr_auto] items-start gap-x-4 gap-y-1 border-t border-gray-200 px-6 py-5 transition-colors first:border-t-0 hover:bg-gray-50">
                 <span className="text-sm font-bold text-secondary-dark">{n(i)}</span>
                 <h3 className="text-lg font-extrabold text-primary">{a.titulo}</h3>
-                <p className="col-start-2 row-start-2 text-justify text-base leading-relaxed text-tertiary md:col-start-3 md:row-start-1">{a.texto}</p>
-                <span className="col-start-3 row-start-1 inline-flex text-primary transition-transform group-hover:translate-x-1 md:col-start-4"><Flecha /></span>
+                <p className="col-start-2 row-start-2 text-justify text-base leading-relaxed text-tertiary">{a.texto}</p>
+                <span className="col-start-3 row-start-1 inline-flex text-primary transition-transform group-hover:translate-x-1"><Flecha /></span>
               </Link>
             ))}
+          </div>
           </div>
         </div>
       </section>
