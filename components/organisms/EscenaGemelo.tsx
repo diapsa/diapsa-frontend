@@ -3,15 +3,16 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * EscenaGemeloEnergia
- * El gemelo digital de la landing de generación de energía
- * (lib/escena-gemelo-energia.js): criticidad, técnicas recomendadas, rutas
- * y sensores, e indicadores de confiabilidad sobre una central de ciclo
- * combinado. Mismo montaje que las demás escenas: Three.js por import
- * dinámico cuando la sección se acerca, respaldo por scroll y limpieza al
- * desmontar. El fondo azul lo pone este cuadro.
+ * EscenaGemelo
+ * El gemelo digital de cada landing de industria (lib/escena-gemelo.js):
+ * una planta del giro recorrida en cuatro pasos, criticidad, técnicas
+ * recomendadas, rutas y sensores, e indicadores de confiabilidad. Mismo
+ * montaje que las demás escenas: Three.js por import dinámico cuando la
+ * sección se acerca, respaldo por scroll y limpieza al desmontar. El
+ * fondo azul lo pone este cuadro. Sustituye a EscenaGemeloEnergia, que
+ * solo tenía la central (Emiliano, 2026-10-04: un gemelo por industria).
  */
-export default function EscenaGemeloEnergia() {
+export default function EscenaGemelo({ planta, nombre }: { planta: string; nombre: string }) {
   const cuadro = useRef<HTMLDivElement>(null);
   const [montada, setMontada] = useState(false);
 
@@ -27,17 +28,17 @@ export default function EscenaGemeloEnergia() {
       iniciada = true;
       observador.disconnect();
       window.removeEventListener("scroll", comprobar);
-      Promise.all([import("three"), import("@/lib/escena-gemelo-energia")])
-        .then(([THREE, { montarEscenaGemeloEnergia }]) => {
+      Promise.all([import("three"), import("@/lib/escena-gemelo")])
+        .then(([THREE, { montarEscenaGemelo }]) => {
           if (cancelado) return;
           try {
-            limpiar = montarEscenaGemeloEnergia(THREE, root, { fuente: getComputedStyle(document.body).fontFamily });
+            limpiar = montarEscenaGemelo(THREE, root, { planta, fuente: getComputedStyle(document.body).fontFamily });
             setMontada(true);
           } catch (e) {
-            console.warn("[gemelo energía] no pudo montarse:", e);
+            console.warn("[gemelo] no pudo montarse:", e);
           }
         })
-        .catch((e) => console.warn("[gemelo energía] no se pudo cargar:", e));
+        .catch((e) => console.warn("[gemelo] no se pudo cargar:", e));
     };
     const comprobar = () => {
       const r = root.getBoundingClientRect();
@@ -56,13 +57,13 @@ export default function EscenaGemeloEnergia() {
       window.removeEventListener("scroll", comprobar);
       limpiar?.();
     };
-  }, []);
+  }, [planta]);
 
   return (
     <div
       ref={cuadro}
       role="img"
-      aria-label="Gemelo digital de una central de ciclo combinado: los equipos se califican por criticidad, se les asignan técnicas, se trazan rutas de inspección y se instalan sensores, y mejoran los indicadores de confiabilidad."
+      aria-label={`Gemelo digital de una planta de ${nombre.toLowerCase()}: los equipos se califican por criticidad, se les asignan técnicas, se trazan rutas de inspección y se instalan sensores, y mejoran los indicadores de confiabilidad.`}
       className={`relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-[radial-gradient(ellipse_at_center,#16324f_0%,#0b1530_70%)] ring-1 ring-white/10 transition-opacity duration-700 sm:aspect-[16/10] lg:aspect-[16/8] ${montada ? "opacity-100" : "opacity-80"}`}
     />
   );
