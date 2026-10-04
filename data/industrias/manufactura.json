@@ -1,0 +1,300 @@
+{
+  "slug": "manufactura",
+  "nombre": "Manufactura",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Industrias",
+      "link": "/#industrias"
+    },
+    {
+      "label": "Manufactura",
+      "link": "/industrias/manufactura"
+    }
+  ],
+  "seoTitle": "Mantenimiento predictivo para plantas de manufactura",
+  "seoDescription": "Mantenimiento predictivo y monitoreo de condición para plantas de manufactura: motores, bombas, ventiladores, compresores, reductores, tableros y subestación. Rutas de vibración, termografía, ultrasonido y aceite con la planta en operación, y monitoreo en línea.",
+  "hero": {
+    "etiqueta": "Industria / Manufactura",
+    "titulo": "Cada equipo cuenta su estado. Hay que saber escucharlo.",
+    "texto": "Motores, bombas, ventiladores, compresores y reductores son los mismos en casi todas las plantas, y fallan de las mismas formas. Combinamos rutas predictivas, monitoreo en línea e IDAP para que cada falla se encuentre a tiempo y se programe su reparación.",
+    "foto": {
+      "src": "/images/servicios/termografia-infrarroja/campo-42.webp",
+      "alt": "Analista de DIAPSA en una planta de manufactura con cámara termográfica"
+    },
+    "nota": "Para plantas de manufactura metalmecánica, plásticos, papel, vidrio, textil y electrónica, y para sus equipos de mantenimiento."
+  },
+  "senales": {
+    "etiqueta": "Una visión con varias técnicas",
+    "titulo": "Ve la falla antes de que pare la producción.",
+    "texto": "En una planta de manufactura, las fallas no sorprenden a quien las mide. Antes del paro hay una vibración que sube en el reductor, un punto caliente en el tablero, una fuga de aire que nadie oye o un rodamiento que empieza a sonar. Cada señal pide su técnica, y el programa se arma alrededor de los equipos que detienen la producción.",
+    "items": [
+      {
+        "titulo": "Vibración",
+        "texto": "Desbalance, desalineación, holguras y rodamientos en motores, bombas, ventiladores y reductores."
+      },
+      {
+        "titulo": "Temperatura",
+        "texto": "Conexiones flojas, sobrecargas y aislamientos dañados en tableros, transformadores y motores."
+      },
+      {
+        "titulo": "Ultrasonido",
+        "texto": "Fugas de aire, vapor y gas, falta de lubricación y descargas eléctricas que el oído no alcanza."
+      },
+      {
+        "titulo": "Aceite y gases",
+        "texto": "Desgaste, contaminación y gases disueltos en reductores, compresores y transformadores."
+      }
+    ]
+  },
+  "areas": [
+    {
+      "id": "rotativos",
+      "nombre": "Motores, bombas y ventiladores",
+      "titulo": "Vigila el equipo rotativo de toda la planta.",
+      "texto": "Son la mayoría de los activos de la planta y la mayoría de las fallas. La ruta de vibración, termografía y ultrasonido los cubre en turno, el análisis de aceite revisa reductores y compresores, y los críticos se vigilan en línea.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-analista-motor.webp",
+        "alt": "Analista de DIAPSA midiendo vibraciones en un motor"
+      },
+      "prioridades": [
+        "Vibración en rodamientos, desbalance y desalineación",
+        "Lubricación guiada por ultrasonido",
+        "Termografía de motores y acoplamientos",
+        "Sensores en línea en los equipos críticos"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        }
+      ],
+      "accion": "Analizar el equipo rotativo"
+    },
+    {
+      "id": "reductores",
+      "nombre": "Reductores, compresores e hidráulica",
+      "titulo": "Cuida lo que trabaja bajo carga.",
+      "texto": "Reductores de alta carga, compresores de aire y unidades hidráulicas. Sus engranes, rodamientos y bombas se desgastan con el aceite, y el aceite lo cuenta antes que la vibración.",
+      "foto": {
+        "src": "/images/servicios/analisis-de-aceite/toma-de-muestra.webp",
+        "alt": "Analista de DIAPSA tomando una muestra de aceite"
+      },
+      "prioridades": [
+        "Aceite de reductores, compresores e hidráulica",
+        "Vibración en engranes y rodamientos",
+        "Alineación y balanceo tras cada intervención",
+        "Fugas de aire comprimido con estimación de pérdida"
+      ],
+      "servicios": [
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Alineación y balanceo",
+          "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        }
+      ],
+      "accion": "Revisar reductores y compresores"
+    },
+    {
+      "id": "electrico",
+      "nombre": "Tableros y subestación",
+      "titulo": "Evita el paro eléctrico y cumple la norma.",
+      "texto": "Centros de control de motores, variadores, transformadores y tableros de distribución. Un punto caliente saca una línea completa, y la NOM-029 y la NOM-022 piden evidencia del estado de la instalación eléctrica.",
+      "foto": {
+        "src": "/images/servicios/estudios-electricos/campo-analista-tablero.webp",
+        "alt": "Analista de DIAPSA midiendo en un tablero eléctrico"
+      },
+      "prioridades": [
+        "Puntos calientes en tableros y conexiones",
+        "Tierras físicas y arco eléctrico",
+        "Calidad de energía y factor de potencia",
+        "Termografía de cuartos eléctricos en línea"
+      ],
+      "servicios": [
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Tierras físicas",
+          "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+        },
+        {
+          "nombre": "Arco eléctrico",
+          "href": "/servicios/monitoreo-condicion/arco-electrico"
+        },
+        {
+          "nombre": "Calidad de energía",
+          "href": "/servicios/monitoreo-condicion/calidad-de-energia"
+        }
+      ],
+      "accion": "Revisar tableros y subestación"
+    },
+    {
+      "id": "programa",
+      "nombre": "El programa de confiabilidad",
+      "titulo": "Empieza por saber qué es crítico.",
+      "texto": "No todos los equipos merecen la misma atención. El diagnóstico situacional califica la criticidad de cada uno, define qué medir y cada cuánto, y DIAPSA START forma al personal de planta para que el programa se sostenga.",
+      "foto": {
+        "src": "/images/servicios/diagnostico-integral/campo-ruta-bombas.webp",
+        "alt": "Analistas de DIAPSA en ruta de medición en una planta"
+      },
+      "prioridades": [
+        "Matriz de criticidad de los equipos",
+        "Rutas y frecuencias por equipo",
+        "Capacitación del personal de mantenimiento",
+        "Indicadores de confiabilidad en IDAP"
+      ],
+      "servicios": [
+        {
+          "nombre": "Diagnóstico situacional",
+          "href": "/servicios/diagnostico-situacional"
+        },
+        {
+          "nombre": "DIAPSA START",
+          "href": "/servicios/diapsa-start"
+        },
+        {
+          "nombre": "IDAP",
+          "href": "/servicios/idap"
+        }
+      ],
+      "accion": "Planear el programa de confiabilidad"
+    }
+  ],
+  "mapa": {
+    "etiqueta": "Mapa de activo y señal",
+    "titulo": "Cada riesgo, con la técnica que lo detecta.",
+    "texto": "Un programa para toda la planta no necesita el mismo equipo en todas partes. Necesita una relación clara entre el activo, la señal que avisa primero y la forma de capturarla.",
+    "filas": [
+      {
+        "activo": "Motores y bombas",
+        "senal": "Cambio en la vibración y temperatura",
+        "servicio": "Vibraciones mecánicas",
+        "detalle": "Rutas periódicas o sensores en línea.",
+        "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "activo": "Reductores y compresores",
+        "senal": "Desgaste en el aceite",
+        "servicio": "Análisis de aceite",
+        "detalle": "Muestreo periódico con tendencia.",
+        "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+      },
+      {
+        "activo": "Aire comprimido",
+        "senal": "Fuga que el oído no alcanza",
+        "servicio": "Análisis de ultrasonido",
+        "detalle": "Inspección en ruta con su estimación de pérdida.",
+        "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+      },
+      {
+        "activo": "Equipos críticos sin relevo",
+        "senal": "Vibración anormal",
+        "servicio": "Sensores de vibración",
+        "detalle": "Alertas en línea revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+      },
+      {
+        "activo": "Tableros y centros de control",
+        "senal": "Punto caliente",
+        "servicio": "Termografía infrarroja",
+        "detalle": "Inspección en ruta o cámara fija.",
+        "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+      },
+      {
+        "activo": "Instalación eléctrica",
+        "senal": "Resistencia de tierras y arco",
+        "servicio": "Tierras físicas",
+        "detalle": "Estudios con evidencia normativa.",
+        "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+      }
+    ]
+  },
+  "arquitectura": {
+    "etiqueta": "Cómo lo armamos",
+    "titulo": "El programa se construye alrededor de lo que no puede fallar.",
+    "texto": "La ruta con analista, el monitoreo en línea y la plataforma cumplen funciones distintas. Las combinamos según la criticidad de cada equipo y lo que ya tiene la planta.",
+    "items": [
+      {
+        "titulo": "Diagnóstico situacional",
+        "texto": "Calificamos la criticidad de cada equipo y definimos qué medir y cada cuánto.",
+        "href": "/servicios/diagnostico-situacional"
+      },
+      {
+        "titulo": "Rutas predictivas",
+        "texto": "Vibración, termografía, ultrasonido y aceite con la planta en operación.",
+        "href": "/servicios/monitoreo-condicion"
+      },
+      {
+        "titulo": "Monitoreo en línea",
+        "texto": "Sensores y cámaras fijas en los equipos críticos, con alertas revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo"
+      },
+      {
+        "titulo": "IDAP",
+        "texto": "Cada hallazgo, su tendencia y su seguimiento en una sola plataforma.",
+        "href": "/servicios/idap"
+      },
+      {
+        "titulo": "Cumplimiento",
+        "texto": "NOM-029, NOM-022 y Código de Red, con su evidencia.",
+        "href": "/servicios/monitoreo-condicion/arco-electrico"
+      }
+    ]
+  },
+  "cierre": {
+    "etiqueta": "Planea la siguiente etapa",
+    "titulo": "Cuéntanos qué planta operas y qué equipo no puede fallar.",
+    "texto": "Dinos qué planta operas, cuáles son sus equipos críticos y cómo los inspeccionas hoy. Te proponemos la combinación de rutas, sensores y plataforma que le conviene."
+  },
+  "faq": [
+    {
+      "question": "¿Se mide con la planta en operación?",
+      "answer": "Sí. Las técnicas predictivas se aplican con los equipos trabajando, que es cuando las fallas se muestran, sin pedir paros."
+    },
+    {
+      "question": "¿Por dónde conviene empezar?",
+      "answer": "Por un diagnóstico situacional: calificamos la criticidad de cada equipo y proponemos qué medir, cada cuánto y qué vigilar en continuo."
+    },
+    {
+      "question": "¿Cuántos equipos cubre una ruta?",
+      "answer": "Depende de la planta y de las técnicas. En el diagnóstico situacional definimos cuántos equipos entran, con qué técnica y cada cuánto, para que la ruta cubra lo crítico sin medir de más."
+    },
+    {
+      "question": "¿Pueden formar a nuestro personal?",
+      "answer": "Sí. DIAPSA START combina capacitación práctica, diagnóstico y las primeras mediciones, para que el programa quede en manos del equipo de planta."
+    }
+  ],
+  "cta": {
+    "title": "¿Qué equipo de tu planta no puede fallar?",
+    "text": "Cuéntanos qué fabricas y te proponemos el programa.",
+    "whatsappMessage": "Hola, quiero información sobre mantenimiento predictivo para una planta de manufactura."
+  }
+}

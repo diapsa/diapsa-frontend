@@ -1,0 +1,61 @@
+{
+  "slug": "mantenimiento-de-subestaciones-electricas-que-incluye",
+  "titulo": "Mantenimiento de subestaciones eléctricas: qué incluye y qué se puede revisar sin desenergizar",
+  "extracto": "Una subestación se mantiene con dos tipos de trabajo: el que necesita librar el equipo y el que se hace con todo energizado. Qué incluye cada uno, qué norma lo pide y cómo se decide qué revisar primero.",
+  "portada": "/images/blog/mantenimiento-subestaciones.webp",
+  "fecha": "2026-10-01T20:00:00.200000Z",
+  "seo": {
+    "titulo": "Mantenimiento de subestaciones eléctricas: qué incluye",
+    "descripcion": "Qué incluye el mantenimiento de una subestación eléctrica: pruebas con el equipo librado, inspecciones con la subestación energizada (termografía, ultrasonido, gases en el aceite, tierras físicas), qué piden la NOM-029 y la NOM-022 y cómo priorizar."
+  },
+  "bloques": [
+    ["p", "La subestación es el punto por donde entra o sale toda la energía de una planta o una central. Cuando falla, no falla un equipo: se queda sin energía todo lo que alimenta. Por eso su mantenimiento no se puede dejar para cuando algo truene, y tampoco conviene hacerlo solo cuando hay un paro."],
+    ["p", "Un buen programa combina dos tipos de trabajo: el que necesita librar y desenergizar el equipo, y el que se hace con la subestación en operación."],
+
+    ["h2", "Lo que necesita librar el equipo"],
+    ["p", "Es el mantenimiento clásico. Se programa en una ventana, se libra el equipo con su procedimiento de seguridad y se hacen la limpieza, los aprietes y las pruebas eléctricas:"],
+    ["lista", [
+      "Limpieza de aisladores, boquillas y gabinetes.",
+      "Revisión y apriete de conexiones.",
+      "Resistencia de aislamiento y factor de potencia del aislamiento.",
+      "Relación de transformación y resistencia de devanados de los transformadores.",
+      "Resistencia de contactos y tiempos de operación de interruptores.",
+      "Pruebas del aceite: rigidez dieléctrica, humedad y gases disueltos.",
+      "Revisión de protecciones y su coordinación."
+    ]],
+    ["p", "Es indispensable, pero tiene un límite: se hace una vez al año o menos, y entre una ventana y otra la subestación queda sin revisar."],
+
+    ["h2", "Lo que se revisa con todo energizado"],
+    ["p", "Estas técnicas necesitan que el equipo esté trabajando, porque es cuando las fallas se muestran:"],
+    ["h3", "Termografía"],
+    ["p", "Encuentra conexiones flojas, contactos dañados y desbalances de carga, que solo se calientan cuando pasa corriente. Es la inspección más útil en una subestación."],
+    ["h3", "Ultrasonido"],
+    ["p", "Escucha el efecto corona, el tracking y las descargas en aisladores, boquillas y celdas, que la termografía muchas veces no ve. Lo explicamos en la guía de [efecto corona](/blog/efecto-corona-que-es-y-como-se-detecta)."],
+    ["h3", "Gases en el aceite"],
+    ["p", "Una muestra del aceite del transformador, tomada con el equipo en servicio, dice si hay una falla interna. En los transformadores críticos se puede medir en línea, cada hora."],
+    ["h3", "Tierras físicas"],
+    ["p", "La red de tierras y los pararrayos se miden para asegurar que protegen al personal y al equipo, como pide la NOM-022-STPS-2015."],
+
+    ["h2", "Qué pide la norma"],
+    ["p", "La NOM-029-STPS-2011 pide un programa de mantenimiento de las instalaciones eléctricas, procedimientos de seguridad y la identificación del riesgo de arco eléctrico. La NOM-022-STPS-2015 pide medir y registrar las tierras físicas y los pararrayos. Y la NFPA 70B, desde su edición 2023, pide un programa de mantenimiento eléctrico documentado, con inspecciones y pruebas según la condición de cada equipo. En los tres casos, lo que se revisa debe quedar registrado."],
+
+    ["h2", "Cómo priorizar"],
+    ["numerada", [
+      "Hacer el inventario de la subestación: transformadores, interruptores, celdas, tableros y su importancia.",
+      "Hacer una termografía y un ultrasonido con todo energizado para encontrar lo que ya está fallando.",
+      "Tomar muestras de aceite de los transformadores.",
+      "Con esos hallazgos, programar la ventana de mantenimiento con lo más urgente primero.",
+      "Repetir la inspección energizada con la frecuencia que pida cada equipo, y medir en línea los transformadores críticos."
+    ]],
+
+    ["h2", "Preguntas frecuentes"],
+    ["h3", "¿Cada cuánto se le da mantenimiento a una subestación?"],
+    ["p", "Como referencia, el mantenimiento con equipo librado suele hacerse una vez al año, y las inspecciones energizadas de termografía y ultrasonido, una o más veces al año según la importancia y el estado de cada equipo. La NFPA 70B propone ajustar la frecuencia a la condición."],
+    ["h3", "¿Es seguro inspeccionar con la subestación energizada?"],
+    ["p", "Sí, con personal capacitado, el equipo de protección que indique el estudio de arco eléctrico y respetando las distancias de seguridad. La termografía y el ultrasonido se hacen a distancia, sin tocar partes energizadas."],
+    ["h3", "¿Qué pasa si encuentro un punto caliente?"],
+    ["p", "Se califica su gravedad y se decide si se corrige en la siguiente ventana o antes. Lo importante es que no se quede en el informe: cada hallazgo necesita su corrección y su reinspección."],
+
+    ["nota", "Inspeccionamos subestaciones energizadas con [termografía](/servicios/monitoreo-condicion/termografia-infrarroja) y [ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido), medimos [tierras físicas](/servicios/monitoreo-condicion/tierras-fisicas) y hacemos el [estudio de arco eléctrico](/servicios/monitoreo-condicion/arco-electrico) para que el mantenimiento se haga con seguridad."]
+  ]
+}
