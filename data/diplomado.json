@@ -34,7 +34,7 @@
     {
       "n": 3, "titulo": "Gestión de la información", "horas": "4 h", "sesiones": "1 sesión",
       "objetivo": "Fortalecer la calidad de los datos técnicos y su análisis.",
-      "temas": ["Informes técnicos", "Confiabilidad del dato", "Herramientas estadísticas"]
+      "temas": ["Informes técnicos", "Confiabilidad del dato", "Herramientas estadísticas", "Integración de inteligencia artificial en el análisis de datos y la toma de decisiones"]
     },
     {
       "n": 4, "titulo": "Vida final del activo", "horas": "4 h", "sesiones": "1 sesión",

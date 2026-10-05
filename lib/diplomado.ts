@@ -22,6 +22,16 @@ export const PAISES_DIPLOMADO = [
 ];
 
 export const NUM_ESPECIALISTAS = PONENTES.length;
+
+/** Lo que cubre el claustro, resumido de los temas de los ponentes. */
+export const ESPECIALIDADES_CLAUSTRO = [
+  "Confiabilidad y gestión de activos",
+  "Integridad, riesgo y protección de activos",
+  "Vibraciones mecánicas",
+  "Lubricación y análisis de aceite",
+  "Diagnóstico y mantenimiento eléctrico",
+  "Monitoreo de condición y tecnologías predictivas",
+];
 export const NUM_PAISES = PAISES_DIPLOMADO.length;
 
 /** Las cuatro cifras del hero, con las de los especialistas calculadas. */

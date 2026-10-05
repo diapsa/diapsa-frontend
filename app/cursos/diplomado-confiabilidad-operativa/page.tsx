@@ -6,11 +6,13 @@ import DescargaBrochure from "@/components/organisms/DescargaBrochure";
 import ContactForm from "@/components/organisms/ContactForm";
 import CarruselFotos from "@/components/molecules/CarruselFotos";
 import ClientesLogos from "@/components/organisms/ClientesLogos";
+import MapaDiplomado from "@/components/organisms/MapaDiplomado";
+import Bandera from "@/components/atoms/Bandera";
 import VideoBucle from "@/components/atoms/VideoBucle";
 import JsonLd, { createBreadcrumbSchema, createCourseSchema, createFaqSchema } from "@/components/atoms/JsonLd";
 import { muestraFotos } from "@/lib/cursos";
 import { AZUL_CLARO_DIPLOMADO, FONDO_DIPLOMADO, PIE_DIPLOMADO } from "@/lib/diplomado-estilo";
-import { DATOS_DIPLOMADO, NUM_ESPECIALISTAS, NUM_PAISES, PAISES_DIPLOMADO, RESUMEN_DIPLOMADO } from "@/lib/diplomado";
+import { DATOS_DIPLOMADO, ESPECIALIDADES_CLAUSTRO, NUM_ESPECIALISTAS, NUM_PAISES, PAISES_DIPLOMADO, RESUMEN_DIPLOMADO } from "@/lib/diplomado";
 import { FAQ_DIPLOMADO } from "@/lib/diplomado-faq";
 
 /*
@@ -49,10 +51,6 @@ const RETICULA = {
     "linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px)",
   backgroundSize: "40px 40px",
 };
-
-function iniciales(n: string) {
-  return n.split(" ").filter(Boolean).slice(0, 2).map((p) => p[0]).join("");
-}
 
 export default function DiplomadoPage() {
   return (
@@ -184,34 +182,39 @@ export default function DiplomadoPage() {
         </div>
       </section>
 
-      {/* Especialistas */}
+      {/* Especialistas: países en el mapa, sin nombres (Emiliano, 2026-10-04) */}
       <section className="w-full bg-white py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <Antetitulo className="text-[#04358f]">Especialistas</Antetitulo>
-          <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">Sesiones 100% en vivo con {NUM_ESPECIALISTAS} especialistas de {NUM_PAISES} países</h2>
-          <ul className="mt-5 flex flex-wrap gap-2" aria-label="Países del claustro">
-            {PAISES_DIPLOMADO.map((p) => (
-              <li key={p} className="rounded-full bg-[#eef3ff] px-3 py-1 text-xs font-bold text-[#04358f]">{p}</li>
-            ))}
-          </ul>
-          <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {dip.ponentes.map((p) => (
-              <li key={p.nombre} className="flex items-start gap-4 rounded-sm bg-gray-50 p-4 ring-1 ring-black/5">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-sm font-extrabold text-white" style={{ background: FONDO_DIPLOMADO }} aria-hidden="true">{iniciales(p.nombre)}</span>
-                <span className="min-w-0">
-                  <span className="block font-extrabold leading-snug text-primary">{p.nombre}</span>
-                  <span className="block text-sm leading-snug text-tertiary">{p.tema}</span>
-                  {p.pais && <span className="mt-1 block text-[11px] font-bold uppercase tracking-wider text-[#04358f]">{p.pais}</span>}
-                </span>
-              </li>
-            ))}
-          </ul>
-          {dip.respaldo.length > 0 && (
-            <p className="mt-8 text-justify text-sm leading-relaxed text-tertiary">
-              <span className="font-bold text-primary">Con el respaldo de </span>
-              {dip.respaldo.join(", ")}, las firmas de las que forman parte los especialistas del claustro.
-            </p>
-          )}
+          <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">Aprenderás de la realidad industrial de {NUM_PAISES} países</h2>
+          <div className="mt-8 grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-12">
+            <MapaDiplomado paises={PAISES_DIPLOMADO} />
+            <div>
+              <p className="text-justify text-lg leading-relaxed text-primary">
+                Las sesiones son 100% en vivo con {NUM_ESPECIALISTAS} especialistas que trabajan en plantas de {PAISES_DIPLOMADO.join(", ").replace(/, ([^,]*)$/, " y $1")}. Cada tema lo imparte quien lo aplica, con casos de su propia industria: cómo se decide, qué falla y qué funcionó en contextos distintos al tuyo.
+              </p>
+              <p className="mt-6 text-[11px] font-bold uppercase tracking-widest text-[#04358f]">Lo que cubre el claustro</p>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {ESPECIALIDADES_CLAUSTRO.map((e) => (
+                  <li key={e} className="rounded-full bg-[#eef3ff] px-3 py-1.5 text-sm font-bold text-[#04358f]">{e}</li>
+                ))}
+              </ul>
+              <ul className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3" aria-label="Países del claustro">
+                {PAISES_DIPLOMADO.map((p) => (
+                  <li key={p} className="flex items-center gap-2 rounded-sm bg-gray-50 px-3 py-2 text-sm font-bold text-primary ring-1 ring-black/5">
+                    <Bandera pais={p} />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+              {dip.respaldo.length > 0 && (
+                <p className="mt-6 text-justify text-sm leading-relaxed text-tertiary">
+                  <span className="font-bold text-primary">Con el respaldo de </span>
+                  {dip.respaldo.join(", ")}, las firmas de las que forman parte los especialistas del claustro.
+                </p>
+              )}
+            </div>
+          </div>
         </div>
       </section>
 
