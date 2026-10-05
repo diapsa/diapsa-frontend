@@ -5,6 +5,7 @@ import type { Course, CourseDetail } from "@/types/course";
 import { FORMATOS, TECNICAS, extraDe, fechaGrupo, galeriaDe, imagenDe, proximosGrupos } from "@/lib/cursos";
 import GaleriaCampo from "./GaleriaCampo";
 import GuiasRelacionadas from "./GuiasRelacionadas";
+import IconoMenu from "../atoms/IconoMenu";
 import VideoBucle from "../atoms/VideoBucle";
 import { SITE_CONFIG } from "@/lib/constants";
 import { getArticulosPorServicio } from "@/lib/recursos";
@@ -107,14 +108,36 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
   const duracion = x?.duracion || (curso.duration ? `${curso.duration} horas` : "");
   const modalidad = x?.modalidad || curso.modality || "";
 
+  // La tira de datos del inicio (Emiliano, 2026-10-04: con tres datos sueltos
+  // se veía vacía). Cada dato lleva su ícono, el valor y una línea que lo
+  // explica; la modalidad del CMS se traduce a lo que entiende quien se
+  // inscribe, y el nivel sale del formato cuando el CMS no lo trae.
+  const ICONO_FORMATO: Record<string, string> = { formacion: "formacion", practica: "taller", certificacion: "certificado", gestion: "metodologia", especialidad: "diagnostico" };
+  const ICONO_TECNICA: Record<string, string> = { vibraciones: "vibraciones", termografia: "termografia", ultrasonido: "ultrasonido", confiabilidad: "situacional" };
+  const NIVEL_FORMATO: Record<string, { v: string; n: string }> = {
+    formacion: { v: "Desde cero", n: "No necesitas experiencia previa en la técnica" },
+    practica: { v: "Con base previa", n: "Para quien ya conoce la técnica y quiere practicarla" },
+    certificacion: { v: x?.nivel ?? "Por categoría", n: "Con los requisitos de experiencia de la norma" },
+    gestion: { v: "Para quien decide", n: "Jefes y gerentes de mantenimiento y confiabilidad" },
+    especialidad: { v: "Con base en la técnica", n: "Una aplicación concreta para quien ya la domina" },
+  };
+  const modalidadLegible = (m: string) => {
+    const t = m.toLowerCase();
+    if (t.includes("privad")) return { v: "Para tu equipo, en tu planta", n: "Grupo cerrado, con fecha a convenir" };
+    if (t.includes("webinar") || t.includes("línea") || t.includes("linea") || t.includes("virtual")) return { v: "Presencial o en línea", n: "Grupos abiertos, o en tu planta" };
+    if (t.includes("presencial") || t.includes("práctico") || t.includes("practico")) return { v: "Presencial", n: "En aula y con equipo en planta" };
+    return { v: m, n: "" };
+  };
+  const nivel = x ? NIVEL_FORMATO[x.formato] : null;
+  const mod = modalidad ? modalidadLegible(modalidad) : null;
   const datos = [
-    { k: "Formato", v: formato?.nombre ?? curso.category?.name ?? "" },
-    { k: "Norma", v: norma },
-    { k: "Categoría", v: x?.nivel ?? "" },
-    { k: "Modalidad", v: modalidad },
-    { k: "Duración", v: duracion },
-    { k: "Imparte", v: curso.provider },
-  ].filter((d) => d.v);
+    formato && { k: "Formato", v: formato.nombre, n: formato.texto, i: ICONO_FORMATO[x!.formato] },
+    tecnica && { k: "Técnica", v: tecnica.nombre, n: norma ? `Con los temas de la norma ${norma}` : "Con casos reales de planta", i: ICONO_TECNICA[x!.tecnica] },
+    mod && { k: "Modalidad", v: mod.v, n: mod.n, i: "empresa" },
+    nivel && { k: "Para quién", v: nivel.v, n: nivel.n, i: "personas" },
+    duracion && { k: "Duración", v: duracion, n: "", i: "reloj" },
+    { k: "Imparte", v: curso.provider || "DIAPSA", n: "Analistas en activo, con más de 3,000 especialistas formados", i: "formacion" },
+  ].filter((d): d is { k: string; v: string; n: string; i: string } => Boolean(d && d.v));
 
   // Lo que se aprende y lo que se podrá hacer: del complemento; si no, los objetivos del CMS
   const aprenderas = x?.aprenderas?.length ? x.aprenderas : lista(curso.specific_objectives);
@@ -141,14 +164,22 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
     <>
       {/* Los datos que se comparan, en una franja */}
       <section className="w-full border-b border-gray-200 bg-white">
-        <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-4 px-6 py-6 sm:grid-cols-3 lg:flex lg:flex-wrap lg:gap-x-12">
-          {datos.map((d) => (
-            <div key={d.k}>
-              <dt className="text-[11px] font-bold uppercase tracking-widest text-tertiary">{d.k}</dt>
-              <dd className="mt-0.5 font-extrabold text-primary">{d.v}</dd>
-            </div>
-          ))}
-        </dl>
+        <div className="mx-auto max-w-7xl px-6 py-6">
+          <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-gray-200 bg-gray-200 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {datos.map((d) => (
+              <div key={d.k} className="flex gap-3 bg-white p-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-primary/5 text-primary" aria-hidden="true">
+                  <IconoMenu icono={d.i} className="h-5 w-5" />
+                </span>
+                <div className="min-w-0">
+                  <dt className="text-[11px] font-bold uppercase tracking-widest text-tertiary">{d.k}</dt>
+                  <dd className="mt-0.5 font-extrabold leading-snug text-primary [overflow-wrap:anywhere]">{d.v}</dd>
+                  {d.n && <dd className="mt-0.5 text-xs leading-snug text-tertiary">{d.n}</dd>}
+                </div>
+              </div>
+            ))}
+          </dl>
+        </div>
       </section>
 
       {/* Al inicio: fotos reales de cursos de la misma técnica */}
