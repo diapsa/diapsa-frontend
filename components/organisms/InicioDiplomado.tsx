@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import diplomado from "@/data/diplomado.json";
 import { AZUL_CLARO_DIPLOMADO, FONDO_DIPLOMADO } from "@/lib/diplomado-estilo";
+import { DATOS_DIPLOMADO, NUM_ESPECIALISTAS, PAISES_DIPLOMADO } from "@/lib/diplomado";
 
 /**
  * InicioDiplomado
@@ -19,20 +20,9 @@ import { AZUL_CLARO_DIPLOMADO, FONDO_DIPLOMADO } from "@/lib/diplomado-estilo";
 const FONDO = FONDO_DIPLOMADO;
 const AZUL_CLARO = AZUL_CLARO_DIPLOMADO;
 
-type Ponente = { nombre: string; pais?: string };
-
-// Países del claustro, sin repetir ("Italia / Cuba" cuenta los dos).
-const PAISES = [
-  ...new Set(
-    (diplomado.ponentes as Ponente[])
-      .flatMap((p) => (p.pais ?? "").split("/"))
-      .map((p) => p.trim())
-      .filter(Boolean),
-  ),
-];
-
-const DATOS = diplomado.datos as { v: string; t: string }[];
-const ESPECIALISTAS = DATOS.find((d) => d.t.startsWith("especialista"))?.v ?? String(diplomado.ponentes.length);
+// Especialistas y países calculados de la lista de ponentes (lib/diplomado.ts)
+const PAISES = PAISES_DIPLOMADO;
+const ESPECIALISTAS = String(NUM_ESPECIALISTAS);
 
 export default function InicioDiplomado() {
   return (
@@ -104,7 +94,7 @@ export default function InicioDiplomado() {
             {/* Los datos del programa */}
             <div className="flex flex-col justify-center gap-3 text-white">
               <dl className="grid grid-cols-2 gap-3">
-                {DATOS.map((d) => (
+                {DATOS_DIPLOMADO.map((d) => (
                   <div key={d.v + d.t} className="flex flex-col-reverse rounded-sm bg-[#001f5f]/70 p-4 ring-1 ring-white/10">
                     <dt className="mt-1 text-xs uppercase tracking-wider text-white/70">{d.t}</dt>
                     <dd className="text-2xl font-black leading-tight lg:text-3xl">{d.v}</dd>
