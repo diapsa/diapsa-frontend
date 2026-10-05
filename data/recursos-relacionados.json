@@ -1139,5 +1139,44 @@
       "titulo": "Tratamiento de agua",
       "resumen": "Mantenimiento predictivo y monitoreo de condición para tratamiento de agua."
     }
+  },
+  {
+    "articulo": {
+      "slug": "vibraciones-en-turbinas-de-vapor-gas-e-hidraulicas",
+      "titulo": "Vibraciones en turbinas",
+      "resumen": "De vapor, de gas e hidráulicas.",
+      "portada": "/images/blog/vibraciones-turbinas.webp"
+    },
+    "servicio": {
+      "href": "/industrias/energias-renovables",
+      "titulo": "Energías renovables",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para parques solares y eólicos, hidroeléctricas y plantas de biogás."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "monitoreo-de-transformadores-de-potencia-que-medir-en-linea",
+      "titulo": "Monitoreo de transformadores",
+      "resumen": "Qué medir en línea en el colector.",
+      "portada": "/images/blog/monitoreo-transformadores.webp"
+    },
+    "servicio": {
+      "href": "/industrias/energias-renovables",
+      "titulo": "Energías renovables",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para parques solares y eólicos, hidroeléctricas y plantas de biogás."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "falla-de-rodamientos-en-motores-electricos-como-detectarla-a-tiempo",
+      "titulo": "Falla de rodamientos",
+      "resumen": "Cómo detectarla a tiempo en generadores y motores.",
+      "portada": "/images/blog/falla-rodamientos.webp"
+    },
+    "servicio": {
+      "href": "/industrias/energias-renovables",
+      "titulo": "Energías renovables",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para parques solares y eólicos, hidroeléctricas y plantas de biogás."
+    }
   }
 ]

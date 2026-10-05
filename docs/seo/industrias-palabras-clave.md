@@ -13,3 +13,7 @@ Cada landing lleva en el título "Mantenimiento predictivo para" más el giro, p
 ## Por revisar con DIAPSA
 
 Las fotos del hero de las siete landings nuevas son fotos reales de campo provisionales, hasta que entre la recarga de Higgsfield para generar una por giro. Los casos que se citan son los ya publicados en /casos-exito (alimentos y agua residual); las demás landings no llevan caso. Confirmar que DIAPSA trabaja en áreas clasificadas de petróleo y gas con los requisitos de acceso que se mencionan, y que los sensores en línea se ofrecen con grado de protección para plantas de agua.
+
+## Energías renovables (2026-10-04)
+
+Emiliano pidió una novena landing para solar, eólica, hidráulica y biogás. Lleva cuatro áreas, una por tecnología, con el gemelo de un parque mixto. Por confirmar con DIAPSA: si los analistas tienen formación de trabajo en alturas para subir a góndolas, qué experiencia hay en hidroeléctricas y en motogeneradores a biogás, y si se atienden inversores y seguidores solares o solo la parte eléctrica del parque.

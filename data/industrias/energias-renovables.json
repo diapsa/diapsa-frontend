@@ -1,0 +1,304 @@
+{
+  "slug": "energias-renovables",
+  "nombre": "Energías renovables",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Industrias",
+      "link": "/#industrias"
+    },
+    {
+      "label": "Energías renovables",
+      "link": "/industrias/energias-renovables"
+    }
+  ],
+  "seoTitle": "Mantenimiento predictivo para energías renovables",
+  "seoDescription": "Mantenimiento predictivo y monitoreo de condición para parques solares, eólicos, centrales hidroeléctricas y plantas de biogás: inversores y transformadores, multiplicadoras y generadores de aerogeneradores, turbinas hidráulicas, motogeneradores a biogás y subestaciones colectoras.",
+  "hero": {
+    "etiqueta": "Industria / Energías renovables",
+    "titulo": "El recurso es gratis. La disponibilidad no.",
+    "texto": "Parques solares y eólicos, centrales hidroeléctricas y plantas de biogás producen solo cuando sus equipos están disponibles. Combinamos rutas predictivas, monitoreo en línea e IDAP para que la multiplicadora, el inversor, la turbina o el motogenerador no se detengan cuando hay sol, viento, agua o gas.",
+    "foto": {
+      "src": "/images/gallery/campo/acustica-lineas-alta-tension.webp",
+      "alt": "Analista de DIAPSA inspeccionando líneas de alta tensión con cámara acústica"
+    },
+    "nota": "Para parques fotovoltaicos y eólicos, pequeñas y grandes hidroeléctricas, plantas de biogás y biomasa, y para sus operadores y equipos de mantenimiento."
+  },
+  "senales": {
+    "etiqueta": "Una visión con varias técnicas",
+    "titulo": "Ve la falla antes de que pare la generación.",
+    "texto": "En una central renovable, cada hora sin producir es energía que no se recupera. Las fallas avisan antes: una vibración que sube en la multiplicadora, un punto caliente en el inversor o en una conexión de corriente directa, un gas disuelto en el aceite del transformador colector o un rodamiento que empieza a sonar en el motogenerador. Cada señal pide su técnica, y el programa se arma alrededor de los equipos que convierten el recurso en energía.",
+    "items": [
+      {
+        "titulo": "Vibración",
+        "texto": "Multiplicadoras, generadores, turbinas hidráulicas y motogeneradores a biogás."
+      },
+      {
+        "titulo": "Temperatura",
+        "texto": "Inversores, cajas de conexión, transformadores y celdas de la subestación colectora."
+      },
+      {
+        "titulo": "Ultrasonido",
+        "texto": "Descargas parciales y efecto corona en la subestación, fugas de gas y aire en biogás."
+      },
+      {
+        "titulo": "Aceite y gases",
+        "texto": "Multiplicadoras, cojinetes de turbina, motores a gas y transformadores."
+      }
+    ]
+  },
+  "areas": [
+    {
+      "id": "solar",
+      "nombre": "Parques solares",
+      "titulo": "Vigila lo que convierte y lo que conecta.",
+      "texto": "Los paneles fallan poco; lo que para un parque solar son los inversores, los transformadores de los centros de transformación, las cajas de conexión y los seguidores. La termografía encuentra los puntos calientes y las cadenas con bajo rendimiento, y la subestación colectora exige su propio programa.",
+      "foto": {
+        "src": "/images/servicios/termografia-infrarroja/campo-71.webp",
+        "alt": "Analista de DIAPSA con cámara termográfica en campo abierto"
+      },
+      "prioridades": [
+        "Termografía de inversores, cajas de conexión y paneles",
+        "Transformadores de centros de transformación",
+        "Subestación colectora y celdas de media tensión",
+        "Tierras físicas y calidad de energía en el punto de interconexión"
+      ],
+      "servicios": [
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "DGA en línea",
+          "href": "/servicios/monitoreo-continuo/dga-en-linea"
+        },
+        {
+          "nombre": "Tierras físicas",
+          "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+        },
+        {
+          "nombre": "Calidad de energía",
+          "href": "/servicios/monitoreo-condicion/calidad-de-energia"
+        }
+      ],
+      "accion": "Revisar un parque solar"
+    },
+    {
+      "id": "eolica",
+      "nombre": "Parques eólicos",
+      "titulo": "Cuida la multiplicadora y el generador en lo alto.",
+      "texto": "Multiplicadora, generador, cojinete principal y sistema de orientación trabajan a decenas de metros de altura y con carga variable. La vibración y el aceite cuentan el estado de engranes y rodamientos con meses de anticipación, y los sensores en línea evitan subir a la góndola sin necesidad.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-motor-grande.webp",
+        "alt": "Analista de DIAPSA midiendo vibraciones en un generador grande"
+      },
+      "prioridades": [
+        "Vibración en multiplicadora, generador y cojinete principal",
+        "Aceite de la multiplicadora con tendencia de desgaste",
+        "Termografía de generador, convertidor y transformador de góndola",
+        "Sensores en línea en el tren de potencia"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        }
+      ],
+      "accion": "Revisar un parque eólico"
+    },
+    {
+      "id": "hidraulica",
+      "nombre": "Centrales hidroeléctricas",
+      "titulo": "Mantén la turbina y el generador en servicio.",
+      "texto": "Turbinas, generadores de eje vertical, cojinetes guía y de empuje, válvulas y compuertas. Son equipos grandes, de larga vida y difíciles de intervenir; la vibración, el aceite de los cojinetes y la termografía del generador dicen cuándo conviene programar la parada.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-bomba-vertical.webp",
+        "alt": "Analista de DIAPSA midiendo vibraciones en un equipo de eje vertical"
+      },
+      "prioridades": [
+        "Vibración en cojinetes guía y de empuje",
+        "Aceite de cojinetes y reguladores",
+        "Termografía del generador, excitación y barras",
+        "Descargas parciales en el generador y la subestación"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        }
+      ],
+      "accion": "Revisar una central hidroeléctrica"
+    },
+    {
+      "id": "biogas",
+      "nombre": "Biogás y biomasa",
+      "titulo": "Vigila el motogenerador y controla el gas.",
+      "texto": "Motogeneradores a biogás, sopladores, agitadores del digestor, compresores y el sistema de gas con su antorcha. El motor a gas trabaja con un combustible variable y corrosivo, así que el aceite y la vibración se vigilan de cerca, y las fugas de metano se detectan y documentan.",
+      "foto": {
+        "src": "/images/servicios/analisis-de-aceite/muestreo-motor-gas.webp",
+        "alt": "Analista de DIAPSA tomando una muestra de aceite en un motor a gas"
+      },
+      "prioridades": [
+        "Aceite y vibración del motogenerador",
+        "Detección de fugas de biogás con cámara OGI y acústica",
+        "Agitadores, sopladores y bombas del digestor",
+        "Termografía de tableros y transformador"
+      ],
+      "servicios": [
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Detección de gas",
+          "href": "/servicios/deteccion-gas"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        }
+      ],
+      "accion": "Revisar una planta de biogás"
+    }
+  ],
+  "mapa": {
+    "etiqueta": "Mapa de activo y señal",
+    "titulo": "Cada riesgo, con la técnica que lo detecta.",
+    "texto": "Un programa para toda la central no necesita el mismo equipo en todas partes. Necesita una relación clara entre el activo, la señal que avisa primero y la forma de capturarla.",
+    "filas": [
+      {
+        "activo": "Multiplicadora y generador eólico",
+        "senal": "Vibración en engranes y desgaste en el aceite",
+        "servicio": "Sensores de vibración",
+        "detalle": "Sensores en línea en el tren de potencia.",
+        "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+      },
+      {
+        "activo": "Inversores y cajas de conexión",
+        "senal": "Punto caliente",
+        "servicio": "Termografía infrarroja",
+        "detalle": "Ruta de termografía por el parque.",
+        "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+      },
+      {
+        "activo": "Turbina y generador hidráulico",
+        "senal": "Vibración en cojinetes",
+        "servicio": "Vibraciones mecánicas",
+        "detalle": "Rutas periódicas y análisis de aceite.",
+        "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "activo": "Motogenerador a biogás",
+        "senal": "Desgaste en el aceite y vibración",
+        "servicio": "Análisis de aceite",
+        "detalle": "Muestreo frecuente con tendencia.",
+        "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+      },
+      {
+        "activo": "Sistema de biogás y antorcha",
+        "senal": "Fuga de metano",
+        "servicio": "Detección de gas",
+        "detalle": "Programa de fugas y monitoreo en línea.",
+        "href": "/servicios/deteccion-gas"
+      },
+      {
+        "activo": "Transformador colector",
+        "senal": "Gases disueltos y humedad",
+        "servicio": "DGA en línea",
+        "detalle": "Tendencia continua del aceite.",
+        "href": "/servicios/monitoreo-continuo/dga-en-linea"
+      }
+    ]
+  },
+  "arquitectura": {
+    "etiqueta": "Cómo lo armamos",
+    "titulo": "El programa se construye alrededor de lo que no puede fallar.",
+    "texto": "La ruta con analista, el monitoreo en línea y la plataforma cumplen funciones distintas. Las combinamos según la criticidad de cada equipo, la distancia entre sitios y lo que ya tiene el operador.",
+    "items": [
+      {
+        "titulo": "Diagnóstico situacional",
+        "texto": "Calificamos la criticidad de cada equipo y definimos qué medir y cada cuánto.",
+        "href": "/servicios/diagnostico-situacional"
+      },
+      {
+        "titulo": "Rutas predictivas",
+        "texto": "Vibración, termografía, ultrasonido y aceite con la central generando.",
+        "href": "/servicios/monitoreo-condicion"
+      },
+      {
+        "titulo": "Monitoreo en línea",
+        "texto": "Sensores en los equipos críticos y de difícil acceso, con alertas revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo"
+      },
+      {
+        "titulo": "IDAP",
+        "texto": "Cada hallazgo, su tendencia y su seguimiento en una sola plataforma, para todos los sitios.",
+        "href": "/servicios/idap"
+      },
+      {
+        "titulo": "Cumplimiento",
+        "texto": "NOM-029, NOM-022 y Código de Red en el punto de interconexión, con su evidencia.",
+        "href": "/servicios/monitoreo-condicion/calidad-de-energia"
+      }
+    ]
+  },
+  "cierre": {
+    "etiqueta": "Planea la siguiente etapa",
+    "titulo": "Cuéntanos qué central operas y qué equipo no puede fallar.",
+    "texto": "Dinos qué tecnología generas, cuántos sitios tienes y cómo los inspeccionas hoy. Te proponemos la combinación de rutas, sensores y plataforma que le conviene."
+  },
+  "faq": [
+    {
+      "question": "¿Se mide con la central generando?",
+      "answer": "Sí. Las técnicas predictivas se aplican con los equipos trabajando, que es cuando las fallas se muestran, sin pedir paros ni desconexiones."
+    },
+    {
+      "question": "¿Suben a la góndola de los aerogeneradores?",
+      "answer": "Las mediciones en góndola las hacen analistas con la formación de trabajo en alturas que exige cada parque. Para no subir sin necesidad, los equipos críticos se vigilan con sensores en línea."
+    },
+    {
+      "question": "¿Cubren parques con muchos sitios dispersos?",
+      "answer": "Sí. Las rutas se programan por región y los sensores en línea mandan sus alertas a IDAP, donde se ve el estado de todos los sitios en una sola plataforma."
+    },
+    {
+      "question": "¿Por dónde conviene empezar?",
+      "answer": "Por un diagnóstico situacional: calificamos la criticidad de cada equipo y proponemos qué medir, cada cuánto y qué vigilar en continuo."
+    }
+  ],
+  "cta": {
+    "title": "¿Qué equipo de tu central no puede fallar?",
+    "text": "Cuéntanos qué tecnología generas y te proponemos el programa.",
+    "whatsappMessage": "Hola, quiero información sobre mantenimiento predictivo para una central de energía renovable."
+  }
+}
