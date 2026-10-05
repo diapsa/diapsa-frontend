@@ -61,7 +61,8 @@
     { "nombre": "Gabriela Camacaro", "pais": "República Dominicana", "tema": "Confiabilidad operativa y mantenimiento eléctrico" },
     { "nombre": "Ryanair Lantigua", "pais": "República Dominicana", "tema": "Monitoreo de condición en sistemas eléctricos" }
   ],
-  "respaldo": ["PdMCubic", "ALPA-EC", "SIM Ingeniería", "INPROCA", "Bannister"],
+  "respaldo": ["PdMCubic", "SIM Ingeniería", "INPROCA", "Bannister"],
+  "paisesClaustro": ["Ecuador"],
   "requisitos": ["85% mínimo de asistencia", "Las 5 constancias de fase", "Entrega del proyecto final"],
   "incluye": ["Material del curso en PDF", "Recursos complementarios", "Constancia por cada fase", "Certificado con valor curricular"],
   "paises": "México, República Dominicana, Ecuador, Argentina, España y Panamá",

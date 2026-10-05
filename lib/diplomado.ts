@@ -12,13 +12,16 @@ type Ponente = { nombre: string; pais?: string; tema: string };
 
 export const PONENTES = diplomado.ponentes as Ponente[];
 
-/** Países del claustro, sin repetir ("Italia / Cuba" cuenta los dos). */
+/**
+ * Países del claustro, sin repetir ("Italia / Cuba" cuenta los dos), más
+ * los de paisesClaustro en el JSON: países con especialista cuyo nombre no
+ * está en la lista (Emiliano, 2026-10-04: Ecuador).
+ */
 export const PAISES_DIPLOMADO = [
-  ...new Set(
-    PONENTES.flatMap((p) => (p.pais ?? "").split("/"))
-      .map((p) => p.trim())
-      .filter(Boolean),
-  ),
+  ...new Set([
+    ...PONENTES.flatMap((p) => (p.pais ?? "").split("/")),
+    ...((diplomado as { paisesClaustro?: string[] }).paisesClaustro ?? []),
+  ].map((p) => p.trim()).filter(Boolean)),
 ];
 
 export const NUM_ESPECIALISTAS = PONENTES.length;
