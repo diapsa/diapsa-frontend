@@ -5,7 +5,11 @@ import type { Course, CourseDetail } from "@/types/course";
 import { FORMATOS, TECNICAS, extraDe, fechaGrupo, galeriaDe, imagenDe, proximosGrupos } from "@/lib/cursos";
 import GaleriaCampo from "./GaleriaCampo";
 import GuiasRelacionadas from "./GuiasRelacionadas";
+import ClientesLogos from "./ClientesLogos";
+import DescargarTemario from "./DescargarTemario";
 import IconoMenu from "../atoms/IconoMenu";
+import JsonLd, { createFaqSchema } from "../atoms/JsonLd";
+import { faqsDe } from "@/lib/cursos-faq";
 import VideoBucle from "../atoms/VideoBucle";
 import { SITE_CONFIG } from "@/lib/constants";
 import { getArticulosPorServicio } from "@/lib/recursos";
@@ -129,6 +133,7 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
     return { v: m, n: "" };
   };
   const nivel = x ? NIVEL_FORMATO[x.formato] : null;
+  const faqs = faqsDe(x?.formato);
   const mod = modalidad ? modalidadLegible(modalidad) : null;
   const datos = [
     formato && { k: "Formato", v: formato.nombre, n: formato.texto, i: ICONO_FORMATO[x!.formato] },
@@ -192,6 +197,9 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
           sinPie
         />
       )}
+
+      {/* Empresas que ya capacitaron con DIAPSA: la prueba social en la ficha, no solo en /cursos */}
+      <ClientesLogos antetitulo="Quién ya se capacitó" titulo="Empresas que ya formaron a su equipo con nosotros" enlace={null} />
 
       <section className="w-full bg-gray-100 py-12 lg:py-16">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10">
@@ -272,6 +280,23 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
                 {curso.certification && <p className="mt-4 text-justify text-base leading-relaxed text-tertiary"><span className="font-bold text-primary">Certificación:</span> {curso.certification}</p>}
               </Bloque>
             )}
+
+            {faqs.length > 0 && (
+              <Bloque etiqueta="Preguntas frecuentes" titulo="Lo que nos preguntan de este curso">
+                {!(curso.faqs ?? []).some((f) => f?.question?.trim() && f?.answer?.trim()) && <JsonLd data={createFaqSchema(faqs)} />}
+                <div className="divide-y divide-gray-200 border-y border-gray-200">
+                  {faqs.map((f) => (
+                    <details key={f.question} className="group py-4">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-primary [&::-webkit-details-marker]:hidden">
+                        {f.question}
+                        <span aria-hidden="true" className="shrink-0 text-2xl font-extrabold text-secondary transition-transform duration-200 group-open:rotate-45">+</span>
+                      </summary>
+                      <p className="mt-2 text-justify text-base leading-relaxed text-tertiary">{f.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </Bloque>
+            )}
           </div>
 
           {/* Inscripción, siempre a la vista */}
@@ -304,6 +329,7 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
                   <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xs border-2 border-primary px-5 py-2.5 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
                     Preguntar por WhatsApp
                   </a>
+                  <DescargarTemario slug={curso.slug} nombre={curso.name} />
                 </div>
               </div>
             </div>
