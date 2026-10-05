@@ -1,0 +1,304 @@
+{
+  "slug": "mineria",
+  "nombre": "Minería",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Industrias",
+      "link": "/#industrias"
+    },
+    {
+      "label": "Minería",
+      "link": "/industrias/mineria"
+    }
+  ],
+  "seoTitle": "Mantenimiento predictivo para minería",
+  "seoDescription": "Mantenimiento predictivo y monitoreo de condición para minas y plantas de beneficio: chancadores, molinos SAG y de bolas, bandas transportadoras, celdas de flotación, espesadores, bombas de pulpa, ventiladores principales, bombas de desagüe y subestaciones. Rutas en operación y monitoreo en línea.",
+  "hero": {
+    "etiqueta": "Industria / Minería",
+    "titulo": "El mineral no espera. El molino tampoco debería parar.",
+    "texto": "Chancadores, molinos, bandas, celdas de flotación y bombas de pulpa trabajan con carga de impacto, polvo y abrasión las 24 horas. Combinamos rutas predictivas, análisis de aceite, monitoreo en línea e IDAP para que la falla del reductor o del rodamiento se encuentre con semanas de anticipación.",
+    "foto": {
+      "src": "/images/servicios/termografia-infrarroja/campo-73.webp",
+      "alt": "Analista de DIAPSA con cámara termográfica frente a un tajo"
+    },
+    "nota": "Para minas a cielo abierto y subterráneas, plantas de beneficio y concentradoras, y para sus equipos de mantenimiento y confiabilidad."
+  },
+  "senales": {
+    "etiqueta": "Una visión con varias técnicas",
+    "titulo": "Ve la falla antes de que pare la planta.",
+    "texto": "En una mina, un reductor de molino o un rodamiento de chancador no se cambian en un turno, y cada hora sin moler es tonelaje perdido. Las fallas avisan antes: una vibración que sube en el piñón del molino, un cambio en el aceite del reductor, un punto caliente en el motor de la banda o un rodillo que empieza a sonar. Cada señal pide su técnica, y el programa se arma alrededor de los equipos que detienen la línea de proceso.",
+    "items": [
+      {
+        "titulo": "Vibración",
+        "texto": "Chancadores, molinos, reductores de banda, ventiladores y bombas de pulpa."
+      },
+      {
+        "titulo": "Temperatura",
+        "texto": "Motores de gran potencia, variadores, celdas y transformadores de la subestación."
+      },
+      {
+        "titulo": "Ultrasonido",
+        "texto": "Lubricación de rodillos y rodamientos, fugas de aire y descargas en media tensión."
+      },
+      {
+        "titulo": "Aceite y gases",
+        "texto": "Reductores de molino y banda, sistemas hidráulicos y transformadores."
+      }
+    ]
+  },
+  "areas": [
+    {
+      "id": "molienda",
+      "nombre": "Chancado y molienda",
+      "titulo": "Vigila los equipos más caros de la planta.",
+      "texto": "Chancadores primarios y secundarios, molinos SAG y de bolas, sus motores de gran potencia y reductores. Trabajan bajo carga de impacto y su cambio tarda semanas. La vibración y el aceite cuentan el estado de engranes, piñones y rodamientos con tiempo para planear la parada.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-maquina-proceso.webp",
+        "alt": "Analista de DIAPSA midiendo vibraciones en maquinaria pesada"
+      },
+      "prioridades": [
+        "Vibración en piñones, coronas y chumaceras",
+        "Aceite de reductores con tendencia de desgaste",
+        "Termografía de motores principales y variadores",
+        "Sensores en línea en molinos y chancadores"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        }
+      ],
+      "accion": "Analizar chancado y molienda"
+    },
+    {
+      "id": "transporte",
+      "nombre": "Bandas y transporte",
+      "titulo": "Mantén el flujo de mineral.",
+      "texto": "Bandas transportadoras de kilómetros, elevadores, apiladores y alimentadores. Cientos de rodillos, poleas y reductores expuestos a polvo y abrasión, cualquiera de los cuales detiene la alimentación de la planta. La ruta los cubre y el ultrasonido guía la lubricación.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-transmision-bandas.webp",
+        "alt": "Analista de DIAPSA revisando una transmisión por bandas"
+      },
+      "prioridades": [
+        "Vibración en reductores y motores de banda",
+        "Lubricación de rodillos guiada por ultrasonido",
+        "Poleas y rodillos calientes con termografía",
+        "Alineación de transmisiones y acoplamientos"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Alineación y balanceo",
+          "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+        }
+      ],
+      "accion": "Revisar bandas y transporte"
+    },
+    {
+      "id": "beneficio",
+      "nombre": "Flotación, espesado y bombeo de pulpa",
+      "titulo": "Cuida los equipos que mueven la pulpa.",
+      "texto": "Celdas de flotación con sus agitadores, espesadores, filtros y bombas de pulpa. La pulpa es abrasiva y corrosiva, y las bombas trabajan con desgaste continuo. La vibración y el aceite revelan el estado de rodamientos, sellos y reductores antes del derrame.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-bomba-roja.webp",
+        "alt": "Analista de DIAPSA midiendo una bomba de proceso"
+      },
+      "prioridades": [
+        "Vibración en bombas de pulpa y agitadores",
+        "Aceite de reductores de espesadores y filtros",
+        "Alineación y balanceo tras cada reparación",
+        "Sensores en línea en el bombeo sin relevo"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        },
+        {
+          "nombre": "Alineación y balanceo",
+          "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        }
+      ],
+      "accion": "Revisar flotación y bombeo"
+    },
+    {
+      "id": "servicios",
+      "nombre": "Ventilación, desagüe y subestación",
+      "titulo": "Mantén la mina segura y con energía.",
+      "texto": "Ventiladores principales, bombas de desagüe, compresores y la subestación con sus transformadores y celdas. Si falla la ventilación o la energía, la mina se detiene completa, y la NOM-029 y la NOM-022 piden evidencia del estado de la instalación eléctrica.",
+      "foto": {
+        "src": "/images/gallery/campo/vibracion-motor-ventilador.webp",
+        "alt": "Analista de DIAPSA midiendo el motor de un ventilador"
+      },
+      "prioridades": [
+        "Vibración y balanceo de ventiladores principales",
+        "Bombas de desagüe y compresores",
+        "Gases disueltos en transformadores de potencia",
+        "Tierras físicas, arco eléctrico y calidad de energía"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "DGA en línea",
+          "href": "/servicios/monitoreo-continuo/dga-en-linea"
+        },
+        {
+          "nombre": "Tierras físicas",
+          "href": "/servicios/monitoreo-condicion/tierras-fisicas"
+        },
+        {
+          "nombre": "Calidad de energía",
+          "href": "/servicios/monitoreo-condicion/calidad-de-energia"
+        }
+      ],
+      "accion": "Revisar ventilación y subestación"
+    }
+  ],
+  "mapa": {
+    "etiqueta": "Mapa de activo y señal",
+    "titulo": "Cada riesgo, con la técnica que lo detecta.",
+    "texto": "Un programa para toda la mina no necesita el mismo equipo en todas partes. Necesita una relación clara entre el activo, la señal que avisa primero y la forma de capturarla.",
+    "filas": [
+      {
+        "activo": "Molino SAG y de bolas",
+        "senal": "Vibración en piñones y desgaste en el aceite",
+        "servicio": "Sensores de vibración",
+        "detalle": "Sensores en línea revisados por un analista.",
+        "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+      },
+      {
+        "activo": "Chancador",
+        "senal": "Vibración y temperatura de chumaceras",
+        "servicio": "Vibraciones mecánicas",
+        "detalle": "Rutas periódicas y análisis de aceite.",
+        "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "activo": "Bandas transportadoras",
+        "senal": "Rodillos sin lubricación y poleas calientes",
+        "servicio": "Análisis de ultrasonido",
+        "detalle": "Ruta de ultrasonido y termografía.",
+        "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+      },
+      {
+        "activo": "Bombas de pulpa",
+        "senal": "Rodamientos y sellos",
+        "servicio": "Vibraciones mecánicas",
+        "detalle": "Rutas y balanceo en sitio.",
+        "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "activo": "Ventilador principal",
+        "senal": "Desbalance",
+        "servicio": "Alineación y balanceo",
+        "detalle": "Balanceo en sitio y ruta de vibración.",
+        "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+      },
+      {
+        "activo": "Transformador de potencia",
+        "senal": "Gases disueltos y humedad",
+        "servicio": "DGA en línea",
+        "detalle": "Tendencia continua del aceite.",
+        "href": "/servicios/monitoreo-continuo/dga-en-linea"
+      }
+    ]
+  },
+  "arquitectura": {
+    "etiqueta": "Cómo lo armamos",
+    "titulo": "El programa se construye alrededor de lo que no puede fallar.",
+    "texto": "La ruta con analista, el monitoreo en línea y la plataforma cumplen funciones distintas. Las combinamos según la criticidad de cada equipo, el acceso a cada área y lo que ya tiene la mina.",
+    "items": [
+      {
+        "titulo": "Diagnóstico situacional",
+        "texto": "Calificamos la criticidad de cada equipo y definimos qué medir y cada cuánto.",
+        "href": "/servicios/diagnostico-situacional"
+      },
+      {
+        "titulo": "Rutas predictivas",
+        "texto": "Vibración, termografía, ultrasonido y aceite con la planta moliendo.",
+        "href": "/servicios/monitoreo-condicion"
+      },
+      {
+        "titulo": "Monitoreo en línea",
+        "texto": "Sensores en molinos, chancadores y bombas sin relevo, con alertas revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo"
+      },
+      {
+        "titulo": "IDAP",
+        "texto": "Cada hallazgo, su tendencia y su seguimiento en una sola plataforma.",
+        "href": "/servicios/idap"
+      },
+      {
+        "titulo": "Cumplimiento",
+        "texto": "NOM-029, NOM-022 y Código de Red, con su evidencia.",
+        "href": "/servicios/monitoreo-condicion/arco-electrico"
+      }
+    ]
+  },
+  "cierre": {
+    "etiqueta": "Planea la siguiente etapa",
+    "titulo": "Cuéntanos qué mina operas y qué equipo no puede fallar.",
+    "texto": "Dinos qué procesas, cuáles son tus equipos críticos y cómo los inspeccionas hoy. Te proponemos la combinación de rutas, sensores y plataforma que le conviene."
+  },
+  "faq": [
+    {
+      "question": "¿Se mide con la planta en operación?",
+      "answer": "Sí. Las técnicas predictivas se aplican con los equipos trabajando, que es cuando las fallas se muestran, sin pedir paros."
+    },
+    {
+      "question": "¿Pueden medir con polvo, en altura o en interior mina?",
+      "answer": "Sí. Los analistas trabajan con el equipo de seguridad y las inducciones que exige cada mina, y los sensores en línea se instalan donde la medición manual es difícil o peligrosa."
+    },
+    {
+      "question": "¿Cada cuánto se analiza el aceite del molino?",
+      "answer": "Depende del equipo y de su historial. En el diagnóstico situacional definimos la frecuencia por reductor, y la tendencia del aceite dice si hay que acortarla."
+    },
+    {
+      "question": "¿Por dónde conviene empezar?",
+      "answer": "Por un diagnóstico situacional: calificamos la criticidad de cada equipo y proponemos qué medir, cada cuánto y qué vigilar en continuo."
+    }
+  ],
+  "cta": {
+    "title": "¿Qué equipo de tu mina no puede fallar?",
+    "text": "Cuéntanos qué procesas y te proponemos el programa.",
+    "whatsappMessage": "Hola, quiero información sobre mantenimiento predictivo para una mina o planta de beneficio."
+  }
+}

@@ -3,9 +3,8 @@ import Link from "next/link";
 import JsonLd, { createBreadcrumbSchema, createFaqSchema } from "@/components/atoms/JsonLd";
 import GuiasRelacionadas from "@/components/organisms/GuiasRelacionadas";
 import ContactForm from "@/components/organisms/ContactForm";
-import VideoBucle from "@/components/atoms/VideoBucle";
 import IconoMenu from "@/components/atoms/IconoMenu";
-import EscenaGemeloEnergia from "@/components/organisms/EscenaGemeloEnergia";
+import EscenaGemelo from "@/components/organisms/EscenaGemelo";
 import clientes from "@/data/clients.json";
 import presencia from "@/data/presencia-mexico.json";
 import { getArticulosPorServicio } from "@/lib/recursos";
@@ -259,20 +258,10 @@ export default function PaginaIndustria({ industria }: { industria: Industria })
             <p className="text-justify text-lg leading-relaxed text-tertiary lg:pt-10">{arquitectura.texto}</p>
           </div>
           <div className="mt-12 grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:gap-12">
-          {industria.slug === "generacion-de-energia" ? (
-            <div className="overflow-hidden rounded-sm">
-              <EscenaGemeloEnergia />
-            </div>
-          ) : (
-            <div className="overflow-hidden rounded-2xl bg-white p-2 shadow-[0_30px_70px_-35px_rgba(13,26,56,0.35)] ring-1 ring-primary/10 sm:p-3">
-              <VideoBucle
-                className="block aspect-[16/10] w-full rounded-xl object-cover"
-                src="/videos/industrias/programa.mp4"
-                poster="/videos/industrias/programa.jpg"
-                descripcion="Cómo se arma el programa: los equipos se califican por criticidad, la ruta les asigna sus técnicas, los críticos reciben sensores en línea y todo se sigue en IDAP"
-              />
-            </div>
-          )}
+          {/* Gemelo digital de la planta del giro (Emiliano, 2026-10-04: uno por industria) */}
+          <div className="overflow-hidden rounded-sm">
+            <EscenaGemelo planta={industria.slug} nombre={industria.nombre} />
+          </div>
           <div className="overflow-hidden rounded-sm border border-gray-200 bg-white">
             {arquitectura.items.map((a, i) => (
               <Link key={a.titulo} href={a.href} className="group grid grid-cols-[2.5rem_1fr_auto] items-start gap-x-4 gap-y-1 border-t border-gray-200 px-6 py-5 transition-colors first:border-t-0 hover:bg-gray-50">

@@ -6,6 +6,10 @@
       "slug": "generacion-de-energia"
     },
     {
+      "nombre": "Energías renovables",
+      "slug": "energias-renovables"
+    },
+    {
       "nombre": "Petróleo y gas",
       "slug": "petroleo-y-gas"
     },
@@ -28,6 +32,10 @@
     {
       "nombre": "Cemento y materiales",
       "slug": "cemento-y-materiales"
+    },
+    {
+      "nombre": "Minería",
+      "slug": "mineria"
     },
     {
       "nombre": "Tratamiento de agua",
