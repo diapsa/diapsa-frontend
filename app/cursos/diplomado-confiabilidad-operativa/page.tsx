@@ -165,15 +165,28 @@ export default function DiplomadoPage() {
                     <span aria-hidden="true" className="shrink-0 text-2xl font-extrabold text-[#04358f] transition-transform duration-200 group-open:rotate-45">+</span>
                   </summary>
                   <div className="border-t border-gray-100 px-5 pb-5 pt-4 lg:px-6">
-                    <p className="text-justify text-sm leading-relaxed text-tertiary"><span className="font-bold text-primary">Objetivo:</span> {f.objetivo}</p>
-                    <ol className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
-                      {f.temas.map((t, i) => (
-                        <li key={t} className="flex gap-3 rounded-sm bg-gray-50 px-3 py-2 text-sm leading-snug">
-                          <span className="font-mono font-bold text-[#04358f]">{String(i + 1).padStart(2, "0")}</span>
-                          {t}
-                        </li>
-                      ))}
-                    </ol>
+                    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-8">
+                      {/* El video de la fase: qué se aprende y dónde se aplica */}
+                      <div className="overflow-hidden rounded-xl bg-gray-50 p-2 ring-1 ring-black/5">
+                        <VideoBucle
+                          className="block aspect-[16/10] w-full rounded-lg object-cover"
+                          src={`/videos/diplomado/dip-fase${f.n}.mp4`}
+                          poster={`/videos/diplomado/dip-fase${f.n}.jpg`}
+                          descripcion={`Animación de la fase ${f.n} del diplomado, ${f.titulo}: lo que se aprende y dónde se aplica.`}
+                        />
+                      </div>
+                      <div>
+                        <p className="text-justify text-sm leading-relaxed text-tertiary"><span className="font-bold text-primary">Objetivo:</span> {f.objetivo}</p>
+                        <ol className="mt-4 grid grid-cols-1 gap-2">
+                          {f.temas.map((t, i) => (
+                            <li key={t} className="flex gap-3 rounded-sm bg-gray-50 px-3 py-2 text-sm leading-snug">
+                              <span className="font-mono font-bold text-[#04358f]">{String(i + 1).padStart(2, "0")}</span>
+                              {t}
+                            </li>
+                          ))}
+                        </ol>
+                      </div>
+                    </div>
                   </div>
                 </details>
               </li>
