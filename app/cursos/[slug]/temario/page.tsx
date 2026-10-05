@@ -60,7 +60,9 @@ export default async function TemarioPage({ params }: Props) {
   ].filter((d) => d[1]);
 
   return (
-    <main className="mx-auto max-w-3xl bg-white px-8 py-10 text-primary print:max-w-none print:px-0 print:py-0">
+    <main className="temario mx-auto max-w-3xl bg-white px-8 py-10 text-primary print:max-w-none print:px-0 print:py-0">
+      {/* Al imprimir, solo la hoja: el menú, el pie y el botón de WhatsApp del layout se ocultan */}
+      <style>{`@media print { body * { visibility: hidden; } main.temario, main.temario * { visibility: visible; } main.temario { position: absolute; left: 0; top: 0; width: 100%; } }`}</style>
       <div className="mb-6 flex items-center justify-between gap-4 print:hidden">
         <Link href={`/cursos/${curso.slug}`} className="text-sm font-bold text-tertiary hover:text-primary">
           ← Volver a la ficha del curso
