@@ -8,6 +8,7 @@ import CarruselFotos from "@/components/molecules/CarruselFotos";
 import ClientesLogos from "@/components/organisms/ClientesLogos";
 import MapaDiplomado from "@/components/organisms/MapaDiplomado";
 import Bandera from "@/components/atoms/Bandera";
+import IconoMenu from "@/components/atoms/IconoMenu";
 import VideoBucle from "@/components/atoms/VideoBucle";
 import JsonLd, { createBreadcrumbSchema, createCourseSchema, createFaqSchema } from "@/components/atoms/JsonLd";
 import { muestraFotos } from "@/lib/cursos";
@@ -207,9 +208,16 @@ export default function DiplomadoPage() {
                 Las sesiones son 100% en vivo con {NUM_ESPECIALISTAS} especialistas que trabajan en plantas de {PAISES_DIPLOMADO.join(", ").replace(/, ([^,]*)$/, " y $1")}. Cada tema lo imparte quien lo aplica, con casos de su propia industria: cómo se decide, qué falla y qué funcionó en contextos distintos al tuyo.
               </p>
               <p className="mt-6 text-[11px] font-bold uppercase tracking-widest text-[#04358f]">Lo que cubre el claustro</p>
-              <ul className="mt-3 flex flex-wrap gap-2">
+              <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {ESPECIALIDADES_CLAUSTRO.map((e) => (
-                  <li key={e} className="rounded-full bg-[#eef3ff] px-3 py-1.5 text-sm font-bold text-[#04358f]">{e}</li>
+                  <li key={e.nombre} className="group flex items-start gap-3 rounded-sm bg-white p-3 ring-1 ring-black/5">
+                    <IconoMenu icono={e.icono} className="!bg-[#eef3ff] !text-[#04358f]" />
+                    <span className="min-w-0">
+                      <span className="block text-sm font-extrabold leading-snug text-primary">{e.nombre}</span>
+                      <span className="block text-xs leading-snug text-tertiary">{e.texto}</span>
+                      <span className="mt-1 block text-[10px] font-bold uppercase tracking-wider text-[#04358f]">{e.fase}</span>
+                    </span>
+                  </li>
                 ))}
               </ul>
               <ul className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3" aria-label="Países del claustro">

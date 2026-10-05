@@ -26,14 +26,15 @@ export const PAISES_DIPLOMADO = [
 
 export const NUM_ESPECIALISTAS = PONENTES.length;
 
-/** Lo que cubre el claustro, resumido de los temas de los ponentes. */
-export const ESPECIALIDADES_CLAUSTRO = [
-  "Confiabilidad y gestión de activos",
-  "Integridad, riesgo y protección de activos",
-  "Vibraciones mecánicas",
-  "Lubricación y análisis de aceite",
-  "Diagnóstico y mantenimiento eléctrico",
-  "Monitoreo de condición y tecnologías predictivas",
+/** Lo que cubre el claustro, resumido de los temas de los ponentes, con el
+ *  ícono del menú y en qué fase del diplomado se ve. */
+export const ESPECIALIDADES_CLAUSTRO: { nombre: string; texto: string; icono: string; fase: string }[] = [
+  { nombre: "Confiabilidad y gestión de activos", texto: "RCM, FMEA, RAM y ciclo de vida", icono: "metodologia", fase: "Fases 1 y 4" },
+  { nombre: "Integridad, riesgo y protección de activos", texto: "IBR, MCC y análisis de riesgo", icono: "situacional", fase: "Fase 2" },
+  { nombre: "Vibraciones mecánicas", texto: "Espectros y casos reales de planta", icono: "vibraciones", fase: "Fase 2" },
+  { nombre: "Lubricación y análisis de aceite", texto: "Aceite y cromatografía de gases", icono: "aceite", fase: "Fase 2" },
+  { nombre: "Diagnóstico y mantenimiento eléctrico", texto: "Sistemas, motores y termografía", icono: "electricos", fase: "Fase 2" },
+  { nombre: "Monitoreo de condición y datos", texto: "Tecnologías predictivas, informes e IA", icono: "idap", fase: "Fases 2 y 3" },
 ];
 export const NUM_PAISES = PAISES_DIPLOMADO.length;
 
