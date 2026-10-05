@@ -4,7 +4,59 @@ import Antetitulo from "../atoms/Antetitulo";
 import type { Course, CourseDetail } from "@/types/course";
 import { FORMATOS, TECNICAS, extraDe, fechaGrupo, galeriaDe, imagenDe, proximosGrupos } from "@/lib/cursos";
 import GaleriaCampo from "./GaleriaCampo";
+import GuiasRelacionadas from "./GuiasRelacionadas";
+import VideoBucle from "../atoms/VideoBucle";
 import { SITE_CONFIG } from "@/lib/constants";
+import { getArticulosPorServicio } from "@/lib/recursos";
+
+/**
+ * Por técnica, el video de Remotion de la página de servicio que muestra la
+ * técnica en campo, y el servicio del que se toman las guías del blog
+ * (Emiliano, 2026-10-04: las fichas eran solo texto y fotos). Dos cursos
+ * tienen su propio par por su tema.
+ */
+const MEDIOS: Record<string, { video: string; titulo: string; texto: string; descripcion: string; servicio: string }> = {
+  vibraciones: {
+    video: "/videos/vibraciones/vib-proceso",
+    titulo: "Así se analiza la vibración de un equipo",
+    texto: "Lo que vas a aprender a hacer: medir en los puntos correctos, leer el espectro y decir qué falla hay y qué tan grave es. Este es el mismo proceso que aplican nuestros analistas en planta.",
+    descripcion: "Un analista mide un motor y una bomba, el espectro muestra la falla y el informe la califica por severidad",
+    servicio: "/servicios/monitoreo-condicion/vibraciones-mecanicas",
+  },
+  termografia: {
+    video: "/videos/termografia/term-proceso",
+    titulo: "Así se hace una inspección termográfica",
+    texto: "Lo que vas a aprender a hacer: recorrer tableros y motores con la cámara, encontrar el punto caliente, calificarlo con la tabla NETA y dejarlo en un informe que el equipo de planta pueda atender.",
+    descripcion: "Un analista recorre tableros con la cámara termográfica, encuentra un punto caliente y lo califica",
+    servicio: "/servicios/monitoreo-condicion/termografia-infrarroja",
+  },
+  ultrasonido: {
+    video: "/videos/ultrasonido/us-proceso",
+    titulo: "Así se trabaja con ultrasonido en planta",
+    texto: "Lo que vas a aprender a hacer: escuchar lo que el oído no alcanza, ubicar fugas, descargas eléctricas y rodamientos sin lubricación, y estimar cuánto cuesta cada hallazgo.",
+    descripcion: "Un analista recorre la planta con el detector de ultrasonido y ubica una fuga de aire, una descarga y un rodamiento seco",
+    servicio: "/servicios/monitoreo-condicion/analisis-de-ultrasonido",
+  },
+  confiabilidad: {
+    video: "/videos/diagnostico-situacional/diag-proceso",
+    titulo: "Así se arma un programa de confiabilidad",
+    texto: "Lo que vas a aprender a hacer: calificar la criticidad de cada equipo, decidir qué técnica aplicar y cada cuánto, y convertir los hallazgos en decisiones de mantenimiento con datos.",
+    descripcion: "Las cuatro etapas de un diagnóstico situacional: levantamiento, criticidad, medición base y hoja de ruta",
+    servicio: "/servicios/diagnostico-situacional",
+  },
+};
+const MEDIOS_POR_CURSO: Record<string, string> = {
+  "alineamiento-balanceo-proactivo": "alineacion",
+  "cursos-de-aprendizaje-practico-vibraciones-ultrasonido-termografia": "vibraciones",
+};
+MEDIOS.alineacion = {
+  video: "/videos/alineacion-balanceo/ali-proceso",
+  titulo: "Así se alinea y balancea un equipo en sitio",
+  texto: "Lo que vas a aprender a hacer: medir la desalineación con equipo láser, corregirla dentro de tolerancia y balancear el rotor sin desmontarlo, con la máquina en su base.",
+  descripcion: "Un analista alinea un motor y una bomba con equipo láser y balancea el rotor en sitio",
+  servicio: "/servicios/monitoreo-condicion/alineacion-balanceo",
+};
+const GUIA_ISO_18436 = "certificacion-iso-18436-2-categorias-de-analista-de-vibraciones";
 
 /**
  * CursoDetalle
@@ -72,6 +124,19 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
   const requisitos = lista(curso.requirements);
   const whatsapp = `https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent(`Hola, quiero información del curso ${curso.name}.`)}`;
 
+  // El video de la técnica y tres guías del blog; en la certificación de
+  // vibraciones, la guía de las categorías ISO 18436 va primero
+  const medio = MEDIOS[MEDIOS_POR_CURSO[curso.slug] ?? x?.tecnica ?? ""] ?? null;
+  const guias = (() => {
+    if (!medio) return [];
+    let lista = getArticulosPorServicio(medio.servicio);
+    if (x?.formato === "certificacion" && x.tecnica === "vibraciones") {
+      const iso = getArticulosPorServicio("/servicios/diapsa-start").find((a) => a.slug === GUIA_ISO_18436);
+      if (iso) lista = [iso, ...lista.filter((a) => a.slug !== iso.slug)];
+    }
+    return lista.slice(0, 3);
+  })();
+
   return (
     <>
       {/* Los datos que se comparan, en una franja */}
@@ -113,6 +178,15 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
                     <li key={o} className="flex gap-3 rounded-sm bg-gray-50 p-3 text-base leading-snug text-primary ring-1 ring-black/5"><Palomita />{o}</li>
                   ))}
                 </ul>
+              </Bloque>
+            )}
+
+            {medio && (
+              <Bloque etiqueta="Así se ve en campo" titulo={medio.titulo}>
+                <div className="overflow-hidden rounded-xl bg-gray-50 p-2 ring-1 ring-black/5">
+                  <VideoBucle className="block aspect-[16/10] w-full rounded-lg object-cover" src={`${medio.video}.mp4`} poster={`${medio.video}.jpg`} descripcion={medio.descripcion} />
+                </div>
+                <p className="mt-4 text-justify text-base leading-relaxed text-tertiary">{medio.texto}</p>
               </Bloque>
             )}
 
@@ -190,7 +264,7 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
                     ))}
                   </ul>
                 ) : (
-                  <p className="mt-2 text-justify text-sm leading-relaxed text-tertiary">Pregunta por la siguiente fecha o pide el curso para tu equipo.</p>
+                  <p className="mt-2 text-justify text-sm leading-relaxed text-tertiary">Aún no hay fecha publicada para el siguiente grupo. Déjanos tus datos y te avisamos cuando abra, o lo armamos para tu equipo en tu planta.</p>
                 )}
                 <div className="mt-5 flex flex-col gap-2">
                   <a href="#contacto" className="inline-flex items-center justify-center rounded-xs bg-secondary px-5 py-3 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
@@ -205,6 +279,9 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
           </aside>
         </div>
       </section>
+
+      {/* Guías del blog de la misma técnica, para leer antes del curso */}
+      {guias.length > 0 && <GuiasRelacionadas articulos={guias} />}
 
       {/* La misma técnica, en sus otros formatos */}
       {relacionados.length > 0 && (

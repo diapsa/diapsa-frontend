@@ -162,7 +162,7 @@ export default function CatalogoFiltros({ tarjetas, tecnicas, tipos, textoTipo }
                     <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-5">
                       <span className="flex items-center gap-1.5 whitespace-nowrap text-xs text-tertiary">
                         <Calendario />
-                        {t.fecha ?? "Fecha por confirmar"}
+                        {t.fecha ?? "Próximo grupo por anunciar · también en tu planta"}
                       </span>
                       <Link
                         href={t.href}

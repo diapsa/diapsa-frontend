@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useContactForm } from "@/lib/hooks/useContactForm";
@@ -10,16 +10,17 @@ import type { ContactFormData } from "@/types/contact";
 
 /**
  * BienvenidaCursos
- * La ventana que aparece al entrar a /cursos (idea tomada de NeoPetrol,
- * 2026-09-27): a la izquierda el anuncio del curso más próximo y a la
- * derecha un formulario corto para recibir fechas y precios.
- *
- * Si hay un grupo con fecha en data/cursos-extra.json, se anuncia ese; si
- * no, el diplomado, que es el programa insignia. Aparece a los cuatro
- * segundos, una vez cada siete días por navegador, y se cierra con la
- * equis, con Escape o tocando fuera. El envío es el mismo del resto de los
- * formularios (tipo main, asunto cursos) con la etiqueta
- * "[Bienvenida cursos]" para distinguirlo en el CRM.
+ * El aviso de /cursos. Nació como ventana emergente a pantalla completa
+ * (idea de NeoPetrol, 2026-09-27) con un formulario de cinco campos y una
+ * lista de 17 cursos. Emiliano pidió el 2026-10-04 mejorarla porque tapaba
+ * el catálogo y la lista era demasiado larga, igual que pasó con el webinar
+ * en la portada. Ahora es una tarjeta en la esquina inferior izquierda, como
+ * AvisoWebinar: anuncia el grupo más próximo (o el diplomado) y pide solo
+ * nombre, correo y la técnica de interés, cinco opciones en vez de 17.
+ * Aparece a los seis segundos, una vez cada siete días por navegador, y no
+ * impide leer ni usar el catálogo. El envío es el mismo del resto de los
+ * formularios (tipo main, asunto cursos) con la etiqueta "[Bienvenida
+ * cursos]" para distinguirlo en el CRM.
  */
 
 export type Anuncio = {
@@ -32,20 +33,29 @@ export type Anuncio = {
   diplomado?: boolean;
 };
 
-type Props = { anuncio: Anuncio; cursos: string[] };
+type Props = { anuncio: Anuncio; cursos?: string[] };
 
 const CLAVE = "diapsa-bienvenida-cursos";
 const DIAS = 7;
-const RETRASO_MS = 4000;
+const RETRASO_MS = 6000;
 
-export default function BienvenidaCursos({ anuncio, cursos }: Props) {
+// Cinco opciones, una por técnica, en lugar de la lista completa de cursos
+const INTERESES = [
+  "Diplomado en Confiabilidad Operativa",
+  "Vibraciones mecánicas",
+  "Termografía infrarroja",
+  "Ultrasonido pasivo",
+  "Confiabilidad y gestión del mantenimiento",
+];
+
+export default function BienvenidaCursos({ anuncio }: Props) {
   const { submitForm, loading, errors, validateField } = useContactForm();
   const [abierta, setAbierta] = useState(false);
+  const [formulario, setFormulario] = useState(false);
   const [listo, setListo] = useState(false);
-  const [datos, setDatos] = useState({ name: "", email: "", company: "", phone: "", curso: "", website: "" });
+  const [datos, setDatos] = useState({ name: "", email: "", curso: "", website: "" });
   const [acepta, setAcepta] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const primerCampo = useRef<HTMLInputElement>(null);
 
   // Aparece una vez cada siete días; si no hay almacenamiento, aparece.
   useEffect(() => {
@@ -70,17 +80,9 @@ export default function BienvenidaCursos({ anuncio, cursos }: Props) {
     }
   };
 
-  useEffect(() => {
-    if (!abierta) return;
-    primerCampo.current?.focus();
-    const tecla = (e: KeyboardEvent) => e.key === "Escape" && cerrar();
-    document.addEventListener("keydown", tecla);
-    return () => document.removeEventListener("keydown", tecla);
-  }, [abierta]);
-
   const enviar = async (e: FormEvent) => {
     e.preventDefault();
-    const fallo = validateField("name", datos.name) || validateField("email", datos.email) || (datos.phone ? validateField("phone", datos.phone) : null);
+    const fallo = validateField("name", datos.name) || validateField("email", datos.email);
     if (fallo) return setError(fallo);
     if (!acepta) return setError("Acepta el aviso de privacidad para continuar");
     setError(null);
@@ -88,8 +90,8 @@ export default function BienvenidaCursos({ anuncio, cursos }: Props) {
     const envio: ContactFormData = {
       name: datos.name,
       email: datos.email,
-      phone: datos.phone,
-      company: datos.company,
+      phone: "",
+      company: "",
       country: "México",
       form_type: "main",
       website: datos.website,
@@ -116,119 +118,110 @@ export default function BienvenidaCursos({ anuncio, cursos }: Props) {
   if (!abierta) return null;
   const general = error ?? (errors.general ? errors.general[0] : null) ?? (Object.values(errors)[0]?.[0] ?? null);
   const campo =
-    "w-full rounded-sm border border-gray-200 bg-gray-100 px-4 py-3 text-sm text-gray-900 outline-none transition-all placeholder:text-gray-500 focus:border-transparent focus:bg-white focus:ring-2 focus:ring-secondary";
+    "w-full rounded-sm border border-gray-200 bg-gray-100 px-3 py-2.5 text-sm text-gray-900 outline-none transition-all placeholder:text-gray-500 focus:border-transparent focus:bg-white focus:ring-2 focus:ring-secondary";
 
   return (
-    <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm motion-safe:animate-[fadeIn_.3s_ease-out]"
-      onClick={cerrar}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="bienvenida-titulo"
+    <aside
+      aria-label="Próximo curso y aviso de fechas"
+      className="fixed bottom-4 left-4 z-40 w-[min(22rem,calc(100%-6.5rem))] overflow-hidden rounded-sm bg-white shadow-2xl ring-1 ring-black/10 motion-safe:animate-[aparecer_.4s_ease-out]"
     >
-      <div
-        className="relative grid max-h-[92vh] w-full max-w-4xl grid-cols-1 overflow-y-auto rounded-sm bg-white shadow-2xl md:grid-cols-2 md:overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
+      <button
+        type="button"
+        onClick={cerrar}
+        aria-label="Cerrar aviso de cursos"
+        className="absolute right-2 top-2 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-primary shadow hover:bg-secondary"
       >
-        <button
-          type="button"
-          onClick={cerrar}
-          aria-label="Cerrar"
-          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-primary shadow transition-colors hover:bg-gray-100"
-        >
-          <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+        <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
 
-        {/* El anuncio del curso más próximo */}
-        <div
-          className="relative flex min-h-[14rem] flex-col justify-end overflow-hidden p-7 text-white md:min-h-full md:p-9"
-          style={{ background: anuncio.diplomado ? FONDO_DIPLOMADO : "#002e46" }}
-        >
-          {anuncio.foto && (
-            <Image src={anuncio.foto.src} alt="" fill sizes="(min-width: 768px) 28rem, 100vw" className="object-cover opacity-25 mix-blend-luminosity" />
-          )}
-          <div className="relative">
-            <span
-              className="inline-block rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest"
-              style={{ background: anuncio.diplomado ? AZUL_CLARO_DIPLOMADO : "#fc9f01", color: anuncio.diplomado ? "#fff" : "#002e46" }}
-            >
-              {anuncio.etiqueta}
-            </span>
-            {anuncio.diplomado && <p className="mt-5 text-5xl font-black leading-none tracking-tight">DIPLOMADO</p>}
-            <p className={`${anuncio.diplomado ? "mt-2 text-lg" : "mt-5 text-2xl"} font-extrabold leading-tight`}>{anuncio.titulo}</p>
-            {anuncio.fecha && (
-              <p className="mt-4 inline-flex items-baseline gap-2 rounded-sm bg-white/15 px-3 py-2">
-                <span className="text-3xl font-black leading-none">{anuncio.fecha.dia}</span>
-                <span className="text-sm font-bold uppercase">{anuncio.fecha.mes}</span>
-              </p>
-            )}
-            <p className="mt-4 text-justify text-sm leading-relaxed text-white/85">{anuncio.detalle}</p>
-            <Link href={anuncio.href} onClick={cerrar} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-white underline decoration-2 underline-offset-4 hover:text-secondary">
-              Ver el programa completo
-            </Link>
-          </div>
-        </div>
-
-        {/* El formulario */}
-        <div className="p-7 md:p-9">
-          {listo ? (
-            <div className="flex h-full flex-col items-center justify-center py-10 text-center">
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-2xl text-emerald-700">✓</span>
-              <p className="mt-4 text-xl font-extrabold text-primary">¡Listo, {datos.name.split(" ")[0]}!</p>
-              <p className="mt-2 text-sm leading-relaxed text-tertiary">Te enviamos fechas y precios a {datos.email} en cuanto el grupo abra inscripciones.</p>
-              <button type="button" onClick={cerrar} className="mt-6 rounded-xs bg-primary px-6 py-3 font-bold text-white hover:bg-secondary hover:text-primary">
-                Ver los cursos
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={enviar} noValidate>
-              <p id="bienvenida-titulo" className="text-center text-2xl font-extrabold uppercase tracking-wide text-primary">
-                Recibe fechas y precios
-              </p>
-              <p className="mt-2 text-center text-sm text-tertiary">Te avisamos cuando abra el próximo grupo, sin compromiso.</p>
-              <div className="mt-6 flex flex-col gap-3">
-                <input ref={primerCampo} className={campo} placeholder="Nombre completo" value={datos.name} onChange={(e) => setDatos({ ...datos, name: e.target.value })} autoComplete="name" />
-                <input className={campo} type="email" placeholder="Correo electrónico" value={datos.email} onChange={(e) => setDatos({ ...datos, email: e.target.value })} autoComplete="email" />
-                <input className={campo} placeholder="Empresa" value={datos.company} onChange={(e) => setDatos({ ...datos, company: e.target.value })} autoComplete="organization" />
-                <input className={campo} type="tel" placeholder="Teléfono (opcional)" value={datos.phone} onChange={(e) => setDatos({ ...datos, phone: e.target.value })} autoComplete="tel" />
-                <select className={campo} value={datos.curso} onChange={(e) => setDatos({ ...datos, curso: e.target.value })} aria-label="Curso de interés">
-                  <option value="">Curso de interés: {anuncio.titulo}</option>
-                  {cursos.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
-                {/* Trampa para robots: debe quedar vacía */}
-                <input type="text" name="website" value={datos.website} onChange={(e) => setDatos({ ...datos, website: e.target.value })} className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
-              </div>
-              <label className="mt-4 flex items-start gap-2 text-xs leading-snug text-tertiary">
-                <input type="checkbox" checked={acepta} onChange={(e) => setAcepta(e.target.checked)} className="mt-0.5 h-4 w-4 shrink-0 accent-[#fc9f01]" />
-                <span>
-                  Acepto el{" "}
-                  <Link href="/aviso-privacidad" className="underline">
-                    aviso de privacidad
-                  </Link>{" "}
-                  de Grupo DIAPSA.
-                </span>
-              </label>
-              {general && <p className="mt-3 text-sm font-semibold text-red-600">{general}</p>}
-              <button
-                type="submit"
-                disabled={loading}
-                className="mt-5 w-full rounded-xs bg-secondary px-6 py-3.5 font-bold text-primary transition-colors hover:bg-primary hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                {loading ? "Enviando…" : "Quiero recibir fechas"}
-              </button>
-              <button type="button" onClick={cerrar} className="mt-3 w-full text-center text-sm font-semibold text-tertiary hover:text-primary">
-                Ahora no, solo quiero ver los cursos
-              </button>
-            </form>
+      {/* El anuncio: el grupo más próximo o el diplomado */}
+      <div className="relative min-h-[6.5rem] w-full overflow-hidden text-white" style={{ background: anuncio.diplomado ? FONDO_DIPLOMADO : "#002e46" }}>
+        {anuncio.foto && <Image src={anuncio.foto.src} alt="" fill sizes="352px" className="object-cover opacity-25 mix-blend-luminosity" />}
+        <div className="relative p-4 pr-10">
+          <span
+            className="inline-flex w-fit items-center rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest"
+            style={{ background: anuncio.diplomado ? AZUL_CLARO_DIPLOMADO : "#fc9f01", color: anuncio.diplomado ? "#fff" : "#002e46" }}
+          >
+            {anuncio.etiqueta}
+          </span>
+          <p className="mt-1.5 text-lg font-extrabold leading-tight">{anuncio.diplomado ? "Diplomado en Confiabilidad Operativa" : anuncio.titulo}</p>
+          {anuncio.fecha && (
+            <p className="mt-1 text-sm font-bold text-secondary">
+              {anuncio.fecha.dia} de {anuncio.fecha.mes}
+            </p>
           )}
         </div>
       </div>
-    </div>
+
+      <div className="p-4 text-primary">
+        {listo ? (
+          <div className="text-center">
+            <p className="text-base font-extrabold">¡Listo, {datos.name.split(" ")[0]}!</p>
+            <p className="mt-1 text-sm leading-relaxed text-tertiary">Te enviamos fechas y precios a {datos.email} en cuanto abra el grupo.</p>
+            <button type="button" onClick={cerrar} className="mt-3 w-full rounded-xs bg-primary px-4 py-2 text-sm font-bold text-white hover:bg-secondary hover:text-primary">
+              Seguir viendo los cursos
+            </button>
+          </div>
+        ) : formulario ? (
+          <form onSubmit={enviar} noValidate>
+            <p className="text-sm font-bold">Te avisamos fechas y precios</p>
+            <div className="mt-2 flex flex-col gap-2">
+              <input className={campo} placeholder="Nombre" value={datos.name} onChange={(e) => setDatos({ ...datos, name: e.target.value })} autoComplete="name" autoFocus />
+              <input className={campo} type="email" placeholder="Correo electrónico" value={datos.email} onChange={(e) => setDatos({ ...datos, email: e.target.value })} autoComplete="email" />
+              <select className={campo} value={datos.curso} onChange={(e) => setDatos({ ...datos, curso: e.target.value })} aria-label="Técnica de interés">
+                <option value="">Me interesa: {anuncio.diplomado ? "el diplomado" : anuncio.titulo}</option>
+                {INTERESES.map((c) => (
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
+                ))}
+              </select>
+              {/* Trampa para robots: debe quedar vacía */}
+              <input type="text" name="website" value={datos.website} onChange={(e) => setDatos({ ...datos, website: e.target.value })} className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+            </div>
+            <label className="mt-2 flex items-start gap-2 text-[11px] leading-snug text-tertiary">
+              <input type="checkbox" checked={acepta} onChange={(e) => setAcepta(e.target.checked)} className="mt-0.5 h-3.5 w-3.5 shrink-0 accent-[#fc9f01]" />
+              <span>
+                Acepto el{" "}
+                <Link href="/aviso-privacidad" className="underline">
+                  aviso de privacidad
+                </Link>
+                .
+              </span>
+            </label>
+            {general && <p className="mt-2 text-xs font-semibold text-red-600">{general}</p>}
+            <button
+              type="submit"
+              disabled={loading}
+              className="mt-3 w-full rounded-xs bg-secondary px-4 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {loading ? "Enviando…" : "Quiero recibir fechas"}
+            </button>
+          </form>
+        ) : (
+          <>
+            <p className="text-justify text-sm leading-relaxed text-tertiary">{anuncio.detalle}</p>
+            <div className="mt-3 flex gap-2">
+              <button
+                type="button"
+                onClick={() => setFormulario(true)}
+                className="inline-flex flex-1 items-center justify-center rounded-xs bg-secondary px-3 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white"
+              >
+                Recibir fechas
+              </button>
+              <Link
+                href={anuncio.href}
+                onClick={cerrar}
+                className="inline-flex flex-1 items-center justify-center rounded-xs border-2 border-primary px-3 py-1.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white"
+              >
+                Ver programa
+              </Link>
+            </div>
+          </>
+        )}
+      </div>
+    </aside>
   );
 }
