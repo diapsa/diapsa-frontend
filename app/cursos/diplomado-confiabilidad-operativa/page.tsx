@@ -5,9 +5,13 @@ import Antetitulo from "@/components/atoms/Antetitulo";
 import DescargaBrochure from "@/components/organisms/DescargaBrochure";
 import ContactForm from "@/components/organisms/ContactForm";
 import CarruselFotos from "@/components/molecules/CarruselFotos";
-import JsonLd, { createBreadcrumbSchema, createCourseSchema } from "@/components/atoms/JsonLd";
+import ClientesLogos from "@/components/organisms/ClientesLogos";
+import VideoBucle from "@/components/atoms/VideoBucle";
+import JsonLd, { createBreadcrumbSchema, createCourseSchema, createFaqSchema } from "@/components/atoms/JsonLd";
 import { muestraFotos } from "@/lib/cursos";
 import { AZUL_CLARO_DIPLOMADO, FONDO_DIPLOMADO, PIE_DIPLOMADO } from "@/lib/diplomado-estilo";
+import { DATOS_DIPLOMADO, NUM_ESPECIALISTAS, NUM_PAISES, PAISES_DIPLOMADO, RESUMEN_DIPLOMADO } from "@/lib/diplomado";
+import { FAQ_DIPLOMADO } from "@/lib/diplomado-faq";
 
 /*
  * Toda la página con la identidad del brochure (Emiliano, 2026-09-28): el
@@ -28,11 +32,11 @@ const URL = `/cursos/${dip.slug}`;
 
 export const metadata: Metadata = {
   title: "Diplomado en Confiabilidad Operativa y Monitoreo de Condición",
-  description: "Diplomado virtual de 60 horas en vivo con 11 especialistas: confiabilidad desde el diseño, RCM, FMEA, KPIs, vibraciones, termografía, ultrasonido, aceite y análisis eléctricos. Descarga el brochure.",
+  description: `Diplomado virtual de 60 horas en vivo con ${NUM_ESPECIALISTAS} especialistas de ${NUM_PAISES} países: confiabilidad desde el diseño, RCM, FMEA, KPIs, vibraciones, termografía, ultrasonido, aceite y análisis eléctricos. Descarga el brochure.`,
   alternates: { canonical: URL },
   openGraph: {
     title: "Diplomado en Confiabilidad Operativa y Monitoreo de Condición | Grupo DIAPSA",
-    description: dip.resumen,
+    description: RESUMEN_DIPLOMADO,
     url: URL,
     type: "website",
     locale: "es_MX",
@@ -53,7 +57,8 @@ function iniciales(n: string) {
 export default function DiplomadoPage() {
   return (
     <main>
-      <JsonLd data={createCourseSchema({ name: dip.nombre, description: dip.resumen, url: URL, courseModes: ["Online"], duration: 60 })} />
+      <JsonLd data={createCourseSchema({ name: dip.nombre, description: RESUMEN_DIPLOMADO, url: URL, courseModes: ["Online"], duration: 60 })} />
+      <JsonLd data={createFaqSchema(FAQ_DIPLOMADO)} />
       <JsonLd data={createBreadcrumbSchema([{ name: "Inicio", url: "/" }, { name: "Cursos", url: "/cursos" }, { name: dip.nombre, url: URL }])} />
 
       {/* Apertura: el diplomado y el brochure a cambio de los datos */}
@@ -69,9 +74,9 @@ export default function DiplomadoPage() {
             </p>
             <p className="mt-5 text-6xl font-black uppercase leading-none tracking-tight text-white lg:text-8xl">Diplomado</p>
             <h1 className="mt-4 text-2xl font-extrabold uppercase leading-tight text-white lg:text-3xl">{dip.corto}</h1>
-            <p className="mt-5 text-justify text-lg leading-relaxed text-white/75">{dip.resumen}</p>
+            <p className="mt-5 text-justify text-lg leading-relaxed text-white/75">{RESUMEN_DIPLOMADO}</p>
             <ul className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {dip.datos.map((d) => (
+              {DATOS_DIPLOMADO.map((d) => (
                 <li key={d.v} className="rounded-sm bg-white/10 px-4 py-3 ring-1 ring-white/15">
                   <p className="text-2xl font-extrabold leading-none text-white">{d.v}</p>
                   <p className="mt-1 text-xs font-bold uppercase tracking-wider text-white/65">{d.t}</p>
@@ -127,7 +132,25 @@ export default function DiplomadoPage() {
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-[11px] font-bold uppercase tracking-widest" style={{ color: AZUL_CLARO_DIPLOMADO }}>Fases y temario</p>
           <h2 className="mt-2 text-3xl font-extrabold leading-tight lg:text-5xl">5 fases, 17 sesiones, 60 horas</h2>
-          <p className="mt-3 max-w-3xl text-justify text-lg leading-relaxed text-white/75">{dip.inscripcion} Cada fase incluye materiales y constancia de participación.</p>
+          <div className="mt-8 grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:gap-12">
+            {/* El hilo del programa: la vida del activo, con las cinco fases sobre ella */}
+            <div className="overflow-hidden rounded-xl bg-white/10 p-2 ring-1 ring-white/15">
+              <VideoBucle
+                className="block aspect-[16/10] w-full rounded-lg object-cover"
+                src="/videos/diplomado/dip-ciclo.mp4"
+                poster="/videos/diplomado/dip-ciclo.jpg"
+                descripcion="Animación de la vida de un activo, con su tasa de falla del arranque al retiro, y las cinco fases del diplomado sobre ella, con sus horas y sus temas."
+              />
+            </div>
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-widest" style={{ color: AZUL_CLARO_DIPLOMADO }}>Por qué cinco fases</p>
+              <p className="mt-2 text-2xl font-extrabold leading-snug lg:text-3xl">Las fases siguen la vida del activo</p>
+              <p className="mt-3 text-justify text-base leading-relaxed text-white/75">
+                Un activo nace en el diseño, pasa la mayor parte de su vida en operación, se gestiona con datos y llega a su retiro. El diplomado recorre ese camino en el mismo orden: primero la confiabilidad que se decide antes de arrancar, después las técnicas que extienden la vida útil, luego la calidad de la información con la que se decide y, al final, cuándo y cómo retirar el equipo.
+              </p>
+              <p className="mt-3 text-justify text-base leading-relaxed text-white/75">{dip.inscripcion} Cada fase incluye materiales y constancia de participación.</p>
+            </div>
+          </div>
           <ol className="mt-10 space-y-3">
             {dip.fases.map((f) => (
               <li key={f.n}>
@@ -165,8 +188,13 @@ export default function DiplomadoPage() {
       <section className="w-full bg-white py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <Antetitulo className="text-[#04358f]">Especialistas</Antetitulo>
-          <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">Sesiones 100% en vivo con especialistas de 6 países</h2>
-          <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">Sesiones 100% en vivo con {NUM_ESPECIALISTAS} especialistas de {NUM_PAISES} países</h2>
+          <ul className="mt-5 flex flex-wrap gap-2" aria-label="Países del claustro">
+            {PAISES_DIPLOMADO.map((p) => (
+              <li key={p} className="rounded-full bg-[#eef3ff] px-3 py-1 text-xs font-bold text-[#04358f]">{p}</li>
+            ))}
+          </ul>
+          <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {dip.ponentes.map((p) => (
               <li key={p.nombre} className="flex items-start gap-4 rounded-sm bg-gray-50 p-4 ring-1 ring-black/5">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-sm font-extrabold text-white" style={{ background: FONDO_DIPLOMADO }} aria-hidden="true">{iniciales(p.nombre)}</span>
@@ -178,8 +206,17 @@ export default function DiplomadoPage() {
               </li>
             ))}
           </ul>
+          {dip.respaldo.length > 0 && (
+            <p className="mt-8 text-justify text-sm leading-relaxed text-tertiary">
+              <span className="font-bold text-primary">Con el respaldo de </span>
+              {dip.respaldo.join(", ")}, las firmas de las que forman parte los especialistas del claustro.
+            </p>
+          )}
         </div>
       </section>
+
+      {/* Quién ya se capacitó con nosotros */}
+      <ClientesLogos antetitulo="Quién ya se capacitó" titulo="Empresas que ya formaron a su equipo con nosotros" enlace={null} />
 
       {/* Beneficios, requisitos e incluye */}
       <section className="w-full bg-gray-100 py-14 lg:py-20">
@@ -208,6 +245,30 @@ export default function DiplomadoPage() {
               <ul className="mt-3 space-y-2">{dip.requisitos.map((x) => <li key={x} className="text-sm font-semibold text-primary">✓ {x}</li>)}</ul>
               <p className="mt-4 text-xs leading-relaxed text-tertiary">Disponible para {dip.paises}.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Preguntas frecuentes */}
+      <section className="w-full bg-white py-14 lg:py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:grid lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-16">
+          <div>
+            <Antetitulo className="text-[#04358f]">Preguntas frecuentes</Antetitulo>
+            <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">Lo que nos preguntan antes de inscribirse</h2>
+            <p className="mt-4 text-justify text-base leading-relaxed text-tertiary">
+              Si tu duda no está aquí, escríbenos en el formulario de abajo o descarga el brochure con el programa completo.
+            </p>
+          </div>
+          <div className="mt-8 divide-y divide-gray-200 border-y border-gray-200 lg:mt-0">
+            {FAQ_DIPLOMADO.map((f) => (
+              <details key={f.question} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-primary [&::-webkit-details-marker]:hidden">
+                  {f.question}
+                  <span aria-hidden="true" className="shrink-0 text-2xl font-extrabold text-[#04358f] transition-transform duration-200 group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-2 text-justify text-base leading-relaxed text-tertiary">{f.answer}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

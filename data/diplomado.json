@@ -2,14 +2,8 @@
   "slug": "diplomado-confiabilidad-operativa",
   "nombre": "Diplomado en Confiabilidad Operativa y Monitoreo de Condición",
   "corto": "Confiabilidad Operativa y Monitoreo de Condición",
-  "resumen": "Nuestro programa insignia: 60 horas en vivo con 11 especialistas para gestionar los activos durante todo su ciclo de vida, del diseño a su retiro.",
+  "resumen": "Nuestro programa insignia: 60 horas en vivo con especialistas de varios países para gestionar los activos durante todo su ciclo de vida, del diseño a su retiro.",
   "brochure": "/files/diplomado-confiabilidad-operativa.pdf",
-  "datos": [
-    { "v": "60 h", "t": "en vivo" },
-    { "v": "5 fases", "t": "17 sesiones" },
-    { "v": "11", "t": "especialistas" },
-    { "v": "Virtual", "t": "desde 6 países" }
-  ],
   "dirigido": "Especialistas en mantenimiento, planeadores, programadores, técnicos y tomadores de decisiones que busquen optimizar la operación y la confiabilidad de activos industriales.",
   "objetivo": "Formar especialistas capaces de gestionar eficientemente los activos durante todo su ciclo de vida, aplicando metodologías de confiabilidad, mantenimiento y monitoreo de condición, para transformar paradigmas tradicionales, estandarizar procesos y fomentar una cultura técnica sólida y proactiva.",
   "aprenderas": [
