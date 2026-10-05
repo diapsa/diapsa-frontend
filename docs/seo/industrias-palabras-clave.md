@@ -17,3 +17,7 @@ Las fotos del hero de las siete landings nuevas son fotos reales de campo provis
 ## Energías renovables (2026-10-04)
 
 Emiliano pidió una novena landing para solar, eólica, hidráulica y biogás. Lleva cuatro áreas, una por tecnología, con el gemelo de un parque mixto. Por confirmar con DIAPSA: si los analistas tienen formación de trabajo en alturas para subir a góndolas, qué experiencia hay en hidroeléctricas y en motogeneradores a biogás, y si se atienden inversores y seguidores solares o solo la parte eléctrica del parque.
+
+## Minería (2026-10-04)
+
+Décima landing, pedida por Emiliano. Áreas: chancado y molienda, bandas y transporte, flotación y bombeo de pulpa, y ventilación, desagüe y subestación. Gemelo con chancador, molinos, bandas con apilador, celdas de flotación, espesador, bombas de pulpa, ventilador principal en el portal y subestación. El hero reutiliza la foto del tajo que también usa cemento, hasta que haya créditos de Higgsfield. Por confirmar con DIAPSA: experiencia en interior mina y en concentradoras, y si los analistas cuentan con las inducciones de seguridad minera.

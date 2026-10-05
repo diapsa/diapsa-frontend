@@ -34,6 +34,10 @@
       "slug": "cemento-y-materiales"
     },
     {
+      "nombre": "Minería",
+      "slug": "mineria"
+    },
+    {
       "nombre": "Tratamiento de agua",
       "slug": "tratamiento-de-agua"
     }

@@ -1178,5 +1178,44 @@
       "titulo": "Energías renovables",
       "resumen": "Mantenimiento predictivo y monitoreo de condición para parques solares y eólicos, hidroeléctricas y plantas de biogás."
     }
+  },
+  {
+    "articulo": {
+      "slug": "lubricacion-por-ultrasonido-como-engrasar-rodamientos",
+      "titulo": "Lubricación por ultrasonido",
+      "resumen": "Cómo engrasar rodamientos en su punto.",
+      "portada": "/images/blog/lubricacion-por-ultrasonido.webp"
+    },
+    "servicio": {
+      "href": "/industrias/mineria",
+      "titulo": "Minería",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para minas y plantas de beneficio."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "analisis-de-aceite-en-mantenimiento-predictivo-pruebas-y-muestreo",
+      "titulo": "Análisis de aceite",
+      "resumen": "Qué pruebas y cómo muestrear.",
+      "portada": "/images/blog/aceite-pruebas-muestreo.webp"
+    },
+    "servicio": {
+      "href": "/industrias/mineria",
+      "titulo": "Minería",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para minas y plantas de beneficio."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "costo-de-un-paro-no-programado-como-calcularlo",
+      "titulo": "Costo de un paro",
+      "resumen": "Cómo calcularlo y usarlo.",
+      "portada": "/images/blog/planta-produccion.webp"
+    },
+    "servicio": {
+      "href": "/industrias/mineria",
+      "titulo": "Minería",
+      "resumen": "Mantenimiento predictivo y monitoreo de condición para minas y plantas de beneficio."
+    }
   }
 ]
