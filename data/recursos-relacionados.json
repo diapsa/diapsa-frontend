@@ -1217,5 +1217,18 @@
       "titulo": "Minería",
       "resumen": "Mantenimiento predictivo y monitoreo de condición para minas y plantas de beneficio."
     }
+  },
+  {
+    "articulo": {
+      "slug": "diferencia-entre-desbalance-y-desalineacion",
+      "titulo": "Desbalance y desalineación",
+      "resumen": "Qué es cada uno y cómo se corrige.",
+      "portada": "/images/gallery/campo/vibracion-bomba-roja.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/alineacion-balanceo",
+      "titulo": "Alineación y Balanceo",
+      "resumen": "Alineación láser de ejes y balanceo dinámico en sitio, con la vibración medida antes y después."
+    }
   }
 ]
