@@ -49,6 +49,12 @@ Lista reunida el 2026-10-04 con todo lo que el sitio afirma y conviene validar c
 25. Talleres prácticos. ¿Los participantes pueden llevar su propio instrumento para practicar con él? La ficha lo afirma en las preguntas frecuentes.
 26. ¿Qué constancia se entrega al terminar cada curso (constancia de participación, DC-3 ante la STPS, certificado por categoría)? La ficha dice "constancia del curso" sin más.
 
+## Contacto
+
+27. ¿Cuál es el correo que recibe los mensajes: info@grupodiapsa.com (el que muestra el sitio) o info@grupodiapsa.com.mx (el que tiene la configuración)? Hay que dejar uno solo.
+28. ¿Cuál es el horario de atención telefónica y de WhatsApp? La página de contacto no lo muestra hasta confirmarlo.
+29. ¿El teléfono +52 (81) 4590-3792 es el mismo para llamadas y WhatsApp? La página lo usa para los dos.
+
 ## Legal
 
 24. Falta el texto del aviso de privacidad: la página /aviso-privacidad da 404 y todos los formularios la enlazan. Es lo más urgente de esta lista.

@@ -48,6 +48,7 @@ export default function ContactFormGeneral({
     custom_fields: {
       message: '',
       preferred_contact: 'email',
+      subject: '',
     },
   });
 
@@ -60,7 +61,7 @@ export default function ContactFormGeneral({
   ) => {
     const { name, value } = e.target;
 
-    if (name === 'message' || name === 'preferred_contact') {
+    if (name === 'message' || name === 'preferred_contact' || name === 'subject') {
       setFormData((prev) => ({
         ...prev,
         custom_fields: {
@@ -194,6 +195,30 @@ export default function ContactFormGeneral({
         <RateLimitBanner attemptsRemaining={0} maxAttempts={5} />
       )}
 
+      {/* Motivo (Emiliano, 2026-10-06): un solo campo que dice a quién va el
+          lead en el CRM. Mismos valores que el formulario del hero más
+          equipos y proveedor. No es obligatorio para no frenar a nadie. */}
+      <div>
+        <label htmlFor="subject" className="block text-sm font-semibold mb-1.5 text-primary">
+          ¿Qué necesitas?
+        </label>
+        <select
+          id="subject"
+          name="subject"
+          value={formData.custom_fields?.subject || ''}
+          onChange={handleChange}
+          disabled={loading}
+          className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-transparent focus:ring-2 focus:ring-secondary"
+        >
+          <option value="">Elige una opción</option>
+          <option value="servicios">Cotizar un servicio para mi planta</option>
+          <option value="equipos">Cotizar un equipo (cámaras, sensores)</option>
+          <option value="cursos">Información de cursos o del diplomado</option>
+          <option value="proveedor">Soy proveedor</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
       {/* Datos personales */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Name */}
@@ -307,8 +332,8 @@ export default function ContactFormGeneral({
       {/* Privacy notice */}
       <p className="text-xs text-tertiary text-center">
         Al enviar este formulario, aceptas nuestra{' '}
-        <a href="/privacidad" className="text-secondary hover:underline font-semibold">
-          política de privacidad
+        <a href="/aviso-privacidad" className="text-secondary hover:underline font-semibold">
+          aviso de privacidad
         </a>
       </p>
     </form>
