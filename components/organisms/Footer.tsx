@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="w-full bg-primary text-white border-t-4 border-secondary">
       {/* Main footer content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10 lg:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Columna 1: Logo y descripción */}
           <div className="lg:col-span-1">
@@ -76,23 +76,15 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4 text-secondary">
               Servicios
             </h4>
-            <ul className="space-y-3">
-              {services.map((item, index) => (
-                <li key={index}>
+            {/* Solo las entradas principales: cada una lleva a la página que
+                lista sus servicios. La lista completa hacía el pie el doble de
+                alto que el resto (Emiliano, 2026-10-05). */}
+            <ul className="space-y-2">
+              {services.map((item) => (
+                <li key={item.href}>
                   <NavLink variant="footer" href={item.href}>
                     {item.label}
                   </NavLink>
-                  {'children' in item && Array.isArray(item.children) && (
-                    <ul className="mt-2 space-y-2 pl-3 border-l border-white/20">
-                      {item.children.map((child, childIndex) => (
-                        <li key={childIndex}>
-                          <NavLink href={child.href} variant="footer">
-                            <span className="text">{child.label}</span>
-                          </NavLink>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                 </li>
               ))}
             </ul>
@@ -101,7 +93,7 @@ export default function Footer() {
           {/* Columna 3: Empresa */}
           <div>
             <h4 className="text-lg font-bold mb-4 text-secondary">Empresa</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
                 <NavLink
                   href="/acerca-de"
