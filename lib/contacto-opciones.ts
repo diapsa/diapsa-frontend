@@ -90,3 +90,22 @@ export function enlaceContacto(motivo: Motivo, interes?: string) {
   if (interes) p.set("interes", interes);
   return `/contacto?${p.toString()}`;
 }
+
+/** Etiqueta del menú de cada servicio por su ruta, para marcarlo solo. */
+const SERVICIO_POR_RUTA: Record<string, string> = Object.fromEntries(
+  (servicios as Entrada[]).flatMap((e) => (e.children ? e.children.map((c) => [c.href, c.label]) : [[e.href, e.label.replace("Conoce ", "")]])),
+);
+
+/**
+ * Motivo e interés que se deducen de la página en que está el formulario:
+ * en la página de un servicio, ese servicio; en productos, equipos. En las
+ * demás, nada, y el visitante elige.
+ */
+export function interesDeRuta(pathname: string): { motivo: Motivo; interes?: string } | null {
+  const ruta = pathname.replace(/\/$/, "");
+  if (SERVICIO_POR_RUTA[ruta]) return { motivo: "servicios", interes: SERVICIO_POR_RUTA[ruta] };
+  if (ruta.startsWith("/servicios/")) return { motivo: "servicios" };
+  if (ruta.startsWith("/productos")) return { motivo: "equipos" };
+  if (ruta.startsWith("/industrias/")) return { motivo: "servicios" };
+  return null;
+}

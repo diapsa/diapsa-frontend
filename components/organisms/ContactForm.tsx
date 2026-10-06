@@ -5,20 +5,16 @@
 
 "use client";
 
-import { useState, useRef, FormEvent } from "react";
+import { useState, useRef, useEffect, FormEvent } from "react";
+import { CAMPO_POR_MOTIVO, MENSAJE_POR_MOTIVO, MOTIVOS, OPCIONES_POR_MOTIVO, interesDeRuta, type Motivo } from "@/lib/contacto-opciones";
+import { SITE_CONFIG } from "@/lib/constants";
 import Button from "@/components/atoms/Button";
 import { useContactForm } from "@/lib/hooks/useContactForm";
-import { useCourses } from "@/lib/hooks/useCourses";
 import { sanitizeContactFormData } from "@/lib/utils/sanitizeFormData";
-import LoadingSpinner from "@/components/atoms/LoadingSpinner";
 import SuccessMessage from "@/components/atoms/SuccessMessage";
 import RateLimitNotice, { RateLimitBanner } from "@/components/molecules/RateLimitNotice";
 import { FormErrors } from "@/components/atoms/FormFieldError";
 import type { ContactFormData, ContactFormMain } from "@/types/contact";
-import serviciosData from "@/data/servicios.json";
-
-// Extraer solo servicios principales
-const SERVICES = serviciosData.map(servicio => servicio.label);
 
 // País por defecto. Se dejó de preguntar en el formulario (2026-08-24) porque
 // prácticamente todo el tráfico es de México y cada campo extra cuesta leads.
@@ -30,6 +26,7 @@ const PAIS_POR_DEFECTO = "México";
 const AREAS = ["Compras", "HSE / Seguridad y medio ambiente", "Compliance / Cumplimiento regulatorio", "Operación o mantenimiento", "Otra"];
 const PPCIEM = ["Sí, ya tenemos PPCIEM", "Lo estamos armando", "No tenemos", "No aplica: no somos del sector hidrocarburos"];
 const SERVICIO_GAS = "Detección de Gas";
+const WHATSAPP = `https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Hola, vengo del sitio de DIAPSA y quiero información.")}`;
 
 type Props = {
   /** Variante de la página de detección de gas. */
@@ -70,10 +67,31 @@ export default function ContactForm({ gas = false, curso }: Props) {
   } = useContactForm();
 
 
-  const { courses, loading: loadingCourses } = useCourses();
-
   const [formData, setFormData] = useState<ContactFormMain>(() => estadoInicial(gas, curso));
   const [perfil, setPerfil] = useState({ area: "", ppciem: "" });
+
+  // Fichas del motivo elegido (Emiliano, 2026-10-06): en lugar de listas de
+  // casillas, opciones del motivo que se marcan con un toque. Las listas
+  // salen de lib/contacto-opciones.ts; en la página de un curso, ese curso va
+  // marcado aunque no esté en el menú.
+  const [intereses, setIntereses] = useState<string[]>(curso ? [curso] : gas ? [SERVICIO_GAS] : []);
+  const motivo = (formData.custom_fields?.subject || "") as Motivo | "";
+  const grupos = motivo ? OPCIONES_POR_MOTIVO[motivo] : [];
+  const gruposConCurso =
+    curso && motivo === "cursos" && !grupos.some((g) => g.opciones.includes(curso))
+      ? [{ titulo: "Este curso", opciones: [curso] }, ...grupos]
+      : grupos;
+  const alternarInteres = (o: string) => setIntereses((prev) => (prev.includes(o) ? prev.filter((x) => x !== o) : [...prev, o]));
+
+  // En la página de un servicio o de productos, el motivo y el interés ya
+  // van puestos; si la página no dice nada, el visitante elige.
+  useEffect(() => {
+    if (gas || curso !== undefined) return;
+    const deducido = interesDeRuta(window.location.pathname);
+    if (!deducido) return;
+    setFormData((prev) => ({ ...prev, custom_fields: { ...prev.custom_fields, subject: deducido.motivo } as ContactFormMain["custom_fields"] }));
+    setIntereses(deducido.interes ? [deducido.interes] : []);
+  }, [gas, curso]);
 
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [aceptaPrivacidad, setAceptaPrivacidad] = useState(false);
@@ -104,6 +122,7 @@ export default function ContactForm({ gas = false, curso }: Props) {
 
       // Limpiar cursos/servicios cuando cambia asunto
       if (name === "subject") {
+        setIntereses([]);
         setFormData((prev) => ({
           ...prev,
           custom_fields: {
@@ -123,24 +142,6 @@ export default function ContactForm({ gas = false, curso }: Props) {
         return newErrors;
       });
     }
-  };
-
-  // Handle checkbox arrays (cursos/servicios)
-  const handleCheckboxArrayChange = (field: "coursesOfInterest" | "servicesOfInterest", value: string) => {
-    setFormData((prev) => {
-      const currentArray = prev.custom_fields?.[field] || [];
-      const newArray = currentArray.includes(value)
-        ? currentArray.filter((item) => item !== value)
-        : [...currentArray, value];
-
-      return {
-        ...prev,
-        custom_fields: {
-          ...prev.custom_fields,
-          [field]: newArray,
-        } as ContactFormMain['custom_fields'],
-      };
-    });
   };
 
   // Handle blur - validate field
@@ -181,13 +182,16 @@ export default function ContactForm({ gas = false, curso }: Props) {
       return;
     }
 
-    // Preparar datos para envío - convertir arrays a strings
+    // Preparar datos para envío: las fichas marcadas van al campo del motivo
+    const campo = motivo ? CAMPO_POR_MOTIVO[motivo] : "";
     const dataToSubmit: ContactFormData = {
       ...formData,
       custom_fields: {
         ...formData.custom_fields,
-        coursesOfInterest: formData.custom_fields?.coursesOfInterest.join(", ") ?? " ",
-        servicesOfInterest: formData.custom_fields?.servicesOfInterest.join(", ") ?? " ",
+        coursesOfInterest: campo === "coursesOfInterest" ? intereses.join(", ") : " ",
+        servicesOfInterest: campo === "servicesOfInterest" ? intereses.join(", ") : " ",
+        ...(campo === "productsOfInterest" ? { productsOfInterest: intereses.join(", ") } : {}),
+        isProvider: motivo === "proveedor" ? "true" : "false",
         // Gas: el perfil va en su propio campo y al inicio del mensaje, para
         // que se vea aunque el panel solo muestre el mensaje.
         ...(gas
@@ -208,6 +212,7 @@ export default function ContactForm({ gas = false, curso }: Props) {
     if (result) {
       // Success - reset form
       setFormData(estadoInicial(gas, curso));
+      setIntereses(curso ? [curso] : gas ? [SERVICIO_GAS] : []);
       setPerfil({ area: "", ppciem: "" });
       setAceptaPrivacidad(false);
       setFieldErrors({});
@@ -222,8 +227,6 @@ export default function ContactForm({ gas = false, curso }: Props) {
     return undefined;
   };
 
-  const mostrarCursos = formData.custom_fields?.subject === "cursos" || formData.custom_fields?.subject === 'cursos/servicios';
-  const mostrarServicios = formData.custom_fields?.subject === "servicios" || formData.custom_fields?.subject === 'cursos/servicios';
 
   // General errors from API
   const generalErrors = apiErrors.general || [];
@@ -254,7 +257,7 @@ export default function ContactForm({ gas = false, curso }: Props) {
         <div className="w-full lg:w-auto">
           <h2 className="text-3xl text-center lg:text-end md:text-4xl lg:text-5xl font-extrabold leading-tight">
             SOLICITA <br />
-            ASESORÍA Ó <br />
+            ASESORÍA O <br />
             INFORMACIÓN <br />
             SIN COSTO
           </h2>
@@ -262,10 +265,14 @@ export default function ContactForm({ gas = false, curso }: Props) {
           <div className="w-24 h-1 bg-secondary mx-auto lg:ml-auto lg:mr-0 my-6" />
 
           <p className="text-lg md:text-xl font-light text-center lg:text-end">
-            Descubre el camino hacia la
+            Un especialista te responde
             <br />
-            Industria 4.0
+            en un día hábil.
           </p>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-xs border-2 border-[#25D366] px-5 py-2.5 font-bold text-[#25D366] transition-colors hover:bg-[#25D366] hover:text-black lg:float-right">
+            <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+            O escríbenos por WhatsApp
+          </a>
         </div>
 
         {/* COLUMNA DERECHA - FORM */}
@@ -400,72 +407,40 @@ export default function ContactForm({ gas = false, curso }: Props) {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
               >
                 <option value="">¿Qué necesitas?</option>
-                <option value="servicios">Un servicio para mi planta</option>
-                <option value="cursos">Información de cursos</option>
-                <option value="cursos/servicios">Servicios y cursos</option>
+                {MOTIVOS.map((m) => <option key={m.valor} value={m.valor}>{m.texto}</option>)}
               </select>
             </div>
             )}
 
-            {/* Sección de cursos */}
-            {mostrarCursos && (loadingCourses || courses.length > 0) && (
-              <div className="p-4 bg-gray-50 border border-gray-700 rounded-lg">
-                <label className="block text-sm font-semibold mb-3 text-gray-900">
-                  Selecciona los cursos de tu interés:
-                </label>
-                {loadingCourses ? (
-                  <div className="flex justify-center py-4">
-                    <LoadingSpinner size="medium" color="primary" />
+            {/* Fichas del motivo elegido (en gas el servicio ya va marcado) */}
+            {!gas && gruposConCurso.length > 0 && (
+              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                <p className="text-sm font-semibold text-gray-900">
+                  {motivo === "cursos" ? "Marca los cursos que te interesan" : motivo === "equipos" ? "Marca los equipos que te interesan" : "Marca los servicios que te interesan"}
+                  <span className="ml-2 text-xs font-normal text-gray-500">{intereses.length ? `${intereses.length} marcados` : "opcional"}</span>
+                </p>
+                {gruposConCurso.map((g) => (
+                  <div key={g.titulo} className="mt-3">
+                    {gruposConCurso.length > 1 && <p className="mb-1.5 text-[11px] font-bold uppercase tracking-widest text-gray-500">{g.titulo}</p>}
+                    <div className="flex flex-wrap gap-2">
+                      {g.opciones.map((o) => {
+                        const on = intereses.includes(o);
+                        return (
+                          <button
+                            key={o}
+                            type="button"
+                            onClick={() => alternarInteres(o)}
+                            aria-pressed={on}
+                            disabled={loading}
+                            className={`rounded-full border px-3 py-1.5 text-sm font-semibold transition-colors ${on ? "border-secondary bg-secondary text-black" : "border-gray-300 bg-white text-gray-800 hover:border-secondary"}`}
+                          >
+                            {on ? "✓ " : ""}{o}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
-                ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {courses.map((curso) => (
-                      <label
-                        key={curso.id}
-                        className="flex items-start gap-3 cursor-pointer group"
-                      >
-                        <input
-                          type="checkbox"
-                          checked={formData.custom_fields?.coursesOfInterest.includes(curso.name)}
-                          onChange={() => handleCheckboxArrayChange("coursesOfInterest", curso.name)}
-                          disabled={loading}
-                          className="mt-1 w-4 h-4 text-secondary bg-white border-gray-300 rounded focus:ring-2 focus:ring-secondary"
-                        />
-                        <span className="text-sm text-gray-900 group-hover:font-bold transition-colors">
-                          {curso.name}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Sección de servicios */}
-            {mostrarServicios && !gas && (
-              <div className="p-4 bg-gray-50 border border-gray-700 rounded-lg">
-                <label className="block text-sm font-semibold mb-3 text-gray-900">
-                  Selecciona los servicios de tu interés:
-                </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {SERVICES.map((servicio) => (
-                    <label
-                      key={servicio}
-                      className="flex items-start gap-3 cursor-pointer group"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={formData.custom_fields?.servicesOfInterest.includes(servicio)}
-                        onChange={() => handleCheckboxArrayChange("servicesOfInterest", servicio)}
-                        disabled={loading}
-                        className="mt-1 w-4 h-4 text-secondary bg-white border-gray-300 rounded focus:ring-2 focus:ring-secondary"
-                      />
-                      <span className="text-sm text-gray-900 group-hover:font-bold transition-colors">
-                        {servicio}
-                      </span>
-                    </label>
-                  ))}
-                </div>
+                ))}
               </div>
             )}
 
@@ -485,7 +460,7 @@ export default function ContactForm({ gas = false, curso }: Props) {
                 rows={3}
                 disabled={loading}
                 className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all resize-none text-gray-900 placeholder:text-gray-400"
-                placeholder="Cuéntanos más sobre tu consulta..."
+                placeholder={MENSAJE_POR_MOTIVO[motivo]}
               />
             </div>
 
