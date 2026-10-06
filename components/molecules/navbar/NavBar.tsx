@@ -255,111 +255,129 @@ export default function NavBar() {
                     </div>
                 </div>
 
-                {/* Mobile Menu */}
+                {/* Menú móvil en acordeón (Emiliano, 2026-10-05): antes era una
+                    lista plana con los 13 subservicios y los 15 cursos abiertos,
+                    y había que deslizar varias pantallas para llegar a Empresa.
+                    Ahora cada entrada principal se abre al tocarla, con sus
+                    grupos también plegados, y el panel cabe en la pantalla con
+                    su propio desplazamiento. Solo cambia en celular: en
+                    escritorio sigue el panel ancho. */}
                 {isMobileMenuOpen && (
-                    <div className="lg:hidden absolute top-full left-0 w-full bg-black border-t border-white/10 shadow-xl">
-                        <div className="flex flex-col space-y-1 px-4 py-4">
-                            {/* Servicios — mismo agrupamiento que en escritorio */}
-                            <div className="py-2">
-                                <p className="text-white/60 text-xs uppercase font-semibold px-4 mb-2">
-                                    Servicios
-                                </p>
-                                {services.map((item, index) => (
-                                    <div key={index}>
-                                        <Link
-                                            href={item.href}
-                                            className="text-white hover:text-secondary transition-colors py-2.5 px-6 block rounded-lg hover:bg-white/5"
-                                            onClick={() => setIsMobileMenuOpen(false)}
-                                        >
-                                            {item.label}
-                                        </Link>
-                                        {"children" in item && item.children?.map((child) => (
-                                            <Link
-                                                key={child.href}
-                                                href={child.href}
-                                                className="text-white/80 hover:text-secondary transition-colors py-2 pl-10 pr-6 block text-sm rounded-lg hover:bg-white/5"
-                                                onClick={() => setIsMobileMenuOpen(false)}
-                                            >
+                    <div className="lg:hidden absolute top-full left-0 w-full bg-black border-t border-white/10 shadow-xl max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain">
+                        <nav className="px-4 py-3" aria-label="Menú principal">
+                            <Acordeon titulo="Servicios" href="/servicios/monitoreo-condicion" abierto>
+                                {[monitoreoCondicion, monitoreoContinuo].map((grupo) => (
+                                    <Acordeon key={grupo.href} titulo={grupo.label} href={grupo.href} nivel={2}>
+                                        {(grupo.children ?? []).map((child) => (
+                                            <EnlaceMovil key={child.href} href={child.href} nivel={3} onClick={() => setIsMobileMenuOpen(false)}>
                                                 {child.label}
-                                            </Link>
+                                            </EnlaceMovil>
                                         ))}
-                                    </div>
+                                    </Acordeon>
                                 ))}
-                            </div>
-
-                            {/* Cursos: los mismos grupos que en escritorio */}
-                            <div className="py-2">
-                                <p className="text-white/60 text-xs uppercase font-semibold px-4 mb-2">
-                                    Cursos
-                                </p>
-                                <Link
-                                    href="/cursos"
-                                    className="text-white hover:text-secondary transition-colors py-2.5 px-6 block rounded-lg hover:bg-white/5"
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                    Todos los cursos
-                                </Link>
-                                {columnasCursos.map((columna) => (
-                                    <div key={columna.titulo}>
-                                        <p className="text-white/50 text-xs px-6 pt-2 pb-1">{columna.titulo}</p>
-                                        {columna.items.map((item) => (
-                                            <Link
-                                                key={item.href}
-                                                href={item.href}
-                                                className="text-white/80 hover:text-secondary transition-colors py-2 pl-10 pr-6 block text-sm rounded-lg hover:bg-white/5"
-                                                onClick={() => setIsMobileMenuOpen(false)}
-                                            >
-                                                {item.label}
-                                            </Link>
-                                        ))}
-                                    </div>
-                                ))}
-                            </div>
-                            <Link
-                                href="/productos"
-                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Equipos
-                            </Link>
-
-                            <Link
-                                href="/casos-exito"
-                                className="text-white hover:text-secondary transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Casos de Éxito
-                            </Link>
-
-                            {/* Empresa */}
-                            <div className="py-2">
-                                <p className="text-white/60 text-xs uppercase font-semibold px-4 mb-2">
-                                    Empresa
-                                </p>
-                                {empresaLinks.map((item, index) => (
-                                    <Link
-                                        key={index}
-                                        href={item.href}
-                                        className="text-white hover:text-secondary transition-colors py-2.5 px-6 block rounded-lg hover:bg-white/5"
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                    >
+                                {sueltos.map((item) => (
+                                    <EnlaceMovil key={item.href} href={item.href} nivel={2} onClick={() => setIsMobileMenuOpen(false)}>
                                         {item.label}
-                                    </Link>
+                                    </EnlaceMovil>
                                 ))}
-                            </div>
+                            </Acordeon>
 
-                            {/* Mobile CTA */}
-                            <div className="pt-4 pb-2 px-4">
+                            <Acordeon titulo="Cursos" href="/cursos">
+                                {diplomado && (
+                                    <EnlaceMovil href={diplomado.href} nivel={2} onClick={() => setIsMobileMenuOpen(false)}>
+                                        {diplomado.label}
+                                    </EnlaceMovil>
+                                )}
+                                {columnasCursos.map((columna) => (
+                                    <Acordeon key={columna.titulo} titulo={columna.titulo} nivel={2}>
+                                        {columna.items
+                                            .filter((item) => item.href !== diplomado?.href)
+                                            .map((item) => (
+                                                <EnlaceMovil key={item.href} href={item.href} nivel={3} onClick={() => setIsMobileMenuOpen(false)}>
+                                                    {item.label}
+                                                </EnlaceMovil>
+                                            ))}
+                                    </Acordeon>
+                                ))}
+                            </Acordeon>
+
+                            <EnlaceMovil href="/productos" onClick={() => setIsMobileMenuOpen(false)}>
+                                Equipos
+                            </EnlaceMovil>
+                            <EnlaceMovil href="/casos-exito" onClick={() => setIsMobileMenuOpen(false)}>
+                                Casos de Éxito
+                            </EnlaceMovil>
+
+                            <Acordeon titulo="Empresa">
+                                {empresaLinks.map((item) => (
+                                    <EnlaceMovil key={item.href} href={item.href} nivel={2} onClick={() => setIsMobileMenuOpen(false)}>
+                                        {item.label}
+                                    </EnlaceMovil>
+                                ))}
+                            </Acordeon>
+
+                            {/* Cotizar, siempre a la vista al final del panel */}
+                            <div className="sticky bottom-0 -mx-4 mt-2 border-t border-white/10 bg-black px-4 py-3">
                                 <Link href="/contacto" onClick={() => setIsMobileMenuOpen(false)}>
                                     <Button variant="primary" ghost ghostVariant="auto">
                                         Cotizar
                                     </Button>
                                 </Link>
                             </div>
-                        </div>
+                        </nav>
                     </div>
                 )}
             </div>
         </nav>
     );
 };
+
+/* Sangría por nivel del menú móvil. */
+const SANGRIA = { 1: "pl-4", 2: "pl-8", 3: "pl-12" } as const;
+
+/** Enlace del menú móvil: una fila tocable, con el tamaño según el nivel. */
+function EnlaceMovil({ href, nivel = 1, onClick, children }: { href: string; nivel?: 1 | 2 | 3; onClick: () => void; children: React.ReactNode }) {
+    return (
+        <Link
+            href={href}
+            onClick={onClick}
+            className={`block rounded-lg ${SANGRIA[nivel]} pr-4 ${nivel === 1 ? "py-3 text-base font-semibold text-white" : nivel === 2 ? "py-2.5 text-[15px] text-white/90" : "py-2 text-sm text-white/75"} transition-colors hover:bg-white/5 hover:text-secondary`}
+        >
+            {children}
+        </Link>
+    );
+}
+
+/**
+ * Grupo plegable del menú móvil. La fila completa abre o cierra el grupo; si
+ * el grupo tiene página propia, va como primer enlace dentro ("Ver todo"),
+ * para que tocar el título no navegue por accidente.
+ */
+function Acordeon({ titulo, href, nivel = 1, abierto = false, children }: { titulo: string; href?: string; nivel?: 1 | 2; abierto?: boolean; children: React.ReactNode }) {
+    const [open, setOpen] = useState(abierto);
+    return (
+        <div className={nivel === 1 ? "border-b border-white/10" : ""}>
+            <button
+                type="button"
+                onClick={() => setOpen((v) => !v)}
+                aria-expanded={open}
+                className={`flex w-full items-center justify-between rounded-lg ${SANGRIA[nivel]} pr-4 text-left transition-colors hover:bg-white/5 ${nivel === 1 ? "py-3 text-base font-semibold text-white" : "py-2.5 text-[15px] font-semibold text-white/90"}`}
+            >
+                {titulo}
+                <svg className={`h-4 w-4 shrink-0 text-secondary transition-transform duration-200 ${open ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            {open && (
+                <div className="pb-2">
+                    {href && (
+                        <Link href={href} className={`block rounded-lg ${nivel === 1 ? "pl-8" : "pl-12"} pr-4 py-2 text-sm font-bold text-secondary hover:bg-white/5`}>
+                            Ver todo
+                        </Link>
+                    )}
+                    {children}
+                </div>
+            )}
+        </div>
+    );
+}
