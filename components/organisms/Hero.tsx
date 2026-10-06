@@ -65,7 +65,7 @@ const SLIDES: Slide[] = [
       "Sensores de vibración, cámaras térmicas fijas, sensores acústicos y DGA en línea para cuando la falla no da tiempo de esperar la siguiente ruta.",
     cta: { label: "Ver monitoreo continuo", href: "/servicios/monitoreo-continuo" },
     ctaSecondary: { label: "Solicitar demo", href: "/contacto" },
-    image: { src: "/images/header-sensores.png", alt: "Sensor de vibración instalado en maquinaria industrial" },
+    image: { src: "/images/header-sensores.webp", alt: "Sensor de vibración instalado en maquinaria industrial" },
     contener: true,
   },
   {
@@ -133,15 +133,15 @@ export default function Hero() {
       <div className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-secondary/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-28 lg:min-h-[calc(100vh-5rem)] lg:py-24">
-        <div className="relative grid min-h-[36rem] grid-cols-1 items-center gap-10 lg:min-h-[32rem] lg:grid-cols-[5fr_6fr] lg:gap-12">
+      <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-28 lg:flex lg:min-h-[calc(100vh-5rem)] lg:flex-col lg:justify-center lg:py-24 2xl:max-w-[88rem] 2xl:px-10">
+        <div className="relative grid min-h-[36rem] grid-cols-1 items-center gap-10 lg:min-h-[32rem] lg:grid-cols-[5fr_6fr] lg:gap-12 2xl:grid-cols-[5fr_7fr] 2xl:gap-16">
           {SLIDES.map((s, i) => {
             const activa = i === actual;
             return (
               <div
                 key={s.id}
                 aria-hidden={!activa}
-                className={`col-start-1 row-start-1 grid grid-cols-1 items-center gap-10 transition-opacity duration-700 ease-in-out lg:grid-cols-[5fr_6fr] lg:gap-12 ${
+                className={`col-start-1 row-start-1 grid grid-cols-1 items-center gap-10 transition-opacity duration-700 ease-in-out lg:grid-cols-[5fr_6fr] lg:gap-12 2xl:grid-cols-[5fr_7fr] 2xl:gap-16 ${
                   activa ? "opacity-100" : "pointer-events-none opacity-0"
                 }`}
                 style={{ gridColumn: "1 / -1" }}
@@ -149,15 +149,15 @@ export default function Hero() {
                 <div className="flex flex-col">
                   <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-secondary lg:text-sm">{s.badge}</p>
                   {i === 0 ? (
-                    <h1 className="mb-5 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+                    <h1 className="mb-5 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl 2xl:text-6xl">
                       {s.title} <span className="text-secondary">{s.titleHighlight}</span>
                     </h1>
                   ) : (
-                    <p role="heading" aria-level={2} className="mb-5 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+                    <p role="heading" aria-level={2} className="mb-5 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl 2xl:text-6xl">
                       {s.title} <span className="text-secondary">{s.titleHighlight}</span>
                     </p>
                   )}
-                  <p className="mb-8 max-w-xl text-justify text-base leading-relaxed text-white/80 lg:text-lg">{s.description}</p>
+                  <p className="mb-8 max-w-xl text-justify text-base leading-relaxed text-white/80 lg:text-lg 2xl:max-w-2xl 2xl:text-xl">{s.description}</p>
                   {s.certifica && (
                     <ul className="-mt-2 mb-8 grid max-w-xl grid-cols-1 gap-2 sm:grid-cols-3">
                       {CERTIFICACIONES.map((c) => (
@@ -189,8 +189,8 @@ export default function Hero() {
                 <div className="w-full">
                   {s.image ? (
                     <div
-                      className={`relative aspect-[16/10] w-full overflow-hidden rounded-[14px] ${
-                        s.contener ? "" : "shadow-2xl ring-1 ring-white/10"
+                      className={`relative w-full overflow-hidden rounded-[14px] ${
+                        s.contener ? "aspect-[4/3]" : "aspect-[16/10] shadow-2xl ring-1 ring-white/10"
                       }`}
                     >
                       <Image
@@ -198,7 +198,7 @@ export default function Hero() {
                         alt={s.image.alt}
                         fill
                         sizes="(min-width: 1024px) 55vw, 100vw"
-                        className={s.contener ? "object-contain drop-shadow-2xl" : "object-cover"}
+                        className={s.contener ? "scale-110 object-contain drop-shadow-2xl" : "object-cover"}
                         priority={i === 1}
                       />
                       {s.certifica && (
