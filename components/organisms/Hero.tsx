@@ -108,6 +108,13 @@ function Flecha() {
 export default function Hero() {
   const [actual, setActual] = useState(0);
   const [pausa, setPausa] = useState(false);
+  // Diapositivas que ya se mostraron: solo esas cargan su foto. Antes las
+  // cuatro fotos se pedían de entrada aunque tres estuvieran ocultas
+  // (Clarity, 2026-10-05: LCP de 5.4 s en la portada).
+  const [vistas, setVistas] = useState<Set<number>>(() => new Set([0]));
+  useEffect(() => {
+    setVistas((v) => (v.has(actual) ? v : new Set(v).add(actual)));
+  }, [actual]);
   const reloj = useRef<number | null>(null);
 
   useEffect(() => {
@@ -128,7 +135,7 @@ export default function Hero() {
     >
       {/* La foto del engranaje de fondo, como en el hero original, velada con
           el azul de la marca para que el texto se lea. */}
-      <Image src="/images/screen.png" alt="" fill priority sizes="100vw" className="object-cover" />
+      <Image src="/images/screen.webp" alt="" fill priority quality={60} sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 bg-primary/65" />
       <div className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-secondary/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
@@ -188,7 +195,7 @@ export default function Hero() {
 
                 <div className="w-full">
                   {s.image ? (
-                    <div
+                    vistas.has(i) && <div
                       className={`relative w-full overflow-hidden rounded-[14px] ${
                         s.contener ? "aspect-[4/3]" : "aspect-[16/10] shadow-2xl ring-1 ring-white/10"
                       }`}
@@ -199,7 +206,6 @@ export default function Hero() {
                         fill
                         sizes="(min-width: 1024px) 55vw, 100vw"
                         className={s.contener ? "scale-110 object-contain drop-shadow-2xl" : "object-cover"}
-                        priority={i === 1}
                       />
                       {s.certifica && (
                         <div className="absolute bottom-3 right-3 flex items-center gap-3 rounded-full bg-primary/85 py-1.5 pl-1.5 pr-4 shadow-xl ring-1 ring-secondary/40 backdrop-blur-sm sm:bottom-4 sm:right-4">
@@ -212,7 +218,7 @@ export default function Hero() {
                       )}
                     </div>
                   ) : (
-                    <EscenaDolor modo="con" inicio={INICIO_CIERRE} />
+                    <EscenaDolor modo="con" inicio={INICIO_CIERRE} poster={{ src: "/videos/idap/idap-equipo.jpg", alt: "Ficha de un equipo en IDAP con su diagnóstico por disciplina" }} />
                   )}
                 </div>
               </div>

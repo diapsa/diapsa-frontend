@@ -66,7 +66,7 @@ function Flecha({ izquierda = false }: { izquierda?: boolean }) {
   );
 }
 
-export default function CarruselBloque({ etiqueta, titulo, texto, apartados, href, fondo = "/images/screen.png", intervalo = 5000 }: Props) {
+export default function CarruselBloque({ etiqueta, titulo, texto, apartados, href, fondo = "/images/screen.webp", intervalo = 5000 }: Props) {
   const [activo, setActivo] = useState(apartados[0]?.id);
   const [pausa, setPausa] = useState(false);
   const pista = useRef<HTMLUListElement>(null);

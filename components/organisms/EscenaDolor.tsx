@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 /**
  * EscenaDolor
@@ -26,18 +27,28 @@ type Props = {
   modo: Modo;
   /** Segundo de la historia en que arranca (la portada empieza en el cierre). */
   inicio?: number;
+  /** Imagen fija para pantallas chicas: en celular no se monta Three.js
+      (Clarity, 2026-10-05: INP de 590 ms y LCP de 5.4 s en la portada). */
+  poster?: { src: string; alt: string };
 };
 
-export default function EscenaDolor({ modo, inicio = 0 }: Props) {
+export default function EscenaDolor({ modo, inicio = 0, poster }: Props) {
   const cuadro = useRef<HTMLDivElement>(null);
   const escena = useRef<Limpieza | null>(null);
   const modoInicial = useRef(modo);
   const inicioRef = useRef(inicio);
   const [montada, setMontada] = useState(false);
+  // undefined mientras no se sabe el ancho (servidor); true en celular
+  const [chica, setChica] = useState<boolean | undefined>(undefined);
+  useEffect(() => {
+    if (!poster) return setChica(false);
+    const mq = window.matchMedia("(max-width: 1023px)");
+    setChica(mq.matches);
+  }, [poster]);
 
   useEffect(() => {
     const root = cuadro.current;
-    if (!root) return;
+    if (!root || chica !== false) return;
     let cancelado = false;
     let iniciada = false;
 
@@ -48,7 +59,11 @@ export default function EscenaDolor({ modo, inicio = 0 }: Props) {
       window.removeEventListener("scroll", comprobar);
       window.removeEventListener("resize", comprobar);
       root.dataset.escena = "cargando";
-      Promise.all([import("three"), import("@/lib/escena-dolor")])
+      // Se carga cuando el navegador está libre, para no competir con la
+      // primera pintura ni con el primer toque
+      const cuandoLibre = (fn: () => void) =>
+        typeof window.requestIdleCallback === "function" ? window.requestIdleCallback(fn, { timeout: 2500 }) : setTimeout(fn, 300);
+      cuandoLibre(() => Promise.all([import("three"), import("@/lib/escena-dolor")])
         .then(([THREE, { montarEscenaDolor }]) => {
           if (cancelado) return;
           try {
@@ -63,7 +78,7 @@ export default function EscenaDolor({ modo, inicio = 0 }: Props) {
         .catch((e) => {
           root.dataset.escena = "error";
           console.warn("[escdolor] no se pudo cargar la escena:", e);
-        });
+        }));
     };
     const comprobar = () => {
       const r = root.getBoundingClientRect();
@@ -87,7 +102,7 @@ export default function EscenaDolor({ modo, inicio = 0 }: Props) {
       escena.current?.();
       escena.current = null;
     };
-  }, []);
+  }, [chica]);
 
   // Cambio de pestaña: la escena ya montada cambia de historia; si todavía
   // no carga, arrancará con el modo que tenga en ese momento.
@@ -95,6 +110,14 @@ export default function EscenaDolor({ modo, inicio = 0 }: Props) {
     modoInicial.current = modo;
     escena.current?.modo?.(modo);
   }, [modo]);
+
+  if (poster && chica !== false) {
+    return (
+      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[14px] shadow-2xl ring-1 ring-white/10">
+        <Image src={poster.src} alt={poster.alt} fill sizes="100vw" priority className="object-cover" />
+      </div>
+    );
+  }
 
   return (
     <div
