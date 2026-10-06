@@ -74,12 +74,17 @@ export default function ContactForm({ gas = false, curso }: Props) {
   // casillas, opciones del motivo que se marcan con un toque. Las listas
   // salen de lib/contacto-opciones.ts; en la página de un curso, ese curso va
   // marcado aunque no esté en el menú.
-  const [intereses, setIntereses] = useState<string[]>(curso ? [curso] : gas ? [SERVICIO_GAS] : []);
+  // El curso de la página se marca con su ficha del menú si la hay ("Diplomado
+  // en Confiabilidad" para el nombre largo del diplomado); si no, con su nombre.
+  const fichaDelCurso = curso
+    ? OPCIONES_POR_MOTIVO.cursos.flatMap((g) => g.opciones).find((o) => curso.toLowerCase().startsWith(o.toLowerCase()) || o.toLowerCase().endsWith(curso.toLowerCase())) ?? curso
+    : undefined;
+  const [intereses, setIntereses] = useState<string[]>(fichaDelCurso ? [fichaDelCurso] : gas ? [SERVICIO_GAS] : []);
   const motivo = (formData.custom_fields?.subject || "") as Motivo | "";
   const grupos = motivo ? OPCIONES_POR_MOTIVO[motivo] : [];
   const gruposConCurso =
-    curso && motivo === "cursos" && !grupos.some((g) => g.opciones.includes(curso))
-      ? [{ titulo: "Este curso", opciones: [curso] }, ...grupos]
+    fichaDelCurso && motivo === "cursos" && !grupos.some((g) => g.opciones.includes(fichaDelCurso))
+      ? [{ titulo: "Este curso", opciones: [fichaDelCurso] }, ...grupos]
       : grupos;
   const alternarInteres = (o: string) => setIntereses((prev) => (prev.includes(o) ? prev.filter((x) => x !== o) : [...prev, o]));
 
@@ -212,7 +217,7 @@ export default function ContactForm({ gas = false, curso }: Props) {
     if (result) {
       // Success - reset form
       setFormData(estadoInicial(gas, curso));
-      setIntereses(curso ? [curso] : gas ? [SERVICIO_GAS] : []);
+      setIntereses(fichaDelCurso ? [fichaDelCurso] : gas ? [SERVICIO_GAS] : []);
       setPerfil({ area: "", ppciem: "" });
       setAceptaPrivacidad(false);
       setFieldErrors({});
