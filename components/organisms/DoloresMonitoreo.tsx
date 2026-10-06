@@ -143,7 +143,7 @@ export default function DoloresMonitoreo() {
               <p className="mt-2 text-justify text-sm leading-relaxed text-white/75">{c.cierre.texto}</p>
             </div>
             <Link
-              href="/contacto"
+              href="/contacto?motivo=servicios"
               className="inline-flex shrink-0 items-center gap-2 rounded-xs bg-secondary px-6 py-3 font-bold text-primary transition-colors hover:bg-white"
             >
               {c.cierre.boton}

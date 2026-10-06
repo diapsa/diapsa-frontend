@@ -49,7 +49,7 @@ export default function ContinuosMonitoringValueProp() {
                             ))}
                         </div>
                         <div className="flex flex-wrap items-center gap-4 pt-2">
-                            <Link href="/contacto">
+                            <Link href="/contacto?motivo=servicios">
                                 <Button variant="secondary" className="px-8 py-3 text-base">
                                     Solicitar informes
                                 </Button>

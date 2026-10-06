@@ -108,7 +108,7 @@ export default function CasosExitoTeaser({ cases }: CasosExitoTeaserProps) {
                                     </svg>
                                 </Link>
                                 <Link
-                                    href="/contacto"
+                                    href="/contacto?motivo=servicios"
                                     className="inline-flex w-full sm:w-fit items-center justify-center gap-2 border border-white/60 bg-white/5 text-white font-bold px-6 py-3 rounded-xs hover:bg-white hover:border-white hover:text-primary transition-all duration-300"
                                 >
                                     Quiero lograr estos resultados

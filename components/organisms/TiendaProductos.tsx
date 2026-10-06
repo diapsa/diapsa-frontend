@@ -297,7 +297,7 @@ export default function TiendaProductos({ productos, marcas }: Props) {
         <p className="mt-2 text-justify text-sm leading-relaxed text-white/75">
           Dinos qué equipos quieres revisar y te recomendamos el modelo que tu planta necesita, sin pagar de más.
         </p>
-        <Link href="/contacto" className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-secondary hover:text-white">
+        <Link href="/contacto?motivo=equipos" className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-secondary hover:text-white">
           Pedir asesoría <Flecha />
         </Link>
       </div>

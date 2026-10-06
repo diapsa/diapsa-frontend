@@ -198,7 +198,7 @@ export default function ContinuosMonitoringTechnology() {
                                                     {expanded === equipo.id ? "Ocultar specs" : "Ver especificaciones"}
                                                 </button>
                                             )}
-                                            <Link href="/contacto">
+                                            <Link href="/contacto?motivo=servicios">
                                                 <Button variant="primary" className="text-sm">
                                                     Solicitar información
                                                 </Button>
@@ -248,7 +248,7 @@ export default function ContinuosMonitoringTechnology() {
                             </p>
                         </div>
                         <div className="flex flex-wrap gap-3 shrink-0">
-                            <Link href="/contacto">
+                            <Link href="/contacto?motivo=servicios">
                                 <Button variant="primary">Hablar con un experto</Button>
                             </Link>
                             <Link href="/metodologia">

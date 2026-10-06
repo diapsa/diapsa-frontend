@@ -238,7 +238,7 @@ export default async function CasosExitoPage({ searchParams }: CasosExitoPagePro
                         predictivo, monitoreo de condición y confiabilidad industrial.
                     </p>
                     <Link
-                        href="/contacto"
+                        href="/contacto?motivo=servicios"
                         className="inline-flex items-center gap-2 bg-secondary text-primary font-bold px-8 py-3 rounded-xs hover:bg-white hover:text-primary transition-all duration-300 shadow-md"
                     >
                         Contactar especialista

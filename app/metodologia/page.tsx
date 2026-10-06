@@ -79,7 +79,7 @@ export default async function MetodologiaPage() {
 
               {/* CTA Link */}
               <div className="relative z-10">
-                <Link href="/contacto" className="inline-flex items-center gap-2 bg-secondary text-primary font-bold px-8 py-3 rounded-xs hover:bg-white hover:text-primary transition-all duration-300 shadow-md [&>span]:hidden">
+                <Link href="/contacto?motivo=servicios" className="inline-flex items-center gap-2 bg-secondary text-primary font-bold px-8 py-3 rounded-xs hover:bg-white hover:text-primary transition-all duration-300 shadow-md [&>span]:hidden">
                   Contáctanos
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -139,7 +139,7 @@ export default async function MetodologiaPage() {
 
           <div className="mt-12 text-center">
             <Link
-              href="/contacto"
+              href="/contacto?motivo=servicios"
               className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-3 rounded-xs hover:bg-secondary hover:text-primary transition-all duration-300 shadow-md"
             >
               Solicitar información
@@ -227,7 +227,7 @@ export default async function MetodologiaPage() {
             Comparte tus datos en el formulario y cuéntanos que equipos, procesos o fallas necesitas evaluar.
           </p>
           <Link
-            href="/contacto"
+            href="/contacto?motivo=servicios"
             className="inline-flex items-center gap-2 bg-secondary text-primary font-bold px-8 py-3 rounded-xs hover:bg-white hover:text-primary transition-all duration-300 shadow-md"
           >
             Cuéntanos de ti
