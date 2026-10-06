@@ -155,7 +155,7 @@ export default function NavBar() {
                     {/* Left Side: Logo + Desktop Navigation */}
                     <div className="flex items-center gap-6 xl:gap-10 min-w-0">
                         {/* Logo */}
-                        <Link href="/" className="flex items-center z-50 shrink-0">
+                        <Link prefetch={false} href="/" className="flex items-center z-50 shrink-0">
                             <Logo />
                         </Link>
 
@@ -177,7 +177,7 @@ export default function NavBar() {
                     <div className="flex items-center gap-4 sm:gap-6">
                         {/* Desktop CTA Button */}
                         <div className="hidden lg:block">
-                            <Link href="/contacto">
+                            <Link prefetch={false} href="/contacto">
                                 <Button variant="primary" ghost ghostVariant="auto">
                                     Cotizar
                                 </Button>
@@ -318,7 +318,7 @@ export default function NavBar() {
 
                             {/* Cotizar, siempre a la vista al final del panel */}
                             <div className="sticky bottom-0 -mx-4 mt-2 border-t border-white/10 bg-black px-4 py-3">
-                                <Link href="/contacto" onClick={() => setIsMobileMenuOpen(false)}>
+                                <Link prefetch={false} href="/contacto" onClick={() => setIsMobileMenuOpen(false)}>
                                     <Button variant="primary" ghost ghostVariant="auto">
                                         Cotizar
                                     </Button>
@@ -338,7 +338,7 @@ const SANGRIA = { 1: "pl-4", 2: "pl-8", 3: "pl-12" } as const;
 /** Enlace del menú móvil: una fila tocable, con el tamaño según el nivel. */
 function EnlaceMovil({ href, nivel = 1, onClick, children }: { href: string; nivel?: 1 | 2 | 3; onClick: () => void; children: React.ReactNode }) {
     return (
-        <Link
+        <Link prefetch={false}
             href={href}
             onClick={onClick}
             className={`block rounded-lg ${SANGRIA[nivel]} pr-4 ${nivel === 1 ? "py-3 text-base font-semibold text-white" : nivel === 2 ? "py-2.5 text-[15px] text-white/90" : "py-2 text-sm text-white/75"} transition-colors hover:bg-white/5 hover:text-secondary`}
@@ -371,7 +371,7 @@ function Acordeon({ titulo, href, nivel = 1, abierto = false, children }: { titu
             {open && (
                 <div className="pb-2">
                     {href && (
-                        <Link href={href} className={`block rounded-lg ${nivel === 1 ? "pl-8" : "pl-12"} pr-4 py-2 text-sm font-bold text-secondary hover:bg-white/5`}>
+                        <Link prefetch={false} href={href} className={`block rounded-lg ${nivel === 1 ? "pl-8" : "pl-12"} pr-4 py-2 text-sm font-bold text-secondary hover:bg-white/5`}>
                             Ver todo
                         </Link>
                     )}
