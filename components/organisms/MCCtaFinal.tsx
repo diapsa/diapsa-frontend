@@ -26,7 +26,7 @@ export default function MCCtaFinal() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     {/* CTA Primario */}
                     <Link
-                        href="/contacto"
+                        href="/contacto?motivo=servicios"
                         className="inline-flex items-center gap-2 bg-secondary text-primary font-bold px-8 py-3 rounded-xs hover:bg-white hover:text-primary transition-all duration-300 shadow-md"
                     >
                         Agendar diagnóstico

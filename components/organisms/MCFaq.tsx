@@ -80,7 +80,7 @@ export default function MCFaq() {
                         ¿Tu caso necesita una respuesta más específica?
                     </p>
                     <Link
-                        href="/contacto"
+                        href="/contacto?motivo=servicios"
                         className="inline-flex items-center gap-2 rounded-xs bg-primary px-8 py-3 font-bold text-white shadow-md transition-colors hover:bg-secondary hover:text-primary"
                     >
                         Resolver una duda sobre mi planta

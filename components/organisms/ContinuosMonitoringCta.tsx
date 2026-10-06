@@ -29,7 +29,7 @@ export default function ContinuosMonitoringCta() {
                     diseñar la solución correcta para tu planta.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-                    <Link href="/contacto">
+                    <Link href="/contacto?motivo=servicios">
                         <Button variant="secondary" className="px-10 py-4 text-lg">
                             Solicitar diagnóstico
                         </Button>

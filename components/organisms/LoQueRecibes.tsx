@@ -220,7 +220,7 @@ export default function LoQueRecibes() {
             })}
             <li className="mt-3 flex flex-wrap gap-3 pl-3 sm:pl-4">
               <Link
-                href="/contacto"
+                href="/contacto?motivo=servicios"
                 className="inline-flex items-center gap-2 rounded-xs bg-secondary px-6 py-3 font-bold text-primary shadow-md transition-colors hover:bg-white"
               >
                 Quiero ver un informe de ejemplo <Flecha />

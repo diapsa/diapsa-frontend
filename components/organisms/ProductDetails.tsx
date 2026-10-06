@@ -5,6 +5,7 @@
 
 'use client';
 
+import { enlaceContacto } from "@/lib/contacto-opciones";
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -179,7 +180,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               Solicitar cotización
             </a>
             <Link
-              href="/contacto"
+              href={enlaceContacto("equipos", product.name)}
               className="
                 flex-1 px-6 py-3 border-2 border-primary text-primary rounded-lg
                 font-semibold text-center hover:bg-primary/5 transition-colors

@@ -470,7 +470,7 @@ export default function ServiciosProductosPage() {
             nuestro equipo técnico te recomendará el punto de entrada ideal en nuestro ecosistema.
           </p>
           <Link
-            href="/contacto"
+            href="/contacto?motivo=servicios"
             className="inline-flex items-center gap-2 bg-secondary text-primary font-bold px-10 py-4 rounded-xs hover:bg-white hover:text-primary transition-all duration-300 shadow-md text-lg"
           >
             Cuéntanos sobre ti →

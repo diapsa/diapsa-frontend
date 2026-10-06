@@ -146,7 +146,7 @@ export default function CasosDestacados({ casos }: { casos: SuccessCase[] }) {
                 Ver caso completo <Flecha />
               </Link>
               <Link
-                href="/contacto"
+                href="/contacto?motivo=servicios"
                 className="inline-flex items-center gap-2 rounded-xs border border-white/40 px-6 py-3 font-bold text-white transition-colors hover:border-secondary hover:text-secondary"
               >
                 Quiero resultados así
