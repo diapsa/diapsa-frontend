@@ -49,7 +49,7 @@ export default function InicioBlog({ entradas }: { entradas: Blog[] }) {
               Lo que aprendemos midiendo equipos, escrito para quien toma las decisiones de mantenimiento.
             </p>
           </div>
-          <Link
+          <Link prefetch={false}
             href="/blog"
             className="inline-flex shrink-0 items-center gap-2 self-start rounded-xs bg-primary px-6 py-3 font-bold text-white transition-colors hover:bg-secondary hover:text-primary lg:self-auto"
           >
@@ -59,7 +59,7 @@ export default function InicioBlog({ entradas }: { entradas: Blog[] }) {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[3fr_2fr]">
           {/* La más reciente, en grande */}
-          <Link
+          <Link prefetch={false}
             href={`/blog/${principal.slug}`}
             className="group relative flex min-h-[24rem] flex-col justify-end overflow-hidden rounded-sm shadow-lg"
           >
@@ -87,7 +87,7 @@ export default function InicioBlog({ entradas }: { entradas: Blog[] }) {
           <div className="flex flex-col gap-4">
             {/* Las siguientes, en lista */}
             {resto.map((e) => (
-              <Link
+              <Link prefetch={false}
                 key={e.slug}
                 href={`/blog/${e.slug}`}
                 className="group flex gap-4 rounded-sm bg-white p-3 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-md"
@@ -105,7 +105,7 @@ export default function InicioBlog({ entradas }: { entradas: Blog[] }) {
             ))}
 
             {/* La noticia: el próximo webinar */}
-            <Link
+            <Link prefetch={false}
               href="/webinar"
               className="group mt-auto flex items-center gap-4 rounded-sm bg-primary p-5 text-white shadow-lg transition-colors hover:bg-primary/90"
             >

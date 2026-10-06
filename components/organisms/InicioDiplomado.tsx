@@ -73,7 +73,7 @@ export default function InicioDiplomado() {
               </div>
 
               <div className="mt-7 flex flex-wrap gap-3">
-                <Link
+                <Link prefetch={false}
                   href="/cursos/diplomado-confiabilidad-operativa"
                   className="inline-flex items-center gap-2 rounded-xs bg-white px-6 py-3 font-bold text-[#001f5f] transition-colors hover:bg-[#dbe6ff]"
                 >
@@ -82,7 +82,7 @@ export default function InicioDiplomado() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
-                <Link
+                <Link prefetch={false}
                   href="/cursos/diplomado-confiabilidad-operativa#brochure"
                   className="inline-flex items-center gap-2 rounded-xs border border-white/50 px-6 py-3 font-bold text-white transition-colors hover:bg-white/10"
                 >

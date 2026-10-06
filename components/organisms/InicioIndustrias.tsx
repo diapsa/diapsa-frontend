@@ -26,7 +26,7 @@ export default function InicioIndustrias() {
           {datos.industrias.map(({ nombre, slug }) =>
             getIndustria(slug) ? (
               <li key={slug}>
-                <Link
+                <Link prefetch={false}
                   href={`/industrias/${slug}`}
                   className="inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-3 text-base font-bold text-white ring-1 ring-primary transition-colors hover:bg-secondary hover:text-primary"
                 >

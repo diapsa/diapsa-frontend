@@ -181,7 +181,7 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
         </div>
 
         {verTodo && (
-          <Link
+          <Link prefetch={false}
             href={verTodo}
             className="relative mt-6 inline-flex items-center justify-center gap-2 self-start rounded-xs bg-secondary px-5 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-white lg:mt-auto"
           >
@@ -226,7 +226,7 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
             const dipl = t.href === RUTA_DIPLOMADO;
             return (
             <li key={t.href + t.titulo} className="w-[85%] shrink-0 snap-start sm:w-[calc((100%-1.5rem)/2)]">
-              <Link
+              <Link prefetch={false}
                 href={t.href}
                 className="group relative flex h-full flex-col overflow-hidden rounded-sm bg-primary shadow-lg transition-shadow duration-300 hover:shadow-2xl"
                 style={idap ? { background: PIE_IDAP } : dipl ? { background: PIE_DIPLOMADO } : undefined}

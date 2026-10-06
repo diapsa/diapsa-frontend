@@ -47,7 +47,7 @@ export default function ClientesLogos({ paso, antetitulo = "Quién ya confía", 
             </h2>
           </div>
           {enlace && (
-            <Link
+            <Link prefetch={false}
               href={enlace.href}
               className="inline-flex shrink-0 items-center gap-2 border-2 border-primary px-6 py-2.5 font-bold text-primary transition-all duration-300 hover:bg-primary hover:text-white rounded-xs"
             >

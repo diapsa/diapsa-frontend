@@ -162,7 +162,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                   <div className="mb-5 flex min-h-[3.25rem] items-center gap-4">
                     <p className="min-w-0 text-sm font-semibold uppercase leading-snug tracking-widest text-white/50">{columna.titulo}</p>
                     {columna.href && (
-                      <Link
+                      <Link prefetch={false}
                         href={columna.href}
                         onClick={cerrarYa}
                         className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-secondary/50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-secondary transition-colors duration-200 hover:bg-secondary hover:text-primary"
@@ -177,7 +177,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                     <ul className="grid grid-cols-3 gap-3">
                       {columna.items.map((item) => (
                         <li key={item.href}>
-                          <Link
+                          <Link prefetch={false}
                             href={item.href}
                             onClick={cerrarYa}
                             title={item.descripcion}
@@ -197,7 +197,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                     <ul className="flex flex-col">
                       {columna.items.map((item) => (
                         <li key={item.href}>
-                          <Link
+                          <Link prefetch={false}
                             href={item.href}
                             onClick={cerrarYa}
                             title={item.descripcion}
@@ -217,7 +217,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                         <li key={item.href} className="flex-1">
                           {item.href === RUTA_IDAP ? (
                             // IDAP conserva su identidad: su logo sobre el azul de la plataforma.
-                            <Link
+                            <Link prefetch={false}
                               href={item.href}
                               onClick={cerrarYa}
                               title={item.descripcion}
@@ -235,7 +235,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                             </Link>
                           ) : item.href === RUTA_DIPLOMADO ? (
                             // El diplomado con la identidad de su brochure.
-                            <Link
+                            <Link prefetch={false}
                               href={item.href}
                               onClick={cerrarYa}
                               title={item.descripcion}
@@ -253,7 +253,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                               </span>
                             </Link>
                           ) : (
-                          <Link
+                          <Link prefetch={false}
                             href={item.href}
                             onClick={cerrarYa}
                             title={item.descripcion}
@@ -283,7 +283,7 @@ export default function MegaMenu({ trigger, columnas }: Props) {
                     <ul className={`grid gap-x-8 ${columna.ancho === 2 ? "sm:grid-cols-2" : ""}`}>
                       {columna.items.map((item) => (
                         <li key={item.href}>
-                          <Link
+                          <Link prefetch={false}
                             href={item.href}
                             onClick={cerrarYa}
                             className="group flex items-start gap-4 rounded-sm py-3 pr-2 transition-colors duration-200"

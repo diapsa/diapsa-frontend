@@ -54,7 +54,7 @@ export default function InicioGas() {
             ))}
           </ol>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
+            <Link prefetch={false}
               href="/servicios/deteccion-gas"
               className="inline-flex items-center gap-2 rounded-xs bg-secondary px-6 py-3 font-bold text-primary transition-colors hover:bg-white"
             >
@@ -63,7 +63,7 @@ export default function InicioGas() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </Link>
-            <Link
+            <Link prefetch={false}
               href="/servicios/deteccion-gas/guia-ppciem"
               className="inline-flex items-center gap-2 rounded-xs border border-white/40 px-6 py-3 font-bold text-white transition-colors hover:border-secondary hover:text-secondary"
             >
