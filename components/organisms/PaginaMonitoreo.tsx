@@ -161,7 +161,7 @@ export default function PaginaMonitoreo() {
             texto="Medimos la condición de tus equipos con ellos en operación y te decimos qué intervenir, cuándo y por qué. Elige por el tipo de equipo que te preocupa."
             apartados={APARTADOS_CONDICION}
             fondo="/images/servicios/diagnostico-integral/campo-bombas-vista-superior.webp"
-            href="/contacto"
+            href="/contacto?motivo=servicios"
           />
         </div>
       </section>
@@ -337,7 +337,7 @@ export default function PaginaMonitoreo() {
                 <p className="flex-1 text-justify text-sm leading-relaxed text-white/85">
                   <strong className="text-white">¿No estás seguro?</strong> Con una llamada corta sobre tu operación te decimos si el monitoreo es la herramienta correcta.
                 </p>
-                <Link href="/contacto" className="shrink-0 rounded-full bg-secondary px-5 py-2 text-center text-sm font-bold text-primary transition-colors hover:bg-white">
+                <Link href="/contacto?motivo=servicios" className="shrink-0 rounded-full bg-secondary px-5 py-2 text-center text-sm font-bold text-primary transition-colors hover:bg-white">
                   Platiquemos
                 </Link>
               </div>

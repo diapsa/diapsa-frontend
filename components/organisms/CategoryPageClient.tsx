@@ -201,7 +201,7 @@ export default function CategoryPageClient({
               <Link href="/servicios" className="rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-white">
                 Ver servicios
               </Link>
-              <Link href="/contacto" className="rounded-sm border border-primary px-4 py-2 text-sm font-semibold text-primary">
+              <Link href="/contacto?motivo=equipos" className="rounded-sm border border-primary px-4 py-2 text-sm font-semibold text-primary">
                 Solicitar asesoria
               </Link>
             </div>

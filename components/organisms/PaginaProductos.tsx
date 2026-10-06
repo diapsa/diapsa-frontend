@@ -185,7 +185,7 @@ export default function PaginaProductos({
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
-              href="/contacto"
+              href="/contacto?motivo=equipos"
               className="inline-flex items-center gap-2 rounded-xs bg-secondary px-7 py-3 font-bold text-primary transition-colors hover:bg-white"
             >
               Solicitar cotización <Flecha />
