@@ -124,7 +124,7 @@ export default function InicioPresencia() {
                   <input type="checkbox" checked={acepta} onChange={(e) => setAcepta(e.target.checked)} className="mt-0.5 h-4 w-4 shrink-0 accent-[#fc9f01]" />
                   <span>
                     He leído y acepto el{" "}
-                    <Link href="/aviso-privacidad" className="text-secondary underline">
+                    <Link prefetch={false} href="/aviso-privacidad" className="text-secondary underline">
                       aviso de privacidad
                     </Link>
                     . Un especialista de DIAPSA te contactará para compartir información de nuestros servicios.

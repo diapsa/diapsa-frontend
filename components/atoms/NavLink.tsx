@@ -26,7 +26,7 @@ export default function NavLink({
   const baseClass = variantStyles[variant];
 
   return (
-    <Link href={href} className={`${baseClass} ${className}`}>
+    <Link prefetch={false} href={href} className={`${baseClass} ${className}`}>
       {children}
     </Link>
   );
