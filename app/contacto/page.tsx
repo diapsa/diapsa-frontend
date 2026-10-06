@@ -105,7 +105,8 @@ export default function ContactPage() {
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                        {/* Izquierda: propuesta, argumentos, cifras y canales */}
+                        {/* Izquierda: los canales directos como protagonistas, al mismo
+                            nivel que el formulario (Emiliano, 2026-10-06: "es uno u otro") */}
                         <div className="flex flex-col gap-8 lg:sticky lg:top-28">
                             <span className="inline-block self-start text-secondary text-xs font-semibold tracking-widest uppercase border border-secondary/40 rounded-full px-3 py-1 bg-secondary/10">
                                 Habla con un especialista
@@ -113,24 +114,56 @@ export default function ContactPage() {
 
                             <div>
                                 <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4">
-                                    TRANSFORMAMOS DATOS EN <span className="text-secondary">DECISIONES QUE PROTEGEN TU PRODUCCIÓN</span>
+                                    ESCRÍBENOS POR DONDE <span className="text-secondary">TE QUEDE MÁS CERCA</span>
                                 </h2>
                                 <p className="text-justify text-white/70 text-lg leading-relaxed">
-                                    Cada hora de paro no programado cuesta más que un año de mantenimiento predictivo. Cuéntanos qué equipos tienes y qué te preocupa, y un especialista te propone por dónde empezar, desde una ruta de medición hasta sensores en línea o el equipo que quieres comprar.
+                                    Cada hora de paro no programado cuesta más que un año de mantenimiento predictivo. Cuéntanos qué equipos tienes y qué te preocupa, por WhatsApp, por teléfono, por correo o en el formulario, y un especialista te responde en un día hábil.
                                 </p>
                             </div>
 
-                            <div className="flex flex-col gap-3">
-                                {ARGUMENTOS.map((a) => (
-                                    <div key={a.titulo} className="flex items-start gap-4 p-4 bg-white/10 rounded-sm border border-white/15 hover:border-secondary/50 transition-colors duration-300">
-                                        <span className="mt-0.5"><Icono d={a.icono} /></span>
-                                        <div>
-                                            <p className="font-bold text-white text-sm">{a.titulo}</p>
-                                            <p className="text-justify text-white/60 text-sm leading-relaxed">{a.texto}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+                            {/* Canales directos, en grande */}
+                            <ul className="grid grid-cols-1 gap-4">
+                                <li>
+                                    <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="flex items-center gap-5 rounded-sm bg-[#25D366] p-5 text-primary shadow-lg transition-transform hover:-translate-y-0.5 lg:p-6">
+                                        <svg className="h-12 w-12 shrink-0 lg:h-14 lg:w-14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                        </svg>
+                                        <span className="min-w-0">
+                                            <span className="block text-xs font-bold uppercase tracking-widest text-primary/70">WhatsApp, el más rápido</span>
+                                            <span className="block text-2xl font-extrabold leading-tight lg:text-3xl">{TELEFONO}</span>
+                                            <span className="block text-sm font-semibold text-primary/80">Escríbenos y te contesta un especialista</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href={TELEFONO_HREF} className="flex h-full items-center gap-4 rounded-sm bg-white/10 p-5 ring-1 ring-white/15 transition-colors hover:ring-secondary/60">
+                                        <Icono className="h-9 w-9" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        <span className="min-w-0">
+                                            <span className="block text-xs font-bold uppercase tracking-widest text-secondary">Llámanos</span>
+                                            <span className="block text-lg font-extrabold leading-tight text-white lg:text-xl">{TELEFONO}</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href={`mailto:${CORREO}`} className="flex h-full items-center gap-4 rounded-sm bg-white/10 p-5 ring-1 ring-white/15 transition-colors hover:ring-secondary/60">
+                                        <Icono className="h-9 w-9" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        <span className="min-w-0">
+                                            <span className="block text-xs font-bold uppercase tracking-widest text-secondary">Correo</span>
+                                            <span className="block text-lg font-extrabold leading-tight text-white lg:text-xl">{CORREO}</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href={MAPA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 rounded-sm bg-white/10 p-5 ring-1 ring-white/15 transition-colors hover:ring-secondary/60">
+                                        <Icono className="h-9 w-9" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <span className="min-w-0">
+                                            <span className="block text-xs font-bold uppercase tracking-widest text-secondary">Visítanos en Saltillo</span>
+                                            <span className="block text-base font-extrabold leading-snug text-white lg:text-lg">{DIRECCION}</span>
+                                            <span className="block text-sm font-bold text-secondary">Cómo llegar</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
 
                             {/* Cifras ya publicadas en el resto del sitio */}
                             <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
@@ -142,31 +175,18 @@ export default function ContactPage() {
                                 ))}
                             </div>
 
-                            {/* Canales directos */}
-                            <div className="border-t border-white/10 pt-6 flex flex-col gap-3">
-                                <p className="text-xs uppercase tracking-widest text-secondary font-semibold mb-1">O escríbenos directo</p>
-                                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/80 hover:text-secondary transition-colors duration-200 text-sm">
-                                    <svg className="w-4 h-4 shrink-0 text-secondary" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                                    </svg>
-                                    WhatsApp {TELEFONO}
-                                </a>
-                                <a href={TELEFONO_HREF} className="flex items-center gap-3 text-white/80 hover:text-secondary transition-colors duration-200 text-sm">
-                                    <Icono className="w-4 h-4" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                    Llamar al {TELEFONO}
-                                </a>
-                                <a href={`mailto:${CORREO}`} className="flex items-center gap-3 text-white/80 hover:text-secondary transition-colors duration-200 text-sm">
-                                    <Icono className="w-4 h-4" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                    {CORREO}
-                                </a>
-                                <a href={MAPA} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-white/80 hover:text-secondary transition-colors duration-200 text-sm">
-                                    <span className="mt-0.5"><Icono className="w-4 h-4" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" /></span>
-                                    <span>
-                                        {DIRECCION}
-                                        <span className="ml-2 font-bold text-secondary">Cómo llegar</span>
-                                    </span>
-                                </a>
-                            </div>
+                            {/* Argumentos, compactos */}
+                            <ul className="flex flex-col gap-2 border-t border-white/10 pt-6">
+                                {ARGUMENTOS.map((a) => (
+                                    <li key={a.titulo} className="flex items-start gap-3">
+                                        <span className="mt-0.5"><Icono className="w-4 h-4" d={a.icono} /></span>
+                                        <p className="text-justify text-sm leading-relaxed text-white/60">
+                                            <span className="font-bold text-white">{a.titulo}. </span>
+                                            {a.texto}
+                                        </p>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
 
                         {/* Derecha: formulario y qué pasa después */}
