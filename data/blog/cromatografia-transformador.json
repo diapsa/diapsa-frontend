@@ -5,8 +5,8 @@
   "portada": "/images/blog/cromatografia-transformador.webp",
   "fecha": "2026-10-01T18:00:00.100000Z",
   "seo": {
-    "titulo": "Cromatografía de gases en transformadores: laboratorio o en línea",
-    "descripcion": "Qué es la cromatografía de gases en el aceite de transformadores, cómo se toma la muestra, qué mide el laboratorio, qué mide un monitor de gases disueltos en línea y cuándo conviene cada uno según la criticidad del transformador."
+    "titulo": "Cromatografía de gases en transformadores",
+    "descripcion": "Cómo se toma la muestra, qué mide el laboratorio, qué mide un monitor de gases en línea y cuándo conviene cada uno según la criticidad del equipo."
   },
   "bloques": [
     ["p", "Cuando algo falla dentro de un transformador, el aceite y el papel se descomponen y dejan gases disueltos. Medir esos gases es la forma más directa de saber qué está pasando adentro sin abrir el equipo. A esa prueba se le suele llamar cromatografía de gases, por la técnica de laboratorio que la hace posible, o análisis de gases disueltos."],

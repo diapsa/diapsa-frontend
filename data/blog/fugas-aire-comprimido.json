@@ -5,8 +5,8 @@
   "portada": "/images/blog/compresor-aire.webp",
   "fecha": "2026-09-29T00:00:00.000000Z",
   "seo": {
-    "titulo": "Fugas de aire comprimido: cuánto cuestan y cómo detectarlas",
-    "descripcion": "Cómo calcular el costo de una fuga de aire comprimido, dónde aparecen, cómo detectarlas con ultrasonido y cómo armar un programa de fugas en tu planta."
+    "titulo": "Fugas de aire comprimido: costo y detección",
+    "descripcion": "Cómo calcular cuánto cuesta una fuga de aire comprimido, dónde aparecen, cómo detectarlas con ultrasonido y cómo armar un programa de fugas en tu planta."
   },
   "bloques": [
     ["p", "El aire comprimido parece gratis porque sale de un tubo, pero es de lo más caro que se produce en una planta. El compresor toma electricidad y la convierte en presión, y en ese camino se pierde buena parte de la energía. Luego, una parte de ese aire que tanto costó hacer ni siquiera llega a trabajar: se escapa por fugas que casi nadie ve ni escucha."],

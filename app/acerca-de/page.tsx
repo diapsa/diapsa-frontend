@@ -11,7 +11,7 @@ import { GallerySection } from "@/components/organisms/GallerySection";
 export const metadata: Metadata = {
   // Tablero 2026-10-01: 195 impresiones y 1.0 % de clics con "Acerca de Nosotros".
   // Quien llega aquí busca la empresa: el título dice quién es y qué hace.
-  title: { absolute: "Grupo DIAPSA: empresa de mantenimiento predictivo industrial en México" },
+  title: { absolute: "Grupo DIAPSA: mantenimiento predictivo en México" },
   description:
     "Más de 20 años, +1,500 servicios y +50,000 fallas detectadas antes de parar una planta. Conoce al equipo de monitoreo de condición de Grupo DIAPSA.",
   keywords: [

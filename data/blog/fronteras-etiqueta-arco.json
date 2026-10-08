@@ -5,8 +5,8 @@
   "portada": "/images/blog/fronteras-etiqueta-arco.webp",
   "fecha": "2026-09-30T23:59:50.000000Z",
   "seo": {
-    "titulo": "Fronteras de arco eléctrico y cómo leer la etiqueta",
-    "descripcion": "Qué son la frontera de arco, la frontera limitada y la frontera restringida según NFPA 70E, qué pide cada una y cómo leer la etiqueta de advertencia de arco eléctrico de un tablero."
+    "titulo": "Fronteras de arco eléctrico y etiqueta de tablero",
+    "descripcion": "Qué son la frontera de arco, la limitada y la restringida según NFPA 70E, qué pide cada una y cómo leer la etiqueta de arco eléctrico de un tablero."
   },
   "bloques": [
     ["p", "Un estudio de arco eléctrico termina en una etiqueta pegada en cada tablero. Esa etiqueta es lo que ve el electricista justo antes de abrirlo, y en unos cuantos renglones le dice todo lo que necesita saber. Pero solo sirve si se entiende. Aquí la leemos con un ejemplo real."],

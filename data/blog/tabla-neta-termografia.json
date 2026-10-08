@@ -5,8 +5,8 @@
   "portada": "/images/blog/tabla-neta-termografia.webp",
   "fecha": "2026-09-30T06:00:00.000000Z",
   "seo": {
-    "titulo": "Tabla NETA en termografía: criterios de severidad y ΔT",
-    "descripcion": "Cómo se califica un punto caliente con la tabla de la NETA: diferencia contra un componente similar y contra el ambiente, rangos de severidad y qué hacer en cada caso."
+    "titulo": "Tabla NETA en termografía: severidad y ΔT",
+    "descripcion": "Cómo calificar un punto caliente con la tabla NETA: diferencia contra un componente similar y contra el ambiente, rangos de severidad y qué hacer."
   },
   "bloques": [
     ["p", "Una imagen térmica llena de rojos y amarillos impresiona, pero no dice por sí sola qué tan grave es lo que estás viendo. Un conector a 60 °C puede ser normal en un equipo y una alarma en otro. Para pasar del color a una decisión hace falta un criterio, y en el mundo eléctrico el más usado es la tabla de la NETA."],

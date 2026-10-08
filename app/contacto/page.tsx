@@ -7,8 +7,8 @@ import clientes from "@/data/clients.json";
 import presencia from "@/data/presencia-mexico.json";
 
 export const metadata: Metadata = {
-    title: "Contacto",
-    description: "Solicita un diagnóstico sin costo para tu planta industrial. Expertos en mantenimiento predictivo, monitoreo de condición y detección de gases listos para ayudarte.",
+    title: "Contacto: diagnóstico sin costo",
+    description: "Escríbenos por WhatsApp, teléfono o formulario y un especialista en mantenimiento predictivo te responde en un día hábil. Diagnóstico sin costo.",
     alternates: {
         canonical: "/contacto",
     },

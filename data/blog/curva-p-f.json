@@ -5,8 +5,8 @@
   "portada": "/images/blog/curva-p-f.webp",
   "fecha": "2026-09-30T23:59:52.000000Z",
   "seo": {
-    "titulo": "Curva P-F en mantenimiento predictivo: qué es y cómo se usa",
-    "descripcion": "Qué es la curva P-F en mantenimiento, el punto de falla potencial y la falla funcional, en qué momento detecta la falla cada técnica predictiva y cómo usar el intervalo P-F para definir frecuencias."
+    "titulo": "Curva P-F en mantenimiento: qué es y cómo usarla",
+    "descripcion": "Qué es la curva P-F, la falla potencial y la funcional, cuándo detecta la falla cada técnica predictiva y cómo usar el intervalo P-F para las frecuencias."
   },
   "bloques": [
     ["p", "Casi ninguna falla mecánica pasa de un día para otro. Un rodamiento empieza a dañarse semanas o meses antes de trabarse, y durante ese tiempo va dejando señales. La curva P-F es la forma más sencilla de ver ese camino, y es la idea que está detrás de todo el mantenimiento predictivo."],

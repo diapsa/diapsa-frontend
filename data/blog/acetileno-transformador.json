@@ -5,8 +5,8 @@
   "portada": "/images/blog/acetileno-transformador.webp",
   "fecha": "2026-10-01T18:00:00.300000Z",
   "seo": {
-    "titulo": "Acetileno en transformadores: qué significa y qué hacer",
-    "descripcion": "Qué significa la presencia de acetileno en el aceite de un transformador: arcos y descargas de energía, la fuga del cambiador de derivaciones como causa a descartar, por qué importa qué tan rápido crece y qué hacer cuando aparece."
+    "titulo": "Acetileno en transformadores: qué significa",
+    "descripcion": "Qué indica el acetileno en el aceite de un transformador, qué causas descartar, por qué importa qué tan rápido crece y qué hacer cuando aparece."
   },
   "bloques": [
     ["p", "De todos los gases que se miden en el aceite de un transformador, el acetileno es el que más alarma provoca, y con razón. Mientras otros gases aparecen con calentamientos moderados o con el envejecimiento normal del aislamiento, el acetileno necesita temperaturas muy altas para formarse. Cuando aparece, algo dentro del transformador está liberando mucha energía."],

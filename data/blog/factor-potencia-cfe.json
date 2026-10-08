@@ -5,8 +5,8 @@
   "portada": "/images/blog/medidores-electricos.webp",
   "fecha": "2026-09-30T23:59:58.000000Z",
   "seo": {
-    "titulo": "Factor de potencia CFE: cargo, bonificación y fórmula",
-    "descripcion": "Cómo calcula CFE el cargo por bajo factor de potencia (menor a 0.90) y la bonificación cuando es mayor, con la fórmula, un ejemplo resuelto y cómo corregirlo con un banco de capacitores."
+    "titulo": "Factor de potencia CFE: cargo y bonificación",
+    "descripcion": "Cómo calcula CFE el cargo por factor de potencia menor a 0.90 y la bonificación cuando es mayor, con la fórmula, un ejemplo resuelto y cómo corregirlo."
   },
   "bloques": [
     ["p", "Si en el recibo de luz de tu planta aparece un renglón por factor de potencia, estás pagando por algo que casi siempre se puede corregir. Y si tu factor de potencia es bueno, CFE incluso te da una pequeña bonificación. Aquí te explicamos cómo se calcula y qué hacer."],

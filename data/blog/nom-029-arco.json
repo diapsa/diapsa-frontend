@@ -5,8 +5,8 @@
   "portada": "/images/blog/nom-029-arco.webp",
   "fecha": "2026-09-30T23:59:30.000000Z",
   "seo": {
-    "titulo": "NOM-029-STPS-2011 y arco eléctrico: qué pide y cómo cumplir",
-    "descripcion": "Resumen de lo que pide la NOM-029-STPS-2011 sobre mantenimiento de instalaciones eléctricas y arco eléctrico: análisis de riesgo, EPP, diagrama unifilar, y cómo se complementa con NFPA 70E e IEEE 1584."
+    "titulo": "NOM-029-STPS-2011 y arco eléctrico: qué pide",
+    "descripcion": "Qué pide la NOM-029-STPS-2011 sobre mantenimiento eléctrico y arco: análisis de riesgo, EPP y diagrama unifilar, y cómo se complementa con NFPA 70E."
   },
   "bloques": [
     ["p", "Si en tu planta alguien abre tableros energizados para medir, revisar o dar mantenimiento, la NOM-029-STPS-2011 te aplica. Es la norma de seguridad para el mantenimiento de instalaciones eléctricas, y es la que un inspector de la STPS usa para revisar cómo se protege al personal frente al choque y al arco eléctrico."],

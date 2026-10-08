@@ -5,8 +5,8 @@
   "portada": "/images/blog/en-linea-vs-rutas.webp",
   "fecha": "2026-09-30T23:59:59.100000Z",
   "seo": {
-    "titulo": "Monitoreo en línea o rutas: cuándo conviene cada uno",
-    "descripcion": "Diferencias entre el monitoreo de condición por rutas periódicas y el monitoreo en línea con sensores, qué equipos justifican un sensor y cómo combinarlos en un programa predictivo."
+    "titulo": "Monitoreo en línea o rutas: cuándo conviene",
+    "descripcion": "Diferencias entre el monitoreo por rutas y el monitoreo en línea con sensores, qué equipos justifican un sensor y cómo combinar ambos en un programa."
   },
   "bloques": [
     ["p", "Cuando una planta empieza a pensar en sensores, casi siempre aparece la misma pregunta: ¿ya no hacen falta las rutas? La respuesta corta es que sí hacen falta. Rutas y sensores no compiten: cada uno sirve para un tipo de equipo, y un buen programa usa los dos."],

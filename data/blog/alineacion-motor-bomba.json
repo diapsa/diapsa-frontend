@@ -5,8 +5,8 @@
   "portada": "/images/blog/alineacion-motor-bomba.webp",
   "fecha": "2026-09-30T22:00:00.000000Z",
   "seo": {
-    "titulo": "Alineación de ejes motor-bomba: láser vs reloj comparador",
-    "descripcion": "Cómo alinear un motor con su bomba, diferencias entre la alineación láser y el reloj comparador, cómo revisar y corregir la pata coja y los errores más comunes que hacen que la alineación no dure."
+    "titulo": "Alineación motor-bomba: láser o reloj comparador",
+    "descripcion": "Cómo alinear un motor con su bomba, láser contra reloj comparador, cómo corregir la pata coja y los errores que hacen que la alineación no dure."
   },
   "bloques": [
     ["p", "El motor con su bomba es el equipo acoplado más común en cualquier planta, y también el que más seguido se desalinea: después de cambiar un sello, de reponer un motor o simplemente porque la base se fue asentando. Alinearlo bien no es difícil, pero tiene un orden, y saltarse un paso es la razón más común de que la alineación no dure."],

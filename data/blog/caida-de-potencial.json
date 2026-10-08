@@ -5,8 +5,8 @@
   "portada": "/images/blog/caida-de-potencial.webp",
   "fecha": "2026-09-30T23:59:20.000000Z",
   "seo": {
-    "titulo": "Método de caída de potencial y regla del 62 % en tierras físicas",
-    "descripcion": "Cómo se mide la resistencia de una tierra física con el método de caída de potencial o de tres puntos: colocación de las estacas, la regla del 62 %, cómo validar la lectura y errores comunes."
+    "titulo": "Caída de potencial y regla del 62 % en tierras",
+    "descripcion": "Cómo medir una tierra física por caída de potencial: dónde clavar las estacas, la regla del 62 %, cómo validar la lectura y los errores comunes."
   },
   "bloques": [
     ["p", "Medir una tierra física parece sencillo: se conecta el telurómetro, se lee un número y listo. Pero ese número solo vale si la medición se hizo bien. El método estándar se llama caída de potencial, o de tres puntos, y entenderlo ayuda a saber si un reporte es confiable."],

@@ -5,8 +5,8 @@
   "portada": "/images/blog/planta-produccion.webp",
   "fecha": "2026-09-30T23:45:00.000000Z",
   "seo": {
-    "titulo": "Costo de un paro no programado: cómo calcular el costo de falla",
-    "descripcion": "Cómo calcular el costo de un paro no programado o costo de falla en mantenimiento industrial: producción perdida, refacciones, mano de obra y costos ocultos, con un ejemplo y cómo usarlo para priorizar."
+    "titulo": "Costo de un paro no programado: cómo calcularlo",
+    "descripcion": "Cómo calcular el costo de un paro no programado: producción perdida, refacciones, mano de obra y costos ocultos, con un ejemplo para priorizar equipos."
   },
   "bloques": [
     ["p", "Cuando se discute el presupuesto de mantenimiento, casi siempre se compara lo que cuesta el programa contra nada. Y contra nada, cualquier gasto parece caro. La comparación correcta es contra lo que cuesta que el equipo falle. Ese número casi nadie lo tiene calculado, y cuando se calcula suele sorprender."],

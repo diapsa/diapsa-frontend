@@ -5,8 +5,8 @@
   "portada": "/images/blog/falla-rodamientos.webp",
   "fecha": "2026-09-30T23:59:56.000000Z",
   "seo": {
-    "titulo": "Falla de rodamientos en motores eléctricos: causas y detección",
-    "descripcion": "Causas más comunes de falla de rodamientos en motores eléctricos, las etapas de la falla y cómo detectarla a tiempo con análisis de aceite, ultrasonido, vibraciones y termografía."
+    "titulo": "Falla de rodamientos en motores: cómo detectarla",
+    "descripcion": "Causas más comunes de falla de rodamientos en motores eléctricos, sus etapas y cómo detectarla a tiempo con vibraciones, ultrasonido, aceite y termografía."
   },
   "bloques": [
     ["p", "Los rodamientos son la causa más común de falla en motores eléctricos. La buena noticia es que casi nunca fallan de golpe: pasan por varias etapas, y en cada una dejan señales que se pueden detectar. Saber leerlas es la diferencia entre cambiar un rodamiento en un paro programado o cambiar el motor completo a media noche."],

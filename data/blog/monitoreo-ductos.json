@@ -5,8 +5,8 @@
   "portada": "/images/blog/monitoreo-ductos.webp",
   "fecha": "2026-10-02T18:00:00.300000Z",
   "seo": {
-    "titulo": "Monitoreo de ductos: cómo se vigila un gasoducto en línea",
-    "descripcion": "Cómo se hace el monitoreo de ductos, gasoductos y oleoductos: riesgos del derecho de vía, centinelas con IA en los postes marcadores, monitoreo acústico de fugas en pozos y válvulas, y fibra óptica DAS y DTS a lo largo del trazo."
+    "titulo": "Monitoreo de ductos: cómo vigilar un gasoducto",
+    "descripcion": "Cómo se vigila un ducto en línea: riesgos del derecho de vía, centinelas con IA en postes marcadores, monitoreo acústico de fugas y fibra óptica DAS y DTS."
   },
   "bloques": [
     ["p", "Un gasoducto o un oleoducto es una de las instalaciones más difíciles de vigilar. Recorre decenas o cientos de kilómetros enterrado, cruza caminos, parcelas y zonas despobladas, y casi todo su trazo queda lejos de una caseta o de una patrulla. Lo que le pasa en un tramo remoto a las tres de la mañana, nadie lo ve."],

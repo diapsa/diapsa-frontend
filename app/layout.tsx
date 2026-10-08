@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.baseUrl),
   title: {
     default: "Grupo DIAPSA | Mantenimiento Predictivo Industrial",
-    template: "%s | Grupo DIAPSA",
+    template: "%s | DIAPSA",
   },
   description:
     "Empresa líder en mantenimiento predictivo industrial, monitoreo de condición y servicios de mantenimiento para Mexico y Sudamérica.",

@@ -5,9 +5,9 @@ import { getBrands } from '@/lib/api/categories';
 import { productosLocales } from '@/lib/productos-locales';
 
 export const metadata: Metadata = {
-  title: 'Productos para Mantenimiento Predictivo Industrial',
+  title: 'Equipos para mantenimiento predictivo',
   description:
-    'Cámaras acústicas HERTZINNO, sensores de vibración inalámbricos KCF y cámaras termográficas HIKMICRO, con la asesoría de especialistas que los usan a diario en planta.',
+    'Cámaras acústicas HERTZINNO, sensores de vibración KCF y cámaras termográficas HIKMICRO, con asesoría de especialistas que los usan en planta. Cotiza.',
   keywords: [
     'productos mantenimiento predictivo',
     'equipos industriales',

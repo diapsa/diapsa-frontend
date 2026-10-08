@@ -25,7 +25,7 @@
     "subtitle": "Vigilancia térmica continua para los equipos críticos y centros de datos que no pueden esperar a la siguiente ruta",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Cámaras térmicas fijas industriales para tableros, subestaciones, centros de datos, hornos, almacenes y control de calidad en línea: monitoreo térmico continuo las 24 horas, conectado a tu PLC o sistema de control, con algoritmos e IA que reconocen el patrón de una falla y alertas revisadas por termógrafos de DIAPSA.",
+  "seoDescription": "Cámaras térmicas fijas para tableros, subestaciones, hornos y control de calidad, conectadas a tu PLC y con alertas revisadas por termógrafos.",
   "content": {
     "title": "Para los equipos donde medir una vez al mes no alcanza",
     "subtitle": "No es para toda la planta: es para los equipos críticos, donde una falla para la línea, tira un centro de datos o puede causar un incendio. Ahí la cámara mide sin parar, y los algoritmos e IA aprenden cómo se comporta cada punto para reconocer el patrón de una falla antes de que ocurra.",
@@ -263,7 +263,7 @@
     }
   ],
   "mostrarClientes": true,
-  "seoTitle": "Cámaras térmicas fijas industriales para monitoreo térmico continuo",
+  "seoTitle": "Cámaras térmicas fijas para monitoreo 24/7",
   "introBeneficios": {
     "beneficios": [
       {

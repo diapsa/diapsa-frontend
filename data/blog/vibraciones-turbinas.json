@@ -5,8 +5,8 @@
   "portada": "/images/blog/vibraciones-turbinas.webp",
   "fecha": "2026-10-01T20:00:00.300000Z",
   "seo": {
-    "titulo": "Vibraciones en turbinas de vapor, de gas e hidráulicas",
-    "descripcion": "Análisis de vibraciones en turbinas: medición del eje con sensores de proximidad y de la carcasa, fallas típicas (desbalance, desalineación, rozamiento, inestabilidad de chumaceras), arranques y paros, y la norma ISO 20816 para turbinas de vapor, de gas e hidráulicas."
+    "titulo": "Vibraciones en turbinas de vapor, gas e hidráulicas",
+    "descripcion": "Medición del eje con sensores de proximidad y de la carcasa, fallas como desbalance, rozamiento e inestabilidad de chumaceras, y la ISO 20816."
   },
   "bloques": [
     ["p", "En la mayoría de los equipos de una planta, la vibración se mide en la caja del rodamiento y con eso basta. En una turbina grande no. El rotor gira sobre chumaceras de película de aceite, que amortiguan buena parte de la vibración antes de que llegue a la carcasa, y muchas de las fallas importantes ocurren en el movimiento del eje dentro de la chumacera. Por eso una turbina se mide de dos formas a la vez."],

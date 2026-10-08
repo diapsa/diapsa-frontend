@@ -25,8 +25,8 @@
     "subtitle": "Huella acústica con IA para transformadores, subestaciones y centros de datos: escucha las 24 horas lo que anuncia una falla eléctrica",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoTitle": "Sensores acústicos para monitoreo de transformadores y descargas parciales",
-  "seoDescription": "Monitoreo acústico en línea de transformadores de potencia, subestaciones GIS, reactores, celdas de media tensión y centros de datos: sensores que aprenden cómo suena cada equipo sano y detectan descargas parciales, aflojamiento de núcleo y devanados y fallas de enfriamiento, con alertas revisadas por especialistas de DIAPSA.",
+  "seoTitle": "Sensores acústicos para transformadores",
+  "seoDescription": "Monitoreo acústico en línea de transformadores y subestaciones: detecta descargas parciales, núcleo flojo y fallas de enfriamiento a tiempo.",
   "content": {
     "title": "Un transformador cambia su sonido antes de fallar",
     "subtitle": "Una descarga parcial, un núcleo que se afloja o un ventilador de enfriamiento que falla cambian el sonido del equipo mucho antes de dar otra señal. El sensor de huella acústica escucha tus transformadores, subestaciones y la infraestructura eléctrica de tu centro de datos todo el día, y los algoritmos e IA reconocen el sonido de la falla.",

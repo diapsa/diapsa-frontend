@@ -5,8 +5,8 @@
   "portada": "/images/blog/termografia-motores.webp",
   "fecha": "2026-09-30T12:00:00.000000Z",
   "seo": {
-    "titulo": "Termografía en motores eléctricos: qué revisa y cómo interpretarla",
-    "descripcion": "Qué detecta la termografía en motores eléctricos: rodamientos, acoplamientos, desalineación, ventilación, caja de conexiones y desbalance, y cómo interpretar cada hallazgo."
+    "titulo": "Termografía en motores eléctricos: qué revisa",
+    "descripcion": "Qué detecta la termografía en motores: rodamientos, acoplamientos, desalineación, ventilación y caja de conexiones, y cómo interpretar cada hallazgo."
   },
   "bloques": [
     ["p", "Cuando se habla de termografía, casi todos piensan en tableros eléctricos. Pero los motores también avisan con calor cuando algo anda mal, y una cámara térmica puede revisar uno completo en un par de minutos, sin tocarlo y sin detenerlo."],

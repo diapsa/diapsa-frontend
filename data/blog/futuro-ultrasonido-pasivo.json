@@ -5,8 +5,8 @@
   "portada": "/images/blog/futuro-ultrasonido-pasivo.webp",
   "fecha": "2026-09-29T12:00:00.000000Z",
   "seo": {
-    "titulo": "El futuro del ultrasonido pasivo en mantenimiento predictivo",
-    "descripcion": "Monitoreo continuo, inteligencia artificial y arreglos de micrófonos: hacia dónde va el ultrasonido pasivo en la industria, con los artículos académicos que lo respaldan."
+    "titulo": "El futuro del ultrasonido pasivo en la industria",
+    "descripcion": "Monitoreo continuo, inteligencia artificial y arreglos de micrófonos: hacia dónde va el ultrasonido pasivo, con los artículos académicos que lo respaldan."
   },
   "bloques": [
     ["p", "El ultrasonido pasivo lleva décadas ayudando al mantenimiento. Es el que escucha lo que hacen la fricción, las fugas y las descargas eléctricas, y hasta ahora ha dependido de un analista que recorre la planta con su detector y sus audífonos. Eso está empezando a cambiar. La investigación de los últimos años apunta a sensores que escuchan todo el tiempo, a programas que reconocen qué tipo de falla es y a arreglos de micrófonos que la ubican en la imagen."],

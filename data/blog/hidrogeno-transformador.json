@@ -5,8 +5,8 @@
   "portada": "/images/blog/hidrogeno-transformador.webp",
   "fecha": "2026-10-01T18:00:00.200000Z",
   "seo": {
-    "titulo": "Hidrógeno en transformadores: de dónde viene y cuándo preocuparse",
-    "descripcion": "Presencia de hidrógeno en el aceite del transformador: por qué es el primer gas de casi toda falla, qué lo produce (descargas parciales, sobrecalentamiento, humedad, gaseo del aceite), cómo interpretarlo con los demás gases y por qué se usa en los monitores en línea."
+    "titulo": "Hidrógeno en transformadores: cuándo preocuparse",
+    "descripcion": "Por qué el hidrógeno es el primer gas de casi toda falla en el transformador, qué lo produce y cómo interpretarlo junto con los demás gases disueltos."
   },
   "bloques": [
     ["p", "Si hubiera que elegir un solo gas para vigilar un transformador, muchos especialistas escogerían el hidrógeno. Aparece en casi todas las fallas internas, aparece temprano y es fácil de medir. Por eso es el gas que miden los monitores en línea más sencillos."],

@@ -5,8 +5,8 @@
   "portada": "/images/blog/camaras-termicas-calidad.webp",
   "fecha": "2026-10-02T12:00:00.100000Z",
   "seo": {
-    "titulo": "Cámaras térmicas industriales para control de calidad y PLC",
-    "descripcion": "Cómo se usan las cámaras térmicas industriales para control de calidad en línea: sellados, soldaduras, piezas que salen del horno, inyección y curado. Cómo se conectan al PLC, al SCADA o al MES para rechazar piezas o ajustar el proceso."
+    "titulo": "Cámaras térmicas para control de calidad y PLC",
+    "descripcion": "Cómo usar cámaras térmicas en control de calidad en línea: sellados, soldaduras, hornos e inyección, y cómo conectarlas al PLC, SCADA o MES."
   },
   "bloques": [
     ["p", "Muchos defectos de producción son, antes que nada, un problema de temperatura. Un sellado que no llegó al calor suficiente, una soldadura fría, una pieza que salió del horno sin el tratamiento completo o un molde que se enfría disparejo. A simple vista la pieza se ve bien, y el defecto aparece después, en el cliente o en la prueba destructiva de una muestra."],

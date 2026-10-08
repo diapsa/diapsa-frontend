@@ -21,9 +21,9 @@ type CasosExitoPageProps = {
 };
 
 export const metadata: Metadata = {
-    title: "Casos de Éxito en Mantenimiento Predictivo",
+    title: "Casos de éxito en mantenimiento predictivo",
     description:
-        "Casos de éxito de Grupo DIAPSA en mantenimiento predictivo, monitoreo de condición y servicios de mantenimiento industrial para Mexico y Sudamérica.",
+        "Fallas detectadas antes del paro en plantas de México y Sudamérica: qué se encontró, con qué técnica y qué se evitó. Casos reales de monitoreo.",
     keywords: [
         "casos de éxito mantenimiento predictivo",
         "mantenimiento predictivo",

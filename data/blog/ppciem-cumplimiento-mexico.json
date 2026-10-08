@@ -5,8 +5,8 @@
   "portada": "/images/blog/ppciem-cumplimiento-mexico.webp",
   "fecha": "2026-10-02T22:00:00.100000Z",
   "seo": {
-    "titulo": "Cuántas empresas cumplen con el PPCIEM en México",
-    "descripcion": "Datos públicos sobre el cumplimiento del PPCIEM de la ASEA: cuántas empresas del sector hidrocarburos han entregado su programa de emisiones de metano, cómo ha cambiado desde 2022, por qué no hay cifras por planta y qué implica para quien cumple."
+    "titulo": "Cuántas empresas cumplen con el PPCIEM",
+    "descripcion": "Datos públicos de la ASEA sobre cuántas empresas han entregado su PPCIEM, cómo ha cambiado desde 2022 y qué implica para quien ya cumple."
   },
   "bloques": [
     ["p", "Las disposiciones de la ASEA para controlar el metano del sector hidrocarburos se publicaron en noviembre de 2018. Desde entonces, cada empresa obligada debe entregar su Programa para la Prevención y el Control Integral de las Emisiones de Metano, el PPCIEM, y reportar cada año su cumplimiento. La pregunta obvia es cuántas lo han hecho."],

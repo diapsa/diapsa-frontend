@@ -5,8 +5,8 @@
   "portada": "/images/blog/sensores-inalambricos.webp",
   "fecha": "2026-09-30T23:59:59.200000Z",
   "seo": {
-    "titulo": "Sensores inalámbricos de vibración: cómo elegirlos e instalarlos",
-    "descripcion": "Guía de sensores inalámbricos de vibración industriales: qué miden, qué revisar al elegirlos, dónde y cómo instalarlos, la estación base y los errores de montaje más comunes."
+    "titulo": "Sensores de vibración inalámbricos: cómo elegirlos",
+    "descripcion": "Qué miden los sensores inalámbricos de vibración, qué revisar al elegirlos, dónde y cómo instalarlos, la estación base y los errores de montaje comunes."
   },
   "bloques": [
     ["p", "Los sensores inalámbricos hicieron que el monitoreo en línea dejara de ser algo solo para las turbinas y los compresores más caros. Hoy se pueden poner en motores y bombas a un costo razonable. Pero un sensor mal elegido o mal instalado da datos que no sirven, y lleva a la conclusión equivocada de que la tecnología no funciona."],

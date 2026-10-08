@@ -5,8 +5,8 @@
   "portada": "/images/blog/aceite-pruebas-muestreo.webp",
   "fecha": "2026-09-30T23:58:00.000000Z",
   "seo": {
-    "titulo": "Análisis de aceite en mantenimiento predictivo: pruebas y muestreo",
-    "descripcion": "Qué pruebas incluye un análisis de aceite industrial (espectrometría, viscosidad, agua, acidez, conteo de partículas), cómo tomar una muestra de aceite correctamente y cada cuánto muestrear."
+    "titulo": "Análisis de aceite: pruebas y toma de muestra",
+    "descripcion": "Qué pruebas incluye un análisis de aceite industrial, cómo tomar la muestra correctamente y cada cuánto muestrear. Guía práctica para mantenimiento."
   },
   "bloques": [
     ["p", "El análisis de aceite es de las técnicas predictivas más baratas y de las que avisan más temprano. Antes de que un rodamiento o un engrane vibre o se caliente, ya está soltando partículas de metal al aceite. El truco está en saber qué pruebas pedir, tomar bien la muestra y leer el resultado contra el equipo y contra la muestra anterior."],

@@ -5,8 +5,8 @@
   "portada": "/images/blog/mantenimiento-subestaciones.webp",
   "fecha": "2026-10-01T20:00:00.200000Z",
   "seo": {
-    "titulo": "Mantenimiento de subestaciones eléctricas: qué incluye",
-    "descripcion": "Qué incluye el mantenimiento de una subestación eléctrica: pruebas con el equipo librado, inspecciones con la subestación energizada (termografía, ultrasonido, gases en el aceite, tierras físicas), qué piden la NOM-029 y la NOM-022 y cómo priorizar."
+    "titulo": "Mantenimiento de subestaciones: qué incluye",
+    "descripcion": "Qué incluye el mantenimiento de una subestación: pruebas con el equipo librado, inspecciones energizada y qué piden la NOM-029 y la NOM-022."
   },
   "bloques": [
     ["p", "La subestación es el punto por donde entra o sale toda la energía de una planta o una central. Cuando falla, no falla un equipo: se queda sin energía todo lo que alimenta. Por eso su mantenimiento no se puede dejar para cuando algo truene, y tampoco conviene hacerlo solo cuando hay un paro."],

@@ -5,8 +5,8 @@
   "portada": "/images/blog/kpi-mantenimiento-predictivo.webp",
   "fecha": "2026-09-30T23:52:00.000000Z",
   "seo": {
-    "titulo": "KPI de mantenimiento predictivo: indicadores que sí sirven",
-    "descripcion": "Qué indicadores KPI llevar en un programa de mantenimiento predictivo industrial: cumplimiento de rutas, hallazgos cerrados, trabajo planeado, paros no programados y MTBF, con fórmula y meta de arranque."
+    "titulo": "KPI de mantenimiento predictivo que sí sirven",
+    "descripcion": "Qué indicadores llevar en un programa predictivo: cumplimiento de rutas, hallazgos cerrados, trabajo planeado, paros no programados y MTBF, con fórmula."
   },
   "bloques": [
     ["p", "Un programa predictivo que no se mide termina igual que muchos: con rutas que se hacen cada vez menos, reportes que nadie lee y una dirección que un día pregunta para qué se paga. Los indicadores sirven para evitar eso. No hacen falta muchos: con cinco bien llevados basta para saber si el programa está funcionando."],
