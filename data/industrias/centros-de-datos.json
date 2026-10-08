@@ -20,7 +20,7 @@
   "hero": {
     "etiqueta": "Industria / Centros de datos",
     "titulo": "Tu centro de datos no se apaga. La falla tampoco debería sorprenderte.",
-    "texto": "Subestación, transferencias, UPS, bancos de baterías, plantas de emergencia y aire de precisión trabajan las 24 horas para que la carga nunca se caiga. Combinamos inspecciones con todo energizado, cámaras térmicas fijas y monitoreo en línea para encontrar la falla en la cadena de energía y enfriamiento antes de que se vuelva un incidente.",
+    "texto": "Un centro de datos opera con una disponibilidad de 99.9 % o más: menos de nueve horas de caída en todo el año. Para sostenerla, subestación, transferencias, UPS, bancos de baterías, plantas de emergencia y aire de precisión trabajan las 24 horas sin margen para una falla sorpresa. Combinamos inspecciones con todo energizado, cámaras térmicas fijas y monitoreo en línea para encontrar la falla en la cadena de energía y enfriamiento antes de que se vuelva un incidente.",
     "foto": {
       "src": "/images/industrias/centros-de-datos-hero.webp",
       "alt": "Pasillo de un centro de datos con filas de racks y distribución eléctrica aérea"
@@ -30,7 +30,7 @@
   "senales": {
     "etiqueta": "Una visión con varias técnicas",
     "titulo": "Ve la falla antes de la caída de carga.",
-    "texto": "En un centro de datos la redundancia da tiempo, pero no lo da todo: una falla escondida en el respaldo aparece justo cuando se necesita. Las señales llegan antes: una conexión que se calienta en el busway o en la PDU, una batería que sube de temperatura, una planta de emergencia que vibra distinto en su prueba o un compresor de chiller que pierde lubricación. Cada señal pide su técnica, y el programa se arma alrededor de la cadena que sostiene la carga crítica.",
+    "texto": "Con una meta de 99.9 % de disponibilidad, cada hora cuenta, y la redundancia da tiempo pero no lo da todo: una falla escondida en el respaldo aparece justo cuando se necesita. Las señales llegan antes: una conexión que se calienta en el busway o en la PDU, una batería que sube de temperatura, una planta de emergencia que vibra distinto en su prueba o un compresor de chiller que pierde lubricación. Cada señal pide su técnica, y el programa se arma alrededor de la cadena que sostiene la carga crítica.",
     "items": [
       {
         "titulo": "Temperatura",
@@ -92,8 +92,8 @@
       "titulo": "Asegura que el respaldo responda.",
       "texto": "Las UPS, los bancos de baterías y las plantas de emergencia casi nunca trabajan, y por eso sus fallas se esconden hasta el día del corte. La termografía en baterías y conexiones, y la vibración y el aceite en los motores de las plantas, muestran su estado sin esperar a la emergencia.",
       "foto": {
-        "src": "/images/gallery/campo/vibracion-generador.webp",
-        "alt": "Analista de DIAPSA midiendo la vibración de un generador"
+        "src": "/images/industrias/centros-de-datos/ups-baterias.webp",
+        "alt": "Cuarto de UPS con bancos de baterías y planta de emergencia al fondo"
       },
       "prioridades": [
         "Termografía de baterías, celdas y conexiones de UPS",
@@ -123,8 +123,8 @@
       "titulo": "Que el enfriamiento no se detenga.",
       "texto": "Chillers, bombas de agua helada, torres de enfriamiento y equipos de aire de precisión. Si el enfriamiento falla, la sala se calienta en minutos. La vibración ve el desgaste de compresores, bombas y ventiladores, y el ultrasonido encuentra fugas y falta de lubricación.",
       "foto": {
-        "src": "/images/servicios/sensores-vibracion/sensor-motor.webp",
-        "alt": "Sensor de vibración instalado en un motor"
+        "src": "/images/industrias/centros-de-datos/enfriamiento.webp",
+        "alt": "Chillers y bombas de agua helada en la azotea de un centro de datos"
       },
       "prioridades": [
         "Vibración en compresores de chillers y bombas",
@@ -158,8 +158,8 @@
       "titulo": "Mira la cadena completa las 24 horas.",
       "texto": "Cámaras térmicas fijas en tableros principales, cuartos de UPS y bancos de baterías, y sensores en los equipos de enfriamiento críticos. Las alertas las revisa un especialista antes de llegarte y todo queda en IDAP, junto con las inspecciones de ruta y la evidencia para tus auditorías.",
       "foto": {
-        "src": "/images/servicios/termografia-infrarroja/termograma-punto-caliente.jpg",
-        "alt": "Termograma con un punto caliente en una conexión eléctrica"
+        "src": "/images/industrias/centros-de-datos/camara-termica-fija.webp",
+        "alt": "Cámara térmica fija vigilando los tableros de un cuarto eléctrico"
       },
       "prioridades": [
         "Cámaras térmicas fijas en los puntos críticos",
@@ -271,6 +271,10 @@
     "texto": "Dinos cómo está armada tu cadena de energía y enfriamiento, qué redundancia tiene y cómo la inspeccionas hoy. Te proponemos la combinación de inspecciones, vigilancia en línea y plataforma que le conviene."
   },
   "faq": [
+    {
+      "question": "¿Por qué un centro de datos necesita mantenimiento predictivo?",
+      "answer": "Porque opera con una disponibilidad de 99.9 % o más, que deja menos de nueve horas de caída en todo el año. Con ese margen no se puede esperar a que un equipo falle: hay que ver la falla en la cadena de energía y enfriamiento semanas antes y corregirla en una ventana planeada."
+    },
     {
       "question": "¿Las inspecciones afectan la operación?",
       "answer": "No. La termografía, el ultrasonido y la vibración se aplican con los equipos energizados y con carga, desde fuera y sin contacto con las partes vivas, que es justo cuando las fallas se muestran."
