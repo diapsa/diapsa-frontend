@@ -1230,5 +1230,44 @@
       "titulo": "Alineación y Balanceo",
       "resumen": "Alineación láser de ejes y balanceo dinámico en sitio, con la vibración medida antes y después."
     }
+  },
+  {
+    "articulo": {
+      "slug": "monitoreo-termico-en-centros-de-datos-que-vigilar",
+      "titulo": "Monitoreo térmico en centros de datos",
+      "resumen": "Qué vigilar y cómo.",
+      "portada": "/images/blog/rack-servidores.webp"
+    },
+    "servicio": {
+      "href": "/industrias/centros-de-datos",
+      "titulo": "Centros de datos",
+      "resumen": "Mantenimiento predictivo y vigilancia en línea para la energía y el enfriamiento de centros de datos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "camara-termica-fija-o-termografia-con-camara-de-mano",
+      "titulo": "Cámara fija o de mano",
+      "resumen": "Cuándo conviene cada una.",
+      "portada": "/images/blog/camara-fija-poste.webp"
+    },
+    "servicio": {
+      "href": "/industrias/centros-de-datos",
+      "titulo": "Centros de datos",
+      "resumen": "Mantenimiento predictivo y vigilancia en línea para la energía y el enfriamiento de centros de datos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "deteccion-temprana-de-incendios-con-camaras-termicas-en-plantas",
+      "titulo": "Incendios y cámaras térmicas",
+      "resumen": "Detectar antes que el humo.",
+      "portada": "/images/blog/almacen-racks.webp"
+    },
+    "servicio": {
+      "href": "/industrias/centros-de-datos",
+      "titulo": "Centros de datos",
+      "resumen": "Mantenimiento predictivo y vigilancia en línea para la energía y el enfriamiento de centros de datos."
+    }
   }
 ]
