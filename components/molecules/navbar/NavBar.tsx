@@ -105,7 +105,8 @@ const columnasCursosPanel: ColumnaMenu[] = [
         titulo: "Programas",
         items: [
             ...(diplomado ? [{ ...diplomado, imagen: "/images/cursos/confiabilidad/confiabilidad-03.webp" }] : []),
-            { label: "Catálogo completo", href: "/cursos#catalogo", descripcion: "Los quince cursos por bloque", imagen: "/images/cursos/vibraciones/vibraciones-01.webp" },
+            { label: "Mini cursos en vivo", href: "/cursos/mini-cursos", descripcion: "Temas puntuales en línea, a bajo costo", imagen: "/images/cursos/termografia/termografia-04.webp" },
+            { label: "Capacitaciones y talleres", href: "/cursos#catalogo", descripcion: "Con certificado o práctica en planta", imagen: "/images/cursos/vibraciones/vibraciones-01.webp" },
         ],
         formato: "tarjetas",
     },
@@ -288,6 +289,9 @@ export default function NavBar() {
                                         {diplomado.label}
                                     </EnlaceMovil>
                                 )}
+                                <EnlaceMovil href="/cursos/mini-cursos" nivel={2} onClick={() => setIsMobileMenuOpen(false)}>
+                                    Mini cursos en vivo
+                                </EnlaceMovil>
                                 {columnasCursos.map((columna) => (
                                     <Acordeon key={columna.titulo} titulo={columna.titulo} nivel={2}>
                                         {columna.items

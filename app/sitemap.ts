@@ -9,6 +9,7 @@ import { getIndustrias } from "@/lib/industrias";
 import { SITE_CONFIG } from "@/lib/constants";
 import type { Category } from "@/types/category";
 import type { Product } from "@/types/product";
+import { MINI_CURSOS, RUTA_MINI } from "@/lib/mini-cursos";
 
 
 type ServiceItem = {
@@ -153,7 +154,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...servicePages, ...industriaPages, ...categoryPages, ...productPages, ...blogPages, ...cursosPages];
+  const miniPages: MetadataRoute.Sitemap = [RUTA_MINI, ...MINI_CURSOS.map((c) => `${RUTA_MINI}/${c.slug}`)].map((ruta) => ({
+    url: `${SITE_CONFIG.baseUrl}${ruta}`,
+    lastModified: ULTIMA_REVISION,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...servicePages, ...industriaPages, ...categoryPages, ...productPages, ...blogPages, ...cursosPages, ...miniPages];
 
 
 }

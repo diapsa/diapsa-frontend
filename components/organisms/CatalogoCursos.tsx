@@ -9,6 +9,9 @@ import GaleriaCampo from "./GaleriaCampo";
 import InicioDiplomado from "@/components/organisms/InicioDiplomado";
 import dip from "@/data/diplomado.json";
 import menuCursos from "@/data/menu-cursos.json";
+import Image from "next/image";
+import TarjetaMiniCurso from "./TarjetaMiniCurso";
+import { FORMATO_MINI, MINI_CURSOS, RUTA_MINI } from "@/lib/mini-cursos";
 
 /**
  * CatalogoCursos
@@ -154,15 +157,15 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
             <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">Aprende la técnica con quien la aplica todos los días</h2>
             <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">
               Nuestros instructores diagnostican maquinaria real en planta, y eso es lo que enseñan: casos de equipos inspeccionados, no ejemplos de libro.
-              Cada técnica tiene tres formas de aprenderla, de la formación completa a la certificación por categoría.
+              Hay dos maneras de aprender con nosotros: capacitaciones con certificado y talleres prácticos para dominar la técnica, y mini cursos en vivo para resolver un tema puntual.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href="#catalogo" className="inline-flex items-center justify-center rounded-xs bg-primary px-7 py-3.5 font-bold text-white transition-colors hover:bg-secondary hover:text-primary">
-                Ver los cursos
+                Ver capacitaciones
               </a>
-              <a href="#contacto" className="inline-flex items-center justify-center rounded-xs border-2 border-primary px-7 py-3 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
-                Capacitar a mi equipo
-              </a>
+              <Link href={RUTA_MINI} prefetch={false} className="inline-flex items-center justify-center rounded-xs border-2 border-primary px-7 py-3 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                Mini cursos en vivo
+              </Link>
             </div>
           </div>
           {/* La escena: del aula a la planta y a la certificación */}
@@ -185,6 +188,57 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Las dos líneas de cursos (Emiliano, 2026-10-08): la capacitación
+          completa, con certificado o taller práctico, y los mini cursos en
+          vivo, cortos y a bajo costo. */}
+      <section className="w-full bg-white py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <Antetitulo>Dos maneras de aprender</Antetitulo>
+          <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">¿Quieres dominar la técnica o resolver un tema?</h2>
+          <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            {[
+              {
+                href: "#catalogo",
+                foto: "/images/cursos/vibraciones/vibraciones-01.webp",
+                etiqueta: "Capacitación completa",
+                titulo: "Capacitaciones con certificado y talleres prácticos",
+                texto: "La técnica completa, con práctica en equipo real, en tu planta o en Saltillo. Incluye la certificación ISO 18436 por categoría y los talleres sobre casos de planta.",
+                puntos: ["Certificación por categoría", "Práctica en planta", "Grupos abiertos o para tu equipo"],
+                accion: "Ver capacitaciones",
+              },
+              {
+                href: RUTA_MINI,
+                foto: "/images/cursos/termografia/termografia-04.webp",
+                etiqueta: "Nuevo",
+                titulo: "Mini cursos en vivo",
+                texto: "Un tema puntual en una sola sesión en línea, a un costo accesible: configurar tu cámara termográfica, entender las vibraciones o inspeccionar un transformador seco.",
+                puntos: [FORMATO_MINI.modalidad, FORMATO_MINI.duracion, `${MINI_CURSOS.length} temas`],
+                accion: "Ver mini cursos",
+              },
+            ].map((x) => (
+              <Link key={x.href} href={x.href} prefetch={false} className="group flex flex-col overflow-hidden rounded-sm bg-primary text-white shadow-sm transition-shadow hover:shadow-xl sm:flex-row">
+                <div className="relative aspect-[16/9] w-full shrink-0 sm:aspect-auto sm:w-2/5">
+                  <Image src={x.foto} alt="" fill sizes="(max-width: 640px) 100vw, 300px" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex flex-1 flex-col p-6 lg:p-7">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-secondary">{x.etiqueta}</p>
+                  <h3 className="mt-2 text-2xl font-extrabold leading-snug">{x.titulo}</h3>
+                  <p className="mt-3 flex-1 text-justify leading-relaxed text-white/75">{x.texto}</p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {x.puntos.map((p) => (
+                      <li key={p} className="rounded-xs bg-white/10 px-2.5 py-1 text-xs font-bold">{p}</li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 font-bold text-secondary">
+                    {x.accion} <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* El programa insignia, antes que todo el catálogo, con la identidad de su brochure */}
@@ -224,9 +278,34 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
           izquierda, tarjetas a la derecha */}
       <section id="catalogo" className="w-full scroll-mt-28 bg-gray-100 py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <Antetitulo>El catálogo</Antetitulo>
-          <h2 className="mb-8 mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">Encuentra el curso indicado para tu equipo</h2>
+          <Antetitulo>Capacitaciones con certificado y talleres prácticos</Antetitulo>
+          <h2 className="mb-8 mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">Encuentra la capacitación indicada para tu equipo</h2>
           <CatalogoFiltros tarjetas={tarjetas} tecnicas={filtrosTecnica} tipos={filtrosTipo} textoTipo={textoTipo} />
+        </div>
+      </section>
+
+      {/* La otra línea: los mini cursos en vivo */}
+      <section className="w-full bg-white py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <Antetitulo>Mini cursos en vivo</Antetitulo>
+              <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">Un tema puntual, en una sesión</h2>
+            </div>
+            <Link href={RUTA_MINI} prefetch={false} className="font-bold text-primary underline underline-offset-4 hover:text-secondary">
+              Ver los {MINI_CURSOS.length} temas
+            </Link>
+          </div>
+          <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
+            {["introduccion-vibraciones-mecanicas", "configuracion-de-la-camara-termografica", "inspeccion-de-transformadores-secos"]
+              .map((s) => MINI_CURSOS.find((c) => c.slug === s))
+              .filter((c) => c !== undefined)
+              .map((c) => (
+                <li key={c.slug}>
+                  <TarjetaMiniCurso curso={c} />
+                </li>
+              ))}
+          </ul>
         </div>
       </section>
 

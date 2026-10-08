@@ -1,0 +1,232 @@
+{
+  "_nota": "Mini cursos en vivo (Emiliano, 2026-10-08): sesiones cortas en línea sobre un tema puntual, a bajo costo. Viven en el sitio, no en el CMS. La duración es una propuesta por confirmar; el precio y las fechas se capturan aquí cuando DIAPSA los defina. Sin precio la página dice que se pregunte; sin fecha, que se aparte lugar para la próxima.",
+  "formato": {
+    "modalidad": "En línea, en vivo",
+    "duracion": "2 horas",
+    "grupo": "Grupos reducidos para poder preguntar"
+  },
+  "cursos": [
+    {
+      "slug": "introduccion-vibraciones-mecanicas",
+      "titulo": "Introducción a las vibraciones mecánicas",
+      "tecnica": "vibraciones",
+      "nivel": "Introductorio",
+      "resumen": "Qué es la vibración, por qué dice tanto de una máquina y cómo se lee una medición básica, para quien empieza o quiere entender sus informes.",
+      "para": "Técnicos, supervisores y planeadores de mantenimiento que nunca han medido vibración o que reciben informes y quieren entenderlos.",
+      "aprenderas": [
+        "Qué es la vibración y qué la provoca en una máquina rotativa",
+        "La diferencia entre desplazamiento, velocidad y aceleración",
+        "Dónde y cómo se coloca el sensor para que la lectura sirva",
+        "Cómo leer un nivel global y cuándo preocuparse"
+      ],
+      "temario": [
+        "La vibración como síntoma de la condición del equipo",
+        "Amplitud, frecuencia y unidades de medida",
+        "Puntos y direcciones de medición",
+        "Niveles de severidad y cómo usarlos",
+        "Preguntas con casos de los participantes"
+      ],
+      "requisitos": "Ninguno.",
+      "foto": "/images/cursos/vibraciones/vibraciones-02.webp"
+    },
+    {
+      "slug": "desbalance-y-desalineacion-en-el-espectro",
+      "titulo": "Desbalance y desalineación en el espectro",
+      "tecnica": "vibraciones",
+      "nivel": "Puntual",
+      "resumen": "Las dos fallas más comunes en maquinaria rotativa y cómo se reconocen en el espectro de vibración, para dejar de confundirlas.",
+      "para": "Quien ya mide vibración y quiere distinguir con seguridad un desbalance de una desalineación.",
+      "aprenderas": [
+        "Cómo se ve un desbalance en el espectro y en la fase",
+        "Cómo se ve una desalineación angular y una paralela",
+        "Qué otras fallas se parecen y cómo descartarlas",
+        "Qué recomendar en el informe en cada caso"
+      ],
+      "temario": [
+        "Repaso rápido del espectro",
+        "Desbalance: patrones y confirmación",
+        "Desalineación: patrones y confirmación",
+        "Casos reales y errores frecuentes"
+      ],
+      "requisitos": "Saber tomar una medición de vibración.",
+      "foto": "/images/cursos/vibraciones/vibraciones-06.webp"
+    },
+    {
+      "slug": "inspeccion-de-bombas-hidraulicas",
+      "titulo": "Inspección de bombas hidráulicas",
+      "tecnica": "vibraciones",
+      "nivel": "Puntual",
+      "resumen": "Cómo revisar una bomba en operación con vibraciones, termografía y ultrasonido, y reconocer las fallas que más paros provocan.",
+      "para": "Técnicos y supervisores de plantas con bombeo de agua, procesos o sistemas hidráulicos.",
+      "aprenderas": [
+        "Dónde medir en el motor y en la bomba",
+        "Cómo reconocer cavitación, desbalance y rodamientos dañados",
+        "Qué revisar con la cámara termográfica en el motor y los sellos",
+        "Qué datos anotar para que el diagnóstico sirva"
+      ],
+      "temario": [
+        "Cómo funciona una bomba y dónde falla",
+        "Vibraciones: puntos de medición y fallas típicas",
+        "Termografía y ultrasonido como apoyo",
+        "Casos reales de bombas inspeccionadas"
+      ],
+      "requisitos": "Conocimientos básicos de mantenimiento.",
+      "foto": "/images/cursos/vibraciones/vibraciones-09.webp"
+    },
+    {
+      "slug": "introduccion-termografia-infrarroja",
+      "titulo": "Introducción a la termografía infrarroja",
+      "tecnica": "termografia",
+      "nivel": "Introductorio",
+      "resumen": "Qué ve una cámara termográfica, qué no ve y cómo se usa en mantenimiento, para quien está por empezar o por comprar su primera cámara.",
+      "para": "Técnicos, electricistas y supervisores que empiezan en la termografía o que evalúan comprar una cámara.",
+      "aprenderas": [
+        "Qué es la radiación infrarroja y qué mide la cámara",
+        "Por qué una imagen térmica puede engañar",
+        "Qué equipos se pueden inspeccionar y qué buscar en cada uno",
+        "Qué cámara conviene según lo que vas a inspeccionar"
+      ],
+      "temario": [
+        "Principios de la termografía",
+        "Emisividad y reflejos explicados sin fórmulas",
+        "Aplicaciones en tableros, motores y procesos",
+        "Cómo elegir una cámara"
+      ],
+      "requisitos": "Ninguno.",
+      "foto": "/images/cursos/termografia/termografia-02.webp"
+    },
+    {
+      "slug": "configuracion-de-la-camara-termografica",
+      "titulo": "Configura tu cámara termográfica",
+      "tecnica": "termografia",
+      "nivel": "Puntual",
+      "resumen": "Los ajustes que deciden si tu lectura es confiable: emisividad, temperatura reflejada, distancia, enfoque, rango y paleta, con tu propia cámara.",
+      "para": "Quien ya tiene cámara termográfica y no está seguro de que sus lecturas sean correctas.",
+      "aprenderas": [
+        "Cómo fijar la emisividad correcta para cada superficie",
+        "Cómo medir y capturar la temperatura reflejada",
+        "Por qué el enfoque y la distancia cambian la lectura",
+        "Qué rango y qué paleta usar en cada inspección"
+      ],
+      "temario": [
+        "Los parámetros que afectan la medición",
+        "Emisividad y temperatura reflejada en la práctica",
+        "Enfoque, distancia y tamaño del objeto",
+        "Rango, nivel, paleta y guardado de imágenes",
+        "Ajustes en vivo con las cámaras de los participantes"
+      ],
+      "requisitos": "Tener a la mano tu cámara termográfica durante la sesión.",
+      "foto": "/images/cursos/termografia/termografia-04.webp"
+    },
+    {
+      "slug": "termografia-en-tableros-electricos",
+      "titulo": "Termografía en tableros eléctricos",
+      "tecnica": "termografia",
+      "nivel": "Puntual",
+      "resumen": "Cómo inspeccionar un tablero con seguridad, encontrar el punto caliente que importa y calificarlo para que mantenimiento sepa qué atender primero.",
+      "para": "Electricistas y termografistas que recorren tableros, centros de control de motores y subestaciones.",
+      "aprenderas": [
+        "Qué condiciones de carga se necesitan para inspeccionar",
+        "Cómo reconocer conexiones flojas, sobrecarga y desbalance de fases",
+        "Cómo calificar la severidad de un hallazgo",
+        "Qué debe llevar el reporte de cada punto caliente"
+      ],
+      "temario": [
+        "Seguridad y condiciones de la inspección",
+        "Patrones térmicos de las fallas eléctricas",
+        "Criterios de severidad",
+        "Del hallazgo al reporte"
+      ],
+      "requisitos": "Saber usar una cámara termográfica.",
+      "foto": "/images/cursos/termografia/termografia-07.webp"
+    },
+    {
+      "slug": "inspeccion-de-transformadores-secos",
+      "titulo": "Inspección de transformadores secos",
+      "tecnica": "termografia",
+      "nivel": "Puntual",
+      "resumen": "Qué revisar en un transformador seco en operación con termografía y ultrasonido, y cómo detectar a tiempo fallas en devanados, conexiones o ventilación.",
+      "para": "Personal eléctrico y de mantenimiento a cargo de transformadores secos en planta, edificios o centros de datos.",
+      "aprenderas": [
+        "Cómo se calienta un transformador seco sano y uno con falla",
+        "Qué revisar en devanados, conexiones y ventiladores",
+        "Cómo apoyarse en el ultrasonido para detectar descargas",
+        "Qué hallazgos piden atención inmediata"
+      ],
+      "temario": [
+        "Partes del transformador seco y sus fallas",
+        "Inspección termográfica paso a paso",
+        "Descargas parciales y ultrasonido",
+        "Casos reales de transformadores inspeccionados"
+      ],
+      "requisitos": "Conocimientos básicos de electricidad.",
+      "foto": "/images/cursos/termografia/termografia-08.webp"
+    },
+    {
+      "slug": "inspeccion-de-motores-electricos",
+      "titulo": "Inspección de motores eléctricos",
+      "tecnica": "termografia",
+      "nivel": "Puntual",
+      "resumen": "Una ruta corta para revisar un motor en operación combinando termografía, vibraciones y ultrasonido, y saber qué le está pasando.",
+      "para": "Técnicos de mantenimiento que tienen motores críticos a su cargo.",
+      "aprenderas": [
+        "Qué revisar en la carcasa, la caja de conexiones y los rodamientos",
+        "Cómo diferenciar un problema eléctrico de uno mecánico",
+        "Qué técnica aplicar en cada parte del motor",
+        "Cada cuánto conviene revisar un motor crítico"
+      ],
+      "temario": [
+        "Fallas típicas de un motor eléctrico",
+        "Termografía en motor y conexiones",
+        "Vibraciones y ultrasonido en rodamientos",
+        "Cómo armar la ruta de inspección"
+      ],
+      "requisitos": "Conocimientos básicos de mantenimiento.",
+      "foto": "/images/cursos/termografia/termografia-03.webp"
+    },
+    {
+      "slug": "fugas-de-aire-comprimido-con-ultrasonido",
+      "titulo": "Fugas de aire comprimido con ultrasonido",
+      "tecnica": "ultrasonido",
+      "nivel": "Puntual",
+      "resumen": "Cómo encontrar fugas de aire comprimido en plena operación, ubicarlas con precisión y estimar cuánto le cuestan a la planta.",
+      "para": "Técnicos de mantenimiento, energía y servicios de planta.",
+      "aprenderas": [
+        "Por qué una fuga se escucha en ultrasonido y no al oído",
+        "Cómo recorrer la red de aire para no dejar fugas sin ver",
+        "Cómo estimar el costo de cada fuga",
+        "Cómo etiquetar y dar seguimiento a las reparaciones"
+      ],
+      "temario": [
+        "El aire comprimido y su costo",
+        "Principios del ultrasonido aplicado a fugas",
+        "Recorrido, ubicación y registro",
+        "Estimación de pérdidas y plan de reparación"
+      ],
+      "requisitos": "Ninguno.",
+      "foto": "/images/cursos/ultrasonido/ultrasonido-03.webp"
+    },
+    {
+      "slug": "lubricacion-de-rodamientos-con-ultrasonido",
+      "titulo": "Lubricación de rodamientos con ultrasonido",
+      "tecnica": "ultrasonido",
+      "nivel": "Puntual",
+      "resumen": "Cómo engrasar un rodamiento con la cantidad justa escuchando lo que pasa dentro, para dejar de lubricar de más o de menos.",
+      "para": "Lubricadores, técnicos mecánicos y responsables de rutas de lubricación.",
+      "aprenderas": [
+        "Por qué el exceso de grasa daña tanto como la falta",
+        "Cómo se escucha un rodamiento seco y uno bien lubricado",
+        "Cómo engrasar guiado por la lectura del ultrasonido",
+        "Cómo registrar cada punto para mejorar la ruta"
+      ],
+      "temario": [
+        "Lubricación y vida del rodamiento",
+        "Qué escucha el ultrasonido en un rodamiento",
+        "Procedimiento de engrase guiado",
+        "Registro y ajuste de frecuencias"
+      ],
+      "requisitos": "Ninguno.",
+      "foto": "/images/cursos/ultrasonido/ultrasonido-08.webp"
+    }
+  ]
+}
