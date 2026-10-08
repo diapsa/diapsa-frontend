@@ -84,7 +84,8 @@ export default function PaginaIndustria({ industria }: { industria: Industria })
       <section className="relative overflow-hidden bg-white pt-32 lg:pt-36">
         <div className="absolute inset-y-0 right-0 hidden w-[62%] lg:block">
           <Image src={hero.foto.src} alt={hero.foto.alt} fill priority sizes="62vw" className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/55 to-transparent" />
+          {/* Velo solo en la franja donde el texto pisa la foto; el resto de la foto queda limpia */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white from-15% via-white/60 via-30% to-transparent to-55%" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6">
           <nav aria-label="Ruta" className="mb-6 text-sm text-tertiary">
