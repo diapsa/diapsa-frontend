@@ -315,8 +315,8 @@
         "alt": "Termograma aéreo de paneles solares."
       },
       {
-        "src": "/images/servicios/termografia-con-drones/termograma-linea.webp",
-        "alt": "Termograma aéreo de un poste de media tensión con el conector de la fase central caliente."
+        "src": "/images/servicios/termografia-con-drones/termograma-torre.webp",
+        "alt": "Termograma aéreo de una torre de alta tensión con la grapa de una fase caliente."
       },
       {
         "src": "/images/servicios/termografia-con-drones/dron-distribucion.webp",
@@ -336,12 +336,12 @@
       "enlace": "/servicios/idap"
     },
     "reporteLinea": {
-      "etiqueta": "Líneas de distribución",
-      "titulo": "Así se ve el informe de una línea, kilómetro por kilómetro",
-      "texto": "Recorremos la línea en carga y cada hallazgo queda en su kilómetro y en su poste, con su termograma, su severidad y qué hacer, para que la cuadrilla salga directo al punto y aproveche cada libranza.",
+      "etiqueta": "Líneas de alta tensión",
+      "titulo": "Así se ve el informe de una línea de transmisión, kilómetro por kilómetro",
+      "texto": "Volamos la línea en carga, torre por torre, y cada hallazgo queda en su kilómetro y en su torre, con su termograma, su severidad y qué hacer, para que la cuadrilla llegue directo al punto y aproveche cada libranza.",
       "puntos": [
         "Trazo de la línea con cada hallazgo",
-        "Kilómetro y número de poste",
+        "Kilómetro y número de torre",
         "Termograma de cada falla",
         "Qué atender primero y cómo"
       ]
