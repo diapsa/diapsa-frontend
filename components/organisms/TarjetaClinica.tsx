@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { RUTA_CLINICAS, duracionDe, nombreTecnica, proximasFechas, type Clinica } from "@/lib/clinicas";
+import { RUTA_CLINICAS, duracionDe, nivelDe, nombreTecnica, proximasFechas, type Clinica } from "@/lib/clinicas";
 
 /**
  * La tarjeta de una clínica técnica en vivo: foto, técnica, nivel, título, una
@@ -27,8 +27,11 @@ export default function TarjetaClinica({ curso }: { curso: Clinica }) {
         </span>
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-[11px] font-bold uppercase tracking-widest text-tertiary">
-          {nombreTecnica(curso.tecnica)} · {curso.nivel}
+        <p className="flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-tertiary">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-2 py-0.5 text-white">
+            <span className="text-secondary">{curso.nivel}</span> {nivelDe(curso).nombre}
+          </span>
+          {nombreTecnica(curso.tecnica)}
         </p>
         <h3 className="mt-2 text-lg font-extrabold leading-snug text-primary">{curso.titulo}</h3>
         <p className="mt-2 flex-1 text-justify text-sm leading-relaxed text-tertiary">{curso.resumen}</p>

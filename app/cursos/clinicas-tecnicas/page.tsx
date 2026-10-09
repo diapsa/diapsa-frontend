@@ -7,7 +7,7 @@ import Antetitulo from "@/components/atoms/Antetitulo";
 import VideoBucle from "@/components/atoms/VideoBucle";
 import JsonLd, { createBreadcrumbSchema } from "@/components/atoms/JsonLd";
 import { TECNICAS } from "@/lib/cursos";
-import { CLINICAS, FORMATO_CLINICA, RUTA_CLINICAS, whatsappClinica } from "@/lib/clinicas";
+import { CLINICAS, FORMATO_CLINICA, NIVELES, RUTA_CLINICAS, whatsappClinica } from "@/lib/clinicas";
 
 export const metadata: Metadata = {
   title: "Clínicas técnicas en vivo: vibraciones y termografía",
@@ -45,7 +45,13 @@ const COMPARA = [
 ];
 
 export default function ClinicasPage() {
-  const tecnicas = TECNICAS.map((t) => ({ ...t, clinicas: CLINICAS.filter((c) => c.tecnica === t.clave) })).filter((t) => t.clinicas.length);
+  // Por técnica, en orden de ruta (para empezar, aplícalo, diagnostica), y
+  // aparte las que combinan técnicas sobre un tipo de equipo.
+  const tecnicas = TECNICAS.map((t) => ({
+    ...t,
+    clinicas: CLINICAS.filter((c) => c.eje === "tecnica" && c.tecnica === t.clave).sort((x, y) => x.nivel - y.nivel),
+  })).filter((t) => t.clinicas.length);
+  const porEquipo = CLINICAS.filter((c) => c.eje === "equipo").sort((x, y) => x.nivel - y.nivel);
   const breadcrumbs = [
     { name: "Inicio", url: "/" },
     { name: "Cursos", url: "/cursos" },
@@ -117,15 +123,36 @@ export default function ClinicasPage() {
         </div>
       </section>
 
-      {/* Los temas, por técnica */}
+      {/* Los temas: una ruta de tres niveles por técnica y, aparte, por tipo de equipo */}
       <section id="temas" className="w-full scroll-mt-28 py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-6">
           <Antetitulo>Los temas</Antetitulo>
           <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">Elige la clínica que necesitas</h2>
+          <p className="mt-4 max-w-3xl text-justify text-lg leading-relaxed text-tertiary">
+            Cada técnica tiene una ruta de tres niveles. Empieza en el que te corresponde, o toma solo la clínica que resuelve tu duda.
+          </p>
+
+          {/* La ruta */}
+          <ol className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+            {NIVELES.map((n) => (
+              <li key={n.n} className="flex gap-4 rounded-sm bg-white p-5 shadow-sm ring-1 ring-black/5">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary text-lg font-extrabold text-secondary">{n.n}</span>
+                <span>
+                  <span className="block text-lg font-extrabold text-primary">{n.nombre}</span>
+                  <span className="mt-0.5 block text-justify text-sm leading-relaxed text-tertiary">{n.texto}</span>
+                </span>
+              </li>
+            ))}
+          </ol>
+
+          {/* Por técnica */}
           {tecnicas.map((t) => (
-            <div key={t.clave} className="mt-10">
-              <h3 className="text-xl font-extrabold text-primary">{t.nombre}</h3>
-              <ul className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div key={t.clave} className="mt-12">
+              <div className="flex items-baseline justify-between gap-4 border-b border-gray-200 pb-3">
+                <h3 className="text-2xl font-extrabold text-primary">{t.nombre}</h3>
+                <span className="text-sm font-semibold text-tertiary">{t.clinicas.length} clínicas</span>
+              </div>
+              <ul className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {t.clinicas.map((c) => (
                   <li key={c.slug}>
                     <TarjetaClinica curso={c} />
@@ -134,6 +161,24 @@ export default function ClinicasPage() {
               </ul>
             </div>
           ))}
+
+          {/* Por tipo de equipo */}
+          {porEquipo.length > 0 && (
+            <div className="mt-14 rounded-sm bg-primary p-6 text-white lg:p-8">
+              <p className="text-xs font-bold uppercase tracking-widest text-secondary">Por tipo de equipo</p>
+              <h3 className="mt-2 text-2xl font-extrabold lg:text-3xl">Un equipo, todas las técnicas</h3>
+              <p className="mt-3 max-w-3xl text-justify leading-relaxed text-white/75">
+                Para quien tiene a su cargo un tipo de equipo y quiere saber qué revisarle con vibraciones, termografía y ultrasonido en una sola sesión.
+              </p>
+              <ul className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {porEquipo.map((c) => (
+                  <li key={c.slug}>
+                    <TarjetaClinica curso={c} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </section>
 

@@ -10,7 +10,7 @@
       "slug": "introduccion-vibraciones-mecanicas",
       "titulo": "Introducción a las vibraciones mecánicas",
       "tecnica": "vibraciones",
-      "nivel": "Introductorio",
+      "nivel": 1,
       "resumen": "Qué es la vibración, por qué dice tanto de una máquina y cómo se lee una medición básica, para quien empieza o quiere entender sus informes.",
       "para": "Técnicos, supervisores y planeadores de mantenimiento que nunca han medido vibración o que reciben informes y quieren entenderlos.",
       "aprenderas": [
@@ -28,13 +28,14 @@
       ],
       "requisitos": "Ninguno.",
       "foto": "/images/cursos/clinicas/introduccion-vibraciones-mecanicas.webp",
-      "caso": "Un informe de vibraciones que hayas recibido y no te quedó claro."
+      "caso": "Un informe de vibraciones que hayas recibido y no te quedó claro.",
+      "eje": "tecnica"
     },
     {
       "slug": "desbalance-y-desalineacion-en-el-espectro",
       "titulo": "Desbalance y desalineación en el espectro",
       "tecnica": "vibraciones",
-      "nivel": "Puntual",
+      "nivel": 2,
       "resumen": "Las dos fallas más comunes en maquinaria rotativa y cómo se reconocen en el espectro de vibración, para dejar de confundirlas.",
       "para": "Quien ya mide vibración y quiere distinguir con seguridad un desbalance de una desalineación.",
       "aprenderas": [
@@ -51,36 +52,38 @@
       ],
       "requisitos": "Saber tomar una medición de vibración.",
       "foto": "/images/cursos/clinicas/desbalance-y-desalineacion-en-el-espectro.webp",
-      "caso": "Un espectro de un equipo tuyo donde dudes si es desbalance o desalineación."
+      "caso": "Un espectro de un equipo tuyo donde dudes si es desbalance o desalineación.",
+      "eje": "tecnica"
     },
     {
-      "slug": "inspeccion-de-bombas-hidraulicas",
-      "titulo": "Inspección de bombas hidráulicas",
+      "slug": "fallas-de-rodamientos-en-el-espectro",
+      "titulo": "Fallas de rodamientos en el espectro",
       "tecnica": "vibraciones",
-      "nivel": "Puntual",
-      "resumen": "Cómo revisar una bomba en operación con vibraciones, termografía y ultrasonido, y reconocer las fallas que más paros provocan.",
-      "para": "Técnicos y supervisores de plantas con bombeo de agua, procesos o sistemas hidráulicos.",
+      "resumen": "Cómo se reconoce un rodamiento dañado en el espectro de vibración, en qué etapa está la falla y cuánto tiempo queda para cambiarlo.",
+      "para": "Quien ya lee espectros y quiere diagnosticar rodamientos con seguridad.",
       "aprenderas": [
-        "Dónde medir en el motor y en la bomba",
-        "Cómo reconocer cavitación, desbalance y rodamientos dañados",
-        "Qué revisar con la cámara termográfica en el motor y los sellos",
-        "Qué datos anotar para que el diagnóstico sirva"
+        "Qué son las frecuencias de falla de un rodamiento y cómo se calculan",
+        "Cómo se ve cada etapa del daño en el espectro y en la forma de onda",
+        "Qué aporta la envolvente o demodulación",
+        "Cuándo recomendar el cambio y qué vigilar mientras tanto"
       ],
       "temario": [
-        "Cómo funciona una bomba y dónde falla",
-        "Vibraciones: puntos de medición y fallas típicas",
-        "Termografía y ultrasonido como apoyo",
-        "Casos reales de bombas inspeccionadas"
+        "Frecuencias de falla: pista exterior, pista interior, bolas y jaula",
+        "Las etapas del daño",
+        "Envolvente y forma de onda",
+        "Casos reales y la recomendación en el informe"
       ],
-      "requisitos": "Conocimientos básicos de mantenimiento.",
-      "foto": "/images/cursos/clinicas/inspeccion-de-bombas-hidraulicas.webp",
-      "caso": "Los datos de una bomba que te preocupa: lecturas, ruido o temperatura."
+      "requisitos": "Saber leer un espectro de vibración.",
+      "caso": "Un espectro de un rodamiento tuyo que te tenga con dudas.",
+      "foto": "/images/cursos/clinicas/fallas-de-rodamientos-en-el-espectro.webp",
+      "nivel": 3,
+      "eje": "tecnica"
     },
     {
       "slug": "introduccion-termografia-infrarroja",
       "titulo": "Introducción a la termografía infrarroja",
       "tecnica": "termografia",
-      "nivel": "Introductorio",
+      "nivel": 1,
       "resumen": "Qué ve una cámara termográfica, qué no ve y cómo se usa en mantenimiento, para quien está por empezar o por comprar su primera cámara.",
       "para": "Técnicos, electricistas y supervisores que empiezan en la termografía o que evalúan comprar una cámara.",
       "aprenderas": [
@@ -97,13 +100,14 @@
       ],
       "requisitos": "Ninguno.",
       "foto": "/images/cursos/clinicas/introduccion-termografia-infrarroja.webp",
-      "caso": "Qué equipos quieres inspeccionar, o la cámara que estás pensando comprar."
+      "caso": "Qué equipos quieres inspeccionar, o la cámara que estás pensando comprar.",
+      "eje": "tecnica"
     },
     {
       "slug": "configuracion-de-la-camara-termografica",
       "titulo": "Configura tu cámara termográfica",
       "tecnica": "termografia",
-      "nivel": "Puntual",
+      "nivel": 2,
       "resumen": "Los ajustes que deciden si tu lectura es confiable: emisividad, temperatura reflejada, distancia, enfoque, rango y paleta, con tu propia cámara.",
       "para": "Quien ya tiene cámara termográfica y no está seguro de que sus lecturas sean correctas.",
       "aprenderas": [
@@ -121,13 +125,14 @@
       ],
       "requisitos": "Tener a la mano tu cámara termográfica durante la sesión.",
       "foto": "/images/cursos/clinicas/configuracion-de-la-camara-termografica.webp",
-      "caso": "Tu cámara y una imagen térmica que te haya dejado dudas."
+      "caso": "Tu cámara y una imagen térmica que te haya dejado dudas.",
+      "eje": "tecnica"
     },
     {
       "slug": "termografia-en-tableros-electricos",
       "titulo": "Termografía en tableros eléctricos",
       "tecnica": "termografia",
-      "nivel": "Puntual",
+      "nivel": 3,
       "resumen": "Cómo inspeccionar un tablero con seguridad, encontrar el punto caliente que importa y calificarlo para que mantenimiento sepa qué atender primero.",
       "para": "Electricistas y termografistas que recorren tableros, centros de control de motores y subestaciones.",
       "aprenderas": [
@@ -144,59 +149,38 @@
       ],
       "requisitos": "Saber usar una cámara termográfica.",
       "foto": "/images/cursos/clinicas/termografia-en-tableros-electricos.webp",
-      "caso": "Un termograma de un tablero tuyo con un punto caliente que no sabes calificar."
+      "caso": "Un termograma de un tablero tuyo con un punto caliente que no sabes calificar.",
+      "eje": "tecnica"
     },
     {
-      "slug": "inspeccion-de-transformadores-secos",
-      "titulo": "Inspección de transformadores secos",
-      "tecnica": "termografia",
-      "nivel": "Puntual",
-      "resumen": "Qué revisar en un transformador seco en operación con termografía y ultrasonido, y cómo detectar a tiempo fallas en devanados, conexiones o ventilación.",
-      "para": "Personal eléctrico y de mantenimiento a cargo de transformadores secos en planta, edificios o centros de datos.",
+      "slug": "introduccion-ultrasonido-pasivo",
+      "titulo": "Introducción al ultrasonido pasivo",
+      "tecnica": "ultrasonido",
+      "resumen": "Qué escucha un detector de ultrasonido que el oído no alcanza y en qué se usa en mantenimiento: fugas, rodamientos, lubricación y descargas eléctricas.",
+      "para": "Técnicos y supervisores que empiezan con el ultrasonido o que evalúan comprar un detector.",
       "aprenderas": [
-        "Cómo se calienta un transformador seco sano y uno con falla",
-        "Qué revisar en devanados, conexiones y ventiladores",
-        "Cómo apoyarse en el ultrasonido para detectar descargas",
-        "Qué hallazgos piden atención inmediata"
+        "Qué es el ultrasonido pasivo y por qué sirve para anticipar fallas",
+        "La diferencia entre escuchar por aire y por contacto",
+        "En qué equipos se aplica y qué se busca en cada uno",
+        "Qué detector conviene según lo que vas a inspeccionar"
       ],
       "temario": [
-        "Partes del transformador seco y sus fallas",
-        "Inspección termográfica paso a paso",
-        "Descargas parciales y ultrasonido",
-        "Casos reales de transformadores inspeccionados"
+        "Principios del ultrasonido pasivo",
+        "Medición por aire y por contacto",
+        "Aplicaciones: fugas, rodamientos, lubricación y eléctrico",
+        "Cómo elegir un detector"
       ],
-      "requisitos": "Conocimientos básicos de electricidad.",
-      "foto": "/images/cursos/clinicas/inspeccion-de-transformadores-secos.webp",
-      "caso": "Imágenes o datos de un transformador seco de tu instalación."
-    },
-    {
-      "slug": "inspeccion-de-motores-electricos",
-      "titulo": "Inspección de motores eléctricos",
-      "tecnica": "termografia",
-      "nivel": "Puntual",
-      "resumen": "Una ruta corta para revisar un motor en operación combinando termografía, vibraciones y ultrasonido, y saber qué le está pasando.",
-      "para": "Técnicos de mantenimiento que tienen motores críticos a su cargo.",
-      "aprenderas": [
-        "Qué revisar en la carcasa, la caja de conexiones y los rodamientos",
-        "Cómo diferenciar un problema eléctrico de uno mecánico",
-        "Qué técnica aplicar en cada parte del motor",
-        "Cada cuánto conviene revisar un motor crítico"
-      ],
-      "temario": [
-        "Fallas típicas de un motor eléctrico",
-        "Termografía en motor y conexiones",
-        "Vibraciones y ultrasonido en rodamientos",
-        "Cómo armar la ruta de inspección"
-      ],
-      "requisitos": "Conocimientos básicos de mantenimiento.",
-      "foto": "/images/cursos/clinicas/inspeccion-de-motores-electricos.webp",
-      "caso": "Un motor crítico de tu planta y lo que has observado en él."
+      "requisitos": "Ninguno.",
+      "caso": "Qué equipos quieres revisar, o el detector que estás pensando comprar.",
+      "foto": "/images/cursos/clinicas/introduccion-ultrasonido-pasivo.webp",
+      "nivel": 1,
+      "eje": "tecnica"
     },
     {
       "slug": "fugas-de-aire-comprimido-con-ultrasonido",
       "titulo": "Fugas de aire comprimido con ultrasonido",
       "tecnica": "ultrasonido",
-      "nivel": "Puntual",
+      "nivel": 2,
       "resumen": "Cómo encontrar fugas de aire comprimido en plena operación, ubicarlas con precisión y estimar cuánto le cuestan a la planta.",
       "para": "Técnicos de mantenimiento, energía y servicios de planta.",
       "aprenderas": [
@@ -213,13 +197,14 @@
       ],
       "requisitos": "Ninguno.",
       "foto": "/images/cursos/clinicas/fugas-de-aire-comprimido-con-ultrasonido.webp",
-      "caso": "Cómo es tu red de aire comprimido y dónde sospechas fugas."
+      "caso": "Cómo es tu red de aire comprimido y dónde sospechas fugas.",
+      "eje": "tecnica"
     },
     {
       "slug": "lubricacion-de-rodamientos-con-ultrasonido",
       "titulo": "Lubricación de rodamientos con ultrasonido",
       "tecnica": "ultrasonido",
-      "nivel": "Puntual",
+      "nivel": 2,
       "resumen": "Cómo engrasar un rodamiento con la cantidad justa escuchando lo que pasa dentro, para dejar de lubricar de más o de menos.",
       "para": "Lubricadores, técnicos mecánicos y responsables de rutas de lubricación.",
       "aprenderas": [
@@ -236,7 +221,118 @@
       ],
       "requisitos": "Ninguno.",
       "foto": "/images/cursos/clinicas/lubricacion-de-rodamientos-con-ultrasonido.webp",
-      "caso": "Tu ruta de lubricación actual y los equipos que más fallan."
+      "caso": "Tu ruta de lubricación actual y los equipos que más fallan.",
+      "eje": "tecnica"
+    },
+    {
+      "slug": "descargas-electricas-con-ultrasonido",
+      "titulo": "Descargas eléctricas con ultrasonido",
+      "tecnica": "ultrasonido",
+      "resumen": "Cómo detectar descargas parciales, efecto corona y tracking en tableros y subestaciones con ultrasonido, sin abrir los equipos y con seguridad.",
+      "para": "Personal eléctrico y termografistas a cargo de tableros, celdas y subestaciones de media tensión.",
+      "aprenderas": [
+        "La diferencia entre corona, tracking y arco por cómo suenan",
+        "Dónde y cómo escuchar en tableros cerrados",
+        "Por qué la termografía no siempre ve estas fallas",
+        "Cómo calificar el hallazgo y qué recomendar"
+      ],
+      "temario": [
+        "Qué son las descargas y por qué hacen ruido",
+        "Corona, tracking y arco: patrones de sonido",
+        "Inspección segura de tableros y celdas",
+        "Del hallazgo a la recomendación"
+      ],
+      "requisitos": "Conocimientos básicos de electricidad.",
+      "caso": "Un tablero o una celda donde hayas escuchado un zumbido o un chisporroteo.",
+      "foto": "/images/cursos/clinicas/descargas-electricas-con-ultrasonido.webp",
+      "nivel": 3,
+      "eje": "tecnica"
+    },
+    {
+      "slug": "inspeccion-de-motores-electricos",
+      "titulo": "Inspección de motores eléctricos",
+      "tecnica": "equipos",
+      "nivel": 2,
+      "resumen": "Una ruta corta para revisar un motor en operación combinando termografía, vibraciones y ultrasonido, y saber qué le está pasando.",
+      "para": "Técnicos de mantenimiento que tienen motores críticos a su cargo.",
+      "aprenderas": [
+        "Qué revisar en la carcasa, la caja de conexiones y los rodamientos",
+        "Cómo diferenciar un problema eléctrico de uno mecánico",
+        "Qué técnica aplicar en cada parte del motor",
+        "Cada cuánto conviene revisar un motor crítico"
+      ],
+      "temario": [
+        "Fallas típicas de un motor eléctrico",
+        "Termografía en motor y conexiones",
+        "Vibraciones y ultrasonido en rodamientos",
+        "Cómo armar la ruta de inspección"
+      ],
+      "requisitos": "Conocimientos básicos de mantenimiento.",
+      "foto": "/images/cursos/clinicas/inspeccion-de-motores-electricos.webp",
+      "caso": "Un motor crítico de tu planta y lo que has observado en él.",
+      "eje": "equipo"
+    },
+    {
+      "slug": "inspeccion-de-bombas-hidraulicas",
+      "titulo": "Inspección de bombas hidráulicas",
+      "tecnica": "equipos",
+      "nivel": 2,
+      "resumen": "Cómo revisar una bomba en operación con vibraciones, termografía y ultrasonido, y reconocer las fallas que más paros provocan.",
+      "para": "Técnicos y supervisores de plantas con bombeo de agua, procesos o sistemas hidráulicos.",
+      "aprenderas": [
+        "Dónde medir en el motor y en la bomba",
+        "Cómo reconocer cavitación, desbalance y rodamientos dañados",
+        "Qué revisar con la cámara termográfica en el motor y los sellos",
+        "Qué datos anotar para que el diagnóstico sirva"
+      ],
+      "temario": [
+        "Cómo funciona una bomba y dónde falla",
+        "Vibraciones: puntos de medición y fallas típicas",
+        "Termografía y ultrasonido como apoyo",
+        "Casos reales de bombas inspeccionadas"
+      ],
+      "requisitos": "Conocimientos básicos de mantenimiento.",
+      "foto": "/images/cursos/clinicas/inspeccion-de-bombas-hidraulicas.webp",
+      "caso": "Los datos de una bomba que te preocupa: lecturas, ruido o temperatura.",
+      "eje": "equipo"
+    },
+    {
+      "slug": "inspeccion-de-transformadores-secos",
+      "titulo": "Inspección de transformadores secos",
+      "tecnica": "equipos",
+      "nivel": 3,
+      "resumen": "Qué revisar en un transformador seco en operación con termografía y ultrasonido, y cómo detectar a tiempo fallas en devanados, conexiones o ventilación.",
+      "para": "Personal eléctrico y de mantenimiento a cargo de transformadores secos en planta, edificios o centros de datos.",
+      "aprenderas": [
+        "Cómo se calienta un transformador seco sano y uno con falla",
+        "Qué revisar en devanados, conexiones y ventiladores",
+        "Cómo apoyarse en el ultrasonido para detectar descargas",
+        "Qué hallazgos piden atención inmediata"
+      ],
+      "temario": [
+        "Partes del transformador seco y sus fallas",
+        "Inspección termográfica paso a paso",
+        "Descargas parciales y ultrasonido",
+        "Casos reales de transformadores inspeccionados"
+      ],
+      "requisitos": "Conocimientos básicos de electricidad.",
+      "foto": "/images/cursos/clinicas/inspeccion-de-transformadores-secos.webp",
+      "caso": "Imágenes o datos de un transformador seco de tu instalación.",
+      "eje": "equipo"
     }
-  ]
+  ],
+  "niveles": {
+    "1": {
+      "nombre": "Para empezar",
+      "texto": "Si nunca has usado la técnica o quieres entender los informes que recibes."
+    },
+    "2": {
+      "nombre": "Aplícalo",
+      "texto": "Si ya la usas y quieres medir mejor y sacarle más provecho."
+    },
+    "3": {
+      "nombre": "Diagnostica",
+      "texto": "Si ya mides y quieres decir con seguridad qué falla hay y qué hacer."
+    }
+  }
 }

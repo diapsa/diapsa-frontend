@@ -7,7 +7,7 @@ import ContactForm from "@/components/organisms/ContactForm";
 import TarjetaClinica from "@/components/organisms/TarjetaClinica";
 import Antetitulo from "@/components/atoms/Antetitulo";
 import JsonLd, { createBreadcrumbSchema, createCourseSchema } from "@/components/atoms/JsonLd";
-import { FORMATO_CLINICA, CLINICAS, RUTA_CLINICAS, duracionDe, clinica, nombreTecnica, proximasFechas, whatsappClinica } from "@/lib/clinicas";
+import { FORMATO_CLINICA, CLINICAS, RUTA_CLINICAS, duracionDe, clinica, nivelDe, nombreTecnica, proximasFechas, whatsappClinica } from "@/lib/clinicas";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -55,7 +55,7 @@ export default async function ClinicaPage({ params }: Props) {
   const datos = [
     { k: "Modalidad", v: FORMATO_CLINICA.modalidad },
     { k: "Duración", v: duracionDe(c) },
-    { k: "Nivel", v: c.nivel },
+    { k: "Nivel", v: `${c.nivel} · ${nivelDe(c).nombre}` },
     { k: "Costo", v: c.precio ?? "Accesible, pregúntanos" },
   ];
 

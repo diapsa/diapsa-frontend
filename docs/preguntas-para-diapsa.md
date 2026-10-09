@@ -55,7 +55,7 @@ Lista reunida el 2026-10-04 con todo lo que el sitio afirma y conviene validar c
 31. ¿Las dos horas por sesión están bien, o algún tema necesita más? Es una propuesta.
 32. ¿En qué plataforma se imparten (Zoom, Teams, Meet) y se entrega grabación o constancia? La página no promete ninguna de las dos.
 33. ¿Qué fechas tiene el primer grupo de cada tema? Sin fecha, la página invita a apartar lugar.
-34. ¿Están bien los diez temas, o quitamos o agregamos alguno?
+34. ¿Están bien los trece temas (tres por técnica en ruta de tres niveles, más tres por tipo de equipo), o quitamos o agregamos alguno? Se agregaron introducción al ultrasonido, fallas de rodamientos en el espectro y descargas eléctricas con ultrasonido.
 34a. "Trae tu caso": la página invita a mandar un termograma, espectro o duda al inscribirse para verlo en la sesión sin el nombre de la empresa. ¿El especialista puede preparar eso antes de cada clínica?
 34b. "Una clínica solo para tu planta": la página ofrece armarla para un equipo en la fecha que les acomode. ¿Se puede ofrecer y con qué mínimo de personas?
 

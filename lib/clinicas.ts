@@ -16,7 +16,10 @@ export type Clinica = {
   slug: string;
   titulo: string;
   tecnica: string;
-  nivel: string;
+  /** 1 para empezar, 2 aplícalo, 3 diagnostica. */
+  nivel: 1 | 2 | 3;
+  /** Por técnica, o por tipo de equipo cuando combina técnicas. */
+  eje: "tecnica" | "equipo";
   resumen: string;
   para: string;
   aprenderas: string[];
@@ -34,6 +37,7 @@ export type Clinica = {
 
 const DATOS = datos as unknown as {
   formato: { modalidad: string; duracion: string; grupo: string };
+  niveles: Record<string, { nombre: string; texto: string }>;
   clinicas: Clinica[];
 };
 
@@ -43,7 +47,11 @@ export const RUTA_CLINICAS = "/cursos/clinicas-tecnicas";
 
 export const clinica = (slug: string) => CLINICAS.find((c) => c.slug === slug) ?? null;
 export const duracionDe = (c: Clinica) => c.duracion ?? FORMATO_CLINICA.duracion;
-export const nombreTecnica = (clave: string) => TECNICAS.find((t) => t.clave === clave)?.nombre ?? "";
+export const nombreTecnica = (clave: string) => (clave === "equipos" ? "Por tipo de equipo" : TECNICAS.find((t) => t.clave === clave)?.nombre ?? "");
+
+/** Los tres niveles de la ruta de cada técnica. */
+export const NIVELES = ([1, 2, 3] as const).map((n) => ({ n, ...DATOS.niveles[String(n)] }));
+export const nivelDe = (c: Clinica) => NIVELES[c.nivel - 1];
 
 const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 
