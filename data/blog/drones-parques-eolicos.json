@@ -1,0 +1,77 @@
+{
+  "slug": "termografia-con-drones-en-parques-eolicos",
+  "titulo": "Termografía con drones en parques eólicos: qué se puede ver y qué no",
+  "extracto": "Un aerogenerador tiene el generador, la caja de engranes y la electrónica a más de ochenta metros de altura. Qué puede ver la termografía con dron desde afuera, qué necesita otra técnica y por qué la subestación del parque no debe quedar fuera de la inspección.",
+  "portada": "/images/blog/dron-parques-eolicos.webp",
+  "fecha": "2026-10-09T16:00:00.000000Z",
+  "seo": {
+    "titulo": "Termografía con drones en parques eólicos",
+    "descripcion": "Qué puede ver la termografía con dron en un aerogenerador: góndola, palas, transformador y subestación del parque, y qué necesita otras técnicas."
+  },
+  "bloques": [
+    [
+      "p",
+      "En un parque eólico, casi todo lo que puede fallar está en lo alto. El generador, la caja de engranes, el sistema de orientación y buena parte de la electrónica de potencia viven dentro de la góndola, a la altura de un edificio de treinta pisos. Subir a revisar cada aerogenerador lleva tiempo, exige detener la máquina y tiene sus propios riesgos."
+    ],
+    [
+      "p",
+      "El dron con cámara térmica no reemplaza esas revisiones, pero sí permite recorrer el parque completo en poco tiempo y decidir a qué máquinas hay que subir primero."
+    ],
+    [
+      "h2",
+      "Qué se ve desde afuera"
+    ],
+    [
+      "h3",
+      "La góndola"
+    ],
+    [
+      "p",
+      "La cámara ve la superficie exterior de la góndola y sus salidas de ventilación. Un generador o una caja de engranes que trabaja más caliente de lo normal se nota como una zona de la carcasa más caliente que en las máquinas vecinas del mismo modelo, con viento y carga parecidos. No dice cuál es la falla, pero sí cuál máquina se está comportando distinto."
+    ],
+    [
+      "h3",
+      "Las palas"
+    ],
+    [
+      "p",
+      "Las palas se inspeccionan sobre todo con imagen visual de alta resolución, con la máquina detenida y la pala en posición. La termografía puede mostrar defectos internos, como despegues o zonas con agua, cuando hay suficiente diferencia de temperatura, por ejemplo cuando el sol empieza a calentar la pala por la mañana. No siempre se dan esas condiciones, así que se planea con cuidado y se combina con la inspección visual."
+    ],
+    [
+      "h3",
+      "Transformador y conexiones al pie de la torre"
+    ],
+    [
+      "p",
+      "Cada aerogenerador tiene un transformador, dentro de la torre o a un costado, y sus conexiones a la red del parque. Ahí aplica la misma termografía que en cualquier instalación eléctrica: conexiones flojas, boquillas calientes y desbalance de fases."
+    ],
+    [
+      "h2",
+      "Lo que necesita otra técnica"
+    ],
+    [
+      "p",
+      "El daño en rodamientos y engranes empieza mucho antes de producir calor que se vea desde afuera. Para eso están el análisis de vibraciones, que en muchos parques ya se mide en línea, y el análisis de aceite de la caja de engranes. La termografía aérea complementa a esas técnicas: ayuda a confirmar y a priorizar, no a sustituirlas."
+    ],
+    [
+      "h2",
+      "No olvidar la subestación del parque"
+    ],
+    [
+      "p",
+      "Toda la energía del parque pasa por la subestación colectora y su transformador principal. Una falla ahí saca de operación a todos los aerogeneradores al mismo tiempo. Conviene incluirla en la misma campaña, desde el aire para la parte alta y a pie para los tableros y celdas."
+    ],
+    [
+      "h2",
+      "Cómo se entrega"
+    ],
+    [
+      "p",
+      "El informe compara cada aerogenerador contra los demás del mismo modelo y ordena las máquinas por prioridad: cuáles requieren subir a revisar, cuáles se vigilan en la siguiente campaña y cuáles están dentro de lo normal. Cada hallazgo lleva su imagen térmica y visual, su ubicación y la recomendación."
+    ],
+    [
+      "p",
+      "Si quieres saber cómo aplicaría en tu parque, revisa nuestro servicio de [termografía con drones](/servicios/monitoreo-condicion/termografia-con-drones)."
+    ]
+  ]
+}

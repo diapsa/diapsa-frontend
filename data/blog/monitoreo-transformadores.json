@@ -5,8 +5,8 @@
   "portada": "/images/blog/monitoreo-transformadores.webp",
   "fecha": "2026-10-01T12:00:00.100000Z",
   "seo": {
-    "titulo": "Monitoreo de transformadores de potencia: qué medir en línea",
-    "descripcion": "Qué medir en línea en un transformador de potencia: gases disueltos, humedad, temperatura, sonido y descargas parciales, boquillas, cambiador de derivaciones y enfriamiento. Cómo se complementa con las pruebas y por dónde empezar."
+    "titulo": "Monitoreo de transformadores: qué medir en línea",
+    "descripcion": "Qué medir en línea en un transformador de potencia: gases disueltos, humedad, temperatura, sonido, boquillas y enfriamiento, y por dónde empezar."
   },
   "bloques": [
     ["p", "Un transformador de potencia puede pasar décadas en servicio sin dar problemas, y por eso es fácil olvidarse de él. Pero cuando falla, la reparación tarda meses, un equipo nuevo puede tardar todavía más en llegar y la planta, la subestación o el centro de datos que alimentaba se queda sin respaldo o sin energía."],

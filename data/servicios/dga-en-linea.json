@@ -25,8 +25,8 @@
     "subtitle": "Los gases del aceite de tus transformadores críticos, medidos todo el día: la falla interna se anuncia antes de ocurrir",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoTitle": "Análisis de gases disueltos en línea para transformadores (DGA)",
-  "seoDescription": "Análisis de gases disueltos en línea para transformadores de potencia: monitor que mide hasta 9 gases y la humedad del aceite cada hora, sin gas portador ni de calibración. Avisa cuando aparece acetileno o sube el hidrógeno, con tendencia, velocidad de generación e interpretación con Duval, IEEE C57.104 e IEC 60599 revisada por especialistas de DIAPSA.",
+  "seoTitle": "DGA en línea para transformadores de potencia",
+  "seoDescription": "Monitor de gases disueltos en línea para transformadores: gases y humedad del aceite cada hora, con cada alerta revisada por un especialista.",
   "content": {
     "title": "Un transformador avisa en sus gases antes de fallar",
     "subtitle": "Un arco interno, una descarga o un punto caliente descomponen el aceite y el papel, y dejan gases disueltos. Con muestras una o dos veces al año, una falla rápida pasa entre dos análisis. El monitor en línea mide esos gases cada hora, y los algoritmos e IA reconocen el patrón de la falla.",

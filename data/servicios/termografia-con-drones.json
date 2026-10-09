@@ -1,0 +1,392 @@
+{
+  "id": "termografia-con-drones",
+  "slug": "termografia-con-drones",
+  "type": "tecnologia",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Servicios",
+      "link": "/servicios"
+    },
+    {
+      "label": "Monitoreo de Condición",
+      "link": "/servicios/monitoreo-condicion"
+    },
+    {
+      "label": "Termografía con Drones",
+      "link": "/servicios/monitoreo-condicion/termografia-con-drones"
+    }
+  ],
+  "header": {
+    "title": "Termografía con Drones",
+    "subtitle": "Inspección termográfica aérea de parques solares y eólicos, líneas, subestaciones, torres de enfriamiento y estructuras altas, sin andamios ni paros",
+    "backgroundImage": "/images/fondo-hero.webp"
+  },
+  "seoTitle": "Inspección termográfica con drones",
+  "seoDescription": "Termografía aérea con dron para parques solares, líneas eléctricas, subestaciones, techos y chimeneas. Análisis por termógrafos certificados. Cotiza.",
+  "content": {
+    "title": "Lo que está en altura también se calienta antes de fallar",
+    "subtitle": "Volamos la cámara térmica hasta donde no llega una persona sin andamio, grúa o libranza, y un termógrafo certificado te dice qué atender y con qué urgencia.",
+    "image": "/images/servicios/termografia-con-drones/dron-parque-solar.webp",
+    "items": [
+      {
+        "id": "aplicaciones",
+        "title": "Dónde se aplica",
+        "content": "Parques solares y eólicos, líneas de transmisión y distribución, subestaciones, torres de enfriamiento, techos industriales, chimeneas, tanques y estructuras altas. Todo lo que es grande, está lejos o está en altura.",
+        "foto": {
+          "src": "/images/servicios/termografia-con-drones/dron-parque-solar.webp",
+          "alt": "Dron de inspección con cámara térmica sobrevolando un parque solar"
+        }
+      },
+      {
+        "id": "beneficios",
+        "title": "Qué ganas",
+        "content": "Cubres en horas lo que a pie tomaría días, sin poner a nadie en altura y sin detener la operación. Cada hallazgo queda ubicado para que la cuadrilla llegue directo.",
+        "foto": {
+          "src": "/images/servicios/termografia-con-drones/termograma-paneles.webp",
+          "alt": "Imagen térmica aérea de paneles solares con celdas más calientes que el resto"
+        }
+      },
+      {
+        "id": "modalidades",
+        "title": "Vuelo y termografía en tierra",
+        "content": "El dron cubre lo grande y lo alto; lo que necesita detalle, como un tablero o un transformador de cerca, se completa con la ruta de termografía a pie en la misma visita.",
+        "foto": {
+          "src": "/images/servicios/termografia-con-drones/termograma-techo.webp",
+          "alt": "Imagen térmica aérea del techo de una nave industrial con zonas de humedad"
+        }
+      },
+      {
+        "id": "plataforma-idap",
+        "title": "Tus datos viven en IDAP",
+        "content": "Cada hallazgo con su imagen térmica, su foto y su ubicación, junto al resto de las técnicas, para consultarlo en línea cuando lo necesites.",
+        "foto": {
+          "src": "/images/idap/mockup.png",
+          "alt": "Pantallas de IDAP con el tablero, la lista de equipos y el historial de inspecciones",
+          "ajuste": "contener",
+          "fondo": "oscuro"
+        }
+      }
+    ]
+  },
+  "fotoPuntos": {
+    "src": "/images/servicios/termografia-con-drones/dron-linea.webp",
+    "alt": "Dron de inspección junto a los aisladores de una torre de transmisión"
+  },
+  "diagramas": [
+    "flujo-servicio"
+  ],
+  "flujo": [
+    {
+      "titulo": "Plan de vuelo",
+      "texto": "Definimos contigo qué se inspecciona, la ruta, el horario y los accesos y reglas de seguridad del sitio."
+    },
+    {
+      "titulo": "Vuelo con cámara térmica",
+      "texto": "Imagen térmica y visual de cada área, en operación y en las condiciones que hacen visibles las fallas: carga, sol o diferencia de temperatura."
+    },
+    {
+      "titulo": "Análisis de imágenes",
+      "texto": "Un termógrafo certificado revisa cada imagen, descarta reflejos y compara cada componente contra sus iguales."
+    },
+    {
+      "titulo": "Diagnóstico ubicado",
+      "texto": "Cada hallazgo con su componente, su causa probable, su severidad y dónde está, para que la cuadrilla llegue directo."
+    },
+    {
+      "titulo": "Seguimiento",
+      "texto": "Lo que sale con hallazgo se vuelve a revisar hasta que se corrige, en vuelo o en tierra."
+    }
+  ],
+  "entregable": {
+    "etiqueta": "Qué recibes",
+    "titulo": "Esto es lo que recibes",
+    "descripcion": "Cada hallazgo con su termograma, su foto, dónde está y qué hacer. Pasa el cursor por la lista para ver dónde va cada cosa en el informe.",
+    "contenido": [
+      "Imagen térmica y foto visual de cada hallazgo",
+      "Ubicación de cada hallazgo en el sitio",
+      "Temperatura y diferencia contra componentes iguales",
+      "Severidad en semáforo y causa probable",
+      "Acción recomendada y con qué urgencia"
+    ],
+    "muestra": {
+      "titulo": "Informe de termografía aérea",
+      "equipo": "Parque solar · Bloque B, fila 7",
+      "subtitulo": "Vuelo con irradiancia estable · planta generando · ejemplo con datos ilustrativos",
+      "estado": {
+        "texto": "Severidad alta",
+        "color": "#dc2626",
+        "punto": 3
+      },
+      "imagen": {
+        "titulo": "Imagen térmica y foto visual",
+        "termica": "/images/servicios/termografia-con-drones/termograma-paneles.webp",
+        "visual": "/images/servicios/termografia-con-drones/paneles-visual.webp",
+        "altTermica": "Termograma aéreo de filas de paneles con una franja caliente en un módulo",
+        "altVisual": "Foto aérea de las mismas filas de paneles",
+        "punto": 0
+      },
+      "lecturas": {
+        "titulo": "Temperatura máxima por módulo · °C",
+        "unidad": "°C",
+        "max": 70,
+        "nota": "La marca es la referencia: los módulos vecinos de la misma cadena.",
+        "punto": 2,
+        "filas": [
+          {
+            "p": "Módulo 11",
+            "valor": 48.2,
+            "ref": 48.5,
+            "color": "#16a34a"
+          },
+          {
+            "p": "Módulo 12",
+            "valor": 58.6,
+            "ref": 48.5,
+            "color": "#dc2626"
+          },
+          {
+            "p": "Módulo 13",
+            "valor": 48.9,
+            "ref": 48.5,
+            "color": "#16a34a"
+          }
+        ]
+      },
+      "escala": {
+        "titulo": "Severidad según el tipo de falla",
+        "punto": 3,
+        "niveles": [
+          {
+            "t": "Baja",
+            "r": "suciedad o sombra",
+            "c": "#ca8a04"
+          },
+          {
+            "t": "Media",
+            "r": "celda caliente",
+            "c": "#ea580c"
+          },
+          {
+            "t": "Alta",
+            "r": "diodo o cadena sin generar",
+            "c": "#dc2626"
+          }
+        ]
+      },
+      "hallazgo": {
+        "titulo": "Diodo de derivación activado",
+        "texto": "Módulo 12 de la cadena 3, bloque B, fila 7: una tercera parte del módulo 10 °C arriba de sus vecinos y sin generar.",
+        "punto": 1
+      },
+      "recomendacion": {
+        "titulo": "Cambiar la caja de conexiones o el módulo",
+        "urgencia": "esta semana",
+        "texto": "Mientras tanto, revisar las demás cadenas del inversor en el siguiente vuelo.",
+        "punto": 4
+      }
+    }
+  },
+  "mostrarClientes": true,
+  "certificacion": "Análisis por termógrafos certificados · ISO 18436-7",
+  "faq": [
+    {
+      "question": "¿Qué es la termografía con drones?",
+      "answer": "Es la misma inspección termográfica de siempre, pero con la cámara térmica montada en un dron. Sirve para revisar lo que es muy grande, está lejos o está en altura, como un parque solar, una línea eléctrica o el techo de una nave, sin andamios ni paros."
+    },
+    {
+      "question": "¿Qué se puede inspeccionar con dron?",
+      "answer": "Paneles solares e inversores, aerogeneradores y su subestación, líneas de transmisión y distribución, subestaciones, torres de enfriamiento, techos industriales, chimeneas, tanques, aislamientos de tubería elevada y estructuras altas. Lo que necesita detalle de cerca se completa con termografía a pie."
+    },
+    {
+      "question": "¿Qué fallas encuentra en un parque solar?",
+      "answer": "Celdas y módulos calientes, diodos de derivación activados, cadenas completas sin generar, suciedad o sombras que generan puntos calientes y conexiones dañadas. Para que se vean, la inspección se hace con buena radiación solar y la planta generando."
+    },
+    {
+      "question": "¿Hay que detener la operación?",
+      "answer": "No. La termografía se hace con todo en operación, porque es justo con carga o con sol cuando las fallas se calientan y se ven."
+    },
+    {
+      "question": "¿Qué diferencia hay con la termografía a pie?",
+      "answer": "El dron cubre mucha área en poco tiempo y llega a lo alto sin poner a nadie en riesgo. La ruta a pie da más detalle en tableros y equipos de cerca. Muchas veces conviene combinar las dos en la misma visita."
+    },
+    {
+      "question": "¿Quién analiza las imágenes?",
+      "answer": "Un termógrafo certificado conforme a ISO 18436-7. El vuelo da la imagen; el diagnóstico, la severidad y la recomendación los da el especialista."
+    },
+    {
+      "question": "¿Qué necesito para cotizar?",
+      "answer": "Qué quieres inspeccionar y su tamaño aproximado: megawatts o hectáreas del parque, kilómetros de línea, metros cuadrados de techo o número de estructuras, la ubicación y las reglas de acceso del sitio."
+    }
+  ],
+  "cta": {
+    "title": "¿Qué necesitas inspeccionar desde el aire?",
+    "text": "Cuéntanos qué es, qué tamaño tiene y dónde está, y te mandamos la propuesta con el plan de vuelo, sin compromiso.",
+    "whatsappMessage": "Hola, quiero cotizar una inspección termográfica con dron.",
+    "datos": [
+      "Registro REPSE vigente",
+      "Termógrafos certificados",
+      "Servicio en todo México"
+    ]
+  },
+  "relatedProducts": {
+    "title": "LLEVA A CABO ANÁLISIS TERMOGRÁFICOS",
+    "subtitle": "Consigue la cámara termográfica que necesitas",
+    "items": []
+  },
+  "cobertura": {
+    "etiqueta": "Dónde aplica",
+    "titulo": "¿Dónde aplica y qué detecta?",
+    "equiposTitulo": "Qué inspeccionamos",
+    "equipos": [
+      "Parques solares",
+      "Techos solares",
+      "Parques eólicos",
+      "Líneas de transmisión",
+      "Líneas de distribución",
+      "Subestaciones",
+      "Torres de enfriamiento",
+      "Techos industriales",
+      "Chimeneas",
+      "Tanques",
+      "Tubería elevada",
+      "Estructuras altas"
+    ],
+    "fallasTitulo": "Fallas que detecta",
+    "fallas": [
+      "Celdas y módulos calientes",
+      "Diodos de derivación activados",
+      "Cadenas sin generar",
+      "Góndolas con sobrecalentamiento",
+      "Conectores, grapas y empalmes calientes",
+      "Aisladores dañados",
+      "Distribución de agua irregular",
+      "Ventiladores y motores calientes",
+      "Humedad en techos",
+      "Aislamiento térmico dañado",
+      "Refractario dañado",
+      "Niveles en tanques"
+    ]
+  },
+  "introBeneficios": {
+    "beneficios": [
+      {
+        "icono": "calendario",
+        "titulo": "En horas, no en días",
+        "texto": "Un parque solar o un techo completo se recorren desde el aire en una fracción del tiempo."
+      },
+      {
+        "icono": "fuego",
+        "titulo": "Nadie en altura",
+        "texto": "Sin andamios, grúas ni personal colgado junto a equipo energizado."
+      },
+      {
+        "icono": "paro",
+        "titulo": "Sin detener nada",
+        "texto": "Se inspecciona en operación, que es cuando las fallas se ven."
+      },
+      {
+        "icono": "documento",
+        "titulo": "Cada hallazgo ubicado",
+        "texto": "Imagen térmica, foto y ubicación para que la cuadrilla llegue directo."
+      }
+    ],
+    "modalidades": [
+      {
+        "titulo": "Vuelo con cámara térmica",
+        "texto": "Para lo grande, lo lejano y lo alto."
+      },
+      {
+        "titulo": "Termografía a pie",
+        "texto": "Para tableros, motores y equipos de cerca, en la misma visita.",
+        "enlace": "/servicios/monitoreo-condicion/termografia-infrarroja"
+      }
+    ],
+    "fotos": [
+      {
+        "src": "/images/servicios/termografia-con-drones/dron-parque-solar.webp",
+        "alt": "Dron con cámara térmica sobre un parque solar."
+      },
+      {
+        "src": "/images/servicios/termografia-con-drones/dron-linea.webp",
+        "alt": "Dron junto a una torre de transmisión."
+      },
+      {
+        "src": "/images/servicios/termografia-con-drones/termograma-paneles.webp",
+        "alt": "Termograma aéreo de paneles solares."
+      },
+      {
+        "src": "/images/servicios/termografia-con-drones/termograma-torre.webp",
+        "alt": "Termograma aéreo de una torre de alta tensión con la grapa de una fase caliente."
+      },
+      {
+        "src": "/images/servicios/termografia-con-drones/dron-distribucion.webp",
+        "alt": "Dron con cámara térmica junto a un poste de una línea de distribución con su transformador."
+      },
+      {
+        "src": "/images/servicios/termografia-con-drones/dron-parque-eolico.webp",
+        "alt": "Dron con cámara térmica junto a la góndola de un aerogenerador."
+      },
+      {
+        "src": "/images/servicios/termografia-con-drones/termograma-torre-enfriamiento.webp",
+        "alt": "Termograma aéreo de una torre de enfriamiento con una celda de distribución irregular."
+      }
+    ],
+    "idap": {
+      "titulo": "Tus datos viven en IDAP",
+      "texto": "Cada termograma entra a la ficha del activo junto con las demás técnicas, y se consulta en línea cuando lo necesites.",
+      "puntos": [
+        "Imagen térmica y visual de cada hallazgo",
+        "Ubicación y severidad",
+        "Historial de cada inspección"
+      ],
+      "video": "/videos/idap/idap-equipo",
+      "descripcionVideo": "Ficha de un equipo en IDAP: gemelo digital, estado por componente y diagnóstico por disciplina",
+      "enlace": "/servicios/idap"
+    },
+    "reporteLinea": {
+      "etiqueta": "Líneas de alta tensión",
+      "titulo": "Así se ve el informe de una línea de transmisión, kilómetro por kilómetro",
+      "texto": "Volamos la línea en carga, torre por torre, y cada hallazgo queda en su kilómetro y en su torre, con su termograma, su severidad y qué hacer, para que la cuadrilla llegue directo al punto y aproveche cada libranza.",
+      "puntos": [
+        "Trazo de la línea con cada hallazgo",
+        "Kilómetro y número de torre",
+        "Termograma de cada falla",
+        "Qué atender primero y cómo"
+      ]
+    }
+  },
+  "servicioRelacionado": {
+    "href": "/servicios/monitoreo-condicion/termografia-infrarroja",
+    "etiqueta": "Termografía en tierra",
+    "titulo": "Termografía infrarroja",
+    "texto": "Para tableros, motores y subestaciones de cerca, con la ruta a pie de un termógrafo certificado.",
+    "enlace": "Ver termografía infrarroja"
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Del dato a la decisión",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "Del vuelo al informe",
+          "texto": "Planeamos la ruta contigo, volamos con la cámara térmica, un termógrafo certificado descarta reflejos y sombras, y cada falla queda ubicada por bloque y fila. En el siguiente vuelo revisamos que se haya corregido.",
+          "video": "/videos/termografia-con-drones/dron-proceso",
+          "descripcion": "Los cinco pasos de una inspección termográfica con dron en un parque solar: plan de vuelo, vuelo térmico, análisis, diagnóstico ubicado y seguimiento",
+          "pasos": [
+            "Plan de vuelo con las reglas del sitio",
+            "Vuelo térmico en operación",
+            "Análisis por termógrafo certificado",
+            "Diagnóstico ubicado por bloque y fila",
+            "Seguimiento en el siguiente vuelo"
+          ]
+        }
+      ]
+    }
+  ]
+}

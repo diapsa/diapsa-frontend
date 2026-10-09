@@ -8,9 +8,9 @@ import MCCtaFinal from "@/components/organisms/MCCtaFinal";
 const OG_IMAGE = "/images/og-images/og-image-monitoreo-condicion.jpg";
 
 export const metadata: Metadata = {
-    title: "Monitoreo de Condición: Vibraciones, Termografía y Ultrasonido",
+    title: "Monitoreo de condición: vibraciones y termografía",
     description:
-        "Detecta fallas antes del paro con termografía, vibraciones, ultrasonido, análisis de aceite y estudios eléctricos. Medimos con tus equipos en operación.",
+        "Detecta fallas antes del paro con vibraciones, termografía, ultrasonido, aceite y estudios eléctricos, con tus equipos en operación. Cotiza tu ruta.",
     keywords: [
         "monitoreo de condición industrial",
         "mantenimiento predictivo México",

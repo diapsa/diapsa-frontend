@@ -175,21 +175,26 @@ export default function MegaMenu({ trigger, columnas }: Props) {
 
                   {formato === "mosaico" && (
                     <ul className="grid grid-cols-3 gap-3">
-                      {columna.items.map((item) => (
-                        <li key={item.href}>
+                      {columna.items.map((item, i, todos) => {
+                        // Si sobra uno en la última fila, ocupa el renglón completo
+                        // y se acuesta, en vez de quedar suelto.
+                        const suelto = todos.length % 3 === 1 && i === todos.length - 1;
+                        return (
+                        <li key={item.href} className={suelto ? "col-span-3" : undefined}>
                           <Link prefetch={false}
                             href={item.href}
                             onClick={cerrarYa}
                             title={item.descripcion}
-                            className="group flex aspect-[5/4] flex-col items-center justify-center gap-4 rounded-lg bg-[#1a1a1a] px-3 text-center transition-colors duration-200 hover:bg-[#262626]"
+                            className={`group flex items-center justify-center gap-4 rounded-lg bg-[#1a1a1a] px-3 text-center transition-colors duration-200 hover:bg-[#262626] ${suelto ? "h-20 flex-row" : "aspect-[5/4] flex-col"}`}
                           >
-                            <IconoMenu icono={item.icono} oscuro className="h-14 w-14 group-hover:text-secondary" />
+                            <IconoMenu icono={item.icono} oscuro className={`${suelto ? "h-9 w-9" : "h-14 w-14"} group-hover:text-secondary`} />
                             <span className="text-xs font-bold uppercase leading-snug tracking-wide text-white transition-colors group-hover:text-secondary">
                               {item.label}
                             </span>
                           </Link>
                         </li>
-                      ))}
+                        );
+                      })}
                     </ul>
                   )}
 

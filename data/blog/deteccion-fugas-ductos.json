@@ -5,8 +5,8 @@
   "portada": "/images/blog/deteccion-fugas-ductos.webp",
   "fecha": "2026-10-02T18:00:00.200000Z",
   "seo": {
-    "titulo": "Sistemas de detección de fugas en ductos: tipos y cuál conviene",
-    "descripcion": "Tipos de sistemas de detección de fugas en ductos y gasoductos: balance de masa, ondas de presión, monitoreo acústico, fibra óptica DAS y DTS, e inspección en campo con cámaras acústicas y ópticas. Ventajas de cada uno y cómo se combinan."
+    "titulo": "Detección de fugas en ductos: cuál conviene",
+    "descripcion": "Balance de masa, ondas de presión, monitoreo acústico, fibra óptica DAS y DTS e inspección con cámaras: ventajas de cada sistema y cómo se combinan."
   },
   "bloques": [
     ["p", "Una fuga en un ducto no siempre es una ruptura espectacular. Muchas empiezan pequeñas, en una válvula, una brida o un punto debilitado, y crecen con el tiempo. Detectarlas pronto evita pérdidas de producto, riesgos para la gente y daños ambientales, y hay varias formas de hacerlo."],

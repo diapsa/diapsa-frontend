@@ -1,0 +1,95 @@
+{
+  "slug": "termografia-con-drones-en-parques-solares",
+  "titulo": "Termografía con drones en parques solares: qué fallas encuentra y cuándo volar",
+  "extracto": "Un parque solar tiene miles de módulos y revisarlos a pie no es práctico. Qué fallas ve la termografía aérea, en qué condiciones hay que volar para que se vean y cómo se convierte la imagen en una lista de trabajo para la cuadrilla.",
+  "portada": "/images/blog/dron-parques-solares.webp",
+  "fecha": "2026-10-09T18:00:00.000000Z",
+  "seo": {
+    "titulo": "Termografía con drones en parques solares",
+    "descripcion": "Qué fallas encuentra la termografía aérea en un parque solar, en qué condiciones volar y cómo se entrega el informe por bloque, fila y módulo."
+  },
+  "bloques": [
+    [
+      "p",
+      "Un parque solar mediano tiene decenas de miles de módulos. Revisarlos uno por uno con una cámara de mano es posible, pero tarda semanas y casi nunca se hace completo. Con un dron, la misma cámara térmica recorre el parque en horas y deja una imagen de cada fila, con la planta generando y sin que nadie tenga que caminar entre los arreglos."
+    ],
+    [
+      "p",
+      "Lo importante no es el vuelo, es lo que se hace con las imágenes. Un termograma bonito no sirve si nadie sabe en qué módulo está la falla ni qué tan urgente es."
+    ],
+    [
+      "h2",
+      "Qué fallas se ven desde el aire"
+    ],
+    [
+      "p",
+      "Un módulo que no está generando bien convierte en calor la energía que no entrega, y ese calor es lo que ve la cámara. Las fallas más comunes tienen patrones que se reconocen con práctica:"
+    ],
+    [
+      "lista",
+      [
+        "Una celda caliente aislada, que suele indicar una celda dañada, una microfractura o suciedad muy localizada.",
+        "Una franja caliente que ocupa un tercio del módulo, típica de un diodo de derivación que se activó y dejó fuera esa sección.",
+        "Un módulo completo más caliente que sus vecinos, que puede ser un módulo desconectado o con falla interna.",
+        "Una cadena entera más caliente, que casi siempre es un problema de conexión, un fusible o un conector en la caja de la cadena.",
+        "Patrones repetidos en muchos módulos, que apuntan a suciedad, sombras de vegetación o un problema de diseño."
+      ]
+    ],
+    [
+      "p",
+      "Cada una cuesta distinto. Una celda caliente pierde poco, pero un diodo activado deja fuera una parte del módulo y una cadena sin generar puede estar perdiendo la producción de veinte o treinta módulos al mismo tiempo."
+    ],
+    [
+      "h2",
+      "Cuándo volar para que las fallas se vean"
+    ],
+    [
+      "p",
+      "La termografía en paneles solares depende del sol. Si no hay suficiente radiación, los módulos no se calientan lo bastante para que la diferencia entre uno sano y uno con falla se note. La especificación IEC TS 62446-3, que es la referencia internacional para la termografía de plantas fotovoltaicas, pide una irradiancia estable de al menos 600 W/m² sobre el plano de los módulos."
+    ],
+    [
+      "p",
+      "En la práctica eso significa volar cerca del mediodía, con cielo despejado y sin nubes que pasen. El viento fuerte enfría los módulos y disimula las diferencias, así que también se cuida. Y la planta tiene que estar generando: un módulo desconectado de la carga se comporta distinto que uno que está entregando energía."
+    ],
+    [
+      "nota",
+      "Una nube que pasa durante el vuelo puede hacer que una fila completa parezca más fría que la siguiente. Por eso el análisis compara cada módulo contra sus vecinos tomados en el mismo momento, no contra un valor fijo."
+    ],
+    [
+      "h2",
+      "Altura, ángulo y reflejos"
+    ],
+    [
+      "p",
+      "La altura del vuelo decide cuánto detalle hay en cada imagen. Más alto se cubre más área, pero cada celda ocupa menos pixeles y las fallas pequeñas se pierden. El plan de vuelo se ajusta a lo que se busca: un barrido general para ubicar cadenas y diodos, y pasadas más bajas donde hace falta detalle."
+    ],
+    [
+      "p",
+      "El vidrio del módulo refleja el cielo y el sol. Un reflejo puede parecer un punto caliente, y por eso un termógrafo revisa cada hallazgo antes de reportarlo: si cambia de lugar al cambiar el ángulo de la cámara, es reflejo; si se queda en la misma celda en todas las pasadas, es falla."
+    ],
+    [
+      "h2",
+      "Del termograma a la lista de trabajo"
+    ],
+    [
+      "p",
+      "El informe útil no es una carpeta de imágenes. Es una lista ordenada de qué atender, con la ubicación exacta de cada hallazgo en el plano del parque: bloque, fila, cadena y módulo. Así la cuadrilla llega directo al punto y no pierde la mañana buscando."
+    ],
+    [
+      "p",
+      "Cada hallazgo lleva su termograma, su foto visual, la diferencia de temperatura contra sus vecinos, la causa probable y la acción recomendada. Las fallas que dejan cadenas completas sin generar van primero, porque son las que más producción cuestan."
+    ],
+    [
+      "h2",
+      "Cada cuánto inspeccionar"
+    ],
+    [
+      "p",
+      "Como referencia, una vez al año como mínimo y una inspección de arranque cuando el parque se recibe, para tener una línea base y detectar defectos de instalación mientras todavía están en garantía. En parques grandes o con historial de fallas conviene hacerlo con más frecuencia."
+    ],
+    [
+      "p",
+      "Si quieres saber cómo se vería esto en tu parque, revisa nuestro servicio de [termografía con drones](/servicios/monitoreo-condicion/termografia-con-drones). Y si tu equipo quiere aprender a hacerlo, tenemos el curso de [inspección termográfica en plantas fotovoltaicas](/cursos/inspeccion-termografica-en-plantas-fotovoltaicas)."
+    ]
+  ]
+}

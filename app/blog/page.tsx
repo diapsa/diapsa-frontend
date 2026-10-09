@@ -21,9 +21,9 @@ type BlogPageProps = {
 };
 
 export const metadata: Metadata = {
-    title: "Blog de Mantenimiento Predictivo Industrial",
+    title: "Guías de mantenimiento predictivo industrial",
     description:
-        "Artículos de Grupo DIAPSA sobre mantenimiento predictivo, monitoreo de condición, diagnostico industrial y confiabilidad de activos.",
+        "Guías prácticas de vibraciones, termografía, ultrasonido, aceite, transformadores y normas NOM, escritas por analistas que miden en planta a diario.",
     keywords: [
         "blog mantenimiento predictivo",
         "mantenimiento predictivo industrial",

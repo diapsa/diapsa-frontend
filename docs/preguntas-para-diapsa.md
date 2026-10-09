@@ -49,6 +49,24 @@ Lista reunida el 2026-10-04 con todo lo que el sitio afirma y conviene validar c
 25. Talleres prácticos. ¿Los participantes pueden llevar su propio instrumento para practicar con él? La ficha lo afirma en las preguntas frecuentes.
 26. ¿Qué constancia se entrega al terminar cada curso (constancia de participación, DC-3 ante la STPS, certificado por categoría)? La ficha dice "constancia del curso" sin más.
 
+## Clínicas técnicas en vivo
+
+30. ¿Cuánto cuesta cada clínica? La página dice "accesible, pregúntanos" hasta capturar el precio en data/clinicas-tecnicas.json.
+31. ¿Las dos horas por sesión están bien, o algún tema necesita más? Es una propuesta.
+32. ¿En qué plataforma se imparten (Zoom, Teams, Meet) y se entrega grabación o constancia? La página no promete ninguna de las dos.
+33. ¿Qué fechas tiene el primer grupo de cada tema? Sin fecha, la página invita a apartar lugar.
+34. ¿Están bien los trece temas (tres por técnica en ruta de tres niveles, más tres por tipo de equipo), o quitamos o agregamos alguno? Se agregaron introducción al ultrasonido, fallas de rodamientos en el espectro y descargas eléctricas con ultrasonido.
+34a. "Trae tu caso": la página invita a mandar un termograma, espectro o duda al inscribirse para verlo en la sesión sin el nombre de la empresa. ¿El especialista puede preparar eso antes de cada clínica?
+34b. "Una clínica solo para tu planta": la página ofrece armarla para un equipo en la fecha que les acomode. ¿Se puede ofrecer y con qué mínimo de personas?
+
+## Termografía con drones
+
+35. ¿El dron es propio o se vuela con un aliado? ¿Qué dron y qué cámara, y la cámara es radiométrica (mide temperatura)?
+36. ¿El piloto y el dron están registrados ante la AFAC? La página no lo menciona hasta confirmarlo.
+37. ¿Qué aplicaciones ya han hecho? La página ofrece parques y techos solares, líneas, subestaciones, techos industriales, chimeneas, tanques y estructuras altas.
+38. ¿Qué se entrega además del informe: ortomosaico, imágenes georreferenciadas, archivo para el SCADA del parque? Hoy dice "ubicación de cada hallazgo".
+39. ¿Hay fotos o video de vuelos reales? Las imágenes actuales son generadas, sin marcas, y no se presentan como trabajos de DIAPSA.
+
 ## Contacto
 
 27. ¿Cuál es el correo que recibe los mensajes: info@grupodiapsa.com (el que muestra el sitio) o info@grupodiapsa.com.mx (el que tiene la configuración)? Hay que dejar uno solo.

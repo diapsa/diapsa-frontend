@@ -5,8 +5,8 @@
   "portada": "/images/blog/holgura-mecanica.webp",
   "fecha": "2026-09-30T23:59:59.500000Z",
   "seo": {
-    "titulo": "Holgura mecánica en vibraciones: tipos y espectro",
-    "descripcion": "Qué es la holgura mecánica en máquinas rotativas, sus tipos (estructural, pernos flojos y holgura rotativa), cómo se ve en el espectro de vibración y cómo se corrige."
+    "titulo": "Holgura mecánica: tipos y espectro de vibración",
+    "descripcion": "Qué es la holgura mecánica en máquinas rotativas, sus tipos, cómo se ve en el espectro de vibración y cómo se corrige."
   },
   "bloques": [
     ["p", "La holgura mecánica es cualquier juego que no debería existir entre piezas de una máquina: una base que no está bien apretada, un perno flojo, un rodamiento que gira dentro de su alojamiento. Sola, a veces no parece grave, pero amplifica cualquier otra falla y termina rompiendo cosas."],

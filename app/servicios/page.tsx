@@ -6,9 +6,9 @@ import Image from "next/image";
 const OG_IMAGE = "/images/og-images/og-image.jpg";
 
 export const metadata: Metadata = {
-  title: "Servicios de Mantenimiento Predictivo",
+  title: "Servicios de mantenimiento predictivo industrial",
   description:
-    "Servicios de mantenimiento predictivo, monitoreo de condicion, monitoreo continuo, diagnostico industrial e inteligencia operativa para Mexico y Sudamerica.",
+    "Monitoreo de condición en ruta, monitoreo continuo en línea, estudios eléctricos NOM, detección de fugas y programas predictivos para tu planta.",
   keywords: [
     "servicios mantenimiento predictivo",
     "servicios de mantenimiento",

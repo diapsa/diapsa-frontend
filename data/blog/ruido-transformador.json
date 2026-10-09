@@ -5,8 +5,8 @@
   "portada": "/images/blog/ruido-transformador.webp",
   "fecha": "2026-10-01T12:00:00.200000Z",
   "seo": {
-    "titulo": "Ruido en transformadores: cuándo el zumbido anuncia una falla",
-    "descripcion": "Por qué zumba un transformador de potencia, por qué el ruido sube con la carga y qué cambios en el sonido sí indican una falla: crujidos, chisporroteos, golpeteos, ventiladores y bombas. Cómo se vigila con sensores acústicos."
+    "titulo": "Ruido en transformadores: cuándo indica falla",
+    "descripcion": "Por qué zumba un transformador, por qué el ruido sube con la carga y qué cambios en el sonido sí anuncian una falla. Cómo vigilarlo con sensores acústicos."
   },
   "bloques": [
     ["p", "Quien trabaja cerca de una subestación conoce el zumbido de un transformador. Es tan constante que se deja de oír. Y justo por eso, cuando cambia, casi nadie lo nota. Ese cambio es información valiosa: muchas fallas internas modifican el sonido del equipo antes de dar cualquier otra señal."],

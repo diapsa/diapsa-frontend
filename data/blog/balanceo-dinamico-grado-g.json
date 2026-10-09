@@ -5,8 +5,8 @@
   "portada": "/images/blog/balanceo-dinamico-grado-g.webp",
   "fecha": "2026-09-30T21:30:00.000000Z",
   "seo": {
-    "titulo": "Balanceo dinámico en sitio y grado de balanceo G 6.3 y G 2.5",
-    "descripcion": "Qué es el balanceo dinámico en sitio, en uno y dos planos, cómo se usa el peso de prueba, qué significan los grados de balanceo G 6.3 y G 2.5 según ISO 21940-11 y cuándo conviene balancear."
+    "titulo": "Balanceo dinámico en sitio y grado G 6.3 y G 2.5",
+    "descripcion": "Qué es el balanceo dinámico en uno y dos planos, cómo se usa el peso de prueba y qué significan los grados G 6.3 y G 2.5 de la ISO 21940-11."
   },
   "bloques": [
     ["p", "Un ventilador que vibra un poco más cada mes, un impulsor que regresó de reparación y ya no quedó igual, un rotor que junta polvo en las aspas. En muchos de estos casos la respuesta es balancear, y casi siempre se puede hacer en sitio, con el rotor en su propia base y girando a su velocidad de trabajo."],

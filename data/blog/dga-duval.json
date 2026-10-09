@@ -5,8 +5,8 @@
   "portada": "/images/blog/dga-duval.webp",
   "fecha": "2026-09-30T23:57:00.000000Z",
   "seo": {
-    "titulo": "DGA en transformadores: gases disueltos y triángulo de Duval",
-    "descripcion": "Qué es el análisis de gases disueltos (DGA) en el aceite de transformadores, qué indica cada gas, cómo leer el triángulo de Duval con un ejemplo, cómo se toma la muestra y con qué frecuencia."
+    "titulo": "DGA en transformadores y triángulo de Duval",
+    "descripcion": "Qué indica cada gas disuelto en el aceite del transformador, cómo leer el triángulo de Duval con un ejemplo y cada cuánto tomar la muestra."
   },
   "bloques": [
     ["p", "Un transformador puede tener una falla interna durante meses sin que nada se note por fuera: no vibra distinto, no hace ruido y a veces ni siquiera se calienta por fuera. Pero por dentro, el aceite y el papel aislante se están descomponiendo y liberando gases que se quedan disueltos en el aceite. El análisis de gases disueltos, o DGA, los mide y dice qué está pasando dentro."],

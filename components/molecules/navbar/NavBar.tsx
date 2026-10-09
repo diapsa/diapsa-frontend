@@ -39,7 +39,11 @@ const columnasServicios: ColumnaMenu[] = [
     {
         titulo: monitoreoCondicion.label,
         href: monitoreoCondicion.href,
-        items: monitoreoCondicion.children ?? [],
+        // El diagnóstico integral reúne a todas las técnicas: va al final, a lo
+        // ancho, como base del mosaico (Emiliano, 2026-10-09).
+        items: [...(monitoreoCondicion.children ?? [])].sort(
+            (a, b) => Number(a.href.endsWith("/diagnostico-de-maquinaria")) - Number(b.href.endsWith("/diagnostico-de-maquinaria")),
+        ),
         ancho: 2,
         formato: "mosaico",
     },
@@ -105,7 +109,8 @@ const columnasCursosPanel: ColumnaMenu[] = [
         titulo: "Programas",
         items: [
             ...(diplomado ? [{ ...diplomado, imagen: "/images/cursos/confiabilidad/confiabilidad-03.webp" }] : []),
-            { label: "Catálogo completo", href: "/cursos#catalogo", descripcion: "Los quince cursos por bloque", imagen: "/images/cursos/vibraciones/vibraciones-01.webp" },
+            { label: "Clínicas técnicas", href: "/cursos/clinicas-tecnicas", descripcion: "Un tema puntual, en vivo y a bajo costo", imagen: "/images/cursos/clinicas/configuracion-de-la-camara-termografica.webp" },
+            { label: "Capacitaciones y talleres", href: "/cursos#catalogo", descripcion: "Con certificado o práctica en planta", imagen: "/images/cursos/vibraciones/vibraciones-01.webp" },
         ],
         formato: "tarjetas",
     },
@@ -288,6 +293,9 @@ export default function NavBar() {
                                         {diplomado.label}
                                     </EnlaceMovil>
                                 )}
+                                <EnlaceMovil href="/cursos/clinicas-tecnicas" nivel={2} onClick={() => setIsMobileMenuOpen(false)}>
+                                    Clínicas técnicas
+                                </EnlaceMovil>
                                 {columnasCursos.map((columna) => (
                                     <Acordeon key={columna.titulo} titulo={columna.titulo} nivel={2}>
                                         {columna.items

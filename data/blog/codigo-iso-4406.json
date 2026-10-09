@@ -5,8 +5,8 @@
   "portada": "/images/blog/codigo-iso-4406.webp",
   "fecha": "2026-09-30T23:56:00.000000Z",
   "seo": {
-    "titulo": "Código ISO 4406: tabla de limpieza del aceite y cómo leerla",
-    "descripcion": "Qué es el código de limpieza ISO 4406, qué significan sus tres números, la tabla de rangos de partículas por mililitro, un ejemplo real y cómo fijar el nivel de limpieza de cada equipo."
+    "titulo": "Código ISO 4406: cómo leer la tabla de limpieza",
+    "descripcion": "Qué significan los tres números del código ISO 4406, la tabla de partículas por mililitro, un ejemplo real y cómo fijar la limpieza de cada equipo."
   },
   "bloques": [
     ["p", "Cuando llega un informe de análisis de aceite, casi siempre trae un renglón con tres números separados por diagonales, algo como 18/16/13. Es el código ISO 4406, y es la forma más usada de decir qué tan limpio está un aceite. Vale la pena entenderlo, porque la suciedad es la causa más común del desgaste de rodamientos, engranes y componentes hidráulicos."],

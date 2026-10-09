@@ -5,8 +5,8 @@
   "portada": "/images/blog/torres-transmision.webp",
   "fecha": "2026-09-30T23:59:57.000000Z",
   "seo": {
-    "titulo": "Código de Red: qué pide a los centros de carga en México",
-    "descripcion": "Qué es el Código de Red de la CRE, a qué centros de carga aplica, qué pide en factor de potencia, armónicos, desbalance y variaciones de tensión, y cómo demostrar el cumplimiento con un estudio de calidad de la energía."
+    "titulo": "Código de Red: qué pide a los centros de carga",
+    "descripcion": "Qué es el Código de Red de la CRE, a quién aplica, qué pide en factor de potencia, armónicos y tensión, y cómo demostrar el cumplimiento."
   },
   "bloques": [
     ["p", "Durante años, la calidad de la energía dentro de una planta era un tema técnico que solo preocupaba cuando algo fallaba. Con el Código de Red eso cambió: ahora es una obligación regulatoria para muchas plantas, y la Comisión Reguladora de Energía puede verificarla. Aquí te contamos qué pide y cómo se demuestra, en palabras sencillas."],

@@ -1,0 +1,300 @@
+{
+  "slug": "centros-de-datos",
+  "nombre": "Centros de datos",
+  "breadcrumbs": [
+    {
+      "label": "Inicio",
+      "link": "/"
+    },
+    {
+      "label": "Industrias",
+      "link": "/#industrias"
+    },
+    {
+      "label": "Centros de datos",
+      "link": "/industrias/centros-de-datos"
+    }
+  ],
+  "seoTitle": "Mantenimiento predictivo para centros de datos",
+  "seoDescription": "Termografía, cámaras térmicas fijas, ultrasonido y vibraciones en subestación, UPS, baterías, plantas de emergencia y enfriamiento, sin afectar la operación.",
+  "hero": {
+    "etiqueta": "Industria / Centros de datos",
+    "titulo": "Tu centro de datos no se apaga. La falla tampoco debería sorprenderte.",
+    "texto": "Un centro de datos opera con una disponibilidad de 99.9 % o más: menos de nueve horas de caída en todo el año. Para sostenerla, subestación, transferencias, UPS, bancos de baterías, plantas de emergencia y aire de precisión trabajan las 24 horas sin margen para una falla sorpresa. Combinamos inspecciones con todo energizado, cámaras térmicas fijas y monitoreo en línea para encontrar la falla en la cadena de energía y enfriamiento antes de que se vuelva un incidente.",
+    "foto": {
+      "src": "/images/industrias/centros-de-datos-hero.webp",
+      "alt": "Pasillo de un centro de datos con filas de racks y distribución eléctrica aérea"
+    },
+    "nota": "Para centros de datos propios y de colocación, salas de cómputo corporativas y sus equipos de infraestructura, energía y facilities."
+  },
+  "senales": {
+    "etiqueta": "Una visión con varias técnicas",
+    "titulo": "Ve la falla antes de la caída de carga.",
+    "texto": "Con una meta de 99.9 % de disponibilidad, cada hora cuenta, y la redundancia da tiempo pero no lo da todo: una falla escondida en el respaldo aparece justo cuando se necesita. Las señales llegan antes: una conexión que se calienta en el busway o en la PDU, una batería que sube de temperatura, una planta de emergencia que vibra distinto en su prueba o un compresor de chiller que pierde lubricación. Cada señal pide su técnica, y el programa se arma alrededor de la cadena que sostiene la carga crítica.",
+    "items": [
+      {
+        "titulo": "Temperatura",
+        "texto": "Conexiones flojas y sobrecargas en tableros, transferencias, UPS, PDU, busway y bancos de baterías."
+      },
+      {
+        "titulo": "Vibración",
+        "texto": "Rodamientos, desbalance y desalineación en plantas de emergencia, chillers, bombas y ventiladores."
+      },
+      {
+        "titulo": "Ultrasonido",
+        "texto": "Efecto corona y descargas en media tensión, y fugas de aire o refrigerante que el oído no alcanza."
+      },
+      {
+        "titulo": "Aceite y gases",
+        "texto": "Desgaste en motores de plantas de emergencia y gases disueltos en el transformador principal."
+      }
+    ]
+  },
+  "areas": [
+    {
+      "id": "energia",
+      "nombre": "Subestación y distribución",
+      "titulo": "Vigila el camino de la energía.",
+      "texto": "Transformador principal, celdas de media tensión, tableros, transferencias automáticas, PDU y busway. Todo se inspecciona energizado y con carga, que es cuando un punto caliente o una descarga se ven. La termografía y el ultrasonido no requieren abrir ventanas de mantenimiento.",
+      "foto": {
+        "src": "/images/servicios/termografia-infrarroja/campo-10.webp",
+        "alt": "Analista de DIAPSA inspeccionando un tablero eléctrico con termografía"
+      },
+      "prioridades": [
+        "Puntos calientes en tableros, transferencias y PDU",
+        "Descargas y efecto corona en media tensión",
+        "Gases disueltos en el transformador principal",
+        "Calidad de energía, armónicos y Código de Red"
+      ],
+      "servicios": [
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "DGA en línea",
+          "href": "/servicios/monitoreo-continuo/dga-en-linea"
+        },
+        {
+          "nombre": "Calidad de energía",
+          "href": "/servicios/monitoreo-condicion/calidad-de-energia"
+        }
+      ],
+      "accion": "Revisar la distribución eléctrica"
+    },
+    {
+      "id": "respaldo",
+      "nombre": "UPS, baterías y plantas de emergencia",
+      "titulo": "Asegura que el respaldo responda.",
+      "texto": "Las UPS, los bancos de baterías y las plantas de emergencia casi nunca trabajan, y por eso sus fallas se esconden hasta el día del corte. La termografía en baterías y conexiones, y la vibración y el aceite en los motores de las plantas, muestran su estado sin esperar a la emergencia.",
+      "foto": {
+        "src": "/images/industrias/centros-de-datos/ups-baterias.webp",
+        "alt": "Cuarto de UPS con bancos de baterías y planta de emergencia al fondo"
+      },
+      "prioridades": [
+        "Termografía de baterías, celdas y conexiones de UPS",
+        "Vibración de plantas de emergencia en su prueba",
+        "Aceite del motor con tendencia de desgaste",
+        "Puntos calientes en la transferencia al respaldo"
+      ],
+      "servicios": [
+        {
+          "nombre": "Termografía infrarroja",
+          "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+        },
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Análisis de aceite",
+          "href": "/servicios/monitoreo-condicion/analisis-de-aceite"
+        }
+      ],
+      "accion": "Revisar el respaldo"
+    },
+    {
+      "id": "enfriamiento",
+      "nombre": "Enfriamiento",
+      "titulo": "Que el enfriamiento no se detenga.",
+      "texto": "Chillers, bombas de agua helada, torres de enfriamiento y equipos de aire de precisión. Si el enfriamiento falla, la sala se calienta en minutos. La vibración ve el desgaste de compresores, bombas y ventiladores, y el ultrasonido encuentra fugas y falta de lubricación.",
+      "foto": {
+        "src": "/images/industrias/centros-de-datos/enfriamiento.webp",
+        "alt": "Chillers y bombas de agua helada en la azotea de un centro de datos"
+      },
+      "prioridades": [
+        "Vibración en compresores de chillers y bombas",
+        "Sensores en línea en el enfriamiento sin relevo",
+        "Ultrasonido para fugas y lubricación",
+        "Alineación y balanceo tras cada reparación"
+      ],
+      "servicios": [
+        {
+          "nombre": "Vibraciones mecánicas",
+          "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        },
+        {
+          "nombre": "Análisis de ultrasonido",
+          "href": "/servicios/monitoreo-condicion/analisis-de-ultrasonido"
+        },
+        {
+          "nombre": "Alineación y balanceo",
+          "href": "/servicios/monitoreo-condicion/alineacion-balanceo"
+        }
+      ],
+      "accion": "Revisar el enfriamiento"
+    },
+    {
+      "id": "vigilancia",
+      "nombre": "Vigilancia en línea",
+      "titulo": "Mira la cadena completa las 24 horas.",
+      "texto": "Cámaras térmicas fijas en tableros principales, cuartos de UPS y bancos de baterías, y sensores en los equipos de enfriamiento críticos. Las alertas las revisa un especialista antes de llegarte y todo queda en IDAP, junto con las inspecciones de ruta y la evidencia para tus auditorías.",
+      "foto": {
+        "src": "/images/industrias/centros-de-datos/camara-termica-fija.webp",
+        "alt": "Cámara térmica fija vigilando los tableros de un cuarto eléctrico"
+      },
+      "prioridades": [
+        "Cámaras térmicas fijas en los puntos críticos",
+        "Sensores en chillers y bombas sin relevo",
+        "Alertas revisadas por un especialista",
+        "Historial y evidencia en IDAP"
+      ],
+      "servicios": [
+        {
+          "nombre": "Cámaras térmicas fijas",
+          "href": "/servicios/monitoreo-continuo/camaras-termicas"
+        },
+        {
+          "nombre": "Sensores de vibración",
+          "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+        },
+        {
+          "nombre": "IDAP",
+          "href": "/servicios/idap"
+        }
+      ],
+      "accion": "Planear la vigilancia en línea"
+    }
+  ],
+  "mapa": {
+    "etiqueta": "Mapa de activo y señal",
+    "titulo": "Cada riesgo, con la técnica que lo detecta.",
+    "texto": "Un centro de datos no necesita el mismo equipo en todas partes. Necesita una relación clara entre el activo, la señal que avisa primero y la forma de capturarla, sin tocar la carga crítica.",
+    "filas": [
+      {
+        "activo": "Tableros, transferencias y PDU",
+        "senal": "Punto caliente",
+        "servicio": "Cámaras térmicas fijas",
+        "detalle": "Vigilancia continua con alertas revisadas.",
+        "href": "/servicios/monitoreo-continuo/camaras-termicas"
+      },
+      {
+        "activo": "Bancos de baterías y UPS",
+        "senal": "Celda o conexión que se calienta",
+        "servicio": "Termografía infrarroja",
+        "detalle": "Inspección con carga, sin desconectar.",
+        "href": "/servicios/monitoreo-condicion/termografia-infrarroja"
+      },
+      {
+        "activo": "Plantas de emergencia",
+        "senal": "Vibración y desgaste en el aceite",
+        "servicio": "Vibraciones mecánicas",
+        "detalle": "Medición durante la prueba periódica.",
+        "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "activo": "Chillers y bombas de agua helada",
+        "senal": "Rodamientos y compresor",
+        "servicio": "Sensores de vibración",
+        "detalle": "Alertas en línea revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo/sensores-vibracion"
+      },
+      {
+        "activo": "Transformador principal",
+        "senal": "Gases disueltos y descargas",
+        "servicio": "DGA en línea",
+        "detalle": "Gases y humedad del aceite cada hora.",
+        "href": "/servicios/monitoreo-continuo/dga-en-linea"
+      },
+      {
+        "activo": "Instalación eléctrica",
+        "senal": "Armónicos, tierras y arco",
+        "servicio": "Calidad de energía",
+        "detalle": "Estudios con evidencia normativa.",
+        "href": "/servicios/monitoreo-condicion/calidad-de-energia"
+      }
+    ]
+  },
+  "arquitectura": {
+    "etiqueta": "Cómo lo armamos",
+    "titulo": "El programa se construye alrededor de la carga crítica.",
+    "texto": "La inspección con analista, la vigilancia en línea y la plataforma cumplen funciones distintas. Las combinamos según la redundancia de cada sistema y lo que ya tiene tu centro de datos.",
+    "items": [
+      {
+        "titulo": "Diagnóstico situacional",
+        "texto": "Calificamos la criticidad de cada equipo de la cadena de energía y enfriamiento y definimos qué medir y cada cuánto.",
+        "href": "/servicios/diagnostico-situacional"
+      },
+      {
+        "titulo": "Inspecciones energizadas",
+        "texto": "Termografía, ultrasonido y vibración con la carga en operación, sin ventanas de mantenimiento.",
+        "href": "/servicios/monitoreo-condicion"
+      },
+      {
+        "titulo": "Monitoreo en línea",
+        "texto": "Cámaras térmicas fijas y sensores en los puntos sin respaldo, con alertas revisadas por un analista.",
+        "href": "/servicios/monitoreo-continuo"
+      },
+      {
+        "titulo": "IDAP",
+        "texto": "Cada hallazgo, su tendencia y su seguimiento en una sola plataforma.",
+        "href": "/servicios/idap"
+      },
+      {
+        "titulo": "Cumplimiento",
+        "texto": "NOM-029, NOM-022 y Código de Red, con su evidencia.",
+        "href": "/servicios/monitoreo-condicion/arco-electrico"
+      }
+    ]
+  },
+  "cierre": {
+    "etiqueta": "Planea la siguiente etapa",
+    "titulo": "Cuéntanos qué centro de datos operas y qué no puede fallar.",
+    "texto": "Dinos cómo está armada tu cadena de energía y enfriamiento, qué redundancia tiene y cómo la inspeccionas hoy. Te proponemos la combinación de inspecciones, vigilancia en línea y plataforma que le conviene."
+  },
+  "faq": [
+    {
+      "question": "¿Por qué un centro de datos necesita mantenimiento predictivo?",
+      "answer": "Porque opera con una disponibilidad de 99.9 % o más, que deja menos de nueve horas de caída en todo el año. Con ese margen no se puede esperar a que un equipo falle: hay que ver la falla en la cadena de energía y enfriamiento semanas antes y corregirla en una ventana planeada."
+    },
+    {
+      "question": "¿Las inspecciones afectan la operación?",
+      "answer": "No. La termografía, el ultrasonido y la vibración se aplican con los equipos energizados y con carga, desde fuera y sin contacto con las partes vivas, que es justo cuando las fallas se muestran."
+    },
+    {
+      "question": "¿Por dónde conviene empezar?",
+      "answer": "Por un diagnóstico situacional de la cadena de energía y enfriamiento: calificamos la criticidad de cada equipo, revisamos su redundancia y proponemos qué inspeccionar, cada cuánto y qué vigilar en línea."
+    },
+    {
+      "question": "¿Cuándo conviene una cámara térmica fija en lugar de la ruta?",
+      "answer": "En los puntos donde una falla tira la carga o puede iniciar un incendio y no hay respaldo, como tableros principales, transferencias y cuartos de baterías. Donde basta revisar cada mes, la ruta con cámara de mano es más económica."
+    },
+    {
+      "question": "¿Cómo se revisan las plantas de emergencia si casi no trabajan?",
+      "answer": "Se miden durante sus pruebas periódicas con carga. La vibración y el análisis del aceite muestran el desgaste del motor y del generador aunque la planta trabaje pocas horas al año."
+    }
+  ],
+  "cta": {
+    "title": "¿Qué parte de tu centro de datos no puede fallar?",
+    "text": "Cuéntanos cómo está armado y te proponemos el programa.",
+    "whatsappMessage": "Hola, quiero información sobre mantenimiento predictivo para un centro de datos."
+  }
+}

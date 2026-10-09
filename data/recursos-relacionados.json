@@ -1230,5 +1230,109 @@
       "titulo": "Alineación y Balanceo",
       "resumen": "Alineación láser de ejes y balanceo dinámico en sitio, con la vibración medida antes y después."
     }
+  },
+  {
+    "articulo": {
+      "slug": "monitoreo-termico-en-centros-de-datos-que-vigilar",
+      "titulo": "Monitoreo térmico en centros de datos",
+      "resumen": "Qué vigilar y cómo.",
+      "portada": "/images/blog/rack-servidores.webp"
+    },
+    "servicio": {
+      "href": "/industrias/centros-de-datos",
+      "titulo": "Centros de datos",
+      "resumen": "Mantenimiento predictivo y vigilancia en línea para la energía y el enfriamiento de centros de datos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "camara-termica-fija-o-termografia-con-camara-de-mano",
+      "titulo": "Cámara fija o de mano",
+      "resumen": "Cuándo conviene cada una.",
+      "portada": "/images/blog/camara-fija-poste.webp"
+    },
+    "servicio": {
+      "href": "/industrias/centros-de-datos",
+      "titulo": "Centros de datos",
+      "resumen": "Mantenimiento predictivo y vigilancia en línea para la energía y el enfriamiento de centros de datos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "deteccion-temprana-de-incendios-con-camaras-termicas-en-plantas",
+      "titulo": "Incendios y cámaras térmicas",
+      "resumen": "Detectar antes que el humo.",
+      "portada": "/images/blog/almacen-racks.webp"
+    },
+    "servicio": {
+      "href": "/industrias/centros-de-datos",
+      "titulo": "Centros de datos",
+      "resumen": "Mantenimiento predictivo y vigilancia en línea para la energía y el enfriamiento de centros de datos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "termografia-con-drones-en-parques-solares",
+      "titulo": "Drones en parques solares",
+      "resumen": "Qué fallas encuentra y cuándo volar.",
+      "portada": "/images/blog/dron-parques-solares.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/termografia-con-drones",
+      "titulo": "Termografía con Drones",
+      "resumen": "Inspección termográfica aérea de parques solares y eólicos, líneas, subestaciones, torres de enfriamiento y techos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "inspeccion-termografica-de-lineas-de-transmision-con-drones",
+      "titulo": "Drones en líneas de transmisión",
+      "resumen": "Grapas, empalmes y aisladores, torre por torre.",
+      "portada": "/images/blog/dron-lineas-transmision.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/termografia-con-drones",
+      "titulo": "Termografía con Drones",
+      "resumen": "Inspección termográfica aérea de parques solares y eólicos, líneas, subestaciones, torres de enfriamiento y techos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "termografia-con-drones-en-parques-eolicos",
+      "titulo": "Drones en parques eólicos",
+      "resumen": "Qué se ve desde afuera y qué no.",
+      "portada": "/images/blog/dron-parques-eolicos.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/termografia-con-drones",
+      "titulo": "Termografía con Drones",
+      "resumen": "Inspección termográfica aérea de parques solares y eólicos, líneas, subestaciones, torres de enfriamiento y techos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "termografia-aerea-de-torres-de-enfriamiento",
+      "titulo": "Torres de enfriamiento",
+      "resumen": "Agua, relleno y ventiladores desde arriba.",
+      "portada": "/images/blog/dron-torres-enfriamiento.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/termografia-con-drones",
+      "titulo": "Termografía con Drones",
+      "resumen": "Inspección termográfica aérea de parques solares y eólicos, líneas, subestaciones, torres de enfriamiento y techos."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "humedad-en-techos-industriales-con-termografia-aerea",
+      "titulo": "Humedad en techos",
+      "resumen": "Encontrarla antes de la gotera.",
+      "portada": "/images/blog/dron-techos-industriales.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/termografia-con-drones",
+      "titulo": "Termografía con Drones",
+      "resumen": "Inspección termográfica aérea de parques solares y eólicos, líneas, subestaciones, torres de enfriamiento y techos."
+    }
   }
 ]
