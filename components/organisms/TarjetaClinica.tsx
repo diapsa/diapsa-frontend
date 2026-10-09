@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { RUTA_MINI, duracionDe, nombreTecnica, proximasFechas, type MiniCurso } from "@/lib/mini-cursos";
+import { RUTA_CLINICAS, duracionDe, nombreTecnica, proximasFechas, type Clinica } from "@/lib/clinicas";
 
 /**
- * La tarjeta de un mini curso en vivo: foto, técnica, nivel, título, una
+ * La tarjeta de una clínica técnica en vivo: foto, técnica, nivel, título, una
  * línea y la próxima fecha (o que se puede apartar lugar si aún no hay).
  */
-export default function TarjetaMiniCurso({ curso }: { curso: MiniCurso }) {
+export default function TarjetaClinica({ curso }: { curso: Clinica }) {
   const fecha = proximasFechas(curso)[0];
   return (
     <Link
-      href={`${RUTA_MINI}/${curso.slug}`}
+      href={`${RUTA_CLINICAS}/${curso.slug}`}
       prefetch={false}
       className="group flex h-full flex-col overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-lg"
     >

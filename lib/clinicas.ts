@@ -1,17 +1,18 @@
-import datos from "@/data/mini-cursos.json";
+import datos from "@/data/clinicas-tecnicas.json";
 import { TECNICAS } from "@/lib/cursos";
 import { SITE_CONFIG } from "@/lib/constants";
 
 /**
- * Mini cursos en vivo (Emiliano, 2026-10-08). El apartado de cursos se
- * divide en dos líneas: las capacitaciones con certificado y los talleres
- * prácticos, que son el catálogo del CMS, y los mini cursos: sesiones cortas
- * en línea sobre un tema puntual y a bajo costo. Estos viven en
- * data/mini-cursos.json; el precio y las fechas se capturan ahí cuando
- * DIAPSA los defina.
+ * Clínicas técnicas en vivo (Emiliano, 2026-10-08; el nombre, 2026-10-09:
+ * "no quiero que se llamen minicursos"). El apartado de cursos se divide en
+ * dos líneas: las capacitaciones con certificado y los talleres prácticos,
+ * que son el catálogo del CMS, y las clínicas: sesiones cortas en línea sobre
+ * un tema puntual, a bajo costo, con espacio para el caso de cada
+ * participante. Viven en data/clinicas-tecnicas.json; el precio y las fechas
+ * se capturan ahí cuando DIAPSA los defina.
  */
 
-export type MiniCurso = {
+export type Clinica = {
   slug: string;
   titulo: string;
   tecnica: string;
@@ -22,6 +23,8 @@ export type MiniCurso = {
   temario: string[];
   requisitos: string;
   foto: string;
+  /** Qué puede traer el participante para verlo en la sesión. */
+  caso: string;
   duracion?: string;
   /** Texto libre, por ejemplo "$990 MXN más IVA". Sin precio, se pide por WhatsApp. */
   precio?: string;
@@ -31,21 +34,21 @@ export type MiniCurso = {
 
 const DATOS = datos as unknown as {
   formato: { modalidad: string; duracion: string; grupo: string };
-  cursos: MiniCurso[];
+  clinicas: Clinica[];
 };
 
-export const FORMATO_MINI = DATOS.formato;
-export const MINI_CURSOS = DATOS.cursos;
-export const RUTA_MINI = "/cursos/mini-cursos";
+export const FORMATO_CLINICA = DATOS.formato;
+export const CLINICAS = DATOS.clinicas;
+export const RUTA_CLINICAS = "/cursos/clinicas-tecnicas";
 
-export const miniCurso = (slug: string) => MINI_CURSOS.find((c) => c.slug === slug) ?? null;
-export const duracionDe = (c: MiniCurso) => c.duracion ?? FORMATO_MINI.duracion;
+export const clinica = (slug: string) => CLINICAS.find((c) => c.slug === slug) ?? null;
+export const duracionDe = (c: Clinica) => c.duracion ?? FORMATO_CLINICA.duracion;
 export const nombreTecnica = (clave: string) => TECNICAS.find((t) => t.clave === clave)?.nombre ?? "";
 
 const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 
 /** Las fechas que no han pasado, de la más cercana a la más lejana. */
-export function proximasFechas(c: MiniCurso): { texto: string; dia: string; mes: string }[] {
+export function proximasFechas(c: Clinica): { texto: string; dia: string; mes: string }[] {
   const d = new Date();
   const hoy = new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
   return (c.fechas ?? [])
@@ -61,10 +64,10 @@ export function proximasFechas(c: MiniCurso): { texto: string; dia: string; mes:
     });
 }
 
-/** WhatsApp con el mensaje ya escrito para apartar lugar en un mini curso. */
-export function whatsappMini(c?: MiniCurso): string {
+/** WhatsApp con el mensaje ya escrito para apartar lugar en una clínica. */
+export function whatsappClinica(c?: Clinica): string {
   const texto = c
-    ? `Hola, me interesa el mini curso en vivo "${c.titulo}". ¿Me comparten la próxima fecha y el costo?`
-    : "Hola, me interesan los mini cursos en vivo de DIAPSA. ¿Me comparten las próximas fechas y costos?";
+    ? `Hola, me interesa la clínica técnica "${c.titulo}". ¿Me comparten la próxima fecha y el costo?`
+    : "Hola, me interesan las clínicas técnicas en vivo de DIAPSA. ¿Me comparten las próximas fechas y costos?";
   return `https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent(texto)}`;
 }

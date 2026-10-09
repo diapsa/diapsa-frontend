@@ -49,13 +49,15 @@ Lista reunida el 2026-10-04 con todo lo que el sitio afirma y conviene validar c
 25. Talleres prácticos. ¿Los participantes pueden llevar su propio instrumento para practicar con él? La ficha lo afirma en las preguntas frecuentes.
 26. ¿Qué constancia se entrega al terminar cada curso (constancia de participación, DC-3 ante la STPS, certificado por categoría)? La ficha dice "constancia del curso" sin más.
 
-## Mini cursos en vivo
+## Clínicas técnicas en vivo
 
-30. ¿Cuánto cuesta cada mini curso? La página dice "accesible, pregúntanos" hasta capturar el precio en data/mini-cursos.json.
+30. ¿Cuánto cuesta cada clínica? La página dice "accesible, pregúntanos" hasta capturar el precio en data/clinicas-tecnicas.json.
 31. ¿Las dos horas por sesión están bien, o algún tema necesita más? Es una propuesta.
 32. ¿En qué plataforma se imparten (Zoom, Teams, Meet) y se entrega grabación o constancia? La página no promete ninguna de las dos.
 33. ¿Qué fechas tiene el primer grupo de cada tema? Sin fecha, la página invita a apartar lugar.
 34. ¿Están bien los diez temas, o quitamos o agregamos alguno?
+34a. "Trae tu caso": la página invita a mandar un termograma, espectro o duda al inscribirse para verlo en la sesión sin el nombre de la empresa. ¿El especialista puede preparar eso antes de cada clínica?
+34b. "Una clínica solo para tu planta": la página ofrece armarla para un equipo en la fecha que les acomode. ¿Se puede ofrecer y con qué mínimo de personas?
 
 ## Termografía con drones
 

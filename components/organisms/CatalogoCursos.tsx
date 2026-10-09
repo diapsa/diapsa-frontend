@@ -10,8 +10,8 @@ import InicioDiplomado from "@/components/organisms/InicioDiplomado";
 import dip from "@/data/diplomado.json";
 import menuCursos from "@/data/menu-cursos.json";
 import Image from "next/image";
-import TarjetaMiniCurso from "./TarjetaMiniCurso";
-import { FORMATO_MINI, MINI_CURSOS, RUTA_MINI } from "@/lib/mini-cursos";
+import TarjetaClinica from "./TarjetaClinica";
+import { FORMATO_CLINICA, CLINICAS, RUTA_CLINICAS } from "@/lib/clinicas";
 
 /**
  * CatalogoCursos
@@ -157,14 +157,14 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
             <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-5xl">Aprende la técnica con quien la aplica todos los días</h2>
             <p className="mt-4 text-justify text-lg leading-relaxed text-tertiary">
               Nuestros instructores diagnostican maquinaria real en planta, y eso es lo que enseñan: casos de equipos inspeccionados, no ejemplos de libro.
-              Hay dos maneras de aprender con nosotros: capacitaciones con certificado y talleres prácticos para dominar la técnica, y mini cursos en vivo para resolver un tema puntual.
+              Hay dos maneras de aprender con nosotros: capacitaciones con certificado y talleres prácticos para dominar la técnica, y clínicas técnicas en vivo para resolver un tema puntual.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href="#catalogo" className="inline-flex items-center justify-center rounded-xs bg-primary px-7 py-3.5 font-bold text-white transition-colors hover:bg-secondary hover:text-primary">
                 Ver capacitaciones
               </a>
-              <Link href={RUTA_MINI} prefetch={false} className="inline-flex items-center justify-center rounded-xs border-2 border-primary px-7 py-3 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
-                Mini cursos en vivo
+              <Link href={RUTA_CLINICAS} prefetch={false} className="inline-flex items-center justify-center rounded-xs border-2 border-primary px-7 py-3 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                Clínicas técnicas
               </Link>
             </div>
           </div>
@@ -191,7 +191,7 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
       </section>
 
       {/* Las dos líneas de cursos (Emiliano, 2026-10-08): la capacitación
-          completa, con certificado o taller práctico, y los mini cursos en
+          completa, con certificado o taller práctico, y las clínicas técnicas en
           vivo, cortos y a bajo costo. */}
       <section className="w-full bg-white py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-6">
@@ -209,13 +209,13 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
                 accion: "Ver capacitaciones",
               },
               {
-                href: RUTA_MINI,
+                href: RUTA_CLINICAS,
                 foto: "/images/cursos/termografia/termografia-04.webp",
                 etiqueta: "Nuevo",
-                titulo: "Mini cursos en vivo",
+                titulo: "Clínicas técnicas en vivo",
                 texto: "Un tema puntual en una sola sesión en línea, a un costo accesible: configurar tu cámara termográfica, entender las vibraciones o inspeccionar un transformador seco.",
-                puntos: [FORMATO_MINI.modalidad, FORMATO_MINI.duracion, `${MINI_CURSOS.length} temas`],
-                accion: "Ver mini cursos",
+                puntos: [FORMATO_CLINICA.modalidad, FORMATO_CLINICA.duracion, `${CLINICAS.length} temas`],
+                accion: "Ver las clínicas",
               },
             ].map((x) => (
               <Link key={x.href} href={x.href} prefetch={false} className="group flex flex-col overflow-hidden rounded-sm bg-primary text-white shadow-sm transition-shadow hover:shadow-xl sm:flex-row">
@@ -284,25 +284,25 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
         </div>
       </section>
 
-      {/* La otra línea: los mini cursos en vivo */}
+      {/* La otra línea: las clínicas técnicas en vivo */}
       <section className="w-full bg-white py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <Antetitulo>Mini cursos en vivo</Antetitulo>
+              <Antetitulo>Clínicas técnicas en vivo</Antetitulo>
               <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary lg:text-4xl">Un tema puntual, en una sesión</h2>
             </div>
-            <Link href={RUTA_MINI} prefetch={false} className="font-bold text-primary underline underline-offset-4 hover:text-secondary">
-              Ver los {MINI_CURSOS.length} temas
+            <Link href={RUTA_CLINICAS} prefetch={false} className="font-bold text-primary underline underline-offset-4 hover:text-secondary">
+              Ver los {CLINICAS.length} temas
             </Link>
           </div>
           <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
             {["introduccion-vibraciones-mecanicas", "configuracion-de-la-camara-termografica", "inspeccion-de-transformadores-secos"]
-              .map((s) => MINI_CURSOS.find((c) => c.slug === s))
+              .map((s) => CLINICAS.find((c) => c.slug === s))
               .filter((c) => c !== undefined)
               .map((c) => (
                 <li key={c.slug}>
-                  <TarjetaMiniCurso curso={c} />
+                  <TarjetaClinica curso={c} />
                 </li>
               ))}
           </ul>

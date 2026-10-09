@@ -1,6 +1,6 @@
 import servicios from "@/data/servicios.json";
 import menuCursos from "@/data/menu-cursos.json";
-import miniCursos from "@/data/mini-cursos.json";
+import clinicas from "@/data/clinicas-tecnicas.json";
 
 /**
  * Opciones del formulario de contacto por motivo (Emiliano, 2026-10-06).
@@ -46,9 +46,9 @@ export const OPCIONES_CURSOS: GrupoOpciones[] = (menuCursos as { titulo: string;
   titulo: c.titulo,
   opciones: c.items.map((i) => (c.titulo.startsWith("Confiabilidad") ? i.label : `${tecnicaCorta(c.titulo)} · ${i.label}`)),
 })).concat({
-  // La otra línea de cursos: sesiones cortas en línea (data/mini-cursos.json)
-  titulo: "Mini cursos en vivo",
-  opciones: miniCursos.cursos.map((m) => `Mini curso · ${m.titulo}`),
+  // La otra línea de cursos: clínicas técnicas en línea (data/clinicas-tecnicas.json)
+  titulo: "Clínicas técnicas",
+  opciones: clinicas.clinicas.map((m) => `Clínica · ${m.titulo}`),
 });
 
 export const OPCIONES_POR_MOTIVO: Record<Motivo, GrupoOpciones[]> = {

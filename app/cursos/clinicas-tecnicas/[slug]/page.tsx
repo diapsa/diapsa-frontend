@@ -4,29 +4,29 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/organisms/PageHeader";
 import ContactForm from "@/components/organisms/ContactForm";
-import TarjetaMiniCurso from "@/components/organisms/TarjetaMiniCurso";
+import TarjetaClinica from "@/components/organisms/TarjetaClinica";
 import Antetitulo from "@/components/atoms/Antetitulo";
 import JsonLd, { createBreadcrumbSchema, createCourseSchema } from "@/components/atoms/JsonLd";
-import { FORMATO_MINI, MINI_CURSOS, RUTA_MINI, duracionDe, miniCurso, nombreTecnica, proximasFechas, whatsappMini } from "@/lib/mini-cursos";
+import { FORMATO_CLINICA, CLINICAS, RUTA_CLINICAS, duracionDe, clinica, nombreTecnica, proximasFechas, whatsappClinica } from "@/lib/clinicas";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return MINI_CURSOS.map((c) => ({ slug: c.slug }));
+  return CLINICAS.map((c) => ({ slug: c.slug }));
 }
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const c = miniCurso(slug);
-  if (!c) return { title: "Mini curso no encontrado" };
-  // "Mini curso" en el título es lo que distingue esta página de la capacitación completa
-  const titulo = `Mini curso: ${c.titulo}`;
+  const c = clinica(slug);
+  if (!c) return { title: "Clínica no encontrada" };
+  // "Clínica" en el título es lo que distingue esta página de la capacitación completa
+  const titulo = `Clínica: ${c.titulo}`;
   return {
     title: titulo.length <= 54 ? titulo : c.titulo,
     description: c.resumen,
-    alternates: { canonical: `${RUTA_MINI}/${c.slug}` },
-    openGraph: { title: `${c.titulo} | DIAPSA`, description: c.resumen, url: `${RUTA_MINI}/${c.slug}`, type: "website" },
+    alternates: { canonical: `${RUTA_CLINICAS}/${c.slug}` },
+    openGraph: { title: `${c.titulo} | DIAPSA`, description: c.resumen, url: `${RUTA_CLINICAS}/${c.slug}`, type: "website" },
   };
 }
 
@@ -38,22 +38,22 @@ function Palomita() {
   );
 }
 
-export default async function MiniCursoPage({ params }: Props) {
+export default async function ClinicaPage({ params }: Props) {
   const { slug } = await params;
-  const c = miniCurso(slug);
+  const c = clinica(slug);
   if (!c) notFound();
 
   const fechas = proximasFechas(c);
-  const otros = [...MINI_CURSOS.filter((o) => o.slug !== c.slug && o.tecnica === c.tecnica), ...MINI_CURSOS.filter((o) => o.tecnica !== c.tecnica)].slice(0, 3);
+  const otros = [...CLINICAS.filter((o) => o.slug !== c.slug && o.tecnica === c.tecnica), ...CLINICAS.filter((o) => o.tecnica !== c.tecnica)].slice(0, 3);
   const breadcrumbs = [
     { name: "Inicio", url: "/" },
     { name: "Cursos", url: "/cursos" },
-    { name: "Mini cursos en vivo", url: RUTA_MINI },
-    { name: c.titulo, url: `${RUTA_MINI}/${c.slug}` },
+    { name: "Clínicas técnicas", url: RUTA_CLINICAS },
+    { name: c.titulo, url: `${RUTA_CLINICAS}/${c.slug}` },
   ];
   const horas = parseInt(duracionDe(c), 10);
   const datos = [
-    { k: "Modalidad", v: FORMATO_MINI.modalidad },
+    { k: "Modalidad", v: FORMATO_CLINICA.modalidad },
     { k: "Duración", v: duracionDe(c) },
     { k: "Nivel", v: c.nivel },
     { k: "Costo", v: c.precio ?? "Accesible, pregúntanos" },
@@ -65,7 +65,7 @@ export default async function MiniCursoPage({ params }: Props) {
         data={createCourseSchema({
           name: c.titulo,
           description: c.resumen,
-          url: `${RUTA_MINI}/${c.slug}`,
+          url: `${RUTA_CLINICAS}/${c.slug}`,
           provider: "Grupo DIAPSA",
           courseModes: ["Online"],
           duration: Number.isFinite(horas) ? horas : undefined,
@@ -74,7 +74,7 @@ export default async function MiniCursoPage({ params }: Props) {
       <JsonLd data={createBreadcrumbSchema(breadcrumbs)} />
       <PageHeader
         title={c.titulo}
-        subtitle={`Mini curso en vivo · ${nombreTecnica(c.tecnica)}`}
+        subtitle={`Clínica técnica en vivo · ${nombreTecnica(c.tecnica)}`}
         breadcrumbs={breadcrumbs.map((b) => ({ label: b.name, link: b.url }))}
       />
 
@@ -130,6 +130,16 @@ export default async function MiniCursoPage({ params }: Props) {
                 {c.requisitos}
               </p>
             </section>
+
+            {/* Lo que la hace clínica: el caso del participante */}
+            <section className="rounded-sm bg-primary p-6 text-white shadow-sm lg:p-8">
+              <Antetitulo>Trae tu caso</Antetitulo>
+              <h2 className="mt-2 text-2xl font-extrabold leading-snug lg:text-3xl">Lo vemos en la sesión</h2>
+              <p className="mt-4 text-justify text-lg leading-relaxed text-white/80">{c.caso}</p>
+              <p className="mt-3 text-justify text-sm leading-relaxed text-white/60">
+                Mándalo al inscribirte y el especialista lo usa como ejemplo, sin mostrar el nombre de tu empresa.
+              </p>
+            </section>
           </div>
 
           {/* La inscripción, siempre a la vista */}
@@ -151,13 +161,13 @@ export default async function MiniCursoPage({ params }: Props) {
                     Estamos armando el próximo grupo. Aparta tu lugar y te avisamos la fecha y el costo.
                   </p>
                 )}
-                <a href={whatsappMini(c)} target="_blank" rel="noopener noreferrer" className="mt-5 flex items-center justify-center gap-2 rounded-xs bg-[#25D366] px-5 py-3.5 font-bold text-white transition-opacity hover:opacity-90">
+                <a href={whatsappClinica(c)} target="_blank" rel="noopener noreferrer" className="mt-5 flex items-center justify-center gap-2 rounded-xs bg-[#25D366] px-5 py-3.5 font-bold text-white transition-opacity hover:opacity-90">
                   Apartar por WhatsApp
                 </a>
                 <a href="#contacto" className="mt-3 flex items-center justify-center rounded-xs border-2 border-primary px-5 py-3 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
                   Dejar mis datos
                 </a>
-                <p className="mt-4 text-justify text-xs leading-relaxed text-tertiary">{FORMATO_MINI.grupo}. Te enviamos el enlace de la sesión al inscribirte.</p>
+                <p className="mt-4 text-justify text-xs leading-relaxed text-tertiary">{FORMATO_CLINICA.grupo}. Te enviamos el enlace de la sesión al inscribirte.</p>
               </div>
             </div>
           </aside>
@@ -167,12 +177,12 @@ export default async function MiniCursoPage({ params }: Props) {
       {/* Más temas */}
       <section className="w-full bg-white py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <Antetitulo>Más mini cursos</Antetitulo>
+          <Antetitulo>Más clínicas</Antetitulo>
           <h2 className="mt-2 text-3xl font-extrabold leading-tight text-primary">Otros temas en vivo</h2>
           <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
             {otros.map((o) => (
               <li key={o.slug}>
-                <TarjetaMiniCurso curso={o} />
+                <TarjetaClinica curso={o} />
               </li>
             ))}
           </ul>
@@ -190,7 +200,7 @@ export default async function MiniCursoPage({ params }: Props) {
         <div className="w-full bg-secondary px-6 py-10 text-center lg:py-12">
           <h2 className="text-3xl font-extrabold leading-tight text-primary lg:text-4xl">Aparta tu lugar</h2>
           <p className="mx-auto mt-3 max-w-2xl text-justify text-lg leading-relaxed text-primary/80">
-            Déjanos tus datos y te respondemos con la próxima fecha, el costo y el enlace de {c.titulo.charAt(0).toLowerCase() + c.titulo.slice(1)}.
+            Déjanos tus datos y te respondemos con la próxima fecha, el costo y el enlace de la clínica. Si quieres que veamos tu caso, cuéntanoslo en el mensaje.
           </p>
         </div>
         <ContactForm curso={c.titulo} />
