@@ -566,6 +566,11 @@
         "titulo": "Cámaras térmicas fijas",
         "texto": "Vigilancia las 24 horas donde un incendio no da tiempo de reaccionar.",
         "enlace": "/servicios/monitoreo-continuo/camaras-termicas"
+      },
+      {
+        "titulo": "Termografía con drones",
+        "texto": "Parques solares, líneas, techos y estructuras altas, desde el aire.",
+        "enlace": "/servicios/monitoreo-condicion/termografia-con-drones"
       }
     ],
     "fotos": [

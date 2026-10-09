@@ -57,6 +57,14 @@ Lista reunida el 2026-10-04 con todo lo que el sitio afirma y conviene validar c
 33. ¿Qué fechas tiene el primer grupo de cada tema? Sin fecha, la página invita a apartar lugar.
 34. ¿Están bien los diez temas, o quitamos o agregamos alguno?
 
+## Termografía con drones
+
+35. ¿El dron es propio o se vuela con un aliado? ¿Qué dron y qué cámara, y la cámara es radiométrica (mide temperatura)?
+36. ¿El piloto y el dron están registrados ante la AFAC? La página no lo menciona hasta confirmarlo.
+37. ¿Qué aplicaciones ya han hecho? La página ofrece parques y techos solares, líneas, subestaciones, techos industriales, chimeneas, tanques y estructuras altas.
+38. ¿Qué se entrega además del informe: ortomosaico, imágenes georreferenciadas, archivo para el SCADA del parque? Hoy dice "ubicación de cada hallazgo".
+39. ¿Hay fotos o video de vuelos reales? Las imágenes actuales son generadas, sin marcas, y no se presentan como trabajos de DIAPSA.
+
 ## Contacto
 
 27. ¿Cuál es el correo que recibe los mensajes: info@grupodiapsa.com (el que muestra el sitio) o info@grupodiapsa.com.mx (el que tiene la configuración)? Hay que dejar uno solo.
