@@ -315,6 +315,10 @@
         "alt": "Termograma aéreo de paneles solares."
       },
       {
+        "src": "/images/servicios/termografia-con-drones/termograma-linea.webp",
+        "alt": "Termograma aéreo de un poste de media tensión con el conector de la fase central caliente."
+      },
+      {
         "src": "/images/servicios/termografia-con-drones/dron-distribucion.webp",
         "alt": "Dron con cámara térmica junto a un poste de una línea de distribución con su transformador."
       }
@@ -331,13 +335,13 @@
       "descripcionVideo": "Ficha de un equipo en IDAP: gemelo digital, estado por componente y diagnóstico por disciplina",
       "enlace": "/servicios/idap"
     },
-    "reporteSolar": {
-      "etiqueta": "Qué recibes",
-      "titulo": "Así se ve el informe de un parque solar",
-      "texto": "Cada hallazgo ubicado en el plano del parque por bloque, fila y módulo, con su termograma, su severidad y qué hacer, para que la cuadrilla vaya directo y atienda primero lo que más genera pérdida.",
+    "reporteLinea": {
+      "etiqueta": "Líneas de distribución",
+      "titulo": "Así se ve el informe de una línea, kilómetro por kilómetro",
+      "texto": "Recorremos la línea en carga y cada hallazgo queda en su kilómetro y en su poste, con su termograma, su severidad y qué hacer, para que la cuadrilla salga directo al punto y aproveche cada libranza.",
       "puntos": [
-        "Plano con cada hallazgo ubicado",
-        "Resumen por severidad",
+        "Trazo de la línea con cada hallazgo",
+        "Kilómetro y número de poste",
         "Termograma de cada falla",
         "Qué atender primero y cómo"
       ]

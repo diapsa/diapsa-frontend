@@ -701,8 +701,8 @@ export interface ServiceIntroBeneficios {
   modalidades?: { titulo: string; texto: string; enlace?: string }[];
   fotos: { src: string; alt: string }[];
   idap: { titulo: string; texto: string; puntos: string[]; video: string; descripcionVideo: string; enlace: string };
-  /** En lugar de la banda de IDAP, la muestra del informe de un parque solar (drones). */
-  reporteSolar?: { etiqueta: string; titulo: string; texto: string; puntos: string[] };
+  /** En lugar de la banda de IDAP, la muestra del informe de una línea por kilómetro (drones). */
+  reporteLinea?: { etiqueta: string; titulo: string; texto: string; puntos: string[] };
 }
 
 /** Contenido de la hoja de informe de ejemplo (InformeMuestra). `punto` es el

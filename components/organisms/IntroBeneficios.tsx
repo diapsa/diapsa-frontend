@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import VideoBucle from "../atoms/VideoBucle";
 import CarruselFotos from "../molecules/CarruselFotos";
-import ReporteSolar from "./ReporteSolar";
+import ReporteLinea from "./ReporteLinea";
 import type { ServiceIntroBeneficios } from "@/types/servicio";
 
 /**
@@ -92,15 +92,15 @@ export default function IntroBeneficios({ intro }: { intro: ServiceIntroBenefici
         />
       </div>
 
-      {/* Drones: en lugar de IDAP, cómo se ve el informe de un parque solar */}
-      {intro.reporteSolar ? (
+      {/* Drones: en lugar de IDAP, cómo se ve el informe de una línea por kilómetro */}
+      {intro.reporteLinea ? (
       <div className="grid grid-cols-1 items-center gap-8 rounded-2xl bg-[#eef4fb] p-6 ring-1 ring-primary/10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12 lg:p-10">
         <div>
-          <p className="text-xs font-bold uppercase tracking-widest text-secondary">{intro.reporteSolar.etiqueta}</p>
-          <p className="mt-2 text-2xl font-extrabold leading-tight text-primary">{intro.reporteSolar.titulo}</p>
-          <p className="mt-2 text-justify text-base leading-relaxed text-tertiary">{intro.reporteSolar.texto}</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-secondary">{intro.reporteLinea.etiqueta}</p>
+          <p className="mt-2 text-2xl font-extrabold leading-tight text-primary">{intro.reporteLinea.titulo}</p>
+          <p className="mt-2 text-justify text-base leading-relaxed text-tertiary">{intro.reporteLinea.texto}</p>
           <ul className="mt-5 space-y-2.5">
-            {intro.reporteSolar.puntos.map((p) => (
+            {intro.reporteLinea.puntos.map((p) => (
               <li key={p} className="flex items-start gap-3 text-sm font-semibold text-primary">
                 <Check />
                 {p}
@@ -108,7 +108,7 @@ export default function IntroBeneficios({ intro }: { intro: ServiceIntroBenefici
             ))}
           </ul>
         </div>
-        <ReporteSolar />
+        <ReporteLinea />
       </div>
       ) : (
       /* Tus datos viven en IDAP */
