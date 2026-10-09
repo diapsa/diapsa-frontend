@@ -4,6 +4,7 @@ import PageHeader from "@/components/organisms/PageHeader";
 import ContactForm from "@/components/organisms/ContactForm";
 import TarjetaClinica from "@/components/organisms/TarjetaClinica";
 import Antetitulo from "@/components/atoms/Antetitulo";
+import VideoBucle from "@/components/atoms/VideoBucle";
 import JsonLd, { createBreadcrumbSchema } from "@/components/atoms/JsonLd";
 import { TECNICAS } from "@/lib/cursos";
 import { CLINICAS, FORMATO_CLINICA, RUTA_CLINICAS, whatsappClinica } from "@/lib/clinicas";
@@ -95,6 +96,15 @@ export default function ClinicasPage() {
         <div className="mx-auto max-w-7xl px-6">
           <Antetitulo>Cómo funciona</Antetitulo>
           <h2 className="mt-2 text-3xl font-extrabold leading-tight lg:text-4xl">De la inscripción a la sesión</h2>
+          {/* El recorrido en video, en grande (Emiliano, 2026-10-09) */}
+          <div className="mt-8 overflow-hidden rounded-xl bg-white/5 p-2 ring-1 ring-white/10 lg:p-3">
+            <VideoBucle
+              className="block aspect-[16/10] w-full rounded-lg object-cover"
+              src="/videos/clinicas/clinica-proceso.mp4"
+              poster="/videos/clinicas/clinica-proceso.jpg"
+              descripcion="Los cuatro pasos de una clínica técnica: eliges el tema, apartas tu lugar por WhatsApp, mandas tu caso y el especialista lo resuelve en vivo con el grupo"
+            />
+          </div>
           <ol className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {PASOS.map((p, i) => (
               <li key={p.t} className="rounded-sm bg-white/[0.06] p-5 ring-1 ring-white/10">
