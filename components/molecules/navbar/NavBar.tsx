@@ -39,7 +39,11 @@ const columnasServicios: ColumnaMenu[] = [
     {
         titulo: monitoreoCondicion.label,
         href: monitoreoCondicion.href,
-        items: monitoreoCondicion.children ?? [],
+        // El diagnóstico integral reúne a todas las técnicas: va al final, a lo
+        // ancho, como base del mosaico (Emiliano, 2026-10-09).
+        items: [...(monitoreoCondicion.children ?? [])].sort(
+            (a, b) => Number(a.href.endsWith("/diagnostico-de-maquinaria")) - Number(b.href.endsWith("/diagnostico-de-maquinaria")),
+        ),
         ancho: 2,
         formato: "mosaico",
     },
