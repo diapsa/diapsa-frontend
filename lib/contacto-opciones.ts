@@ -72,17 +72,17 @@ export const MENSAJE_POR_MOTIVO: Record<Motivo | "", string> = {
   "": "Cuéntanos cómo podemos ayudarte",
   servicios: "Qué equipos tienes, qué te preocupa y dónde está la planta",
   equipos: "Cuántos equipos necesitas y para qué aplicación",
-  cursos: "Cuántas personas y si lo quieres en tu planta o en Saltillo",
+  cursos: "Cuántas personas y qué tema o caso te interesa",
   proveedor: "Qué ofreces y a quién atiendes",
   otro: "Cuéntanos cómo podemos ayudarte",
 };
 
-export const MOTIVOS: { valor: Motivo; texto: string }[] = [
-  { valor: "servicios", texto: "Cotizar un servicio para mi planta" },
-  { valor: "equipos", texto: "Cotizar un equipo (cámaras, sensores)" },
-  { valor: "cursos", texto: "Información de cursos o del diplomado" },
-  { valor: "proveedor", texto: "Soy proveedor" },
-  { valor: "otro", texto: "Otro" },
+export const MOTIVOS: { valor: Motivo; texto: string; corto: string }[] = [
+  { valor: "servicios", texto: "Cotizar un servicio para mi planta", corto: "Un servicio" },
+  { valor: "equipos", texto: "Cotizar un equipo (cámaras, sensores)", corto: "Un equipo" },
+  { valor: "cursos", texto: "Información de cursos o del diplomado", corto: "Un curso o clínica" },
+  { valor: "proveedor", texto: "Soy proveedor", corto: "Soy proveedor" },
+  { valor: "otro", texto: "Otro", corto: "Otra cosa" },
 ];
 
 export function esMotivo(v: string | null | undefined): v is Motivo {

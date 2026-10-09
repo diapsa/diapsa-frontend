@@ -81,12 +81,15 @@ export default function ContactForm({ gas = false, curso }: Props) {
     : undefined;
   const [intereses, setIntereses] = useState<string[]>(fichaDelCurso ? [fichaDelCurso] : gas ? [SERVICIO_GAS] : []);
   const motivo = (formData.custom_fields?.subject || "") as Motivo | "";
-  const grupos = motivo ? OPCIONES_POR_MOTIVO[motivo] : [];
-  const gruposConCurso =
-    fichaDelCurso && motivo === "cursos" && !grupos.some((g) => g.opciones.includes(fichaDelCurso))
-      ? [{ titulo: "Este curso", opciones: [fichaDelCurso] }, ...grupos]
-      : grupos;
-  const alternarInteres = (o: string) => setIntereses((prev) => (prev.includes(o) ? prev.filter((x) => x !== o) : [...prev, o]));
+  const quitarInteres = (o: string) => setIntereses((prev) => prev.filter((x) => x !== o));
+  // Elegir qué necesita con un toque; cambiar de motivo limpia el interés.
+  const elegirMotivo = (valor: Motivo) => {
+    setIntereses([]);
+    setFormData((prev) => ({
+      ...prev,
+      custom_fields: { ...prev.custom_fields, subject: valor, coursesOfInterest: [], servicesOfInterest: [] } as ContactFormMain["custom_fields"],
+    }));
+  };
 
   // En la página de un servicio o de productos, el motivo y el interés ya
   // van puestos; si la página no dice nada, el visitante elige.
@@ -305,7 +308,7 @@ export default function ContactForm({ gas = false, curso }: Props) {
                   required
                   disabled={loading}
                   className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
-                  placeholder="Ingresa tu nombre completo"
+                  placeholder="Tu nombre"
                 />
                 {getFieldError("name") && (
                   <p className="text-sm text-red-500 mt-1">{getFieldError("name")}</p>
@@ -322,7 +325,7 @@ export default function ContactForm({ gas = false, curso }: Props) {
                   onChange={handleChange}
                   disabled={loading}
                   className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
-                  placeholder="Nombre de tu empresa"
+                  placeholder="Empresa (opcional)"
                 />
               </div>
 
@@ -356,7 +359,7 @@ export default function ContactForm({ gas = false, curso }: Props) {
                   onBlur={(e) => handleBlur("phone", e.target.value)}
                   disabled={loading}
                   className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
-                  placeholder="(000) 000-0000"
+                  placeholder="WhatsApp o teléfono (opcional)"
                 />
                 {getFieldError("phone") && (
                   <p className="text-sm text-red-500 mt-1">{getFieldError("phone")}</p>
@@ -401,50 +404,41 @@ export default function ContactForm({ gas = false, curso }: Props) {
                 )}
               </div>
             ) : (
-            <div>
-              <select
-                id="subject"
-                name="subject"
-                value={formData.custom_fields?.subject}
-                onChange={handleChange}
-                required
-                disabled={loading}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
-              >
-                <option value="">¿Qué necesitas?</option>
-                {MOTIVOS.map((m) => <option key={m.valor} value={m.valor}>{m.texto}</option>)}
-              </select>
-            </div>
+            /* Simplificado (Emiliano, 2026-10-09): qué necesita, con un toque,
+               en lugar de un menú desplegable y el catálogo de fichas. */
+            <fieldset>
+              <legend className="mb-2 text-sm font-semibold text-white">¿Qué necesitas?</legend>
+              <div className="flex flex-wrap gap-2">
+                {MOTIVOS.map((m) => {
+                  const on = motivo === m.valor;
+                  return (
+                    <button
+                      key={m.valor}
+                      type="button"
+                      onClick={() => elegirMotivo(m.valor)}
+                      aria-pressed={on}
+                      disabled={loading}
+                      className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${on ? "border-secondary bg-secondary text-black" : "border-white/30 bg-transparent text-white hover:border-secondary"}`}
+                    >
+                      {m.corto}
+                    </button>
+                  );
+                })}
+              </div>
+            </fieldset>
             )}
 
-            {/* Fichas del motivo elegido (en gas el servicio ya va marcado) */}
-            {!gas && gruposConCurso.length > 0 && (
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="text-sm font-semibold text-gray-900">
-                  {motivo === "cursos" ? "Marca los cursos que te interesan" : motivo === "equipos" ? "Marca los equipos que te interesan" : "Marca los servicios que te interesan"}
-                  <span className="ml-2 text-xs font-normal text-gray-500">{intereses.length ? `${intereses.length} marcados` : "opcional"}</span>
-                </p>
-                {gruposConCurso.map((g) => (
-                  <div key={g.titulo} className="mt-3">
-                    {gruposConCurso.length > 1 && <p className="mb-1.5 text-[11px] font-bold uppercase tracking-widest text-gray-500">{g.titulo}</p>}
-                    <div className="flex flex-wrap gap-2">
-                      {g.opciones.map((o) => {
-                        const on = intereses.includes(o);
-                        return (
-                          <button
-                            key={o}
-                            type="button"
-                            onClick={() => alternarInteres(o)}
-                            aria-pressed={on}
-                            disabled={loading}
-                            className={`rounded-full border px-3 py-1.5 text-sm font-semibold transition-colors ${on ? "border-secondary bg-secondary text-black" : "border-gray-300 bg-white text-gray-800 hover:border-secondary"}`}
-                          >
-                            {on ? "✓ " : ""}{o}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
+            {/* Lo que la página ya sabe (el curso, el servicio o el equipo de la
+                página) va marcado y se puede quitar; lo demás se escribe en el
+                mensaje. */}
+            {!gas && intereses.length > 0 && (
+              <div className="flex flex-wrap items-center gap-2 text-sm">
+                <span className="text-white/70">Sobre:</span>
+                {intereses.map((o) => (
+                  <span key={o} className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1 font-semibold text-black">
+                    {o}
+                    <button type="button" onClick={() => quitarInteres(o)} aria-label={`Quitar ${o}`} className="leading-none opacity-60 hover:opacity-100">×</button>
+                  </span>
                 ))}
               </div>
             )}
@@ -469,8 +463,8 @@ export default function ContactForm({ gas = false, curso }: Props) {
               />
             </div>
 
-            {/* Checkbox de privacidad */}
-            <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+            {/* Privacidad en un renglón */}
+            <label htmlFor="aceptaPrivacidad" className="flex items-center gap-2.5 text-sm text-white/80">
               <input
                 type="checkbox"
                 id="aceptaPrivacidad"
@@ -488,22 +482,15 @@ export default function ContactForm({ gas = false, curso }: Props) {
                 }}
                 required
                 disabled={loading}
-                className="mt-1 w-5 h-5 text-secondary border-gray-300 rounded focus:ring-secondary focus:ring-2"
+                className="h-4 w-4 shrink-0 rounded border-gray-300 text-secondary focus:ring-2 focus:ring-secondary"
               />
-              <label htmlFor="aceptaPrivacidad" className="text-sm text-gray-700 leading-relaxed">
-                <span className="font-semibold">Tratamiento de datos personales.</span> He leído y
-                acepto el{" "}
-                <a
-                  href="/aviso-privacidad"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-secondary font-semibold hover:underline"
-                >
+              <span>
+                Acepto el{" "}
+                <a href="/aviso-privacidad" target="_blank" rel="noopener noreferrer" className="font-semibold text-secondary hover:underline">
                   Aviso de Privacidad
-                </a>{" "}
-                de Grupo DIAPSA. <span className="text-red-500">*</span>
-              </label>
-            </div>
+                </a>
+              </span>
+            </label>
             {fieldErrors.aceptaPrivacidad && (
               <p className="text-sm text-red-500 mt-1">{fieldErrors.aceptaPrivacidad}</p>
             )}
