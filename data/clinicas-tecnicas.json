@@ -27,7 +27,7 @@
         "Preguntas con casos de los participantes"
       ],
       "requisitos": "Ninguno.",
-      "foto": "/images/cursos/vibraciones/vibraciones-02.webp",
+      "foto": "/images/cursos/clinicas/introduccion-vibraciones-mecanicas.webp",
       "caso": "Un informe de vibraciones que hayas recibido y no te quedó claro."
     },
     {
@@ -50,7 +50,7 @@
         "Casos reales y errores frecuentes"
       ],
       "requisitos": "Saber tomar una medición de vibración.",
-      "foto": "/images/cursos/vibraciones/vibraciones-06.webp",
+      "foto": "/images/cursos/clinicas/desbalance-y-desalineacion-en-el-espectro.webp",
       "caso": "Un espectro de un equipo tuyo donde dudes si es desbalance o desalineación."
     },
     {
@@ -73,7 +73,7 @@
         "Casos reales de bombas inspeccionadas"
       ],
       "requisitos": "Conocimientos básicos de mantenimiento.",
-      "foto": "/images/cursos/vibraciones/vibraciones-09.webp",
+      "foto": "/images/cursos/clinicas/inspeccion-de-bombas-hidraulicas.webp",
       "caso": "Los datos de una bomba que te preocupa: lecturas, ruido o temperatura."
     },
     {
@@ -96,7 +96,7 @@
         "Cómo elegir una cámara"
       ],
       "requisitos": "Ninguno.",
-      "foto": "/images/cursos/termografia/termografia-02.webp",
+      "foto": "/images/cursos/clinicas/introduccion-termografia-infrarroja.webp",
       "caso": "Qué equipos quieres inspeccionar, o la cámara que estás pensando comprar."
     },
     {
@@ -120,7 +120,7 @@
         "Ajustes en vivo con las cámaras de los participantes"
       ],
       "requisitos": "Tener a la mano tu cámara termográfica durante la sesión.",
-      "foto": "/images/cursos/termografia/termografia-04.webp",
+      "foto": "/images/cursos/clinicas/configuracion-de-la-camara-termografica.webp",
       "caso": "Tu cámara y una imagen térmica que te haya dejado dudas."
     },
     {
@@ -143,7 +143,7 @@
         "Del hallazgo al reporte"
       ],
       "requisitos": "Saber usar una cámara termográfica.",
-      "foto": "/images/cursos/termografia/termografia-07.webp",
+      "foto": "/images/cursos/clinicas/termografia-en-tableros-electricos.webp",
       "caso": "Un termograma de un tablero tuyo con un punto caliente que no sabes calificar."
     },
     {
@@ -166,7 +166,7 @@
         "Casos reales de transformadores inspeccionados"
       ],
       "requisitos": "Conocimientos básicos de electricidad.",
-      "foto": "/images/cursos/termografia/termografia-08.webp",
+      "foto": "/images/cursos/clinicas/inspeccion-de-transformadores-secos.webp",
       "caso": "Imágenes o datos de un transformador seco de tu instalación."
     },
     {
@@ -189,7 +189,7 @@
         "Cómo armar la ruta de inspección"
       ],
       "requisitos": "Conocimientos básicos de mantenimiento.",
-      "foto": "/images/cursos/termografia/termografia-03.webp",
+      "foto": "/images/cursos/clinicas/inspeccion-de-motores-electricos.webp",
       "caso": "Un motor crítico de tu planta y lo que has observado en él."
     },
     {
@@ -212,7 +212,7 @@
         "Estimación de pérdidas y plan de reparación"
       ],
       "requisitos": "Ninguno.",
-      "foto": "/images/cursos/ultrasonido/ultrasonido-03.webp",
+      "foto": "/images/cursos/clinicas/fugas-de-aire-comprimido-con-ultrasonido.webp",
       "caso": "Cómo es tu red de aire comprimido y dónde sospechas fugas."
     },
     {
@@ -235,7 +235,7 @@
         "Registro y ajuste de frecuencias"
       ],
       "requisitos": "Ninguno.",
-      "foto": "/images/cursos/ultrasonido/ultrasonido-08.webp",
+      "foto": "/images/cursos/clinicas/lubricacion-de-rodamientos-con-ultrasonido.webp",
       "caso": "Tu ruta de lubricación actual y los equipos que más fallan."
     }
   ]

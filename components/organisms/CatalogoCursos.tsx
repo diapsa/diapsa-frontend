@@ -210,7 +210,7 @@ export default function CatalogoCursos({ cursos: delCms }: { cursos: Course[] })
               },
               {
                 href: RUTA_CLINICAS,
-                foto: "/images/cursos/termografia/termografia-04.webp",
+                foto: "/images/cursos/clinicas/configuracion-de-la-camara-termografica.webp",
                 etiqueta: "Nuevo",
                 titulo: "Clínicas técnicas en vivo",
                 texto: "Un tema puntual en una sola sesión en línea, a un costo accesible: configurar tu cámara termográfica, entender las vibraciones o inspeccionar un transformador seco.",

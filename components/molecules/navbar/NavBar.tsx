@@ -109,7 +109,7 @@ const columnasCursosPanel: ColumnaMenu[] = [
         titulo: "Programas",
         items: [
             ...(diplomado ? [{ ...diplomado, imagen: "/images/cursos/confiabilidad/confiabilidad-03.webp" }] : []),
-            { label: "Clínicas técnicas", href: "/cursos/clinicas-tecnicas", descripcion: "Un tema puntual, en vivo y a bajo costo", imagen: "/images/cursos/termografia/termografia-04.webp" },
+            { label: "Clínicas técnicas", href: "/cursos/clinicas-tecnicas", descripcion: "Un tema puntual, en vivo y a bajo costo", imagen: "/images/cursos/clinicas/configuracion-de-la-camara-termografica.webp" },
             { label: "Capacitaciones y talleres", href: "/cursos#catalogo", descripcion: "Con certificado o práctica en planta", imagen: "/images/cursos/vibraciones/vibraciones-01.webp" },
         ],
         formato: "tarjetas",
