@@ -5,8 +5,8 @@
   "portada": "/images/blog/matriz-criticidad.webp",
   "fecha": "2026-09-30T23:00:00.000000Z",
   "seo": {
-    "titulo": "Análisis de criticidad de equipos: matriz de criticidad con ejemplo",
-    "descripcion": "Cómo hacer un análisis de criticidad de equipos en mantenimiento: criterios, matriz de frecuencia por consecuencia, ejemplo con puntajes, clases A, B y C y qué estrategia aplicar a cada una."
+    "titulo": "Análisis de criticidad: matriz con ejemplo",
+    "descripcion": "Cómo hacer un análisis de criticidad de equipos: criterios, matriz de frecuencia por consecuencia, ejemplo con puntajes y qué hacer con los A, B y C."
   },
   "bloques": [
     ["p", "En cualquier planta hay equipos que pueden fallar y nadie se entera hasta el siguiente turno, y otros que si fallan paran la producción en minutos. Tratarlos igual es gastar de más en los primeros y de menos en los segundos. El análisis de criticidad sirve justo para eso: ordenar los equipos según el riesgo que representan y decidir cuánto cuidado merece cada uno."],

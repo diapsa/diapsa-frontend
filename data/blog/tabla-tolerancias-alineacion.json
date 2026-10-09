@@ -5,8 +5,8 @@
   "portada": "/images/blog/tabla-tolerancias-alineacion.webp",
   "fecha": "2026-09-30T21:00:00.000000Z",
   "seo": {
-    "titulo": "Tabla de tolerancias para alineación de ejes por velocidad",
-    "descripcion": "Tolerancias de alineación de ejes por rango de velocidad: desalineación paralela en milímetros y angular en milímetros por cada 100 mm, cómo leerlas y cuándo usar las del fabricante."
+    "titulo": "Tabla de tolerancias de alineación de ejes",
+    "descripcion": "Tolerancias de alineación por rango de velocidad: desalineación paralela en mm y angular en mm por cada 100 mm, y cuándo usar las del fabricante."
   },
   "bloques": [
     ["p", "Ningún par de ejes queda perfectamente alineado, y tampoco hace falta. Lo que se busca es que la desalineación quede tan chica que el acople, los rodamientos y los sellos no la resientan. La pregunta de siempre es cuánto es suficiente, y la respuesta depende sobre todo de qué tan rápido gira la máquina."],

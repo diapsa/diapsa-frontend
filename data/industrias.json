@@ -40,6 +40,10 @@
     {
       "nombre": "Tratamiento de agua",
       "slug": "tratamiento-de-agua"
+    },
+    {
+      "nombre": "Centros de datos",
+      "slug": "centros-de-datos"
     }
   ]
 }

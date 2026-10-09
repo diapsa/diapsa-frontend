@@ -5,8 +5,8 @@
   "portada": "/images/blog/vibraciones-motores-bombas.webp",
   "fecha": "2026-09-30T20:00:00.000000Z",
   "seo": {
-    "titulo": "Vibraciones en motores y bombas centrífugas: puntos de medición",
-    "descripcion": "Dónde se mide la vibración en motores eléctricos y bombas centrífugas, cómo se nombran los puntos, qué fallas son típicas de cada uno y cómo medir para poder comparar."
+    "titulo": "Vibraciones en motores y bombas: dónde medir",
+    "descripcion": "Dónde medir la vibración en motores y bombas centrífugas, cómo nombrar los puntos, qué fallas son típicas de cada uno y cómo medir para poder comparar."
   },
   "bloques": [
     ["p", "Si en tu planta hay un equipo que no puede faltar en ninguna ruta de vibraciones, es el motor-bomba. Mueve agua de enfriamiento, alimenta calderas, recircula procesos y casi siempre está en el camino crítico. La buena noticia es que es de los equipos que mejor se diagnostican con vibraciones, siempre que se mida en los lugares correctos y de la misma forma cada vez."],

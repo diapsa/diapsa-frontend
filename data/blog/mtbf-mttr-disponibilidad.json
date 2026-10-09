@@ -5,8 +5,8 @@
   "portada": "/images/blog/ingenieros-planta.webp",
   "fecha": "2026-09-30T23:50:00.000000Z",
   "seo": {
-    "titulo": "MTBF, MTTR y disponibilidad: fórmulas y ejemplos resueltos",
-    "descripcion": "Qué son el MTBF y el MTTR, cómo se calculan, cómo se obtiene la disponibilidad a partir de ellos, un ejemplo resuelto paso a paso y los errores más comunes al medirlos."
+    "titulo": "MTBF, MTTR y disponibilidad: fórmulas y ejemplos",
+    "descripcion": "Qué son el MTBF y el MTTR, cómo se calculan, cómo se obtiene la disponibilidad, un ejemplo resuelto paso a paso y los errores más comunes al medirlos."
   },
   "bloques": [
     ["p", "Si alguna vez te han pedido indicadores de mantenimiento, casi seguro aparecieron tres siglas: MTBF, MTTR y disponibilidad. Son los más usados porque responden tres preguntas sencillas: cada cuánto falla un equipo, cuánto tardamos en repararlo y qué parte del tiempo estuvo listo para trabajar."],

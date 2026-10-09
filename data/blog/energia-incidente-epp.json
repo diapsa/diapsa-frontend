@@ -5,8 +5,8 @@
   "portada": "/images/blog/energia-incidente-epp.webp",
   "fecha": "2026-09-30T23:59:40.000000Z",
   "seo": {
-    "titulo": "Energía incidente y categorías de EPP para arco eléctrico",
-    "descripcion": "Qué es la energía incidente de un arco eléctrico en cal/cm², las categorías de EPP de NFPA 70E (4, 8, 25 y 40 cal/cm²), de qué depende que un tablero salga alto y cómo se reduce."
+    "titulo": "Energía incidente y categorías de EPP por arco",
+    "descripcion": "Qué es la energía incidente en cal/cm², las categorías de EPP de NFPA 70E, por qué un tablero sale alto y cómo se reduce la energía del arco."
   },
   "bloques": [
     ["p", "Cuando un arco eléctrico ocurre en un tablero, libera en milisegundos una ráfaga de calor, luz y presión. La energía incidente es la forma de medir cuánto de ese calor le llega a una persona parada frente al tablero. Es el número más importante de un estudio de arco eléctrico, porque de él sale todo lo demás: qué ropa usar, a qué distancia y qué dice la etiqueta."],

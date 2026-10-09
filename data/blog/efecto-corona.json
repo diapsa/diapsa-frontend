@@ -5,8 +5,8 @@
   "portada": "/images/blog/aisladores-transformador.webp",
   "fecha": "2026-09-29T00:00:00.000000Z",
   "seo": {
-    "titulo": "Efecto corona: qué es y cómo detectarlo en subestaciones y tableros",
-    "descripcion": "Qué es el efecto corona, dónde aparece (subestaciones, aisladores, transformadores, tableros), cómo se distingue del tracking y del arco y cómo se detecta con ultrasonido."
+    "titulo": "Efecto corona: qué es y cómo detectarlo",
+    "descripcion": "Qué es el efecto corona, dónde aparece en subestaciones, aisladores y tableros, cómo distinguirlo del tracking y cómo detectarlo con ultrasonido."
   },
   "bloques": [
     ["p", "Si alguna vez te has parado junto a una subestación y escuchaste un zumbido raro, como un chisporroteo suave, es posible que estuvieras oyendo efecto corona. Es una de esas fallas que pasan de largo: casi no calienta, no dispara ninguna protección y en la planta, con todo el ruido de la producción, nadie la nota. Pero mientras tanto va desgastando aisladores, terminales y barras, y un día se convierte en algo más serio."],

@@ -5,8 +5,8 @@
   "portada": "/images/blog/almacen-racks.webp",
   "fecha": "2026-09-30T23:59:59.800000Z",
   "seo": {
-    "titulo": "Detección temprana de incendios con cámaras térmicas",
-    "descripcion": "Cómo las cámaras térmicas fijas detectan el inicio de un incendio antes que el humo en almacenes, bandas transportadoras, colectores de polvo y patios de material, y cómo se integran al sistema contra incendio."
+    "titulo": "Detección de incendios con cámaras térmicas",
+    "descripcion": "Cómo las cámaras térmicas fijas detectan un incendio antes que el humo en almacenes, bandas y colectores, y cómo se integran al sistema contra incendio."
   },
   "bloques": [
     ["p", "Un detector de humo avisa cuando ya hay humo. Una cámara térmica puede ver antes: el punto que se está calentando en una pila de material, un rodillo de banda trabado o una chispa que quedó dentro de un colector. En plantas con material combustible, esos minutos de ventaja cambian todo."],

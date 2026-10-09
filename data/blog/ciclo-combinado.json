@@ -5,8 +5,8 @@
   "portada": "/images/blog/ciclo-combinado.webp",
   "fecha": "2026-10-01T20:00:00.100000Z",
   "seo": {
-    "titulo": "Mantenimiento predictivo en centrales de ciclo combinado",
-    "descripcion": "Cómo se arma el mantenimiento predictivo de una central de ciclo combinado: turbinas de gas y de vapor, generador, caldera de recuperación, transformador elevador, bombas, torres de enfriamiento y subestación, con la técnica que ve la falla de cada uno."
+    "titulo": "Mantenimiento predictivo en ciclo combinado",
+    "descripcion": "Cómo armar el predictivo de una central de ciclo combinado: turbinas, generador, caldera de recuperación, transformador y bombas, técnica por equipo."
   },
   "bloques": [
     ["p", "Una central de ciclo combinado aprovecha dos veces el mismo combustible: la turbina de gas genera energía, y el calor de sus gases de escape produce vapor en una caldera de recuperación que mueve una turbina de vapor. Es un diseño eficiente, pero también uno donde todo está encadenado. Si falla un equipo del ciclo, la unidad baja carga o sale de línea."],

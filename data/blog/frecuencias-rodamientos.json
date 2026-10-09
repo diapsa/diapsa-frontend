@@ -5,8 +5,8 @@
   "portada": "/images/blog/frecuencias-rodamientos.webp",
   "fecha": "2026-09-30T23:59:59.600000Z",
   "seo": {
-    "titulo": "Frecuencias de falla de rodamientos: BPFO, BPFI, BSF y FTF",
-    "descripcion": "Qué son las frecuencias de falla de rodamientos (pista externa BPFO, pista interna BPFI, elementos rodantes BSF y jaula FTF), sus fórmulas, un ejemplo resuelto y cómo se usan en el análisis de vibraciones."
+    "titulo": "Frecuencias de rodamientos: BPFO, BPFI, BSF y FTF",
+    "descripcion": "Qué son las frecuencias de falla de rodamientos, sus fórmulas, un ejemplo resuelto y cómo se usan en el espectro de vibración para ubicar el daño."
   },
   "bloques": [
     ["p", "Cuando un rodamiento empieza a dañarse, cada vez que un elemento rodante pasa por el defecto produce un pequeño golpe. Esos golpes se repiten a una frecuencia que depende de la geometría del rodamiento y de la velocidad. Conocerlas es lo que permite decir, mirando un espectro, no solo que un rodamiento está mal, sino dónde está el daño."],

@@ -5,8 +5,8 @@
   "portada": "/images/blog/armonicos-thd.webp",
   "fecha": "2026-09-30T23:59:59.000000Z",
   "seo": {
-    "titulo": "Armónicos eléctricos y THD: qué son y límites de IEEE 519",
-    "descripcion": "Qué son los armónicos eléctricos y la distorsión armónica total (THD y TDD), qué cargas los generan, qué daños causan en motores, transformadores y capacitores, los límites de IEEE 519 y cómo se corrigen."
+    "titulo": "Armónicos y THD: qué son y límites de IEEE 519",
+    "descripcion": "Qué son los armónicos y la distorsión THD y TDD, qué cargas los generan, qué daños causan, los límites de IEEE 519 y cómo se corrigen."
   },
   "bloques": [
     ["p", "La corriente que llega a una planta debería tener forma de onda senoidal, suave y pareja. Pero muchas de las cargas modernas la deforman. Esa deformación se llama distorsión armónica, y es una de las causas más comunes de calentamientos, disparos y capacitores dañados que nadie sabe explicar."],

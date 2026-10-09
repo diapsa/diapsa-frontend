@@ -5,8 +5,8 @@
   "portada": "/images/blog/falsas-alarmas-iot.webp",
   "fecha": "2026-09-30T23:59:59.300000Z",
   "seo": {
-    "titulo": "Sensores IoT en mantenimiento predictivo: cómo evitar falsas alarmas",
-    "descripcion": "Por qué los programas de mantenimiento predictivo con sensores IoT generan falsas alarmas, cómo ajustar los umbrales de vibración a cada equipo y cómo rescatar un programa de monitoreo que no está dando resultados."
+    "titulo": "Sensores IoT: cómo evitar falsas alarmas",
+    "descripcion": "Por qué los sensores IoT de mantenimiento dan falsas alarmas, cómo ajustar los umbrales a cada equipo y cómo rescatar un programa que no da resultados."
   },
   "bloques": [
     ["p", "Es una historia que se repite: una planta instala decenas de sensores, los primeros meses todos revisan las alertas, y al año nadie les hace caso porque la mayoría son falsas. El problema casi nunca es el sensor. Es cómo se diseñó el programa."],

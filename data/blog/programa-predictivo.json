@@ -5,8 +5,8 @@
   "portada": "/images/blog/programa-predictivo.webp",
   "fecha": "2026-09-30T23:30:00.000000Z",
   "seo": {
-    "titulo": "Cómo hacer un programa de mantenimiento predictivo paso a paso",
-    "descripcion": "Guía para hacer un programa de mantenimiento predictivo: inventario de equipos, análisis de criticidad, qué técnica aplicar a cada equipo, medición base, frecuencias de medición y errores comunes."
+    "titulo": "Cómo hacer un programa de mantenimiento predictivo",
+    "descripcion": "Guía paso a paso: inventario de equipos, análisis de criticidad, técnica para cada equipo, medición base, frecuencias de medición y errores comunes."
   },
   "bloques": [
     ["p", "Muchas plantas empiezan con el mantenimiento predictivo al revés: compran un analizador de vibraciones o contratan una ruta de termografía, miden todo lo que pueden y a los pocos meses tienen un cerro de reportes y las mismas fallas de siempre. El problema no es la técnica. Es que nadie decidió antes qué medir, para qué y qué hacer con el resultado."],

@@ -9,9 +9,9 @@ import { getFeaturedSuccessCases } from "@/lib/api/posts";
 import CasosExitoTeaser from "@/components/organisms/CasosExitoTeaser";
 
 export const metadata: Metadata = {
-  title: "Nuestra Metodología",
+  title: "Metodología de mantenimiento predictivo 360",
   description:
-    "Metodología DIAPSA 360°: Un enfoque sistemático para maximizar la confiabilidad de tus equipos. Diagnóstico integral, análisis predictivo y estrategias de mantenimiento personalizadas.",
+    "Cómo llevamos un programa predictivo de principio a fin: criticidad, rutas, técnicas cruzadas, IDAP y seguimiento, para que cada hallazgo se cierre.",
   keywords: [
     "metodología mantenimiento predictivo",
     "DIAPSA 360",

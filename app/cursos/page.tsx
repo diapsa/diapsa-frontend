@@ -7,8 +7,8 @@ import { getCourses } from "@/lib/api/courses";
 export const metadata: Metadata = {
   // Tablero 2026-10-01: 148 impresiones y 1.4 % de clics con "Cursos y Capacitación".
   // Se busca por técnica y por certificación ("curso de vibraciones nivel 1", "cursos de termografía").
-  title: { absolute: "Cursos de vibraciones y termografía con certificación ISO 18436 | DIAPSA" },
-  description: "Cursos de vibraciones mecánicas, termografía infrarroja y ultrasonido en México: formación técnica, talleres prácticos y certificación ISO 18436 Categorías I y II. Más de 3,000 especialistas capacitados en 15 años.",
+  title: { absolute: "Cursos de vibraciones y termografía ISO 18436 | DIAPSA" },
+  description: "Cursos de vibraciones, termografía y ultrasonido en México: formación, talleres y certificación ISO 18436 Categorías I y II, en tu planta o en Saltillo.",
   alternates: {
     canonical: "/cursos",
   },

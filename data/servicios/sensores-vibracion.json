@@ -25,7 +25,7 @@
     "subtitle": "Tus equipos críticos medidos cada 10 minutos, con un analista viendo la tendencia",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Sistema de monitoreo de vibraciones en línea para plantas en México: sensores inalámbricos en motores, bombas, ventiladores y compresores que miden cada 10 minutos y detectan fallas de forma automática, con cada alerta revisada contra el espectro por un especialista Categoría III antes de avisarte. Todo en IDAP.",
+  "seoDescription": "Sensores inalámbricos de vibración en motores, bombas y compresores: una lectura cada 10 minutos y cada alerta revisada por un analista Categoría III.",
   "content": {
     "title": "Tus equipos críticos, medidos cada 10 minutos",
     "subtitle": "El sensor se queda en la máquina, manda una lectura cada 10 minutos y un especialista revisa cada cambio contra el espectro antes de avisarte. La falla que nace entre dos rutas se ve el mismo día, y los equipos a los que nadie debería subir se miden sin exponer a nadie.",
@@ -430,7 +430,7 @@
     "titulo": "Del sensor a la decisión, en cinco pasos",
     "texto": "No vendemos sensores: vendemos saber a tiempo qué le pasa a tu equipo y qué hacer. Así se llega de la lectura al aviso."
   },
-  "seoTitle": "Sensores inalámbricos de vibración con monitoreo en línea",
+  "seoTitle": "Sensores de vibración inalámbricos en línea",
   "introBeneficios": {
     "beneficios": [
       {

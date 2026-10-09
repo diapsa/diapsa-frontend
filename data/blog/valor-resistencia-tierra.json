@@ -5,8 +5,8 @@
   "portada": "/images/blog/valor-resistencia-tierra.webp",
   "fecha": "2026-09-30T23:59:10.000000Z",
   "seo": {
-    "titulo": "Valor de resistencia de tierra física: cuánto debe medir",
-    "descripcion": "Cuál es el valor máximo de resistencia de tierra física en México (25 ohms la red y 10 ohms los pararrayos según NOM-022-STPS-2015), por qué sale alto una tierra y cómo se corrige."
+    "titulo": "Resistencia de tierra física: cuánto debe medir",
+    "descripcion": "Cuánto debe medir una tierra física en México: 25 ohms la red y 10 ohms los pararrayos según la NOM-022-STPS-2015, por qué sale alta y cómo se corrige."
   },
   "bloques": [
     ["p", "Es la pregunta que más nos hacen: ¿cuánto debe medir una tierra física? La respuesta corta es que depende de qué se está midiendo. Y la respuesta completa incluye algo que muchos reportes olvidan: un valor bueno no sirve de nada si el equipo no está conectado a ese electrodo."],

@@ -5,8 +5,8 @@
   "portada": "/images/blog/descargas-parciales-transformadores.webp",
   "fecha": "2026-10-01T12:00:00.300000Z",
   "seo": {
-    "titulo": "Descargas parciales en transformadores: qué son y cómo detectarlas",
-    "descripcion": "Qué son las descargas parciales en transformadores de potencia, qué las provoca, por qué terminan en falla del aislamiento y cómo se detectan en operación: monitoreo acústico, gases disueltos en el aceite y medición eléctrica."
+    "titulo": "Descargas parciales en transformadores",
+    "descripcion": "Qué son las descargas parciales, qué las provoca, por qué terminan en falla del aislamiento y cómo detectarlas en operación por sonido, gases y señal."
   },
   "bloques": [
     ["p", "La mayoría de las fallas graves de un transformador empiezan en el aislamiento. Y muchas de ellas empiezan igual: con descargas parciales que nadie nota durante meses. No hacen saltar ninguna protección, no se ven por fuera y el transformador sigue entregando su carga como si nada. Mientras tanto, cada descarga deja una pequeña huella de daño."],

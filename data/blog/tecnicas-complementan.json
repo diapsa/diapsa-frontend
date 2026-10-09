@@ -5,8 +5,8 @@
   "portada": "/images/blog/tecnicas-complementan.webp",
   "fecha": "2026-09-30T23:59:54.000000Z",
   "seo": {
-    "titulo": "Técnicas de mantenimiento predictivo y cómo se complementan",
-    "descripcion": "Las principales técnicas de mantenimiento predictivo (vibraciones, termografía, ultrasonido y análisis de aceite): qué detecta cada una, sus límites y cómo se combinan para llegar a un diagnóstico."
+    "titulo": "Técnicas predictivas y cómo se complementan",
+    "descripcion": "Vibraciones, termografía, ultrasonido y análisis de aceite: qué detecta cada técnica, sus límites y cómo se combinan para llegar a un solo diagnóstico."
   },
   "bloques": [
     ["p", "Cuando se habla de mantenimiento predictivo, casi siempre salen las mismas cuatro técnicas: vibraciones, termografía, ultrasonido y análisis de aceite. Cada una es buena para algo y débil para otra cosa. Entender eso es lo que permite elegir bien y, sobre todo, combinarlas para que se corrijan entre sí."],

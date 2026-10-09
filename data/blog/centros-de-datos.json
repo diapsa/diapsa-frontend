@@ -5,8 +5,8 @@
   "portada": "/images/blog/rack-servidores.webp",
   "fecha": "2026-09-30T23:59:59.900000Z",
   "seo": {
-    "titulo": "Monitoreo térmico en centros de datos: qué vigilar y cómo",
-    "descripcion": "Cómo vigilar térmicamente un centro de datos: tableros, transferencias, UPS, bancos de baterías, PDU, busway y aire de precisión. Por qué un cambio de un grado importa, por qué no basta una tabla de severidad y cómo combinar termografía y cámaras fijas."
+    "titulo": "Monitoreo térmico en centros de datos",
+    "descripcion": "Qué vigilar térmicamente en un centro de datos: tableros, UPS, baterías, PDU, busway y aire de precisión, y cómo combinar termografía y cámaras fijas."
   },
   "bloques": [
     ["p", "En una planta industrial hay equipos críticos y equipos que pueden esperar. En un centro de datos, casi no hay de los segundos. Todo lo que está entre la acometida y el servidor existe para que la operación no se detenga nunca, y una falla en cualquier punto de esa cadena puede tirar un rack, una sala o el sitio completo."],

@@ -22,6 +22,12 @@
         "icono": "termografia"
       },
       {
+        "label": "Termografía con Drones",
+        "href": "/servicios/monitoreo-condicion/termografia-con-drones",
+        "descripcion": "Parques solares y eólicos, líneas y torres de enfriamiento",
+        "icono": "dron"
+      },
+      {
         "label": "Análisis de Calidad de Energía",
         "href": "/servicios/monitoreo-condicion/calidad-de-energia",
         "descripcion": "Armónicos, factor de potencia y eventos de tensión",

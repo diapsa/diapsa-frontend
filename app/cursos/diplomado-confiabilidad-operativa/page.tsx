@@ -34,8 +34,8 @@ const AZUL_REY = "#04358f";
 const URL = `/cursos/${dip.slug}`;
 
 export const metadata: Metadata = {
-  title: "Diplomado en Confiabilidad Operativa y Monitoreo de Condición",
-  description: `Diplomado virtual de 60 horas en vivo con ${NUM_ESPECIALISTAS} especialistas de ${NUM_PAISES} países: confiabilidad desde el diseño, RCM, FMEA, KPIs, vibraciones, termografía, ultrasonido, aceite y análisis eléctricos. Descarga el brochure.`,
+  title: "Diplomado en confiabilidad operativa",
+  description: `Diplomado virtual de 60 horas en vivo con ${NUM_ESPECIALISTAS} especialistas de ${NUM_PAISES} países: RCM, FMEA, KPIs y técnicas predictivas. Descarga el brochure.`,
   alternates: { canonical: URL },
   openGraph: {
     title: "Diplomado en Confiabilidad Operativa y Monitoreo de Condición | Grupo DIAPSA",

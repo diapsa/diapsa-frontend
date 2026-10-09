@@ -75,7 +75,7 @@
     "subtitle": "Equipos y soluciones complementarias",
     "items": []
   },
-  "seoDescription": "Diagnóstico integral de maquinaria con las cuatro técnicas de mantenimiento predictivo: vibraciones, termografía, ultrasonido y análisis de aceite sobre el mismo equipo, cruzadas por un analista en un solo diagnóstico con la etapa de la falla en la curva P-F.",
+  "seoDescription": "Vibraciones, termografía, ultrasonido y aceite sobre el mismo equipo, cruzados por un analista en un solo diagnóstico con la etapa de la falla.",
   "porQue": {
     "foto": {
       "src": "/images/servicios/diagnostico-integral/campo-analista-motor.webp",
@@ -515,7 +515,7 @@
       }
     }
   },
-  "seoTitle": "Diagnóstico integral de maquinaria: cuatro técnicas predictivas, un diagnóstico",
+  "seoTitle": "Diagnóstico integral de maquinaria",
   "videos": [
     {
       "lugar": "flujo",

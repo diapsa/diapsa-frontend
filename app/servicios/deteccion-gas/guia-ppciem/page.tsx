@@ -17,7 +17,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 const URL = "/servicios/deteccion-gas/guia-ppciem";
 const TITULO = "Qué exige el PPCIEM y cómo cumplirlo, trimestre por trimestre";
 const DESCRIPCION =
-  "Guía práctica del Programa para la Prevención y el Control Integral de las Emisiones de Metano (PPCIEM): quién debe tenerlo, qué incluye, cómo funciona un programa LDAR trimestral y qué evidencia pide la ASEA.";
+  "Guía práctica del PPCIEM de la ASEA: quién debe tenerlo, qué incluye, cómo funciona un programa LDAR y qué evidencia te van a pedir.";
 const OG_IMAGE = "/images/og-images/og-images-gas.jpg";
 
 export const metadata: Metadata = {

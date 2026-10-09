@@ -5,8 +5,8 @@
   "portada": "/images/blog/cavitacion-bombas.webp",
   "fecha": "2026-09-30T23:59:59.400000Z",
   "seo": {
-    "titulo": "Cavitación en bombas centrífugas: cómo detectarla y evitarla",
-    "descripcion": "Qué es la cavitación en bombas centrífugas, cómo se detecta con análisis de vibraciones y por el ruido, sus causas más comunes (NPSH, succión, temperatura) y cómo evitarla."
+    "titulo": "Cavitación en bombas: cómo detectarla y evitarla",
+    "descripcion": "Qué es la cavitación en bombas centrífugas, cómo detectarla por vibración y por ruido, sus causas más comunes como el NPSH y cómo evitarla."
   },
   "bloques": [
     ["p", "Si una bomba suena como si trajera grava adentro, es muy probable que esté cavitando. La cavitación es de las fallas más dañinas en bombas centrífugas, porque se come el impulsor poco a poco, y también de las más fáciles de evitar una vez que se entiende qué la provoca."],

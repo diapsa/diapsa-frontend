@@ -25,7 +25,7 @@
     "subtitle": "Termografía eléctrica e industrial: puntos calientes en tableros, subestaciones y motores, detectados con el equipo en operación",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Estudio e inspección termográfica de tableros eléctricos, subestaciones y motores en México, con termógrafos certificados y criterios NETA. Informe en 2 días.",
+  "seoDescription": "Estudio termográfico de tableros, subestaciones y motores con termógrafos certificados y criterios NETA. Informe en 2 días. Cotiza tu inspección.",
   "content": {
     "title": "Vemos el calor antes de que se vuelva falla",
     "subtitle": "Inspeccionamos con cámara térmica, en operación y con carga, y te decimos qué punto caliente atender, por qué y con qué urgencia.",
@@ -533,7 +533,7 @@
       }
     ]
   },
-  "seoTitle": "Termografía eléctrica e industrial: estudio termográfico",
+  "seoTitle": "Termografía industrial y estudio termográfico",
   "introBeneficios": {
     "beneficios": [
       {
@@ -566,6 +566,11 @@
         "titulo": "Cámaras térmicas fijas",
         "texto": "Vigilancia las 24 horas donde un incendio no da tiempo de reaccionar.",
         "enlace": "/servicios/monitoreo-continuo/camaras-termicas"
+      },
+      {
+        "titulo": "Termografía con drones",
+        "texto": "Parques solares, líneas, techos y estructuras altas, desde el aire.",
+        "enlace": "/servicios/monitoreo-condicion/termografia-con-drones"
       }
     ],
     "fotos": [

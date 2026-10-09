@@ -25,9 +25,9 @@ export const revalidate = 3600;
 const OG_IMAGE = "/images/og-images/og-image.jpg";
 
 export const metadata: Metadata = {
-  title: "Inicio | Mantenimiento Predictivo Industrial",
+  title: { absolute: "Mantenimiento predictivo industrial en México | DIAPSA" },
   description:
-    "Monitoreo de condición, sensores en línea y cursos de mantenimiento predictivo. Medimos tus equipos en operación y te decimos qué intervenir, cuándo y por qué.",
+    "Medimos tus equipos en operación con vibraciones, termografía, ultrasonido y aceite, y te decimos qué intervenir, cuándo y por qué. Diagnóstico sin costo.",
   keywords: [
     "mantenimiento predictivo México",
     "mantenimiento predictivo Sudamérica",

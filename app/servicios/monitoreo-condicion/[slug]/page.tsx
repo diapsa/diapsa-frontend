@@ -8,6 +8,7 @@ const OG_IMAGE = "/images/og-images/og-image-monitoreo-condicion.jpg";
 // Lista de slugs disponibles
 const serviceSlugs = [
     "termografia-infrarroja",
+    "termografia-con-drones",
     "vibraciones-mecanicas",
     "analisis-de-aceite",
     "diagnostico-de-maquinaria",

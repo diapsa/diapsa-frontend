@@ -9,6 +9,7 @@ import { getIndustrias } from "@/lib/industrias";
 import { SITE_CONFIG } from "@/lib/constants";
 import type { Category } from "@/types/category";
 import type { Product } from "@/types/product";
+import { CLINICAS, RUTA_CLINICAS } from "@/lib/clinicas";
 
 
 type ServiceItem = {
@@ -153,7 +154,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...servicePages, ...industriaPages, ...categoryPages, ...productPages, ...blogPages, ...cursosPages];
+  const clinicasPages: MetadataRoute.Sitemap = [RUTA_CLINICAS, ...CLINICAS.map((c) => `${RUTA_CLINICAS}/${c.slug}`)].map((ruta) => ({
+    url: `${SITE_CONFIG.baseUrl}${ruta}`,
+    lastModified: ULTIMA_REVISION,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...servicePages, ...industriaPages, ...categoryPages, ...productPages, ...blogPages, ...cursosPages, ...clinicasPages];
 
 
 }

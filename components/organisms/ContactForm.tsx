@@ -28,6 +28,22 @@ const PPCIEM = ["Sí, ya tenemos PPCIEM", "Lo estamos armando", "No tenemos", "N
 const SERVICIO_GAS = "Detección de Gas";
 const WHATSAPP = `https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Hola, vengo del sitio de DIAPSA y quiero información.")}`;
 
+type Paso = "motivo" | "grupo" | "opcion" | "datos";
+
+/** Una línea bajo cada área del recorrido, para que se entienda qué hay dentro. */
+const TEXTO_GRUPO: Record<string, string> = {
+  "Monitoreo en ruta": "Un especialista mide tus equipos en visitas periódicas.",
+  "Monitoreo en línea": "Sensores y cámaras que vigilan tus equipos las 24 horas.",
+  Programas: "Diagnóstico, arranque de un programa, plataforma, gas y ductos.",
+  "Vibraciones mecánicas": "Formación, taller práctico y certificación.",
+  "Termografía infrarroja": "Formación, taller práctico, certificación y fotovoltaica.",
+  "Ultrasonido pasivo": "Formación, taller práctico y certificación.",
+  "Confiabilidad y gestión": "Diplomado, programas de monitoreo y cursos ejecutivos.",
+  "Clínicas técnicas": "Un tema puntual en línea, en vivo y a bajo costo.",
+};
+/** La opción sin el prefijo de su área ("Vibraciones · Taller práctico" → "Taller práctico"). */
+const sinPrefijo = (o: string) => o.replace(/^[^·]+·\s*/, "");
+
 type Props = {
   /** Variante de la página de detección de gas. */
   gas?: boolean;
@@ -81,12 +97,44 @@ export default function ContactForm({ gas = false, curso }: Props) {
     : undefined;
   const [intereses, setIntereses] = useState<string[]>(fichaDelCurso ? [fichaDelCurso] : gas ? [SERVICIO_GAS] : []);
   const motivo = (formData.custom_fields?.subject || "") as Motivo | "";
+
+  // Recorrido guiado (Emiliano, 2026-10-09: "que sea guiado, si selecciono un
+  // servicio que me vaya encaminando"): qué necesita, el área, la opción
+  // concreta y al final sus datos. Si la página ya sabe el tema, empieza en
+  // los datos con el tema marcado; si sabe el motivo, empieza en el área.
+  const pasoInicial = (): Paso => (gas || fichaDelCurso ? "datos" : curso !== undefined ? "grupo" : "motivo");
+  const [paso, setPaso] = useState<Paso>(pasoInicial);
+  const [grupoSel, setGrupoSel] = useState<string | null>(null);
   const grupos = motivo ? OPCIONES_POR_MOTIVO[motivo] : [];
-  const gruposConCurso =
-    fichaDelCurso && motivo === "cursos" && !grupos.some((g) => g.opciones.includes(fichaDelCurso))
-      ? [{ titulo: "Este curso", opciones: [fichaDelCurso] }, ...grupos]
-      : grupos;
-  const alternarInteres = (o: string) => setIntereses((prev) => (prev.includes(o) ? prev.filter((x) => x !== o) : [...prev, o]));
+  const grupoActual = grupos.find((g) => g.titulo === grupoSel) ?? (grupos.length === 1 ? grupos[0] : undefined);
+  const quitarInteres = (o: string) => setIntereses((prev) => prev.filter((x) => x !== o));
+  const elegirMotivo = (valor: Motivo) => {
+    setIntereses([]);
+    setGrupoSel(null);
+    setFormData((prev) => ({
+      ...prev,
+      custom_fields: { ...prev.custom_fields, subject: valor, coursesOfInterest: [], servicesOfInterest: [] } as ContactFormMain["custom_fields"],
+    }));
+    const n = OPCIONES_POR_MOTIVO[valor].length;
+    setPaso(n === 0 ? "datos" : n === 1 ? "opcion" : "grupo");
+  };
+  const elegirGrupo = (titulo: string) => {
+    setGrupoSel(titulo);
+    setPaso("opcion");
+  };
+  const elegirOpcion = (o: string) => {
+    setIntereses([o]);
+    setPaso("datos");
+  };
+  const sinSaber = () => {
+    setIntereses([]);
+    setPaso("datos");
+  };
+  const atras = () => {
+    if (paso === "datos") setPaso(grupos.length === 0 ? "motivo" : intereses.length ? "opcion" : grupos.length === 1 ? "motivo" : "grupo");
+    else if (paso === "opcion") setPaso(grupos.length > 1 ? "grupo" : "motivo");
+    else setPaso("motivo");
+  };
 
   // En la página de un servicio o de productos, el motivo y el interés ya
   // van puestos; si la página no dice nada, el visitante elige.
@@ -96,6 +144,7 @@ export default function ContactForm({ gas = false, curso }: Props) {
     if (!deducido) return;
     setFormData((prev) => ({ ...prev, custom_fields: { ...prev.custom_fields, subject: deducido.motivo } as ContactFormMain["custom_fields"] }));
     setIntereses(deducido.interes ? [deducido.interes] : []);
+    setPaso(deducido.interes ? "datos" : "grupo");
   }, [gas, curso]);
 
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
@@ -219,6 +268,8 @@ export default function ContactForm({ gas = false, curso }: Props) {
       setFormData(estadoInicial(gas, curso));
       setIntereses(fichaDelCurso ? [fichaDelCurso] : gas ? [SERVICIO_GAS] : []);
       setPerfil({ area: "", ppciem: "" });
+      setGrupoSel(null);
+      setPaso(pasoInicial());
       setAceptaPrivacidad(false);
       setFieldErrors({});
       formRef.current?.reset();
@@ -291,221 +342,237 @@ export default function ContactForm({ gas = false, curso }: Props) {
               <RateLimitBanner attemptsRemaining={0} maxAttempts={5} />
             )}
 
-            {/* Datos personales */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Nombre */}
-              <div>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  onBlur={(e) => handleBlur("name", e.target.value)}
-                  required
-                  disabled={loading}
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
-                  placeholder="Ingresa tu nombre completo"
-                />
-                {getFieldError("name") && (
-                  <p className="text-sm text-red-500 mt-1">{getFieldError("name")}</p>
+            {/* Recorrido guiado: en qué vamos y cómo regresar */}
+            {!gas && (
+              <div className="flex items-center justify-between gap-3 text-xs font-bold uppercase tracking-widest text-white/50">
+                <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  {[
+                    ["motivo", "Qué necesitas"],
+                    ...(grupos.length > 1 ? [["grupo", "Área"]] : []),
+                    ...(grupos.length > 0 ? [["opcion", "Opción"]] : []),
+                    ["datos", "Tus datos"],
+                  ].map(([clave, nombre], n, todos) => {
+                    const actual = todos.findIndex(([c]) => c === paso);
+                    return (
+                      <li key={clave} className={`flex items-center gap-2 ${n === actual ? "text-secondary" : n < actual ? "text-white/80" : ""}`}>
+                        <span>{n + 1}. {nombre}</span>
+                        {n < todos.length - 1 && <span aria-hidden="true">›</span>}
+                      </li>
+                    );
+                  })}
+                </ol>
+                {paso !== "motivo" && (
+                  <button type="button" onClick={atras} className="shrink-0 normal-case tracking-normal text-sm font-semibold text-white/80 hover:text-secondary">
+                    ← Atrás
+                  </button>
                 )}
               </div>
-
-              {/* Empresa */}
-              <div>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  disabled={loading}
-                  className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
-                  placeholder="Nombre de tu empresa"
-                />
-              </div>
-
-              {/* Correo */}
-              <div>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  onBlur={(e) => handleBlur("email", e.target.value)}
-                  required
-                  disabled={loading}
-                  className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
-                  placeholder="correo@ejemplo.com"
-                />
-                {getFieldError("email") && (
-                  <p className="text-sm text-red-500 mt-1">{getFieldError("email")}</p>
-                )}
-              </div>
-
-              {/* Teléfono */}
-              <div>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  onBlur={(e) => handleBlur("phone", e.target.value)}
-                  disabled={loading}
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
-                  placeholder="(000) 000-0000"
-                />
-                {getFieldError("phone") && (
-                  <p className="text-sm text-red-500 mt-1">{getFieldError("phone")}</p>
-                )}
-              </div>
-            </div>
-
-            {/* Asunto. El selector de país se retiró del formulario (2026-08-24):
-                cada campo extra cuesta conversión y el país se deduce del
-                teléfono o se pregunta en el primer contacto. Se sigue enviando
-                "México" por defecto para no cambiar el contrato del backend. */}
-            {gas ? (
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <select
-                  id="area"
-                  name="area"
-                  value={perfil.area}
-                  onChange={(e) => setPerfil((p) => ({ ...p, area: e.target.value }))}
-                  required
-                  disabled={loading}
-                  aria-label="Tu área"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
-                >
-                  <option value="">Tu área</option>
-                  {AREAS.map((a) => <option key={a} value={a}>{a}</option>)}
-                </select>
-                <select
-                  id="ppciem"
-                  name="ppciem"
-                  value={perfil.ppciem}
-                  onChange={(e) => setPerfil((p) => ({ ...p, ppciem: e.target.value }))}
-                  required
-                  disabled={loading}
-                  aria-label="¿Ya tienen un PPCIEM?"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
-                >
-                  <option value="">¿Ya tienen un PPCIEM?</option>
-                  {PPCIEM.map((a) => <option key={a} value={a}>{a}</option>)}
-                </select>
-                {(fieldErrors.area || fieldErrors.ppciem) && (
-                  <p className="text-sm text-red-600 sm:col-span-2">{fieldErrors.area || fieldErrors.ppciem}</p>
-                )}
-              </div>
-            ) : (
-            <div>
-              <select
-                id="subject"
-                name="subject"
-                value={formData.custom_fields?.subject}
-                onChange={handleChange}
-                required
-                disabled={loading}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
-              >
-                <option value="">¿Qué necesitas?</option>
-                {MOTIVOS.map((m) => <option key={m.valor} value={m.valor}>{m.texto}</option>)}
-              </select>
-            </div>
             )}
 
-            {/* Fichas del motivo elegido (en gas el servicio ya va marcado) */}
-            {!gas && gruposConCurso.length > 0 && (
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="text-sm font-semibold text-gray-900">
-                  {motivo === "cursos" ? "Marca los cursos que te interesan" : motivo === "equipos" ? "Marca los equipos que te interesan" : "Marca los servicios que te interesan"}
-                  <span className="ml-2 text-xs font-normal text-gray-500">{intereses.length ? `${intereses.length} marcados` : "opcional"}</span>
-                </p>
-                {gruposConCurso.map((g) => (
-                  <div key={g.titulo} className="mt-3">
-                    {gruposConCurso.length > 1 && <p className="mb-1.5 text-[11px] font-bold uppercase tracking-widest text-gray-500">{g.titulo}</p>}
-                    <div className="flex flex-wrap gap-2">
-                      {g.opciones.map((o) => {
-                        const on = intereses.includes(o);
-                        return (
-                          <button
-                            key={o}
-                            type="button"
-                            onClick={() => alternarInteres(o)}
-                            aria-pressed={on}
-                            disabled={loading}
-                            className={`rounded-full border px-3 py-1.5 text-sm font-semibold transition-colors ${on ? "border-secondary bg-secondary text-black" : "border-gray-300 bg-white text-gray-800 hover:border-secondary"}`}
-                          >
-                            {on ? "✓ " : ""}{o}
-                          </button>
-                        );
-                      })}
-                    </div>
+            {/* 1. Qué necesita */}
+            {!gas && paso === "motivo" && (
+              <div>
+                <p className="text-xl font-extrabold text-white">¿Qué necesitas?</p>
+                <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {MOTIVOS.map((m) => (
+                    <button
+                      key={m.valor}
+                      type="button"
+                      onClick={() => elegirMotivo(m.valor)}
+                      className="rounded-lg border border-white/20 bg-white/[0.04] px-4 py-3.5 text-left font-semibold text-white transition-colors hover:border-secondary hover:bg-white/[0.08]"
+                    >
+                      {m.texto} <span className="text-secondary" aria-hidden="true">→</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* 2. El área */}
+            {!gas && paso === "grupo" && (
+              <div>
+                <p className="text-xl font-extrabold text-white">{motivo === "cursos" ? "¿Qué quieres aprender?" : "¿Qué tipo de servicio buscas?"}</p>
+                <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {grupos.map((g) => (
+                    <button
+                      key={g.titulo}
+                      type="button"
+                      onClick={() => elegirGrupo(g.titulo)}
+                      className="rounded-lg border border-white/20 bg-white/[0.04] px-4 py-3.5 text-left transition-colors hover:border-secondary hover:bg-white/[0.08]"
+                    >
+                      <span className="block font-bold text-white">{g.titulo} <span className="text-secondary" aria-hidden="true">→</span></span>
+                      {TEXTO_GRUPO[g.titulo] && <span className="mt-0.5 block text-sm text-white/60">{TEXTO_GRUPO[g.titulo]}</span>}
+                    </button>
+                  ))}
+                </div>
+                <button type="button" onClick={sinSaber} className="mt-4 text-sm font-semibold text-white/70 underline underline-offset-4 hover:text-secondary">
+                  No estoy seguro, quiero que me orienten
+                </button>
+              </div>
+            )}
+
+            {/* 3. La opción concreta */}
+            {!gas && paso === "opcion" && grupoActual && (
+              <div>
+                <p className="text-xl font-extrabold text-white">{grupoActual.titulo}</p>
+                <p className="mt-1 text-sm text-white/60">Elige la opción que más se acerca a lo que buscas.</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {grupoActual.opciones.map((o) => (
+                    <button
+                      key={o}
+                      type="button"
+                      onClick={() => elegirOpcion(o)}
+                      className="rounded-full border border-white/25 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-secondary hover:bg-secondary hover:text-black"
+                    >
+                      {sinPrefijo(o)}
+                    </button>
+                  ))}
+                </div>
+                <button type="button" onClick={sinSaber} className="mt-4 text-sm font-semibold text-white/70 underline underline-offset-4 hover:text-secondary">
+                  No estoy seguro, quiero que me orienten
+                </button>
+              </div>
+            )}
+
+            {/* 4. Sus datos */}
+            {(gas || paso === "datos") && (
+              <>
+                {!gas && (
+                  <div className="flex flex-wrap items-center gap-2 text-sm">
+                    <span className="text-white/70">{intereses.length ? "Sobre:" : "Motivo:"}</span>
+                    {intereses.length
+                      ? intereses.map((o) => (
+                          <span key={o} className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1 font-semibold text-black">
+                            {o}
+                            <button type="button" onClick={() => quitarInteres(o)} aria-label={`Quitar ${o}`} className="leading-none opacity-60 hover:opacity-100">×</button>
+                          </span>
+                        ))
+                      : <span className="rounded-full bg-white/10 px-3 py-1 font-semibold text-white">{MOTIVOS.find((m) => m.valor === motivo)?.corto ?? "Por definir"}</span>}
+                    <button type="button" onClick={() => setPaso("motivo")} className="font-semibold text-secondary hover:underline">Cambiar</button>
                   </div>
-                ))}
-              </div>
-            )}
+                )}
 
-            {/* "Medio de contacto preferido" y la casilla de proveedor se
-                retiraron del formulario (2026-08-24). El primero no cambiaba
-                nada operativamente (se responde por donde el prospecto dejó
-                dato) y el segundo pedía al cliente que se autoclasificara antes
-                de conocerlo. Ambos se siguen enviando con su valor por defecto. */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Nombre */}
+                  <div>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      onBlur={(e) => handleBlur("name", e.target.value)}
+                      required
+                      disabled={loading}
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
+                      placeholder="Tu nombre"
+                    />
+                    {getFieldError("name") && (
+                      <p className="text-sm text-red-500 mt-1">{getFieldError("name")}</p>
+                    )}
+                  </div>
 
-            {/* Comentarios */}
-            <div>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.custom_fields?.message}
-                onChange={handleChange}
-                rows={3}
-                disabled={loading}
-                className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all resize-none text-gray-900 placeholder:text-gray-400"
-                placeholder={MENSAJE_POR_MOTIVO[motivo]}
-              />
-            </div>
+                  {/* Empresa */}
+                  <div>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      disabled={loading}
+                      className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
+                      placeholder="Empresa (opcional)"
+                    />
+                  </div>
 
-            {/* Checkbox de privacidad */}
-            <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
-              <input
-                type="checkbox"
-                id="aceptaPrivacidad"
-                name="aceptaPrivacidad"
-                checked={aceptaPrivacidad}
-                onChange={(e) => {
-                  setAceptaPrivacidad(e.target.checked);
-                  if (fieldErrors.aceptaPrivacidad) {
-                    setFieldErrors((prev) => {
-                      const newErrors = { ...prev };
-                      delete newErrors.aceptaPrivacidad;
-                      return newErrors;
-                    });
-                  }
-                }}
-                required
-                disabled={loading}
-                className="mt-1 w-5 h-5 text-secondary border-gray-300 rounded focus:ring-secondary focus:ring-2"
-              />
-              <label htmlFor="aceptaPrivacidad" className="text-sm text-gray-700 leading-relaxed">
-                <span className="font-semibold">Tratamiento de datos personales.</span> He leído y
-                acepto el{" "}
-                <a
-                  href="/aviso-privacidad"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-secondary font-semibold hover:underline"
-                >
-                  Aviso de Privacidad
-                </a>{" "}
-                de Grupo DIAPSA. <span className="text-red-500">*</span>
-              </label>
-            </div>
-            {fieldErrors.aceptaPrivacidad && (
-              <p className="text-sm text-red-500 mt-1">{fieldErrors.aceptaPrivacidad}</p>
+                  {/* Correo */}
+                  <div>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      onBlur={(e) => handleBlur("email", e.target.value)}
+                      required
+                      disabled={loading}
+                      className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
+                      placeholder="correo@ejemplo.com"
+                    />
+                    {getFieldError("email") && (
+                      <p className="text-sm text-red-500 mt-1">{getFieldError("email")}</p>
+                    )}
+                  </div>
+
+                  {/* Teléfono */}
+                  <div>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      onBlur={(e) => handleBlur("phone", e.target.value)}
+                      disabled={loading}
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-gray-900 placeholder:text-gray-400"
+                      placeholder="WhatsApp o teléfono (opcional)"
+                    />
+                    {getFieldError("phone") && (
+                      <p className="text-sm text-red-500 mt-1">{getFieldError("phone")}</p>
+                    )}
+                  </div>
+                </div>
+
+                {gas && (
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <select
+                      id="area"
+                      name="area"
+                      value={perfil.area}
+                      onChange={(e) => setPerfil((p) => ({ ...p, area: e.target.value }))}
+                      required
+                      disabled={loading}
+                      aria-label="Tu área"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
+                    >
+                      <option value="">Tu área</option>
+                      {AREAS.map((a) => <option key={a} value={a}>{a}</option>)}
+                    </select>
+                    <select
+                      id="ppciem"
+                      name="ppciem"
+                      value={perfil.ppciem}
+                      onChange={(e) => setPerfil((p) => ({ ...p, ppciem: e.target.value }))}
+                      required
+                      disabled={loading}
+                      aria-label="¿Ya tienen un PPCIEM?"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all bg-white text-gray-900"
+                    >
+                      <option value="">¿Ya tienen un PPCIEM?</option>
+                      {PPCIEM.map((a) => <option key={a} value={a}>{a}</option>)}
+                    </select>
+                    {(fieldErrors.area || fieldErrors.ppciem) && (
+                      <p className="text-sm text-red-600 sm:col-span-2">{fieldErrors.area || fieldErrors.ppciem}</p>
+                    )}
+                  </div>
+                )}
+
+                {/* Comentarios */}
+                <div>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.custom_fields?.message}
+                    onChange={handleChange}
+                    rows={3}
+                    disabled={loading}
+                    className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all resize-none text-gray-900 placeholder:text-gray-400"
+                    placeholder={MENSAJE_POR_MOTIVO[motivo]}
+                  />
+                </div>
+
+              </>
             )}
 
             {/* Honeypot field */}
@@ -520,14 +587,50 @@ export default function ContactForm({ gas = false, curso }: Props) {
               aria-hidden="true"
             />
 
-            <Button
-              type="submit"
-              variant="secondary"
-              disabled={loading}
-              className="w-full py-4 text-lg"
-            >
-              {loading ? "ENVIANDO..." : "ENVIAR"}
-            </Button>
+            {(gas || paso === "datos") && (
+              <>
+                {/* Privacidad en un renglón */}
+                <label htmlFor="aceptaPrivacidad" className="flex items-center gap-2.5 text-sm text-white/80">
+                  <input
+                    type="checkbox"
+                    id="aceptaPrivacidad"
+                    name="aceptaPrivacidad"
+                    checked={aceptaPrivacidad}
+                    onChange={(e) => {
+                      setAceptaPrivacidad(e.target.checked);
+                      if (fieldErrors.aceptaPrivacidad) {
+                        setFieldErrors((prev) => {
+                          const newErrors = { ...prev };
+                          delete newErrors.aceptaPrivacidad;
+                          return newErrors;
+                        });
+                      }
+                    }}
+                    required
+                    disabled={loading}
+                    className="h-4 w-4 shrink-0 rounded border-gray-300 text-secondary focus:ring-2 focus:ring-secondary"
+                  />
+                  <span>
+                    Acepto el{" "}
+                    <a href="/aviso-privacidad" target="_blank" rel="noopener noreferrer" className="font-semibold text-secondary hover:underline">
+                      Aviso de Privacidad
+                    </a>
+                  </span>
+                </label>
+                {fieldErrors.aceptaPrivacidad && (
+                  <p className="text-sm text-red-500 mt-1">{fieldErrors.aceptaPrivacidad}</p>
+                )}
+
+                <Button
+                  type="submit"
+                  variant="secondary"
+                  disabled={loading}
+                  className="w-full py-4 text-lg"
+                >
+                  {loading ? "ENVIANDO..." : "ENVIAR"}
+                </Button>
+              </>
+            )}
           </form>
         </div>
       </div>
