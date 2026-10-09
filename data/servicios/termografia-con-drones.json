@@ -22,7 +22,7 @@
   ],
   "header": {
     "title": "Termografía con Drones",
-    "subtitle": "Inspección termográfica aérea de parques solares, líneas, subestaciones, techos y estructuras altas, sin andamios ni paros",
+    "subtitle": "Inspección termográfica aérea de parques solares y eólicos, líneas, subestaciones, torres de enfriamiento y estructuras altas, sin andamios ni paros",
     "backgroundImage": "/images/fondo-hero.webp"
   },
   "seoTitle": "Inspección termográfica con drones",
@@ -35,7 +35,7 @@
       {
         "id": "aplicaciones",
         "title": "Dónde se aplica",
-        "content": "Parques y techos solares, líneas de transmisión y distribución, subestaciones, techos industriales, chimeneas, tanques y estructuras altas. Todo lo que es grande, está lejos o está en altura.",
+        "content": "Parques solares y eólicos, líneas de transmisión y distribución, subestaciones, torres de enfriamiento, techos industriales, chimeneas, tanques y estructuras altas. Todo lo que es grande, está lejos o está en altura.",
         "foto": {
           "src": "/images/servicios/termografia-con-drones/dron-parque-solar.webp",
           "alt": "Dron de inspección con cámara térmica sobrevolando un parque solar"
@@ -199,7 +199,7 @@
     },
     {
       "question": "¿Qué se puede inspeccionar con dron?",
-      "answer": "Paneles solares e inversores, líneas de transmisión y distribución, subestaciones, techos industriales, chimeneas, tanques, aislamientos de tubería elevada y estructuras altas. Lo que necesita detalle de cerca se completa con termografía a pie."
+      "answer": "Paneles solares e inversores, aerogeneradores y su subestación, líneas de transmisión y distribución, subestaciones, torres de enfriamiento, techos industriales, chimeneas, tanques, aislamientos de tubería elevada y estructuras altas. Lo que necesita detalle de cerca se completa con termografía a pie."
     },
     {
       "question": "¿Qué fallas encuentra en un parque solar?",
@@ -244,9 +244,11 @@
     "equipos": [
       "Parques solares",
       "Techos solares",
+      "Parques eólicos",
       "Líneas de transmisión",
       "Líneas de distribución",
       "Subestaciones",
+      "Torres de enfriamiento",
       "Techos industriales",
       "Chimeneas",
       "Tanques",
@@ -258,13 +260,15 @@
       "Celdas y módulos calientes",
       "Diodos de derivación activados",
       "Cadenas sin generar",
-      "Conectores y empalmes calientes",
+      "Góndolas con sobrecalentamiento",
+      "Conectores, grapas y empalmes calientes",
       "Aisladores dañados",
+      "Distribución de agua irregular",
+      "Ventiladores y motores calientes",
       "Humedad en techos",
       "Aislamiento térmico dañado",
       "Refractario dañado",
-      "Niveles en tanques",
-      "Fugas de calor"
+      "Niveles en tanques"
     ]
   },
   "introBeneficios": {
@@ -321,6 +325,14 @@
       {
         "src": "/images/servicios/termografia-con-drones/dron-distribucion.webp",
         "alt": "Dron con cámara térmica junto a un poste de una línea de distribución con su transformador."
+      },
+      {
+        "src": "/images/servicios/termografia-con-drones/dron-parque-eolico.webp",
+        "alt": "Dron con cámara térmica junto a la góndola de un aerogenerador."
+      },
+      {
+        "src": "/images/servicios/termografia-con-drones/termograma-torre-enfriamiento.webp",
+        "alt": "Termograma aéreo de una torre de enfriamiento con una celda de distribución irregular."
       }
     ],
     "idap": {

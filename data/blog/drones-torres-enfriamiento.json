@@ -1,0 +1,81 @@
+{
+  "slug": "termografia-aerea-de-torres-de-enfriamiento",
+  "titulo": "Torres de enfriamiento: lo que la termografía aérea muestra desde arriba",
+  "extracto": "Una torre de enfriamiento que no enfría lo que debe le cuesta eficiencia a todo el proceso, y casi nunca avisa. Qué revela una imagen térmica tomada desde arriba sobre la distribución del agua, el relleno y los ventiladores, y cuándo conviene volar.",
+  "portada": "/images/servicios/termografia-con-drones/termograma-torre-enfriamiento.webp",
+  "fecha": "2026-10-09T15:00:00.000000Z",
+  "seo": {
+    "titulo": "Termografía aérea de torres de enfriamiento",
+    "descripcion": "Qué muestra la termografía con dron en una torre de enfriamiento: agua mal distribuida, relleno dañado, ventiladores y motores calientes."
+  },
+  "bloques": [
+    [
+      "p",
+      "Las torres de enfriamiento trabajan sin que nadie las mire mucho. Mientras el agua regrese fría, se da por hecho que todo está bien. Pero una torre puede ir perdiendo capacidad poco a poco, por boquillas tapadas, relleno dañado o un ventilador que ya no mueve el aire que debería, y eso se paga en el proceso: condensadores que trabajan más calientes, compresores que consumen más energía o un proceso que no alcanza su temperatura."
+    ],
+    [
+      "p",
+      "Desde arriba, con una cámara térmica, la torre cuenta lo que le pasa por dentro."
+    ],
+    [
+      "h2",
+      "Qué se ve desde el aire"
+    ],
+    [
+      "h3",
+      "Distribución del agua"
+    ],
+    [
+      "p",
+      "En una torre sana, el agua caliente se reparte de forma pareja sobre todo el relleno, y la imagen térmica de cada celda se ve uniforme. Cuando hay boquillas tapadas o un canal de distribución obstruido, aparecen zonas más frías donde no está cayendo agua y zonas más calientes donde cae de más. Ese desequilibrio reduce la capacidad de la celda aunque el ventilador funcione bien."
+    ],
+    [
+      "h3",
+      "Relleno dañado o tapado"
+    ],
+    [
+      "p",
+      "El relleno con incrustaciones, lodo o secciones colapsadas cambia la forma en que el aire y el agua se encuentran. En la imagen se nota como zonas que no siguen el patrón del resto de la celda."
+    ],
+    [
+      "h3",
+      "Celdas desbalanceadas"
+    ],
+    [
+      "p",
+      "En torres de varias celdas, comparar una contra otra dice mucho. Una celda que descarga aire más caliente o más frío que sus vecinas, con el mismo flujo de agua, está trabajando distinto y merece revisión."
+    ],
+    [
+      "h3",
+      "Ventiladores, motores y reductores"
+    ],
+    [
+      "p",
+      "Los motores y reductores de los ventiladores también se ven desde arriba. Un motor más caliente que los demás, o un reductor con calentamiento en un costado, son señales que conviene confirmar con análisis de vibraciones antes de que el ventilador se detenga."
+    ],
+    [
+      "h2",
+      "Cuándo volar"
+    ],
+    [
+      "p",
+      "La torre tiene que estar operando con su carga normal, con agua circulando y ventiladores encendidos. Conviene evitar las horas de sol fuerte sobre la cubierta, que calienta las superficies y confunde la lectura, y los días con mucho viento. Muchas veces la mejor imagen se toma temprano en la mañana o al final de la tarde."
+    ],
+    [
+      "nota",
+      "La pluma de vapor que sale de la torre puede tapar parte de la imagen. El plan de vuelo busca los ángulos donde la pluma no estorba, y a veces hace falta más de una pasada."
+    ],
+    [
+      "h2",
+      "Cómo se entrega"
+    ],
+    [
+      "p",
+      "El informe muestra cada celda con su imagen térmica y su foto, señala las zonas con distribución irregular o relleno dañado, compara las celdas entre sí y marca los motores y reductores que requieren revisión. Con eso, la limpieza y la reparación se hacen donde hacen falta y no en toda la torre."
+    ],
+    [
+      "p",
+      "Si quieres revisar tus torres, conoce nuestro servicio de [termografía con drones](/servicios/monitoreo-condicion/termografia-con-drones)."
+    ]
+  ]
+}

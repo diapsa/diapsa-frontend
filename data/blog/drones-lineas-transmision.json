@@ -1,0 +1,79 @@
+{
+  "slug": "inspeccion-termografica-de-lineas-de-transmision-con-drones",
+  "titulo": "Inspección termográfica de líneas de transmisión con drones",
+  "extracto": "Una grapa o un empalme que se calienta en una línea de alta tensión no da aviso hasta que el conductor se corta. Qué componentes revisa el dron, por qué la carga y el viento cambian la lectura y cómo se entrega el informe por kilómetro y por torre.",
+  "portada": "/images/servicios/termografia-con-drones/dron-linea.webp",
+  "fecha": "2026-10-09T17:00:00.000000Z",
+  "seo": {
+    "titulo": "Termografía de líneas de transmisión con drones",
+    "descripcion": "Qué revisa la termografía con dron en una línea de alta tensión: grapas, empalmes, puentes y aisladores, y cómo se entrega el informe por torre."
+  },
+  "bloques": [
+    [
+      "p",
+      "Las líneas de transmisión fallan pocas veces, pero cuando fallan, el costo es enorme: una línea fuera deja sin energía a una planta, a una ciudad o a un parque de generación completo. Y casi siempre la falla empieza en un punto pequeño que se fue calentando durante meses: una grapa, un empalme o un puente con una conexión que se aflojó."
+    ],
+    [
+      "p",
+      "Durante años, la termografía de líneas se hizo desde tierra, con la cámara apuntando hacia arriba a decenas de metros, o desde helicóptero. El dron cambió eso: la cámara térmica se acerca a cada torre a una distancia segura, con un ángulo que permite ver cada componente."
+    ],
+    [
+      "h2",
+      "Qué componentes se revisan"
+    ],
+    [
+      "lista",
+      [
+        "Grapas de suspensión y de remate, donde el conductor se sujeta a la cadena de aisladores.",
+        "Empalmes de compresión, que unen dos tramos de conductor a mitad del claro.",
+        "Puentes en las torres de remate y deflexión, que conectan el conductor de un lado de la torre con el del otro.",
+        "Cadenas de aisladores, donde un aislador dañado o contaminado puede mostrar un patrón de calentamiento distinto al de sus vecinos.",
+        "Conectores en las llegadas a subestación y en las derivaciones."
+      ]
+    ],
+    [
+      "p",
+      "En todos los casos, lo que se busca es lo mismo: un punto por donde pasa corriente y que tiene más resistencia de la que debería. Esa resistencia convierte energía en calor, y ese calor es lo que ve la cámara."
+    ],
+    [
+      "h2",
+      "Por qué la carga y el viento importan"
+    ],
+    [
+      "p",
+      "Un empalme defectuoso se calienta en proporción a la corriente que pasa por él. Con la línea poco cargada, el mismo empalme puede verse apenas unos grados arriba del conductor; con la línea a plena carga, puede estar decenas de grados arriba. Por eso conviene volar en las horas de mayor demanda y anotar la carga del momento en el informe: sin ese dato, la diferencia de temperatura no se puede interpretar."
+    ],
+    [
+      "p",
+      "El viento enfría el conductor y los herrajes, y puede esconder un problema real. Un hallazgo pequeño en un día con viento puede ser grave en un día tranquilo. El termógrafo toma en cuenta las condiciones del vuelo al calificar la severidad."
+    ],
+    [
+      "nota",
+      "La termografía no ve el efecto corona. Las descargas en aisladores y herrajes se detectan con cámaras de ultravioleta o con ultrasonido, y conviene combinarlas con la termografía en la misma campaña. Lo explicamos en la guía sobre el [efecto corona](/blog/efecto-corona-que-es-y-como-se-detecta)."
+    ],
+    [
+      "h2",
+      "Cómo se entrega: por kilómetro y por torre"
+    ],
+    [
+      "p",
+      "En una línea de cien kilómetros, un hallazgo sin ubicación no sirve de nada. El informe ordena cada hallazgo por kilómetro y por número de torre, con su termograma, su foto visual, la diferencia de temperatura contra la fase vecina, la carga de la línea en ese momento y la acción recomendada."
+    ],
+    [
+      "p",
+      "Las fallas se ordenan por severidad para que la cuadrilla aproveche cada libranza: lo que no puede esperar va primero, y lo que puede vigilarse queda marcado para el siguiente vuelo."
+    ],
+    [
+      "h2",
+      "Cada cuánto inspeccionar"
+    ],
+    [
+      "p",
+      "Como referencia, una vez al año en líneas de alta tensión, y antes de las temporadas de mayor demanda. Las líneas que alimentan cargas críticas, o que ya tuvieron fallas, conviene revisarlas con más frecuencia."
+    ],
+    [
+      "p",
+      "Si quieres ver cómo se vería el informe de tu línea, revisa nuestro servicio de [termografía con drones](/servicios/monitoreo-condicion/termografia-con-drones)."
+    ]
+  ]
+}

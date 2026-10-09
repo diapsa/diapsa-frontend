@@ -1,0 +1,65 @@
+{
+  "slug": "humedad-en-techos-industriales-con-termografia-aerea",
+  "titulo": "Humedad en techos industriales: cómo se encuentra con termografía aérea",
+  "extracto": "Cuando la gotera aparece dentro de la nave, el agua ya lleva tiempo empapando el aislamiento. Cómo la termografía con dron encuentra la humedad atrapada en un techo, por qué se vuela al atardecer y cómo se marca cada zona para repararla sin cambiar todo el techo.",
+  "portada": "/images/servicios/termografia-con-drones/termograma-techo.webp",
+  "fecha": "2026-10-09T14:00:00.000000Z",
+  "seo": {
+    "titulo": "Humedad en techos industriales con termografía",
+    "descripcion": "Cómo la termografía con dron encuentra la humedad atrapada en techos industriales, por qué se vuela al atardecer y cómo se marca cada zona a reparar."
+  },
+  "bloques": [
+    [
+      "p",
+      "En un techo industrial, el agua entra mucho antes de que alguien vea una gotera. Se filtra por una junta, por un tornillo o por una fisura en la membrana, y se queda atrapada en el aislamiento. Ahí pasa meses: el aislamiento pierde su capacidad, la estructura se corroe y, cuando por fin gotea dentro de la nave, la zona dañada ya es mucho más grande que el punto por donde entró."
+    ],
+    [
+      "p",
+      "Encontrar esa humedad a tiempo permite reparar solo la parte dañada, en lugar de cambiar el techo completo."
+    ],
+    [
+      "h2",
+      "Por qué la termografía ve la humedad"
+    ],
+    [
+      "p",
+      "El aislamiento mojado guarda calor mucho mejor que el seco. Durante el día, el sol calienta todo el techo. Al atardecer, cuando el techo empieza a enfriarse, las zonas secas pierden calor rápido y las zonas con agua atrapada se quedan calientes por más tiempo. En la imagen térmica, la humedad aparece como manchas más calientes con formas irregulares, que siguen la pendiente del techo o las juntas por donde entró el agua."
+    ],
+    [
+      "p",
+      "La práctica está descrita en la norma ASTM C1153, que es la referencia para localizar aislamiento mojado en techos con imagen infrarroja."
+    ],
+    [
+      "h2",
+      "Cuándo volar"
+    ],
+    [
+      "p",
+      "Las condiciones importan más que el equipo. Lo ideal es un día soleado, sin lluvia reciente en la superficie, seguido de una tarde despejada y con poco viento. El vuelo se hace después de la puesta del sol, cuando el techo ya empezó a enfriarse y la diferencia entre las zonas secas y mojadas es más clara."
+    ],
+    [
+      "nota",
+      "Un charco sobre el techo no es lo mismo que humedad atrapada. El agua superficial se ve distinto y se descarta antes de marcar una zona. Por eso conviene volar cuando el techo está seco por encima."
+    ],
+    [
+      "h2",
+      "Por qué con dron"
+    ],
+    [
+      "p",
+      "Caminar un techo de varios miles de metros cuadrados con una cámara de mano es lento y no deja ver el patrón completo. Desde el aire se ve el techo entero en una sola imagen o en un mosaico, y las manchas de humedad se relacionan con las juntas, los equipos de azotea y las bajadas de agua. Además, nadie tiene que caminar sobre láminas que pueden estar dañadas."
+    ],
+    [
+      "h2",
+      "Cómo se entrega"
+    ],
+    [
+      "p",
+      "El informe marca cada zona sospechosa sobre el plano del techo, con su imagen térmica, su foto y su área aproximada. Lo recomendable es confirmar algunas zonas con un medidor de humedad o una cala pequeña antes de reparar. Con eso, el contratista sabe exactamente qué secciones cambiar y cuáles se pueden dejar."
+    ],
+    [
+      "p",
+      "Si quieres revisar el techo de tu nave, conoce nuestro servicio de [termografía con drones](/servicios/monitoreo-condicion/termografia-con-drones)."
+    ]
+  ]
+}
