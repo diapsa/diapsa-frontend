@@ -18,8 +18,11 @@ function Flecha() {
   );
 }
 
-export default function GuiasRelacionadas({ articulos }: { articulos: ArticuloRelacionado[] }) {
-  if (articulos.length === 0) return null;
+export default function GuiasRelacionadas({ articulos: todas }: { articulos: ArticuloRelacionado[] }) {
+  if (todas.length === 0) return null;
+  // Tres guías en un renglón (Emiliano, 2026-10-09: con cinco o más la
+  // sección se alargaba); las demás se encuentran en el blog y desde cada guía.
+  const articulos = todas.slice(0, 3);
 
   if (articulos.length === 1) {
     const a = articulos[0];

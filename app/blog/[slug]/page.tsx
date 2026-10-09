@@ -4,13 +4,14 @@ import Image from "next/image";
 import { getServicioPorArticulo } from "@/lib/recursos";
 import { getGuiaPorArticulo } from "@/lib/guias";
 import ComplementosGuia from "@/components/organisms/ComplementosGuia";
+import ArticulosRelacionados, { elegirRelacionados } from "@/components/organisms/ArticulosRelacionados";
 import Link from "next/link";
 import JsonLd, { createBreadcrumbSchema } from "@/components/atoms/JsonLd";
 import ArticleIndex, { type ArticleIndexItem } from "@/components/molecules/ArticleIndex";
 import TiptapRenderer, { prepareTiptapContent } from "@/components/tiptap/tiptap-renderer";
 import PageHeader from "@/components/organisms/PageHeader";
 import { getStorageUrl } from "@/lib/api/config";
-import { getBlogBySlug } from "@/lib/api/posts";
+import { getBlogBySlug, getBlogs } from "@/lib/api/posts";
 import { formatDate } from "@/lib/utils/formatDate";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -110,6 +111,8 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     // Bloques técnicos dibujados en código (curva P-F, modos de falla,
     // semáforo) que se agregan a esta guía, si los tiene.
     const guia = getGuiaPorArticulo(slug);
+    // Tres lecturas para seguir al terminar el artículo
+    const relacionados = elegirRelacionados(slug, await getBlogs().catch(() => []));
     const articleIndexItems: ArticleIndexItem[] = [
         { id: "contenido", label: "Contenido" },
         ...preparedContent.h2Items,
@@ -197,6 +200,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     <ArticleIndex items={articleIndexItems} />
                 </aside>
             </div>
+            <ArticulosRelacionados articulos={relacionados} />
         </main>
     );
 }

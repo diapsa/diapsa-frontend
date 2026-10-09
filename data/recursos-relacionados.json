@@ -1275,7 +1275,7 @@
       "slug": "termografia-con-drones-en-parques-solares",
       "titulo": "Drones en parques solares",
       "resumen": "Qué fallas encuentra y cuándo volar.",
-      "portada": "/images/servicios/termografia-con-drones/dron-parque-solar.webp"
+      "portada": "/images/blog/dron-parques-solares.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/termografia-con-drones",
@@ -1288,7 +1288,7 @@
       "slug": "inspeccion-termografica-de-lineas-de-transmision-con-drones",
       "titulo": "Drones en líneas de transmisión",
       "resumen": "Grapas, empalmes y aisladores, torre por torre.",
-      "portada": "/images/servicios/termografia-con-drones/dron-linea.webp"
+      "portada": "/images/blog/dron-lineas-transmision.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/termografia-con-drones",
@@ -1301,7 +1301,7 @@
       "slug": "termografia-con-drones-en-parques-eolicos",
       "titulo": "Drones en parques eólicos",
       "resumen": "Qué se ve desde afuera y qué no.",
-      "portada": "/images/servicios/termografia-con-drones/dron-parque-eolico.webp"
+      "portada": "/images/blog/dron-parques-eolicos.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/termografia-con-drones",
@@ -1314,7 +1314,7 @@
       "slug": "termografia-aerea-de-torres-de-enfriamiento",
       "titulo": "Torres de enfriamiento",
       "resumen": "Agua, relleno y ventiladores desde arriba.",
-      "portada": "/images/servicios/termografia-con-drones/termograma-torre-enfriamiento.webp"
+      "portada": "/images/blog/dron-torres-enfriamiento.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/termografia-con-drones",
@@ -1327,7 +1327,7 @@
       "slug": "humedad-en-techos-industriales-con-termografia-aerea",
       "titulo": "Humedad en techos",
       "resumen": "Encontrarla antes de la gotera.",
-      "portada": "/images/servicios/termografia-con-drones/termograma-techo.webp"
+      "portada": "/images/blog/dron-techos-industriales.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/termografia-con-drones",

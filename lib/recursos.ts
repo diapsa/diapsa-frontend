@@ -47,3 +47,18 @@ export function getArticuloPorServicio(href: string): ArticuloRelacionado | null
 export function getArticulosPorServicio(href: string): ArticuloRelacionado[] {
   return CORRESPONDENCIAS.filter((c) => c.servicio.href === href).map((c) => c.articulo);
 }
+
+/**
+ * Slugs de otros artículos del blog que tratan lo mismo: primero los que
+ * comparten página de servicio con este, después los de servicios hermanos
+ * (la misma sección, como monitoreo de condición). Sirve para cerrar cada
+ * artículo con lecturas relacionadas (Emiliano, 2026-10-09).
+ */
+export function slugsRelacionados(slug: string): string[] {
+  const propios = CORRESPONDENCIAS.filter((c) => c.articulo.slug === slug).map((c) => c.servicio.href);
+  const padre = (href: string) => href.split("/").slice(0, -1).join("/");
+  const padres = new Set(propios.map(padre));
+  const mismos = CORRESPONDENCIAS.filter((c) => propios.includes(c.servicio.href)).map((c) => c.articulo.slug);
+  const hermanos = CORRESPONDENCIAS.filter((c) => padres.has(padre(c.servicio.href))).map((c) => c.articulo.slug);
+  return [...new Set([...mismos, ...hermanos])].filter((s) => s !== slug);
+}
