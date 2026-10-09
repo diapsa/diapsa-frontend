@@ -5,6 +5,7 @@ import ContactForm from "@/components/organisms/ContactForm";
 import TarjetaClinica from "@/components/organisms/TarjetaClinica";
 import Antetitulo from "@/components/atoms/Antetitulo";
 import VideoBucle from "@/components/atoms/VideoBucle";
+import VisualClinica, { type ClaveVisual } from "@/components/molecules/VisualClinica";
 import JsonLd, { createBreadcrumbSchema } from "@/components/atoms/JsonLd";
 import { TECNICAS } from "@/lib/cursos";
 import { CLINICAS, FORMATO_CLINICA, NIVELES, RUTA_CLINICAS, whatsappClinica } from "@/lib/clinicas";
@@ -21,11 +22,11 @@ export const metadata: Metadata = {
   },
 };
 
-const DATOS = [
-  { v: FORMATO_CLINICA.modalidad, t: "Te conectas desde donde estés y preguntas en el momento." },
-  { v: FORMATO_CLINICA.duracion, t: "Una sola sesión, sin descuidar el turno." },
-  { v: "Trae tu caso", t: "Tu termograma, tu espectro o tu duda se vuelve el ejemplo de la sesión." },
-  { v: "Costo accesible", t: "Para resolver un tema o probar una técnica antes de invertir en ella." },
+const DATOS: { v: string; t: string; visual: ClaveVisual }[] = [
+  { v: FORMATO_CLINICA.modalidad, t: "Te conectas desde donde estés y preguntas en el momento.", visual: "vivo" },
+  { v: FORMATO_CLINICA.duracion, t: "Una sola sesión, sin descuidar el turno.", visual: "horas" },
+  { v: "Trae tu caso", t: "Tu termograma, tu espectro o tu duda se vuelve el ejemplo de la sesión.", visual: "caso" },
+  { v: "Costo accesible", t: "Para resolver un tema o probar una técnica antes de invertir en ella.", visual: "costo" },
 ];
 
 // Cómo funciona una clínica, de la inscripción a la sesión
@@ -88,9 +89,12 @@ export default function ClinicasPage() {
           </div>
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {DATOS.map((x) => (
-              <li key={x.v} className="rounded-sm border-l-4 border-secondary bg-gray-50 p-5">
+              <li key={x.v} className="flex flex-col rounded-sm border-l-4 border-secondary bg-gray-50 p-5">
                 <p className="text-xl font-extrabold text-primary">{x.v}</p>
                 <p className="mt-1 text-justify text-sm leading-relaxed text-tertiary">{x.t}</p>
+                <div className="mt-auto pt-4">
+                  <VisualClinica clave={x.visual} />
+                </div>
               </li>
             ))}
           </ul>
