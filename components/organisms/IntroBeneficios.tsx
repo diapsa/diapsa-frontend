@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import VideoBucle from "../atoms/VideoBucle";
 import CarruselFotos from "../molecules/CarruselFotos";
+import ReporteSolar from "./ReporteSolar";
 import type { ServiceIntroBeneficios } from "@/types/servicio";
 
 /**
@@ -91,7 +92,26 @@ export default function IntroBeneficios({ intro }: { intro: ServiceIntroBenefici
         />
       </div>
 
-      {/* Tus datos viven en IDAP */}
+      {/* Drones: en lugar de IDAP, cómo se ve el informe de un parque solar */}
+      {intro.reporteSolar ? (
+      <div className="grid grid-cols-1 items-center gap-8 rounded-2xl bg-[#eef4fb] p-6 ring-1 ring-primary/10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12 lg:p-10">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-widest text-secondary">{intro.reporteSolar.etiqueta}</p>
+          <p className="mt-2 text-2xl font-extrabold leading-tight text-primary">{intro.reporteSolar.titulo}</p>
+          <p className="mt-2 text-justify text-base leading-relaxed text-tertiary">{intro.reporteSolar.texto}</p>
+          <ul className="mt-5 space-y-2.5">
+            {intro.reporteSolar.puntos.map((p) => (
+              <li key={p} className="flex items-start gap-3 text-sm font-semibold text-primary">
+                <Check />
+                {p}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <ReporteSolar />
+      </div>
+      ) : (
+      /* Tus datos viven en IDAP */
       <div className="grid grid-cols-1 items-center gap-8 rounded-2xl bg-[#eef4fb] p-6 ring-1 ring-primary/10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12 lg:p-10">
         <div>
           <Image src="/images/idap/idap-logo.png" alt="IDAP" width={566} height={207} className="h-auto w-28" />
@@ -118,6 +138,7 @@ export default function IntroBeneficios({ intro }: { intro: ServiceIntroBenefici
           />
         </div>
       </div>
+      )}
     </div>
   );
 }

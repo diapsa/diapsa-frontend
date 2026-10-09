@@ -55,8 +55,8 @@
         "title": "Vuelo y termografía en tierra",
         "content": "El dron cubre lo grande y lo alto; lo que necesita detalle, como un tablero o un transformador de cerca, se completa con la ruta de termografía a pie en la misma visita.",
         "foto": {
-          "src": "/images/servicios/termografia-con-drones/dron-subestacion.webp",
-          "alt": "Dron con cámara visual y térmica sobre una subestación eléctrica"
+          "src": "/images/servicios/termografia-con-drones/termograma-techo.webp",
+          "alt": "Imagen térmica aérea del techo de una nave industrial con zonas de humedad"
         }
       },
       {
@@ -243,14 +243,6 @@
         "alt": "Termograma aéreo de paneles solares."
       },
       {
-        "src": "/images/servicios/termografia-con-drones/dron-subestacion.webp",
-        "alt": "Dron sobre una subestación."
-      },
-      {
-        "src": "/images/servicios/termografia-con-drones/dron-chimenea.webp",
-        "alt": "Dron junto a una chimenea industrial."
-      },
-      {
         "src": "/images/servicios/termografia-con-drones/termograma-techo.webp",
         "alt": "Termograma aéreo de un techo industrial."
       }
@@ -266,6 +258,17 @@
       "video": "/videos/idap/idap-equipo",
       "descripcionVideo": "Ficha de un equipo en IDAP: gemelo digital, estado por componente y diagnóstico por disciplina",
       "enlace": "/servicios/idap"
+    },
+    "reporteSolar": {
+      "etiqueta": "Qué recibes",
+      "titulo": "Así se ve el informe de un parque solar",
+      "texto": "Cada hallazgo ubicado en el plano del parque por bloque, fila y módulo, con su termograma, su severidad y qué hacer, para que la cuadrilla vaya directo y atienda primero lo que más genera pérdida.",
+      "puntos": [
+        "Plano con cada hallazgo ubicado",
+        "Resumen por severidad",
+        "Termograma de cada falla",
+        "Qué atender primero y cómo"
+      ]
     }
   },
   "servicioRelacionado": {
