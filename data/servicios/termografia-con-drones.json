@@ -104,7 +104,7 @@
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "Esto es lo que recibes",
-    "descripcion": "Un informe que la cuadrilla puede usar en campo: qué falla, dónde está y qué hacer primero.",
+    "descripcion": "Cada hallazgo con su termograma, su foto, dónde está y qué hacer. Pasa el cursor por la lista para ver dónde va cada cosa en el informe.",
     "contenido": [
       "Imagen térmica y foto visual de cada hallazgo",
       "Ubicación de cada hallazgo en el sitio",
@@ -112,11 +112,83 @@
       "Severidad en semáforo y causa probable",
       "Acción recomendada y con qué urgencia"
     ],
-    "paginas": [
-      "/images/informe/pagina-1.png",
-      "/images/informe/pagina-2.png"
-    ],
-    "altPaginas": "Páginas de un informe de monitoreo de condición de Grupo DIAPSA con las imágenes termográficas de los hallazgos"
+    "muestra": {
+      "titulo": "Informe de termografía aérea",
+      "equipo": "Parque solar · Bloque B, fila 7",
+      "subtitulo": "Vuelo con irradiancia estable · planta generando · ejemplo con datos ilustrativos",
+      "estado": {
+        "texto": "Severidad alta",
+        "color": "#dc2626",
+        "punto": 3
+      },
+      "imagen": {
+        "titulo": "Imagen térmica y foto visual",
+        "termica": "/images/servicios/termografia-con-drones/termograma-paneles.webp",
+        "visual": "/images/servicios/termografia-con-drones/paneles-visual.webp",
+        "altTermica": "Termograma aéreo de filas de paneles con una franja caliente en un módulo",
+        "altVisual": "Foto aérea de las mismas filas de paneles",
+        "punto": 0
+      },
+      "lecturas": {
+        "titulo": "Temperatura máxima por módulo · °C",
+        "unidad": "°C",
+        "max": 70,
+        "nota": "La marca es la referencia: los módulos vecinos de la misma cadena.",
+        "punto": 2,
+        "filas": [
+          {
+            "p": "Módulo 11",
+            "valor": 48.2,
+            "ref": 48.5,
+            "color": "#16a34a"
+          },
+          {
+            "p": "Módulo 12",
+            "valor": 58.6,
+            "ref": 48.5,
+            "color": "#dc2626"
+          },
+          {
+            "p": "Módulo 13",
+            "valor": 48.9,
+            "ref": 48.5,
+            "color": "#16a34a"
+          }
+        ]
+      },
+      "escala": {
+        "titulo": "Severidad según el tipo de falla",
+        "punto": 3,
+        "niveles": [
+          {
+            "t": "Baja",
+            "r": "suciedad o sombra",
+            "c": "#ca8a04"
+          },
+          {
+            "t": "Media",
+            "r": "celda caliente",
+            "c": "#ea580c"
+          },
+          {
+            "t": "Alta",
+            "r": "diodo o cadena sin generar",
+            "c": "#dc2626"
+          }
+        ]
+      },
+      "hallazgo": {
+        "titulo": "Diodo de derivación activado",
+        "texto": "Módulo 12 de la cadena 3, bloque B, fila 7: una tercera parte del módulo 10 °C arriba de sus vecinos y sin generar.",
+        "punto": 1
+      },
+      "recomendacion": {
+        "titulo": "Cambiar la caja de conexiones o el módulo",
+        "urgencia": "esta semana",
+        "texto": "Mientras tanto, revisar las demás cadenas del inversor en el siguiente vuelo.",
+        "punto": 4
+      }
+    }
   },
   "mostrarClientes": true,
   "certificacion": "Análisis por termógrafos certificados · ISO 18436-7",
@@ -277,5 +349,28 @@
     "titulo": "Termografía infrarroja",
     "texto": "Para tableros, motores y subestaciones de cerca, con la ruta a pie de un termógrafo certificado.",
     "enlace": "Ver termografía infrarroja"
-  }
+  },
+  "videos": [
+    {
+      "lugar": "flujo",
+      "etiqueta": "Cómo trabajamos",
+      "titulo": "Del dato a la decisión",
+      "fondo": "blanco",
+      "bloques": [
+        {
+          "titulo": "Del vuelo al informe",
+          "texto": "Planeamos la ruta contigo, volamos con la cámara térmica, un termógrafo certificado descarta reflejos y sombras, y cada falla queda ubicada por bloque y fila. En el siguiente vuelo revisamos que se haya corregido.",
+          "video": "/videos/termografia-con-drones/dron-proceso",
+          "descripcion": "Los cinco pasos de una inspección termográfica con dron en un parque solar: plan de vuelo, vuelo térmico, análisis, diagnóstico ubicado y seguimiento",
+          "pasos": [
+            "Plan de vuelo con las reglas del sitio",
+            "Vuelo térmico en operación",
+            "Análisis por termógrafo certificado",
+            "Diagnóstico ubicado por bloque y fila",
+            "Seguimiento en el siguiente vuelo"
+          ]
+        }
+      ]
+    }
+  ]
 }
