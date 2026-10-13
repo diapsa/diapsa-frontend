@@ -22,6 +22,9 @@ export async function submitContact(
     // Ensure honeypot field is empty
     const dataToSend = {
       ...formData,
+      // De qué página del sitio se manda: el CMS lo cruza con Google y
+      // WhatsApp para saber qué páginas traen clientes. Solo la ruta.
+      ...(typeof window !== 'undefined' ? { pagina: window.location.pathname } : {}),
       website: '', // Always set honeypot to empty
     };
 

@@ -22,6 +22,7 @@ export interface ContactFormData {
   utm_medium?: string;
   utm_campaign?: string;
   custom_fields?: Record<string, string | string[]>;
+  pagina?: string; // Ruta de la página desde la que se mandó (la pone submitContact)
   website?: string; // Honeypot field - must be empty
 }
 
