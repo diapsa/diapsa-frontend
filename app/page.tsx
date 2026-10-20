@@ -14,7 +14,8 @@ import LoQueRecibes from "@/components/organisms/LoQueRecibes";
 import InicioDiplomado from "@/components/organisms/InicioDiplomado";
 import InicioBlog from "@/components/organisms/InicioBlog";
 import ContactForm from "@/components/organisms/ContactForm";
-import AvisoWebinar from "@/components/organisms/AvisoWebinar";
+import AvisoClinicas from "@/components/organisms/AvisoClinicas";
+import InicioContacto from "@/components/organisms/InicioContacto";
 import galeriaMonitoreo from "@/data/monitoreo-condicion-galeria.json";
 import { getBlogs, getFeaturedSuccessCases } from "@/lib/api/posts";
 import { getProducts } from "@/lib/api/products";
@@ -104,14 +105,14 @@ export default async function Home() {
       {/* El Hero queda fuera de Reveal a propósito: animar lo que ya está
           visible al cargar retrasa la primera impresión y penaliza el LCP. */}
       <Hero />
-      {/* Ventana emergente del webinar del 6 de octubre; se apaga sola al terminar. */}
-      <AvisoWebinar />
+      {/* Anuncio de las clínicas técnicas en la esquina (el del webinar ya pasó). */}
+      <AvisoClinicas />
 
-      {/* Quiénes somos y todos los servicios a la vista */}
-      <Reveal><QuienesSomos /></Reveal>
+      {/* Cómo empezar, en la primera pantalla y media (Clarity: solo el 16 %
+          de la portada se veía). Lo que vende va antes que lo institucional. */}
+      <InicioContacto />
 
-      {/* Presencia en siete países y lo que obtiene el cliente */}
-      <Reveal><InicioPresencia /></Reveal>
+      {/* Todos los servicios y equipos a la vista */}
       <Reveal><InicioBloques productos={productos} /></Reveal>
 
       {/* Las industrias que atendemos, con sus equipos, servicios y clientes */}
@@ -131,6 +132,10 @@ export default async function Home() {
       {/* Resultados: los casos documentados y lo que recibes en cada servicio */}
       {cases.length > 0 && <Reveal><CasosDestacados casos={cases} /></Reveal>}
       <Reveal><LoQueRecibes /></Reveal>
+
+      {/* Quiénes somos y presencia, después de lo que vende */}
+      <Reveal><QuienesSomos /></Reveal>
+      <Reveal><InicioPresencia /></Reveal>
 
       {/* Cierre */}
       <Reveal><InicioDiplomado /></Reveal>

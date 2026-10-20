@@ -5,6 +5,8 @@ import { tiptapExtensions } from "@/lib/tiptap/extensions";
 
 export interface TiptapRendererProps {
     content?: object | string | null;
+    /** Contenido que ya pasó por prepareTiptapContent (ids de H2 puestos), por ejemplo una mitad de partirAntesDelH2. */
+    preparado?: JSONContent | null;
 }
 
 export interface TiptapHeadingIndexItem {
@@ -220,6 +222,25 @@ export function prepareTiptapContent(content: TiptapRendererProps["content"]): P
     };
 }
 
+/**
+ * Parte el documento en dos justo antes del encabezado H2 número `n`
+ * (contando desde 1), para meter un bloque de la página entre ambos. Si el
+ * artículo tiene menos encabezados, el corte va antes del último; con uno o
+ * ninguno, no se parte y la segunda mitad sale null.
+ */
+export function partirAntesDelH2(content: JSONContent | null, n = 2): [JSONContent | null, JSONContent | null] {
+    if (!content?.content?.length) return [content, null];
+    const indices = content.content
+        .map((nodo, i) => (nodo.type === "heading" && nodo.attrs?.level === 2 ? i : -1))
+        .filter((i) => i >= 0);
+    if (indices.length < 2) return [content, null];
+    const corte = indices[Math.min(n, indices.length) - 1];
+    return [
+        { ...content, content: content.content.slice(0, corte) },
+        { ...content, content: content.content.slice(corte) },
+    ];
+}
+
 function isEmptyTiptapContent(content: JSONContent) {
     if (!content.type) {
         return true;
@@ -245,8 +266,8 @@ function renderTiptapContent(content: JSONContent) {
     }
 }
 
-export default function TiptapRenderer({ content }: TiptapRendererProps) {
-    const { content: parsedContent } = prepareTiptapContent(content);
+export default function TiptapRenderer({ content, preparado }: TiptapRendererProps) {
+    const { content: parsedContent } = preparado ? { content: preparado } : prepareTiptapContent(content);
 
     if (!parsedContent) {
         return null;
