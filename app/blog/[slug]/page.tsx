@@ -8,7 +8,9 @@ import ArticulosRelacionados, { elegirRelacionados } from "@/components/organism
 import Link from "next/link";
 import JsonLd, { createBreadcrumbSchema } from "@/components/atoms/JsonLd";
 import ArticleIndex, { type ArticleIndexItem } from "@/components/molecules/ArticleIndex";
-import TiptapRenderer, { prepareTiptapContent } from "@/components/tiptap/tiptap-renderer";
+import TiptapRenderer, { partirAntesDelH2, prepareTiptapContent } from "@/components/tiptap/tiptap-renderer";
+import OfertaGuia from "@/components/organisms/OfertaGuia";
+import { ofertaDeGuia } from "@/lib/ofertas-guias";
 import PageHeader from "@/components/organisms/PageHeader";
 import { getStorageUrl } from "@/lib/api/config";
 import { getBlogBySlug, getBlogs } from "@/lib/api/posts";
@@ -106,6 +108,11 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
         inLanguage: "es-MX",
     };
     const preparedContent = prepareTiptapContent(blog.content);
+    // La oferta del tema va a media lectura, antes del segundo encabezado
+    // (Emiliano, 2026-10-19): el blog trae casi todo el tráfico y solo
+    // ofrecía el servicio al final.
+    const oferta = ofertaDeGuia(slug);
+    const [antes, despues] = oferta ? partirAntesDelH2(preparedContent.content, 2) : [preparedContent.content, null];
     // Servicio de DIAPSA que ejecuta la técnica que explica el artículo.
     const servicioRelacionado = getServicioPorArticulo(slug);
     // Bloques técnicos dibujados en código (curva P-F, modos de falla,
@@ -151,7 +158,9 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     )} */}
 
                     <section id="contenido" className="scroll-mt-28 border-t border-gray-100 pt-8 lg:pt-10">
-                        <TiptapRenderer content={preparedContent.content} />
+                        <TiptapRenderer preparado={antes} />
+                        {oferta && <OfertaGuia oferta={oferta} />}
+                        {despues && <TiptapRenderer preparado={despues} />}
                     </section>
 
                     {guia && <ComplementosGuia guia={guia} />}
