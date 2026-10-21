@@ -15,13 +15,13 @@ import { SITE_CONFIG } from "@/lib/constants";
  */
 
 const URL = "/servicios/deteccion-gas/guia-ppciem";
-const TITULO = "Qué exige el PPCIEM y cómo cumplirlo, trimestre por trimestre";
+const TITULO = "Qué exige la ASEA en el PPCIEM y cómo cumplirlo, trimestre por trimestre";
 const DESCRIPCION =
-  "Guía práctica del PPCIEM de la ASEA: quién debe tenerlo, qué incluye, cómo funciona un programa LDAR y qué evidencia te van a pedir.";
+  "Guía del PPCIEM de la ASEA: quién debe tenerlo, qué pide punto por punto, cómo funciona el programa LDAR trimestral y qué evidencia revisa la ASEA.";
 const OG_IMAGE = "/images/og-images/og-images-gas.jpg";
 
 export const metadata: Metadata = {
-  title: "Guía del PPCIEM: qué exige y cómo cumplirlo",
+  title: "PPCIEM de la ASEA: qué exige y cómo cumplirlo",
   description: DESCRIPCION,
   keywords: ["PPCIEM", "qué es el PPCIEM", "cómo cumplir el PPCIEM", "programa LDAR", "inspección trimestral de fugas", "ASEA metano", "reporte anual PPCIEM"],
   alternates: { canonical: URL },
@@ -60,6 +60,13 @@ const SECCIONES = [
     ],
   },
   {
+    titulo: "Qué te pide la ASEA, punto por punto",
+    parrafos: [
+      "Un programa por escrito, registrado ante la ASEA, que diga qué instalación cubre, qué componentes pueden emitir metano y cómo los vas a inspeccionar. Un inventario de esos componentes con su ubicación. Inspecciones de detección de fugas con la frecuencia que fije el programa, normalmente trimestral, hechas con un método reconocido: cámara OGI o cámara acústica con láser TDLAS.",
+      "Por cada fuga, el registro de cuándo se detectó, con qué lectura, qué reparación se hizo y la reinspección que confirma que quedó cerrada. Un reporte anual de cumplimiento con las emisiones estimadas y las acciones del año. Y la evidencia de todo lo anterior disponible cuando la ASEA la pida en una inspección o auditoría.",
+    ],
+  },
+  {
     titulo: "Cómo funciona un programa LDAR trimestral",
     parrafos: [
       "LDAR viene del inglés leak detection and repair: detección y reparación de fugas. Es el método con el que se cumple la parte operativa del PPCIEM, y se repite cada trimestre.",
@@ -82,6 +89,8 @@ const SECCIONES = [
 ];
 
 const FAQ = [
+  { question: "¿Qué es el PPCIEM de la ASEA?", answer: "Es el Programa para la Prevención y el Control Integral de las Emisiones de Metano que la ASEA exige a las instalaciones del sector hidrocarburos. Obliga a identificar los componentes que pueden fugar metano, inspeccionarlos periódicamente, reparar y reinspeccionar cada fuga, y reportar cada año." },
+  { question: "¿Qué revisa la ASEA en una inspección del PPCIEM?", answer: "Que el programa esté registrado y vigente, que el inventario de componentes exista, que las inspecciones se hayan hecho con la frecuencia y el método declarados, y que cada fuga tenga su registro con evidencia: fecha, lectura, reparación y reinspección. Lo que más falla es la trazabilidad, no la detección." },
   { question: "¿Cada cuánto se inspecciona en un programa LDAR?", answer: "El esquema más común es trimestral: cuatro inspecciones al año, cada una con su reparación y su reinspección. La frecuencia exacta depende de lo que establezca tu PPCIEM y de las disposiciones vigentes." },
   { question: "¿Qué pasa si no tengo PPCIEM?", answer: "Si tu instalación es del sector hidrocarburos, la ASEA puede pedirlo en cualquier inspección o auditoría. Lo recomendable es armarlo cuanto antes y empezar el primer ciclo de detección y reparación de fugas." },
   { question: "¿Puedo hacer el LDAR con personal propio?", answer: "Sí, si cuentas con el equipo (cámara OGI o cámara acústica con láser TDLAS) y con un método que genere evidencia trazable. Muchas empresas lo contratan con un tercero para no comprar el equipo y para tener un registro independiente." },

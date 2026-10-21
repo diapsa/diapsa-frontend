@@ -113,6 +113,10 @@
         {
           "nombre": "Cámaras térmicas",
           "href": "/servicios/monitoreo-continuo/camaras-termicas"
+        },
+        {
+          "nombre": "Guía del PPCIEM de la ASEA",
+          "href": "/servicios/deteccion-gas/guia-ppciem"
         }
       ],
       "accion": "Planear el programa de fugas"

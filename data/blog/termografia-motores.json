@@ -27,7 +27,7 @@
     ["p", "La carga también importa aquí: un motor al 30 % no se calienta igual que uno al 90 %. Por eso conviene anotar la corriente al momento de medir."],
 
     ["h2", "Cuándo confirmar con otra técnica"],
-    ["p", "La termografía te dice que algo se está calentando, pero no siempre el porqué. Cuando un rodamiento sale caliente, el [análisis de vibraciones](/servicios/monitoreo-condicion/vibraciones-mecanicas) dice si es daño, desalineación o desbalance, y el [ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido) ayuda a saber si es falta de grasa. Si te interesa ese tema, revisa la guía de [lubricación por ultrasonido](/blog/lubricacion-por-ultrasonido-como-engrasar-rodamientos). Juntas, las tres técnicas dan un diagnóstico completo."],
+    ["p", "La termografía te dice que algo se está calentando, pero no siempre el porqué. Cuando un rodamiento sale caliente, el [análisis de vibraciones mecánicas](/servicios/monitoreo-condicion/vibraciones-mecanicas) dice si es daño, desalineación o desbalance, y el [ultrasonido](/servicios/monitoreo-condicion/analisis-de-ultrasonido) ayuda a saber si es falta de grasa. Si te interesa ese tema, revisa la guía de [lubricación por ultrasonido](/blog/lubricacion-por-ultrasonido-como-engrasar-rodamientos). Juntas, las tres técnicas dan un diagnóstico completo."],
 
     ["h2", "Buenas prácticas al medir"],
     ["lista", [

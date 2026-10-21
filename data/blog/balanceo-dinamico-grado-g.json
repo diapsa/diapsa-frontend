@@ -33,7 +33,7 @@
       "G 2.5: para máquinas más rápidas o delicadas, como turbinas, turbocompresores y algunos motores de alta velocidad.",
       "G 16 y superiores: para piezas más toscas, como ejes cardán o maquinaria agrícola."
     ]],
-    ["p", "Con el grado, la masa del rotor y su velocidad se calcula el desbalance residual permitido. En sitio, la forma práctica de comprobar el resultado es que la vibración a 1X baje a niveles aceptables para la máquina según la [tabla ISO 10816-3](/blog/tabla-iso-10816-3-y-20816-3-limites-de-vibracion)."],
+    ["p", "Con el grado, la masa del rotor y su velocidad se calcula el desbalance residual permitido. En sitio, la forma práctica de comprobar el resultado es que la vibración a 1X baje a niveles aceptables para la máquina según la [tabla de severidad de vibraciones ISO 10816-3](/blog/tabla-iso-10816-3-y-20816-3-limites-de-vibracion)."],
 
     ["h2", "En sitio o en taller"],
     ["p", "En sitio se balancea el conjunto completo, con sus rodamientos, su base y su velocidad real, así que el resultado refleja cómo va a trabajar. No hay que desmontar, transportar ni volver a alinear. En taller se consigue un balanceo muy fino de la pieza sola, útil para rotores nuevos o reconstruidos. Muchas veces lo mejor es combinar: la pieza sale balanceada de taller y se hace un ajuste final en sitio."],
