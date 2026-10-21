@@ -34,7 +34,7 @@
 
     ["h2", "Cuando el problema ya no es la grasa"],
     ["p", "Hay señales que te dicen que engrasar no va a resolver nada. Si el nivel no baja después de varios disparos, lo más probable es que el rodamiento ya tenga daño. Si sube cuando engrasas, puede ser exceso de grasa, una grasa que no es compatible o la purga tapada. Si en lugar de un siseo parejo escuchas golpeteo o crepitar, hay daño en las pistas o en los elementos que ruedan. Y si la temperatura sube después de engrasar, seguramente te pasaste."],
-    ["p", "En esos casos vale la pena confirmar con [análisis de vibraciones](/servicios/monitoreo-condicion/vibraciones-mecanicas), que te dice qué tipo de daño es y qué tan avanzado está."],
+    ["p", "En esos casos vale la pena confirmar con [análisis de vibraciones mecánicas](/servicios/monitoreo-condicion/vibraciones-mecanicas), que te dice qué tipo de daño es y qué tan avanzado está."],
 
     ["h2", "Buenas prácticas"],
     ["lista", [

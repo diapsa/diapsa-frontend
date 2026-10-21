@@ -31,7 +31,7 @@
       "Operar lejos de su punto de mejor eficiencia: recirculación y vibración a baja frecuencia que cambia con el flujo.",
       "Rodamientos, desbalance del impulsor y desalineación, igual que en el motor."
     ]],
-    ["p", "Para la severidad, las bombas centrífugas tienen su propia parte de la norma, la ISO 10816-7. Para el resto de las máquinas se usa la ISO 10816-3; te explicamos cómo leerla en la guía de la [tabla ISO 10816-3](/blog/tabla-iso-10816-3-y-20816-3-limites-de-vibracion)."],
+    ["p", "Para la severidad, las bombas centrífugas tienen su propia parte de la norma, la ISO 10816-7. Para el resto de las máquinas se usa la ISO 10816-3; te explicamos cómo leerla en la guía de la [tabla de severidad de vibraciones ISO 10816-3](/blog/tabla-iso-10816-3-y-20816-3-limites-de-vibracion)."],
 
     ["h2", "Buenas prácticas para que las mediciones sirvan"],
     ["lista", [
@@ -53,6 +53,6 @@
     ["h3", "¿Cómo distingo un problema eléctrico de uno mecánico?"],
     ["p", "Si el pico a 120 Hz desaparece en el instante en que se corta la energía, es eléctrico; si baja poco a poco con la velocidad, es mecánico. Para las fallas del lado de la máquina, revisa la guía de [desbalance y desalineación](/blog/diferencia-entre-desbalance-y-desalineacion)."],
 
-    ["nota", "Medimos tus motor-bomba punto por punto y te decimos qué tiene cada uno y qué atender primero. Conoce nuestro [análisis de vibraciones](/servicios/monitoreo-condicion/vibraciones-mecanicas)."]
+    ["nota", "Medimos tus motor-bomba punto por punto y te decimos qué tiene cada uno y qué atender primero. Conoce nuestro [análisis de vibraciones mecánicas](/servicios/monitoreo-condicion/vibraciones-mecanicas)."]
   ]
 }
