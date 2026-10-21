@@ -241,6 +241,19 @@ export function partirAntesDelH2(content: JSONContent | null, n = 2): [JSONConte
     ];
 }
 
+/** Parte el documento después del H2 cuyo texto sea `texto`, conservando `saltar` bloques más. Sin ese H2, no parte. */
+export function partirDespuesDelH2(content: JSONContent | null, texto: string, saltar = 0): [JSONContent | null, JSONContent | null] {
+    if (!content?.content?.length) return [content, null];
+    const textoDe = (n: JSONContent): string => (n.text ?? "") + (n.content ?? []).map(textoDe).join("");
+    const i = content.content.findIndex((n) => n.type === "heading" && n.attrs?.level === 2 && textoDe(n).trim() === texto);
+    if (i < 0) return [content, null];
+    const corte = Math.min(content.content.length, i + 1 + saltar);
+    return [
+        { ...content, content: content.content.slice(0, corte) },
+        { ...content, content: content.content.slice(corte) },
+    ];
+}
+
 function isEmptyTiptapContent(content: JSONContent) {
     if (!content.type) {
         return true;

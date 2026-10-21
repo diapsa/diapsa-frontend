@@ -8,7 +8,9 @@ import ArticulosRelacionados, { elegirRelacionados } from "@/components/organism
 import Link from "next/link";
 import JsonLd, { createBreadcrumbSchema } from "@/components/atoms/JsonLd";
 import ArticleIndex, { type ArticleIndexItem } from "@/components/molecules/ArticleIndex";
-import TiptapRenderer, { partirAntesDelH2, prepareTiptapContent } from "@/components/tiptap/tiptap-renderer";
+import TiptapRenderer, { partirAntesDelH2, partirDespuesDelH2, prepareTiptapContent } from "@/components/tiptap/tiptap-renderer";
+import TablaGuia from "@/components/organisms/TablaGuia";
+import { tablaDeGuia } from "@/lib/tablas-guias";
 import OfertaGuia from "@/components/organisms/OfertaGuia";
 import { ofertaDeGuia } from "@/lib/ofertas-guias";
 import PageHeader from "@/components/organisms/PageHeader";
@@ -112,7 +114,11 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     // (Emiliano, 2026-10-19): el blog trae casi todo el tráfico y solo
     // ofrecía el servicio al final.
     const oferta = ofertaDeGuia(slug);
-    const [antes, despues] = oferta ? partirAntesDelH2(preparedContent.content, 2) : [preparedContent.content, null];
+    // Una tabla dibujada en su lugar (lib/tablas-guias.ts), después del
+    // encabezado que la presenta; lo demás sigue después de ella.
+    const tabla = tablaDeGuia(slug);
+    const [antesTabla, despuesTabla] = tabla ? partirDespuesDelH2(preparedContent.content, tabla.despuesDe, tabla.saltar) : [preparedContent.content, null];
+    const [antes, despues] = oferta ? partirAntesDelH2(antesTabla, 2) : [antesTabla, null];
     // Servicio de DIAPSA que ejecuta la técnica que explica el artículo.
     const servicioRelacionado = getServicioPorArticulo(slug);
     // Bloques técnicos dibujados en código (curva P-F, modos de falla,
@@ -161,6 +167,8 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                         <TiptapRenderer preparado={antes} />
                         {oferta && <OfertaGuia oferta={oferta} />}
                         {despues && <TiptapRenderer preparado={despues} />}
+                        {tabla && <TablaGuia tabla={tabla} />}
+                        {despuesTabla && <TiptapRenderer preparado={despuesTabla} />}
                     </section>
 
                     {guia && <ComplementosGuia guia={guia} />}
