@@ -30,6 +30,19 @@ const TABLAS: Record<string, TablaGuia> = {
     ],
     pie: "Zona A: máquina nueva o recién reparada. Zona B: aceptable para operar sin restricción. Zona C: no apta para operar continuamente; programar la corrección. Zona D: la vibración puede causar daño.",
   },
+  "tipos-de-mantenimiento-industrial": {
+    despuesDe: "Tabla comparativa de los tipos de mantenimiento",
+    saltar: 1,
+    titulo: "Los cuatro tipos, comparados",
+    columnas: ["Tipo", "Cuándo interviene", "Qué información usa", "Costo típico", "Para qué equipos"],
+    filas: [
+      ["Correctivo", "Después de la falla", "Ninguna", "Bajo si es planificado; muy alto si es emergencia", "Redundantes, baratos, de bajo impacto"],
+      ["Preventivo", "Por calendario u horas de uso", "El manual y el historial de fallas", "Medio; cambia piezas que a veces aún sirven", "Desgaste proporcional al uso, importancia media"],
+      ["Predictivo", "Cuando la medición muestra que la falla empezó", "Vibraciones, termografía, ultrasonido, aceite, pruebas eléctricas", "Medio al inicio, el más bajo por paro evitado", "Críticos y caros de parar"],
+      ["Prescriptivo", "En el momento óptimo que recomienda el sistema", "Todo lo anterior más criticidad, producción y refacciones", "Requiere plataforma y datos ordenados", "Críticos con historial y monitoreo en marcha"],
+    ],
+    pie: "Una planta sana combina los tres primeros según el equipo; el prescriptivo llega cuando el predictivo ya tiene historial.",
+  },
 };
 
 export const tablaDeGuia = (slug: string): TablaGuia | null => TABLAS[slug] ?? null;

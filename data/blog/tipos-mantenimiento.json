@@ -1,0 +1,153 @@
+{
+  "slug": "tipos-de-mantenimiento-industrial",
+  "titulo": "Tipos de mantenimiento industrial: cuál aplicar a cada equipo",
+  "extracto": "Correctivo, preventivo, predictivo y prescriptivo no compiten: cada uno tiene un lugar según lo crítico que sea el equipo y cómo falla. La tabla comparativa primero, tres preguntas para decidir, y después cada tipo explicado.",
+  "portada": "/images/servicios/diagnostico-de-maquinaria/campo-equipo-ruta.webp",
+  "fecha": "2026-11-02T13:00:00.000000Z",
+  "seo": {
+    "titulo": "Tipos de mantenimiento industrial: cuál aplicar",
+    "descripcion": "Correctivo, preventivo, predictivo y prescriptivo comparados en una tabla: cuándo intervienen, qué cuestan y a qué equipos convienen, y tres preguntas para elegir el tipo por equipo."
+  },
+  "bloques": [
+    [
+      "p",
+      "Hay cuatro tipos de mantenimiento industrial: el correctivo repara después de la falla, el preventivo interviene por calendario u horas de uso, el predictivo interviene según la condición real del equipo y el prescriptivo usa los datos para recomendar la mejor acción y el mejor momento. Ninguno es el mejor en abstracto. La pregunta correcta no es cuál adoptar en la planta, sino cuál le toca a cada equipo."
+    ],
+    [
+      "p",
+      "Por eso esta guía empieza por donde se decide: la tabla que los compara y las tres preguntas que resuelven qué tipo aplicar. Después viene cada tipo con detalle."
+    ],
+    [
+      "h2",
+      "Tabla comparativa de los tipos de mantenimiento"
+    ],
+    [
+      "p",
+      "Lo que cambia entre un tipo y otro es cuándo se interviene y qué información se usa para decidirlo:"
+    ],
+    [
+      "p",
+      "Con esa tabla a la vista, el patrón es claro: entre más crítico y más caro de parar es un equipo, más conviene subir de correctivo a preventivo y de preventivo a predictivo. Y entre más barato y redundante, más sentido tiene dejarlo en correctivo planificado."
+    ],
+    [
+      "h2",
+      "Cómo elegir el tipo de mantenimiento para cada equipo"
+    ],
+    [
+      "p",
+      "Tres preguntas bastan para clasificar casi cualquier activo de la planta:"
+    ],
+    [
+      "numerada",
+      [
+        "¿Qué pasa si falla? Si para la producción, pone en riesgo a las personas o daña otros equipos, es crítico y merece predictivo. Si no pasa nada que un repuesto no resuelva en una hora, puede quedarse en correctivo planificado.",
+        "¿Cómo falla? Las fallas que avanzan despacio y avisan, como rodamientos, conexiones eléctricas, lubricantes y alineación, se detectan con monitoreo de condición y conviene vigilarlas. Las que ocurren sin aviso, como un fusible o una tarjeta electrónica, no se predicen: se protegen con redundancia o con repuesto en almacén.",
+        "¿Cuánto cuesta cada opción? Compara el costo de un paro no programado contra el de medir periódicamente o contra el de cambiar piezas por calendario. En un equipo crítico, una ruta de medición cuesta una fracción de un solo paro."
+      ]
+    ],
+    [
+      "p",
+      "El resultado típico en una planta es una mezcla: predictivo en los equipos críticos, preventivo en los de importancia media donde el desgaste es predecible por horas, y correctivo planificado en lo redundante y barato. Si quieres hacer ese ejercicio con método, es lo que hacemos en un [diagnóstico situacional](/servicios/diagnostico-situacional): calificar la criticidad de cada equipo y proponer qué medir, cada cuánto y con qué técnica."
+    ],
+    [
+      "h2",
+      "Mantenimiento correctivo: reparar cuando falla"
+    ],
+    [
+      "p",
+      "Es el que se ejecuta después de que el equipo dejó de funcionar o de cumplir su función. Conviene distinguir dos variantes muy distintas. El correctivo no planificado es la emergencia: la falla sorprende a la operación y trae paro no programado, refacciones urgentes, horas extra, daños secundarios y riesgo para las personas. Es el escenario más caro que existe en mantenimiento."
+    ],
+    [
+      "p",
+      "El correctivo planificado es otra cosa: se decide de forma consciente dejar que ciertos equipos trabajen hasta fallar porque son baratos, redundantes o de bajo impacto, y se tiene lista la refacción y el procedimiento. Una lámpara, la banda de un transportador secundario con respaldo o una bomba pequeña duplicada son candidatos razonables. Su ventaja es que casi no cuesta planearlo; su límite es que solo sirve para equipos que de verdad pueden fallar sin consecuencias."
+    ],
+    [
+      "h2",
+      "Mantenimiento preventivo: intervenir por calendario"
+    ],
+    [
+      "p",
+      "Se interviene a intervalos fijos, por tiempo o por horas de uso, sin importar el estado real del equipo: cambiar el aceite cada tres meses, los rodamientos cada año, el filtro cada quinientas horas. Es el más extendido porque es fácil de programar y de auditar, y funciona bien cuando el desgaste es proporcional al uso."
+    ],
+    [
+      "p",
+      "Su problema es que trabaja a ciegas. A veces se cambia una pieza que todavía estaba bien, y se paga la refacción, la mano de obra y el paro sin necesidad; otras veces la falla llega antes del intervalo y el plan no la ve venir. Además, cada intervención es una oportunidad de introducir un error de montaje. Un plan preventivo bien llevado reduce fallas, pero no las elimina, y tiende a costar más de lo que parece."
+    ],
+    [
+      "h2",
+      "Mantenimiento predictivo: intervenir por condición"
+    ],
+    [
+      "p",
+      "Aquí no se interviene por fecha sino por evidencia: se mide el estado del equipo mientras opera, con vibraciones, termografía, ultrasonido, análisis de aceite o pruebas eléctricas, y se actúa cuando los datos muestran que una falla empezó. Como la mayoría de las fallas mecánicas y eléctricas avanzan durante semanas o meses antes de romper, hay tiempo para programar la reparación en una ventana conveniente, con la refacción ya comprada."
+    ],
+    [
+      "p",
+      "Es el tipo que más reduce paros no programados y el que mejor aprovecha la vida útil de las piezas, porque solo se cambia lo que de verdad se está deteriorando. Requiere instrumentos, un analista que sepa interpretar y un historial por equipo; por eso se aplica donde el paro cuesta y no en toda la planta. Las técnicas y cómo se combinan están explicadas en la guía de [análisis de vibraciones mecánicas](/servicios/monitoreo-condicion/vibraciones-mecanicas) y en la de [termografía industrial](/blog/termografia-industrial-una-herramienta-clave-para-el-mantenimiento-predictivo)."
+    ],
+    [
+      "h2",
+      "Mantenimiento prescriptivo: el siguiente escalón"
+    ],
+    [
+      "p",
+      "Es el predictivo llevado un paso más allá: además de detectar que una falla empezó, el sistema cruza el historial del equipo, la criticidad, la carga de producción y la disponibilidad de refacciones para recomendar qué hacer y cuándo. Por ejemplo, no solo avisar que un rodamiento se está dañando, sino proponer cambiarlo en el paro del día quince porque antes no llega la pieza y después el riesgo de falla supera el costo de adelantar la ventana."
+    ],
+    [
+      "p",
+      "En la práctica se construye sobre una plataforma que concentre las mediciones de todas las técnicas por equipo, con tendencias y alarmas. Sin esa base de datos ordenada no hay prescriptivo que valga; con ella, el salto es natural."
+    ],
+    [
+      "h2",
+      "El error más común: confundir tener un plan preventivo con estar protegido"
+    ],
+    [
+      "p",
+      "Muchas plantas tienen un programa preventivo completo y aun así sufren paros no programados en sus equipos críticos. No es que el preventivo esté mal hecho; es que el preventivo no ve el estado real de la máquina. Un rodamiento puede fallar a la mitad de su intervalo por una desalineación, una conexión eléctrica puede aflojarse entre dos revisiones, un lubricante puede contaminarse en un mes. Lo que protege un equipo crítico es saber cómo está hoy, y eso solo lo da la medición."
+    ],
+    [
+      "h2",
+      "Preguntas frecuentes sobre tipos de mantenimiento"
+    ],
+    [
+      "h3",
+      "¿Cuál es la diferencia entre mantenimiento preventivo y predictivo?"
+    ],
+    [
+      "p",
+      "El preventivo interviene por calendario, sin saber el estado del equipo; el predictivo interviene por condición, cuando una medición muestra que la falla empezó. El primero cambia piezas por si acaso; el segundo, cuando hace falta."
+    ],
+    [
+      "h3",
+      "¿Qué es el mantenimiento correctivo planificado?"
+    ],
+    [
+      "p",
+      "Dejar que un equipo trabaje hasta fallar por decisión propia, porque es barato, redundante o de bajo impacto, y tener la refacción y el procedimiento listos para reponerlo rápido."
+    ],
+    [
+      "h3",
+      "¿Cuál es el mejor tipo de mantenimiento industrial?"
+    ],
+    [
+      "p",
+      "El que le corresponde a cada equipo. Predictivo en lo crítico, preventivo donde el desgaste va con las horas de uso, correctivo planificado en lo redundante y barato. Una planta sana usa los tres."
+    ],
+    [
+      "h3",
+      "¿Qué es el mantenimiento prescriptivo?"
+    ],
+    [
+      "p",
+      "El que, además de detectar la falla en curso, recomienda la acción y el momento óptimos cruzando el historial del equipo, su criticidad, la producción y las refacciones disponibles."
+    ],
+    [
+      "h3",
+      "¿Por dónde empiezo si mi planta es cien por ciento correctiva?"
+    ],
+    [
+      "p",
+      "Por clasificar los equipos: cuáles paran la producción si fallan y cuáles no. Con esa lista, los diez o veinte más críticos entran a una ruta de medición periódica y el resto se queda como está. Es lo que arma un [diagnóstico situacional](/servicios/diagnostico-situacional), y hay programas como [DIAPSA START](/servicios/diapsa-start) para empezar sin comprar equipo."
+    ]
+  ]
+}
