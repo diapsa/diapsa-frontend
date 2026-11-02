@@ -46,6 +46,12 @@ const SECCIONES = [
     ],
   },
   {
+    titulo: "Qué significa PPCIEM",
+    parrafos: [
+      "Las siglas son Programa para la Prevención y el Control Integral de las Emisiones de Metano. Cada palabra pesa: prevención, porque busca evitar la fuga antes de que exista; control, porque lo que fuga se repara y se vuelve a revisar; integral, porque cubre toda la instalación y no solo un equipo; y metano, porque es el gas que regula, el componente principal del gas natural.",
+    ],
+  },
+  {
     titulo: "Quién debe tenerlo",
     parrafos: [
       "Las instalaciones del sector hidrocarburos donde puede haber emisiones de metano: estaciones de compresión, ductos y estaciones de regulación, plantas de proceso, terminales y tanques de almacenamiento, entre otras.",
