@@ -19,6 +19,18 @@
     ],
     [
       "h2",
+      "Tabla de severidad de vibraciones ISO 10816-3"
+    ],
+    [
+      "p",
+      "Estos son los límites entre zonas, en mm/s RMS:"
+    ],
+    [
+      "p",
+      "Con el ejemplo del principio: un motor de 75 kW, grupo 2, sobre base flexible, con 5.6 mm/s está en zona C. Puede seguir trabajando, pero hay que encontrar la causa y programar la corrección."
+    ],
+    [
+      "h2",
       "¿Qué cubre la ISO 10816-3?"
     ],
     [
@@ -49,18 +61,6 @@
         "Zona C: no es adecuada para operar por largo tiempo; se puede seguir mientras se programa la corrección.",
         "Zona D: la vibración ya es suficiente para dañar la máquina."
       ]
-    ],
-    [
-      "h2",
-      "Tabla de severidad de vibraciones ISO 10816-3"
-    ],
-    [
-      "p",
-      "Estos son los límites entre zonas, en mm/s RMS:"
-    ],
-    [
-      "p",
-      "Con el ejemplo del principio: un motor de 75 kW, grupo 2, sobre base flexible, con 5.6 mm/s está en zona C. Puede seguir trabajando, pero hay que encontrar la causa y programar la corrección."
     ],
     [
       "h2",

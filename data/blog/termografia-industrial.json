@@ -1,0 +1,132 @@
+{
+  "slug": "termografia-industrial-una-herramienta-clave-para-el-mantenimiento-predictivo",
+  "titulo": "Termografía industrial: qué fallas detecta y cómo leer un termograma",
+  "extracto": "La termografía ve el calor que una falla produce antes de que se note. Qué equipos se inspeccionan, qué fallas aparecen en tableros, motores y procesos, cómo se lee un termograma y cómo se califica un punto caliente.",
+  "portada": "/images/blog/tabla-neta-termografia.webp",
+  "fecha": "2026-11-02T12:00:00.000000Z",
+  "seo": {
+    "titulo": "Termografía industrial: fallas y termogramas",
+    "descripcion": "Qué detecta la termografía industrial en tableros, motores y procesos, cómo se lee un termograma, cómo se califica un punto caliente y cada cuánto conviene inspeccionar."
+  },
+  "bloques": [
+    [
+      "p",
+      "Casi todo lo que está a punto de fallar en una planta se calienta antes: una conexión floja, un rodamiento sin grasa, un fusible fatigado, una trampa de vapor que no cierra. La termografía industrial consiste en recorrer los equipos con una cámara que ve la temperatura en lugar de la luz, con la planta operando, y encontrar ese calor cuando todavía se puede corregir sin paro."
+    ],
+    [
+      "p",
+      "Aquí te explicamos en qué equipos se usa, qué fallas se ven, cómo se lee una imagen térmica y cómo se decide qué atender primero."
+    ],
+    [
+      "h2",
+      "Dónde se aplica la termografía industrial"
+    ],
+    [
+      "h3",
+      "Instalaciones eléctricas"
+    ],
+    [
+      "p",
+      "Es la aplicación más extendida: tableros y centros de carga, centros de control de motores, subestaciones, transformadores, interruptores, cuchillas y bancos de capacitores. Se inspecciona con el equipo energizado y con carga, porque un tablero sin carga no muestra sus puntos calientes."
+    ],
+    [
+      "h3",
+      "Equipo mecánico"
+    ],
+    [
+      "p",
+      "Motores, rodamientos, acoplamientos, reductores y bandas. Un rodamiento que empieza a fallar o un acoplamiento desalineado se calientan más que sus vecinos, y la cámara lo muestra sin tocar la máquina."
+    ],
+    [
+      "h3",
+      "Procesos"
+    ],
+    [
+      "p",
+      "Hornos y refractarios, aislamientos térmicos de tubería y tanques, trampas de vapor, intercambiadores y chimeneas. Aquí la termografía encuentra pérdidas de energía y daños que de otra forma solo se ven cuando ya son grandes."
+    ],
+    [
+      "h2",
+      "Qué fallas detecta"
+    ],
+    [
+      "lista",
+      [
+        "Conexiones flojas, sulfatadas o mal apretadas, que son la causa más común de incendio en tableros.",
+        "Sobrecarga y desbalance de fases.",
+        "Fusibles, contactores e interruptores dañados.",
+        "Rodamientos con fricción y acoplamientos desalineados.",
+        "Refractario y aislamiento térmico dañados.",
+        "Trampas de vapor que fugan y válvulas que pasan."
+      ]
+    ],
+    [
+      "h2",
+      "Cómo se lee un termograma"
+    ],
+    [
+      "p",
+      "Un termograma es la imagen de temperatura. Los colores por sí solos no dicen nada: una imagen llena de rojos puede ser un equipo sano que trabaja caliente. Lo que importa es la comparación. En equipo eléctrico, el punto se compara con el mismo componente en otra fase con carga parecida; en equipo mecánico, con la misma pieza en una máquina igual o con el historial de esa máquina. La diferencia de temperatura, no la temperatura absoluta, es lo que califica la falla."
+    ],
+    [
+      "p",
+      "Dos cosas engañan al principiante: los reflejos, porque una superficie metálica brillante refleja el calor de lo que tiene enfrente, y la emisividad, porque dos materiales a la misma temperatura se ven distintos. Por eso la cámara se configura para cada superficie y cada hallazgo se confirma antes de reportarlo."
+    ],
+    [
+      "h2",
+      "Cómo se califica un punto caliente"
+    ],
+    [
+      "p",
+      "En instalaciones eléctricas la referencia más usada es la tabla de la NETA: de 1 a 3 °C de diferencia contra un componente similar es una posible deficiencia, de 4 a 15 °C una deficiencia probable que se repara cuando el tiempo lo permita, y más de 15 °C una deficiencia mayor que se repara de inmediato. Los rangos completos y un ejemplo están en la guía de la [tabla NETA](/blog/tabla-neta-termografia-como-se-califica-un-punto-caliente)."
+    ],
+    [
+      "h2",
+      "Cada cuánto inspeccionar"
+    ],
+    [
+      "p",
+      "En tableros y subestaciones, al menos una vez al año, como pide la NFPA 70B, y cada seis meses cuando la carga es alta o el ambiente es agresivo. Lo que sale con hallazgo se vuelve a revisar hasta que se corrige. En equipo mecánico, la termografía suele ir dentro de la misma ruta que las vibraciones y el ultrasonido."
+    ],
+    [
+      "h2",
+      "Qué se necesita para hacerla bien"
+    ],
+    [
+      "p",
+      "Una cámara radiométrica, que mida temperatura y no solo dé imagen; un termógrafo con formación y certificación conforme a ISO 18436-7; acceso a los equipos con carga; y un informe que traiga, por cada hallazgo, la imagen térmica, la foto visual, la diferencia de temperatura, la severidad y qué hacer."
+    ],
+    [
+      "h2",
+      "Preguntas frecuentes"
+    ],
+    [
+      "h3",
+      "¿Qué es la termografía industrial?"
+    ],
+    [
+      "p",
+      "Es la inspección de equipos con una cámara infrarroja que mide su temperatura superficial, para encontrar fallas que se calientan antes de romperse, sin tocar ni detener nada."
+    ],
+    [
+      "h3",
+      "¿Se puede hacer con la planta operando?"
+    ],
+    [
+      "p",
+      "Sí, y así debe hacerse. Las fallas eléctricas solo se calientan con carga y las mecánicas con la máquina girando."
+    ],
+    [
+      "h3",
+      "¿Qué diferencia hay entre una cámara térmica y un termómetro infrarrojo?"
+    ],
+    [
+      "p",
+      "El termómetro mide un punto; la cámara mide miles de puntos a la vez y los muestra como imagen, así que encuentra el punto caliente aunque no sepas dónde buscarlo."
+    ],
+    [
+      "nota",
+      "Si quieres ver qué se calienta en tu planta, nuestro servicio de [termografía infrarroja](/servicios/monitoreo-condicion/termografia-infrarroja) inspecciona tableros, motores y procesos con la planta operando y entrega el informe en dos días hábiles."
+    ]
+  ]
+}
