@@ -117,8 +117,12 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     // Una tabla dibujada en su lugar (lib/tablas-guias.ts), después del
     // encabezado que la presenta; lo demás sigue después de ella.
     const tabla = tablaDeGuia(slug);
-    const [antesTabla, despuesTabla] = tabla ? partirDespuesDelH2(preparedContent.content, tabla.despuesDe, tabla.saltar) : [preparedContent.content, null];
-    const [antes, despues] = oferta ? partirAntesDelH2(antesTabla, 2) : [antesTabla, null];
+    // Primero dónde va la oferta (antes del segundo H2 del artículo completo) y
+    // después la tabla, pegada a su encabezado, esté en la mitad que esté.
+    const [antes, despues] = oferta ? partirAntesDelH2(preparedContent.content, 2) : [preparedContent.content, null];
+    const conTabla = (parte: typeof antes) => (tabla && parte ? partirDespuesDelH2(parte, tabla.despuesDe, tabla.saltar) : [parte, null]);
+    const [antes1, antes2] = conTabla(antes);
+    const [despues1, despues2] = conTabla(despues);
     // Servicio de DIAPSA que ejecuta la técnica que explica el artículo.
     const servicioRelacionado = getServicioPorArticulo(slug);
     // Bloques técnicos dibujados en código (curva P-F, modos de falla,
@@ -164,11 +168,13 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     )} */}
 
                     <section id="contenido" className="scroll-mt-28 border-t border-gray-100 pt-8 lg:pt-10">
-                        <TiptapRenderer preparado={antes} />
+                        <TiptapRenderer preparado={antes1} />
+                        {tabla && antes2 && <TablaGuia tabla={tabla} />}
+                        {antes2 && <TiptapRenderer preparado={antes2} />}
                         {oferta && <OfertaGuia oferta={oferta} />}
-                        {despues && <TiptapRenderer preparado={despues} />}
-                        {tabla && <TablaGuia tabla={tabla} />}
-                        {despuesTabla && <TiptapRenderer preparado={despuesTabla} />}
+                        {despues1 && <TiptapRenderer preparado={despues1} />}
+                        {tabla && despues2 && <TablaGuia tabla={tabla} />}
+                        {despues2 && <TiptapRenderer preparado={despues2} />}
                     </section>
 
                     {guia && <ComplementosGuia guia={guia} />}

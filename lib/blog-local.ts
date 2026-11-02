@@ -59,6 +59,7 @@ import ppciemCumplimiento from "@/data/blog/ppciem-cumplimiento-mexico.json";
 import vibracionesTurbinas from "@/data/blog/vibraciones-turbinas.json";
 import mantenimientoSubestaciones from "@/data/blog/mantenimiento-subestaciones.json";
 import cicloCombinado from "@/data/blog/ciclo-combinado.json";
+import termografiaIndustrial from "@/data/blog/termografia-industrial.json";
 import dronesSolares from "@/data/blog/drones-parques-solares.json";
 import dronesLineas from "@/data/blog/drones-lineas-transmision.json";
 import dronesEolicos from "@/data/blog/drones-parques-eolicos.json";
@@ -152,7 +153,7 @@ function aBlog(a: ArticuloLocal, i: number): Blog {
   };
 }
 
-export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba, matrizCriticidad, programaPredictivo, costoParo, mtbfMttr, kpiPredictivo, certificacionIso, codigoIso4406, dgaDuval, aceitePruebas, nom022Tierras, valorResistencia, caidaPotencial, nom029Arco, energiaIncidente, fronterasEtiqueta, curvaPF, tecnicasComplementan, fallaRodamientos, codigoDeRed, factorPotencia, armonicosThd, enLineaRutas, sensoresInalambricos, falsasAlarmas, cavitacionBombas, holguraMecanica, frecuenciasRodamientos, camaraFijaMano, incendiosCamaras, centrosDeDatos, camarasCalidad, descargasParciales, ruidoTransformador, monitoreoTransformadores, acetilenoTransformador, hidrogenoTransformador, cromatografiaTransformador, monitoreoDuctos, deteccionFugasDuctos, derechoDeVia, ppciemImportancia, emisionesFugitivas, metanoAmbiente, ppciemCumplimiento, vibracionesTurbinas, mantenimientoSubestaciones, cicloCombinado, dronesSolares, dronesLineas, dronesEolicos, dronesTorres, dronesTechos] as ArticuloLocal[]).map(aBlog);
+export const BLOGS_LOCALES: Blog[] = ([efectoCorona, fugasAire, lubricacion, futuroUltrasonido, termografiaTableros, tablaNeta, termografiaMotores, tablaIso, desbalanceDesalineacion, vibracionesMotoresBombas, tablaTolerancias, balanceoGrado, alineacionMotorBomba, matrizCriticidad, programaPredictivo, costoParo, mtbfMttr, kpiPredictivo, certificacionIso, codigoIso4406, dgaDuval, aceitePruebas, nom022Tierras, valorResistencia, caidaPotencial, nom029Arco, energiaIncidente, fronterasEtiqueta, curvaPF, tecnicasComplementan, fallaRodamientos, codigoDeRed, factorPotencia, armonicosThd, enLineaRutas, sensoresInalambricos, falsasAlarmas, cavitacionBombas, holguraMecanica, frecuenciasRodamientos, camaraFijaMano, incendiosCamaras, centrosDeDatos, camarasCalidad, descargasParciales, ruidoTransformador, monitoreoTransformadores, acetilenoTransformador, hidrogenoTransformador, cromatografiaTransformador, monitoreoDuctos, deteccionFugasDuctos, derechoDeVia, ppciemImportancia, emisionesFugitivas, metanoAmbiente, ppciemCumplimiento, vibracionesTurbinas, mantenimientoSubestaciones, cicloCombinado, dronesSolares, dronesLineas, dronesEolicos, dronesTorres, dronesTechos, termografiaIndustrial] as ArticuloLocal[]).map(aBlog);
 
 export function getBlogLocal(slug: string): Blog | null {
   return BLOGS_LOCALES.find((b) => b.slug === slug) ?? null;
@@ -160,8 +161,8 @@ export function getBlogLocal(slug: string): Blog | null {
 
 /** Une los del CMS con los locales, sin repetir, del más nuevo al más viejo. */
 export function conBlogsLocales(delCms: Blog[]): Blog[] {
-  const slugs = new Set(delCms.map((b) => b.slug));
-  return [...delCms, ...BLOGS_LOCALES.filter((b) => !slugs.has(b.slug))].sort(
+  const locales = new Set(BLOGS_LOCALES.map((b) => b.slug));
+  return [...delCms.filter((b) => !locales.has(b.slug)), ...BLOGS_LOCALES].sort(
     (x, y) => new Date(y.published_at).getTime() - new Date(x.published_at).getTime(),
   );
 }
