@@ -67,6 +67,13 @@ const POR_GUIA: Record<string, OfertaGuia> = {
     whatsapp: "Hola, leí la guía de termografía industrial. Quiero una inspección termográfica para mi planta.",
     interes: "Termografía Infrarroja",
   },
+  "mantenimiento-predictivo-que-es-tecnicas-y-ejemplos-reales": {
+    etiqueta: "Para empezar",
+    titulo: "¿Quieres saber por dónde empezar en tu planta?",
+    texto: "Levantamos tus equipos, calificamos su criticidad y te decimos qué medir, cada cuánto y con qué técnica. Si prefieres arrancar ya, medimos tres equipos sin costo.",
+    whatsapp: "Hola, leí la guía de mantenimiento predictivo. Quiero saber por dónde empezar un programa en mi planta.",
+    interes: "Diagnóstico Situacional",
+  },
   "importancia-del-ppciem-y-que-pasa-si-no-cumples": {
     etiqueta: "Cumplimiento ASEA",
     titulo: "¿Tu PPCIEM está al día?",
