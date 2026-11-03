@@ -72,6 +72,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: `${SITE_CONFIG.baseUrl}/aviso-privacidad`,
+      lastModified: ULTIMA_REVISION,
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
+    {
       url: `${SITE_CONFIG.baseUrl}/metodologia`,
       lastModified: ULTIMA_REVISION,
       changeFrequency: "monthly",
