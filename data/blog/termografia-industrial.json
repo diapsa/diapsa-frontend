@@ -1,12 +1,12 @@
 {
   "slug": "termografia-industrial-una-herramienta-clave-para-el-mantenimiento-predictivo",
-  "titulo": "Termografía industrial: qué fallas detecta y cómo leer un termograma",
-  "extracto": "La termografía ve el calor que una falla produce antes de que se note. Qué equipos se inspeccionan, qué fallas aparecen en tableros, motores y procesos, cómo se lee un termograma y cómo se califica un punto caliente.",
-  "portada": "/images/blog/tabla-neta-termografia.webp",
-  "fecha": "2026-11-02T12:00:00.000000Z",
+  "titulo": "Termografía industrial: qué detecta, cómo se lee un termograma y cuándo actuar",
+  "extracto": "Casi todo lo que está por fallar se calienta antes. Qué fallas ve la termografía en cada equipo, en una tabla; cómo se lee un termograma con un caso real de tablero; cómo se califica un punto caliente y cada cuánto inspeccionar.",
+  "portada": "https://diapsa-storage.sfo3.cdn.digitaloceanspaces.com/grupo-diapsa/production/image/blog/drafts/72407fef-c96d-4c10-a2a9-fa0a6fd0a83c/5b1dc889-631c-4659-a1bb-a439018e9bff.jpg",
+  "fecha": "2026-11-02T16:00:00.000000Z",
   "seo": {
-    "titulo": "Termografía industrial: fallas y termogramas",
-    "descripcion": "Qué detecta la termografía industrial en tableros, motores y procesos, cómo se lee un termograma, cómo se califica un punto caliente y cada cuánto conviene inspeccionar."
+    "titulo": "Termografía industrial: qué detecta y cómo leer un termograma",
+    "descripcion": "Qué fallas detecta la termografía industrial en tableros, motores, subestaciones y procesos, en una tabla por equipo; cómo se lee un termograma con un caso real; cómo se califica un punto caliente con la tabla NETA y cada cuánto inspeccionar."
   },
   "bloques": [
     [
@@ -15,62 +15,40 @@
     ],
     [
       "p",
-      "Aquí te explicamos en qué equipos se usa, qué fallas se ven, cómo se lee una imagen térmica y cómo se decide qué atender primero."
+      "Esta guía va directo a lo que se busca: qué falla ve la termografía en cada equipo, cómo se lee un termograma con un caso real, cómo se decide qué atender primero y cada cuánto conviene inspeccionar."
     ],
     [
       "h2",
-      "Dónde se aplica la termografía industrial"
-    ],
-    [
-      "h3",
-      "Instalaciones eléctricas"
+      "Qué detecta la termografía en cada equipo"
     ],
     [
       "p",
-      "Es la aplicación más extendida: tableros y centros de carga, centros de control de motores, subestaciones, transformadores, interruptores, cuchillas y bancos de capacitores. Se inspecciona con el equipo energizado y con carga, porque un tablero sin carga no muestra sus puntos calientes."
-    ],
-    [
-      "h3",
-      "Equipo mecánico"
+      "La cámara no ve la falla, ve el calor que la falla produce. Por eso conviene saber, equipo por equipo, qué se calienta y cómo se ve:"
     ],
     [
       "p",
-      "Motores, rodamientos, acoplamientos, reductores y bandas. Un rodamiento que empieza a fallar o un acoplamiento desalineado se calientan más que sus vecinos, y la cámara lo muestra sin tocar la máquina."
-    ],
-    [
-      "h3",
-      "Procesos"
-    ],
-    [
-      "p",
-      "Hornos y refractarios, aislamientos térmicos de tubería y tanques, trampas de vapor, intercambiadores y chimeneas. Aquí la termografía encuentra pérdidas de energía y daños que de otra forma solo se ven cuando ya son grandes."
+      "Lo eléctrico se inspecciona energizado y con carga, porque un tablero sin carga no muestra sus puntos calientes; lo mecánico, con la máquina girando. En procesos la termografía encuentra pérdidas de energía y daños de refractario o aislamiento que de otra forma solo se ven cuando ya son grandes."
     ],
     [
       "h2",
-      "Qué fallas detecta"
-    ],
-    [
-      "lista",
-      [
-        "Conexiones flojas, sulfatadas o mal apretadas, que son la causa más común de incendio en tableros.",
-        "Sobrecarga y desbalance de fases.",
-        "Fusibles, contactores e interruptores dañados.",
-        "Rodamientos con fricción y acoplamientos desalineados.",
-        "Refractario y aislamiento térmico dañados.",
-        "Trampas de vapor que fugan y válvulas que pasan."
-      ]
-    ],
-    [
-      "h2",
-      "Cómo se lee un termograma"
+      "Cómo se lee un termograma: un caso real"
     ],
     [
       "p",
       "Un termograma es la imagen de temperatura. Los colores por sí solos no dicen nada: una imagen llena de rojos puede ser un equipo sano que trabaja caliente. Lo que importa es la comparación. En equipo eléctrico, el punto se compara con el mismo componente en otra fase con carga parecida; en equipo mecánico, con la misma pieza en una máquina igual o con el historial de esa máquina. La diferencia de temperatura, no la temperatura absoluta, es lo que califica la falla."
     ],
     [
+      "img",
+      "https://diapsa-storage.sfo3.cdn.digitaloceanspaces.com/grupo-diapsa/production/image/blog/drafts/b9242300-1e21-4bd3-b7c7-067d9e9d1e2a/3528a78d-2142-4114-80f9-f1dcf7af841b.jpg",
+      "Termograma de un tablero de distribución: una conexión a 463 °C junto a componentes a 56 °C"
+    ],
+    [
       "p",
-      "Dos cosas engañan al principiante: los reflejos, porque una superficie metálica brillante refleja el calor de lo que tiene enfrente, y la emisividad, porque dos materiales a la misma temperatura se ven distintos. Por eso la cámara se configura para cada superficie y cada hallazgo se confirma antes de reportarlo."
+      "Este termograma viene de una de nuestras rutas. En un tablero de distribución, un interruptor termomagnético mostró una conexión a 463 °C mientras los componentes vecinos marcaban 56 °C y el ambiente 26 °C. Tres cosas hacen que la lectura sea confiable y no una ilusión de la cámara: la emisividad configurada para esa superficie, la temperatura reflejada medida y la distancia anotada, todo en la propia imagen. Con eso, un diferencial de más de 400 °C contra sus vecinos no deja duda: es la clasificación más grave y se corrige el mismo día, con la desenergización controlada del circuito, no en el siguiente paro programado."
+    ],
+    [
+      "p",
+      "Dos cosas engañan al principiante: los reflejos, porque una superficie metálica brillante refleja el calor de lo que tiene enfrente, y la emisividad, porque dos materiales a la misma temperatura se ven distintos. Por eso la cámara se configura para cada superficie y cada hallazgo se confirma, cambiando el ángulo o midiendo la fase vecina, antes de reportarlo."
     ],
     [
       "h2",
@@ -78,7 +56,11 @@
     ],
     [
       "p",
-      "En instalaciones eléctricas la referencia más usada es la tabla de la NETA: de 1 a 3 °C de diferencia contra un componente similar es una posible deficiencia, de 4 a 15 °C una deficiencia probable que se repara cuando el tiempo lo permita, y más de 15 °C una deficiencia mayor que se repara de inmediato. Los rangos completos y un ejemplo están en la guía de la [tabla NETA](/blog/tabla-neta-termografia-como-se-califica-un-punto-caliente)."
+      "En instalaciones eléctricas la referencia más usada es la tabla de la NETA, que califica por la diferencia de temperatura contra un componente similar bajo carga parecida: de 1 a 3 °C es una posible deficiencia que se vigila, de 4 a 15 °C una deficiencia probable que se repara cuando el tiempo lo permita, y más de 15 °C una deficiencia mayor que se repara de inmediato. Contra el ambiente, más de 40 °C también es deficiencia mayor. Los rangos completos y cómo aplicarlos están en la guía de la [tabla NETA de termografía](/blog/tabla-neta-termografia-como-se-califica-un-punto-caliente)."
+    ],
+    [
+      "p",
+      "En equipo mecánico no hay una tabla única: se califica contra el historial de la máquina y contra sus iguales, y se cruza con vibraciones y ultrasonido, que ven la misma falla por otro lado. Cómo se reparten las fallas entre técnicas lo explicamos en la guía de [cómo se complementan las técnicas predictivas](/blog/tecnicas-de-mantenimiento-predictivo-como-se-complementan)."
     ],
     [
       "h2",
@@ -86,7 +68,25 @@
     ],
     [
       "p",
-      "En tableros y subestaciones, al menos una vez al año, como pide la NFPA 70B, y cada seis meses cuando la carga es alta o el ambiente es agresivo. Lo que sale con hallazgo se vuelve a revisar hasta que se corrige. En equipo mecánico, la termografía suele ir dentro de la misma ruta que las vibraciones y el ultrasonido."
+      "En tableros y subestaciones, al menos una vez al año, como pide la NFPA 70B desde su edición 2023, y cada seis meses cuando la carga es alta, el ambiente es agresivo o el equipo ya tuvo hallazgos. Lo que sale con hallazgo se vuelve a revisar hasta que se corrige, y después de cualquier reparación se toma la termografía de cierre para confirmar que la conexión opera ya a la temperatura de sus vecinas. En equipo mecánico, la termografía suele ir dentro de la misma ruta mensual o trimestral que las vibraciones y el ultrasonido."
+    ],
+    [
+      "h2",
+      "Cómo se hace una inspección"
+    ],
+    [
+      "img",
+      "https://diapsa-storage.sfo3.cdn.digitaloceanspaces.com/grupo-diapsa/production/image/blog/drafts/72407fef-c96d-4c10-a2a9-fa0a6fd0a83c/5b1dc889-631c-4659-a1bb-a439018e9bff.jpg",
+      "Termógrafo inspeccionando un tablero de control de motores energizado con la cámara térmica"
+    ],
+    [
+      "p",
+      "Se recorre el equipo energizado y con carga, gabinete por gabinete, comparando fase contra fase. Cada hallazgo se documenta con la imagen térmica, la foto visual del mismo encuadre, la diferencia de temperatura, la carga en ese momento, la severidad y la acción recomendada. Abrir tableros energizados exige el equipo de protección que marca la NOM-029 y, en media y alta tensión, distancia: en subestaciones la inspección se hace desde fuera del área de riesgo con lentes de mayor alcance."
+    ],
+    [
+      "img",
+      "https://diapsa-storage.sfo3.cdn.digitaloceanspaces.com/grupo-diapsa/production/image/blog/drafts/72407fef-c96d-4c10-a2a9-fa0a6fd0a83c/6d32e924-99e1-4a6b-b68c-f4e11fa4674c.jpeg",
+      "Inspección termográfica de una subestación con cámara térmica desde el nivel de piso"
     ],
     [
       "h2",
@@ -94,11 +94,11 @@
     ],
     [
       "p",
-      "Una cámara radiométrica, que mida temperatura y no solo dé imagen; un termógrafo con formación y certificación conforme a ISO 18436-7; acceso a los equipos con carga; y un informe que traiga, por cada hallazgo, la imagen térmica, la foto visual, la diferencia de temperatura, la severidad y qué hacer."
+      "Una cámara radiométrica, que mida temperatura y no solo dé imagen; un termógrafo con formación y certificación conforme a ISO 18436-7; acceso a los equipos con carga; y un informe que traiga, por cada hallazgo, la imagen térmica, la foto visual, la diferencia de temperatura, la severidad y qué hacer. Un informe que solo trae imágenes bonitas sin diferencia de temperatura ni severidad no sirve para decidir."
     ],
     [
       "h2",
-      "Preguntas frecuentes"
+      "Preguntas frecuentes sobre termografía industrial"
     ],
     [
       "h3",
@@ -110,11 +110,19 @@
     ],
     [
       "h3",
+      "¿Qué es un termograma?"
+    ],
+    [
+      "p",
+      "La imagen que entrega la cámara térmica: cada píxel es una temperatura y los colores representan una escala. Se lee comparando el punto sospechoso con un componente igual en condiciones iguales, no por el color."
+    ],
+    [
+      "h3",
       "¿Se puede hacer con la planta operando?"
     ],
     [
       "p",
-      "Sí, y así debe hacerse. Las fallas eléctricas solo se calientan con carga y las mecánicas con la máquina girando."
+      "Sí, y así debe hacerse. Las fallas eléctricas solo se calientan con carga y las mecánicas con la máquina girando. Lo ideal es inspeccionar con al menos el 40 % de la carga nominal."
     ],
     [
       "h3",
@@ -123,6 +131,14 @@
     [
       "p",
       "El termómetro mide un punto; la cámara mide miles de puntos a la vez y los muestra como imagen, así que encuentra el punto caliente aunque no sepas dónde buscarlo."
+    ],
+    [
+      "h3",
+      "¿La termografía sustituye a las pruebas eléctricas?"
+    ],
+    [
+      "p",
+      "No. La termografía ve el síntoma térmico de una conexión o un componente en falla; las pruebas eléctricas, como resistencia de aislamiento y análisis de circuitos de motor, ven la causa en el aislamiento o el devanado. Se complementan."
     ],
     [
       "nota",
