@@ -43,6 +43,20 @@ const TABLAS: Record<string, TablaGuia> = {
     ],
     pie: "Una planta sana combina los tres primeros según el equipo; el prescriptivo llega cuando el predictivo ya tiene historial.",
   },
+  "mantenimiento-predictivo-que-es-tecnicas-y-ejemplos-reales": {
+    despuesDe: "Las cinco técnicas del mantenimiento predictivo",
+    saltar: 1,
+    titulo: "Qué detecta cada técnica y en qué equipos",
+    columnas: ["Técnica", "Qué detecta", "En qué equipos", "Cuánto avisa antes"],
+    filas: [
+      ["Termografía", "Conexiones flojas, sobrecarga, desbalance de fases, fricción", "Tableros, CCM, transformadores, subestaciones, motores", "Semanas a meses"],
+      ["Vibraciones", "Desbalance, desalineación, holguras, rodamientos, engranes", "Motores, bombas, ventiladores, compresores, reductores", "Semanas a meses"],
+      ["Ultrasonido", "Fugas de aire y gas, corona, trampas de vapor, rodamientos en etapa temprana", "Redes de aire comprimido, tableros de media tensión, rodamientos", "Meses"],
+      ["Análisis de aceite", "Partículas de desgaste, agua, polvo, aceite degradado", "Reductores, sistemas hidráulicos, motores de combustión", "Meses"],
+      ["Pruebas eléctricas", "Aislamiento degradado, barras rotas, desbalance de voltaje, armónicos", "Motores, transformadores, cables", "Meses a años"],
+    ],
+    pie: "El tiempo de aviso es el orden de magnitud habitual entre la primera señal y la falla funcional; varía con la carga y el tipo de equipo.",
+  },
 };
 
 export const tablaDeGuia = (slug: string): TablaGuia | null => TABLAS[slug] ?? null;

@@ -1,0 +1,201 @@
+{
+  "slug": "mantenimiento-predictivo-que-es-tecnicas-y-ejemplos-reales",
+  "titulo": "Mantenimiento predictivo: qué es, técnicas y cómo empezar en tu planta",
+  "extracto": "Medir la condición real de los equipos para intervenir cuando una falla empezó, no por calendario ni después del paro. Las cinco técnicas en una tabla, los seis pasos para arrancar un programa y un caso real de tablero.",
+  "portada": "/images/servicios/diagnostico-integral/campo-termografia-ruta.webp",
+  "fecha": "2026-11-02T15:00:00.000000Z",
+  "seo": {
+    "titulo": "Mantenimiento predictivo: qué es, técnicas y cómo empezar",
+    "descripcion": "Qué es el mantenimiento predictivo, las cinco técnicas comparadas en una tabla (qué detecta cada una y en qué equipos), los seis pasos para arrancar un programa y un caso real de conexión a 463 °C."
+  },
+  "bloques": [
+    [
+      "p",
+      "El mantenimiento predictivo consiste en medir la condición real de los equipos mientras operan, con vibraciones, termografía, ultrasonido, análisis de aceite y pruebas eléctricas, para intervenir solo cuando los datos muestran que una falla empezó. No se repara después del paro, como en el correctivo, ni se cambian piezas por calendario, como en el preventivo: se actúa por evidencia, en una ventana programada y con la refacción ya en mano."
+    ],
+    [
+      "p",
+      "Esta guía va al grano: primero qué técnica detecta qué cosa y en qué equipos, después cómo arrancar un programa en seis pasos, y al final un caso real, cuándo no conviene y las preguntas que más nos hacen. Antes, lo esencial: toda máquina avisa antes de fallar."
+    ],
+    [
+      "p",
+      "Un rodamiento que se degrada vibra distinto semanas o meses antes de romperse. Una conexión eléctrica floja se calienta mucho antes de disparar el interruptor o provocar un arco. Un aceite contaminado deja partículas de desgaste antes de que el reductor haga ruido. El mantenimiento predictivo es escuchar esas señales de forma sistemática."
+    ],
+    [
+      "p",
+      "La base técnica es la [curva P-F](/blog/curva-p-f-en-mantenimiento-predictivo-que-es-y-como-usarla): entre el punto en que una falla ya es detectable y el punto en que el equipo deja de cumplir su función pasa un tiempo, y las técnicas predictivas acercan la detección al primer punto, cuando corregir todavía es barato, programable y seguro. El ciclo siempre es el mismo: medir, comparar contra una línea base y contra criterios normados, diagnosticar el modo de falla y su gravedad, planear la corrección en una ventana y verificar después que la condición volvió a lo normal."
+    ],
+    [
+      "h2",
+      "Las cinco técnicas del mantenimiento predictivo"
+    ],
+    [
+      "p",
+      "Cada técnica ve una familia de fallas y conviene a una familia de equipos. Ninguna lo ve todo, por eso un programa serio combina varias:"
+    ],
+    [
+      "p",
+      "En la práctica, un motor grande pide vibraciones y pruebas eléctricas; un tablero o un centro de control de motores pide termografía; un sistema de aire comprimido pide ultrasonido; un reductor o una unidad hidráulica pide análisis de aceite. Cómo se reparten las fallas entre técnicas lo explicamos en la guía de [cómo se complementan las técnicas predictivas](/blog/tecnicas-de-mantenimiento-predictivo-como-se-complementan)."
+    ],
+    [
+      "h2",
+      "Cómo empezar un programa predictivo en seis pasos"
+    ],
+    [
+      "numerada",
+      [
+        "Inventario y criticidad. No todos los equipos merecen monitoreo. Clasifica los activos por lo que pasa si fallan: paro de producción, riesgo a las personas, costo de reparación. El programa arranca por los críticos.",
+        "Técnica por modo de falla. Cada equipo crítico tiene fallas dominantes, y a cada falla le corresponde una técnica. Define qué se mide en cada activo con la tabla de arriba.",
+        "Línea base. La primera campaña de medición fija la condición de referencia de cada equipo. Sin línea base no hay tendencia, y sin tendencia no hay predicción.",
+        "Rutas y frecuencias. Define rutas periódicas, mensuales o trimestrales según la criticidad, y evalúa sensores en línea para los pocos activos donde una falla no puede esperar a la siguiente ruta.",
+        "Cerrar el ciclo. El valor no está en medir sino en que cada hallazgo se convierta en diagnóstico, orden de trabajo, corrección y verificación. Aquí fracasan la mayoría de los programas, enterrados en reportes que nadie ejecuta.",
+        "Indicadores del programa. Hallazgos por ruta, tiempo entre detección y corrección, fallas evitadas. Con esa evidencia se ajustan frecuencias y cobertura."
+      ]
+    ],
+    [
+      "p",
+      "Los pasos uno y dos son lo que hacemos en un [diagnóstico situacional](/servicios/diagnostico-situacional); los pasos tres a cinco son el programa [DIAPSA START](/servicios/diapsa-start), rutas con nuestros equipos y analistas sin que la planta compre instrumentos ni certifique personal."
+    ],
+    [
+      "h2",
+      "Termografía infrarroja"
+    ],
+    [
+      "p",
+      "Convierte la radiación infrarroja de los cuerpos en una imagen de temperaturas. Es la técnica principal para sistemas eléctricos: detecta conexiones flojas, desbalance de fases, sobrecargas y componentes defectuosos en tableros, centros de control de motores, transformadores y subestaciones. También ve fallas mecánicas por fricción, como rodamientos y acoplamientos, y de proceso, como refractarios, trampas de vapor y aislamientos. Desde la edición 2023 de la NFPA 70B la inspección termográfica de equipo eléctrico es un requisito con frecuencia mínima anual, no una recomendación. Cómo se califica un punto caliente está en la guía de la [tabla NETA de termografía](/blog/tabla-neta-termografia-como-se-califica-un-punto-caliente)."
+    ],
+    [
+      "h2",
+      "Análisis de vibraciones"
+    ],
+    [
+      "p",
+      "Cada falla mecánica deja una firma propia en el espectro de vibración: el desbalance, la desalineación, las holguras, el desgaste de rodamientos y los problemas de engranes se distinguen por su frecuencia. Es la técnica principal para maquinaria rotativa, motores, bombas, ventiladores, compresores y reductores, y la que dice qué pieza está fallando, no solo que algo falla. Los límites de severidad están en la [tabla de severidad de vibraciones ISO 10816-3](/blog/tabla-iso-10816-3-y-20816-3-limites-de-vibracion) y el servicio en [análisis de vibraciones mecánicas](/servicios/monitoreo-condicion/vibraciones-mecanicas)."
+    ],
+    [
+      "h2",
+      "Ultrasonido"
+    ],
+    [
+      "p",
+      "Capta sonidos de alta frecuencia que el oído no percibe. Sus usos más rentables son las [fugas de aire comprimido](/blog/fugas-de-aire-comprimido-cuanto-cuestan-y-como-detectarlas) y de gases, uno de los desperdicios de energía más caros y más ignorados de la industria; las fallas eléctricas como efecto corona y tracking; la inspección de trampas de vapor; y la detección más temprana de fallas en rodamientos, incluso antes de que se vean en vibración. También es la base de la lubricación por condición."
+    ],
+    [
+      "h2",
+      "Análisis de lubricantes"
+    ],
+    [
+      "p",
+      "El aceite cuenta lo que pasa dentro de la máquina: las partículas de desgaste y de qué componente vienen, la contaminación por agua o polvo, y la degradación del propio lubricante. Permite cambiar el aceite por condición en lugar de por calendario y anticipar desgaste interno en reductores, sistemas hidráulicos y motores de combustión. El servicio está en [análisis de aceite](/servicios/monitoreo-condicion/analisis-de-aceite)."
+    ],
+    [
+      "h2",
+      "Pruebas eléctricas"
+    ],
+    [
+      "p",
+      "El análisis de circuitos de motor, la resistencia de aislamiento, el índice de polarización y el análisis de calidad de la energía detectan aislamiento degradado, barras del rotor rotas, desbalance de voltaje y armónicos que acortan la vida de motores y transformadores. Complementan a la termografía, que ve el síntoma térmico, con la causa eléctrica. El servicio está en [calidad de energía y estudios eléctricos](/servicios/monitoreo-condicion/calidad-de-energia)."
+    ],
+    [
+      "h2",
+      "Caso real: una conexión a 463 °C detectada antes de la falla"
+    ],
+    [
+      "p",
+      "El termograma viene de una de nuestras rutas. Durante la termografía a un tablero de distribución, un interruptor termomagnético mostró una conexión a 463 °C, mientras los componentes vecinos marcaban 56 °C y el ambiente 26 °C. Con emisividad, temperatura reflejada y distancia documentadas en la propia imagen no hay ambigüedad: bajo los criterios de severidad NETA, un diferencial de esa magnitud cae en la clasificación más grave y exige corrección inmediata."
+    ],
+    [
+      "img",
+      "https://diapsa-storage.sfo3.cdn.digitaloceanspaces.com/grupo-diapsa/production/image/blog/drafts/b9242300-1e21-4bd3-b7c7-067d9e9d1e2a/3528a78d-2142-4114-80f9-f1dcf7af841b.jpg",
+      "Termograma de un tablero de distribución con una conexión a 463 °C junto a componentes a 56 °C"
+    ],
+    [
+      "p",
+      "En un caso así no se espera al paro de fin de semana. Se coordinó con operaciones la desenergización controlada del circuito ese mismo día, se sustituyeron el interruptor y el tramo de conductor dañado por el calor, se verificó el torque de las conexiones nuevas y la termografía de cierre confirmó que la conexión operaba ya a la temperatura de sus fases vecinas. El costo fue de unas horas de intervención controlada y componentes menores. El costo probable de no haberlo detectado: la falla del interruptor con riesgo real de arco eléctrico e incendio del tablero, daño a los equipos adyacentes y un paro no planeado de la línea completa."
+    ],
+    [
+      "p",
+      "Eso es el mantenimiento predictivo en una sola historia: la diferencia entre una intervención controlada y una emergencia."
+    ],
+    [
+      "h2",
+      "Qué resultados puedes esperar"
+    ],
+    [
+      "p",
+      "La guía de mejores prácticas de operación y mantenimiento del programa FEMP del Departamento de Energía de Estados Unidos documenta, para un programa predictivo funcional frente a uno solo preventivo, reducciones del 25 al 30 % en el costo de mantenimiento, del 70 al 75 % en fallas y del 35 al 45 % en tiempo de paro, con un aumento del 20 al 25 % en producción. A eso hay que sumar dos beneficios que no siempre se contabilizan: la seguridad, porque las fallas eléctricas y mecánicas graves ponen en riesgo a las personas antes que a la producción, y la vida útil de los activos, porque intervenir a tiempo evita daños en cascada."
+    ],
+    [
+      "p",
+      "Cómo medir esos resultados en tu propia planta está en la guía de [indicadores de un programa predictivo](/blog/kpi-de-mantenimiento-predictivo-cuales-medir)."
+    ],
+    [
+      "h2",
+      "Cuándo no conviene el predictivo"
+    ],
+    [
+      "p",
+      "Monitorear todo es tan mal negocio como no monitorear nada. Para equipos redundantes, baratos, de baja criticidad o cuya falla no da señal medible con anticipación, lo correcto puede ser un preventivo simple o incluso trabajar hasta la falla con refacción en almacén. El análisis de criticidad del primer paso existe precisamente para eso, y la comparación completa entre estrategias está en la guía de [tipos de mantenimiento industrial](/blog/tipos-de-mantenimiento-industrial)."
+    ],
+    [
+      "h2",
+      "El software: convertir mediciones en decisiones"
+    ],
+    [
+      "p",
+      "Un programa maduro genera miles de mediciones, cientos de termogramas y decenas de diagnósticos al mes. Gestionarlos en carpetas y hojas de cálculo es la receta para que los hallazgos se pierdan. Por eso desarrollamos IDAP, nuestra plataforma de diagnóstico y análisis predictivo: concentra los resultados de todas las técnicas por equipo, dispara alertas por severidad, genera órdenes de trabajo y mantiene la trazabilidad de cada activo contra los estándares de referencia."
+    ],
+    [
+      "h2",
+      "Preguntas frecuentes sobre mantenimiento predictivo"
+    ],
+    [
+      "h3",
+      "¿Cuál es la diferencia entre mantenimiento predictivo y preventivo?"
+    ],
+    [
+      "p",
+      "El preventivo interviene por calendario u horas de operación, sin saber si el equipo lo necesita. El predictivo mide la condición del equipo y solo actúa cuando hay evidencia de una falla en desarrollo. Evita tanto las fallas como las intervenciones innecesarias."
+    ],
+    [
+      "h3",
+      "¿Qué es el monitoreo de condición?"
+    ],
+    [
+      "p",
+      "La medición sistemática de variables físicas de un equipo, vibración, temperatura, ultrasonido, estado del lubricante y parámetros eléctricos, para evaluar su estado de salud. Es la base operativa del mantenimiento predictivo."
+    ],
+    [
+      "h3",
+      "¿Necesito comprar equipos y capacitar personal para empezar?"
+    ],
+    [
+      "p",
+      "No necesariamente. Las dos rutas habituales son contratar rutas de inspección con un proveedor especializado, con inversión inicial baja y resultados desde la primera ruta, o desarrollar capacidad interna con equipos propios y personal certificado, que tiene sentido en plantas grandes. Muchas empresas combinan ambas."
+    ],
+    [
+      "h3",
+      "¿El mantenimiento predictivo elimina al preventivo?"
+    ],
+    [
+      "p",
+      "No. Lubricación, limpieza, ajustes y reemplazo de elementos de desgaste siguen siendo preventivos. El predictivo sustituye sobre todo las inspecciones invasivas y los reemplazos por si acaso de componentes mayores."
+    ],
+    [
+      "h3",
+      "¿Cada cuánto se mide?"
+    ],
+    [
+      "p",
+      "Depende de la criticidad y de la velocidad con que avanza la falla. Lo común en rutas es mensual para los equipos críticos y trimestral para el resto; los pocos activos donde una falla no puede esperar a la siguiente ruta se vigilan con sensores en línea."
+    ],
+    [
+      "h3",
+      "¿Qué industrias usan mantenimiento predictivo?"
+    ],
+    [
+      "p",
+      "Prácticamente todas las que dependen de maquinaria: automotriz, metalmecánica, alimentos y bebidas, minería, papel, química, generación de energía, farmacéutica y edificios de misión crítica como hospitales y centros de datos."
+    ]
+  ]
+}
