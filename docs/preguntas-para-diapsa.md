@@ -75,4 +75,4 @@ Lista reunida el 2026-10-04 con todo lo que el sitio afirma y conviene validar c
 
 ## Legal
 
-24. Falta el texto del aviso de privacidad: la página /aviso-privacidad da 404 y todos los formularios la enlazan. Es lo más urgente de esta lista.
+24. El aviso de privacidad ya existe en /aviso-privacidad (3 de noviembre de 2026), pero identifica al responsable solo como Grupo DIAPSA. Falta la razón social y el RFC para ponerlos en el aviso, y confirmar si el domicilio de Saltillo es el que debe ir ahí.
