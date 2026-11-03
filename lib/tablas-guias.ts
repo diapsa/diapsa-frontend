@@ -57,6 +57,20 @@ const TABLAS: Record<string, TablaGuia> = {
     ],
     pie: "El tiempo de aviso es el orden de magnitud habitual entre la primera señal y la falla funcional; varía con la carga y el tipo de equipo.",
   },
+  "termografia-industrial-una-herramienta-clave-para-el-mantenimiento-predictivo": {
+    despuesDe: "Qué detecta la termografía en cada equipo",
+    saltar: 1,
+    titulo: "Qué se calienta y cómo se ve en el termograma",
+    columnas: ["Equipo", "Falla que detecta", "Cómo se ve", "Qué tan grave suele ser"],
+    filas: [
+      ["Tableros y CCM", "Conexión floja o sulfatada, fusible o contactor dañado, sobrecarga", "Un punto o una fase más caliente que sus vecinas con la misma carga", "La causa más común de incendio en tableros"],
+      ["Subestaciones y transformadores", "Conectores y cuchillas flojos, aisladores dañados, radiadores tapados", "Un conector o aislador caliente a distancia; un radiador frío entre calientes", "Puede sacar la planta completa"],
+      ["Motores", "Rodamiento con fricción, ventilación tapada, desbalance de fases", "Chumacera más caliente que la opuesta; carcasa caliente de un lado", "Avisa semanas antes"],
+      ["Acoplamientos, reductores y bandas", "Desalineación, falta de lubricante, banda patinando", "Calor en el acople o en el apoyo; polea más caliente que la banda", "Avisa semanas antes"],
+      ["Procesos", "Refractario o aislamiento dañado, trampa de vapor que pasa, tubería tapada", "Mancha caliente en el horno o el tanque; trampa igual de caliente a la salida", "Pérdida de energía continua"],
+    ],
+    pie: "Lo que califica la falla es la diferencia de temperatura contra un componente igual en condiciones iguales, no la temperatura absoluta.",
+  },
 };
 
 export const tablaDeGuia = (slug: string): TablaGuia | null => TABLAS[slug] ?? null;
