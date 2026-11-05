@@ -280,7 +280,14 @@
       ]
     }
   },
-  "grupos": [],
+  "grupos": [
+    {
+      "curso": "termografia-infrarroja-curso-de-certificacion",
+      "inicio": "2026-12-08",
+      "fin": "2026-12-11",
+      "duracion": "4 días"
+    }
+  ],
   "galerias": {
     "vibraciones": [
       {

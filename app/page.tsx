@@ -14,7 +14,7 @@ import LoQueRecibes from "@/components/organisms/LoQueRecibes";
 import InicioDiplomado from "@/components/organisms/InicioDiplomado";
 import InicioBlog from "@/components/organisms/InicioBlog";
 import ContactForm from "@/components/organisms/ContactForm";
-import AvisoClinicas from "@/components/organisms/AvisoClinicas";
+import AvisoCurso from "@/components/organisms/AvisoCurso";
 import InicioContacto from "@/components/organisms/InicioContacto";
 import galeriaMonitoreo from "@/data/monitoreo-condicion-galeria.json";
 import { getBlogs, getFeaturedSuccessCases } from "@/lib/api/posts";
@@ -106,7 +106,7 @@ export default async function Home() {
           visible al cargar retrasa la primera impresión y penaliza el LCP. */}
       <Hero />
       {/* Anuncio de las clínicas técnicas en la esquina (el del webinar ya pasó). */}
-      <AvisoClinicas />
+      <AvisoCurso />
 
       {/* Cómo empezar, en la primera pantalla y media (Clarity: solo el 16 %
           de la portada se veía). Lo que vende va antes que lo institucional. */}
