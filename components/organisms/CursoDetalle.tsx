@@ -7,11 +7,12 @@ import GaleriaCampo from "./GaleriaCampo";
 import GuiasRelacionadas from "./GuiasRelacionadas";
 import ClientesLogos from "./ClientesLogos";
 import DescargarTemario from "./DescargarTemario";
+import InscripcionCurso from "./InscripcionCurso";
+import BarraCurso from "./BarraCurso";
 import IconoMenu from "../atoms/IconoMenu";
 import JsonLd, { createFaqSchema } from "../atoms/JsonLd";
 import { faqsDe } from "@/lib/cursos-faq";
 import VideoBucle from "../atoms/VideoBucle";
-import { SITE_CONFIG } from "@/lib/constants";
 import { getArticulosPorServicio } from "@/lib/recursos";
 
 /**
@@ -150,7 +151,6 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
   const temario = x?.temario?.length ? x.temario : lista(curso.syllabus);
   const imagen = imagenDe(curso.slug, curso.url_img, curso.alt_img);
   const requisitos = lista(curso.requirements);
-  const whatsapp = `https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent(`Hola, quiero información del curso ${curso.name}.`)}`;
 
   // El video de la técnica y tres guías del blog; en la certificación de
   // vibraciones, la guía de las categorías ISO 18436 va primero
@@ -322,18 +322,15 @@ export default function CursoDetalle({ curso, relacionados }: Props) {
                 ) : (
                   <p className="mt-2 text-justify text-sm leading-relaxed text-tertiary">Aún no hay fecha publicada para el siguiente grupo. Déjanos tus datos y te avisamos cuando abra, o lo armamos para tu equipo en tu planta.</p>
                 )}
-                <div className="mt-5 flex flex-col gap-2">
-                  <a href="#contacto" className="inline-flex items-center justify-center rounded-xs bg-secondary px-5 py-3 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
-                    {grupos.length > 0 ? "Quiero inscribirme" : "Quiero información"}
-                  </a>
-                  <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xs border-2 border-primary px-5 py-2.5 font-bold text-primary transition-colors hover:bg-primary hover:text-white">
-                    Preguntar por WhatsApp
-                  </a>
+                {/* Inscripción corta, sin salir de la ficha (Emiliano, 2026-11-08) */}
+                <InscripcionCurso slug={curso.slug} nombre={curso.name} grupos={grupos} />
+                <div className="mt-3">
                   <DescargarTemario slug={curso.slug} nombre={curso.name} />
                 </div>
               </div>
             </div>
           </aside>
+          <BarraCurso texto={grupos.length > 0 ? "Apartar mi lugar" : "Avisarme cuando haya fecha"} detalle={grupos.length > 0 ? fechaGrupo(grupos[0]) : curso.name} />
         </div>
       </section>
 
