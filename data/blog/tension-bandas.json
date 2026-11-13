@@ -1,0 +1,102 @@
+{
+  "slug": "tension-de-bandas-en-v-como-medirla-y-cuanto-debe-tener",
+  "titulo": "Tensión de bandas en V: cómo medirla y qué pasa si queda floja o apretada",
+  "extracto": "La tensión correcta es la otra mitad de un equipo por bandas bien instalado. Los dos métodos para medirla, la regla de deflexión, qué daña una banda floja y qué daña una apretada.",
+  "portada": "/images/servicios/alineacion-balanceo/campo-analista-equipo.webp",
+  "fecha": "2026-11-13T15:10:00.000000Z",
+  "seo": {
+    "titulo": "Tensión de bandas en V: cómo medirla bien",
+    "descripcion": "Cómo medir la tensión de bandas en V por deflexión o con frecuencímetro, qué daña una banda floja y una apretada, y cuándo volver a tensar."
+  },
+  "bloques": [
+    [
+      "p",
+      "Una banda en V transmite la potencia por la fricción de sus costados contra el canal de la polea, y esa fricción depende de la tensión. Con poca, la banda patina, se calienta y se cristaliza. Con demasiada, la banda dura más que los rodamientos y el eje, que terminan pagando la diferencia. La tensión correcta está en medio y se mide, no se calcula al tacto."
+    ],
+    [
+      "h2",
+      "Los dos métodos para medir la tensión"
+    ],
+    [
+      "h3",
+      "Fuerza y deflexión"
+    ],
+    [
+      "p",
+      "Se empuja la banda a la mitad del tramo libre con un tensiómetro de resorte y se mide cuánto se hunde. La regla práctica de los fabricantes es una deflexión de 1/64 de pulgada por cada pulgada de tramo, que en métrico son unos 1.6 milímetros por cada 100 milímetros de distancia entre los puntos de contacto. La fuerza que hay que aplicar para lograr esa deflexión la da el fabricante según la sección de la banda y el diámetro de la polea chica."
+    ],
+    [
+      "h3",
+      "Frecuencímetro sónico"
+    ],
+    [
+      "p",
+      "Se golpea suavemente la banda y un medidor capta la frecuencia a la que vibra el tramo, igual que una cuerda de guitarra. Con la masa de la banda y la longitud del tramo, esa frecuencia da la tensión. Es más repetible que el resorte y no depende de la mano de quien mide."
+    ],
+    [
+      "h2",
+      "Qué pasa si queda floja"
+    ],
+    [
+      "lista",
+      [
+        "La banda patina en el arranque y con carga, y chilla.",
+        "Se calienta, se endurece y se agrieta en los costados.",
+        "Pierde velocidad el equipo movido, y con ella capacidad de la bomba o el ventilador.",
+        "En juegos de varias bandas, unas trabajan más que otras y se rompen primero."
+      ]
+    ],
+    [
+      "h2",
+      "Qué pasa si queda apretada"
+    ],
+    [
+      "lista",
+      [
+        "Carga de más los rodamientos del motor y del equipo movido, que se calientan y fallan antes.",
+        "Flexiona el eje del motor y puede llegar a fatigarlo.",
+        "Estira la banda y la deforma, aunque al principio parezca que dura más."
+      ]
+    ],
+    [
+      "h2",
+      "Cuándo volver a tensar"
+    ],
+    [
+      "p",
+      "Las bandas nuevas se estiran lo más en las primeras horas de trabajo, así que se revisan después de ese asentamiento inicial y se ajustan. Después, dentro de la ruta de mantenimiento, junto con la alineación. Y siempre que se tense hay que volver a revisar la alineación, porque al mover el motor para tensar se puede girar sobre su base. Cómo alinear está en la guía de [alineación de poleas y bandas](/blog/alineacion-de-poleas-y-bandas-tolerancias-y-como-se-corrige)."
+    ],
+    [
+      "h2",
+      "Preguntas frecuentes sobre tensión de bandas"
+    ],
+    [
+      "h3",
+      "¿Se pueden mezclar bandas nuevas con usadas?"
+    ],
+    [
+      "p",
+      "No. Una banda usada está estirada y trabaja floja junto a las nuevas, así que el juego completo se cambia a la vez y con bandas del mismo lote."
+    ],
+    [
+      "h3",
+      "¿Por qué chilla la banda si la tensión está bien?"
+    ],
+    [
+      "p",
+      "Casi siempre por desalineación de las poleas o por canales gastados. La banda entra torcida y roza, aunque esté bien tensada."
+    ],
+    [
+      "h3",
+      "¿Las bandas dentadas se tensan igual?"
+    ],
+    [
+      "p",
+      "Se miden con los mismos métodos, pero con los valores de su fabricante, que son distintos. Una banda dentada floja salta dientes; una apretada se desgasta y castiga los rodamientos igual que una en V."
+    ],
+    [
+      "nota",
+      "Si quieres que revisemos tus equipos por bandas, nuestro servicio de [alineación y balanceo](/servicios/monitoreo-condicion/alineacion-balanceo) alinea las poleas con láser, tensa las bandas al valor del fabricante y deja el registro de cada equipo."
+    ]
+  ]
+}

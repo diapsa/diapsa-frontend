@@ -1,0 +1,74 @@
+{
+  "slug": "frecuencia-de-banda-en-el-espectro-de-vibraciones-fallas-de-bandas-y-poleas",
+  "titulo": "Frecuencia de banda en el espectro: cómo se ven las fallas de bandas y poleas",
+  "extracto": "Cómo calcular la frecuencia de banda, dónde aparece en el espectro de vibraciones y cómo distinguir una banda gastada, una polea excéntrica, poleas desalineadas y la resonancia del tramo.",
+  "portada": "/images/gallery/campo/vibracion-analista-motor.webp",
+  "fecha": "2026-11-13T15:20:00.000000Z",
+  "seo": {
+    "titulo": "Frecuencia de banda: fallas de bandas y poleas",
+    "descripcion": "Cómo calcular la frecuencia de banda, dónde aparece en el espectro de vibraciones y cómo se distinguen la banda gastada, la polea excéntrica y la desalineación de poleas."
+  },
+  "bloques": [
+    [
+      "p",
+      "En un equipo movido por bandas hay tres velocidades que conviene tener a la mano antes de leer un espectro: la del motor, la del equipo movido y la de la propia banda. Cada falla del sistema deja su huella en una de ellas, y saber cuál es la diferencia entre cambiar la banda y cambiar la polea."
+    ],
+    [
+      "h2",
+      "Cómo se calcula la frecuencia de banda"
+    ],
+    [
+      "p",
+      "Es la cantidad de veces por segundo que un mismo punto de la banda pasa por el mismo lugar. Se obtiene multiplicando pi por el diámetro de paso de la polea y por su velocidad, y dividiendo entre la longitud de la banda. Por ejemplo, una polea de 200 milímetros que gira a 1,780 revoluciones por minuto con una banda de 2,000 milímetros da unos 559 ciclos por minuto, alrededor de 9.3 por segundo, muy por debajo de la velocidad del motor."
+    ],
+    [
+      "p",
+      "Siempre queda por debajo de la velocidad de giro de las dos poleas. Por eso, cuando aparece un pico por debajo de 1X que no es de rodamiento ni de holgura, lo primero que se revisa es si coincide con la banda o con sus múltiplos."
+    ],
+    [
+      "h2",
+      "Qué falla se ve en qué frecuencia"
+    ],
+    [
+      "lista",
+      [
+        "Banda gastada, agrietada o con un tramo dañado: picos a la frecuencia de banda y sobre todo a dos veces esa frecuencia, porque el defecto pasa por las dos poleas en cada vuelta. Suelen moverse y no ser estables.",
+        "Polea excéntrica: vibración a 1X de la polea excéntrica, más alta en la dirección de la banda. Se confunde con desbalance, pero no se corrige balanceando.",
+        "Poleas desalineadas: vibración axial alta a 1X del motor o del equipo movido. Es la misma huella de una desalineación de ejes, pero en un equipo que no tiene acople.",
+        "Resonancia del tramo de banda: si la frecuencia natural del tramo coincide con la velocidad del motor o del equipo, la banda flamea y la vibración sube. Se corrige cambiando la tensión, no la banda."
+      ]
+    ],
+    [
+      "h2",
+      "Cómo confirmar antes de cambiar piezas"
+    ],
+    [
+      "p",
+      "Una lámpara estroboscópica sincronizada a la frecuencia del pico deja ver qué parte está bailando: si es la banda, la polea o el equipo. La medición axial en las dos chumaceras dice si la desalineación está del lado del motor o del equipo movido. Y medir la excentricidad de la polea con un comparador confirma si la polea es el problema antes de alinear contra ella. Los demás modos de falla y sus huellas están en la guía de [análisis de vibraciones mecánicas](/blog/analisis-de-vibraciones-guia-completa-de-fallas-parametros-y-normas-iso)."
+    ],
+    [
+      "h2",
+      "Preguntas frecuentes"
+    ],
+    [
+      "h3",
+      "¿Por qué la banda aparece a dos veces su frecuencia?"
+    ],
+    [
+      "p",
+      "Porque un defecto de la banda pega dos veces por vuelta: al entrar en la polea motriz y al entrar en la conducida."
+    ],
+    [
+      "h3",
+      "¿Un equipo por bandas puede tener desbalance?"
+    ],
+    [
+      "p",
+      "Sí, en la polea, en el ventilador o en el impulsor, y se ve a 1X en radial como en cualquier equipo. Lo que hay que descartar antes de balancear es que no sea una polea excéntrica, que da la misma huella."
+    ],
+    [
+      "nota",
+      "Si el espectro de tus equipos por bandas te genera dudas, nuestro servicio de [análisis de vibraciones mecánicas](/servicios/monitoreo-condicion/vibraciones-mecanicas) lo diagnostica y el de [alineación y balanceo](/servicios/monitoreo-condicion/alineacion-balanceo) corrige en sitio."
+    ]
+  ]
+}
