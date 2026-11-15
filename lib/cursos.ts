@@ -34,6 +34,8 @@ type Extra = {
   temario?: string[];
   /** La imagen del CMS no carga (403): se usa una foto de la galería. */
   ocultarImagenCms?: boolean;
+  /** Título y descripción para Google que sustituyen a los del CMS. */
+  seo?: { titulo?: string; descripcion?: string };
 };
 export type FotoCurso = { src: string; alt: string };
 
@@ -102,6 +104,24 @@ export function fechaGrupo(g: Grupo): string {
   const [a2, m2, d2] = g.fin.split("-").map(Number);
   if (m === m2 && a === a2) return `${d} al ${d2} de ${MESES[m - 1]} de ${a}`;
   return `${d} de ${MESES[m - 1]} al ${d2} de ${MESES[m2 - 1]} de ${a2}`;
+}
+
+/**
+ * Título y descripción para Google que pone el sitio sobre los del CMS.
+ * Search Console, 16 oct a 12 nov de 2026 (2026-11-15): el curso de
+ * certificación de termografía salía en el puesto 35 con el nombre del CMS
+ * ("Termografía Infrarroja - Curso de Certificación") y una descripción que no
+ * decía "curso de termografía" ni la categoría. Se sobreescribe desde
+ * data/cursos-extra.json sin tocar el CMS. Si hay un grupo por venir, su fecha
+ * se agrega a la descripción y se cae sola cuando el grupo pasa; nunca el costo.
+ */
+export function seoDe(slug: string): { titulo?: string; descripcion?: string } | null {
+  const seo = extraDe(slug)?.seo;
+  if (!seo) return null;
+  const grupo = proximosGrupos(slug)[0];
+  const descripcion =
+    seo.descripcion && grupo ? `${seo.descripcion} Próximo grupo: ${fechaGrupo(grupo)}.` : seo.descripcion;
+  return { titulo: seo.titulo, descripcion };
 }
 
 /** Día y mes cortos para la tarjeta de fecha. */

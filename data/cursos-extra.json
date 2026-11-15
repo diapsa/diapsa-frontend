@@ -1,5 +1,5 @@
 {
-  "_nota": "Complemento del CMS por slug: técnica, formato y grupos programados. El CMS no trae fechas ni duración; aquí se capturan hasta que el CMS los tenga. Un grupo sin fecha no se muestra.",
+  "_nota": "Complemento del CMS por slug: técnica, formato y grupos programados. El CMS no trae fechas ni duración; aquí se capturan hasta que el CMS los tenga. Un grupo sin fecha no se muestra. 'seo' (opcional) sobreescribe el título y la descripción para Google que vienen del CMS; a la descripción se le agrega sola la fecha del próximo grupo.",
   "tecnicas": [
     {
       "clave": "vibraciones",
@@ -136,6 +136,10 @@
       "tecnica": "termografia",
       "formato": "certificacion",
       "nivel": "Categorías I y II",
+      "seo": {
+        "titulo": "Curso de termografía: certificación Categoría I y II",
+        "descripcion": "Curso de termografía ISO 18436-7 para certificarte en Categoría I o II, con más de 100 ejercicios reales."
+      },
       "aprenderas": [
         "Los principios de la termografía infrarroja y sus alcances",
         "A adquirir datos con la cámara y a procesar las imágenes",

@@ -34,7 +34,7 @@
     ["p", "La referencia más usada es la tabla de la NETA, que califica la diferencia de temperatura contra un componente similar con carga similar. De 1 a 3 °C es una posible deficiencia que conviene investigar, de 4 a 15 °C una deficiencia probable que se repara cuando se pueda, y más de 15 °C una deficiencia mayor que se repara de inmediato. Te lo explicamos a fondo en nuestra guía de la [tabla NETA en termografía](/blog/tabla-neta-termografia-como-se-califica-un-punto-caliente)."],
 
     ["h2", "Qué debe traer el informe"],
-    ["p", "Un buen estudio termográfico no es una carpeta de fotos de colores. Por cada hallazgo debería traer la imagen térmica y la foto visual del mismo punto, la temperatura máxima y la diferencia contra la referencia, la carga al momento de medir, el componente y la causa probable, la severidad y qué hacer y con qué urgencia. Con eso, el equipo de mantenimiento puede actuar sin tener que interpretar nada."],
+    ["p", "Un buen estudio termográfico no es una carpeta de fotos de colores. Por cada hallazgo debería traer la imagen térmica y la foto visual del mismo punto, la temperatura máxima y la diferencia contra la referencia, la carga al momento de medir, el componente y la causa probable, la severidad y qué hacer y con qué urgencia. Con eso, el equipo de mantenimiento puede actuar sin tener que interpretar nada. Así es el informe de nuestro [servicio de termografía infrarroja](/servicios/monitoreo-condicion/termografia-infrarroja)."],
 
     ["h2", "Los errores más comunes"],
     ["lista", [

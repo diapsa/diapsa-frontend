@@ -51,6 +51,9 @@ export default function AvisoCurso() {
         `Hola, me interesa el curso de ${TITULO} del ${fecha}. ¿Me dan informes de costo e inscripción?`,
     )}`;
 
+    // 2026-11-15: en celular la ficha medía unos 270 px de alto y tapaba un
+    // tercio de la pantalla justo sobre "cómo empezar". Ahí va sin el párrafo
+    // y con la foto más baja; en tableta y escritorio sigue completa.
     return (
         <aside
             aria-label={`Próximo curso: ${TITULO}`}
@@ -66,19 +69,19 @@ export default function AvisoCurso() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <div className="relative h-24 w-full">
+            <div className="relative h-20 w-full sm:h-24">
                 <Image src="/images/cursos/termografia/termografia-01.webp" alt="" fill sizes="352px" className="object-cover" />
                 <div className="absolute inset-0 bg-primary/60" />
-                <div className="absolute inset-0 flex flex-col justify-end p-4">
+                <div className="absolute inset-0 flex flex-col justify-end p-3 sm:p-4">
                     <span className="inline-flex w-fit items-center rounded-full bg-secondary px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-primary">
                         Próximo curso
                     </span>
-                    <p className="mt-1 text-lg font-extrabold leading-tight text-white">{TITULO}</p>
+                    <p className="mt-1 text-base font-extrabold leading-tight text-white sm:text-lg">{TITULO}</p>
                 </div>
             </div>
-            <div className="p-4 text-primary">
+            <div className="p-3 text-primary sm:p-4">
                 <p className="text-sm font-extrabold">{fecha}</p>
-                <p className="mt-1 text-justify text-sm leading-relaxed">
+                <p className="mt-1 hidden text-justify text-sm leading-relaxed sm:block">
                     Curso de certificación conforme a ISO 18436-7 para inspectores termográficos, con más de cien ejercicios con imágenes reales.
                 </p>
                 <div className="mt-3 flex gap-2">

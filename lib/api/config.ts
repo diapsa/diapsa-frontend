@@ -3,6 +3,8 @@
  * Base URL and fetch wrapper for API requests
  */
 
+import { unstable_rethrow } from 'next/navigation';
+
 if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
   throw new Error('NEXT_PUBLIC_API_BASE_URL is not defined');
 }
@@ -10,6 +12,14 @@ if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export const API_TIMEOUT = parseInt(process.env.NEXT_PUBLIC_API_TIMEOUT || '10000', 10);
+
+/**
+ * Segundos que Next guarda una respuesta del CMS antes de volver a pedirla
+ * (2026-11-15). Es el mismo plazo que el `revalidate` de la portada y de las
+ * fichas de cursos, guías, casos y productos; en esos page.tsx va escrito como
+ * número porque Next exige ahí un literal.
+ */
+export const API_REVALIDATE = 3600;
 
 /**
  * Construye la URL completa para archivos del storage
@@ -55,6 +65,16 @@ export class ApiError extends Error {
 }
 
 /**
+ * true solo si el CMS contestó 404 de verdad (2026-11-15). Las páginas llaman
+ * notFound() únicamente en ese caso: un timeout, un 429 o un error de red no
+ * significa que la página no exista, y un 404 falso puede sacarla de Google
+ * (al pedir el sitemap de ocho en ocho salieron 15 cursos y 2 guías en 404).
+ */
+export function esNoEncontrado(error: unknown): boolean {
+  return error instanceof ApiError && error.status === 404;
+}
+
+/**
  * Generic fetch wrapper with error handling, timeout, and automatic headers
  */
 export async function apiFetch<T>(
@@ -74,8 +94,20 @@ export async function apiFetch<T>(
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT);
 
+  // Las lecturas del CMS se guardan en el caché de datos de Next una hora
+  // (2026-11-15): sin esto cada visita a un curso, guía o producto volvía a
+  // pedirle todo al CMS, que limita las peticiones (429). Solo GET y solo si
+  // quien llama no pidió otra cosa; en el navegador `next` se ignora y los
+  // formularios (POST) nunca se guardan.
+  const metodo = (options.method ?? 'GET').toUpperCase();
+  const cacheDeNext: RequestInit =
+    metodo === 'GET' && options.cache === undefined && options.next === undefined
+      ? { next: { revalidate: API_REVALIDATE } }
+      : {};
+
   try {
     const response = await fetch(url, {
+      ...cacheDeNext,
       ...options,
       headers,
       signal: controller.signal,
@@ -83,13 +115,24 @@ export async function apiFetch<T>(
 
     clearTimeout(timeoutId);
 
-    // Parse JSON response
-    const data = await response.json();
+    // Se lee el cuerpo sin romper si no es JSON (2026-11-15): un 404 o un 502
+    // del servidor del CMS en HTML terminaba en "Error desconocido" y perdía el
+    // código. Así cada error conserva su estado (el 404 sin JSON, abajo).
+    let data: { message?: string; errors?: Record<string, string[]> } | null = null;
+    let cuerpoJson = false;
+    try {
+      data = await response.json();
+      cuerpoJson = true;
+    } catch {
+      if (response.ok) {
+        throw new ApiError('El CMS respondió algo que no es JSON.', response.status);
+      }
+    }
 
     // Handle HTTP errors
     if (!response.ok) {
       // Handle validation errors (422)
-      if (response.status === 422 && data.errors) {
+      if (response.status === 422 && data?.errors) {
         throw new ApiError(
           data.message || 'Error de validación',
           response.status,
@@ -107,13 +150,21 @@ export async function apiFetch<T>(
       }
 
       // Handle not found (404)
+      // Solo es 404 de verdad si viene en JSON (2026-11-15): el CMS contesta
+      // así cuando un slug no existe (comprobado con /blogs y /courses). Un
+      // 404 en HTML sale del servidor o de un proxy mal configurado, no del
+      // CMS; tratarlo como 404 sacaría de Google todas las fichas a la vez,
+      // así que se reporta como 502 para que Next sirva el caché o dé un 5xx.
       if (response.status === 404) {
+        if (!cuerpoJson) {
+          throw new ApiError('El servidor respondió 404 sin JSON; no viene del CMS.', 502);
+        }
         throw new ApiError('Recurso no encontrado', response.status);
       }
 
       // Generic error
       throw new ApiError(
-        data.message || `Error HTTP: ${response.status}`,
+        data?.message || `Error HTTP: ${response.status}`,
         response.status
       );
     }
@@ -121,6 +172,11 @@ export async function apiFetch<T>(
     return data as T;
   } catch (error) {
     clearTimeout(timeoutId);
+
+    // Los avisos internos de Next (render dinámico, notFound, redirect) se
+    // dejan pasar tal cual (2026-11-15): convertidos en ApiError acababan en
+    // el catch de la página como si el CMS hubiera fallado.
+    unstable_rethrow(error);
 
     // Handle timeout
     if (error instanceof Error && error.name === 'AbortError') {

@@ -34,9 +34,13 @@ type Props = {
   texto?: string;
   /** Sin el pie de cada foto: solo las fotos, más grandes y centradas. */
   sinPie?: boolean;
+  /** Carga la primera foto con prioridad (por omisión, sí). La portada lo
+      apaga (2026-11-15): ahí la galería queda muy abajo, y precargar su foto
+      competía con el hero por la primera pintura. */
+  prioridad?: boolean;
 };
 
-export default function GaleriaCampo({ fotos, titulo, texto, intervalo = 5000, sinPie = false }: Props) {
+export default function GaleriaCampo({ fotos, titulo, texto, intervalo = 5000, sinPie = false, prioridad = true }: Props) {
   const [activa, setActiva] = useState(0);
   const total = fotos.length;
   const marco = useRef<HTMLDivElement>(null);
@@ -126,7 +130,7 @@ export default function GaleriaCampo({ fotos, titulo, texto, intervalo = 5000, s
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 60vw"
-                      priority={i === 0}
+                      priority={prioridad && i === 0}
                     />
                   </div>
                 ))}

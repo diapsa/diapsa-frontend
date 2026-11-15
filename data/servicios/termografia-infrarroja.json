@@ -21,14 +21,14 @@
     }
   ],
   "header": {
-    "title": "Termografía Infrarroja",
-    "subtitle": "Termografía eléctrica e industrial: puntos calientes en tableros, subestaciones y motores, detectados con el equipo en operación",
+    "title": "Termografía Infrarroja Industrial",
+    "subtitle": "Estudio termográfico de tableros, subestaciones y motores con el equipo en operación: cada punto caliente con su imagen, su severidad y qué hacer",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Estudio termográfico de tableros, subestaciones y motores con termógrafos certificados y criterios NETA. Informe en 2 días. Cotiza tu inspección.",
+  "seoDescription": "Termografía infrarroja industrial: estudio termográfico de tableros, subestaciones y motores con termógrafos certificados. Informe en 2 días. Cotiza.",
   "content": {
     "title": "Vemos el calor antes de que se vuelva falla",
-    "subtitle": "Inspeccionamos con cámara térmica, en operación y con carga, y te decimos qué punto caliente atender, por qué y con qué urgencia.",
+    "subtitle": "Hacemos el estudio termográfico con cámara térmica, en operación y con carga, y te decimos qué punto caliente atender, por qué y con qué urgencia.",
     "image": "/images/servicios/termografia-infrarroja/termograma-subestacion.jpg",
     "items": [
       {
@@ -118,7 +118,7 @@
   "entregable": {
     "etiqueta": "Qué recibes",
     "titulo": "Esto es lo que recibes",
-    "descripcion": "Cada hallazgo con su imagen térmica, su foto, la temperatura contra la referencia y qué hacer. Pasa el cursor por la lista para ver dónde va cada cosa en el informe.",
+    "descripcion": "El informe del estudio termográfico trae cada hallazgo con su imagen térmica, su foto, la temperatura contra la referencia y qué hacer. Pasa el cursor por la lista para ver dónde va cada cosa en el informe.",
     "contenido": [
       "Imagen térmica y foto visual de cada hallazgo",
       "Temperatura máxima y diferencia contra la referencia",
@@ -214,12 +214,24 @@
   "mostrarClientes": true,
   "faq": [
     {
-      "question": "¿Qué es la termografía infrarroja industrial?",
-      "answer": "Es revisar los equipos con una cámara que ve la temperatura en lugar de la luz. Una conexión floja o un rodamiento sin grasa se calientan antes de fallar, y la cámara lo muestra sin tocar ni detener nada."
+      "question": "¿Qué incluye el estudio termográfico?",
+      "answer": "La ruta en campo con cámara térmica, con los equipos en operación y con carga; el análisis de cada imagen por un termógrafo certificado, que la compara contra la fase vecina, el ambiente y la carga del momento; el diagnóstico con el componente, la causa probable y la severidad; la recomendación con su urgencia, y el seguimiento de los puntos con hallazgo hasta que se corrigen."
     },
     {
-      "question": "¿Qué fallas detecta la termografía?",
-      "answer": "Conexiones flojas o sulfatadas, desbalance de fases, fusibles y contactores dañados, puntos calientes en transformadores, rodamientos y acoplamientos calientes, refractario dañado, aislamiento perdido y trampas de vapor que no cierran."
+      "question": "¿Qué entrega el estudio termográfico?",
+      "answer": "Un informe con cada hallazgo: su imagen térmica y su foto visual, la temperatura máxima y la diferencia contra la referencia, el estado del equipo en semáforo, el componente afectado con su causa probable y la acción recomendada con su urgencia. Llega en menos de dos días hábiles y queda en IDAP, con el historial de cada equipo."
+    },
+    {
+      "question": "¿En qué equipos se hace la inspección termográfica?",
+      "answer": "Tableros y centros de carga, subestaciones, transformadores, interruptores y cuchillas, bancos de capacitores, motores, rodamientos y acoplamientos, hornos y refractarios, aislamientos térmicos y trampas de vapor. Para parques solares, líneas y techos usamos drones, y donde un incendio no da tiempo de reaccionar, cámaras térmicas fijas."
+    },
+    {
+      "question": "¿Es una inspección puntual o un monitoreo continuo?",
+      "answer": "Las dos. Puntual, con rutas periódicas con cámara térmica y termógrafo certificado; continuo, con cámaras fijas que vigilan las 24 horas donde un incendio no da tiempo de reaccionar. Lo que sale con hallazgo se vuelve a revisar hasta que se corrige."
+    },
+    {
+      "question": "¿Tienen registro REPSE y dan servicio en todo México?",
+      "answer": "Sí. Tenemos registro REPSE vigente y damos servicio en todo México."
     },
     {
       "question": "¿Se puede hacer con la planta operando?",
@@ -234,20 +246,20 @@
       "answer": "Nuestros termógrafos están certificados conforme a ISO 18436-7 y la severidad se evalúa con NFPA 70B, la tabla de la ANSI/NETA y la ISO 18434-1."
     },
     {
-      "question": "¿Qué es un estudio termográfico eléctrico?",
-      "answer": "Es la inspección con cámara térmica de las instalaciones eléctricas de la planta, con un informe que trae la imagen térmica y la foto de cada hallazgo, su temperatura, su severidad y qué hacer."
-    },
-    {
-      "question": "¿Cómo se califica un punto caliente?",
-      "answer": "Por la diferencia de temperatura contra un componente igual con carga similar. Con la tabla de la NETA: de 1 a 3 °C es una posible deficiencia, de 4 a 15 °C una probable y más de 15 °C una deficiencia mayor que se repara de inmediato."
-    },
-    {
       "question": "¿Con cuánta carga debe estar el equipo?",
       "answer": "Lo recomendable es al menos 40 % de su carga nominal. Con menos carga los puntos calientes casi no se notan y el estudio pierde valor."
     },
     {
-      "question": "¿Qué necesito para cotizar?",
-      "answer": "El listado o número aproximado de tableros, subestaciones y equipos, y si la planta pide documentos de ingreso."
+      "question": "¿Qué es la termografía infrarroja industrial?",
+      "answer": "Es revisar los equipos con una cámara que ve la temperatura en lugar de la luz. Una conexión floja o un rodamiento sin grasa se calientan antes de fallar, y la cámara lo muestra sin tocar ni detener nada."
+    },
+    {
+      "question": "¿Qué fallas detecta la termografía?",
+      "answer": "Conexiones flojas o sulfatadas, desbalance de fases, fusibles y contactores dañados, puntos calientes en transformadores, rodamientos y acoplamientos calientes, refractario dañado, aislamiento perdido y trampas de vapor que no cierran."
+    },
+    {
+      "question": "¿Cómo se cotiza un estudio termográfico?",
+      "answer": "Con el listado o el número aproximado de tableros, subestaciones y equipos, y con saber si la planta pide documentos de ingreso. Con eso armamos la ruta y te mandamos la propuesta, sin compromiso."
     }
   ],
   "certificacion": "Termógrafos certificados · ISO 18436-7",
@@ -455,7 +467,7 @@
   ],
   "cta": {
     "title": "¿Cuántos tableros y equipos críticos tiene tu planta?",
-    "text": "Mándanos tu listado de tableros, subestaciones y equipos y te armamos la ruta con propuesta, sin compromiso.",
+    "text": "Mándanos tu listado de tableros, subestaciones y equipos y te armamos la ruta del estudio termográfico con su propuesta, sin compromiso.",
     "whatsappMessage": "Hola, quiero cotizar termografía infrarroja para mi planta.",
     "datos": [
       "Registro REPSE vigente",
@@ -533,7 +545,7 @@
       }
     ]
   },
-  "seoTitle": "Termografía industrial y estudio termográfico",
+  "seoTitle": "Termografía infrarroja y estudio termográfico",
   "introBeneficios": {
     "beneficios": [
       {
@@ -620,7 +632,7 @@
       "fondo": "blanco",
       "bloques": [
         {
-          "titulo": "De la imagen térmica a la recomendación",
+          "titulo": "Qué incluye el estudio termográfico",
           "texto": "Comparamos cada punto contra su fase vecina y la carga del momento, y lo calificamos con la tabla NETA. Luego volvemos a medir hasta que la temperatura regresa a lo normal.",
           "video": "/videos/termografia/term-proceso",
           "descripcion": "Los cinco pasos de una inspección termográfica: inspección, imagen térmica, diagnóstico con la tabla NETA, recomendación y seguimiento",
@@ -638,7 +650,7 @@
       "lugar": "cobertura",
       "etiqueta": "Dónde aplica",
       "titulo": "¿Dónde aplica y qué detecta?",
-      "texto": "Termografía eléctrica en tableros y subestaciones, y termografía mecánica en motores, hornos y procesos.",
+      "texto": "La inspección termográfica cubre lo eléctrico, en tableros y subestaciones, y lo mecánico, en motores, hornos y procesos.",
       "fondo": "gris",
       "bloques": [
         {

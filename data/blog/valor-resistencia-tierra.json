@@ -5,8 +5,8 @@
   "portada": "/images/blog/valor-resistencia-tierra.webp",
   "fecha": "2026-09-30T23:59:10.000000Z",
   "seo": {
-    "titulo": "¿Cuánto debe medir una tierra física? Valores NOM-022",
-    "descripcion": "25 ohms la red y 10 ohms los pararrayos, según la NOM-022-STPS-2015. Qué hacer si tu tierra sale alta y cómo acreditar el valor ante la STPS antes de la inspección."
+    "titulo": "Valor de resistencia de tierra física: cuántos ohms debe medir",
+    "descripcion": "Valor de resistencia de tierra física: 0 a 25 ohms la red y hasta 10 los pararrayos, según la NOM-022-STPS-2015. Por qué sale alta y cómo se corrige."
   },
   "bloques": [
     [

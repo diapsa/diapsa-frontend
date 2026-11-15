@@ -7,7 +7,7 @@ import Link from "next/link";
 import JsonLd, { createBreadcrumbSchema } from "@/components/atoms/JsonLd";
 import ArticleIndex, { type ArticleIndexItem } from "@/components/molecules/ArticleIndex";
 import PageHeader from "@/components/organisms/PageHeader";
-import { getStorageUrl } from "@/lib/api/config";
+import { esNoEncontrado, getStorageUrl } from "@/lib/api/config";
 import { getSuccessCaseBySlug } from "@/lib/api/posts";
 import { formatDate } from "@/lib/utils/formatDate";
 import ContactForm from "@/components/organisms/ContactForm";
@@ -15,6 +15,17 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 interface SuccessCasePageProps {
     params: Promise<{ slug: string }>;
+}
+
+// El caso se sirve desde el caché y se rehace cada hora, como la portada y
+// /servicios (2026-11-15): sin generateStaticParams Next lo marcaba dinámico
+// (ƒ) y cada visita tardaba 0.6 a 1.2 s. Devuelve [] para no pedirle cada caso
+// al CMS en el build (limita peticiones, 429); se genera con el primer
+// visitante y las siguientes visitas salen del caché.
+export const revalidate = 3600;
+
+export function generateStaticParams() {
+    return [];
 }
 
 function SectionHeading({ title }: { title: string }) {
@@ -120,12 +131,11 @@ export async function generateMetadata({
             },
         };
     } catch (error) {
-        // Log en desarrollo para debugging
-        if (process.env.NODE_ENV === 'development') {
-            console.log(`[casos-exito] Slug no encontrado: ${slug}`);
-        }
+        // Solo un 404 real del CMS es "no encontrado" (2026-11-15); un timeout o
+        // un 429 se relanza para que ese título no se quede guardado en caché.
+        if (!esNoEncontrado(error)) throw error;
         return {
-            title: "Caso de exito no encontrado"
+            title: "Caso de éxito no encontrado"
         };
     }
 }
@@ -139,10 +149,10 @@ export default async function CasoExitoDetailPage({
     try {
         caso = await getSuccessCaseBySlug(slug);
     } catch (error) {
-        // Log en desarrollo para debugging
-        if (process.env.NODE_ENV === 'development') {
-            console.log(`[casos-exito] Slug no encontrado: ${slug}`);
-        }
+        // notFound() solo si el CMS dice 404 (2026-11-15); con cualquier otro
+        // error Next sigue sirviendo la versión en caché o da un 5xx que Google
+        // reintenta, nunca un 404 falso.
+        if (!esNoEncontrado(error)) throw error;
         notFound();
     }
 

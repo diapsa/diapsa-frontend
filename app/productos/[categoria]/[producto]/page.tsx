@@ -8,7 +8,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getProductBySlug } from '@/lib/api/products';
 import { incluyeCurso, productoLocal, versionesLocales } from '@/lib/productos-locales';
-import { getStorageUrl } from '@/lib/api/config';
+import { esNoEncontrado, getStorageUrl } from '@/lib/api/config';
 import ProductDetails from '@/components/organisms/ProductDetails';
 import PageHeader from '@/components/organisms/PageHeader';
 import JsonLd, { createProductSchema, createBreadcrumbSchema } from '@/components/atoms/JsonLd';
@@ -18,6 +18,17 @@ import { SITE_CONFIG } from '@/lib/constants';
 
 interface ProductPageProps {
   params: Promise<{ categoria: string; producto: string }>;
+}
+
+// La ficha se sirve desde el caché y se rehace cada hora, como la portada y
+// /servicios (2026-11-15): sin generateStaticParams Next la marcaba dinámica
+// (ƒ), con "Cache-Control: no-store" y 0.6 a 1.2 s por visita. Devuelve []
+// para no pedirle cada producto al CMS en el build (limita peticiones, 429);
+// se genera con el primer visitante y las siguientes visitas salen del caché.
+export const revalidate = 3600;
+
+export function generateStaticParams() {
+  return [];
 }
 
 // Generate metadata for SEO
@@ -56,8 +67,10 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
         images: mainImages,
       },
     };
-  } catch {
-
+  } catch (error) {
+    // Solo un 404 real del CMS es "no encontrado" (2026-11-15); un timeout o un
+    // 429 se relanza para que ese título no se quede guardado en caché.
+    if (!esNoEncontrado(error)) throw error;
     return {
       title: 'Producto no encontrado',
     };
@@ -71,9 +84,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
   let product = productoLocal(producto);
   try {
     product ??= await getProductBySlug(producto);
-  } catch {
-    console.log('Producto no encontrado:', producto)
-
+  } catch (error) {
+    // notFound() solo si no hay producto local y el CMS dice 404 (2026-11-15);
+    // con cualquier otro error Next sigue sirviendo la versión en caché o da un
+    // 5xx que Google reintenta, nunca un 404 falso.
+    if (!esNoEncontrado(error)) throw error;
     notFound();
   }
 

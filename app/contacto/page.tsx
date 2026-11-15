@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import ContactFormGeneral from "@/components/organisms/ContactFormGeneral";
+import ContactoWhatsApp from "@/components/organisms/ContactoWhatsApp";
 import PageHeader from "@/components/organisms/PageHeader";
 import { SITE_CONFIG } from "@/lib/constants";
 import clientes from "@/data/clients.json";
@@ -28,11 +30,22 @@ export const metadata: Metadata = {
  * logotipos de clientes. Se agregan WhatsApp y la dirección con "Cómo
  * llegar" a la lista de contacto, la tira de qué pasa después de enviar y
  * el selector de motivo en el formulario. Sin guiones medios en los textos.
+ *
+ * WhatsApp primero (Emiliano, 2026-11-15). Del 16 de octubre al 12 de
+ * noviembre la página tuvo 4 clics a WhatsApp y 0 formularios enviados; en
+ * Clarity el 25 % se regresa enseguida (el sitio promedia 4 %) y el 25 % hace
+ * clic en algo que no es enlace (promedio 12 %). Cambios: WhatsApp sale de la
+ * lista y va solo, arriba de todo y visible sin scroll en celular, con el
+ * mensaje ya escrito según ?motivo= e ?interes= (ContactoWhatsApp, que lee la
+ * URL en el cliente para que la página siga estática). El formulario queda
+ * como segunda opción y en celular va antes que teléfono, correo y dirección.
+ * La etiqueta de arriba deja de verse como botón y los logotipos dejan de
+ * reaccionar al pasar el mouse (parecían enlaces); abajo va un enlace real a
+ * los casos de éxito.
  */
 
 const DIRECCION = "C. Alfalfa 128, Las Praderas, 25295 Saltillo, Coah.";
 const MAPA = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Grupo DIAPSA, ${DIRECCION}`)}`;
-const WHATSAPP = `https://wa.me/${SITE_CONFIG.contact.whatsapp}?text=${encodeURIComponent("Hola, vengo del sitio de DIAPSA y quiero información.")}`;
 const TELEFONO_HREF = `tel:+${SITE_CONFIG.contact.whatsapp}`;
 const TELEFONO = "+52 (81) 4590-3792";
 const CORREO = "info@grupodiapsa.com";
@@ -98,43 +111,40 @@ export default function ContactPage() {
                 ]}
             />
 
+            {/* Primera opción: WhatsApp, pegado al encabezado para que en celular
+                se vea sin scroll (2026-11-15, 0 formularios en 28 días) */}
+            <section className="w-full bg-primary pt-6 lg:pt-10" aria-label="Escríbenos por WhatsApp">
+                <div className="max-w-7xl mx-auto px-6">
+                    <ContactoWhatsApp />
+                </div>
+            </section>
+
             {/* Sección principal, en oscuro */}
-            <section className="w-full bg-primary py-16 lg:py-24 relative overflow-hidden">
+            <section className="w-full bg-primary pt-10 pb-16 lg:pt-14 lg:pb-24 relative overflow-hidden">
                 <div className="absolute top-1/4 left-1/3 w-150 h-150 bg-secondary/8 rounded-full blur-3xl pointer-events-none" />
                 <div className="absolute bottom-0 right-0 w-100 h-100 bg-white/5 rounded-full blur-2xl pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                        {/* Izquierda: los canales directos como protagonistas, al mismo
-                            nivel que el formulario (Emiliano, 2026-10-06: "es uno u otro") */}
-                        <div className="flex flex-col gap-8 lg:sticky lg:top-28">
-                            <span className="inline-block self-start text-secondary text-xs font-semibold tracking-widest uppercase border border-secondary/40 rounded-full px-3 py-1 bg-secondary/10">
-                                Habla con un especialista
-                            </span>
+                        {/* Izquierda: los demás canales directos. En celular van después
+                            del formulario (order-2) para que este quede como segunda opción */}
+                        <div className="order-2 flex flex-col gap-8 lg:order-1 lg:sticky lg:top-28">
+                            {/* Antes era una pastilla con borde que parecía botón (clics en falso) */}
+                            <p className="text-secondary text-xs font-semibold tracking-widest uppercase">
+                                Otras formas de hablar con nosotros
+                            </p>
 
                             <div>
                                 <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4">
-                                    ESCRÍBENOS POR DONDE <span className="text-secondary">TE QUEDE MÁS CERCA</span>
+                                    LLÁMANOS, ESCRÍBENOS <span className="text-secondary">O VISÍTANOS</span>
                                 </h2>
                                 <p className="text-justify text-white/70 text-lg leading-relaxed">
-                                    Cada hora de paro no programado cuesta más que un año de mantenimiento predictivo. Cuéntanos qué equipos tienes y qué te preocupa, por WhatsApp, por teléfono, por correo o en el formulario, y un especialista te responde en un día hábil.
+                                    Cada hora de paro no programado cuesta más que un año de mantenimiento predictivo. Cuéntanos qué equipos tienes y qué te preocupa, por teléfono, por correo o en nuestra oficina de Saltillo, y un especialista te responde en un día hábil.
                                 </p>
                             </div>
 
-                            {/* Canales directos, en grande */}
+                            {/* Canales directos, en grande; cada tarjeta es un enlace (tel:, mailto: y mapa) */}
                             <ul className="grid grid-cols-1 gap-4">
-                                <li>
-                                    <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="flex items-center gap-5 rounded-sm bg-[#25D366] p-5 text-primary shadow-lg transition-transform hover:-translate-y-0.5 lg:p-6" aria-label="Escríbenos por WhatsApp">
-                                        <svg className="h-12 w-12 shrink-0 lg:h-14 lg:w-14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                                        </svg>
-                                        <span className="min-w-0">
-                                            <span className="block text-xs font-bold uppercase tracking-widest text-primary/70">WhatsApp, el más rápido</span>
-                                            <span className="block text-2xl font-extrabold leading-tight lg:text-3xl">{TELEFONO}</span>
-                                            <span className="block text-sm font-semibold text-primary/80">Escríbenos y te contesta un especialista</span>
-                                        </span>
-                                    </a>
-                                </li>
                                 <li>
                                     <a href={TELEFONO_HREF} className="flex h-full items-center gap-4 rounded-sm bg-white/10 p-5 ring-1 ring-white/15 transition-colors hover:ring-secondary/60">
                                         <Icono className="h-9 w-9" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -189,12 +199,14 @@ export default function ContactPage() {
                             </ul>
                         </div>
 
-                        {/* Derecha: formulario y qué pasa después */}
-                        <div className="flex flex-col gap-6">
+                        {/* Derecha: formulario y qué pasa después. Segunda opción después de
+                            WhatsApp (2026-11-15); el texto dice para qué conviene escribir aquí */}
+                        <div className="order-1 flex flex-col gap-6 lg:order-2">
                             <div className="bg-white p-8 space-y-6 shadow-2xl shadow-secondary/50 ring-1 ring-secondary rounded-sm">
                                 <div className="mb-6 border-b border-gray-100 pb-5">
-                                    <h3 className="text-xl font-extrabold text-primary">Cuéntanos tu caso</h3>
-                                    <p className="text-tertiary text-sm mt-1">Completa el formulario y un especialista te contactará en un día hábil.</p>
+                                    <p className="text-xs font-bold uppercase tracking-widest text-secondary-dark">Segunda opción: el formulario</p>
+                                    <h3 className="mt-1 text-xl font-extrabold text-primary">Mándanos el detalle por escrito</h3>
+                                    <p className="text-justify text-tertiary text-sm mt-1">Conviene cuando quieres enviar el detalle técnico de tus equipos (cuáles son, cuántos y qué síntomas tienen) o pedir una cotización formal. Un especialista te contesta en un día hábil.</p>
                                 </div>
                                 <ContactFormGeneral />
                             </div>
@@ -225,10 +237,16 @@ export default function ContactPage() {
                     <ul className="mt-8 grid grid-cols-3 items-center gap-x-8 gap-y-8 sm:grid-cols-4 lg:grid-cols-6">
                         {LOGOS.map((c) => (
                             <li key={c.name} className="flex items-center justify-center">
-                                <Image src={c.logo} alt={c.name} width={160} height={64} className="h-10 w-auto max-w-[9rem] object-contain brightness-0 opacity-60 transition-opacity hover:opacity-100" />
+                                {/* Sin efecto al pasar el mouse: parecían enlaces y no lo son (2026-11-15) */}
+                                <Image src={c.logo} alt={c.name} width={160} height={64} className="h-10 w-auto max-w-[9rem] object-contain brightness-0 opacity-60" />
                             </li>
                         ))}
                     </ul>
+                    <p className="mt-10 text-center">
+                        <Link href="/casos-exito" className="inline-flex items-center gap-1.5 text-sm font-bold text-primary underline decoration-secondary decoration-2 underline-offset-4 hover:text-secondary-dark">
+                            Ver casos de éxito
+                        </Link>
+                    </p>
                 </div>
             </section>
         </main>
