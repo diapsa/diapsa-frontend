@@ -22,7 +22,7 @@
   ],
   "header": {
     "title": "Alineación y Balanceo",
-    "subtitle": "Alineación láser de ejes y de poleas, y balanceo dinámico en sitio para motores, bombas, ventiladores y equipos movidos por bandas",
+    "subtitle": "Alineación láser de ejes y de poleas, y balanceo dinámico en sitio para motores, bombas, ventiladores, transportadoras y otros equipos movidos por bandas",
     "backgroundImage": "/images/fondo-hero.webp"
   },
   "seoDescription": "Alineación láser de ejes y de poleas y balanceo dinámico en sitio en México. Medimos antes y después para probar el resultado. Cotiza con DIAPSA.",
@@ -34,7 +34,7 @@
       {
         "id": "aplicaciones",
         "title": "Dónde se aplica",
-        "content": "Cualquier equipo acoplado: motor con bomba, con ventilador, con compresor o con caja de engranes. Cualquier equipo movido por bandas y poleas: ventiladores, sopladores, compresores, molinos, trituradoras y transportadores. Y cualquier rotor que gire desbalanceado: impulsores, ventiladores, poleas y volantes. También en equipo nuevo o recién reparado, antes de arrancarlo.",
+        "content": "Cualquier equipo acoplado: motor con bomba, con ventilador, con compresor o con caja de engranes. Cualquier equipo movido por bandas y poleas: transportadoras, ventiladores, sopladores y compresores. Y cualquier rotor que gire desbalanceado: impulsores, ventiladores, poleas y volantes. También en equipo nuevo o recién reparado, antes de arrancarlo.",
         "foto": {
           "src": "/images/disciplinas/alineacion-balaceo.jpg",
           "alt": "Analista de DIAPSA midiendo sobre un motor acoplado antes de corregir la alineación"
@@ -217,7 +217,7 @@
     },
     {
       "question": "¿También alinean poleas y bandas?",
-      "answer": "Sí. En ventiladores, sopladores, compresores, molinos y cualquier equipo movido por bandas alineamos las poleas con láser, corregimos el desfase, el ángulo y la torsión, y tensamos las bandas al valor del fabricante."
+      "answer": "Sí. En transportadoras, ventiladores, sopladores, compresores y cualquier equipo movido por bandas alineamos las poleas con láser, corregimos el desfase, el ángulo y la torsión, y tensamos las bandas al valor del fabricante."
     },
     {
       "question": "¿Qué tolerancia aplican en poleas?",
@@ -287,7 +287,7 @@
       "Motor con compresor",
       "Motor con reductor",
       "Equipos movidos por bandas y poleas",
-      "Molinos, trituradoras y transportadores",
+      "Transportadoras de banda",
       "Ventiladores e impulsores",
       "Rotores de motor",
       "Sopladores"
@@ -363,7 +363,7 @@
       },
       {
         "titulo": "Equipos que se comen las bandas",
-        "texto": "Poleas desalineadas y bandas mal tensadas: se alinean con láser y se tensan al valor del fabricante.",
+        "texto": "Transportadoras y otros equipos con poleas desalineadas y bandas mal tensadas: se alinean con láser y se tensan al valor del fabricante.",
         "enlace": "/blog/alineacion-de-poleas-y-bandas-tolerancias-y-como-se-corrige"
       },
       {
@@ -447,7 +447,7 @@
         },
         {
           "titulo": "Alineación láser de poleas",
-          "texto": "En equipos movidos por bandas, el láser pone las dos poleas en el mismo plano: corrige el desfase, el ángulo y la torsión, y después se tensan las bandas al valor del fabricante.",
+          "texto": "En transportadoras y otros equipos movidos por bandas, el láser pone las dos poleas en el mismo plano: corrige el desfase, el ángulo y la torsión, y después se tensan las bandas al valor del fabricante.",
           "video": "/videos/alineacion-balanceo/ali-poleas",
           "descripcion": "Vista superior de un motor y un equipo movido por bandas: la polea conducida desplazada y girada se corrige con el láser hasta quedar en el mismo plano"
         },
@@ -467,7 +467,7 @@
             "Motor con compresor",
             "Motor con reductor",
             "Equipos movidos por bandas y poleas",
-            "Molinos, trituradoras y transportadores",
+            "Transportadoras de banda",
             "Ventiladores e impulsores",
             "Rotores de motor",
             "Sopladores"
