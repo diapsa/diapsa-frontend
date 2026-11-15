@@ -95,7 +95,7 @@ const POR_SERVICIO: Record<string, OfertaGuia> = {
   "/servicios/monitoreo-condicion/alineacion-balanceo": {
     etiqueta: "En sitio",
     titulo: "¿Un equipo vibra de más?",
-    texto: "Lo medimos y lo alineamos o balanceamos en sitio, sin desmontar, con la vibración medida antes y después.",
+    texto: "Lo medimos y lo alineamos o balanceamos en sitio, sin desmontar, también si es por poleas y bandas, con la vibración medida antes y después.",
     whatsapp: "Hola, leí una guía de alineación y balanceo. Tengo un equipo que vibra de más y quiero que lo revisen.",
     interes: "Alineación y Balanceo",
   },

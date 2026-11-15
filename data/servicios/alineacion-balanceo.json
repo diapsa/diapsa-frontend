@@ -22,19 +22,19 @@
   ],
   "header": {
     "title": "Alineación y Balanceo",
-    "subtitle": "Alineación láser de ejes y balanceo dinámico en sitio para motores, bombas y ventiladores industriales",
+    "subtitle": "Alineación láser de ejes y de poleas, y balanceo dinámico en sitio para motores, bombas, ventiladores y equipos movidos por bandas",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Alineación láser de ejes y balanceo dinámico en sitio en México. Medimos antes y después para probar el resultado. Cotiza tu servicio con DIAPSA.",
+  "seoDescription": "Alineación láser de ejes y de poleas y balanceo dinámico en sitio en México. Medimos antes y después para probar el resultado. Cotiza con DIAPSA.",
   "content": {
     "title": "El análisis las encuentra; esto las corrige",
-    "subtitle": "El análisis de vibraciones encuentra la desalineación y el desbalance; aquí los corregimos en su propia base y volvemos a medir para probar que quedó.",
+    "subtitle": "El análisis de vibraciones encuentra la desalineación y el desbalance; aquí los corregimos en su propia base, en equipos acoplados y en equipos movidos por bandas, y volvemos a medir para probar que quedó.",
     "image": "/images/disciplinas/alineacion-balaceo.jpg",
     "items": [
       {
         "id": "aplicaciones",
         "title": "Dónde se aplica",
-        "content": "Cualquier equipo acoplado: motor con bomba, con ventilador, con compresor o con caja de engranes. Y cualquier rotor que gire desbalanceado: impulsores, ventiladores, poleas y volantes. También en equipo nuevo o recién reparado, antes de arrancarlo.",
+        "content": "Cualquier equipo acoplado: motor con bomba, con ventilador, con compresor o con caja de engranes. Cualquier equipo movido por bandas y poleas: ventiladores, sopladores, compresores, molinos, trituradoras y transportadores. Y cualquier rotor que gire desbalanceado: impulsores, ventiladores, poleas y volantes. También en equipo nuevo o recién reparado, antes de arrancarlo.",
         "foto": {
           "src": "/images/disciplinas/alineacion-balaceo.jpg",
           "alt": "Analista de DIAPSA midiendo sobre un motor acoplado antes de corregir la alineación"
@@ -54,7 +54,7 @@
       {
         "id": "como",
         "title": "Cómo lo hacemos",
-        "content": "Alineación con equipo láser, que mide el desfase real entre los ejes y dice cuánto calzar y cuánto mover en cada pata, con la máquina en su sitio y sin desmontar el acople. Balanceo dinámico en campo, en uno o dos planos, con el rotor montado en su propia chumacera.",
+        "content": "Alineación con equipo láser, que mide el desfase real entre los ejes y dice cuánto calzar y cuánto mover en cada pata, con la máquina en su sitio y sin desmontar el acople. En equipos por bandas, láser de poleas que pone las dos poleas en el mismo plano, y tensión de bandas al valor del fabricante. Balanceo dinámico en campo, en uno o dos planos, con el rotor montado en su propia chumacera.",
         "foto": {
           "src": "/images/servicios/alineacion-balanceo/campo-sensores-acople.webp",
           "alt": "Cabezales del láser montados a cada lado del acople, con el equipo en su base"
@@ -135,6 +135,7 @@
     "contenido": [
       "Estado del equipo antes de la corrección, medido",
       "Valores de desalineación encontrados y la tolerancia aplicada",
+      "En equipos por bandas: desfase y ángulo de las poleas, y tensión final de las bandas",
       "Calzas colocadas y movimientos hechos en cada pata",
       "Grado de balanceo alcanzado en el rotor",
       "Estado después, medido en los mismos puntos que al principio"
@@ -215,6 +216,18 @@
       "answer": "Los dos alinean, pero el láser es más rápido, más preciso y dice directamente cuánto calzar y mover en cada pata. El reloj comparador depende mucho de la experiencia de quien lo usa."
     },
     {
+      "question": "¿También alinean poleas y bandas?",
+      "answer": "Sí. En ventiladores, sopladores, compresores, molinos y cualquier equipo movido por bandas alineamos las poleas con láser, corregimos el desfase, el ángulo y la torsión, y tensamos las bandas al valor del fabricante."
+    },
+    {
+      "question": "¿Qué tolerancia aplican en poleas?",
+      "answer": "La del fabricante de la banda. Como referencia, las bandas en V aceptan hasta medio grado de desalineación y las dentadas alrededor de un cuarto de grado; con láser se dejan muy por debajo de esos límites."
+    },
+    {
+      "question": "¿Por qué mi equipo se come las bandas?",
+      "answer": "Casi siempre por poleas desalineadas, canales gastados o tensión incorrecta. Cambiar la banda sin corregir la causa solo repite la falla."
+    },
+    {
       "question": "¿Qué necesito para cotizar?",
       "answer": "El tipo de equipo, su potencia y velocidad, si está acoplado directo o por bandas, y si ya tienes una medición de vibración."
     }
@@ -257,7 +270,7 @@
   "cta": {
     "title": "¿Tienes un equipo que vibra desde que lo instalaron?",
     "text": "Cuéntanos qué equipo es y qué medición tienes, y te preparamos la propuesta con verificación incluida.",
-    "whatsappMessage": "Hola, quiero cotizar alineación y balanceo para un equipo de mi planta.",
+    "whatsappMessage": "Hola, quiero cotizar alineación de ejes, de poleas o balanceo para un equipo de mi planta.",
     "datos": [
       "Registro REPSE vigente",
       "Se mide antes y después",
@@ -273,20 +286,23 @@
       "Motor con ventilador",
       "Motor con compresor",
       "Motor con reductor",
+      "Equipos movidos por bandas y poleas",
+      "Molinos, trituradoras y transportadores",
       "Ventiladores e impulsores",
       "Rotores de motor",
-      "Sopladores",
-      "Poleas"
+      "Sopladores"
     ],
     "fallasTitulo": "Lo que corrige",
     "fallas": [
       "Desalineación angular",
       "Desalineación paralela",
+      "Poleas desalineadas o en torsión",
+      "Bandas flojas o sobretensadas",
       "Pata coja",
       "Desbalance estático",
       "Desbalance dinámico",
       "Vibración alta por desbalance o desalineación",
-      "Desgaste prematuro de rodamientos y sellos"
+      "Desgaste prematuro de rodamientos, sellos y bandas"
     ],
     "fotos": [
       {
@@ -296,6 +312,10 @@
       {
         "nombre": "Motor con ventilador",
         "ilustracion": "ventilador"
+      },
+      {
+        "nombre": "Equipos por bandas",
+        "ilustracion": "banda"
       },
       {
         "nombre": "Motor con compresor",
@@ -311,7 +331,7 @@
       }
     ]
   },
-  "seoTitle": "Alineación láser y balanceo dinámico en sitio",
+  "seoTitle": "Alineación láser de ejes y poleas, y balanceo en sitio",
   "introBeneficios": {
     "beneficios": [
       {
@@ -340,6 +360,11 @@
         "titulo": "Cuando la vibración lo señala",
         "texto": "El análisis de vibraciones dice si es desalineación, desbalance o las dos.",
         "enlace": "/servicios/monitoreo-condicion/vibraciones-mecanicas"
+      },
+      {
+        "titulo": "Equipos que se comen las bandas",
+        "texto": "Poleas desalineadas y bandas mal tensadas: se alinean con láser y se tensan al valor del fabricante.",
+        "enlace": "/blog/alineacion-de-poleas-y-bandas-tolerancias-y-como-se-corrige"
       },
       {
         "titulo": "Equipo nuevo o reparado",
@@ -411,7 +436,7 @@
       "lugar": "cobertura",
       "etiqueta": "Qué corregimos",
       "titulo": "¿Dónde aplica y qué corrige?",
-      "texto": "Alineación láser de ejes en equipos acoplados y balanceo dinámico en sitio de rotores, impulsores y ventiladores.",
+      "texto": "Alineación láser de ejes en equipos acoplados, alineación láser de poleas en equipos movidos por bandas y balanceo dinámico en sitio de rotores, impulsores y ventiladores.",
       "fondo": "gris",
       "bloques": [
         {
@@ -419,6 +444,12 @@
           "texto": "Motor con bomba, ventilador, compresor o reductor: el láser dice cuánto calzar y mover en cada pata, sin desmontar el acople.",
           "video": "/videos/alineacion-balanceo/ali-laser",
           "descripcion": "Secuencia real del equipo láser: cabezales en el acople, lectura inicial fuera de tolerancia y lectura final dentro de tolerancia"
+        },
+        {
+          "titulo": "Alineación láser de poleas",
+          "texto": "En equipos movidos por bandas, el láser pone las dos poleas en el mismo plano: corrige el desfase, el ángulo y la torsión, y después se tensan las bandas al valor del fabricante.",
+          "video": "/videos/alineacion-balanceo/ali-poleas",
+          "descripcion": "Vista superior de un motor y un equipo movido por bandas: la polea conducida desplazada y girada se corrige con el láser hasta quedar en el mismo plano"
         },
         {
           "titulo": "Balanceo dinámico en sitio",
@@ -435,10 +466,11 @@
             "Motor con ventilador",
             "Motor con compresor",
             "Motor con reductor",
+            "Equipos movidos por bandas y poleas",
+            "Molinos, trituradoras y transportadores",
             "Ventiladores e impulsores",
             "Rotores de motor",
-            "Sopladores",
-            "Poleas"
+            "Sopladores"
           ]
         },
         {
@@ -446,11 +478,13 @@
           "items": [
             "Desalineación angular",
             "Desalineación paralela",
+            "Poleas desalineadas o en torsión",
+            "Bandas flojas o sobretensadas",
             "Pata coja",
             "Desbalance estático",
             "Desbalance dinámico",
             "Vibración alta por desbalance o desalineación",
-            "Desgaste prematuro de rodamientos y sellos"
+            "Desgaste prematuro de rodamientos, sellos y bandas"
           ]
         }
       ]

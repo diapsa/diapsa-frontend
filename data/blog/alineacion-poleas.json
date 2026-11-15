@@ -1,0 +1,124 @@
+{
+  "slug": "alineacion-de-poleas-y-bandas-tolerancias-y-como-se-corrige",
+  "titulo": "Alineación de poleas y bandas: tolerancias, síntomas y cómo se corrige",
+  "extracto": "Por qué una polea desalineada se come las bandas y los rodamientos, los tres tipos de desalineación, la tolerancia de referencia para bandas en V y dentadas, y el orden correcto para alinear con láser.",
+  "portada": "/images/blog/alineacion-poleas.jpg",
+  "fecha": "2026-11-13T15:00:00.000000Z",
+  "seo": {
+    "titulo": "Alineación de poleas y bandas: tolerancias y método",
+    "descripcion": "Los tres tipos de desalineación de poleas, la tolerancia de referencia para bandas en V y dentadas, los síntomas y cómo se alinea con láser paso a paso."
+  },
+  "bloques": [
+    [
+      "p",
+      "Un equipo movido por bandas tiene una regla simple: las dos poleas tienen que girar en el mismo plano. Cuando no lo hacen, la banda entra torcida al canal, roza un costado, se calienta y se desgasta en semanas lo que debía durar meses. Detrás de la banda caen los rodamientos del motor y del equipo movido, porque la desalineación los carga de lado y en sentido axial."
+    ],
+    [
+      "p",
+      "Es uno de los problemas más baratos de corregir y de los más ignorados, porque la banda se cambia rápido y nadie pregunta por qué se acabó. Aquí está cómo reconocerlo, cuánto se acepta y cómo se corrige."
+    ],
+    [
+      "h2",
+      "Los tres tipos de desalineación de poleas"
+    ],
+    [
+      "lista",
+      [
+        "Desfase paralelo: las caras de las poleas son paralelas pero no están en el mismo plano, una quedó adelantada respecto a la otra. Pasa cuando se cambia una polea y no se monta a la misma distancia del rodamiento.",
+        "Desalineación angular horizontal: vistas desde arriba, las poleas forman un ángulo. Pasa cuando el motor quedó girado sobre su base.",
+        "Desalineación angular vertical o torsión: vistas de frente, una polea está inclinada respecto a la otra. Pasa por una base deformada, una pata coja o calzas mal puestas."
+      ]
+    ],
+    [
+      "p",
+      "En la práctica casi siempre hay una combinación de las tres, y por eso conviene medirlas por separado: cada una se corrige con un movimiento distinto."
+    ],
+    [
+      "h2",
+      "Cuánta desalineación se acepta"
+    ],
+    [
+      "p",
+      "Manda la tolerancia del fabricante de la banda. Como referencia general, los fabricantes de bandas en V aceptan hasta medio grado de desalineación angular, y las bandas dentadas o síncronas, que son más sensibles, alrededor de un cuarto de grado. El desfase paralelo se juzga por la misma regla: el ángulo que forma la banda al pasar de una polea a otra no debe salirse de esos límites, así que entre más corta es la distancia entre centros, menos desfase se tolera."
+    ],
+    [
+      "p",
+      "Esas cifras son el máximo, no la meta. Con un láser de poleas es normal dejar el equipo muy por debajo, y cada décima de grado que se gana se nota en la vida de la banda."
+    ],
+    [
+      "h2",
+      "Síntomas de poleas desalineadas"
+    ],
+    [
+      "lista",
+      [
+        "La banda se desgasta de un solo costado o deja polvo de hule bajo el equipo.",
+        "Chillido al arrancar o con carga, aunque la tensión esté bien.",
+        "Bandas que se voltean dentro del canal o brincan de canal en juegos de varias bandas.",
+        "Las poleas se ven brillantes o con escalón en un lado del canal.",
+        "Rodamientos del motor o del equipo movido que se calientan o fallan antes de tiempo.",
+        "Vibración axial alta a la velocidad de giro de una de las dos poleas."
+      ]
+    ],
+    [
+      "h2",
+      "Cómo se alinean las poleas, paso a paso"
+    ],
+    [
+      "numerada",
+      [
+        "Bloquear y etiquetar el equipo y quitar la guarda.",
+        "Revisar las poleas: canales gastados, polea excéntrica o que cabecea. Alinear una polea dañada no resuelve nada, se cambia primero.",
+        "Revisar la base y la pata coja del motor, igual que en un equipo acoplado.",
+        "Montar el emisor del láser en la cara de la polea motriz y el receptor en la de la conducida.",
+        "Corregir primero la torsión con calzas bajo las patas del motor y después el ángulo horizontal y el desfase moviendo el motor sobre su base.",
+        "Tensar las bandas al valor del fabricante y volver a medir, porque tensar mueve el motor.",
+        "Arrancar, dejar trabajar y revisar la tensión de bandas nuevas después del asentamiento inicial."
+      ]
+    ],
+    [
+      "p",
+      "La regla o el hilo tensado sirven para una alineación gruesa, pero no miden la torsión ni dan el valor real del ángulo. El láser de poleas proyecta una línea sobre las caras de las dos poleas y muestra al momento el desfase y los dos ángulos, de modo que la corrección se ve mientras se hace."
+    ],
+    [
+      "h2",
+      "Los errores que hacen que no dure"
+    ],
+    [
+      "p",
+      "Alinear y no tensar, o tensar y no volver a medir. Cambiar una sola banda en un juego de varias, que deja bandas de distinto largo trabajando juntas. Alinear contra una polea gastada. Y no revisar la tensión después del asentamiento, cuando las bandas nuevas se estiran lo más. Cómo medir la tensión está en la guía de [tensión de bandas en V](/blog/tension-de-bandas-en-v-como-medirla-y-cuanto-debe-tener)."
+    ],
+    [
+      "h2",
+      "Preguntas frecuentes sobre alineación de poleas"
+    ],
+    [
+      "h3",
+      "¿Cada cuánto se alinean las poleas?"
+    ],
+    [
+      "p",
+      "Siempre que se cambia una banda, una polea o el motor, y dentro de la ruta de mantenimiento en equipos críticos. Si el espectro de vibraciones muestra vibración axial alta en el equipo, es lo primero que se revisa."
+    ],
+    [
+      "h3",
+      "¿Se puede alinear con regla?"
+    ],
+    [
+      "p",
+      "Se puede hacer una alineación gruesa, útil para dejar el equipo en rango. Para el valor final conviene el láser, porque la regla no ve la torsión y depende mucho de que las caras de las poleas estén sanas."
+    ],
+    [
+      "h3",
+      "¿La desalineación de poleas se ve en el análisis de vibraciones?"
+    ],
+    [
+      "p",
+      "Sí: aparece como vibración axial alta a la velocidad de giro del motor o del equipo movido. Lo explicamos en la guía de la [frecuencia de banda en el espectro](/blog/frecuencia-de-banda-en-el-espectro-de-vibraciones-fallas-de-bandas-y-poleas)."
+    ],
+    [
+      "nota",
+      "Si tienes equipos que se comen las bandas, nuestro servicio de [alineación y balanceo](/servicios/monitoreo-condicion/alineacion-balanceo) alinea poleas con láser en sitio, tensa las bandas y entrega el antes y el después medido."
+    ]
+  ]
+}
