@@ -180,6 +180,32 @@
   },
   {
     "articulo": {
+      "slug": "tension-de-bandas-en-v-como-medirla-y-cuanto-debe-tener",
+      "titulo": "Tensión de bandas en V",
+      "resumen": "Cómo medirla, qué daña una banda floja y una apretada, y cuándo volver a tensar.",
+      "portada": "/images/servicios/alineacion-balanceo/campo-analista-equipo.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/alineacion-balanceo",
+      "titulo": "Alineación y Balanceo",
+      "resumen": "Alineación láser de ejes y de poleas, y balanceo dinámico en sitio, con la vibración medida antes y después."
+    }
+  },
+  {
+    "articulo": {
+      "slug": "frecuencia-de-banda-en-el-espectro-de-vibraciones-fallas-de-bandas-y-poleas",
+      "titulo": "Frecuencia de banda en el espectro",
+      "resumen": "Cómo se ven en vibraciones la banda gastada, la polea excéntrica y la desalineación de poleas.",
+      "portada": "/images/gallery/campo/vibracion-analista-motor.webp"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/vibraciones-mecanicas",
+      "titulo": "Análisis de Vibraciones Mecánicas",
+      "resumen": "Rutas de medición e interpretación espectral en tu planta, con analistas Categoría III ISO 18436-2."
+    }
+  },
+  {
+    "articulo": {
       "slug": "analisis-de-vibraciones-en-motores-y-bombas-centrifugas",
       "titulo": "Vibraciones en motores y bombas centrífugas: dónde medir y qué buscar",
       "resumen": "Los puntos de medición, las fallas típicas de cada uno y cómo medir para poder comparar.",
@@ -193,6 +219,19 @@
   },
   {
     "articulo": {
+      "slug": "alineacion-de-poleas-y-bandas-tolerancias-y-como-se-corrige",
+      "titulo": "Alineación de poleas y bandas",
+      "resumen": "Los tres tipos de desalineación, la tolerancia de referencia y cómo se alinea con láser.",
+      "portada": "/images/blog/alineacion-poleas.jpg"
+    },
+    "servicio": {
+      "href": "/servicios/monitoreo-condicion/alineacion-balanceo",
+      "titulo": "Alineación y Balanceo",
+      "resumen": "Alineación láser de ejes y de poleas, y balanceo dinámico en sitio, con la vibración medida antes y después."
+    }
+  },
+  {
+    "articulo": {
       "slug": "tabla-de-tolerancias-para-alineacion-de-ejes",
       "titulo": "Tabla de tolerancias para alineación de ejes",
       "resumen": "Cuánta desalineación paralela y angular se acepta según la velocidad del equipo.",
@@ -201,7 +240,7 @@
     "servicio": {
       "href": "/servicios/monitoreo-condicion/alineacion-balanceo",
       "titulo": "Alineación y Balanceo",
-      "resumen": "Alineación láser de ejes y balanceo dinámico en sitio, con la vibración medida antes y después."
+      "resumen": "Alineación láser de ejes y de poleas, y balanceo dinámico en sitio, con la vibración medida antes y después."
     }
   },
   {
@@ -214,7 +253,7 @@
     "servicio": {
       "href": "/servicios/monitoreo-condicion/alineacion-balanceo",
       "titulo": "Alineación y Balanceo",
-      "resumen": "Alineación láser de ejes y balanceo dinámico en sitio, con la vibración medida antes y después."
+      "resumen": "Alineación láser de ejes y de poleas, y balanceo dinámico en sitio, con la vibración medida antes y después."
     }
   },
   {
@@ -227,7 +266,7 @@
     "servicio": {
       "href": "/servicios/monitoreo-condicion/alineacion-balanceo",
       "titulo": "Alineación y Balanceo",
-      "resumen": "Alineación láser de ejes y balanceo dinámico en sitio, con la vibración medida antes y después."
+      "resumen": "Alineación láser de ejes y de poleas, y balanceo dinámico en sitio, con la vibración medida antes y después."
     }
   },
   {
@@ -1228,7 +1267,7 @@
     "servicio": {
       "href": "/servicios/monitoreo-condicion/alineacion-balanceo",
       "titulo": "Alineación y Balanceo",
-      "resumen": "Alineación láser de ejes y balanceo dinámico en sitio, con la vibración medida antes y después."
+      "resumen": "Alineación láser de ejes y de poleas, y balanceo dinámico en sitio, con la vibración medida antes y después."
     }
   },
   {
