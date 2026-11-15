@@ -15,14 +15,14 @@
   {
     "articulo": {
       "slug": "termografia-industrial-una-herramienta-clave-para-el-mantenimiento-predictivo",
-      "titulo": "Termografía industrial: una herramienta clave para el mantenimiento predictivo",
-      "resumen": "Cómo la inspección térmica detecta problemas eléctricos y mecánicos antes de que se vuelvan falla.",
+      "titulo": "Termografía industrial: qué detecta y cómo leer un termograma",
+      "resumen": "Qué fallas ve la termografía en cada equipo, cómo se lee un termograma con un caso real y cómo se califica un punto caliente.",
       "portada": "/images/servicios/termografia-infrarroja/campo-09.webp"
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/termografia-infrarroja",
-      "titulo": "Termografía Infrarroja",
-      "resumen": "Inspección termográfica de tableros, motores y procesos con reporte de hallazgos priorizado."
+      "titulo": "Estudio de termografía infrarroja industrial",
+      "resumen": "Inspección termográfica de tableros, subestaciones y motores con el equipo en operación, con informe de cada hallazgo, su severidad y qué hacer."
     }
   },
   {
@@ -122,8 +122,8 @@
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/termografia-infrarroja",
-      "titulo": "Termografía Infrarroja",
-      "resumen": "Inspección termográfica de tableros, motores y procesos con reporte de hallazgos priorizado."
+      "titulo": "Estudio de termografía infrarroja industrial",
+      "resumen": "Inspección termográfica de tableros, subestaciones y motores con el equipo en operación, con informe de cada hallazgo, su severidad y qué hacer."
     }
   },
   {
@@ -135,8 +135,8 @@
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/termografia-infrarroja",
-      "titulo": "Termografía Infrarroja",
-      "resumen": "Inspección termográfica de tableros, motores y procesos con reporte de hallazgos priorizado."
+      "titulo": "Estudio de termografía infrarroja industrial",
+      "resumen": "Inspección termográfica de tableros, subestaciones y motores con el equipo en operación, con informe de cada hallazgo, su severidad y qué hacer."
     }
   },
   {
@@ -148,8 +148,8 @@
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/termografia-infrarroja",
-      "titulo": "Termografía Infrarroja",
-      "resumen": "Inspección termográfica de tableros, motores y procesos con reporte de hallazgos priorizado."
+      "titulo": "Estudio de termografía infrarroja industrial",
+      "resumen": "Inspección termográfica de tableros, subestaciones y motores con el equipo en operación, con informe de cada hallazgo, su severidad y qué hacer."
     }
   },
   {
@@ -369,8 +369,8 @@
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/analisis-de-aceite",
-      "titulo": "Análisis de Aceite",
-      "resumen": "Muestreo en planta, laboratorio acreditado y DGA en transformadores, interpretados por analistas certificados."
+      "titulo": "Programa de análisis de aceite industrial",
+      "resumen": "Muestreo en planta, laboratorio acreditado ISO/IEC 17025 y DGA en transformadores, interpretados por analistas certificados."
     }
   },
   {
@@ -382,8 +382,8 @@
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/analisis-de-aceite",
-      "titulo": "Análisis de Aceite",
-      "resumen": "Muestreo en planta, laboratorio acreditado y DGA en transformadores, interpretados por analistas certificados."
+      "titulo": "Programa de análisis de aceite industrial",
+      "resumen": "Muestreo en planta, laboratorio acreditado ISO/IEC 17025 y DGA en transformadores, interpretados por analistas certificados."
     }
   },
   {
@@ -395,8 +395,8 @@
     },
     "servicio": {
       "href": "/servicios/monitoreo-condicion/analisis-de-aceite",
-      "titulo": "Análisis de Aceite",
-      "resumen": "Muestreo en planta, laboratorio acreditado y DGA en transformadores, interpretados por analistas certificados."
+      "titulo": "Programa de análisis de aceite industrial",
+      "resumen": "Muestreo en planta, laboratorio acreditado ISO/IEC 17025 y DGA en transformadores, interpretados por analistas certificados."
     }
   },
   {

@@ -35,13 +35,19 @@ export default function CasosDestacados({ casos }: { casos: SuccessCase[] }) {
   const lista = casos.slice(0, 4);
   const [activo, setActivo] = useState(0);
   const [pausa, setPausa] = useState(false);
+  // 2026-11-15: quien elige un caso o toca la franja en el celular se queda
+  // con ese caso. Antes cambiaba solo cada 9 s también en celular, donde no
+  // hay cursor que lo pause, y el texto y las cifras cambiaban de alto a
+  // media lectura (Clarity: 8 % de tiempo activo en la portada).
+  const [fijo, setFijo] = useState(false);
+  const detenido = pausa || fijo;
 
   useEffect(() => {
-    if (pausa || lista.length < 2) return;
+    if (detenido || lista.length < 2) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const reloj = window.setTimeout(() => setActivo((a) => (a + 1) % lista.length), INTERVALO);
     return () => window.clearTimeout(reloj);
-  }, [activo, pausa, lista.length]);
+  }, [activo, detenido, lista.length]);
 
   if (lista.length === 0) return null;
   const c = lista[activo];
@@ -50,7 +56,12 @@ export default function CasosDestacados({ casos }: { casos: SuccessCase[] }) {
 
   return (
     <section className="w-full bg-gray-50 py-14 lg:py-20">
-      <div className="mx-auto max-w-7xl px-6" onMouseEnter={() => setPausa(true)} onMouseLeave={() => setPausa(false)}>
+      <div
+        className="mx-auto max-w-7xl px-6"
+        onMouseEnter={() => setPausa(true)}
+        onMouseLeave={() => setPausa(false)}
+        onTouchStart={() => setFijo(true)}
+      >
         <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">Resultados</span>
@@ -69,8 +80,10 @@ export default function CasosDestacados({ casos }: { casos: SuccessCase[] }) {
           </Link>
         </div>
 
-        {/* Una pestaña por caso, con su industria */}
-        <div role="tablist" className="mb-6 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-flow-col lg:auto-cols-fr lg:grid-cols-none">
+        {/* Una pestaña por caso, con su industria. Dos por fila en celular
+            (2026-11-15): en una sola columna las cuatro ocupaban media
+            pantalla antes del caso. */}
+        <div role="tablist" className="mb-6 grid grid-cols-2 gap-2 lg:grid-flow-col lg:auto-cols-fr lg:grid-cols-none">
           {lista.map((k, i) => {
             const sel = i === activo;
             return (
@@ -79,7 +92,10 @@ export default function CasosDestacados({ casos }: { casos: SuccessCase[] }) {
                 type="button"
                 role="tab"
                 aria-selected={sel}
-                onClick={() => setActivo(i)}
+                onClick={() => {
+                  setFijo(true);
+                  setActivo(i);
+                }}
                 className={`relative overflow-hidden rounded-sm px-4 py-3 text-left transition-colors ${
                   sel ? "bg-primary text-white" : "bg-white text-primary ring-1 ring-black/5 hover:ring-secondary"
                 }`}
@@ -89,7 +105,7 @@ export default function CasosDestacados({ casos }: { casos: SuccessCase[] }) {
                 </span>
                 <span className="mt-0.5 block text-sm font-bold leading-snug">{k.success_case.service}</span>
                 {/* Barra de avance hacia el siguiente caso */}
-                {sel && !pausa && lista.length > 1 && (
+                {sel && !detenido && lista.length > 1 && (
                   <span
                     key={`barra-${activo}`}
                     className="absolute bottom-0 left-0 h-0.5 bg-secondary motion-safe:animate-[avance_9s_linear_forwards]"

@@ -93,7 +93,9 @@ const SLIDES: Slide[] = [
   },
 ];
 
-const AUTOPLAY_MS = 7000;
+// 2026-11-15: de 7 a 9 s. Clarity: 8 % de tiempo activo en la portada; con
+// 7 s el titular y su párrafo cambiaban antes de terminar de leerlos.
+const AUTOPLAY_MS = 9000;
 // Segundo de la historia "con" en que entra el analista.
 const INICIO_CIERRE = 12.5;
 
@@ -105,27 +107,54 @@ function Flecha() {
   );
 }
 
+// Agrega la diapositiva al conjunto de las ya vistas (mismo objeto si ya estaba).
+const anotar = (v: Set<number>, i: number) => (v.has(i) ? v : new Set(v).add(i));
+
 export default function Hero() {
   const [actual, setActual] = useState(0);
   const [pausa, setPausa] = useState(false);
   // Diapositivas que ya se mostraron: solo esas cargan su foto. Antes las
   // cuatro fotos se pedían de entrada aunque tres estuvieran ocultas
   // (Clarity, 2026-10-05: LCP de 5.4 s en la portada).
+  // Se anota al cambiar de diapositiva, no en un efecto aparte (2026-11-15:
+  // el efecto hacía un segundo render en cada cambio y eslint lo marcaba).
   const [vistas, setVistas] = useState<Set<number>>(() => new Set([0]));
-  useEffect(() => {
-    setVistas((v) => (v.has(actual) ? v : new Set(v).add(actual)));
-  }, [actual]);
   const reloj = useRef<number | null>(null);
+  // Quien ya movió el carrusel a mano eligió qué leer: no se le cambia más
+  // (2026-11-15). En celular no hay "cursor encima" que lo pause.
+  const [fijo, setFijo] = useState(false);
+  // La columna de la foto solo existe en escritorio (2026-11-15). La escena
+  // se monta solo ahí: su póster lleva prioridad y, oculto con CSS, el
+  // celular lo descargaba igual sin mostrarlo.
+  const [ancha, setAncha] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const medir = () => setAncha(mq.matches);
+    medir();
+    mq.addEventListener("change", medir);
+    return () => mq.removeEventListener("change", medir);
+  }, []);
 
   useEffect(() => {
-    if (pausa) return;
-    reloj.current = window.setTimeout(() => setActual((a) => (a + 1) % SLIDES.length), AUTOPLAY_MS);
+    if (pausa || fijo) return;
+    // Quien pidió menos movimiento tampoco ve el cambio automático.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    reloj.current = window.setTimeout(() => {
+      const siguiente = (actual + 1) % SLIDES.length;
+      setActual(siguiente);
+      setVistas((v) => anotar(v, siguiente));
+    }, AUTOPLAY_MS);
     return () => {
       if (reloj.current) window.clearTimeout(reloj.current);
     };
-  }, [actual, pausa]);
+  }, [actual, pausa, fijo]);
 
-  const irA = (i: number) => setActual((i + SLIDES.length) % SLIDES.length);
+  const irA = (i: number) => {
+    const destino = (i + SLIDES.length) % SLIDES.length;
+    setFijo(true);
+    setActual(destino);
+    setVistas((v) => anotar(v, destino));
+  };
 
   return (
     <section
@@ -140,8 +169,12 @@ export default function Hero() {
       <div className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-secondary/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-28 lg:flex lg:min-h-[calc(100vh-5rem)] lg:flex-col lg:justify-center lg:py-24 2xl:max-w-[88rem] 2xl:px-10">
-        <div className="relative grid min-h-[36rem] grid-cols-1 items-center gap-10 lg:min-h-[32rem] lg:grid-cols-[5fr_6fr] lg:gap-12 2xl:grid-cols-[5fr_7fr] 2xl:gap-16">
+      {/* 2026-11-15: el hero ya no llena toda la pantalla en escritorio y en
+          celular no lleva la foto ni las normas (cerca de 1100 px de alto, estimado por sus clases):
+          así las tarjetas de "cómo empezar" asoman en la primera pantalla.
+          Clarity: la gente baja en promedio al 24 % de la portada. */}
+      <div className="relative mx-auto max-w-7xl px-6 pb-16 pt-28 lg:flex lg:min-h-[calc(100vh-12rem)] lg:flex-col lg:justify-center lg:py-24 2xl:max-w-[88rem] 2xl:px-10">
+        <div className="relative grid grid-cols-1 items-center gap-10 lg:min-h-[32rem] lg:grid-cols-[5fr_6fr] lg:gap-12 2xl:grid-cols-[5fr_7fr] 2xl:gap-16">
           {SLIDES.map((s, i) => {
             const activa = i === actual;
             return (
@@ -166,7 +199,7 @@ export default function Hero() {
                   )}
                   <p className="mb-8 max-w-xl text-justify text-base leading-relaxed text-white/80 lg:text-lg 2xl:max-w-2xl 2xl:text-xl">{s.description}</p>
                   {s.certifica && (
-                    <ul className="-mt-2 mb-8 grid max-w-xl grid-cols-1 gap-2 sm:grid-cols-3">
+                    <ul className="-mt-2 mb-8 hidden max-w-xl sm:grid grid-cols-1 gap-2 sm:grid-cols-3">
                       {CERTIFICACIONES.map((c) => (
                         <li key={c.norma} className="rounded-sm border border-secondary/40 bg-primary/60 px-3 py-2 backdrop-blur-sm">
                           <p className="text-sm font-extrabold text-secondary">{c.norma}</p>
@@ -193,7 +226,7 @@ export default function Hero() {
                   </div>
                 </div>
 
-                <div className="w-full">
+                <div className="hidden w-full lg:block">
                   {s.image ? (
                     vistas.has(i) && <div
                       className={`relative w-full overflow-hidden rounded-[14px] ${
@@ -218,7 +251,7 @@ export default function Hero() {
                       )}
                     </div>
                   ) : (
-                    <EscenaDolor modo="con" inicio={INICIO_CIERRE} poster={{ src: "/videos/idap/idap-equipo.jpg", alt: "Ficha de un equipo en IDAP con su diagnóstico por disciplina" }} />
+                    ancha && <EscenaDolor modo="con" inicio={INICIO_CIERRE} poster={{ src: "/videos/idap/idap-equipo.jpg", alt: "Ficha de un equipo en IDAP con su diagnóstico por disciplina" }} />
                   )}
                 </div>
               </div>

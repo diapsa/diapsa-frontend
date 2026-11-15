@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
 import { CATEGORIA_TERMOGRAFIA } from '@/lib/productos-locales';
 import { getBrands, getCategoryBySlug, getSeries } from '@/lib/api/categories';
-import { getStorageUrl } from '@/lib/api/config';
+import { esNoEncontrado, getStorageUrl } from '@/lib/api/config';
 import { getProducts } from '@/lib/api/products';
 import JsonLd, { createBreadcrumbSchema } from '@/components/atoms/JsonLd';
 import CategoryPageClient from '@/components/organisms/CategoryPageClient';
@@ -15,6 +15,17 @@ import { SITE_CONFIG } from '@/lib/constants';
 
 interface CategoryPageProps {
     params: Promise<{ categoria: string }>;
+}
+
+// La categoría se sirve desde el caché y se rehace cada hora, como la portada
+// y /servicios (2026-11-15): sin generateStaticParams Next la marcaba dinámica
+// (ƒ), con "Cache-Control: no-store" en cada visita. Devuelve [] para no
+// pedirle cada categoría al CMS en el build (limita peticiones, 429); se
+// genera con el primer visitante.
+export const revalidate = 3600;
+
+export function generateStaticParams() {
+    return [];
 }
 
 
@@ -63,22 +74,35 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
                     : undefined,
             },
         };
-    } catch {
+    } catch (error) {
+        // Solo un 404 real del CMS es "no encontrada" (2026-11-15); un timeout o
+        // un 429 se relanza para que ese título no se quede guardado en caché.
+        if (!esNoEncontrado(error)) throw error;
         return {
-            title: 'Categoria no encontrada',
+            title: 'Categoría no encontrada',
         };
     }
 }
 
 async function getCategoryPageData(categoria: string) {
-    const [category, productsResponse, brands, series] = await Promise.all([
-        getCategoryBySlug(categoria),
-        getProducts({ category: categoria, page: 1, per_page: 12 }),
-        getBrands(),
-        getSeries({ category: categoria }),
-    ]);
+    const pedidaCategoria = getCategoryBySlug(categoria);
+    try {
+        const [category, productsResponse, brands, series] = await Promise.all([
+            pedidaCategoria,
+            getProducts({ category: categoria, page: 1, per_page: 12 }),
+            getBrands(),
+            getSeries({ category: categoria }),
+        ]);
 
-    return { category, productsResponse, brands, series };
+        return { category, productsResponse, brands, series };
+    } catch (error) {
+        // La página es 404 solo si la categoría misma no existe en el CMS
+        // (2026-11-15). Si falló otra de las cuatro peticiones (un 429 en
+        // marcas, por ejemplo) se relanza tal cual, sin convertirla en 404.
+        const noExiste = await pedidaCategoria.then(() => false, esNoEncontrado);
+        if (noExiste) notFound();
+        throw error;
+    }
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
@@ -89,15 +113,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         redirect(`/productos?categoria=${categoria}`);
     }
 
-    let pageData: Awaited<ReturnType<typeof getCategoryPageData>>;
-
-    try {
-        pageData = await getCategoryPageData(categoria);
-    } catch {
-        notFound();
-    }
-
-    const { category, productsResponse, brands, series } = pageData;
+    // getCategoryPageData ya llama notFound() con el 404 real del CMS; los
+    // demás errores suben para que Next sirva la versión en caché o un 5xx
+    // (2026-11-15), en vez del 404 que salía ante cualquier fallo.
+    const { category, productsResponse, brands, series } = await getCategoryPageData(categoria);
     const breadcrumbItems = [
         { label: 'Inicio', href: '/' },
         { label: 'Productos', href: '/productos' },

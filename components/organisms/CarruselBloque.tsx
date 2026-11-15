@@ -56,6 +56,12 @@ type Props = {
   /** Foto de fondo del panel azul; cada bloque lleva la suya. */
   fondo?: string;
   intervalo?: number;
+  /** Versión de la portada (2026-11-15, Clarity: 8 % de tiempo activo ahí).
+      En celular el resumen y las tres ideas del apartado se quitan (las
+      tarjetas ya traen su texto y cada bloque iba en unos 1100 px, estimado por sus clases), y el
+      carrusel deja de avanzar solo en cuanto lo tocan, porque en celular no
+      hay cursor que lo pause. Monitoreo de condición no lo usa. */
+  compacto?: boolean;
 };
 
 function Flecha({ izquierda = false }: { izquierda?: boolean }) {
@@ -66,9 +72,12 @@ function Flecha({ izquierda = false }: { izquierda?: boolean }) {
   );
 }
 
-export default function CarruselBloque({ etiqueta, titulo, texto, apartados, href, fondo = "/images/screen.webp", intervalo = 5000 }: Props) {
+export default function CarruselBloque({ etiqueta, titulo, texto, apartados, href, fondo = "/images/screen.webp", intervalo = 5000, compacto = false }: Props) {
   const [activo, setActivo] = useState(apartados[0]?.id);
   const [pausa, setPausa] = useState(false);
+  // Tocado en celular (solo con compacto): ya no avanza solo. Va aparte de
+  // "pausa" porque el mouseleave que emula el celular la volvía a soltar.
+  const [fijo, setFijo] = useState(false);
   const pista = useRef<HTMLUListElement>(null);
   const apartado = apartados.find((a) => a.id === activo) ?? apartados[0];
   const [posicion, setPosicion] = useState(0);
@@ -99,11 +108,11 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
   }, [activo]);
 
   useEffect(() => {
-    if (pausa) return;
+    if (pausa || fijo) return;
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const reloj = window.setInterval(() => mover(1), intervalo);
     return () => window.clearInterval(reloj);
-  }, [pausa, intervalo, activo]);
+  }, [pausa, fijo, intervalo, activo]);
 
   const verTodo = apartado?.href ?? href;
 
@@ -114,6 +123,7 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
       onMouseLeave={() => setPausa(false)}
       onFocus={() => setPausa(true)}
       onBlur={() => setPausa(false)}
+      onTouchStart={compacto ? () => setFijo(true) : undefined}
     >
       {/* Panel: el bloque, sus apartados y el resumen del elegido */}
       <div className="relative flex flex-col overflow-hidden rounded-sm bg-primary p-6 text-white shadow-xl sm:p-7">
@@ -162,7 +172,10 @@ export default function CarruselBloque({ etiqueta, titulo, texto, apartados, hre
           )}
 
           {(apartado?.descripcion || apartado?.puntos?.length) && (
-            <div key={`info-${apartado.id}`} className="mt-6 border-t border-white/10 pt-5 motion-safe:animate-[fadeIn_.3s_ease-out]">
+            <div
+              key={`info-${apartado.id}`}
+              className={`mt-6 border-t border-white/10 pt-5 motion-safe:animate-[fadeIn_.3s_ease-out] ${compacto ? "hidden lg:block" : ""}`}
+            >
               {apartado.descripcion && <p className="text-justify text-sm leading-relaxed text-white/80">{apartado.descripcion}</p>}
               {apartado.puntos && apartado.puntos.length > 0 && (
                 <ul className="mt-4 flex flex-col gap-2">

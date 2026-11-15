@@ -47,10 +47,18 @@ function Tira({ clientes, reversa = false }: { clientes: Cliente[]; reversa?: bo
   );
 }
 
-export function Clients() {
+/**
+ * compacto (2026-11-15, solo la portada): Clarity mostró que la portada se
+ * abre y no se lee (8 % de tiempo activo). Ahí la barra va justo debajo de
+ * "cómo empezar", así que el titular largo y el antetítulo sobran: queda la
+ * línea de para quién trabajamos como título y los logotipos, con menos aire.
+ * Metodología sigue usando la versión completa.
+ */
+export function Clients({ compacto = false }: { compacto?: boolean } = {}) {
   const invertidos = [...CLIENTES].reverse();
+  const linea = "Plantas de energía, hidrocarburos, alimentos y manufactura que ya miden sus equipos con nosotros.";
   return (
-    <section className="flex w-full flex-col bg-white pt-16 lg:pt-24">
+    <section className={`flex w-full flex-col bg-white ${compacto ? "pt-8 lg:pt-12" : "pt-16 lg:pt-24"}`}>
       <style>{`
         @keyframes clientes-avance { from { transform: translateX(0) } to { transform: translateX(-50%) } }
         @keyframes clientes-reversa { from { transform: translateX(-50%) } to { transform: translateX(0) } }
@@ -63,19 +71,23 @@ export function Clients() {
           .clientes-avance, .clientes-reversa { animation: none; }
         }
       `}</style>
-      <div className="mx-auto mb-10 flex w-full max-w-4xl flex-col items-center gap-4 px-6 text-center">
-        <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-secondary">
-          <span className="h-px w-8 bg-secondary" aria-hidden="true" />
-          Clientes satisfechos
-          <span className="h-px w-8 bg-secondary" aria-hidden="true" />
-        </span>
-        <h2 className="text-3xl font-extrabold leading-tight text-primary lg:text-5xl">
-          PASIÓN POR EL MONITOREO DE CONDICIÓN <span className="text-secondary">Y LA CONFIABILIDAD</span>
-        </h2>
-        <p className="max-w-2xl text-justify text-lg leading-relaxed text-tertiary sm:text-center">
-          Plantas de energía, hidrocarburos, alimentos y manufactura que ya miden sus equipos con nosotros.
-        </p>
-      </div>
+      {compacto ? (
+        <div className="mx-auto mb-6 w-full max-w-3xl px-6 text-center">
+          <h2 className="text-xl font-extrabold leading-snug text-primary lg:text-2xl">{linea}</h2>
+        </div>
+      ) : (
+        <div className="mx-auto mb-10 flex w-full max-w-4xl flex-col items-center gap-4 px-6 text-center">
+          <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-secondary">
+            <span className="h-px w-8 bg-secondary" aria-hidden="true" />
+            Clientes satisfechos
+            <span className="h-px w-8 bg-secondary" aria-hidden="true" />
+          </span>
+          <h2 className="text-3xl font-extrabold leading-tight text-primary lg:text-5xl">
+            PASIÓN POR EL MONITOREO DE CONDICIÓN <span className="text-secondary">Y LA CONFIABILIDAD</span>
+          </h2>
+          <p className="max-w-2xl text-justify text-lg leading-relaxed text-tertiary sm:text-center">{linea}</p>
+        </div>
+      )}
       <div className="relative w-full space-y-4 bg-[repeating-linear-gradient(45deg,#003853_0px,#003853_10px,transparent_10px,transparent_15px),linear-gradient(135deg,#003853,#002e46)] py-8 bg-blend-multiply md:space-y-6 md:py-10">
         {/* Desvanecido en las orillas para que los logos entren y salgan suaves */}
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#002e46] to-transparent md:w-32" aria-hidden="true" />

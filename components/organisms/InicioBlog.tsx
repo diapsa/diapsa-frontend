@@ -37,7 +37,10 @@ export default function InicioBlog({ entradas }: { entradas: Blog[] }) {
   const portada = (e: Blog) => getStorageUrl(e.cover_image) || "/images/fondo-mantenimiento.webp";
 
   return (
-    <section className="w-full bg-gray-50 py-14 lg:py-20">
+    // Fondo blanco (2026-11-15): con la portada recortada, el blog queda
+    // justo después de los casos y las fotos de campo, las dos en gris, y
+    // las tres franjas se leían como una sola.
+    <section className="w-full bg-white py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">

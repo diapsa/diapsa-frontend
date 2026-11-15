@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/organisms/Hero";
-import QuienesSomos from "@/components/organisms/QuienesSomos";
-import InicioPresencia from "@/components/organisms/InicioPresencia";
 import InicioIndustrias from "@/components/organisms/InicioIndustrias";
 import InicioBloques from "@/components/organisms/InicioBloques";
-import InicioGas from "@/components/organisms/InicioGas";
-import Reveal from "@/components/atoms/Reveal";
 import { Clients } from "@/components/organisms/Clients";
 import GaleriaCampo from "@/components/organisms/GaleriaCampo";
 import CasosDestacados from "@/components/organisms/CasosDestacados";
-import LoQueRecibes from "@/components/organisms/LoQueRecibes";
-import InicioDiplomado from "@/components/organisms/InicioDiplomado";
 import InicioBlog from "@/components/organisms/InicioBlog";
 import ContactForm from "@/components/organisms/ContactForm";
 import AvisoCurso from "@/components/organisms/AvisoCurso";
@@ -73,13 +67,26 @@ export const metadata: Metadata = {
   },
 };
 
-// Portada rehecha con el plan de septiembre (docs/designs/plan-home-2026-09.md):
-// una línea en lugar de trece secciones sueltas. Hero en carrusel (cuatro
-// puertas, la primera con la escena de la planta), quiénes somos en corto,
-// servicios, cursos y productos en carruseles por bloque, gas y equipos, la prueba (clientes, fotos
-// de campo, casos), lo que recibes, el diplomado, el blog y el contacto.
-// Salen las pestañas, los anuncios, la galería suelta, la historia con
-// cifras que no se podían sostener y la introducción de IDAP.
+// Portada rehecha con el plan de septiembre (docs/designs/plan-home-2026-09.md)
+// y recortada el 2026-11-15. Clarity de noviembre: la gente baja en promedio
+// al 24 % de la página y solo el 8 % de su tiempo ahí es activo ("la abren y
+// no la leen"). Eran quince franjas; quedan diez, con lo que vende primero:
+// hero, cómo empezar (WhatsApp es el botón más usado del sitio), clientes,
+// servicios, cursos y equipos, industrias, casos, fotos de campo, guías, el
+// formulario y la línea de cobertura.
+// Salen de la portada (los componentes siguen en el repo) las que repetían
+// otra franja: InicioGas (ya es la diapositiva 3 del hero y una tarjeta de
+// "Más servicios"), LoQueRecibes (vive en monitoreo de condición; cargaba
+// una segunda escena 3D y cambiaba de alto cada 8 s), QuienesSomos (sus
+// tres datos ya están en el hero, en el bloque de servicios y en el texto
+// de las fotos de campo, y su carrusel repetía las fotos de campo),
+// InicioPresencia (un segundo formulario antes del formulario final; sus
+// tres cifras no llevan caso ni fuente a la vista, y los casos ya dan cifras
+// medidas) e InicioDiplomado (el diplomado ya está
+// en el hero y en el bloque de cursos).
+// Tampoco va Reveal: escondía cada franja hasta que su borde entraba en
+// pantalla y la mostraba con 0.7 s de fundido; en un desplazamiento rápido
+// se veían huecos en blanco justo donde se esperaba leer.
 export default async function Home() {
   // El CMS no debe poder tumbar la home: si alguna llamada falla, la página
   // carga igual y solo se omite la sección que dependía de esos datos.
@@ -105,41 +112,33 @@ export default async function Home() {
       {/* El Hero queda fuera de Reveal a propósito: animar lo que ya está
           visible al cargar retrasa la primera impresión y penaliza el LCP. */}
       <Hero />
-      {/* Anuncio de las clínicas técnicas en la esquina (el del webinar ya pasó). */}
+      {/* Ficha de esquina con el curso de termografía del 8 al 11 de diciembre. */}
       <AvisoCurso />
 
-      {/* Cómo empezar, en la primera pantalla y media (Clarity: solo el 16 %
-          de la portada se veía). Lo que vende va antes que lo institucional. */}
+      {/* Cómo empezar, en la primera pantalla y media. Subirlo el 3 y el 21
+          de octubre llevó "hasta dónde bajan" de 24.2 % a 37.5 %. */}
       <InicioContacto />
 
-      {/* Todos los servicios y equipos a la vista */}
-      <Reveal><InicioBloques productos={productos} /></Reveal>
+      {/* La prueba social justo después: para quién trabajamos, en una línea
+          y con los logotipos, sin el titular largo de su versión completa. */}
+      <Clients compacto />
 
-      {/* Las industrias que atendemos, con sus equipos, servicios y clientes */}
-      <Reveal><InicioIndustrias /></Reveal>
+      {/* Servicios, cursos y equipos */}
+      <InicioBloques productos={productos} />
 
-      {/* Detección de gas, el servicio más especializado, con franja propia */}
-      <Reveal><InicioGas /></Reveal>
+      {/* Las industrias, con enlace a la página de cada una */}
+      <InicioIndustrias />
 
-      {/* La prueba: clientes y fotos de campo */}
-      <Reveal><Clients /></Reveal>
+      {/* Resultados documentados y fotos reales de campo */}
+      {cases.length > 0 && <CasosDestacados casos={cases} />}
       <GaleriaCampo
         sinPie
+        prioridad={false}
         fotos={galeriaMonitoreo}
-        texto="Nuestros analistas en planta con vibraciones, termografía, ultrasonido, aceite y calidad de energía. Mediciones reales, sin fotos de banco de imágenes."
+        texto="Somos un despacho de ingeniería dedicado al monitoreo de condición, con base en Saltillo y servicio en todo México y Sudamérica. Estas son mediciones reales de nuestros analistas, sin fotos de banco de imágenes."
       />
 
-      {/* Resultados: los casos documentados y lo que recibes en cada servicio */}
-      {cases.length > 0 && <Reveal><CasosDestacados casos={cases} /></Reveal>}
-      <Reveal><LoQueRecibes /></Reveal>
-
-      {/* Quiénes somos y presencia, después de lo que vende */}
-      <Reveal><QuienesSomos /></Reveal>
-      <Reveal><InicioPresencia /></Reveal>
-
-      {/* Cierre */}
-      <Reveal><InicioDiplomado /></Reveal>
-      {blogs.length > 0 && <Reveal><InicioBlog entradas={blogs} /></Reveal>}
+      {blogs.length > 0 && <InicioBlog entradas={blogs} />}
 
       <section id="contacto">
         <ContactForm />

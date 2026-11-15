@@ -5,8 +5,8 @@
   "portada": "/images/blog/rayo-tormenta.webp",
   "fecha": "2026-09-30T23:59:00.000000Z",
   "seo": {
-    "titulo": "NOM-022-STPS-2015: tierras físicas y pararrayos",
-    "descripcion": "Qué pide la NOM-022-STPS-2015 punto por punto: a quién aplica, los valores de resistencia (25 y 10 ohms), cada cuánto medir, qué revisa la STPS y qué pasa si no cumples."
+    "titulo": "NOM-022-STPS-2015: qué pide, cuántos ohms y cada cuánto medir",
+    "descripcion": "La NOM 022 STPS 2015 en palabras sencillas: a quién aplica, 25 ohms en tierras y 10 en pararrayos, cada cuánto medir y qué revisa el inspector."
   },
   "bloques": [
     [
