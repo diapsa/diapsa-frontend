@@ -15,13 +15,16 @@ import type { Product } from "@/types/product";
  * bloque simplemente no aparece.
  */
 
+// 2026-11-15: menos aire entre bloques y la versión compacta del carrusel
+// (Clarity: la portada se abre y no se lee; en celular cada bloque medía
+// unos 1100 px, estimado por sus clases, y los tres juntos eran la mitad de la página).
 export default function InicioBloques({ productos }: { productos: Product[] }) {
   const bloqueProductos = apartadosProductos(productos, (ruta) => getStorageUrl(ruta) ?? ruta);
 
   return (
-    <section id="servicios" className="w-full bg-gray-50 py-14 lg:py-20">
+    <section id="servicios" className="w-full bg-gray-50 py-12 lg:py-16">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="mx-auto mb-8 max-w-3xl text-center lg:mb-10">
           <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">Lo que hacemos</span>
           <h2 className="mb-5 text-3xl font-extrabold text-primary lg:text-4xl">
             SERVICIOS, CURSOS <span className="text-secondary">Y EQUIPOS</span>
@@ -36,13 +39,14 @@ export default function InicioBloques({ productos }: { productos: Product[] }) {
           </div>
         </div>
 
-        <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-12 lg:gap-14">
           <CarruselBloque
             etiqueta="Servicios"
             titulo={<>Medimos, vigilamos y <span className="text-secondary">diagnosticamos</span></>}
             texto="Rutas con nuestros analistas, sensores en línea y servicios especializados, con tus equipos en operación."
             apartados={APARTADOS_SERVICIOS}
             href="/servicios"
+            compacto
             fondo="/images/gallery/campo/vibracion-motor-grande.webp"
           />
           <CarruselBloque
@@ -51,6 +55,7 @@ export default function InicioBloques({ productos }: { productos: Product[] }) {
             texto="Formación técnica, talleres y certificaciones por técnica, y el diplomado en confiabilidad operativa."
             apartados={APARTADOS_CURSOS}
             href="/cursos"
+            compacto
             fondo="/images/cursos/confiabilidad/confiabilidad-09.webp"
           />
           {bloqueProductos.length > 0 && (
@@ -60,6 +65,7 @@ export default function InicioBloques({ productos }: { productos: Product[] }) {
               texto="Te asesoramos en la selección para que compres el equipo que tu planta realmente necesita."
               apartados={bloqueProductos}
               href="/productos"
+              compacto
               fondo="/images/servicios/sensores-acusticos/campo-00.webp"
             />
           )}

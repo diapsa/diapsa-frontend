@@ -21,14 +21,14 @@
     }
   ],
   "header": {
-    "title": "Análisis de Aceite",
-    "subtitle": "Análisis de aceite lubricante y de gases disueltos en transformadores: lo que pasa dentro del equipo, sin abrirlo ni pararlo",
+    "title": "Análisis de Aceite Industrial",
+    "subtitle": "Programa de análisis de aceite lubricante y de gases disueltos en transformadores: muestreo en planta, laboratorio acreditado y un diagnóstico por equipo, sin abrirlo ni pararlo",
     "backgroundImage": "/images/fondo-hero.webp"
   },
-  "seoDescription": "Análisis de aceite industrial y DGA en transformadores: muestreo en planta, laboratorio ISO/IEC 17025 e interpretación de analistas certificados.",
+  "seoDescription": "Programa de análisis de aceite industrial: muestreo en planta, laboratorio acreditado ISO/IEC 17025, diagnóstico por equipo y DGA en transformadores.",
   "content": {
     "title": "Vemos el desgaste desde adentro, sin abrir el equipo",
-    "subtitle": "Una muestra de aceite dice si el equipo se está desgastando por dentro, si le está entrando algo que no debe y si el aceite todavía sirve. En transformadores, los gases disueltos avisan de una falla eléctrica antes de que se vea.",
+    "subtitle": "Armamos el programa de análisis de aceite de tu planta. Una muestra de aceite dice si el equipo se está desgastando por dentro, si le está entrando algo que no debe y si el aceite todavía sirve. En transformadores, los gases disueltos avisan de una falla eléctrica antes de que se vea.",
     "image": "/images/servicios/analisis-de-aceite/muestreo-motor-azul.webp",
     "items": [
       {
@@ -273,6 +273,14 @@
   "mostrarClientes": true,
   "faq": [
     {
+      "question": "¿Qué incluye el servicio de análisis de aceite?",
+      "answer": "El programa de muestreo armado equipo por equipo, la toma de cada muestra en planta con el equipo en operación, el análisis en laboratorio acreditado ISO/IEC 17025, la interpretación de un analista certificado ICML MLA III y un informe con una hoja por equipo: su condición en semáforo, el diagnóstico, las recomendaciones, el historial de sus muestras y las fotos de la toma. Todo queda en IDAP junto con las demás técnicas del mismo equipo."
+    },
+    {
+      "question": "¿Quién analiza las muestras?",
+      "answer": "Las pruebas las hace un laboratorio acreditado ISO/IEC 17025, y un analista certificado ICML MLA III lee los resultados contra los límites del equipo y contra la muestra anterior. Un valor alto no es un diagnóstico; la tendencia y la combinación de parámetros sí, y eso es lo que el analista te escribe con qué hacer."
+    },
+    {
       "question": "¿Qué detecta el análisis de aceite que otras técnicas no?",
       "answer": "El desgaste interno en su etapa más temprana. Las partículas de metal aparecen en el aceite mucho antes de que el daño sea suficiente para cambiar la vibración o la temperatura del equipo. Además dice de qué componente vienen: hierro de engranes, rodamientos o ejes; cobre de bujes, jaulas o enfriadores; aluminio de pistones o alojamientos; plomo y estaño de cojinetes. Y detecta lo que no debería estar ahí: agua, polvo, combustible o refrigerante."
     },
@@ -309,7 +317,7 @@
       "answer": "Es una forma de interpretar los gases disueltos en el aceite de un transformador. Con la proporción de metano, etileno y acetileno, el resultado cae en una zona que indica el tipo de falla: descargas parciales, fallas térmicas o arqueo."
     },
     {
-      "question": "¿Qué necesito para cotizar?",
+      "question": "¿Cómo se cotiza un programa de análisis de aceite?",
       "answer": "La lista de equipos a vigilar con el tipo de aceite que usa cada uno y, si hay transformadores, su capacidad y voltaje. Si ya tienes análisis anteriores, sirven para arrancar con historial. Con eso preparamos el programa de muestreo y la propuesta."
     }
   ],
@@ -337,7 +345,7 @@
   ],
   "cta": {
     "title": "¿Cuántos reductores, compresores y transformadores críticos tiene tu planta?",
-    "text": "Cuéntanos qué equipos quieres vigilar y qué aceite usan, y te armamos el programa de muestreo y análisis con su propuesta.",
+    "text": "Cuéntanos qué equipos quieres vigilar y qué aceite usan, y te armamos el programa de análisis de aceite con su propuesta.",
     "whatsappMessage": "Hola, quiero información sobre análisis de aceite y DGA para mi planta.",
     "datos": [
       "Registro REPSE vigente",
@@ -404,7 +412,7 @@
     "titulo": "De la muestra a la decisión, en cinco pasos",
     "texto": "No vendemos resultados de laboratorio: vendemos saber qué pasa dentro de tu equipo y qué hacer. Así se llega de la muestra a la acción."
   },
-  "seoTitle": "Análisis de aceite y DGA en transformadores",
+  "seoTitle": "Análisis de aceite industrial con laboratorio acreditado",
   "introBeneficios": {
     "beneficios": [
       {
@@ -481,7 +489,7 @@
       "fondo": "blanco",
       "bloques": [
         {
-          "titulo": "De la muestra a la acción",
+          "titulo": "Qué incluye el programa de análisis de aceite",
           "texto": "Una muestra bien tomada, un laboratorio acreditado y un analista que lee los números contra el equipo y contra la muestra anterior.",
           "video": "/videos/analisis-de-aceite/ace-proceso",
           "descripcion": "Los cinco pasos del análisis de aceite: muestreo, resultados de laboratorio, interpretación, recomendación y la tendencia real de una chumacera",

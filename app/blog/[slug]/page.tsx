@@ -14,16 +14,29 @@ import { tablaDeGuia } from "@/lib/tablas-guias";
 import OfertaGuia from "@/components/organisms/OfertaGuia";
 import { ofertaDeGuia } from "@/lib/ofertas-guias";
 import PageHeader from "@/components/organisms/PageHeader";
-import { getStorageUrl } from "@/lib/api/config";
+import { esNoEncontrado, getStorageUrl } from "@/lib/api/config";
 import { getBlogBySlug, getBlogs } from "@/lib/api/posts";
 import { formatDate } from "@/lib/utils/formatDate";
 import { SITE_CONFIG } from "@/lib/constants";
+import { BLOGS_LOCALES } from "@/lib/blog-local";
 
 interface BlogDetailPageProps {
     params: Promise<{ slug: string }>;
 }
 
 const DEFAULT_BLOG_IMAGE = "/images/fondo-mantenimiento.webp";
+
+// Cada guía se sirve desde el caché y se rehace cada hora, como la portada y
+// /servicios (2026-11-15): sin generateStaticParams Next la marcaba dinámica
+// (ƒ) y cada visita tardaba 0.6 a 1.2 s con "Cache-Control: no-store". Solo se
+// generan en el build las guías locales (data/blog), que no le piden nada al
+// CMS; las del CMS se generan con el primer visitante, para no saturarlo de
+// peticiones en el build (responde 429).
+export const revalidate = 3600;
+
+export function generateStaticParams() {
+    return BLOGS_LOCALES.map((b) => ({ slug: b.slug }));
+}
 
 export async function generateMetadata({
     params,
@@ -46,12 +59,11 @@ export async function generateMetadata({
             },
         };
     } catch (error) {
-        // Log en desarrollo para debugging
-        if (process.env.NODE_ENV === 'development') {
-            console.log(`[blog] Slug no encontrado: ${slug}`);
-        }
+        // Solo un 404 real del CMS es "no encontrado" (2026-11-15); un timeout o
+        // un 429 se relanza para que ese título no se quede guardado en caché.
+        if (!esNoEncontrado(error)) throw error;
         return {
-            title: "Articulo no encontrado"
+            title: "Artículo no encontrado"
         };
     }
 }
@@ -63,10 +75,10 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     try {
         blog = await getBlogBySlug(slug);
     } catch (error) {
-        // Log en desarrollo para debugging
-        if (process.env.NODE_ENV === 'development') {
-            console.log(`[blog] Slug no encontrado: ${slug}`);
-        }
+        // notFound() solo si el CMS dice 404 y no hay guía local (2026-11-15):
+        // con cualquier otro error Next sigue sirviendo la versión en caché o da
+        // un 5xx que Google reintenta. Antes un 429 del CMS salía como 404.
+        if (!esNoEncontrado(error)) throw error;
         notFound();
     }
 

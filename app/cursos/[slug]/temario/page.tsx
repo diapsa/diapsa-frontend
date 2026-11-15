@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import BotonImprimir from "@/components/atoms/BotonImprimir";
 import { getCourseBySlug } from "@/lib/api/courses";
+import { esNoEncontrado } from "@/lib/api/config";
 import { FORMATOS, TECNICAS, extraDe } from "@/lib/cursos";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -19,6 +20,15 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+// Desde el caché, rehecho cada hora, como la ficha del curso (2026-11-15). []
+// para no pedirle cada curso al CMS en el build; se genera con el primer
+// visitante.
+export const revalidate = 3600;
+
+export function generateStaticParams() {
+  return [];
+}
+
 function lista(v: unknown): string[] {
   if (Array.isArray(v)) return v.filter((x): x is string => typeof x === "string" && x.trim() !== "");
   if (typeof v === "string" && v.trim()) return v.split(/\n+/).map((x) => x.trim()).filter(Boolean);
@@ -30,7 +40,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
     const curso = await getCourseBySlug(slug);
     return { title: `Temario de ${curso.name}`, robots: { index: false, follow: false } };
-  } catch {
+  } catch (error) {
+    // Un fallo pasajero del CMS se relanza para no guardar en caché un título
+    // genérico (2026-11-15); solo el 404 real cae aquí.
+    if (!esNoEncontrado(error)) throw error;
     return { title: "Temario", robots: { index: false, follow: false } };
   }
 }
@@ -40,7 +53,10 @@ export default async function TemarioPage({ params }: Props) {
   let curso;
   try {
     curso = await getCourseBySlug(slug);
-  } catch {
+  } catch (error) {
+    // notFound() solo con un 404 real del CMS (2026-11-15); timeout, 429 o red
+    // se relanzan para no dar un 404 falso.
+    if (!esNoEncontrado(error)) throw error;
     notFound();
   }
   const x = extraDe(curso.slug);

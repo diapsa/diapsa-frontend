@@ -35,7 +35,7 @@
     ["p", "Una muestra mal tomada da un resultado que no sirve, por bueno que sea el laboratorio. Tomarla del fondo de un cárter o del drenado después de parar el equipo es el error más común."],
 
     ["h2", "Cada cuánto muestrear"],
-    ["p", "Como punto de partida, los equipos críticos cada tres meses y los demás cada seis. Cuando un resultado sale fuera, se acorta el plazo hasta confirmar la tendencia. Lo que vale es la serie: un valor suelto dice poco."],
+    ["p", "Como punto de partida, los equipos críticos cada tres meses y los demás cada seis. Cuando un resultado sale fuera, se acorta el plazo hasta confirmar la tendencia. Lo que vale es la serie: un valor suelto dice poco. Por eso un [programa de análisis de aceite](/servicios/monitoreo-condicion/analisis-de-aceite) se arma equipo por equipo y se ajusta con cada resultado."],
 
     ["h2", "Cómo leer el informe"],
     ["lista", [
